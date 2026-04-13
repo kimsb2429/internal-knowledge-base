@@ -10,15 +10,17 @@ Extracted moments, narratives, and artifacts from the session that demonstrate R
 
 **Act 1 — Reverse-engineering the data source** (crawler discovery)
 - KnowVA is a JavaScript SPA (eGain platform) — no static pages to wget
-- Walked through Chrome DevTools together to find the API
+- Walked through Chrome DevTools together to find the API ([Ex. I](#ex-i-devtools-api-discovery))
 - Discovered the eGain v11 XML API by intercepting XHR calls
-- Key moment: finding the `$level` parameter that unlocks the full topic tree — no headless browser needed
-- Built a pure-API crawler that politely downloads 237 articles with structure preserved
+- Key moment: finding the `$level` parameter that unlocks the full topic tree — no headless browser needed ([Ex. J](#ex-j-level-parameter-discovery))
+- XML had namespace prefixes (`ns2:`), article IDs as attributes (not child elements), content as XML-escaped HTML — each required a debug iteration ([Ex. K](#ex-k-xml-namespace-surprises))
+- Built a pure-API crawler that politely downloads 237 articles with structure preserved ([Ex. L](#ex-l-crawler-output-structure))
 
 **Act 2 — Building the golden evaluation set** (domain expertise + AI)
 - Created 110 queries across 5 personas: VCE (claims examiner), consulting SME, prod ops, new hire, auditor
 - Cross-source queries that require stitching M22-3 + M22-4 + VADIR ICD
-- Deliberately wrote queries in natural domain language ("the service record shows...") instead of naming systems ("VADIR returns...") — tests semantic retrieval, not keyword matching
+- Deliberately wrote queries in natural domain language ("the service record shows...") instead of naming systems ("VADIR returns...") — tests semantic retrieval, not keyword matching ([Ex. M](#ex-m-domain-language-rewrites))
+- Iteratively refined query voice: textbook → cross-source → consulting SME → prod ops → domain-language ([Ex. N](#ex-n-query-voice-progression))
 
 **Act 3 — Metadata enrichment that the CMS didn't do** (Step 3)
 - Audited all metadata requirements from the pipeline docs — gap analysis between what's needed and what exists
@@ -477,11 +479,175 @@ Rate tables in M22-4 Part 5 (article `554400000073756`) have merged header cells
 
 54 articles affected, 445 broken rows total. Community consensus: don't fix the pipe table — prepend an LLM-generated semantic description during chunking (Step 7) that captures what the merged header conveyed.
 
+### Ex. I: DevTools API discovery
+
+The KnowVA page renders as a JavaScript SPA — raw HTML is just a loading spinner. The API endpoint was discovered by watching XHR calls in Chrome DevTools Network tab:
+
+```
+https://www.knowva.ebenefits.va.gov/system/ws/v11/ss/article?$attribute=&$lang=en-us&$rangesize=1&$rangestart=0&portalId=554400000001018&topicId=554400000016107&usertype=customer
+```
+
+This returned XML (not JSON) — an eGain v11 self-service API. The article content endpoint:
+```
+https://www.knowva.ebenefits.va.gov/system/ws/v11/ss/article/554400000059318?$lang=en-us&portalId=554400000001018&usertype=customer
+```
+
+### Ex. J: $level parameter discovery
+
+The topic API without `$level` always returned root-level topics regardless of `parentTopicId`. The SPA's own XHR calls revealed the missing parameter:
+
+**Without $level** (returns root topics, useless for subtree discovery):
+```
+/ss/topic?parentTopicId=554400000016104&portalId=...
+→ Returns: Burial & Memorial, Compensation and Pension, eBenefits... (root topics)
+```
+
+**With $level=5** (returns full subtree — the breakthrough):
+```
+/ss/topic/554400000016106?$level=3&$pagesize=1000&portalId=...
+→ Returns: M22-4 with all 12 parts, all chapters within each part = 161 topics in one call
+```
+
+This eliminated Playwright entirely. The crawler went from "navigate SPA, click links, intercept responses" to "one HTTP GET per manual."
+
+### Ex. K: XML namespace surprises
+
+Three bugs from assuming standard XML structure:
+
+**Bug 1 — Namespace prefixes:** Expected `<name>`, got `<ns2:name>`
+```xml
+<!-- Expected -->
+<topic><name>M22-3</name><articleCount>0</articleCount></topic>
+
+<!-- Actual -->
+<ns2:topic childCount="8" id="554400000016105">
+    <ns2:name>M22-3</ns2:name>
+    <ns2:articleCount>0</ns2:articleCount>
+</ns2:topic>
+```
+
+**Bug 2 — ID as attribute, not element:** Expected `<id>...</id>`, got `id="..."` on the tag
+```xml
+<!-- Expected -->
+<ns2:article><id>554400000059318</id><ns2:name>CHAPTER 1...</ns2:name></ns2:article>
+
+<!-- Actual -->
+<ns2:article alternateId="KMPR-59318" id="554400000059318">
+    <ns2:name>CHAPTER 1.  GENERAL</ns2:name>
+</ns2:article>
+```
+
+**Bug 3 — Content as XML-escaped HTML:** Expected CDATA or raw HTML, got entity-encoded
+```xml
+<!-- Expected -->
+<content><![CDATA[<p>The purpose of this manual...</p>]]></content>
+
+<!-- Actual -->
+<ns2:content>&lt;p style="text-align: center"&gt;&lt;strong&gt;CHAPTER 1...&lt;/strong&gt;&lt;/p&gt;</ns2:content>
+```
+
+Each required a separate debug iteration. Lesson: dump the raw response before writing any parser.
+
+### Ex. L: Crawler output structure
+
+Per-article output — HTML preserves all structure (headings, tables, lists, anchor links) with metadata in `<meta>` tags:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="source-system" content="KnowVA (knowva.ebenefits.va.gov)">
+  <meta name="source-type" content="va_manual">
+  <meta name="manual-name" content="M22-4">
+  <meta name="article-id" content="554400000073486">
+  <meta name="last-modified" content="2025-03-06T15:33:49.000Z">
+  <meta name="topic-breadcrumb" content="M22-4 &gt; Part 03 – Claims Processing &gt; 01 – Administrative Issues">
+  <meta name="content-category" content="Policy or Procedure">
+</head>
+<body>
+<nav class="topic-breadcrumb">M22-4 / Part 03 – Claims Processing / 01 – Administrative Issues</nav>
+<h1>PART 01, GENERAL. CHAPTER 1 - OVERVIEW OF THE MANUAL</h1>
+<!-- original HTML content with tables, headings, lists intact -->
+</body>
+</html>
+```
+
+Companion JSON metadata aligned to pgvector schema:
+```json
+{
+  "article_id": "554400000073486",
+  "source_type": "va_manual",
+  "topic_breadcrumb": ["M22-4", "Part 03 – Claims Processing", "01 – Administrative Issues"],
+  "manual_name": "M22-4",
+  "contains_table": true,
+  "contains_list": true,
+  "heading_outline": [{"level": 2, "text": "1.01 PURPOSE"}, "..."],
+  "heading_count": 10,
+  "content_category": "Policy or Procedure",
+  "attachments": []
+}
+```
+
+### Ex. M: Domain-language rewrites
+
+Same query, before and after removing system names — tests whether RAG retrieves VADIR docs from domain context alone:
+
+**Before** (names the system):
+> "A VADIR getServicePeriods response shows purpleHeartIndCd = 'Y'. What benefit level does this veteran receive under Chapter 33?"
+
+**After** (domain language only):
+> "This veteran received a Purple Heart but only served 4 months. Does that affect their benefit percentage?"
+
+The RAG must connect "Purple Heart" → VADIR purpleHeart data element AND "benefit percentage" → M22-4 benefit level chart (100% for Purple Heart recipients regardless of service length).
+
+**Before:**
+> "The VADIR resultsHash field changed between two getServicePeriods calls for the same veteran. What does this mean?"
+
+**After:**
+> "We pulled the same veteran's military service data twice and got different results. What could have changed and what should the system do?"
+
+### Ex. N: Query voice progression
+
+The golden set evolved through 5 voice levels, each pushed by the first brain:
+
+**Level 1 — Textbook lookup** (50 queries):
+> "What End Product Code is used for an original Chapter 35 claim?" → EPC 240
+
+**Level 2 — Cross-source** (25 queries):
+> "The veteran's record shows a Character of Service code 'H'. What does that mean for Chapter 33 eligibility?"
+
+**Level 3 — Consulting SME** (10 queries):
+> "Where could a valid military service code produce a wrong eligibility determination? What are the data quality risks in the handoff between service records and benefits policy?"
+
+**Level 4 — Prod ops** (10 queries):
+> "Since yesterday the service record system keeps returning transformation errors. What does that mean and what's the playbook?"
+
+**Level 5 — Synthesis** (3 queries):
+> "Walk me through what happens end-to-end from when a veteran submits a Chapter 33 application to when they receive their first housing allowance payment."
+
+Each level requires retrieving from more sources and reasoning across more documents to answer.
+
 ### Git commands for live demo
 
 Pull up "before" states from git history during a demo:
 
 ```bash
+# Steps 1-2 commit (crawler + articles)
+git show 784fed8 --stat | head -10
+
+# Golden query set commit
+git show c6de724 --stat
+
+# Hallucination fix commit — show what changed
+git show 99b79df --stat
+
+# Eval v1 vs v2 — show the improvement
+diff <(python3 -c "import json; d=json.load(open('data/eval_correctness.json')); print(d.get('average_score',0))") \
+     <(python3 -c "import json; d=json.load(open('data/eval_correctness_v2.json')); print(d.get('average_score',0))")
+
+# Show the hallucination propagation chain in the golden set diff
+git diff 99b79df~1 99b79df -- data/golden_query_set.json | head -80
+
 # Metadata before enrichment (Step 3) — empty headings, keywords present
 git show cb55724~1:data/knowva_manuals/articles/554400000060851.json | python3 -m json.tool | head -30
 
