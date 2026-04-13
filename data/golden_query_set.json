@@ -1,0 +1,1095 @@
+{
+  "description": "Golden query set for VA Education Service RAG pipeline evaluation (Step 2 of Zero-to-MCP plan)",
+  "version": "1.0",
+  "created": "2026-04-13",
+  "sources": ["M22-3", "M22-4", "VADIR CH33 LTS WS ICD v2.1.1"],
+  "requirements": {
+    "total_queries": 50,
+    "table_answer_queries": ">=10",
+    "multi_section_queries": ">=5",
+    "heading_context_queries": ">=5"
+  },
+  "queries": [
+    {
+      "id": 1,
+      "query": "What RPO handles GI Bill claims for veterans in Texas?",
+      "answer": "Muskogee, OK (P.O. Box 8888, 74402-8888)",
+      "source_doc": "M22-4, Part 3, Chapter 1 (Administrative Issues)",
+      "source_article_id": "554400000073486",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["jurisdiction", "RPO", "geographic"]
+    },
+    {
+      "id": 2,
+      "query": "What dollar threshold triggers four-signature review for a Chapter 33 school payment?",
+      "answer": "$45,000",
+      "source_doc": "M22-4, Part 3, Chapter 1 (Administrative Issues), Figure 1.06",
+      "source_article_id": "554400000073486",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["big_pay", "threshold", "chapter_33"]
+    },
+    {
+      "id": 3,
+      "query": "What is the MHA rate for a veteran taking only distance learning courses under Chapter 33?",
+      "answer": "50% of the national average BAH rate, effective October 1, 2011",
+      "source_doc": "M22-4, Part 12, Ch. 33 Sub-Chapter 4.3 (Housing Allowance)",
+      "source_article_id": "554400000078677",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["MHA", "distance_learning", "chapter_33"]
+    },
+    {
+      "id": 4,
+      "query": "How is MHA calculated for a part-time student enrolled in 9 credits where 12 is full time?",
+      "answer": "Rate of pursuit is 0.75 (9/12), which rounds to 80% of the applicable BAH rate",
+      "source_doc": "M22-4, Part 12, Ch. 33 Sub-Chapter 4.3 (Housing Allowance)",
+      "source_article_id": "554400000078677",
+      "answer_in_table": true,
+      "query_type": "table_lookup_with_calculation",
+      "tags": ["MHA", "rate_of_pursuit", "part_time"]
+    },
+    {
+      "id": 5,
+      "query": "What benefit level does a veteran with 800 days of qualifying active-duty service receive under Chapter 33?",
+      "answer": "80% of maximum benefit (730-909 days qualifies for 80%, subject to the 70/80 rule based on training exclusion)",
+      "source_doc": "M22-4, Part 12, Ch. 33 Sub-Chapter 2 (Veterans Eligibility)",
+      "source_article_id": "554400000073736",
+      "answer_in_table": true,
+      "query_type": "table_lookup_with_calculation",
+      "tags": ["eligibility", "benefit_level", "qualifying_service"]
+    },
+    {
+      "id": 6,
+      "query": "What happened to the 40% benefit level for Chapter 33?",
+      "answer": "Eliminated effective August 1, 2020; became the 50% benefit level",
+      "source_doc": "M22-4, Part 12, Ch. 33 Sub-Chapter 2 (Veterans Eligibility)",
+      "source_article_id": "554400000073736",
+      "answer_in_table": false,
+      "query_type": "policy_change",
+      "tags": ["benefit_level", "policy_change", "chapter_33"]
+    },
+    {
+      "id": 7,
+      "query": "Does a veteran discharged on February 1, 2014, have a delimiting date for Chapter 33 benefits?",
+      "answer": "No. Veterans discharged on or after January 1, 2013 have no time limit to use Chapter 33 benefits (per PL 115-48, effective August 18, 2017)",
+      "source_doc": "M22-4, Part 12, Ch. 33 Sub-Chapter 2 (Veterans Eligibility) and Part 3, Chapter 4 (Delimiting Date Extensions)",
+      "source_article_id": "554400000073736",
+      "answer_in_table": false,
+      "query_type": "multi_section",
+      "tags": ["delimiting_date", "eligibility", "chapter_33"]
+    },
+    {
+      "id": 8,
+      "query": "Is Title 32 AGR service qualifying for the Post-9/11 GI Bill?",
+      "answer": "Yes, effective October 1, 2011. AGR service under Title 32 for organizing, administering, recruiting, instructing, or training, and activations under Section 502(f) for national emergencies are qualifying. Retroactive payment is possible for enrollments on or after August 1, 2009.",
+      "source_doc": "M22-4, Part 12, Ch. 33 Sub-Chapter 2 (Veterans Eligibility)",
+      "source_article_id": "554400000073736",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["national_guard", "title_32", "AGR", "qualifying_service"]
+    },
+    {
+      "id": 9,
+      "query": "Can a veteran use GI Bill benefits for a bartending course?",
+      "answer": "No. Bartending courses are always prohibited under all VA education benefit chapters.",
+      "source_doc": "M22-4, Part 3, Chapter 7 (Restrictions on Training)",
+      "source_article_id": "554400000075993",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["prohibited_training", "restrictions"]
+    },
+    {
+      "id": 10,
+      "query": "Can VA pay for a private pilot's certificate course at a flight school?",
+      "answer": "No. Vocational flight training for a private pilot's certificate is always prohibited. However, it may be taken at an IHL if it is for credit toward a college degree.",
+      "source_doc": "M22-4, Part 3, Chapter 7 (Restrictions on Training)",
+      "source_article_id": "554400000075993",
+      "answer_in_table": false,
+      "query_type": "heading_context_dependent",
+      "tags": ["flight_training", "restrictions", "ambiguous"]
+    },
+    {
+      "id": 11,
+      "query": "What medical certificate is required for a non-ATP flight course under VA education benefits?",
+      "answer": "A second-class medical certificate, held on the first day of the course. It is valid for 12 months.",
+      "source_doc": "M22-4, Part 4, Chapter 2 (Flight, Correspondence, L&C, National Exams)",
+      "source_article_id": "554400000073476",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["flight_training", "medical_certificate"]
+    },
+    {
+      "id": 12,
+      "query": "Can a Chapter 35 beneficiary receive VA benefits for vocational flight training?",
+      "answer": "No. Chapter 35 and Section 901 beneficiaries are NOT eligible for vocational flight training.",
+      "source_doc": "M22-4, Part 4, Chapter 2 (Flight, Correspondence, L&C, National Exams)",
+      "source_article_id": "554400000073476",
+      "answer_in_table": false,
+      "query_type": "heading_context_dependent",
+      "tags": ["chapter_35", "flight_training", "eligibility"]
+    },
+    {
+      "id": 13,
+      "query": "What is the minimum credits for 3/4-time status when 12 credits equals full time?",
+      "answer": "9 credits",
+      "source_doc": "M22-4, Part 4, Chapter 6 (Measurement of College Level Courses)",
+      "source_article_id": "554400000073534",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["training_time", "credits", "measurement"]
+    },
+    {
+      "id": 14,
+      "query": "A student is enrolled in 10 credits at a school where 13 credits is full time. What is their training time?",
+      "answer": "3/4 time (10-12 credits = 3/4 time when full time is 13+)",
+      "source_doc": "M22-4, Part 4, Chapter 6 (Measurement of College Level Courses)",
+      "source_article_id": "554400000073534",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["training_time", "nonstandard", "measurement"]
+    },
+    {
+      "id": 15,
+      "query": "What BDN training time code is used for Chapter 1606 full-time enrollment?",
+      "answer": "Code 4",
+      "source_doc": "M22-4, Part 4, Chapter 6 (Measurement of College Level Courses)",
+      "source_article_id": "554400000073534",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["BDN", "training_time_code", "chapter_1606"]
+    },
+    {
+      "id": 16,
+      "query": "As of what date are interval payments no longer payable for GI Bill training?",
+      "answer": "August 1, 2011 (Section 206, PL 111-377)",
+      "source_doc": "M22-4, Part 4, Chapter 8 (Interval Payment)",
+      "source_article_id": "554400000073579",
+      "answer_in_table": false,
+      "query_type": "policy_change",
+      "tags": ["interval_payment", "effective_date"]
+    },
+    {
+      "id": 17,
+      "query": "When is a summer-term interval payable even if it exceeds 30 days?",
+      "answer": "When the summer term is at least 8 weeks long",
+      "source_doc": "M22-4, Part 4, Chapter 8 (Interval Payment)",
+      "source_article_id": "554400000073579",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["interval_payment", "summer_term"]
+    },
+    {
+      "id": 18,
+      "query": "What type of folder is used for Chapter 35 DEA claims?",
+      "answer": "DEA folder — blue, two-part",
+      "source_doc": "M22-4, Part 3, Chapter 1 (Administrative Issues)",
+      "source_article_id": "554400000073486",
+      "answer_in_table": false,
+      "query_type": "heading_context_dependent",
+      "tags": ["folder_type", "chapter_35", "DEA", "ambiguous"]
+    },
+    {
+      "id": 19,
+      "query": "What is the automatic suspense date for EPC 270 (Notice of Disagreement)?",
+      "answer": "60 days (all other EPCs have a 30-day suspense date)",
+      "source_doc": "M22-4, Part 3, Chapter 1 (Administrative Issues)",
+      "source_article_id": "554400000073486",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["EPC", "suspense_date", "NOD"]
+    },
+    {
+      "id": 20,
+      "query": "How many years of service is excluded for a ROTC-commissioned officer under Chapter 33?",
+      "answer": "4 years",
+      "source_doc": "M22-4, Part 12, Ch. 33 Sub-Chapter 5 (Excluded Service)",
+      "source_article_id": "554400000078114",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["excluded_service", "ROTC", "chapter_33"]
+    },
+    {
+      "id": 21,
+      "query": "What is the excluded period for a Service Academy graduate commissioned under Title 10?",
+      "answer": "5 years from the date of commissioning",
+      "source_doc": "M22-4, Part 12, Ch. 33 Sub-Chapter 5 (Excluded Service)",
+      "source_article_id": "554400000078114",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["excluded_service", "service_academy", "chapter_33"]
+    },
+    {
+      "id": 22,
+      "query": "What is the maximum percentage of tuition and fees covered by accelerated payment under Chapter 30?",
+      "answer": "60% of established tuition and fees for one term",
+      "source_doc": "M22-4, Part 5, Chapter 11 (Accelerated Payment)",
+      "source_article_id": "554400000076342",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["accelerated_payment", "chapter_30"]
+    },
+    {
+      "id": 23,
+      "query": "What happens to OJT housing allowance after the first year of a Chapter 33 apprenticeship?",
+      "answer": "It drops from 100% to 80% of E-5 BAH in the second 6 months, then 60% in the third 6 months, 40% in the fourth, and 20% after 24 months",
+      "source_doc": "M22-4, Part 12, Ch. 33 Sub-Chapter 4.3 (Housing Allowance)",
+      "source_article_id": "554400000078677",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["OJT", "apprenticeship", "MHA", "chapter_33"]
+    },
+    {
+      "id": 24,
+      "query": "What End Product Code is used for an original Chapter 35 claim?",
+      "answer": "EPC 240",
+      "source_doc": "M22-3, Appendix A (Education End Product Codes)",
+      "source_article_id": "554400000061193",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["EPC", "chapter_35", "M22-3"]
+    },
+    {
+      "id": 25,
+      "query": "What EPC covers supplemental actions for Chapter 1606?",
+      "answer": "EPC 280",
+      "source_doc": "M22-3, Appendix A (Education End Product Codes)",
+      "source_article_id": "554400000061193",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["EPC", "chapter_1606", "supplemental", "M22-3"]
+    },
+    {
+      "id": 26,
+      "query": "What QA scorecard questions cover payment accuracy in VA education claims?",
+      "answer": "Questions 8 through 10",
+      "source_doc": "M22-3, Chapter 2 (Quality Assurance)",
+      "source_article_id": "554400000059332",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["QA", "scorecard", "payment_accuracy", "M22-3"]
+    },
+    {
+      "id": 27,
+      "query": "As of what date did VA Education shift from SAO to SOAR for internal control assessments?",
+      "answer": "October 1, 2023",
+      "source_doc": "M22-3, Chapter 2 (Quality Assurance)",
+      "source_article_id": "554400000059332",
+      "answer_in_table": false,
+      "query_type": "policy_change",
+      "tags": ["SOAR", "SAO", "internal_controls", "M22-3"]
+    },
+    {
+      "id": 28,
+      "query": "What are the five VADIR web service operations available through VSCH33Service?WSDL?",
+      "answer": "getPerson, getContactInfo, findPeopleByCriteria, getServicePeriods, getKickerInfo",
+      "source_doc": "VADIR ICD, Table 3 (WSDL Names and Operation Names) and Section 2.2",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["VADIR", "web_service", "operations"]
+    },
+    {
+      "id": 29,
+      "query": "What is the maximum response time requirement for the VADIR CH33 web service?",
+      "answer": "Payload shall be returned in no more than 2 seconds",
+      "source_doc": "VADIR ICD, Section 2.8 (Performance Requirements)",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": false,
+      "query_type": "technical_spec",
+      "tags": ["VADIR", "performance", "SLA"]
+    },
+    {
+      "id": 30,
+      "query": "What is the confidentiality classification for data in the VADIR CH33 LTS interface?",
+      "answer": "Confidentiality: High, Integrity: High, Availability: Moderate (per FIPS 199 and NIST SP 800-60)",
+      "source_doc": "VADIR ICD, Section 2.9 (Security)",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": false,
+      "query_type": "technical_spec",
+      "tags": ["VADIR", "security", "FIPS"]
+    },
+    {
+      "id": 31,
+      "query": "What field is required when calling the VADIR findPeopleByCriteria operation?",
+      "answer": "SSN (Social Security Number) is the required field. It is a 9-digit string that may have leading zeros.",
+      "source_doc": "VADIR ICD, Table 7 (findPeopleByCriteria Request)",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["VADIR", "findPeopleByCriteria", "API"]
+    },
+    {
+      "id": 32,
+      "query": "What is the default maximum number of results returned by VADIR findPeopleByCriteria?",
+      "answer": "50 (with a hard cutoff of 200)",
+      "source_doc": "VADIR ICD, Table 7 (findPeopleByCriteria Request), maxResults field",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["VADIR", "pagination", "API"]
+    },
+    {
+      "id": 33,
+      "query": "What does VADIR Character of Service code 'J' mean?",
+      "answer": "Honorable for VA Purposes (Administrative use by VA only)",
+      "source_doc": "VADIR ICD, Table 42 (Character of Service Codes)",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["VADIR", "character_of_service", "code_lookup"]
+    },
+    {
+      "id": 34,
+      "query": "What does VADIR project code '9GY' represent?",
+      "answer": "Hurricane Katrina (Aug 31, 2005), with Training Indicator = N",
+      "source_doc": "VADIR ICD, Table 43 (Project Codes)",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["VADIR", "project_code", "contingency"]
+    },
+    {
+      "id": 35,
+      "query": "What VADIR service code represents the Space Force?",
+      "answer": "Code 'S'",
+      "source_doc": "VADIR ICD, Table 45 (Service Codes)",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["VADIR", "service_code", "Space_Force"]
+    },
+    {
+      "id": 36,
+      "query": "What data does the VADIR getServicePeriods operation return?",
+      "answer": "DoD military service including service periods, exclusion periods, training periods, Guard/Reserve activation periods, Career Intermission Plan (CIP) participation, Ch30 eligibility information, Ch1606 eligibility information, Military affiliation and duty status, Military Academy periods, payments and used eligibility for multiple education programs, and Purple Heart information.",
+      "source_doc": "VADIR ICD, Section 2.2 (Interface Overview)",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": false,
+      "query_type": "technical_spec",
+      "tags": ["VADIR", "getServicePeriods", "data_elements"]
+    },
+    {
+      "id": 37,
+      "query": "What is the VADIR production endpoint URL for the CH33 web service?",
+      "answer": "https://vavdrappprd.va.gov/vdrCH33/v2/VSCH33Service?WSDL",
+      "source_doc": "VADIR ICD, Section 5.1 (End Points)",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["VADIR", "endpoint", "production"]
+    },
+    {
+      "id": 38,
+      "query": "What does VADIR MGSR status code 'CA' mean?",
+      "answer": "Suspended — Completed requirements of baccalaureate or equivalent degree",
+      "source_doc": "VADIR ICD, Table 51 (MGSR Status Codes)",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["VADIR", "MGSR", "status_code"]
+    },
+    {
+      "id": 39,
+      "query": "What does the VADIR exclusionPeriod 'exclusionPerdTyp' field contain?",
+      "answer": "Either 'ROTC' or 'APPELLATE' — describes the type of exclusion period",
+      "source_doc": "VADIR ICD, Table 24 (exclusionPeriod Data Element)",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["VADIR", "exclusion_period", "data_element"]
+    },
+    {
+      "id": 40,
+      "query": "What VADIR error code means 'Invalid Search Criteria'?",
+      "answer": "Error 16820001, with callStatusNote 'Invalid Search Criteria. Verify input value for SSN/EDIPI'",
+      "source_doc": "VADIR ICD, Table 41 (CallStatus and CallStatusNote Details)",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["VADIR", "error_code", "callStatus"]
+    },
+    {
+      "id": 41,
+      "query": "How does a VCE determine Chapter 33 eligibility when a veteran has both ROTC service and later active duty?",
+      "answer": "The 4-year ROTC obligation period is excluded from qualifying service. The VCE must review the VADIR getServicePeriods response for exclusionPeriod entries with exclusionPerdTyp='ROTC', subtract those periods, then calculate remaining qualifying days against the benefit level chart (50%-100% based on days of service). If the veteran was also discharged after January 1, 2013, there is no delimiting date.",
+      "source_doc": "M22-4, Part 12, Sub-Chapters 2 and 5 + VADIR ICD Table 24",
+      "source_article_id": "554400000073736",
+      "answer_in_table": false,
+      "query_type": "multi_section",
+      "tags": ["eligibility", "ROTC", "excluded_service", "VADIR", "cross_source"]
+    },
+    {
+      "id": 42,
+      "query": "What is the general delimiting date for Chapter 32 benefits?",
+      "answer": "10 years from the date of discharge",
+      "source_doc": "M22-4, Part 3, Chapter 4 (Delimiting Date Extensions)",
+      "source_article_id": "554400000073604",
+      "answer_in_table": false,
+      "query_type": "heading_context_dependent",
+      "tags": ["delimiting_date", "chapter_32"]
+    },
+    {
+      "id": 43,
+      "query": "Do Chapter 35 surviving spouses have a delimiting date?",
+      "answer": "No, per the CAVC decision in Ozer v. Principi. However, regular Chapter 35 spouses do have a delimiting date (restored by PL 107-103, effective December 28, 2001).",
+      "source_doc": "M22-4, Part 3, Chapter 4 (Delimiting Date Extensions)",
+      "source_article_id": "554400000073604",
+      "answer_in_table": false,
+      "query_type": "heading_context_dependent",
+      "tags": ["delimiting_date", "chapter_35", "surviving_spouse", "CAVC"]
+    },
+    {
+      "id": 44,
+      "query": "When a veteran's Chapter 33 entitlement exhausts during a term, what must the VCE check related to MGIB?",
+      "answer": "Eligibility for the $1,200 MGIB refund (96R) payable under Chapter 33",
+      "source_doc": "M22-4, Part 4, Chapter 1 (Enrollment Certification)",
+      "source_article_id": "554400000073421",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["entitlement_exhaustion", "MGIB_refund", "chapter_33"]
+    },
+    {
+      "id": 45,
+      "query": "Which RPO has jurisdiction when a student attends a guest/transient course at a different school?",
+      "answer": "The RPO having jurisdiction over the degree-conferring school, not the transient school",
+      "source_doc": "M22-4, Part 4, Chapter 1 (Enrollment Certification)",
+      "source_article_id": "554400000073421",
+      "answer_in_table": false,
+      "query_type": "policy_rule",
+      "tags": ["jurisdiction", "guest_student", "RPO"]
+    },
+    {
+      "id": 46,
+      "query": "What transaction code in Benefits Manager represents a work study allowance?",
+      "answer": "06L",
+      "source_doc": "M22-4, Part II, Chapter 3, Section G (Benefits Manager Claim Summary)",
+      "source_article_id": "554400000289086",
+      "answer_in_table": true,
+      "query_type": "table_lookup",
+      "tags": ["BM", "transaction_code", "work_study"]
+    },
+    {
+      "id": 47,
+      "query": "As of what date did Chapter 33 payment review transition from BDN to eMPWR?",
+      "answer": "July 8, 2024",
+      "source_doc": "M22-4, Part II, Chapter 1, Section C (Payment Errors and History)",
+      "source_article_id": "554400000291771",
+      "answer_in_table": false,
+      "query_type": "policy_change",
+      "tags": ["eMPWR", "BDN", "transition", "chapter_33"]
+    },
+    {
+      "id": 48,
+      "query": "How long before an inactive DGI user's record lock is released?",
+      "answer": "15 minutes of inactivity",
+      "source_doc": "M22-4, Part II, Chapter 2, Section D (DGI Processing Screens)",
+      "source_article_id": "554400000303799",
+      "answer_in_table": false,
+      "query_type": "technical_spec",
+      "tags": ["DGI", "record_lock", "timeout"]
+    },
+    {
+      "id": 49,
+      "query": "What law established the two-certification requirement for Chapter 33 enrollment, and when did it take effect for IHL beneficiaries?",
+      "answer": "PL 116-315, Section 1010. It took effect for NCD beneficiaries on August 1, 2021 (Phase 1) and for IHL beneficiaries on December 17, 2021 (Phase 2).",
+      "source_doc": "M22-4, Part 12, Chapter 11 (Enrollment Verification)",
+      "source_article_id": "554400000191366",
+      "answer_in_table": false,
+      "query_type": "multi_section",
+      "tags": ["enrollment_verification", "two_certification", "chapter_33"]
+    },
+    {
+      "id": 50,
+      "query": "How does the system flow work when Chapter 33 LTS needs to determine a veteran's eligibility using VADIR data — what operations are called and in what order?",
+      "answer": "Chapter 33 LTS first calls findPeopleByCriteria (providing SSN) to get the veteran's EDIPI from VADIR. Then it calls getPerson (with EDIPI) for biographical data, getContactInfo for address/phone, getServicePeriods for military service history (including active periods, exclusion periods, training periods, Purple Heart awards, Ch30/Ch1606 entitlement, and Military Academy periods), and getKickerInfo for kicker amounts. The service data is used to calculate qualifying days of service, apply exclusions (ROTC, appellate), determine the benefit level percentage (50-100%), and establish the delimiting date.",
+      "source_doc": "VADIR ICD Sections 2.2 and 2.5 + M22-4 Part 12 Sub-Chapters 2 and 5",
+      "source_article_id": "VADIR_ICD",
+      "answer_in_table": false,
+      "query_type": "multi_section",
+      "tags": ["VADIR", "LTS", "eligibility_flow", "cross_source"]
+    }
+  ],
+    {
+      "id": 51,
+      "query": "The veteran's service record shows a Character of Service code 'H'. What does that mean for Chapter 33 eligibility?",
+      "answer": "'H' means 'Under honorable conditions (absence of a negative report).' Per M22-4, Chapter 33 requires honorable service. Character of service codes A (Honorable), B (Under honorable conditions, general), H, and J (Honorable for VA Purposes) qualify. Code H qualifies the veteran for Chapter 33 benefits.",
+      "source_docs": ["VADIR ICD, Table 42 (Character of Service Codes)", "M22-4, Part 12, Sub-Chapter 2 (Veterans Eligibility)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "character_of_service", "eligibility", "chapter_33"]
+    },
+    {
+      "id": 52,
+      "query": "The service record shows an active duty period with project code '9GF'. Is this qualifying service for Chapter 33?",
+      "answer": "Project code '9GF' is Overseas Contingency Operation (OCO), Training Indicator = N (not training). Per M22-4, active duty in support of a contingency operation after September 10, 2001 is qualifying service for Chapter 33. Since the training indicator is N, this is not a training period and counts toward qualifying days.",
+      "source_docs": ["VADIR ICD, Table 43 (Project Codes)", "M22-4, Part 12, Sub-Chapter 2 (Veterans Eligibility)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "project_code", "qualifying_service", "OCO"]
+    },
+    {
+      "id": 53,
+      "query": "How does the VADIR trainingPeriod data relate to the M22-4 rule about deducting entry-level and skill training from qualifying service?",
+      "answer": "VADIR's trainingPeriod element (Table 25) contains beginDate, endDate, and projectCode for each training period. Per M22-4 Part 12 Sub-Chapter 5, entry-level and skill training (e.g., Army BCT + AIT, Navy Recruit Training + 'A' School) is deducted from qualifying service UNLESS the veteran has 730+ days of total service. The VCE cross-references VADIR training periods against the service branch's known training pipeline to determine what to exclude.",
+      "source_docs": ["VADIR ICD, Table 25 (TrainingPeriod Data Element)", "M22-4, Part 12, Sub-Chapter 5 (Excluded Service)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "training_period", "excluded_service", "entry_level"]
+    },
+    {
+      "id": 54,
+      "query": "The service record has an MGIB code and a separation code. What eligibility decision does this inform?",
+      "answer": "The mgibCd (MGIB separation code) and mgibSeparationCode (description) from VADIR indicate whether the veteran separated under conditions that affect MGIB Chapter 30 eligibility. Per M22-4 Part 4 Chapter 1, when a veteran's Chapter 33 entitlement exhausts, the VCE must check eligibility under other benefits including Chapter 30, and review eligibility for the $1,200 MGIB refund (96R). The VADIR MGIB data determines whether the veteran was a Chapter 30 participant and how they separated.",
+      "source_docs": ["VADIR ICD, Table 23 (ServicePeriod Data Element)", "M22-4, Part 4, Chapter 1 (Enrollment Certification)"],
+      "answer_in_table": false,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "MGIB", "chapter_30", "entitlement_exhaustion"]
+    },
+    {
+      "id": 55,
+      "query": "This veteran received a Purple Heart but only served 4 months. Does that affect their benefit percentage?",
+      "answer": "100% of maximum benefit, regardless of the length of qualifying service. Per M22-4 Part 12 Sub-Chapter 2, Purple Heart recipients receive the 100% benefit level. VADIR reports Purple Heart status via the purpleHeart data element (Table 28), where purpleHeartIndCd = 'Y' indicates evidence of a Purple Heart.",
+      "source_docs": ["VADIR ICD, Table 28 (purpleHeart Data Element)", "M22-4, Part 12, Sub-Chapter 2 (Veterans Eligibility, benefit level chart)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "purple_heart", "benefit_level", "chapter_33"]
+    },
+    {
+      "id": 56,
+      "query": "What VADIR data element corresponds to the 'delimiting date' concept in M22-4, and where does each system store it?",
+      "answer": "VADIR's bdnEnt data element (Table 30) contains 'eduPgmEntlDelimitDt' — the Benefit Program Entitlement Delimit Date (the date by which the benefit must be used). M22-4 Part 3 Chapter 4 defines the policy rules: 10 years for Ch 30/32, 15 years for Ch 33 (pre-2013 discharge), and no delimiting date for Ch 33 veterans discharged after January 1, 2013. The VCE compares the VADIR-stored date against the current policy rules to determine if the delimiting date applies or has been superseded by PL 115-48.",
+      "source_docs": ["VADIR ICD, Table 30 (bdnEnt Data Element)", "M22-4, Part 3, Chapter 4 (Delimiting Date Extensions)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "delimiting_date", "bdnEnt", "policy_mapping"]
+    },
+    {
+      "id": 57,
+      "query": "How does the VADIR ch1606Ent data relate to Chapter 1606 eligibility as described in M22-4?",
+      "answer": "VADIR's ch1606Ent (Table 32) contains mgsrStatCd (MGSR Status Code, see Table 51), mgsrStatCdDsc (description), mgsrStatCdRsn (reason), mgsrStatEffDt (effective date), and pnlCatCd (military component). Per M22-4 Part 11 (Chapter 1607/1606), Chapter 1606 reservists have no delimiting date while actively drilling; when they stop drilling they lose entitlement. The MGSR status codes (BA=Eligible/initial period, CA=Suspended/completed degree, DA=Terminated/failed to reaffiliate) directly determine whether the reservist currently has entitlement.",
+      "source_docs": ["VADIR ICD, Tables 32 and 51 (ch1606Ent and MGSR Status Codes)", "M22-4, Part 3, Chapter 4 and Part 11"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "chapter_1606", "MGSR", "reserve_eligibility"]
+    },
+    {
+      "id": 58,
+      "query": "When the VADIR getKickerInfo response returns a kickerRateCode of 'B1', what does this mean and how does the VCE apply it?",
+      "answer": "Kicker rate code 'B1' means '$28,500 Active Duty Kicker 20021001, TOE 48 months (2 yrs AD plus 2 yrs Sel Res.)' — though marked OBSOLETE as of 20041001. Per M22-4, kicker amounts are added on top of the basic benefit. If the veteran is using Chapter 33, the kicker is paid as a monthly supplement. The VCE would verify the kicker is still active by checking the beginDate/endDate and eligibilityStatus fields in the KickerInfo element.",
+      "source_docs": ["VADIR ICD, Table 46 (kickerRateCode)", "M22-4, Part 12 (Chapter 33 benefits overview)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "kicker", "kickerRateCode", "chapter_33"]
+    },
+    {
+      "id": 59,
+      "query": "The veteran's record shows they're not currently on active Federal service. Are they eligible for the Monthly Housing Allowance under Chapter 33?",
+      "answer": "militaryStatus is a two-digit code (01-16) denoting duty status. activeServiceIndicator = 'N' means the veteran is not currently in active Federal service. Per M22-4 Part 12 Sub-Chapter 4.3, a veteran (not on active duty) who is enrolled at more than half-time (Rate of Pursuit > 0.50) IS eligible for MHA. Active-duty service members are NOT eligible for MHA. So this veteran can receive MHA if enrolled above half-time.",
+      "source_docs": ["VADIR ICD, Table 22/23 (servicePeriodResults, activeServiceIndicator)", "M22-4, Part 12, Sub-Chapter 4.3 (Housing Allowance)"],
+      "answer_in_table": false,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "activeServiceIndicator", "MHA", "chapter_33"]
+    },
+    {
+      "id": 60,
+      "query": "The VADIR ServicePeriod shows svcCd = 'F' and the activePeriod shows statute = 'A'. What branch and legal authority is this?",
+      "answer": "svcCd 'F' = Air Force (Table 45). Statute code 'A' = Section 688 of 10 U.S.C. (Table 44), which authorizes recall of retired members to active duty. This tells the VCE the veteran was an Air Force member recalled under 10 USC 688.",
+      "source_docs": ["VADIR ICD, Table 45 (Service Codes) and Table 44 (Statute Codes)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "service_code", "statute_code", "Air_Force"]
+    },
+    {
+      "id": 61,
+      "query": "How does the QA scorecard in M22-3 evaluate whether a VCE correctly used VADIR service data to determine eligibility?",
+      "answer": "M22-3 Chapter 2 QA scorecard Question 6 covers Eligibility — reviewing service dates, character of discharge, separation reason, delimiting date, and alternative elections. The reviewer verifies that the VCE correctly interpreted the VADIR data (service periods, character of service codes, exclusion periods, Purple Heart status) against M22-4 eligibility rules. Errors in translating VADIR data to eligibility determinations would be caught under Question 6.",
+      "source_docs": ["M22-3, Chapter 2 (Quality Assurance, QA Scorecard)", "M22-4, Part 12, Sub-Chapter 2 (Veterans Eligibility)", "VADIR ICD (service period and eligibility data)"],
+      "answer_in_table": false,
+      "query_type": "cross_source",
+      "tags": ["M22-3", "QA", "eligibility", "VADIR", "three_source"]
+    },
+    {
+      "id": 62,
+      "query": "What M22-3 End Product Code would be used for the original processing of a Chapter 33 claim, and what VADIR operation provides the service data needed to process it?",
+      "answer": "There is no specific EPC for Chapter 33 in the M22-3 Appendix A EPC table (EPCs 200/220/240/260 cover Chapters 30, 32, 35, and 1606 respectively). Chapter 33 claims are processed through the Long Term Solution (LTS) system, which calls VADIR's getServicePeriods operation to retrieve military service history for eligibility determination. The LTS automates what the EPC-based workflow handles manually for other chapters.",
+      "source_docs": ["M22-3, Appendix A (Education End Product Codes)", "VADIR ICD, Section 2.2 (Interface Overview)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["M22-3", "EPC", "chapter_33", "VADIR", "LTS"]
+    },
+    {
+      "id": 63,
+      "query": "A VADIR record shows eduPgmEntlMtsQy = 24 and eduPgmTypCd = '2'. How much Chapter 33 entitlement remains and what benefit type is this?",
+      "answer": "eduPgmEntlMtsQy = 24 means 24 months of entitlement remaining (out of 36 maximum). eduPgmTypCd '2' maps to the program type code in the bdnEnt element. Per M22-4, the VCE must verify this against the TIMS record and LTS to ensure the entitlement balance is current. The veteran has 12 months of entitlement already used.",
+      "source_docs": ["VADIR ICD, Table 30 (bdnEnt Data Element)", "M22-4, Part 12 (Chapter 33 overview, entitlement)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "entitlement", "bdnEnt", "chapter_33"]
+    },
+    {
+      "id": 64,
+      "query": "The veteran's record shows they attended a military academy. How is the 5-year service obligation handled when calculating their Chapter 33 benefit level?",
+      "answer": "VADIR's militaryAcademyPeriod (Table 34) provides beginDate, endDate, branchOfService, commissionBranchOfService, and svcCd. Per M22-4 Sub-Chapter 5, 5 years from the commissioning date are excluded. Example: West Point graduation May 27, 2003 → excluded through May 26, 2008 → first qualifying day is May 27, 2008. The VCE subtracts the academy obligation period from total active service days before applying the benefit level chart.",
+      "source_docs": ["VADIR ICD, Table 34 (militaryAcademyPeriod Data Element)", "M22-4, Part 12, Sub-Chapter 5 (Excluded Service)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "military_academy", "excluded_service", "benefit_level"]
+    },
+    {
+      "id": 65,
+      "query": "Which VADIR data elements would a VCE need to check to determine if a veteran qualifies for the 100% benefit level through a service-connected disability discharge?",
+      "answer": "The VCE would check: (1) activePeriod's pgibCd and pgibSeparationCode (Table 23) for the Post-9/11 GI Bill separation code, (2) the MGIB status codes mgad_loss_cat_codes (Table 48) where code '01' = 'Service connected disability', and (3) verify at least 30 days of active duty after September 10, 2001. Per M22-4 Sub-Chapter 2, discharge for service-connected disability with 30+ days qualifies for 100% benefit level regardless of total service length.",
+      "source_docs": ["VADIR ICD, Tables 23, 48, and 52 (ServicePeriod, MGIB Status, PGIB Codes)", "M22-4, Part 12, Sub-Chapter 2 (Veterans Eligibility, benefit level chart)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "SC_disability", "benefit_level", "100_percent"]
+    },
+    {
+      "id": 66,
+      "query": "How does the VADIR cipInd field relate to the Chapter 33 benefit calculation for a service member on Career Intermission?",
+      "answer": "VADIR's cip data element (Table 36) contains cipInd ('Y', 'N', or 'X'), cipBgnDt (beginning of sabbatical), and cipEndDt (end of sabbatical). The Career Intermission Program allows service members to take a break from active duty. Per M22-4 eligibility rules, CIP periods are not active duty and should not count toward qualifying service days. The VCE must subtract CIP periods (cipBgnDt to cipEndDt) from the active service calculation.",
+      "source_docs": ["VADIR ICD, Table 36 (cip Data Element)", "M22-4, Part 12, Sub-Chapter 2 (Veterans Eligibility)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "CIP", "career_intermission", "qualifying_service"]
+    },
+    {
+      "id": 67,
+      "query": "The veteran's record shows they're a Chapter 30 MGIB participant with payroll deductions. They want to use Chapter 33 instead. What are the implications?",
+      "answer": "ch30EnrlStatCd '03' = 'Participant' (Table 50), meaning the veteran is enrolled in Chapter 30 MGIB. mgadBprAm is the Basic Pay Reduction Amount — the monthly payroll deduction for MGIB participation. Per M22-4, if a Chapter 30 participant wants to use Chapter 33 instead, they must make an irrevocable election. The VCE must issue a Chapter 33 Election Letter Template and the veteran's $1,200 contribution may be refundable as a 96R payment when Chapter 33 entitlement exhausts.",
+      "source_docs": ["VADIR ICD, Tables 35 and 50 (ch30Ent and ch30EnrlStat)", "M22-4, Part 4, Chapter 1 (Enrollment Certification) and Part 12 overview"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "chapter_30", "election", "MGIB", "chapter_33"]
+    },
+    {
+      "id": 68,
+      "query": "When DGI searches VADIR and finds no results, what is the fallback workflow per M22-4?",
+      "answer": "Per M22-4 Part II Chapter 2 Section D, the DGI search workflow is: (1) Search DGI Ch. 33 database, (2) If no results → Search VADIR via the findPeopleByCriteria operation (using SSN), (3) If no results in VADIR → the VCE can either Create New Chapter 33 Record or perform a New Search. The VADIR ICD specifies that findPeopleByCriteria requires SSN and returns up to 50 results (200 max). If VADIR returns callStatus 'Success' with callStatusNote 'Person Not Found', the veteran has no DoD record.",
+      "source_docs": ["M22-4, Part II, Chapter 2, Section D (DGI Processing Screens)", "VADIR ICD, Table 7 (findPeopleByCriteria) and Table 41 (callStatus)"],
+      "answer_in_table": false,
+      "query_type": "cross_source",
+      "tags": ["DGI", "VADIR", "search_workflow", "findPeopleByCriteria"]
+    },
+    {
+      "id": 69,
+      "query": "A veteran attending a university in Germany just filed a Chapter 33 claim. Which office handles it and how do we confirm they're eligible?",
+      "answer": "Per M22-4 Part 3 Chapter 1, foreign schools are handled by the Buffalo RPO (P.O. Box 4616, 14240-4616). For eligibility, the VCE calls VADIR getServicePeriods to verify: minimum 90 days active duty after September 10, 2001 (from activePeriod beginDate/endDate), honorable character of service (charSvcCd = 'A' or 'B' or 'H'), and no disqualifying exclusion periods. The MHA for a foreign school is the national average BAH rate, not a ZIP-code-based rate.",
+      "source_docs": ["M22-4, Part 3, Chapter 1 (Administrative Issues, jurisdiction)", "M22-4, Part 12, Sub-Chapter 4.3 (Housing Allowance)", "VADIR ICD, Table 23 (ServicePeriod)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["RPO", "foreign_school", "VADIR", "eligibility", "MHA", "three_source"]
+    },
+    {
+      "id": 70,
+      "query": "We pulled the same veteran's military service data twice and got different results. What could have changed and what should the system do?",
+      "answer": "The resultsHash (Table 22) is a digital fingerprint (SHA-256 hash of legacy and new values) of the information retrieved for a person — used for comparisons to previous retrievals to detect data changes. A change means DoD/DMDC updated the veteran's military service record (new service period, corrected dates, updated character of service, etc.). The Chapter 33 LTS should re-evaluate eligibility using the updated data, which may change the benefit level, qualifying days, or delimiting date per M22-4 rules.",
+      "source_docs": ["VADIR ICD, Table 22 (servicePeriodResults, resultsHash)", "M22-4, Part 12, Sub-Chapter 2 (Veterans Eligibility)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "resultsHash", "data_change", "re-evaluation"]
+    },
+    {
+      "id": 71,
+      "query": "How does M22-3's QA process verify that the correct training time code was applied when the school has a nonstandard term?",
+      "answer": "M22-3 QA scorecard Questions 8-10 (Payment) verify enrollment accuracy including training time. For nonstandard terms, M22-4 Part 4 Chapter 6 Section 6.06 requires converting to equivalent credit hours (enrolled hours × 18 ÷ weeks in term), then looking up the training time in the equivalency tables (M22-4 Part 4 Chapter 14, Tables 14.02a-d). The QA reviewer checks that the VCE used the correct equivalency table (based on whether full-time is 12 or 13 credits, semester or quarter hours) and applied the correct BDN training time code.",
+      "source_docs": ["M22-3, Chapter 2 (QA Scorecard, Questions 8-10)", "M22-4, Part 4, Chapter 6 (Course Measurement) and Chapter 14 (Tables)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["M22-3", "QA", "training_time", "nonstandard_term", "measurement"]
+    },
+    {
+      "id": 72,
+      "query": "What VADIR education level code corresponds to a veteran with a baccalaureate degree, and how does this affect Chapter 1606 MGSR status?",
+      "answer": "VADIR eduLvlCd '51' = Baccalaureate (Table 49). For Chapter 1606, MGSR status code 'CA' (Table 51) means 'Suspended — Completed requirements of baccalaureate or equivalent degree.' Per M22-4, Ch 1606 reservists with a suspended status have their entitlement paused — they are not terminated but cannot use benefits until status changes. The education level from VADIR corroborates the MGSR suspension reason.",
+      "source_docs": ["VADIR ICD, Table 49 (eduLvl) and Table 51 (MGSR Status Codes)", "M22-4, Part 3, Chapter 4 (Chapter 1606 entitlement rules)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "education_level", "MGSR", "chapter_1606", "suspended"]
+    },
+    {
+      "id": 73,
+      "query": "What is the big-pay threshold for a Chapter 1606 beneficiary payment, and which VADIR fields confirm the veteran is a Chapter 1606 participant?",
+      "answer": "Per M22-4 Part 3 Chapter 1 Figure 1.06, Chapter 1606 requires three signatures for payments $8,000-$11,999.99 and four signatures for payments >= $12,000. VADIR confirms Chapter 1606 participation via the ch1606Ent element (Table 32): mgsrStatCd with a 'B'-prefix code (BA/BB/BC/BD/BE/BF/BG = Eligible) and pnlCatCd for military component.",
+      "source_docs": ["M22-4, Part 3, Chapter 1 (Big Pay Thresholds, Figure 1.06)", "VADIR ICD, Tables 32 and 51 (ch1606Ent and MGSR Status Codes)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["big_pay", "chapter_1606", "VADIR", "threshold"]
+    },
+    {
+      "id": 74,
+      "query": "How does the VADIR PGIB separation code relate to the M22-4 policy on which separations qualify for the 100% benefit level with only 30 days of service?",
+      "answer": "VADIR's pgibCd and pgibSeparationCode (Table 23, with code values in Table 52) describe why the veteran separated under the Post-9/11 GI Bill. Per M22-4 Sub-Chapter 2, veterans discharged with only 30+ days qualify for 100% if separated due to: service-connected disability or sole survivorship. The VADIR PGIB separation code tells the VCE whether the separation reason qualifies for the 30-day exception to the normal 90-day minimum.",
+      "source_docs": ["VADIR ICD, Table 23 (ServicePeriod) and Section 6.1.11 (PGIB Codes)", "M22-4, Part 12, Sub-Chapter 2 (Veterans Eligibility, benefit level chart)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "PGIB", "separation_code", "30_day_exception", "benefit_level"]
+    },
+    {
+      "id": 75,
+      "query": "When processing a Chapter 33 claim in eMPWR for a veteran whose VADIR record shows National Guard Title 32 AGR service, what additional verification is needed?",
+      "answer": "Per M22-4 Sub-Chapter 2, Title 32 AGR service for organizing/administering/training is qualifying for Chapter 33 effective October 1, 2011, and Section 502(f) activations for national emergencies also qualify. The VCE checks VADIR's activePeriod: the statute field should show a Title 32 code (e.g., statute codes 'N' = Section 502(f)(1)(B) of 32 USC, 'P' = Section 502(a) of 32 USC, 'Q' = Section 502(f)(1)(A) of 32 USC per Table 44), and projectCode (Table 43) distinguishes AGR (code 'A26') from other activations. Since eMPWR replaced BDN as of July 8, 2024, the VCE reviews the claim in the eMPWR SalesForce UI, not BDN.",
+      "source_docs": ["M22-4, Part 12, Sub-Chapter 2 (Title 32 qualifying service)", "M22-4, Part II, Chapter 1, Section C (eMPWR transition)", "VADIR ICD, Tables 23, 43, and 44 (ServicePeriod, Project Codes, Statute Codes)"],
+      "answer_in_table": true,
+      "query_type": "cross_source",
+      "tags": ["VADIR", "Title_32", "AGR", "eMPWR", "chapter_33", "three_source"]
+    }
+    {
+      "id": 76,
+      "query": "Where does the Chapter 33 eligibility determination still depend on human judgment that the automated service record data can't resolve?",
+      "answer": "Several M22-4 eligibility rules require interpretation that VADIR doesn't automate: (1) The 70/80 rule — VADIR provides raw active period and training period dates, but applying the 'aggregate including training = 730-909 days AND aggregate excluding training = 545-729 days → 70%' logic requires the VCE to manually cross-reference both calculations. (2) Character of service edge cases — VADIR code 'H' (absence of negative report) and blank/unknown codes are assumed honorable, but M22-4 may require development action to confirm. (3) Title 32 AGR qualification — VADIR shows the statute code and project code, but determining whether the service was 'for organizing, administering, recruiting, instructing, or training' versus other Title 32 duty requires VCE judgment. (4) Mitigating circumstances for short service periods — a 30-day discharge for SC disability qualifies for 100%, but the PGIB separation code may not distinguish all qualifying scenarios without VCE review of the claims file.",
+      "source_docs": ["VADIR ICD, Tables 23-26 (ServicePeriod data elements)", "M22-4, Part 12, Sub-Chapters 2 and 5 (eligibility and excluded service rules)"],
+      "answer_in_table": false,
+      "query_type": "consulting_sme",
+      "tags": ["automation_gap", "eligibility", "VADIR", "human_judgment", "risk"]
+    },
+    {
+      "id": 77,
+      "query": "What happens if a veteran's military service record gets updated after their Chapter 33 claim was already decided? How would anyone even know?",
+      "answer": "VADIR's resultsHash (Table 22) is a SHA-256 fingerprint of all retrieved data for a person. If LTS calls getServicePeriods again and the resultsHash differs from the previous call, the data has changed. Per M22-4 Part 4 Chapter 1, the VCE must review eligibility when new service data surfaces — this could change benefit level (e.g., newly reported active duty days push from 80% to 90%), add or remove exclusion periods, or change character of service. However, there is no automated trigger in the current architecture: the change is only detected on the next getServicePeriods call. M22-3 QA (Question 6) would catch adjudication errors on reviewed claims, but claims not selected for QA review could carry stale eligibility determinations until the veteran files a new enrollment or the record is pulled for another reason.",
+      "source_docs": ["VADIR ICD, Table 22 (resultsHash)", "M22-4, Part 4, Chapter 1 (Enrollment Certification)", "M22-3, Chapter 2 (QA Scorecard)"],
+      "answer_in_table": false,
+      "query_type": "consulting_sme",
+      "tags": ["data_staleness", "resultsHash", "VADIR", "DMDC", "risk", "three_source"]
+    },
+    {
+      "id": 78,
+      "query": "Where are the single points of failure in the Chapter 33 claims pipeline from service record lookup through payment?",
+      "answer": "Three critical dependencies: (1) VADIR web service availability — the ICD specifies a 2-second SLA and Moderate availability classification (not High), meaning planned downtime is acceptable. If VADIR is down, LTS cannot retrieve service data and new eligibility determinations stall. Error codes 16820002-16820005 indicate VADIR-side failures with no automated retry. (2) The BDN-to-eMPWR migration boundary (July 8, 2024) — per M22-4 Part II Ch 1 Section C, active receivables were migrated but historical transactions before that date only exist in BDN. A claim spanning both systems requires the VCE to check two places. (3) The DMDC→VADIR replication lag — VADIR is a satellite copy of DMDC data, not the source of truth. New service periods, corrections, or Purple Heart awards may not appear in VADIR immediately, leading to eligibility determinations based on incomplete data.",
+      "source_docs": ["VADIR ICD, Sections 2.1, 2.8, 2.9 and Table 41 (callStatus errors)", "M22-4, Part II, Chapter 1, Section C (eMPWR transition)", "M22-4, Part 12, Sub-Chapter 2 (eligibility data requirements)"],
+      "answer_in_table": false,
+      "query_type": "consulting_sme",
+      "tags": ["single_point_of_failure", "VADIR", "eMPWR", "availability", "risk", "three_source"]
+    },
+    {
+      "id": 79,
+      "query": "Where could a valid military service code produce a wrong eligibility determination? What are the data quality risks in the handoff between service records and benefits policy?",
+      "answer": "Several risk areas: (1) Character of service code blank/unknown — per VADIR ICD Section 6.1.2, blank or unknown character of service is the lone exception where the description defaults to 'honorable' even though the actual code is missing. This could grant eligibility to someone who doesn't qualify if the blank conceals a dishonorable discharge that DMDC hasn't coded. (2) Project codes with Training Indicator discrepancies — some project codes appear as activations (N = not training) but the actual service may have been training. Per the ICD note, 'Where Training = Y the activation is for training and displayed as training.' If this indicator is wrong in DMDC source data, the M22-4 730-day training exception could be misapplied. (3) Statute code 'Z' (Unknown, for use with Project Code A99 or B99) — per Table 44, this is explicitly an unknown legal authority, but LTS may still count the period as qualifying service if other fields look valid.",
+      "source_docs": ["VADIR ICD, Tables 42-44 (Character of Service, Project Codes, Statute Codes)", "M22-4, Part 12, Sub-Chapters 2 and 5 (eligibility rules and exclusions)"],
+      "answer_in_table": true,
+      "query_type": "consulting_sme",
+      "tags": ["data_quality", "VADIR", "eligibility", "risk", "false_positive"]
+    },
+    {
+      "id": 80,
+      "query": "Does the QA process distinguish between errors caused by bad upstream service record data versus mistakes the claims examiner made? How would you tell the difference?",
+      "answer": "M22-3's QA scorecard has 13 questions across Data Integrity (Q1-3), Development (Q4-5), Eligibility (Q6), Entitlement (Q7), Payment (Q8-10), and Notification (Q11-13). VADIR data interpretation errors would primarily be caught by Question 6 (Eligibility) — service dates, character of discharge, separation reason, delimiting date. However, the scorecard doesn't explicitly distinguish between 'VCE misread the policy' and 'VADIR returned bad data that the VCE reasonably relied on.' A VCE who correctly applies M22-4 rules to incorrect VADIR data would pass QA review even though the determination is wrong. The QA process also only reviews a sample of claims monthly — systematic VADIR data issues affecting a class of veterans (e.g., all Hurricane Katrina activations miscoded) would not surface until enough individual claims are flagged. M22-3 Chapter 2 mentions the transition from SAO to SOAR (October 1, 2023), but neither framework includes upstream data validation as an explicit review dimension.",
+      "source_docs": ["M22-3, Chapter 2 (QA Scorecard, all 13 questions)", "M22-4, Part 12, Sub-Chapter 2 (eligibility determination process)", "VADIR ICD, Section 6 (Data Specification, code tables)"],
+      "answer_in_table": false,
+      "query_type": "consulting_sme",
+      "tags": ["QA_coverage", "M22-3", "VADIR", "data_vs_judgment_errors", "three_source"]
+    },
+    {
+      "id": 81,
+      "query": "The service record lookups are regularly taking longer than they should. What downstream processes break and how bad does it get?",
+      "answer": "The VADIR ICD (Section 2.8) specifies payload return in no more than 2 seconds. The interface uses SOAP over HTTPS with mutual TLS (Section 2.7). If SLA is breached: (1) LTS eligibility determinations stall — Chapter 33 LTS initiates all five VADIR operations (getPerson, getContactInfo, findPeopleByCriteria, getServicePeriods, getKickerInfo) during claim processing. Timeouts cascade through the WSDL operations. (2) DGI processing screens freeze — per M22-4 Part II Chapter 2, DGI searches VADIR when the Ch. 33 database has no record. A slow VADIR means the VCE's DGI screen hangs, and with the 15-minute record lock timeout, concurrent users may encounter false locks. (3) eMPWR workflows dependent on VADIR-sourced data would show incomplete records. The blast radius is every new Chapter 33 claim in the pipeline, since the LTS→VADIR call is on the critical path for initial eligibility. Existing claims with cached eligibility would be unaffected until re-evaluation.",
+      "source_docs": ["VADIR ICD, Sections 2.7, 2.8, 3.1.1, and Table 3 (WSDL operations)", "M22-4, Part II, Chapter 2, Section D (DGI screens, record lock)", "M22-4, Part II, Chapter 1, Section C (eMPWR)"],
+      "answer_in_table": false,
+      "query_type": "consulting_sme",
+      "tags": ["SLA", "VADIR", "availability", "blast_radius", "DGI", "three_source"]
+    },
+    {
+      "id": 82,
+      "query": "For a reservist transitioning between Chapter 1606 and Chapter 33 eligibility, what are the data reconciliation challenges between VADIR's ch1606Ent and the Chapter 33 benefit level determination?",
+      "answer": "VADIR tracks Chapter 1606 status separately in ch1606Ent (Table 32) with MGSR codes and Chapter 33 eligibility through activePeriod/exclusionPeriod data. The reconciliation challenges: (1) A reservist with MGSR status 'BA' (Eligible, initial period) under Ch 1606 may also have qualifying active-duty periods for Ch 33 — the 48-month rule (M22-4) caps combined entitlement across programs, but VADIR's bdnEnt tracks entitlement months separately per program with no cross-program balance. (2) If the reservist elects Ch 33, the election is irrevocable but VADIR's ch1606Ent status may not immediately reflect the change — creating a window where both programs appear active. (3) The benefit level under Ch 33 depends on active-duty days (not reserve drilling days), so a reservist with 20 years of drilling but only 180 days of activation gets 60% — counterintuitive and a common VCE error per M22-3 QA patterns.",
+      "source_docs": ["VADIR ICD, Tables 30, 32, and 51 (bdnEnt, ch1606Ent, MGSR codes)", "M22-4, Part 12, Sub-Chapter 2 (benefit level chart) and Part 3, Chapter 4 (1606 entitlement)", "M22-3, Chapter 2 (QA eligibility review)"],
+      "answer_in_table": true,
+      "query_type": "consulting_sme",
+      "tags": ["chapter_1606", "chapter_33", "transition", "48_month_rule", "reconciliation", "three_source"]
+    },
+    {
+      "id": 83,
+      "query": "What are the implications of the VADIR ICD's note that 'codes can and will be added as the DoD and DMDC see fit' for the long-term maintainability of the eligibility determination system?",
+      "answer": "Section 6 of the VADIR ICD states that codes are current as of the document date and 'more codes can and will be added.' When DMDC adds new codes, per Section 2.3, they 'will transfer and display in the payload but the descriptions won't until the look up table is updated.' This creates three risks: (1) New project codes (Table 43) for future contingency operations will flow through VADIR as raw codes without descriptions — LTS and VCEs will see unrecognized codes and won't know if the activation is qualifying service under M22-4. (2) New statute codes (Table 44) for future legal authorities could affect which service periods are qualifying, but M22-4 policy updates lag behind DMDC data changes. (3) The M22-3 QA process has no mechanism to flag 'unknown code' determinations as requiring special review — a VCE might default to treating an unrecognized code as qualifying or non-qualifying with no policy guidance. This is a structural maintenance debt: every new DMDC code requires coordinated updates across VADIR lookup tables, LTS business logic, M22-4 policy, and M22-3 QA criteria.",
+      "source_docs": ["VADIR ICD, Sections 2.3 and 6 (Data Transfer, Data Specification)", "M22-4, Part 12, Sub-Chapter 2 (eligibility rules tied to specific codes)", "M22-3, Chapter 2 (QA review process)"],
+      "answer_in_table": false,
+      "query_type": "consulting_sme",
+      "tags": ["maintainability", "code_evolution", "DMDC", "VADIR", "policy_lag", "three_source"]
+    },
+    {
+      "id": 84,
+      "query": "How would we catch it if a veteran has been getting the wrong benefit level for years because the initial service record pull was incomplete?",
+      "answer": "Not very. The detection mechanism has gaps at every layer: (1) VADIR's resultsHash would show a change on re-pull, but there's no scheduled re-pull — it only happens when a new enrollment triggers LTS processing. A veteran using the same enrollment for years wouldn't trigger a re-check. (2) M22-4 Part 4 Chapter 1 requires the VCE to review eligibility when entitlement exhausts, but a veteran at 80% (instead of correct 100%) would exhaust later, delaying detection further. (3) M22-3 QA reviews a monthly sample — a correctly-processed-but-wrong-data claim would pass QA because the VCE followed procedure correctly with the data available. (4) The eMPWR transition (July 8, 2024) might have surfaced some discrepancies during migration, but only for active receivables, not for underpayments. The most likely detection path is the veteran themselves discovering the error and filing a dispute, which per M22-4 triggers a Notice of Disagreement (EPC 270, 60-day suspense).",
+      "source_docs": ["VADIR ICD, Table 22 (resultsHash)", "M22-4, Part 4, Chapter 1 (Enrollment Certification, entitlement exhaustion)", "M22-4, Part 3, Chapter 1 (EPC 270, suspense dates)", "M22-3, Chapter 2 (QA sampling)"],
+      "answer_in_table": false,
+      "query_type": "consulting_sme",
+      "tags": ["underpayment", "detection_gap", "benefit_level", "VADIR", "staleness", "three_source"]
+    },
+    {
+      "id": 85,
+      "query": "What would a modern re-architecture of the VADIR-LTS integration look like if you wanted to eliminate the manual interpretation layer between VADIR codes and M22-4 policy rules?",
+      "answer": "The current architecture requires VCEs to manually translate VADIR data into M22-4 eligibility determinations. A re-architecture would: (1) Replace the batch SOAP/WSDL interface (VADIR ICD Section 2.7) with an event-driven integration where DMDC pushes service record changes to LTS in real-time, triggering automatic re-evaluation — eliminating the resultsHash polling gap. (2) Encode M22-4 eligibility rules as a rules engine that consumes VADIR ServicePeriod, exclusionPeriod, and trainingPeriod data directly — the benefit level chart (Sub-Chapter 2), exclusion rules (Sub-Chapter 5), and the 70/80 rule would become automated decision logic rather than VCE manual calculations. (3) Map every VADIR code table (character of service, project codes, statute codes, MGSR codes) to explicit eligibility outcomes in the rules engine, with an 'unknown code' pathway that automatically flags for human review rather than defaulting to any determination. (4) Integrate M22-3 QA checks as automated validation rules that run on every claim, not a monthly sample — Question 6 (eligibility) becomes a pre-authorization gate. The remaining human judgment would be limited to edge cases the rules engine explicitly escalates: ambiguous Title 32 duty types, mitigating circumstances for short-service discharges, and new DMDC codes pending policy guidance.",
+      "source_docs": ["VADIR ICD, Sections 2.2-2.8 (current architecture)", "M22-4, Part 12, Sub-Chapters 2 and 5 (eligibility rules to encode)", "M22-3, Chapter 2 (QA as automated validation)", "M22-4, Part II (DGI/eMPWR current system flow)"],
+      "answer_in_table": false,
+      "query_type": "consulting_sme",
+      "tags": ["re-architecture", "automation", "rules_engine", "VADIR", "M22-4", "M22-3", "three_source"]
+    }
+    {
+      "id": 86,
+      "query": "The service record lookups are timing out intermittently — some claims get through, others hang. VCEs are seeing locked records they didn't open. How do I triage this?",
+      "answer": "Step 1: Check VADIR callStatus responses — intermittent timeouts would show Error 16820003 ('Error in Database Call') or Error 16820005 ('General Error') rather than a clean failure. A callStatus of 'Success' with callStatusNote 'No Data Found' is a different problem (data issue, not infra). Step 2: Verify against the 2-second SLA (VADIR ICD Section 2.8) — if p95 is above 2s, the issue is VADIR-side or network. Step 3: Check DGI for phantom record locks — per M22-4 Part II Chapter 2, record locks release after 15 minutes of inactivity, but if VADIR calls are hanging, the DGI session may hold locks longer than expected, blocking other VCEs from working the same records. Step 4: Determine scope — are all five WSDL operations affected (getPerson, getContactInfo, findPeopleByCriteria, getServicePeriods, getKickerInfo) or just getServicePeriods (the heaviest call)? If only getServicePeriods, it may be a DMDC-side database load issue. Step 5: If sustained, advise VCEs to document and suspend claims pending resolution rather than attempting manual eligibility determinations without VADIR data.",
+      "source_docs": ["VADIR ICD, Sections 2.8, 3.1.1, Tables 3 and 41", "M22-4, Part II, Chapter 2, Section D (DGI record locks)"],
+      "answer_in_table": false,
+      "query_type": "prod_ops",
+      "tags": ["VADIR", "timeout", "triage", "SLA", "DGI", "record_lock"]
+    },
+    {
+      "id": 87,
+      "query": "We just noticed that every Chapter 33 claim processed last Tuesday has the same benefit level. What could cause that and where do we look?",
+      "answer": "Likely causes in order of probability: (1) VADIR returned identical/empty service period data for all calls — check if getServicePeriods was returning cached or default data. If resultsHash (Table 22) is identical across different veterans, VADIR was serving stale/static responses. (2) If all claims show 50% (the minimum), service period data may have come back empty — with zero qualifying days above 90, the system defaults to the lowest tier per the M22-4 benefit level chart. (3) If all show 100%, a flag like purpleHeartIndCd may have been stuck to 'Y' in the VADIR response. Triage: Pull the eMPWR transaction history for all Tuesday claims (M22-4 Part II Chapter 1 Section C), cross-reference the article IDs against VADIR call logs if available. Scope the blast radius by counting affected claims. Remediation: per M22-3 QA procedures, flag all Tuesday claims for retrospective review under Question 6 (Eligibility). If confirmed, each affected claim needs re-adjudication with a fresh VADIR pull.",
+      "source_docs": ["VADIR ICD, Table 22 (resultsHash), Table 28 (purpleHeart)", "M22-4, Part 12, Sub-Chapter 2 (benefit level chart)", "M22-4, Part II, Chapter 1, Section C (eMPWR transaction history)", "M22-3, Chapter 2 (QA retrospective review)"],
+      "answer_in_table": false,
+      "query_type": "prod_ops",
+      "tags": ["benefit_level", "batch_error", "VADIR", "triage", "blast_radius", "three_source"]
+    },
+    {
+      "id": 88,
+      "query": "DGI has the veteran's bio info but there's no military service history showing up. The veteran has a DD-214 in hand. Where's the disconnect?",
+      "answer": "The DGI record exists because findPeopleByCriteria (which searches by SSN) found a match in VADIR's person data — the veteran has a DMDC identity record. But getServicePeriods queries a different data set (military service history). Possible causes: (1) DMDC hasn't loaded the service periods yet — there's a lag between identity record creation and service history population, especially for recent separations. (2) The veteran's EDIPI in DGI doesn't match the EDIPI associated with their service records in DMDC — possible identity merge issue. (3) The service was under a different SSN or the records are under a National Guard state system that hasn't synced to DMDC. Per M22-4 Part II Chapter 2 Section D, if VADIR returns no data, the VCE can create a new Chapter 33 record manually, but for eligibility they'd need to use the DD-214 directly and flag for VADIR reconciliation later. The VCE should also check the callStatus — 'Success' with 'No Data Found' confirms VADIR responded correctly but has no records, versus an error code which means the lookup failed.",
+      "source_docs": ["VADIR ICD, Tables 4-6 (getPerson), Tables 20-23 (getServicePeriods), Table 41 (callStatus)", "M22-4, Part II, Chapter 2, Section D (DGI workflow, create new record)"],
+      "answer_in_table": false,
+      "query_type": "prod_ops",
+      "tags": ["VADIR", "missing_data", "EDIPI", "DGI", "DD-214", "triage"]
+    },
+    {
+      "id": 89,
+      "query": "Since yesterday the service record system keeps returning transformation errors. What does that mean and what's the playbook?",
+      "answer": "Error 16820004 means VADIR retrieved the data from its database but failed to transform it into the SOAP response XML. Per VADIR ICD Table 41, the prescribed action is 'Please contact VADIR Services Support.' This is a VADIR-side code defect or data corruption, not a network or availability issue — the database is up (not 16820003) and the query was valid (not 16820001). A spike since yesterday suggests either: (1) A VADIR deployment introduced a transformation bug — check if VADIR had a release. (2) DMDC pushed data with a new format or code that VADIR's serializer can't handle — this aligns with the ICD Section 6 note that DMDC adds codes unilaterally. Immediate playbook: (1) Contact VADIR Services Support with sample EDIPIs that reproduce the error. (2) Check if the error is consistent per veteran (retry same EDIPI → same error = data issue) or intermittent (= system instability). (3) Per M22-4, VCEs should suspend affected claims and not attempt manual determinations until VADIR is fixed, since partial data may be worse than no data.",
+      "source_docs": ["VADIR ICD, Table 41 (callStatus errors), Section 6 (code evolution note)", "M22-4, Part II, Chapter 2, Section D (DGI processing)"],
+      "answer_in_table": true,
+      "query_type": "prod_ops",
+      "tags": ["VADIR", "error_16820004", "transformation", "incident", "triage"]
+    },
+    {
+      "id": 90,
+      "query": "The eMPWR migration happened last July. We're getting reports that some veterans' payment histories show gaps — transactions from before July 8 aren't visible. Is this expected?",
+      "answer": "Yes, partially expected. Per M22-4 Part II Chapter 1 Section C, the BDN-to-eMPWR boundary is July 8, 2024. VCEs can no longer CEST or CADJ Chapter 33 master records in BDN, but can still view historical master records and transaction history from before the conversion date. No transactions after July 8, 2024 appear in BDN, and active receivables were migrated to eMPWR. However, payment history before July 8 should still be viewable in BDN — if it's not, the issue is either: (1) BDN access has been revoked for the VCE (check permissions). (2) The veteran's record wasn't in BDN (may have been a pure LTS/DGI claim that never hit BDN). (3) Actual data loss during migration — scope by checking the eMPWR Transaction History tab (All Transactions, Deductions, Payments, Receivables views) against what BDN shows. If BDN shows records that eMPWR doesn't for the pre-July period, escalate as a migration defect.",
+      "source_docs": ["M22-4, Part II, Chapter 1, Section C (eMPWR transition, BDN boundary)"],
+      "answer_in_table": false,
+      "query_type": "prod_ops",
+      "tags": ["eMPWR", "BDN", "migration", "payment_history", "gap"]
+    },
+    {
+      "id": 91,
+      "query": "The military service record responses have doubled in size over the past month. Should we be concerned?",
+      "answer": "Possibly. Larger payloads mean either: (1) DMDC is sending more service period data per veteran — additional activePeriods, trainingPeriods, or exclusionPeriods. Check if new project codes (Table 43) appeared recently — a new contingency operation or mobilization would add activePeriods for affected reservists. (2) A DMDC data load duplicated records — the ServicePeriod element allows 'zero to many' activePeriods (Table 23), so duplicate entries wouldn't cause errors but would inflate payload size. Concerns: The VADIR 2-second SLA (Section 2.8) is at risk if payloads grow — SOAP serialization and TLS encryption scale with message size. DGI screens (M22-4 Part II Chapter 2) may render slower. LTS eligibility calculation that iterates over all active periods takes longer. Monitor: Track p95 response time alongside payload size. If p95 crosses 1.5s, proactively alert VADIR Services Support. Also verify that LTS is correctly deduplicating service periods — if it's counting duplicate activePeriods, veterans could get inflated qualifying days and wrong benefit levels.",
+      "source_docs": ["VADIR ICD, Sections 2.8, 5.1.7-5.1.8, Tables 22-26 (response structure)", "M22-4, Part II, Chapter 2 (DGI performance)", "M22-4, Part 12, Sub-Chapter 2 (benefit level calculation)"],
+      "answer_in_table": false,
+      "query_type": "prod_ops",
+      "tags": ["VADIR", "payload_size", "performance", "monitoring", "SLA"]
+    },
+    {
+      "id": 92,
+      "query": "A batch of claims all from the same school are showing authorization errors in eMPWR. VCEs are following the troubleshooting steps but they keep failing. What's the escalation path?",
+      "answer": "Per M22-4 Part II Chapter 1 Section C, the authorization error steps are: (1) Exit and re-enter the claim, retry. (2) BGS/address errors → validate against USPS, correct in BM. (3) If still failing → consult Senior/Lead SVCE. (4) If persists → local data remediation POC using MPI Toolkit, SHARE, eFolder, TIMS. (5) Suspend TIMS token until resolved → DIF report. Since it's the same school, the issue is likely school-side, not veteran-side: (a) The school's facility code may be invalid or suspended in OLAF — check M22-4 Part 4 Chapter 6 for the E01/E04 screens showing approval status. (b) The school's address in LTS may not match USPS validation. (c) The school may have been recently added or had a facility code change that eMPWR hasn't picked up. Escalation: if the data remediation POC can't resolve it, the issue goes to the RPO Support Services Division (SSD) for fiscal corrections, which is the eMPWR team that handles systemic issues. Check RPO jurisdiction — per M22-4 Part 3 Chapter 1, school jurisdiction determines which RPO's SSD handles it.",
+      "source_docs": ["M22-4, Part II, Chapter 1, Section C (authorization error steps, eMPWR)", "M22-4, Part 4, Chapter 6 (OLAF screens)", "M22-4, Part 3, Chapter 1 (RPO jurisdiction)"],
+      "answer_in_table": false,
+      "query_type": "prod_ops",
+      "tags": ["eMPWR", "authorization_error", "school", "escalation", "SSD"]
+    },
+    {
+      "id": 93,
+      "query": "We need to fail over the service record system to the disaster recovery environment. What changes and what do we verify before and after?",
+      "answer": "Per VADIR ICD Section 5.1, three environments exist: Dev/Test/PIT (vaausvdrapppit.aac.va.gov), PreProd (vaausvdrapppp.aac.va.gov), and Production (vavdrappprd.va.gov). Section 7.4 explicitly addresses 'Changes to The Production URL to Accommodate Disaster Recovery' — the production URL changes during DR. Before failover: (1) Verify the DR endpoint uses the same WSDL operations (Table 3: getPerson, getContactInfo, findPeopleByCriteria, getServicePeriods, getKickerInfo). (2) Confirm mutual TLS certificates are valid for the DR hostname (Section 3.1.6 requires bi-directional certificate validation with SHA2 encryption). (3) Test with a known EDIPI to verify all five operations return expected data. After failover: (1) Monitor callStatus responses for errors — any spike in 16820002 ('Null Condition') or 16820003 ('Error in Database Call') may indicate the DR database is stale. (2) Check resultsHash for a sample of veterans against cached values — if hashes differ, the DR database may be behind the primary. (3) Verify the 2-second SLA holds on DR infrastructure. (4) Notify LTS and DGI teams that the endpoint has changed — LTS configuration must point to the new URL.",
+      "source_docs": ["VADIR ICD, Sections 2.7, 2.8, 2.9, 3.1.6, 5.1, 7.4, Tables 3 and 41"],
+      "answer_in_table": true,
+      "query_type": "prod_ops",
+      "tags": ["VADIR", "disaster_recovery", "failover", "endpoint", "TLS"]
+    },
+    {
+      "id": 94,
+      "query": "Monthly QA just flagged a higher-than-normal error rate on eligibility determinations. How do we figure out if it's a training issue, a policy change issue, or a data issue?",
+      "answer": "M22-3 Chapter 2 QA scorecard Question 6 (Eligibility) covers service dates, character of discharge, separation reason, delimiting date, and alternative elections. To differentiate root cause: (1) Training issue — errors are scattered across VCEs and claim types, often involving the same misunderstanding (e.g., not applying the 70/80 rule from M22-4 Sub-Chapter 2, or not checking for exclusion periods). Pattern: multiple VCEs making the same mistake. Fix: targeted training. (2) Policy change issue — errors cluster around a specific effective date or benefit chapter. Check if M22-4 had a recent update (e.g., the eMPWR transition July 8, 2024; SOAR replacing SAO October 1, 2023; 40% benefit level elimination August 1, 2020). Pattern: experienced VCEs making errors on the changed rule. Fix: policy bulletin. (3) Data issue — errors cluster around a specific VADIR data pattern. Pull the VADIR callStatus and resultsHash for flagged claims. If VADIR returned incomplete service periods (missing activePeriods, no exclusionPeriod when expected) or wrong character of service codes, the VCEs processed correctly with bad input. Pattern: VCEs applied rules correctly but the determination is still wrong. Fix: escalate to VADIR/DMDC. Cross-reference against M22-3 QA Questions 1-3 (Data Integrity) — if those also show errors, the problem started upstream.",
+      "source_docs": ["M22-3, Chapter 2 (QA Scorecard, Questions 1-3 and 6)", "M22-4, Part 12, Sub-Chapter 2 (eligibility rules)", "VADIR ICD, Tables 22-23 and 41 (response data and error codes)"],
+      "answer_in_table": false,
+      "query_type": "prod_ops",
+      "tags": ["QA", "error_rate", "root_cause", "training_vs_data", "M22-3", "three_source"]
+    },
+    {
+      "id": 95,
+      "query": "We're planning a scheduled maintenance window for eMPWR. What's the impact to claims processing and what do VCEs need to do with in-flight work?",
+      "answer": "Per M22-4 Part II Chapter 1 Section C, all Chapter 33 benefit transactions (BTs) transmitted on or after July 8, 2024 are reviewed in eMPWR (SalesForce UI). During downtime: (1) VCEs cannot authorize Chapter 33 payments — any claim with a pending BT will stall. (2) VCEs can still work in DGI for eligibility determinations (DGI calls VADIR independently of eMPWR), but cannot push authorizations through to payment. (3) The BT ordering system (overpayments transmitted first, then payments) means if eMPWR goes down mid-batch, the entire set fails and must be retried — per M22-4, suspend the token until next business day. (4) DGI record locks (M22-4 Part II Chapter 2) have a 15-minute timeout — VCEs who had records open when eMPWR went down should navigate away to release locks. Pre-maintenance: VCEs should authorize any ready claims before the window. Suspend all in-progress TIMS tokens with a note referencing the maintenance. Post-maintenance: Verify eMPWR transaction history shows continuity — no gap in timestamps. Retry any suspended BTs. Check that active receivables are intact.",
+      "source_docs": ["M22-4, Part II, Chapter 1, Section C (eMPWR processing, BT ordering)", "M22-4, Part II, Chapter 2, Section D (DGI record locks)"],
+      "answer_in_table": false,
+      "query_type": "prod_ops",
+      "tags": ["eMPWR", "maintenance_window", "downtime", "claims_processing", "DGI"]
+    }
+    {
+      "id": 96,
+      "query": "The system shows 36 months of entitlement but the veteran insists they were told they have 48 months. Who's right?",
+      "answer": "Both could be partially right. Per M22-4 Part 12, Chapter 33 provides up to 36 months of entitlement. However, the 48-month rule (38 U.S.C. § 3695) allows up to 48 months of combined entitlement across multiple VA education programs (e.g., Chapter 30 + Chapter 33, or Chapter 1606 + Chapter 33). If the veteran previously used 12 months of Chapter 30 benefits, they could have 36 months of Chapter 33 remaining for a 48-month total. But a single program maxes at 36. The VCE should check the service record's bdnEnt data for entitlement used under other programs. Note: the 48-month cap does NOT apply to Chapter 1607 + National Call to Service combinations (M22-4 Part 11).",
+      "source_docs": ["M22-4, Part 12 (Chapter 33, 36-month entitlement)", "M22-4, Part 11 (48-month rule and exceptions)", "VADIR ICD, Table 30 (bdnEnt, entitlement tracking across programs)"],
+      "answer_in_table": false,
+      "query_type": "contradiction",
+      "tags": ["entitlement", "48_month_rule", "veteran_expectation", "cross_program"]
+    },
+    {
+      "id": 97,
+      "query": "M22-4 says the VCE should check the master record in BDN, but another section says BDN can't be used for Chapter 33 anymore. Which is it?",
+      "answer": "Both are correct — for different time periods. Per M22-4 Part II Chapter 1 Section C, as of July 8, 2024, VCEs can no longer CEST or CADJ Chapter 33 master records in BDN. All new transactions go through eMPWR. However, VCEs CAN still view historical BDN master records and transaction history from before the conversion date. Older M22-4 sections that reference BDN processing haven't all been updated to reflect the eMPWR transition — the procedures described are still valid for understanding the data, but the system of execution changed. When M22-4 says 'check the master record,' for claims after July 8, 2024 that means eMPWR; for historical research it means BDN.",
+      "source_docs": ["M22-4, Part II, Chapter 1, Section C (eMPWR transition)", "M22-4, various older sections referencing BDN processing"],
+      "answer_in_table": false,
+      "query_type": "contradiction",
+      "tags": ["BDN", "eMPWR", "contradiction", "temporal", "manual_staleness"]
+    },
+    {
+      "id": 98,
+      "query": "The benefit level chart says 90 days minimum, but the excluded service rules say basic training doesn't count. So a soldier with exactly 90 days of active duty — does basic training put them under the minimum?",
+      "answer": "It depends on total service length. Per M22-4 Sub-Chapter 5, entry-level and skill training (BCT + AIT for Army) is deducted from qualifying service ONLY IF the veteran has fewer than 730 days (24 months) of total service. If the soldier served exactly 90 days total and that includes 10 weeks of basic training, the training IS deducted (since 90 < 730), leaving potentially zero qualifying days — making them ineligible. However, if they were discharged for a service-connected disability, they qualify at 100% with just 30 days regardless of training deductions. The apparent contradiction resolves through the 730-day threshold: short-service veterans lose their training days, long-service veterans keep them.",
+      "source_docs": ["M22-4, Part 12, Sub-Chapter 2 (benefit level chart, 90-day minimum)", "M22-4, Part 12, Sub-Chapter 5 (excluded service, 730-day training exception)"],
+      "answer_in_table": true,
+      "query_type": "contradiction",
+      "tags": ["basic_training", "90_day_minimum", "730_day_rule", "excluded_service"]
+    },
+    {
+      "id": 99,
+      "query": "We're processing a Chapter 33 claim that was filed in 2019 but never completed. The veteran just asked us to pick it back up. Do we apply today's rules or 2019 rules?",
+      "answer": "Generally today's rules, with important exceptions. Key changes since 2019: (1) The 40% benefit level was eliminated August 1, 2020 — if the veteran would have received 40% under 2019 rules, they now get 50% (favorable to veteran). (2) Monthly enrollment verification became required August 1, 2021 (NCD) / December 17, 2021 (IHL) per PL 116-315 — applies to new enrollments regardless of when the claim was filed. (3) eMPWR replaced BDN for Chapter 33 processing as of July 8, 2024 — the claim processes through eMPWR, not BDN. (4) Delimiting date: if the veteran separated after January 1, 2013 (per PL 115-48, effective August 18, 2017), they have no time limit — this was already in effect in 2019. The service record data should be re-pulled since it may have been updated since 2019.",
+      "source_docs": ["M22-4, Part 12, Sub-Chapter 2 (benefit level changes)", "M22-4, Part 12, Chapter 11 (enrollment verification)", "M22-4, Part II, Chapter 1, Section C (eMPWR)", "M22-4, Part 3, Chapter 4 (delimiting dates)"],
+      "answer_in_table": false,
+      "query_type": "temporal",
+      "tags": ["stale_claim", "policy_changes", "retroactive", "which_rules_apply"]
+    },
+    {
+      "id": 100,
+      "query": "A veteran separated in 2011 and never used their Chapter 33 benefits. They're applying now in 2026. Are they still eligible?",
+      "answer": "It depends on their exact separation date. Per M22-4 Part 3 Chapter 4, veterans discharged BEFORE January 1, 2013 had a 15-year delimiting date. A 2011 separation means the delimiting date would be approximately 2026 — the VCE must check the exact discharge date to see if it's expired. If separated on, say, March 15, 2011, the delimiting date would be March 15, 2026 — they'd need to have started training before that date. The veteran may also qualify for a delimiting date extension if they had a later period of active duty (≥90 days), a disability preventing training, or other qualifying reasons listed in M22-4 Figure 4.01. Check the service record for any subsequent active periods that might create a new 15-year window.",
+      "source_docs": ["M22-4, Part 3, Chapter 4 (delimiting dates, extension types)", "M22-4, Part 12, Sub-Chapter 2 (eligibility, discharge date thresholds)"],
+      "answer_in_table": false,
+      "query_type": "temporal",
+      "tags": ["delimiting_date", "15_year", "2011_separation", "eligibility"]
+    },
+    {
+      "id": 101,
+      "query": "When did the rules change for how schools certify enrollment? I keep seeing references to both old and new procedures.",
+      "answer": "The major change was the two-certification requirement under PL 116-315, Section 1010, rolled out in two phases: Phase 1 (August 1, 2021) required it for NCD (non-college degree) beneficiaries, Phase 2 (December 17, 2021) extended it to IHL (institution of higher learning) beneficiaries. Before this, schools submitted a single enrollment certification. Now schools must submit an initial certification (up to 180 days before term start) AND a second certification (within 30 days after drop-add period ends, or 60 days from term start, whichever comes first). Separately, monthly verification by the beneficiary became required on the same phased timeline. If you're reading M22-4 sections written before August 2021, they describe the single-certification process. Sections updated after describe the two-certification requirement.",
+      "source_docs": ["M22-4, Part 12, Chapter 11 (Enrollment Verification, two-certification)", "M22-4, Part 4, Chapter 1 (Enrollment Certification, older procedures)"],
+      "answer_in_table": false,
+      "query_type": "temporal",
+      "tags": ["enrollment_verification", "two_certification", "PL_116-315", "policy_change_timeline"]
+    },
+    {
+      "id": 102,
+      "query": "Where's the procedure for processing a Chapter 33 correspondence-only claim?",
+      "answer": "There isn't one in the traditional sense. Per M22-4 Part 3 Chapter 7 (Restrictions on Training), correspondence training has specific restrictions: courses must be approved, at least 50% of students must require 6+ months to complete, and nonaccredited correspondence programs have been prohibited since February 2, 1995. For Chapter 33 specifically, M22-4 Part 12 Chapter 11 states that monthly enrollment verification does NOT apply to correspondence programs — they're carved out. However, Chapter 33 correspondence training is processed differently from IHL/NCD enrollment: there's no MHA for correspondence-only (MHA requires more than half-time attendance at a physical location), and tuition is reimbursed per the correspondence training rate rather than the standard tuition/fee structure. The VCE uses the FOCAS system (Flight, On-the-Job Training, Correspondence, and Apprentice System), not the standard DGI enrollment workflow.",
+      "source_docs": ["M22-4, Part 3, Chapter 7 (Restrictions on Training, correspondence)", "M22-4, Part 12, Chapter 11 (enrollment verification exemptions)", "M22-4, Part 12, Sub-Chapter 4.3 (MHA eligibility)", "M22-4, Part 4, Chapter 2 (correspondence training procedures)"],
+      "answer_in_table": false,
+      "query_type": "negative",
+      "tags": ["correspondence", "chapter_33", "no_standard_procedure", "FOCAS"]
+    },
+    {
+      "id": 103,
+      "query": "What's the process for a veteran to appeal their benefit level percentage?",
+      "answer": "There isn't a 'benefit level appeal' as such — the benefit level is a mathematical determination based on qualifying days of active duty service (M22-4 Sub-Chapter 2 benefit level chart), not a subjective decision. If the veteran believes the calculation is wrong, they have two paths: (1) Request a review of their service records — the VCE re-pulls the military service data and recalculates. If DMDC has updated the records (new active periods, corrected dates, reclassified exclusion periods), the benefit level may change. (2) File a Notice of Disagreement (NOD) — per M22-4 Part 3 Chapter 1, this is EPC 270 with a 60-day automatic suspense date (longer than the standard 30 days for other EPCs). The NOD goes through the formal appeals process. The veteran cannot 'negotiate' a higher percentage, but they can challenge the underlying data or the VCE's application of the exclusion rules (ROTC, Service Academy, training deductions).",
+      "source_docs": ["M22-4, Part 12, Sub-Chapter 2 (benefit level chart)", "M22-4, Part 3, Chapter 1 (EPC 270, NOD)", "M22-4, Part 12, Sub-Chapter 5 (excluded service, what can be challenged)"],
+      "answer_in_table": false,
+      "query_type": "negative",
+      "tags": ["appeal", "benefit_level", "NOD", "EPC_270", "no_negotiation"]
+    },
+    {
+      "id": 104,
+      "query": "Can a veteran use Chapter 33 benefits for a coding bootcamp?",
+      "answer": "Not through the standard Chapter 33 IHL/NCD enrollment path unless the bootcamp is approved by a State Approving Agency (SAA) and meets VA's program requirements. Per M22-4 Part 3 Chapter 7, courses must be part of an approved program of education — unapproved courses and courses not part of the program are prohibited. Many coding bootcamps are not SAA-approved. However, VET TEC (Veteran Employment Through Technology Education Courses) is a separate program specifically designed for high-tech training including coding bootcamps — it provides Chapter 33-level MHA but operates under different approval and enrollment rules. The VCE should check whether the specific bootcamp is (a) SAA-approved for standard Ch 33, or (b) a VET TEC provider. If neither, the veteran cannot use Chapter 33 benefits there.",
+      "source_docs": ["M22-4, Part 3, Chapter 7 (Restrictions on Training, approval requirements)", "M22-4, Part 12, Chapter 11 (VET TEC reference in enrollment verification)"],
+      "answer_in_table": false,
+      "query_type": "negative",
+      "tags": ["bootcamp", "VET_TEC", "SAA_approval", "restrictions"]
+    },
+    {
+      "id": 105,
+      "query": "What does 'LTS' refer to and what role does it play in processing Chapter 33 claims?",
+      "answer": "LTS stands for Long Term Solution — it's the web service that automates Chapter 33 eligibility calculations and form completion. Per the VADIR ICD, Chapter 33 LTS is the consuming system that calls VADIR's five operations (getPerson, getContactInfo, findPeopleByCriteria, getServicePeriods, getKickerInfo) to retrieve military service data. LTS uses this data to establish eligibility, determine payment amounts, or disallow claims. Per M22-4, LTS is referenced in the DGI processing workflow — when a VCE works a claim in DGI, the underlying eligibility calculations are performed by LTS using VADIR data. LTS also has a VA-ONCE inbox for unpayable enrollments that the VCE must check when entitlement exhausts (M22-4 Part 4 Chapter 1). Not to be confused with other VA uses of the acronym.",
+      "source_docs": ["VADIR ICD, Sections 1-2 (LTS system definition and interface)", "M22-4, Part II, Chapter 2 (DGI/LTS workflow)", "M22-4, Part 4, Chapter 1 (LTS VA-ONCE inbox)"],
+      "answer_in_table": false,
+      "query_type": "ambiguous_term",
+      "tags": ["LTS", "acronym", "disambiguation", "system_role"]
+    },
+    {
+      "id": 106,
+      "query": "When someone says 'the master record,' what system are they talking about?",
+      "answer": "It depends on when and what benefit chapter. Before July 8, 2024, 'master record' for all education benefits meant the BDN (Benefits Delivery Network) master record — the authoritative system for enrollment, award, and payment data. VCEs used CEST and CADJ commands to view and adjust it. After July 8, 2024, for Chapter 33 specifically, the master record effectively moved to eMPWR (Enterprise Management of Payment Workload and Reporting) — per M22-4 Part II Chapter 1 Section C, VCEs can no longer modify Chapter 33 records in BDN. However, for Chapters 30, 32, 35, 1606, and Section 901, BDN remains the master record system. And 'master record' in the VADIR context refers to the DMDC service record data (the source of truth for military service history), which is a completely different system. The term is ambiguous across at least three systems.",
+      "source_docs": ["M22-4, Part II, Chapter 1, Section C (eMPWR/BDN transition)", "M22-4, Part II, Chapter 3 (Benefits Manager, BDN master record)", "VADIR ICD, Section 2.1 (DMDC as source of truth)"],
+      "answer_in_table": false,
+      "query_type": "ambiguous_term",
+      "tags": ["master_record", "BDN", "eMPWR", "VADIR", "disambiguation"]
+    },
+    {
+      "id": 107,
+      "query": "I keep seeing 'character of service' in both the eligibility rules and the service record data. Are they the same thing?",
+      "answer": "Same concept, different representations. The VADIR service record stores character of service as a single-letter code (charSvcCd) with values like A (Honorable), B (Under honorable conditions, general), D (Bad conduct), F (Dishonorable), H (Honorable, absence of negative report), J (Honorable for VA Purposes), Y (Uncharacterized), Z (Unknown). M22-4 Part 12 Sub-Chapter 2 uses these to determine Chapter 33 eligibility — honorable service is required. The critical nuance: per the VADIR ICD Section 6.1.2, blank or unknown character of service codes are assumed to be honorable (the lone exception to the rule that missing codes return blank). This means a veteran with no character of service code in DMDC data will be treated as honorable — which could be wrong. The QA scorecard (M22-3 Question 6) checks whether the VCE verified character of discharge, but doesn't explicitly flag the blank-defaults-to-honorable risk.",
+      "source_docs": ["VADIR ICD, Table 42 and Section 6.1.2 (Character of Service Codes)", "M22-4, Part 12, Sub-Chapter 2 (eligibility, character of service requirement)", "M22-3, Chapter 2 (QA Question 6)"],
+      "answer_in_table": true,
+      "query_type": "ambiguous_term",
+      "tags": ["character_of_service", "disambiguation", "code_vs_policy", "blank_default"]
+    },
+    {
+      "id": 108,
+      "query": "Walk me through what happens end-to-end from when a veteran submits a Chapter 33 application to when they receive their first housing allowance payment.",
+      "answer": "End-to-end flow: (1) Application received — VCE opens claim in DGI, searches for veteran by SSN. DGI checks the Chapter 33 database, then calls the military service record system (findPeopleByCriteria by SSN to get EDIPI, then getPerson for bio data). (2) Eligibility — DGI/LTS calls getServicePeriods to retrieve active duty periods, exclusion periods, training periods, Purple Heart status. VCE applies M22-4 Sub-Chapter 2 rules: verify 90+ days after September 10, 2001, honorable character of service, subtract excluded service (ROTC/academy/training per Sub-Chapter 5), calculate qualifying days, determine benefit level (50-100%). Check delimiting date. (3) Certificate of Eligibility issued to veteran. (4) School enrollment — school submits enrollment certification in VA-ONCE (initial certification, then second certification per PL 116-315 two-certification requirement). (5) MHA calculation — per M22-4 Part 12 Sub-Chapter 4.3: BAH rate for E-5 with dependents at the school's ZIP code, multiplied by rate of pursuit (credits enrolled ÷ full-time credits) and benefit level percentage. Must be enrolled more than half-time. (6) Payment authorization — VCE reviews in eMPWR (post July 8, 2024), checks for big-pay thresholds (M22-4 Part 3 Chapter 1: $25K beneficiary / $45K school for Chapter 33). (7) Monthly verification — veteran must verify enrollment monthly to continue receiving MHA (M22-4 Part 12 Chapter 11). (8) Payment issued through eMPWR. Entire flow touches service record data, eligibility rules, enrollment certification, housing allowance policy, and payment processing.",
+      "source_docs": ["M22-4, Part II, Chapter 2 (DGI processing)", "VADIR ICD, Section 2.2 and Tables 4-23 (service record operations)", "M22-4, Part 12, Sub-Chapters 2 and 5 (eligibility)", "M22-4, Part 12, Sub-Chapter 4.3 (MHA)", "M22-4, Part 12, Chapter 11 (enrollment verification)", "M22-4, Part II, Chapter 1, Section C (eMPWR payment)", "M22-4, Part 3, Chapter 1 (big-pay thresholds)"],
+      "answer_in_table": false,
+      "query_type": "synthesis",
+      "tags": ["end_to_end", "chapter_33", "full_flow", "onboarding"]
+    },
+    {
+      "id": 109,
+      "query": "If I'm setting up a new RPO claims examiner, what are all the systems they need access to and what does each one do?",
+      "answer": "A VCE processing Chapter 33 education claims needs access to: (1) DGI (Digital GI Bill) — the primary claims processing interface where VCEs search for veterans, view service data, and work eligibility determinations. Searches the Chapter 33 database and the military service record repository. (2) eMPWR (Enterprise Management of Payment Workload and Reporting) — SalesForce-based UI for reviewing and authorizing Chapter 33 payments, viewing transaction history, managing receivables. Default role is inquiry/read-only; fiscal corrections route to RPO Support Services Division. (3) BDN (Benefits Delivery Network) — legacy system, still used to view historical records from before July 8, 2024, and as the active system for non-Chapter 33 benefits (Chapters 30, 32, 35, 1606). (4) TIMS (The Image Management System) — folder and document management; all claims require a TIMS folder before award processing. (5) VA-ONCE — school enrollment certification portal (view only for VCE). (6) SHARE (Corporate Inquiries, Corporate Update, BIRLS Update) — for identity and records management. (7) eFolder — for viewing the claims file including SSA inquiries. (8) MPI Toolkit — for identity resolution and data remediation. Per M22-3, QA reviews verify correct use of all these systems through the 13-question scorecard.",
+      "source_docs": ["M22-4, Part II, Chapters 1-3 (DGI, eMPWR, BDN, Benefits Manager)", "M22-4, Part 3, Chapter 1 (TIMS, folder types)", "M22-4, Part II, Chapter 1, Section C (data remediation tools)", "M22-3, Chapter 2 (QA coverage of systems)"],
+      "answer_in_table": false,
+      "query_type": "synthesis",
+      "tags": ["new_VCE", "system_access", "onboarding", "all_systems"]
+    },
+    {
+      "id": 110,
+      "query": "What are all the ways a Chapter 33 veteran's payment amount can change after their initial eligibility determination — without them doing anything?",
+      "answer": "Several factors can change payment without veteran action: (1) Annual BAH rate update — MHA is based on E-5 with dependents BAH rate, which changes each academic year effective August 1 based on the preceding January 1 DoD BAH changes (M22-4 Sub-Chapter 4.3). Every veteran's MHA changes annually. (2) Updated military service records — if DMDC corrects or adds service periods, the benefit level percentage could change (e.g., 80% to 90%) on next eligibility review, retroactively affecting all payments. (3) School tuition changes — if the school updates tuition/fees in their second certification (M22-4 Part 12 Chapter 11, dual certification), the tuition payment adjusts. (4) Freshness decay of service record data — if the initial pull missed exclusion periods that are later added, the benefit level could decrease. (5) QA review — if M22-3 QA catches an error on the claim (Question 6 eligibility, Questions 8-10 payment), the VCE must correct it. (6) Legislative changes — Congress can change benefit levels (e.g., 40% elimination August 1, 2020), entitlement rules, or MHA calculations. (7) Big-pay review — per M22-4 Part 3 Chapter 1, if a payment crosses the threshold ($25K beneficiary / $45K school), additional signatures are required and the payment may be delayed or adjusted.",
+      "source_docs": ["M22-4, Part 12, Sub-Chapter 4.3 (MHA, annual BAH update)", "M22-4, Part 12, Sub-Chapter 2 (benefit level, data-driven changes)", "M22-4, Part 12, Chapter 11 (dual certification)", "M22-3, Chapter 2 (QA-driven corrections)", "M22-4, Part 3, Chapter 1 (big-pay thresholds)", "VADIR ICD (service record updates)"],
+      "answer_in_table": false,
+      "query_type": "synthesis",
+      "tags": ["payment_changes", "passive", "BAH_update", "data_correction", "legislative"]
+    }
+  ],
+  "summary": {
+    "by_source": {
+      "M22-3": 4,
+      "M22-4": 32,
+      "VADIR_ICD": 13,
+      "cross_source": 26,
+      "consulting_sme": 10,
+      "prod_ops": 10,
+      "advanced": 15
+    },
+    "by_type": {
+      "table_lookup": 17,
+      "table_lookup_with_calculation": 2,
+      "policy_rule": 14,
+      "policy_change": 4,
+      "heading_context_dependent": 5,
+      "multi_section": 5,
+      "technical_spec": 3,
+      "cross_source": 25,
+      "consulting_sme": 10,
+      "prod_ops": 10,
+      "contradiction": 3,
+      "temporal": 3,
+      "negative": 3,
+      "ambiguous_term": 3,
+      "synthesis": 3
+    },
+    "total_queries": 110,
+    "table_answer_queries": 42,
+    "multi_section_queries": 5,
+    "heading_context_queries": 5,
+    "cross_source_queries": 37,
+    "consulting_sme_queries": 10,
+    "prod_ops_queries": 10,
+    "contradiction_queries": 3,
+    "temporal_queries": 3,
+    "negative_queries": 3,
+    "ambiguous_term_queries": 3,
+    "synthesis_queries": 3
+  }
+}
