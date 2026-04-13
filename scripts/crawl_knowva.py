@@ -585,7 +585,6 @@ def _build_metadata(article: dict) -> dict:
         # --- Article metadata ---
         "title": article.get("name"),
         "description": article.get("description"),
-        "keywords": article.get("keywords"),
         "last_modified": article.get("last_modified_date"),
         "created": article.get("created_date"),
         "version": article.get("version"),
