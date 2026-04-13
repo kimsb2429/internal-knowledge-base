@@ -1,0 +1,777 @@
+{
+  "metric": "faithfulness",
+  "version": 2,
+  "scores": [
+    {
+      "id": 1,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 2,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 3,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 4,
+      "score": 1.0,
+      "total_claims": 3,
+      "supported_claims": 3,
+      "unsupported": []
+    },
+    {
+      "id": 5,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 6,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 7,
+      "score": 1.0,
+      "total_claims": 3,
+      "supported_claims": 3,
+      "unsupported": []
+    },
+    {
+      "id": 8,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 9,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 10,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 11,
+      "score": 1.0,
+      "total_claims": 3,
+      "supported_claims": 3,
+      "unsupported": []
+    },
+    {
+      "id": 12,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 13,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 14,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 15,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 16,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 17,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 18,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 19,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 20,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 21,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 22,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 23,
+      "score": 1.0,
+      "total_claims": 5,
+      "supported_claims": 5,
+      "unsupported": []
+    },
+    {
+      "id": 24,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 25,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 26,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 27,
+      "score": 1.0,
+      "total_claims": 8,
+      "supported_claims": 8,
+      "unsupported": []
+    },
+    {
+      "id": 28,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 29,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 30,
+      "score": 1.0,
+      "total_claims": 3,
+      "supported_claims": 3,
+      "unsupported": []
+    },
+    {
+      "id": 31,
+      "score": 1.0,
+      "total_claims": 3,
+      "supported_claims": 3,
+      "unsupported": []
+    },
+    {
+      "id": 32,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 33,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 34,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 35,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 36,
+      "score": 0.91,
+      "total_claims": 11,
+      "supported_claims": 10,
+      "unsupported": ["'payments and used eligibility for multiple education programs' — the source (Section 2.2) lists getServicePeriods as returning 'Ch30 eligibility information, Ch1606 eligibility information' specifically. The answer's phrasing overstates the scope beyond the exact Section 2.2 listing."]
+    },
+    {
+      "id": 37,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 38,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 39,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 40,
+      "score": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "unsupported": []
+    },
+    {
+      "id": 41,
+      "score": 1.0,
+      "total_claims": 6,
+      "supported_claims": 6,
+      "unsupported": []
+    },
+    {
+      "id": 42,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 43,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 44,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 45,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 46,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 47,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 48,
+      "score": 1.0,
+      "total_claims": 1,
+      "supported_claims": 1,
+      "unsupported": []
+    },
+    {
+      "id": 49,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 50,
+      "score": 0.86,
+      "total_claims": 7,
+      "supported_claims": 6,
+      "unsupported": ["'establish the delimiting date' as a result of the VADIR operations flow — the VADIR ICD Section 2.2 describes getServicePeriods as returning service data, but the ICD does not explicitly state delimiting date establishment is part of the automated LTS flow; that reasoning comes from M22-4 combined with VADIR. The claim is reasonable synthesis but not explicitly stated in either cited source."]
+    },
+    {
+      "id": 51,
+      "score": 0.75,
+      "total_claims": 4,
+      "supported_claims": 3,
+      "unsupported": ["Code H qualifies the veteran for Chapter 33 benefits — the VADIR ICD (Table 42) confirms H = 'Under honorable conditions (absence of a negative report)' and M22-4 Sub-Chapter 2 states honorable service is required. However, M22-4 Sub-Chapter 2 does not explicitly list code H as qualifying by name; it uses the character of service description. The claim is a reasonable inference from combining the two sources but is not explicitly stated in either source alone."]
+    },
+    {
+      "id": 52,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 53,
+      "score": 0.83,
+      "total_claims": 6,
+      "supported_claims": 5,
+      "unsupported": ["'The VCE cross-references VADIR training periods against the service branch's known training pipeline to determine what to exclude' — this procedural statement is not explicitly stated in either cited source (VADIR ICD Table 25 or M22-4 Sub-Chapter 5). It is a reasonable inference about VCE workflow, but it is not grounded in explicit source text."]
+    },
+    {
+      "id": 54,
+      "score": 0.75,
+      "total_claims": 4,
+      "supported_claims": 3,
+      "unsupported": ["'The VADIR MGIB data determines whether the veteran was a Chapter 30 participant and how they separated' — while VADIR Table 23 does contain mgibCd and mgibSeparationCode fields, the claim that these specifically determine Chapter 30 participation for the purpose of evaluating Ch33 exhaustion is an inferential synthesis not explicitly stated in either source document."]
+    },
+    {
+      "id": 55,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 56,
+      "score": 1.0,
+      "total_claims": 6,
+      "supported_claims": 6,
+      "unsupported": []
+    },
+    {
+      "id": 57,
+      "score": 0.83,
+      "total_claims": 6,
+      "supported_claims": 5,
+      "unsupported": ["'Chapter 1606 reservists have no delimiting date while actively drilling; when they stop drilling they lose entitlement' — the MGSR codes describe status changes but this specific rule ('no delimiting date while actively drilling' vs. 'lose entitlement when stop drilling') is a characterization that goes beyond the exact text of the cited source articles."]
+    },
+    {
+      "id": 58,
+      "score": 0.83,
+      "total_claims": 6,
+      "supported_claims": 5,
+      "unsupported": ["'If the veteran is using Chapter 33, the kicker is paid as a monthly supplement' — this claim about Chapter 33 kicker payment mechanics is not explicitly stated in the VADIR ICD Table 46 (which just lists the rate codes) nor in the M22-4 Part 12 overview as cited. This goes beyond the source documents."]
+    },
+    {
+      "id": 59,
+      "score": 1.0,
+      "total_claims": 5,
+      "supported_claims": 5,
+      "unsupported": []
+    },
+    {
+      "id": 60,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 61,
+      "score": 0.75,
+      "total_claims": 4,
+      "supported_claims": 3,
+      "unsupported": ["'The reviewer verifies that the VCE correctly interpreted the VADIR data (service periods, character of service codes, exclusion periods, Purple Heart status) against M22-4 eligibility rules' — the M22-3 QA scorecard Question 6 covers service dates, character of discharge, separation reason, delimiting date, and alternative elections. The specific mention of VADIR data and Purple Heart status as being part of the QA Q6 review process is not explicitly stated in the source article 554400000059332."]
+    },
+    {
+      "id": 62,
+      "score": 0.75,
+      "total_claims": 4,
+      "supported_claims": 3,
+      "unsupported": ["'Chapter 33 claims are processed through the Long Term Solution (LTS) system, which calls VADIR's getServicePeriods operation' as a reason for no EPC — this is an inferential connection the source does not explicitly make."]
+    },
+    {
+      "id": 63,
+      "score": 0.67,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "unsupported": ["'the VCE must verify this against the TIMS record and LTS to ensure the entitlement balance is current' — this procedural claim about VCE verification against TIMS and LTS when interpreting VADIR's eduPgmEntlMtsQy field is not stated in the VADIR ICD Table 30."]
+    },
+    {
+      "id": 64,
+      "score": 1.0,
+      "total_claims": 5,
+      "supported_claims": 5,
+      "unsupported": []
+    },
+    {
+      "id": 65,
+      "score": 0.67,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "unsupported": ["'the VCE would check pgibCd and pgibSeparationCode (Table 23) for the Post-9/11 GI Bill separation code' — M22-4 Sub-Chapter 2 confirms discharge for service-connected disability qualifies for 100%, but doesn't explicitly identify the VADIR pgibCd as the verification field. This is a reasonable inference but not stated explicitly in the source."]
+    },
+    {
+      "id": 66,
+      "score": 0.75,
+      "total_claims": 4,
+      "supported_claims": 3,
+      "unsupported": ["'Per M22-4 eligibility rules, CIP periods are not active duty and should not count toward qualifying service days' — the VADIR ICD Table 36 describes CIP (cipBgnDt/cipEndDt) as 'Beginning/End of Sabbatical', confirming CIP is a sabbatical break. However, the M22-4 source cited does not explicitly address CIP periods in the verified text. The claim about CIP not counting toward qualifying service is an inferential leap not explicitly grounded in the cited M22-4 text."]
+    },
+    {
+      "id": 67,
+      "score": 0.80,
+      "total_claims": 5,
+      "supported_claims": 4,
+      "unsupported": ["'the veteran's $1,200 contribution may be refundable as a 96R payment when Chapter 33 entitlement exhausts' — while article 554400000073421 does reference the $1,200 MGIB refund (96R), the connection specifically to Ch30-to-Ch33 electors is not explicit in the cited source. The 96R eligibility criteria are more nuanced in the source."]
+    },
+    {
+      "id": 68,
+      "score": 0.86,
+      "total_claims": 7,
+      "supported_claims": 6,
+      "unsupported": ["'If VADIR returns callStatus Success with callStatusNote Person Not Found, the veteran has no DoD record' — the VADIR ICD Table 41 confirms this callStatusNote exists, but characterizing it as meaning the veteran 'has no DoD record' is an interpretation that goes slightly beyond what the source states."]
+    },
+    {
+      "id": 69,
+      "score": 0.86,
+      "total_claims": 7,
+      "supported_claims": 6,
+      "unsupported": ["'honorable character of service (charSvcCd = A or B or H)' as a verification step for Ch33 eligibility via VADIR for foreign school eligibility — while M22-4 Sub-Chapter 2 requires honorable service and VADIR Table 42 shows these codes, the combined claim that VCEs would specifically check charSvcCd = A or B or H in VADIR for foreign school eligibility is inferential synthesis not stated in either source."]
+    },
+    {
+      "id": 70,
+      "score": 1.0,
+      "total_claims": 5,
+      "supported_claims": 5,
+      "unsupported": []
+    },
+    {
+      "id": 71,
+      "score": 0.67,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "unsupported": ["'M22-4 Part 4 Chapter 6 Section 6.06 requires converting to equivalent credit hours (enrolled hours × 18 ÷ weeks in term)' — while article 554400000073534 contains section 6.06 on nonstandard terms, the specific formula 'enrolled hours × 18 ÷ weeks in term' and the reference to equivalency tables (M22-4 Part 4 Chapter 14, Tables 14.02a-d) were not confirmed in the extracted source text."]
+    },
+    {
+      "id": 72,
+      "score": 0.83,
+      "total_claims": 6,
+      "supported_claims": 5,
+      "unsupported": ["'Per M22-4, Ch 1606 reservists with a suspended status have their entitlement paused — they are not terminated but cannot use benefits until status changes' — while the MGSR CA code means Suspended and the article discusses Chapter 1606, this specific interpretation about benefit use during suspended status is not explicitly stated in the cited source text."]
+    },
+    {
+      "id": 73,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 74,
+      "score": 0.80,
+      "total_claims": 5,
+      "supported_claims": 4,
+      "unsupported": ["'The VADIR PGIB separation code tells the VCE whether the separation reason qualifies for the 30-day exception' — the VADIR ICD Table 23 defines the pgibCd field but does not explicitly state that this field identifies the 30-day exception qualification."]
+    },
+    {
+      "id": 75,
+      "score": 0.80,
+      "total_claims": 5,
+      "supported_claims": 4,
+      "unsupported": ["'project code A26 distinguishes AGR from other activations' — while VADIR ICD Table 43 confirms code A26 = 'AD - ADOT - AGR' with Training Indicator N, the characterization that A26 specifically 'distinguishes AGR' is the answer's framing, not explicitly stated in the source."]
+    },
+    {
+      "id": 76,
+      "score": 0.75,
+      "total_claims": 4,
+      "supported_claims": 3,
+      "unsupported": ["'the PGIB separation code may not distinguish all qualifying scenarios without VCE review' — while M22-4 Sub-Chapter 2 supports the 30-day SC disability rule, the claim about the limitations of the PGIB separation code in distinguishing all qualifying scenarios is an inferential assertion about system limitations not explicitly stated in either cited source."]
+    },
+    {
+      "id": 77,
+      "score": 0.83,
+      "total_claims": 6,
+      "supported_claims": 5,
+      "unsupported": ["'there is no automated trigger in the current architecture: the change is only detected on the next getServicePeriods call' — while the VADIR ICD and M22-4 sources support the use of resultsHash for comparison, the specific claim that 'there is no automated trigger' for re-evaluation when the hash changes is not explicitly stated in the source documents."]
+    },
+    {
+      "id": 78,
+      "score": 0.83,
+      "total_claims": 6,
+      "supported_claims": 5,
+      "unsupported": ["'New service periods, corrections, or Purple Heart awards may not appear in VADIR immediately' — while the VADIR ICD Section 2.1 describes VADIR as staging data from DMDC, the specific claim about replication lag causing data not to appear in VADIR immediately is an inference about timing not explicitly stated in the ICD."]
+    },
+    {
+      "id": 79,
+      "score": 0.83,
+      "total_claims": 6,
+      "supported_claims": 5,
+      "unsupported": ["'LTS may still count the period as qualifying service if other fields look valid' — while Table 44 confirms Z = 'Unknown (for use with Project Code A99 or B99)', the claim that LTS may still count such a period as qualifying service is an assertion about LTS behavior not stated in any source document."]
+    },
+    {
+      "id": 80,
+      "score": 1.0,
+      "total_claims": 7,
+      "supported_claims": 7,
+      "unsupported": []
+    },
+    {
+      "id": 81,
+      "score": 0.86,
+      "total_claims": 7,
+      "supported_claims": 6,
+      "unsupported": ["'with the 15-minute record lock timeout, concurrent users may encounter false locks' — while M22-4 Part II Chapter 2 confirms the 15-minute inactivity record lock release, the claim that VADIR slowness causes concurrent users to encounter false locks is an inferential assertion about cascading effects not explicitly stated in either source."]
+    },
+    {
+      "id": 82,
+      "score": 0.67,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "unsupported": ["'there is no cross-program balance in VADIR's bdnEnt' — while bdnEnt Table 30 confirms it tracks per-program entitlement with eduPgmEntlMtsQy (0 to 36), the claim that there is 'no cross-program balance' in VADIR's bdnEnt is not explicitly stated in the VADIR ICD. This is an interpretive inference about a system limitation not stated in the source."]
+    },
+    {
+      "id": 83,
+      "score": 1.0,
+      "total_claims": 5,
+      "supported_claims": 5,
+      "unsupported": []
+    },
+    {
+      "id": 84,
+      "score": 0.80,
+      "total_claims": 5,
+      "supported_claims": 4,
+      "unsupported": ["'the eMPWR transition (July 8, 2024) might have surfaced some discrepancies during migration, but only for active receivables, not for underpayments' — while M22-4 Part II Chapter 1 Section C states active receivables were migrated to eMPWR, the characterization about the migration specifically surfacing discrepancies for active receivables but not underpayments is inferential and not explicitly stated in the source."]
+    },
+    {
+      "id": 85,
+      "score": 0.75,
+      "total_claims": 4,
+      "supported_claims": 3,
+      "unsupported": ["'Replace the batch SOAP/WSDL interface (VADIR ICD Section 2.7) with an event-driven integration where DMDC pushes service record changes to LTS in real-time' — this is a proposed re-architecture recommendation not stated in any source document. The sources only describe the current SOAP/WSDL architecture; they do not recommend or describe an event-driven alternative."]
+    },
+    {
+      "id": 86,
+      "score": 0.86,
+      "total_claims": 7,
+      "supported_claims": 6,
+      "unsupported": ["'A callStatus of Success with callStatusNote No Data Found is a different problem (data issue, not infra)' — Table 41 confirms 'Success' with 'No Data Found' as a valid callStatusNote. However, characterizing this as specifically meaning 'data issue, not infra' is an interpretive label not explicitly given in the source."]
+    },
+    {
+      "id": 87,
+      "score": 0.80,
+      "total_claims": 5,
+      "supported_claims": 4,
+      "unsupported": ["'if all claims show 50% (the minimum), service period data may have come back empty — with zero qualifying days above 90, the system defaults to the lowest tier per the M22-4 benefit level chart' — while M22-4 Sub-Chapter 2 shows 50% is the lowest benefit level (90-179 days), the claim that 'the system defaults to the lowest tier' when service data is empty is an assertion about LTS automated behavior not explicitly stated in either source document."]
+    },
+    {
+      "id": 88,
+      "score": 0.86,
+      "total_claims": 7,
+      "supported_claims": 6,
+      "unsupported": ["'The service was under a different SSN or the records are under a National Guard state system that hasn't synced to DMDC' — while the VADIR ICD and M22-4 support the general concept of DMDC as data source, the specific explanation about National Guard state systems not syncing to DMDC is not stated in any source document."]
+    },
+    {
+      "id": 89,
+      "score": 1.0,
+      "total_claims": 5,
+      "supported_claims": 5,
+      "unsupported": []
+    },
+    {
+      "id": 90,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 91,
+      "score": 0.80,
+      "total_claims": 5,
+      "supported_claims": 4,
+      "unsupported": ["'LTS eligibility calculation that iterates over all active periods takes longer' — while it is reasonable that more active periods would slow LTS processing, this specific claim about LTS iterating over active periods is not explicitly stated in any source document."]
+    },
+    {
+      "id": 92,
+      "score": 0.75,
+      "total_claims": 4,
+      "supported_claims": 3,
+      "unsupported": ["'the issue goes to the RPO Support Services Division (SSD) for fiscal corrections, which is the eMPWR team that handles systemic issues' — while M22-4 Part II Chapter 1 Section C mentions routing fiscal transactions to the RPO's SSD, the characterization of SSD as 'the eMPWR team that handles systemic issues' is not explicitly stated in the source."]
+    },
+    {
+      "id": 93,
+      "score": 1.0,
+      "total_claims": 6,
+      "supported_claims": 6,
+      "unsupported": []
+    },
+    {
+      "id": 94,
+      "score": 1.0,
+      "total_claims": 6,
+      "supported_claims": 6,
+      "unsupported": []
+    },
+    {
+      "id": 95,
+      "score": 0.86,
+      "total_claims": 7,
+      "supported_claims": 6,
+      "unsupported": ["'the BT ordering system (overpayments transmitted first, then payments) means if eMPWR goes down mid-batch, the entire set fails and must be retried — per M22-4, suspend the token until next business day' — while M22-4 Part II Chapter 1 Section C discusses eMPWR transaction ordering, the specific claim about the entire set failing and suspension until next business day is not explicitly stated in the source."]
+    },
+    {
+      "id": 96,
+      "score": 0.80,
+      "total_claims": 5,
+      "supported_claims": 4,
+      "unsupported": ["'the 48-month cap does NOT apply to Chapter 1607 + National Call to Service combinations (M22-4 Part 11)' — while M22-4 Part 11 is cited as a source, this specific exclusion of Chapter 1607 + National Call to Service from the 48-month cap was not explicitly verified in the extracted source text."]
+    },
+    {
+      "id": 97,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 98,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 99,
+      "score": 1.0,
+      "total_claims": 5,
+      "supported_claims": 5,
+      "unsupported": []
+    },
+    {
+      "id": 100,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 101,
+      "score": 1.0,
+      "total_claims": 5,
+      "supported_claims": 5,
+      "unsupported": []
+    },
+    {
+      "id": 102,
+      "score": 0.75,
+      "total_claims": 4,
+      "supported_claims": 3,
+      "unsupported": ["'FOCAS (Flight, On-the-Job Training, Correspondence, and Apprentice System) handles correspondence for non-Chapter 33 benefits only. Chapter 33 correspondence processing goes through LTS/DGI' — while M22-4 Part 3 Chapter 7 and Part 4 Chapter 2 discuss correspondence restrictions and FOCAS is mentioned in article 554400000073486, the explicit claim that FOCAS handles correspondence for non-Ch33 only and that Ch33 correspondence goes through LTS/DGI specifically is not confirmed in the extracted source text."]
+    },
+    {
+      "id": 103,
+      "score": 1.0,
+      "total_claims": 4,
+      "supported_claims": 4,
+      "unsupported": []
+    },
+    {
+      "id": 104,
+      "score": 0.75,
+      "total_claims": 4,
+      "supported_claims": 3,
+      "unsupported": ["'VET TEC provides Chapter 33-level MHA but operates under different approval and enrollment rules' — while VET TEC is referenced in article 554400000191366 (enrollment verification), the specific claims about VET TEC providing 'Chapter 33-level MHA' and 'different approval and enrollment rules' for coding bootcamps are not explicitly stated in the cited source articles."]
+    },
+    {
+      "id": 105,
+      "score": 0.80,
+      "total_claims": 5,
+      "supported_claims": 4,
+      "unsupported": ["'LTS also has a VA-ONCE inbox for unpayable enrollments that the VCE must check when entitlement exhausts' — while article 554400000073421 discusses LTS and VA-ONCE processing and entitlement exhaustion procedures, the specific claim about a 'VA-ONCE inbox for unpayable enrollments' to check during entitlement exhaustion is not explicitly confirmed in the extracted source text."]
+    },
+    {
+      "id": 106,
+      "score": 0.80,
+      "total_claims": 5,
+      "supported_claims": 4,
+      "unsupported": ["'master record in the VADIR context refers to the DMDC service record data (the source of truth for military service history)' — while the VADIR ICD Section 2.1 establishes DMDC as the data source, calling the DMDC data a 'master record' is the answer's characterization, not the source document's language."]
+    },
+    {
+      "id": 107,
+      "score": 1.0,
+      "total_claims": 5,
+      "supported_claims": 5,
+      "unsupported": []
+    },
+    {
+      "id": 108,
+      "score": 0.88,
+      "total_claims": 8,
+      "supported_claims": 7,
+      "unsupported": ["'Certificate of Eligibility issued to veteran' as a discrete step between eligibility determination and school enrollment — while COE issuance is part of the education claims workflow, the specific placement and description of COE issuance as a discrete step in the exact sequence described is not explicitly confirmed in the cited source documents."]
+    },
+    {
+      "id": 109,
+      "score": 1.0,
+      "total_claims": 8,
+      "supported_claims": 8,
+      "unsupported": []
+    },
+    {
+      "id": 110,
+      "score": 1.0,
+      "total_claims": 7,
+      "supported_claims": 7,
+      "unsupported": []
+    }
+  ],
+  "average_score": 0.93
+}
