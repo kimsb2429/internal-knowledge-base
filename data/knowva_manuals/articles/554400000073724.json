@@ -1,0 +1,29 @@
+{
+  "article_id": "554400000073724",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000073724",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 11 – Chapter 1607",
+    "06 – Payment and Authorization Processes [DRAFT]"
+  ],
+  "topic_id": "554400000016249",
+  "manual_name": "M22-4",
+  "title": "1607 Part 11: Chapter 6 - Payment and Authorization Processes",
+  "description": "Descriptions on 1607 payments and authorizations with details of the 312, 317 and authorization screens",
+  "keywords": "REAP, 1607, 1607 authorization, REAP authorization, REAP 312 screen, 1607 312 screen, REAP 317 screen, 1607 312 screen, reap authorization screen, 1607 authorization screen,",
+  "last_modified": "2022-09-02T15:32:17.000Z",
+  "created": "2017-11-20T17:02:20Z",
+  "version": "18",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": false,
+  "heading_outline": [],
+  "heading_count": 0,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

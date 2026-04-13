@@ -1,0 +1,86 @@
+{
+  "article_id": "554400000073684",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000073684",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 04 – Award Issues",
+    "13 – Miscellaneous Award Issues"
+  ],
+  "topic_id": "554400000016176",
+  "manual_name": "M22-4",
+  "title": "Part 4: Chapter 13 - Miscellaneous Award Issues",
+  "description": "This article covers misc award issues",
+  "keywords": "award, quality, letter, issues, payment, EFT, direct deposit, claim, processing, prison, jail, attendance, enroll, unsat, poa, emergency situations",
+  "last_modified": "2026-03-24T10:59:04.000Z",
+  "created": "2017-11-17T22:57:05Z",
+  "version": "123",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": true,
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "13.36  General"
+    },
+    {
+      "level": 1,
+      "text": "13.37  School Reporting Actions"
+    },
+    {
+      "level": 1,
+      "text": "13.38  Claim Processing Actions"
+    },
+    {
+      "level": 2,
+      "text": "b. Change in Type Training (residence to distance):"
+    },
+    {
+      "level": 2,
+      "text": "f.  School closes during term, remains closed:"
+    },
+    {
+      "level": 2,
+      "text": "g.  School reopens, closed for 28 calendar days or less, term end date extended for 28 calendar days or less."
+    },
+    {
+      "level": 2,
+      "text": "h.  School reopens, closed for 28 calendar days or less, term end date extended for more than 28 calendar days."
+    },
+    {
+      "level": 2,
+      "text": "i. School reopens, closed for more than 28 calendar days, term dates extended 28 calendar days or less."
+    },
+    {
+      "level": 2,
+      "text": "j. School reopened, closed for more than 28 calendar days, term dates extended more than 28 calendar days."
+    },
+    {
+      "level": 1,
+      "text": "13.39  On the Job & Apprenticeship"
+    },
+    {
+      "level": 1,
+      "text": "13.40  Delimiting Date Extension"
+    },
+    {
+      "level": 2,
+      "text": "b. Chapter 33"
+    },
+    {
+      "level": 2,
+      "text": "c. Chapter 35"
+    },
+    {
+      "level": 1,
+      "text": "13.41  Entitlement Restoration"
+    }
+  ],
+  "heading_count": 14,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

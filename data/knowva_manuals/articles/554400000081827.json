@@ -1,0 +1,42 @@
+{
+  "article_id": "554400000081827",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000081827",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 12 – Chapter 33",
+    "02 – Eligibility"
+  ],
+  "topic_id": "554400000016255",
+  "manual_name": "M22-4",
+  "title": "Sub-Chapter 1. Service Members",
+  "description": "This section of the Post-9/11 GI Bill (chapter 33) Benefits Manual explains the eligibility criteria required for service members who want to receive benefits under chapter 33.",
+  "keywords": "Service, National Guard, Benefit level",
+  "last_modified": "2025-01-17T17:42:11.000Z",
+  "created": "2018-03-19T19:40:32Z",
+  "version": "8",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": true,
+  "heading_outline": [
+    {
+      "level": 2,
+      "text": "Sub-Chapter 1. Service Members"
+    },
+    {
+      "level": 2,
+      "text": "1.01 Qualifying Service"
+    },
+    {
+      "level": 2,
+      "text": "1.02 Length of Service"
+    }
+  ],
+  "heading_count": 3,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

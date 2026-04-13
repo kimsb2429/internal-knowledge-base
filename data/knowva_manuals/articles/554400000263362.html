@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M22-4, Part II, Chapter 6, Section A - Handling Payment Issues and Errors in eMPWR</title>
+  <meta name="source-system" content="KnowVA (knowva.ebenefits.va.gov)">
+  <meta name="source-type" content="va_manual">
+  <meta name="manual-name" content="M22-4">
+  <meta name="article-id" content="554400000263362">
+  <meta name="alternate-id" content="None">
+  <meta name="last-modified" content="2025-08-27T18:22:03.000Z">
+  <meta name="created" content="2024-02-29T19:47:58Z">
+  <meta name="keywords" content="Digital GI Bill (DGIB) eMPWR managed service enterprise management of payment workload and reporting">
+  <meta name="topic-breadcrumb" content="M22-4 &gt; Part 02 – Computer Processing &gt; 06 - eMPWR">
+  <meta name="content-category" content="">
+  <meta name="target-audience" content="">
+</head>
+<body>
+<nav class="topic-breadcrumb" aria-label="Topic hierarchy"><span class="bc-item">M22-4</span> / <span class="bc-item">Part 02 – Computer Processing</span> / <span class="bc-item">06 - eMPWR</span></nav>
+<h1>M22-4, Part II, Chapter 6, Section A - Handling Payment Issues and Errors in eMPWR</h1>
+<p style="margin-bottom: 11px; margin-left: 48px; text-indent: 0px; -webkit-text-stroke-width: 0px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="white-space: normal"><span style="word-spacing: 0px"><span style="text-transform: none"><span style="font-weight: 400"><span style="color: #000000"><span style="font-style: normal"><span style="orphans: 2"><span style="widows: 2"><span style="letter-spacing: normal"><span style="line-height: 15px"><span style="font-variant-ligatures: normal"><span style="font-variant-caps: normal"><span style="text-decoration-thickness: initial"><span style="text-decoration-style: initial"><span style="text-decoration-color: initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<table align="left" class="MsoTableGrid" style="-webkit-text-stroke-width:0px;border-bottom:medium none;border-collapse:collapse;border-left:medium none;border-right:medium none;border-top:medium none;font-family:"Times New Roman";letter-spacing:normal;margin-left:6px;orphans:2;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-transform:none;widows:2;width:666px;word-spacing:0px;" width="666">
+	<tbody>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><a id="Top" name="Top"></a><b>Overview</b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">This section discusses how to manage payment errors and other payment issues that occur for chapter 33<span style="line-height: normal">.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b>In This Section</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">This section contains the following topics:</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<table class="MsoTableGrid" style="border-top: medium none; border-right: medium none; border-collapse: collapse; border-bottom: medium none; border-left: medium none">
+				<tbody>
+					<tr>
+						<td style="border-top: black 1px solid; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b>Topic</b></span></span></span></p>
+						</td>
+						<td style="border-top: black 1px solid; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b>Topic Name</b></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">1      </span></span></span></p>
+						</td>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#_Topic_1:_Handling">Topic 1: Handling Authorization Errors in eMPWR</a></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p style="text-align: center;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">2</span></span></p>
+						</td>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Topic_2:_Fry">Topic 2: Fry Authorization Error</a></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p style="text-align: center;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">3</span></span></p>
+						</td>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Topic_3:_Handling">Topic 3: Handling Proceeds Under eMPWR</a></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">4      </span></span></span></p>
+						</td>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#_Topic_2:_Payment">Topic 4: Payment Action Report</a></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; text-align: center; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">5</span></span></p>
+						</td>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#_Topic_3:_Debt">Topic 5: Debt Transfers</a></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; text-align: center; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">6</span></span></p>
+						</td>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Topic_6:_Requesting">Topic 6: Requesting Manual Payment Processing</a></span></span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<h3 style="margin-top: 3px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-weight: normal"><span style="color: #1f3763"><span style="line-height: normal"><span style="break-after: avoid"><a id="_Topic_1:_Handling" name="_Topic_1:_Handling"></a><b>Topic 1: Handling Authorization Errors in eMPWR</b></span></span></span></span></span></span></h3>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b>Introduction</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">This section covers how to handle payment errors that occur after June 26, 2024.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b>Change Date</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">June 24, 2025</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b>II.6.A.1</b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b>General</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Various technical errors may occur during routine processing.  This section discusses known possible errors and provides instructions for resolving them.</span></span></p>
+
+			<p class="MsoNoSpacing"></p>
+
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">a.  <b>Pre-Authorization/Authorization Failure</b></span></span></p>
+
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">If DGI rules cannot generate the fields required for successful transmission of payments to the Enterprise Management of Payment Workload and Reporting (eMPWR) or invalid values are passed, the impacted work product will be unable to be authorized until the issue is rectified.</span></span></p>
+
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">The Veteran Claims Examiner (VCE) will be notified of an error by a red authorization error banner as described in </span></span><a class="eGainArticleLink" articleid="554400000263561" articlename="M22-4, Part II, Chapter 2, Section D, Topics 11-15:  Chapter 33 Processing Screens in DGI" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263561?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 2.D.14.b</a><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">.  <i>Note</i>: This list may not cover every possible error message.</span></span></p>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• Payee code is not available for payment. Please try again or contact your coach if error persists.</span></span></div>
+
+			<div style="margin-left: 40px;"></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• Veteran information unavailable/cannot be retrieved from VADIR. Please contact your coach.</span></span></div>
+
+			<div style="margin-left: 40px;"></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• Veteran information cannot be established in DGI. Please contact your coach.</span></span></div>
+
+			<div style="margin-left: 40px;"></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• Participant id is not available for payment. Try again or contact your coach.</span></span></div>
+
+			<div style="margin-left: 40px;"></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• MPI Sync found multiple claimants match. Contact your coach.</span></span></div>
+
+			<div style="margin-left: 40px;"></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• VAProfile id is not available for payment. Try again or contact your coach.</span></span></div>
+
+			<div style="margin-left: 40px;"></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• Exception while adding Benefit Claim to BGS. Try again or contact your coach.</span></span></div>
+
+			<div style="margin-left: 40px;"></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• CorpDB Sync Failure occurred.</span></span></div>
+
+			<div style="margin-left: 40px;"></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• MPI response does not match with search criteria or low confidence score on claimant.</span></span></div>
+
+			<div></div>
+
+			<table align="left">
+				<tbody>
+					<tr>
+						<td>
+						<p></p>
+						</td>
+						<td>
+						<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><img src="/system/ws/v11/media/image/5544/9d50acff-c367-4031-bdb4-093c7f398ebd" /></span></span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p style="text-align: center"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">  <span class="MsoSubtleEmphasis" style="color: #404040"><span style="font-style: italic">Figure 7.1: Authorization error message example</span></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">For each of the above error messages, the VCE should take the following steps.</span></span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">(1)   Select on the <b>Work Product Summary</b> tab on the left side of the DGI screen to refresh the record.</span></span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">(2)   Attempt to authorize the work product a second time.</span></span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(3)   If the error indicates a “BGS” or an address, phone, or email issue, take the following steps.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(a)   Review TIMS and DGI to identify the most recent mailing address.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(b)   Check the format of the most recent address against the United States Postal Service (USPS) address validator.  Enter the address into the validator and click “Find.” </span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(c)   Correct the address in DGI to the exact address provided by USPS.</span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(4)   If the error indicates that a Fry claim cannot be created, take the following steps.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(a)   Review the TIMS and Share files to locate the SSN of the Fry veteran.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(b)   Enter the Fry veteran SSN on the BIO screen.</span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(5)   If this fails, consult with a Senior VCE or Lead Senior VCE for review and an additional attempt to authorize the work product on their own.  Follow local procedures as appropriate.</span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(6)   If the work product continues to fail, follow local procedures to request review by the local data remediation point of contact (POC) who will follow their procedures to fix the problem or submit a Defect in Functionality (DIF) report for database correction, as appropriate.</span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(7)   Follow local procedures to suspend the token in The Image Management System (TIMS) until data remediation and/or DIF resolution.</span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(8)   Upon communication that the remediation has been completed, the VCE will continue normal processing.</span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">b.  <strong>Data Remediation</strong></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Due to data inconsistencies across VA systems, some first post-eMPWR work products may require data remediation in order to proceed with establishing an Education claim in the Corporate Database (CorpDB).  Each Regional Processing Office (RPO) will establish local procedures for VCEs to request POC intervention to resolve any data mismatches.</span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Data remediation POCs need access to the following systems:</span></span></p>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• Master Person Index (MPI) Toolkit with access to the “Search Experian” button</span></span></div>
+
+			<div style="margin-left: 40px;"></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• SHARE application with access to the “Corporate Inquires,”, “Corporate Update,” and “BIRLS Update” (BUPD) commands</span></span></div>
+
+			<div style="margin-left: 40px;"></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• eFolder application with SSA Inquiry access to view documents</span></span></div>
+
+			<div style="margin-left: 40px;"></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">• TIMS application with Folder Processing access to view Education Service (EDU) documents</span></span></div>
+
+			<div></div>
+
+			<p style="margin-left: 40px;"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;">(1)   For errors that involve a missing ID or an MPI issue, data remediation POCs will complete the following:</span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(a)   Compare identity information in the MPI Toolkit with the information in Share, TIMS, and eFolder to determine the correct Participant ID (PID).</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(b)   Upon identifying the correct PID, the data remediation POC follows local procedures to submit a Service Now (SNOW) ticket to the VBA EDU Identity Tiger Team for correction.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(c)   For any systems that need data corrected, take the POC will take the necessary corrective actions:</span></span></p>
+
+			<p style="margin-left: 120px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">i.   If there is an incorrect file number/SSN in eFolder, submit a SNOW ticket to the VBA CORP OBI Data Quality team along with any supporting documentation to correct VBMS.  This ticket must be resolved before moving onto any additional corrections.</span></span></p>
+
+			<p style="margin-left: 120px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">ii.   If the information in BIRLS is found to be incorrect, use the BUPD button in Share to update that information, as appropriate.  Before making any BIRLS updates, run a “Search All in List” action and compare the name and date of birth to ensure the BIRLS and CorpDB records match.</span></span></p>
+
+			<p style="margin-left: 120px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">iii.   If the information in CorpDB is found to be incorrect, use the Corporate Update button in Share to update that information, as appropriate.</span></span></p>
+
+			<p style="margin-left: 120px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">iv.   If the information in MPI is found to be incorrect, submit a Request in the MPI Toolkit.</span></span></p>
+
+			<p style="margin-left: 120px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">v.   If the information in DGI is found to be incorrect, update the BIO screen as appropriate.  If the SSN in DGI needs to be updated, submit a SNOW ticket for DGI updates using established SSN correction procedures.</span></span></p>
+
+			<p style="margin-left: 120px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">vi.   If the information of the TIMS folder is found to be incorrect, follow established procedures to have corrections made to the TIMS folder.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(d)   Once all SNOW tickets have been resolved and all corrections have been made, the remediation POC will return the token to the VCE to complete normal processing.</span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(2)   For errors that involve a missing date of birth (DOB), data remediation POCs will complete the following:</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(a)   Review the DGI file to locate the beneficiary’s DOB.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(b)   Perform a BUPD in Share to update the DOB.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(c)   If the DOB in DGI was adjusted as part of the existing Fry work around, re-associate the file to VADIR and return the token to the VCE with instructions to enter the appropriate graduate date on the Enrollments screen and complete normal processing.</span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">See <a class="eGainArticleLink" articleid="554400000280787" articlename="(F) 2024 28 June: Procedural Advisory: Chapter 33 eMPWR Conversion Identity Mismatch Procedures " href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000280787?portalId=554400000001018&usertype=customer&\$lang=en-us&">(F) 2024 28 June: Procedural Advisory: Chapter 33 eMPWR Conversion Identity Mismatch Procedures </a>for additional information. </span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">c.   </span><b><span style="line-height: 17px">Business Transaction (BT) Order Failures</span></b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">When a work product includes both payments and receivables, then upon authorization, overpayments are transmitted first to (eMPWR, followed by payments, to allow eMPWR’s Participant Systematic Review (PSR) to properly review and code items for collection, affording due process rights when needed.</span></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">If any of the receivable or associated payment BTs fail or are rescheduled, then the entire set of BTs will fail.  The VCE will know this occurred through an error showing on the Payment Instructions (PI) screen of DGI.</span></span></span></span></p>
+
+			<p align="center" class="MsoNoSpacing" style="text-align: center"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> </span></span></p>
+
+			<table align="left">
+				<tbody>
+					<tr>
+						<td>
+						<p></p>
+						</td>
+						<td>
+						<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><img id="2d3e0cea-fbfb-485c-baaf-dd1266853f59" name="image175.png" src="/system/ws/v11/media/image/5544/2d3e0cea-fbfb-485c-baaf-dd1266853f59" style="width:500px;height:33px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></span></span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p style="margin-left: 200px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">  <span class="MsoSubtleEmphasis" style="color: #404040"><span style="font-style: italic">Figure 7.2: BT Failure example</span></span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><i><span style="line-height: 17px">Example: </span></i><span style="line-height: 17px">If a work product generates a housing debt AND a currently payable housing payment for a beneficiary, and either the housing debt or the housing payment fail at the time of authorization, THEN both the debt and payment will fail.</span></span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><i><span style="line-height: 17px">Note: </span></i><span style="line-height: 17px">This failure will not automatically cause the failures of other payment or debt types, such as books and supplies, tuition and fees, or Yellow Ribbon.</span></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">To resolve this issue, the VCE should take the following steps.</span></span></span></span></p>
+
+			<p style="margin-left: 80px; text-indent: -0.25in;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">(1)   Suspend the token in TIMS until the next business day.</span></span></span></span></p>
+
+			<p style="margin-left: 80px; text-indent: -0.25in;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">(2)   After the suspension time has elapsed, review the authorized work product in DGI to see if the error is still displaying.  This will give the system the opportunity to run its automatic retries.</span></span></span></span></p>
+
+			<p style="margin-left: 80px; text-indent: -0.25in;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">(3)   If the error persists, contact your Coach to follow local procedures to submit a DIF report for database correction.</span></span></span></p>
+
+			<p style="text-indent: -0.25in; margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">(4)   Follow local procedures to suspend the token in TIMS until DIF resolution.</span></span></span></p>
+
+			<p style="text-indent: -0.25in; margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(5)   Upon receiving notification of resolution, continue to work the claim follow standard procedures.</span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><i>Note</i>: Until the issue is resolved, no new work products can be created for the beneficiary.</span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><img src="/system/ws/v11/media/image/5544/4f7058da-8e0d-475b-a0d0-f0c00c220d2f" /></span></span></p>
+
+			<p style="text-align: center"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><i><span style="line-height: 107%">Figure 7.3: Unable to create work product error example</span></i></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">d.   </span><b><span style="line-height: 17px">Payment Error Resolution Attempts (Automated)</span></b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">When a processor (whether VCE or automation) attempts to authorize a claim within DGI and there is a failure to successfully transmit to eMPWR, the system will do the following.</span></span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">(1)   The unsuccessful BTs will show with a status of <i>Rescheduled</i> on the PI screen.</span></span></span></span></p>
+
+			<table align="left">
+				<tbody>
+					<tr>
+						<td>
+						<p></p>
+						</td>
+						<td>
+						<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><img src="/system/ws/v11/media/image/5544/9109d748-6aee-4310-9715-32aae773408c" /></span></span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p style="text-align: center"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> <span class="MsoSubtleEmphasis" style="color: #404040"><span style="font-style: italic">Figure 7.4: BT Rescheduled example</span></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"> </span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">(2)   The system will automatically attempt to resubmit the transaction up to five (5) times.</span></span></span></span></p>
+
+			<p style="margin-left: 96px; text-indent: -0.25in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">(a).   If one of retries is successful,</span></span></span></span></p>
+
+			<p style="margin-left: 144px; text-indent: -1.5in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">                            i.  Then there is no further action needed, and</span></span></span></span></p>
+
+			<p style="margin-left: 144px; text-indent: -1.5in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">                           ii.  The BT will display with a status of <i>Successful </i>on the PI screen.</span></span></span></span></p>
+
+			<p style="margin-left: 144px; text-indent: -1.5in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">                          iii.  The failed payment attempt would not be reported to the RPO of jurisdiction.</span></span></span></span></p>
+
+			<p style="margin-left: 96px; text-indent: -0.25in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">(b)   If, after five (5) attempts, the BT is still not unsuccessful,</span></span></span></span></p>
+
+			<p style="margin-left: 144px; text-indent: -1.5in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">                            i.  Then the BT will display with a status of <i>Failed</i> on the PI screen</span></span></span></span></p>
+
+			<p style="margin-left: 144px; text-indent: -1.5in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">                           ii.  The errored BT will display on for the <a href="#_Topic_2:_Payment">Topic 4: Payment Action Report </a>along with a reason for review and corrective action.</span></span></span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(3)   Once a BT displays on the Payment Action Report, the Production Operations (ProdOps) team from Accenture Federal Services (AFS) will work directly with the local Support Services Division (SSD) to have payments manually issued through eMPWR and to make any corrections necessary to continue normal processing.</span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Note</strong>: VCEs will not usually see this activity, since it happens in the background.</span></span></p>
+
+			<p style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(4)   If a VCE comes across a beneficiary with failed payments that have not been resolved, take the following steps:</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(a)   Suspend the token in TIMS until the next business day.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(b)   After the suspension time has elapsed, review the authorized work product in DGI to see if the error is still displaying.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(c)   If the error persists, contact your Coach to follow local procedures to coordinate with SSD to manually issue the BTs and to submit a DIF report to AFS ProdOps for database correction.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(d)   Follow local procedures to suspend the token in TIMS until DIF resolution.</span></span></p>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(e)   Upon receiving notification of resolution, continue to work the claim follow standard procedures.</span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"> </span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">e.  </span><b><span style="line-height: 17px">Work Product Creation Failure</span></b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">If there is an error or a rescheduled BT which impedes the creation of a new work product, then paused payments are rolled back to their previous state to prevent payments from being unnecessarily delayed.</span></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"> </span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">f.   </span><b><span style="line-height: 17px">Retry Failed Payments Button</span></b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">Before the integration with eMPWR, DGI displayed a <b>Retry Failed Payments</b> button.  As of July 8, 2024, this button no longer is an option.  To retry failed payment, VCEs must identify the relevant scenario and follow the procedures indicated.</span></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"> </span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">g.   </span><b><span style="line-height: 17px">Manually Enter Payments Button</span></b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">Before the integration with eMPWR, DGI displayed a <b>Retry Failed Payments</b> button.  As of July 8, 2024, this button no longer is an option.</span></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">Education service will no longer have the ability to issue these payments on its own due to the Office of Financial Management’s (OFM) need to maintain fiscal separation of duties.</span></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px">h.   <b><span style="line-height: 17px">Payment Error (DGI unavailable)</span></b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><b> </b><span style="line-height: 17px">If DGI goes offline and fails to receive a response from eMPWR regarding the status of a BT, then,</span></span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">(1)   DGI will resend the BT to eMPWR,</span></span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">(2)   eMPWR will cross-reference the previously received BT and re-send the response, and</span></span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">(3)   eMPWR will NOT reprocess the duplicate BT.</span></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"> <u><span style="line-height: 17px">No manual action is necessary.</span></u></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"> </span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">i.   </span><b><span style="line-height: 17px">eMPWR System Outage</span></b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">If eMPWR is down for an outage (planned or otherwise), the monitoring team will notify the RPOs of the outage.  No BTs will be sent to eMPWR during the outage.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p align="right" style="text-align: right"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Top">Go to Top</a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong><span style="line-height:normal"><span style="break-after:avoid"><a id="Topic_2:_Fry" name="Topic_2:_Fry"></a><span style="color:#1f3763">Topic 2: Fry Authorization Error</span></span></span></strong></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>Introduction</b></span></span></span></p>
+			</td>
+			<td style="width: 150px; padding: 0in 7px;" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">This section discusses authorization errors for Fry Spouses</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 150px; padding: 0in 7px;" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>Change Date</b></span></span></span></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal">June 24, 2025</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>II.6.A.2</b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>General</b></span></span></span></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:15.6933px"><span style="line-height:17.12px">For beneficiaries originally processed using the </span><a href="https://vaww.vrm.km.va.gov/system/templates/selfservice/va_kanew/help/agent/locale/en-US/portal/554400000001048/content/554400000086860/RESCINDED-Procedural-Advisory-Long-Term-Solution-LTS-Colmery-Section-112-of-Public-Law-115-48-Forever-GI-Bill-Fry-Spouse-Work-Around"><span style="line-height:17.12px">Colmery Section 112 Fry Spouse work around</span></a><span style="line-height:17.12px"> (revoked April 2022) and not updated to a relationship of “Spouse” in DGI prior to the eMPWR conversion, an error message will likely result when attempting to authorize the first work product changing the Fry relationship from “Parent” to “Spouse.”</span></span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><img id="60ad94fa-2446-4c0e-ade2-39e3fdea2ade" name="image001.png" src="/system/ws/v11/media/image/5544/60ad94fa-2446-4c0e-ade2-39e3fdea2ade" style="width:502px;height:43px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></span></span></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:15.6933px"><i><span style="line-height:17.12px">Figure 7.5: Fry Spouse error</span></i></span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:15.6933px"><span style="line-height:17.12px">To resolve this issue, a Detailed Issue Form (DIF) must be submitted for database correction using local DIF procedures.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 150px; padding: 0in 7px; text-align: right;" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Top"><span style="line-height:normal">Go to Top</span></a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong><span style="line-height:normal"><span style="break-after:avoid"><a id="Topic_3:_Handling" name="Topic_3:_Handling"></a><span style="color:#1f3763">Topic 3: Handling Proceeds Under eMPWR</span></span></span></strong></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 150px; padding: 0in 7px;" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>Introduction</b></span></span></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal">This section discusses the procedures for handling proceeds on a beneficiary’s account.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Change Date</strong></span></span></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">June 24, 2025</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 150px; padding: 0in 7px;" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>II.6.A.3</b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>General</b></span></span></span></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">See <a class="eGainArticleLink" articleid="554400000291771" articlename="M22-4, Part II, Chapter 1, Section C - Payment  Errors and History" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000291771?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 1.C</a> for details on handling proceeds.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 150px; padding: 0in 7px; text-align: right;" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Top"><span style="line-height:normal">Go to Top</span></a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<h3 style="margin-top: 3px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-weight: normal"><span style="color: #1f3763"><span style="line-height: normal"><span style="break-after: avoid"><a id="_Topic_4:_Payment" name="_Topic_4:_Payment"></a><b>Topic 4: Payment Action Report</b></span></span></span></span></span></span></h3>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b>Introduction</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">This section discusses the Payment Action Report.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b>Change Date</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">June 24, 2025</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b>II.6.A.4</b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"><b>General</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">Once a business transaction (BT) displays on the <strong>Payment Action Report</strong>, the Production Operations (ProdOps) team from Accenture Federal Services (AFS) will work directly with the local Support Services Division (SSD) to have payments manually issued through eMPWR and to make any corrections necessary to continue normal processing. For awareness purposes, the <strong>Payment Action Report</strong> will be created daily for transmission to VA Central Office (VACO) and RPO staff for review.  No active local review process is necessary.</span></span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">If a Veterans Claims Examiner (VCE) finds a beneficiary with failed BTs during normal processing, see <a href="#_Topic_1:_Handling">Topic 1: Handling Authorization Errors in eMPWR</a> for procedures.</span></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"> </span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: 15px"><span style="line-height: 17px">The report includes all BTs which failed due to system/record issues. This report includes:</span> </span></span></span></p>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">•   Masked SSN</span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">•   Claimant ID (same/future term for Product Key)</span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">•   Work Product Key</span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">•   Date Authorized (if so)</span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">•   # of Errors</span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">•   Reason of Error</span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">•   Total Errors</span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">•   Total Claims</span></span></div>
+
+			<div></div>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p align="right" style="text-align: right"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Top">Go to Top</a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:666px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<h3 style="margin-top:3px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-weight:normal"><span style="color:#1f3763"><span style="line-height:normal"><span style="break-after:avoid"><a id="_Topic_4:_Payment" name="_Topic_4:_Payment"></a><b>Topic 5: Debt Transfers</b></span></span></span></span></span></span></h3>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:666px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p style="margin-left:24px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b> </b></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p style="margin-left:24px"></p>
+			</td>
+			<td style="width:516px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<div align="center" style="text-align:center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>Introduction</b></span></span></span></p>
+			</td>
+			<td style="width:516px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal">This section contains information on debt transfers between different benefit chapters.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:516px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<div align="center" style="text-align:center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>Change Date</b></span></span></span></p>
+			</td>
+			<td style="width:516px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal">July 31, 2025</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:516px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<div align="center" style="text-align:center">
+			<p></p>
+
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>II.6.A.5</b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>Debt Transfers</b></span></span></span></p>
+			</td>
+			<td style="width:516px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">Before the conversion to eMPWR, receivable balances associated with a Chapter 30, 1606, or 1607 master record could be transferred to a Chapter 33 master record for collection via processing of a BT 04E 90C, 96C, and 97C deduction in BDN. Prior to Release 8, 61C and 63C deductions were required to offset receivables established for benefit chapters other than the currently active chapter. As of eMPWR Release 19, a C-type deduction is no longer required to offset receivables established for benefit chapters other than the currently active chapter.</span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">In eMPWR, all chapter 33 participant payables with the exception of BT 06I Housing/Kick are considered ‘Retro.’ All non-chapter 33 payables with the exception of BT 35, 35CO, 35FCO, and 35SRT are considered retro.</span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">Chapter 33 participant BT 06I Housing/Kicker awards can be considered either ‘Retro’ or ‘Recurring’. For chapter 33 purposes, retro is defined as any 06I where the payable period is for a prior month. Recurring is defined as any 06I where the payable is for the current month. DGI processes distinct 06Is that separate award periods so that no 06I contains an award period that is both Retro and Recurring. If a payable 06I is received by eMPWR in the last two business days of the month, regardless of the payable effective date, the award will be considered retroactive and will be processed on the first working day of the following month.</span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">Non-chapter 33 BTs 35, 35CO, 35FCO, and 35SRT can be considered either 'Retro' or 'Recurring'. For non-chapter 33 purposes, retro is defined as any of the previously mentioned BTs, where the payable period is earlier than the immediately preceding month. Recurring is defined as any of the previously mentioned BTs, where the payable period is for the immediately preceding month or current month. Benefits Manager processes distinct BTs that separate award periods so that no BT contains an award period that is both Retro and Recurring. If a payable BT is received by eMPWR in the last two business days of the month, and the award is for the immediately preceding month, the award will be considered retroactive and will be processed on the first working day of the following month.</span></span></span></p>
+
+			<p><font face="Arial, Helvetica, sans-serif"><span style="font-size: 16px;">eMPWR employs a Participant Systematic Review (PSR) to automatically determine if there are existing proceeds, receivables, or offsets which can be applied to a payable resulting from a BT. Listed below are general rules which the PSR follows:</span></font></p>
+
+			<p style="margin-left: 40px;"><font face="Arial, Helvetica, sans-serif"><span style="font-size: 16px;">1. Recurring payments are protected from offset against collectible receivables, even if the receivable has congruent dates</span></font></p>
+
+			<p style="margin-left: 40px;"><font face="Arial, Helvetica, sans-serif"><span style="font-size: 16px;">2. Retro payments will be offset by collectible receivables</span></font></p>
+
+			<p style="margin-left: 40px;"><font face="Arial, Helvetica, sans-serif"><span style="font-size: 16px;">3. Retro payments will be offset by receivables that are in a "Due Process" collection status when the dates of the receivable are congruent with the dates of the award</span></font></p>
+
+			<p style="margin-left: 40px;"><font face="Arial, Helvetica, sans-serif"><span style="font-size: 16px;">4. When a receivable has an active Benefit Repayment plan attached to it, the receivable is protected from any retro payment offset, so long as the receivable and award do not have congruent dates</span></font></p>
+
+			<p style="margin-left: 40px;"><font face="Arial, Helvetica, sans-serif"><span style="font-size: 16px;">5. When a receivable has an active Benefit Repayment plan attached to it, only Recurring payment will have deductions made</span></font></p>
+
+			<p style="margin-left: 40px;"><font face="Arial, Helvetica, sans-serif"><span style="font-size: 16px;">6. PSR is driven by the RECIP_ID of the receivable and award, so when an award and receivable have different file numbers (i.e. chapter 35 award and chapter 33 Self receivable), but the RECIP_ID is the same, offset between programs will occur</span></font></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">The table below provides processing examples and outcomes:</span></span></span></p>
+
+			<table align="center" class="Table" style="border-collapse:collapse;">
+				<tbody>
+					<tr>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; border-top:2px double gray; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%"><b>If the example involves …</b></span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; border-top:2px double gray; border-right:2px double gray; border-left:none" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%"><b>Outcomes include …</b></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.2in; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%"><u>Example 1</u><b>:</b> Paul Smith received chapter 30 benefits for the period of 1/15/25 – 3/31/25. On 4/2/2025, it is discovered that a processing error occurred, and the claimant elected chapter 33 benefits effective 1/1/25. Today is 4/2/2025.</span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.2in; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%">Chapter 33 06I and 06O transactions will automatically apply against the chapter 30 receivable. Although the chapter 30 receivable is in due process, the chapter 33 payments are both retroactive and the dates of the receivable and awards are congruent, resulting in offset.</span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="1" style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.2in; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%"><u>Example 2</u>: Carrie Smith received chapter 35 benefits for the period of 1/16/25 – 2/28/25. On 3/1/2025, it is discovered that a processing error occurred, and the claimant elected chapter 33 benefits effective 1/1/2025. Today is 3/1/2025.</span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.2in; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%">Chapter 33 06I and 06O transactions will automatically apply against the chapter 35 receivable. Although the chapter 35 receivable is in due process, the chapter 33 payments are both retroactive and the dates of the receivable and awards are congruent, resulting in offset.</span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="1" style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.2in; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%"><u>Example 3</u>: Peter Smith received chapter 1606 benefits for the period of 1/16/25 – 3/15/25. On 3/17/2025, it is discovered that a processing error occurred, and the claimant elected chapter 33 benefits effective 1/1/25. Today is 3/17/25.</span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.2in; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%">Chapter 33 06O and the 06I with the award period 1/16/25 – 2/28/25 will offset the chapter 1606 receivable automatically. When the 06I with the award period 3/1/25 – 3/15/25 matures on 3/27/25, it will be considered recurring and therefore protected from offsetting the 1606 receivable, if it still exists at that time.</span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.100px; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%"><u>Example 4</u>: Robert Smith received chapter 33 benefits for the period of 1/16/25 – 3/31/25. On 4/10/2025, it is discovered that a processing error occurred, and the claimant requested chapter 30 benefits effective 1/1/25. Today is 4/10/25.</span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.100px; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%">Chapter 30 transaction with the award period 1/16/25 – 2/28/25 is considered retro and will automatically offset the chapter 33 receivable. The chapter 30 transaction with the award period 3/1/25 – 3/31/25 is recurring and therefore protected from offsetting the chapter 33 receivable.</span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.100px; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%"><u>Example 5</u>: Kathleen Smith received 1606 benefits in 2018 and has an outstanding receivable balance in the amount of $60.00, which was converted to eMPWR in July 2025. The collection offset is set to 'Collectible'. Kathleen has re-enrolled in school and is set to receive chapter 33 benefits for the period 8/15/25 – 12/15/25. The award is processed on 8/20/25.</span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.100px; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%">Chapter 33 06O transaction is considered retro and will automatically offset the chapter 1606 receivable. If the chapter 1606 receivable has a remaining balance after application of the 06O offset, it would not be further reduced by any 06I transaction which meets the definition of recurring.</span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="1" style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.100px; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%"><u>Example 6</u>: Steven Smith received chapter 31 benefits for the period of 8/15/24 – 12/15/24. On 2/5/25, it is determined that this period should have been paid under chapter 33. Today is 2/5/25.</span></span></span></p>
+
+						<p style="margin-bottom:11px"></p>
+						</td>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.100px; border-top:none; border-right:2px double gray; border-left:none" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%">Chapter 33 06I and 06O transactions will automatically apply against the chapter 31 receivable. Although the chapter 31 receivable is in due process, the chapter 33 payments are both retroactive and the dates of the receivable and awards are congruent, resulting in offset.</span></span></span></td>
+					</tr>
+					<tr>
+						<td rowspan="1" style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.100px; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%"><u>Example 7</u>: Patrick Smith received chapter 35 benefits for the period of 5/5/25 – 5/31/25. On 6/25/25, it is determined that this period should have been paid under chapter 33. Today is 6/25/25.</span></span></span></p>
+
+						<p style="margin-bottom:11px"></p>
+						</td>
+						<td style="border-bottom:2px double gray; width:254px; padding:0in 7px 0in 7px; height:.100px; border-top:none; border-right:2px double gray; border-left:none" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%">Chapter 33 06O and 06I will offset the chapter 35 receivable automatically. Although the chapter 35 receivable is in due process, the chapter 33 payments are both retroactive and the dates of the receivable and awards are congruent, resulting in offset. If the chapter 35 receivable has a remaining balance after application of the 06O and 06I offsets, it would not be further reduced by any 06I transaction which meets the definition of recurring.</span></span></span></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p style="text-align: center;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><i><span style="line-height:107%">Table 7.1: Examples of debt offsets</span></i></span></span></p>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:516px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p align="right" style="text-align:right"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Top">Go to Top</a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong><span style="line-height:normal"><span style="break-after:avoid"><a id="Topic_2:_Fry" name="Topic_2:_Fry"></a><span style="color:#1f3763">Topic 6: Requesting Manual Payment Processing</span></span></span></strong></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>Introduction</b></span></span></span></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">This section discusses submitting a request for manual payment processing to the Support Services Division (SSD).</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>Change Date</b></span></span></span></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal">June 24, 2025</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>II.6.A.6.a</b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>Manual Payments</b></span></span></span></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Business Transaction (BT)</strong>.  </span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">If the Veterans Claims Examiner (VCE) finds that business transactions (BTs) need out of system action,</span></span></p>
+
+			<p style="margin-bottom: 16px; margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(1)   Complete the attached Fiscal Action PDF and follow local procedures to send form to SSD Finance for manual transactions to be completed. </span></span></p>
+
+			<p style="margin-bottom: 16px; margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(a)   Include screen captures of Payment Instructions screen, audit, or other evidence, as appropriate. </span></span></p>
+
+			<p style="margin-bottom: 16px; margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(b)   If the BT is from a TOE or Fry Scholarship claim, include the file number of the source veteran in the “TOE Claim” or “FRY Scholarship Claim” field, as appropriate.</span></span></p>
+
+			<p style="margin-bottom: 16px; margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(2)   If the manual payments are required for specialized processing, such as incarcerated claimant claims or retroactive inductions, the work product must be authorized before being sent to SSD.</span></span></p>
+
+			<p style="margin-bottom: 16px; margin-left: 40px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">(3)   If the payment is to resolve a failed payment from a previous work product, SSD must release the payment and EDU will follow local procedures to submit a Defect in Functionality (DIF) ticket to AFS ProdOps to adjust the payment status in the database.  No new work product can be created until both actions have been completed.</span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>Work Study</b></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">If Chapter 33 eligibility was established in DGI before June 26, 2024, and no subsequent work product was authorized, a new DGI work product needs to be created and authorized before requests for manual payment can be sent to SSD.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:150px; padding:0in 7px; text-align:right" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Top"><span style="line-height:normal">Go to Top</span></a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:150px; padding-bottom:0in; padding-top:0in; padding-left:7px; padding-right:7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>II.6.A.6.b</b></span></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>Manual Payments Without a Corporate Record</b></span></span></span></p>
+			</td>
+			<td style="width:150px; padding:0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">If no eMPWR conversion work product exists AND no work product authorized on or after July 8, 2024, exists, then no manual financial action can be taken by either SSD or the Debt Management Center (DMC) on the beneficiary’s Chapter 33 record.  This situation most commonly can occur in the processing of Work Study claims and DMC actions to collect a debt.</span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">The Regional Processing Offices (RPOs) need to assign Points of Contact (POCs) for SSD and DMC to contact when no Education record exists in CorpDB and must be created to process a fiscal action.  Upon receiving that contact, the POC needs to create and authorized a work product in DGI to create the corporate record.  Once the work product is authorized, the POC will respond to SSD or DMC as appropriate to allow them to continue their work.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 150px; padding: 0in 7px; text-align: right;" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Top"><span style="line-height:normal">Go to Top</span></a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding: 0in 7px; text-align: right;" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 150px; padding: 0in 7px; text-align: right;" valign="top">
+			<p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><a class="eGainArticleLink" articleid="554400000263365" articlename="M22-4, Part II, Chapter 6, Section B - Conversion from BDN to eMPWR" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263365?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Next Section</a></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p></p>
+
+<p></p>
+
+<p style="margin-bottom: 11px; margin-left: 48px; text-indent: 0px; -webkit-text-stroke-width: 0px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="white-space: normal"><span style="word-spacing: 0px"><span style="text-transform: none"><span style="font-weight: 400"><span style="color: #000000"><span style="font-style: normal"><span style="orphans: 2"><span style="widows: 2"><span style="letter-spacing: normal"><span style="line-height: 15px"><span style="font-variant-ligatures: normal"><span style="font-variant-caps: normal"><span style="text-decoration-thickness: initial"><span style="text-decoration-style: initial"><span style="text-decoration-color: initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+</body>
+</html>

@@ -1,0 +1,86 @@
+{
+  "article_id": "554400000073726",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000073726",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 11 – Chapter 1607",
+    "09 – Out-of-System Award Processing [DRAFT]"
+  ],
+  "topic_id": "554400000016252",
+  "manual_name": "M22-4",
+  "title": "Part XI: Chapter 9-Out-of-System Award Processing",
+  "description": "Interim Procedures of IHL, NCD Training, Apprenticeship/OJT Correspondence, Flight Awards",
+  "keywords": "1607, NCD, IHL OJT, Apprenticeship, guard, reserve",
+  "last_modified": "2020-08-05T13:42:22.000Z",
+  "created": "2017-11-20T17:29:47Z",
+  "version": "16",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": false,
+  "heading_outline": [
+    {
+      "level": 4,
+      "text": "Entered by"
+    },
+    {
+      "level": 4,
+      "text": "Approved by"
+    },
+    {
+      "level": 4,
+      "text": "Stub Name"
+    },
+    {
+      "level": 4,
+      "text": "Component"
+    },
+    {
+      "level": 4,
+      "text": "Service"
+    },
+    {
+      "level": 4,
+      "text": "Facility Code"
+    },
+    {
+      "level": 4,
+      "text": "CH 1607 Percentage"
+    },
+    {
+      "level": 4,
+      "text": "Begin Date"
+    },
+    {
+      "level": 4,
+      "text": "No Pay Date"
+    },
+    {
+      "level": 4,
+      "text": "Type Trng"
+    },
+    {
+      "level": 4,
+      "text": "Trng Time"
+    },
+    {
+      "level": 4,
+      "text": "ORIG MONTHS"
+    },
+    {
+      "level": 4,
+      "text": "CH 1607 06A DATE"
+    },
+    {
+      "level": 4,
+      "text": "CH 1606 DEBT 08E DATE"
+    }
+  ],
+  "heading_count": 14,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

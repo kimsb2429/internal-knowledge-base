@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M22-4, Part II, Chapter 2, Section B – Legacy Chapter 33 Payment Processing</title>
+  <meta name="source-system" content="KnowVA (knowva.ebenefits.va.gov)">
+  <meta name="source-type" content="va_manual">
+  <meta name="manual-name" content="M22-4">
+  <meta name="article-id" content="554400000263336">
+  <meta name="alternate-id" content="None">
+  <meta name="last-modified" content="2025-08-27T18:09:51.000Z">
+  <meta name="created" content="2024-02-29T18:47:56Z">
+  <meta name="keywords" content="BDN legacy payment processing eMPWR">
+  <meta name="topic-breadcrumb" content="M22-4 &gt; Part 02 – Computer Processing &gt; 02 - The 33 Processing System (DGI)">
+  <meta name="content-category" content="">
+  <meta name="target-audience" content="">
+</head>
+<body>
+<nav class="topic-breadcrumb" aria-label="Topic hierarchy"><span class="bc-item">M22-4</span> / <span class="bc-item">Part 02 – Computer Processing</span> / <span class="bc-item">02 - The 33 Processing System (DGI)</span></nav>
+<h1>M22-4, Part II, Chapter 2, Section B – Legacy Chapter 33 Payment Processing</h1>
+<p style="margin-bottom: 11px; margin-left: 48px; text-indent: 0px; -webkit-text-stroke-width: 0px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="white-space: normal"><span style="word-spacing: 0px"><span style="text-transform: none"><span style="font-weight: 400"><span style="color: #000000"><span style="font-style: normal"><span style="orphans: 2"><span style="widows: 2"><span style="letter-spacing: normal"><span style="line-height: 15px"><span style="font-variant-ligatures: normal"><span style="font-variant-caps: normal"><span style="text-decoration-thickness: initial"><span style="text-decoration-style: initial"><span style="text-decoration-color: initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<table class="MsoTableGrid" style="border-top: medium none; font-family: "Times New Roman"; border-right: medium none; width: 666px; word-spacing: 0px; border-collapse: collapse; border-bottom: medium none; text-transform: none; margin-left: 6px; border-left: medium none; orphans: 2; widows: 2; letter-spacing: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial" width="666">
+	<tbody>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><a id="Top" name="Top"><b>Overview</b></a></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">This section discusses chapter 33 payment processing under BDN through June 28, 2024.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>In This Section</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">This section contains the following topics:</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<table class="MsoTableGrid" style="border-top: medium none; border-right: medium none; border-collapse: collapse; border-bottom: medium none; border-left: medium none">
+				<tbody>
+					<tr>
+						<td style="border-top: black 1px solid; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Topic</b></span></span></span></p>
+						</td>
+						<td style="border-top: black 1px solid; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Topic Name</b></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">1      </span></span></span></p>
+						</td>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><a href="#Topic 1">Topic 1: Chapter 33 Payments</a></span></span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-top: 3px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><span style="break-after: avoid"><b><a id="Topic 1" name="Topic 1"></a>Topic 1: Chapter 33 Payments</b></span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Introduction</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">This topic contains information on Chapter 33 payment processing through June 28, 2024.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Change Date</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">June 23, 2025</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.2.B.1.a</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>General</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">Prior to the transition from the Benefits Delivery Network (BDN) to the Enterprise Management of Payment Workload and Reporting (eMPWR) that occurred between June 28, 2024, and July 8, 2024, all Chapter 33 payment and receivable actions were transmitted through BDN to the Department of Treasury for payments and/or the Debt Management Center (DMC) for debt management.  With the conversion to eMPWR, the activities once performed by BDN have been integrated with eMPWR or rendered obsolete.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.2.B.1.b</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>BDN Master Record</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">Before the transition to eMPWR, a Chapter 33 master record was established in BDN in order to facilitate payments and debts for Chapter 33.  This master record was established using either the Claims Establishment (CEST) command or the Claims Adjudication (CADJ) command.  The master record contained the basic eligibility information for Chapter 33 beneficiaries, including the date last paid (DLP), if eligible, for the beneficiary, and the relevant payment address to which payments were sent, whether it was direct deposit or a physical address for paper checks.  The DLP indicated the day after the actual last day of the last payable period.</span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">From the master record, processors can review the Chapter 33 transaction and payment history for the beneficiary for actions taken before June 28, 2024.</span></span></p>
+
+			<p><strong><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">For claims processed authorized after July 8, 2024, no CEST or CADJ actions are needed or possible.</span></span></span> </strong></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">With the conversion to eMPWR, Veterans Claims Examiners (VCEs) will still be able to review existing Chapter 33 master records in BDN using the master record Inquiry (MINQ) command.  Review of the BDN master record may still be required to perform audit and review actions of claims that were authorized on or before June 28, 2024.</span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><i>Reference:</i> See <a class="eGainArticleLink" articleid="554400000076905" articlename="9. Chapter 33 BDN Screens and FOES Review" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076905?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-4, Part XII, 9.01 - 9.07</a> for details on the Chapter 33 Master Record screen (M21) and the transaction and payment history screens (M22, M23, M24, and M01).</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.2.B.1.c</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>DGI to BDN Actions</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">The integration of BDN and DGI resulted in several actions which potentially impacted the file in BDN. </span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">The most basic of these actions was the authorize functionality located on the DGI Work Product Summary (WPS) screen which allowed VCEs to submit a work product and potentially take the additional actions discussed in the following section. </span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">Other actions included:</span></span></span></p>
+
+			<p></p>
+
+			<ul style="margin-bottom: 0in; margin-top: 0in" type="disc">
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">refreshing the Chapter 33 master record on the WPS screen,</span></span></li>
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">retrying failed payments on the Payment Instructions (PI) screen, and</span></span></li>
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">manually entering failed payments on the PI screen.</span></span></li>
+			</ul>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">In the case of the failed payments actions, no additional work products could be created for the beneficiary until the failed payments were resolved.</span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">Payments sent via DGI to BDN were scheduled and submitted every night after close of business as part of routine behind the scenes processing.</span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><i>References: </i>For more information see</span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">·Topic 14: Work Product Summary Screen for information on the WPS screen of <a class="eGainArticleLink" articleid="554400000263561" articlename="M22-4, Part II, Chapter 2, Section D, Topics 11-15:  Chapter 33 Processing Screens in DGI" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263561?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-4, Part II, 2.D.14 </a></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">·Topic 15: Payment Instructions Screen for information on the PI screen of <a class="eGainArticleLink" articleid="554400000263561" articlename="M22-4, Part II, Chapter 2, Section D, Topics 11-15:  Chapter 33 Processing Screens in DGI" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263561?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-4, Part II, 2.D.15</a></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.2.B.1.d</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>DGI-BDN Validations</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">The Chapter 33 master record in BDN was integrated with the beneficiary’s file in DGI which allowed numerous validations to occur between the systems upon the attempted authorization of a work product in DGI. </span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">If the validation checks were successful, then the authorization was allowed to complete. </span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">If one of the validation checks failed, then a red error banner was returned on the DGI WPS screen, and the authorization did not process.  In order to authorize the work product, the VCE needed to resolve the error and authorize again.  Each of the following validations have been discontinued, being no longer relevant once DGI integrates with eMPWR: </span></span></span></p>
+
+			<p></p>
+
+			<ul style="margin-bottom: 0in; margin-top: 0in" type="disc">
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">a suspended Chapter 33 master record,</span></span></li>
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">a mismatched stub name between the master record and DGI,</span></span></li>
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">a mismatched DLP between the master record and DGI,</span></span></li>
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">a master record not found in BDN,</span></span></li>
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">a mismatched housing payment between BDN and DGI,</span></span></li>
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">proceeds existing on the master record,</span></span></li>
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">an only debts master record in BDN,</span></span></li>
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">an invalid master record status type, and,</span></span></li>
+				<li style="font-size: 11pt; font-family: Arial, sans-serif; line-height: normal"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">a duplicate, invalid, or masked Social Security Number (SSN) or File Number.</span></span></li>
+			</ul>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">With the conversion to eMPWR, no new master records are needed for Chapter 33 claims.  Existing master records cannot be updated.</span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><i>References: </i>For more information see</span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">·Topic 14: Work Product Summary Screen for information on the WPS screen of <a class="eGainArticleLink" articleid="554400000263561" articlename="M22-4, Part II, Chapter 2, Section D, Topics 11-15:  Chapter 33 Processing Screens in DGI" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263561?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-4, Part II, 2.D.14</a></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">·Topic 15: Payment Instructions Screen for information on the PI screen of <a class="eGainArticleLink" articleid="554400000263561" articlename="M22-4, Part II, Chapter 2, Section D, Topics 11-15:  Chapter 33 Processing Screens in DGI" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263561?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-4, Part II, 2.D.15</a></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.2.B.1.e</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>STEM and VET TEC actions</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">While the Edith Nourse Rogers Science, Technology, Engineering, and Mathematics (STEM) Scholarship and the Veteran Employment Through Technology Education Courses (VET TEC) programs have never involved BTs being submitted via BDN, processing actions for both depended on the existence of a master record in BDN to be successful in a similar manner to the integrations described for Chapter 33.</span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">With the conversion to eMPWR, the dependency on master records in BDN has been removed.  No new master records are created for STEM or VET TEC beneficiaries.</span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><i>References: </i>See <a class="eGainArticleLink" articleid="554400000154368" articlename="(H) 2020 04 August: Procedural Advisory: STEM Scholarship Processing in LTS – Buffalo STEM Team" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000154368?portalId=554400000001018&usertype=customer&\$lang=en-us&">(H) 2020 04 August: Procedural Advisory: STEM Scholarship Processing in LTS – Buffalo STEM Team</a> for details on STEM processing.  See <a class="eGainArticleLink" articleid="554400000198778" articlename="VET TEC Claims Processing Guides" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000198778?portalId=554400000001018&usertype=customer&\$lang=en-us&">VET TEC Claims Processing Guides</a> for details on VET TEC Payment Instructions.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.2.B.1.f</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Controlling Work in BDN</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">BDN was an integral part of controlling and managing Chapter 33 processing work.  Pending End Products (EPs) were used in managing and tracking pending work.  Cleared EPs were used to track completed work and to calculate individual and RPO productivity.  Diaries (EPs with future dates) were used to track and manage future processing work.</span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">For the Chapter 33 claims the DGI system attempted to automate, BDN created EPs for beneficiaries whose work products offramped and did not successfully automate.</span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">With the conversion to eMPWR, most of this functionality was turned off in BDN to prevent erroneous release of payments.</span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">For information on interim and future work credit systems, see <a class="eGainArticleLink" articleid="554400000263367" articlename="M22-4, Part II, Chapter 6, Section D - Controlling Work After eMPWR Transition" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263367?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-4, Part II, 6</a>.</span></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><i>References: </i>See <a class="eGainArticleLink" articleid="554400000060851" articlename="CHAPTER 5. QUANTITATIVE MEASUREMENT" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000060851?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-3, Chapter 5. QUANTITATIVE MEASUREMENT</a> for additional details on EPs.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p align="right" style="text-align: right"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><a href="#Top">Go to Top</a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p style="text-align: right"><span style="font-family:Trebuchet MS,Helvetica,sans-serif;"><span style="font-size:16px;"> </span></span><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><a class="eGainArticleLink" articleid="554400000263346" articlename="M22-4, Part II, Chapter 2, Section C – Chapter 33 Payment Transmission to eMPWR" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263346?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Next Section</a></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="margin-bottom: 11px; margin-left: 48px; text-indent: 0px; -webkit-text-stroke-width: 0px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="white-space: normal"><span style="word-spacing: 0px"><span style="text-transform: none"><span style="font-weight: 400"><span style="color: #000000"><span style="font-style: normal"><span style="orphans: 2"><span style="widows: 2"><span style="letter-spacing: normal"><span style="line-height: 15px"><span style="font-variant-ligatures: normal"><span style="font-variant-caps: normal"><span style="text-decoration-thickness: initial"><span style="text-decoration-style: initial"><span style="text-decoration-color: initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M22-4, Part II, Chapter 6, Section B - Conversion from BDN to eMPWR</title>
+  <meta name="source-system" content="KnowVA (knowva.ebenefits.va.gov)">
+  <meta name="source-type" content="va_manual">
+  <meta name="manual-name" content="M22-4">
+  <meta name="article-id" content="554400000263365">
+  <meta name="alternate-id" content="None">
+  <meta name="last-modified" content="2025-08-27T18:22:32.000Z">
+  <meta name="created" content="2024-02-29T19:53:10Z">
+  <meta name="keywords" content="Digital GI Bill (DGIB) eMPWR managed service enterprise management of payment workload and reporting">
+  <meta name="topic-breadcrumb" content="M22-4 &gt; Part 02 – Computer Processing &gt; 06 - eMPWR">
+  <meta name="content-category" content="">
+  <meta name="target-audience" content="">
+</head>
+<body>
+<nav class="topic-breadcrumb" aria-label="Topic hierarchy"><span class="bc-item">M22-4</span> / <span class="bc-item">Part 02 – Computer Processing</span> / <span class="bc-item">06 - eMPWR</span></nav>
+<h1>M22-4, Part II, Chapter 6, Section B - Conversion from BDN to eMPWR</h1>
+<p style="margin-bottom: 11px; margin-left: 48px; text-indent: 0px; -webkit-text-stroke-width: 0px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="white-space: normal"><span style="word-spacing: 0px"><span style="text-transform: none"><span style="font-weight: 400"><span style="color: #000000"><span style="font-style: normal"><span style="orphans: 2"><span style="widows: 2"><span style="letter-spacing: normal"><span style="line-height: 15px"><span style="font-variant-ligatures: normal"><span style="font-variant-caps: normal"><span style="text-decoration-thickness: initial"><span style="text-decoration-style: initial"><span style="text-decoration-color: initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<table class="MsoTableGrid" style="border-top: medium none; font-family: "Times New Roman"; border-right: medium none; width: 666px; word-spacing: 0px; border-collapse: collapse; border-bottom: medium none; text-transform: none; margin-left: 6px; border-left: medium none; orphans: 2; widows: 2; letter-spacing: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial" width="666">
+	<tbody>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top"></td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><a id="Top" name="Top"></a><a name="_Chapter_08:_Conversion"></a><b>Overview</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">This section discusses the conversion activities surrounding the transition from BDN to the Enterprise Management of Payment Workload and Reporting (eMPWR).</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>In This Section</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">This section contains the following topics:</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<table class="MsoTableGrid" style="border-top: medium none; border-right: medium none; border-collapse: collapse; border-bottom: medium none; border-left: medium none">
+				<tbody>
+					<tr>
+						<td style="border-top: black 1px solid; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p style="text-align: center;"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Topic</b></span></span></span></p>
+						</td>
+						<td style="border-top: black 1px solid; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Topic Name</b></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">1      </span></span></span></p>
+						</td>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p class="MsoNoSpacing"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><a href="#_Topic_1:_Preparation">Topic 1: Preparation</a></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">2      </span></span></span></p>
+						</td>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p class="MsoNoSpacing"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><a href="#_Topic_2:_Conversion">Topic 2: Conversion Plan</a></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">3      </span></span></span></p>
+						</td>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p class="MsoNoSpacing"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><a href="#_Topic_3:_Conversion">Topic 3: Conversion Reports</a></span></span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<h3 style="margin-top: 3px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="font-weight: normal"><span style="color: #1f3763"><span style="line-height: normal"><span style="break-after: avoid"><a name="_Topic_1:_Preparation"></a><b>Topic 1: Preparation</b></span></span></span></span></span></span></h3>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Introduction</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">This section discusses the preparation for the conversion from BDN to eMPWR for Chapter 33 processing</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Change Date</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">June 24, 2025</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.6.B.1</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>General</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: 15px"><span style="line-height: 17px">To ensure that as many beneficiary records as possible are successfully transitioned to eMPWR, several data clean-up projects were completed by VA Central Office (VACO) and RPO staff in the months leading up July 8, 2024.  This section is for information only.  No Veteran Claims Examiner (VCE) action is needed.</span></span></span></span></p>
+
+			<p></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">a.   <b>Fry Veteran SSNs </b>will need to be housed within the DGI system. Without the information being present within the record, DGI BTs sent to eMPWR would fail for all Fry recipients. To avoid this, VA has:</span></span></span></p>
+
+			<p style="margin-left: 96px; text-indent: -0.25in"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">(1)  Requested an update to DGI’s Claimant Biography (BIO) screen to include a <b>Veteran’s SSN</b> field. This field is required for all Fry claims processed after July 8, 2024.  (See Topic 9: Work Product Creation Screen (Fry) of </span><a class="eGainArticleLink" articleid="554400000303797" articlename="M22-4, Part II, Chapter 2, Section D, Topics 06-10: Chapter 33 Processing Screens in DGI" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000303797?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 2.D.6-10</a><span style="line-height: normal"> for further details).</span></span></span></p>
+
+			<p style="margin-left: 96px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">(2)  A Fry Veteran SSN retrieval project was conducted by the Digital GI Bill (DGIB) Payment Team, in conjunction with the DGIB Procedures team so that existing Fry beneficiaries have the Veteran SSN associated without VCE intervention.  See <a href="#_Topic_2:_Conversion" style="text-decoration: underline; color: #0563c1">Topic 2: Conversion Plan</a> for instructions on resolving any errors.</span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">b.   <b>Remaining 06H (recurring) BTs will cease</b> and be replaced by one-time 06I transactions. This will include any remaining NCD programs that have not completed by the date of release, as well as all On-The-Job (OJT) and Apprenticeship program recipients. This is being done for multiple reasons, to include:</span></span></span></p>
+
+			<p style="margin-left: 96px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">(1)  Align these benefits/beneficiary records with the majority of those receiving benefits under Chapter 33.</span></span></span></p>
+
+			<p style="margin-left: 96px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">(2)  eMPWR cannot handle recurring payments.</span></span></span></p>
+
+			<p style="margin-left: 48px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">No VCE or RPO action is needed for this effort.</span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">c.   <b>BDN suspended master record review and clearance </b>was conducted to ensure that all payable BTs were sent to BDN prior to the transition.  VACO and RPO staff have coordinated to resolve all suspended payments held in BDN.</span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">d.   <b>BDN receivable migration to eMPWR</b> was run by the Office of Financial Management (OFM) to support their Participant Systematic Review (PSR)/due process procedures.  No Education Service efforts were needed.</span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">e.  <b>Payment address migration to eMPWR</b> for Chapter 33 beneficiaries was completed by the Office of Integration and Technology (OIT) to ensure that the most updated payment address (either from BDN or the Corporate Database (CorpDB) was active as of the conversion to eMPWR.</span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">f.   <b>Pending work products in DGI</b> were minimized by the RPOs prior to the June 26, 2024 blackout period as pending work will need to be recreated after the conversion is complete.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p align="right" style="text-align: right"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><a href="#Top">Go to Top</a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<h3 style="margin-top: 3px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="font-weight: normal"><span style="color: #1f3763"><span style="line-height: normal"><span style="break-after: avoid"><a name="_Topic_2:_Conversion"></a><b>Topic 2: Conversion Plan</b></span></span></span></span></span></span></h3>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Introduction</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">This section discusses the conversion plan for the transition from BDN to eMPWR for Chapter 33 processing.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Change Date</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">July 1, 2024</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.6.B.2</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>General</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: 15px"><b><span style="line-height: 17px">eMPWR Conversion</span></b><span style="line-height: 17px"> work products, if successfully automated, did not make any adjustments/corrections to a beneficiary’s record, nor released any letters to the beneficiary. The conversion has no impact outside of the redirection from BDN to eMPWR.</span></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: 15px"><span style="line-height: 17px">The conversion will involve the following steps:</span></span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">a.   All users will be blocked from accessing DGI from the close of business of June 26, 2024, through approximately July 8, 2024.</span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">b.   An <b>eMPWR conversion</b> work product will run, attempting to redirect and authorize all records containing any paused or scheduled payments, or those in a hold status.</span></span></span></p>
+
+			<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">c.   The initiative resulted in one of two paths:</span></span></span></p>
+
+			<p style="margin-left: 96px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">(1)    <strong>S</strong><b>uccessfully Authorized Conversion</b></span></span></span></p>
+
+			<p style="margin-left: 80px; text-indent: -1.5in;"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">                                The batch conversion encountered no offramps causing  the </span></span></span><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">run to fail, resulting in the  conversion of payment rules  allowing for business transactions to be transmitted to eMPWR.</span></span></span><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">                                     </span></span></span></p>
+
+			<p style="margin-left: 96px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">(2)    <b>Offramped/Incomplete Conversions</b></span></span></span></p>
+
+			<p style="margin-left: 120px; text-indent: -1.5in;"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">                                (a)  If the conversion batch work product has failed to authorize through automation (caused by a system error OR stop automation flag on the file),</span></span></span></p>
+
+			<p style="margin-left: 120px; text-indent: -1.5in;"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">                                (b)  Work product is offramped for review by a special RPO Tiger Team,</span></span></span></p>
+
+			<p style="margin-left: 160px; text-indent: -0.25in;"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">i.    Reviews include identifying the reason for the offramp, taking any corrective action, and authorizing the conversion work product.</span></span></span></p>
+
+			<p style="margin-left: 160px; text-indent: -0.25in;"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">ii.    If the offramp was due to a <b>stop automation flag</b> on file, the VCE must confirm that the stop automation reason is still valid.</span></span></span></p>
+
+			<p style="margin-left: 160px; text-indent: -0.25in;"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">iii.    If the offramp was due to pending enrollments or amendments in the Enrollment Manager Inbox, the VCE must decline all pending enrollments or amendments before authorizing the conversion work product.  A second work product may need to be created to work these pending enrollments and amendments following normal procedures.</span></span></span></p>
+
+			<p style="margin-left: 160px; text-indent: -0.25in;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal">iv.  If the offramp was due to a system error, see </span><a class="eGainArticleLink" articleid="554400000263362" articlename="M22-4, Part II, Chapter 6, Section A - Handling Payment Issues and Errors in eMPWR" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263362?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 6.A </a><span style="line-height: normal"> for instructions.</span></span></span></p>
+
+			<p style="margin-left: 160px; text-indent: -0.25in;"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">v.   <u>The eMPWR conversion work product should NOT be deleted as this could cause erroneous payments to be sent to BDN during the review but must be authorized.</u></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p align="right" style="text-align: right"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><a href="#Top">Go to Top</a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<h3 style="margin-top: 3px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="font-weight: normal"><span style="color: #1f3763"><span style="line-height: normal"><span style="break-after: avoid"><a name="_Topic_3:_Conversion"></a><b>Topic 3: Conversion Reports</b></span></span></span></span></span></span></h3>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Introduction</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">This section discusses the reports associated with the conversion from BDN to eMPWR for Chapter 33 processing.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Change Date</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">February 15, 2024</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.6.B.3</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>General</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: 15px"><span style="line-height: 17px">To monitor the size of the conversion effort, including all successful and unsuccessful attempts to convert records, three reports are being run to capture the following paths:</span></span></span></span></p>
+
+			<ul>
+				<li>
+				<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="text-indent:-0.25in">Successfully Authorized</span></span></span></p>
+				</li>
+				<li>
+				<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="text-indent: -0.25in;">Unassigned/Offramped Claims</span></span></span></p>
+				</li>
+				<li>
+				<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Assigned/VCE In-Progress Claims</span></span></p>
+				</li>
+			</ul>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: 15px"><span style="line-height: 17px">The Unassigned/Offramped Claims and Assigned/VCE In-Progress Claims reports include the date of work product creation and days since work product was created to assist the RPOs in prioritizing any reviews to meet their timeliness goals.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p align="right" style="text-align: right"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><a href="#Top">Go to Top</a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p style="text-align: right"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a class="eGainArticleLink" articleid="554400000263366" articlename="M22-4, Part II, Chapter 6, Section C - Requesting Access to eMPWR" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263366?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Next Section</a></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="margin-bottom: 11px; margin-left: 48px; text-indent: 0px; -webkit-text-stroke-width: 0px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="white-space: normal"><span style="word-spacing: 0px"><span style="text-transform: none"><span style="font-weight: 400"><span style="color: #000000"><span style="font-style: normal"><span style="orphans: 2"><span style="widows: 2"><span style="letter-spacing: normal"><span style="line-height: 15px"><span style="font-variant-ligatures: normal"><span style="font-variant-caps: normal"><span style="text-decoration-thickness: initial"><span style="text-decoration-style: initial"><span style="text-decoration-color: initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "article_id": "554400000078677",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000078677",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 12 – Chapter 33",
+    "04 – Monetary Benefits"
+  ],
+  "topic_id": "554400000016257",
+  "manual_name": "M22-4",
+  "title": "Chapter 33 Sub-Chapter 4.3 Housing Allowance",
+  "description": "Individuals pursing a program of education at an Institution of Higher Learning (IHL) or a Non-College Degree (NCD) program at a non-degree granting school may be eligible to receive a Monthly Housing Allowance (MHA).",
+  "keywords": "BAH, housing, Chapter 33, pay rates",
+  "last_modified": "2018-03-27T16:48:22.000Z",
+  "created": "2018-01-31T14:48:27Z",
+  "version": "3",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": true,
+  "heading_outline": [
+    {
+      "level": 2,
+      "text": "Sub-Chapter 3. Housing Allowance"
+    },
+    {
+      "level": 3,
+      "text": "3.01 Housing Benefit for In-Residence Study at U.S. Schools"
+    },
+    {
+      "level": 3,
+      "text": "3.02 Housing Benefit for In-Residence Study at Foreign Schools"
+    },
+    {
+      "level": 3,
+      "text": "3.03 Housing Benefit for Distance Learners"
+    },
+    {
+      "level": 3,
+      "text": "3.04 Housing Benefit for Part-time Students"
+    },
+    {
+      "level": 3,
+      "text": "3.05 Housing Benefit for OJT/Apprenticeship"
+    },
+    {
+      "level": 3,
+      "text": "3.06 Housing Allowance in Lieu of the Chapter 31 Subsistence Allowance"
+    }
+  ],
+  "heading_count": 7,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M22-4, Part II, Chapter 1, Section C - Payment  Errors and History</title>
+  <meta name="source-system" content="KnowVA (knowva.ebenefits.va.gov)">
+  <meta name="source-type" content="va_manual">
+  <meta name="manual-name" content="M22-4">
+  <meta name="article-id" content="554400000291771">
+  <meta name="alternate-id" content="None">
+  <meta name="last-modified" content="2025-08-27T18:08:36.000Z">
+  <meta name="created" content="2025-01-22T18:02:39Z">
+  <meta name="keywords" content="DGI, BM, DGIB Managed Service">
+  <meta name="topic-breadcrumb" content="M22-4 &gt; Part 02 – Computer Processing &gt; 01 - DGIB Managed Service">
+  <meta name="content-category" content="">
+  <meta name="target-audience" content="">
+</head>
+<body>
+<nav class="topic-breadcrumb" aria-label="Topic hierarchy"><span class="bc-item">M22-4</span> / <span class="bc-item">Part 02 – Computer Processing</span> / <span class="bc-item">01 - DGIB Managed Service</span></nav>
+<h1>M22-4, Part II, Chapter 1, Section C - Payment  Errors and History</h1>
+<table class="MsoTableGrid" style="width:666px; margin-left:41px; border-collapse:collapse; border:none" width="666">
+	<tbody>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b><a id="Top" name="Top"></a>Overview</b></span></span></span></p>
+			</td>
+			<td style="width:516px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal">This section </span><span style="line-height:107%">covers viewing payment records and managing payment errors and other issues in the Enterprise Management of Payment Workload and Reporting (eMPWR) from claims processed in the DGIB Managed Service.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<div align="center" style="text-align:center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><b>In This Section</b></span></span></span></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal">This section contains the following topics:</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<table border="1" cellpadding="1" cellspacing="1" style="width:500px;">
+				<tbody>
+					<tr>
+						<td style="text-align: center;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Topic</strong></span></span></td>
+						<td style="text-align: center;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Topic Name</strong></span></span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">1</span></span></td>
+						<td><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Topic1">Topic 1: Reviewing BTs in eMPWR</a></span></span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">2</span></span></td>
+						<td><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Topic2">Topic 2: Reviewing BTs in BDN</a></span></span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">3</span></span></td>
+						<td><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Topic3">Topic 3: Handling authorization errors</a></span></span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;"><span style="font-size:16px;">4</span></td>
+						<td><span style="font-size:16px;"><a href="#Topic4">Topic 4: Handling proceeds under eMPWR</a></span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;"><span style="font-size:16px;">5</span></td>
+						<td><span style="font-size:16px;"><a href="#Topic5">Topic 5: Debt transfers</a></span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;"><span style="font-size:16px;">6</span></td>
+						<td><span style="font-size:16px;"><a href="#Topic6">Topic 6: Requesting Manual Payment Processing</a></span></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<div align="center" style="text-align:center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:666px; margin-left:41px; border-collapse:collapse; border:none" width="666">
+	<tbody>
+		<tr>
+			<td colspan="2" style="width:666px; padding:0in 7px 0in 7px" valign="top">
+			<h3><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong><span style="line-height:normal"><a id="Topic1" name="Topic1"></a>Topic 1: </span>Reviewing BTs in eMPWR</strong></span></span></h3>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:666px; margin-left:41px; border-collapse:collapse; border:none" width="666">
+	<tbody>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Introduction</strong></span></span></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">This section discusses viewing payment records in eMPWR for claims processed in <span style="letter-spacing:-.15pt">either </span>the Chapter 33 Processing System (DGI) or Benefits Manager (BM).</span></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Change date</strong></span></span></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal">January 22</span>, 2025</span></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>II.1.C.1.a</b></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>General</b></span></span></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<div>
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="letter-spacing:-.15pt">Users who review education benefit payments and receivables for claims processed in BM or </span>DGI (BTs transmitted on or after<span style="letter-spacing:-.15pt"> July 8, 2024) do so using the eMPWR user interface in SalesForce.  For details on logging on and accessing eMPWR in SalesForce, please review the <u>Logging into the Application</u> section of the </span><a href="https://empwr.va.gov/help/#/user-guide" style="color:#0563c1; text-decoration:underline"><span style="letter-spacing:-.15pt">eMPWR User Guide</span></a><span style="letter-spacing:-.15pt">.</span></span></span></p>
+
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Unless additional access is specifically needed for their position or role, individuals will be given access to the eMPWR system with an inquiry (read-only) role. Any fiscal transactions needed for the correction or completion of a record must be routed for review and processing by the Regional Processing Office’s (RPO) Support Services Division (SSD).</span></span></p>
+
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Users can search for a participant (beneficiary) by SSN or file number.</span></span></p>
+
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">After a successful participant search is conducted from the home screen, the participant record is displayed via the Participant Record screen with tabs including Transaction History, Participant Details, Notes, and eFolder.</span></span></p>
+			</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>II.1.C.1.b</b></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>Transaction history tab</b></span></span></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">When processing a claim, responding to questions received via the telephone, or written correspondence, Education employees require the ability to search the system to retrieve all transactions associated with the searched participant. The Transaction History tab contains the following information.</span></span></p>
+
+			<ol>
+				<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>All Transactions </b>– displays all transaction history records, not just those transactions sent from Education service.</span></span></li>
+				<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>Deductions </b>– displays active benefit repayment and offsets deduction records. The processor can change the default filter to display inactive deductions.</span></span></li>
+				<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>Payments </b>– displays all payments scheduled for release by treasury and the details of those payment records.</span></span></li>
+				<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>Receivables </b>– displays all active receivable records with a balance greater than zero. The processor can change the default filter to display inactive receivables.</span></span></li>
+			</ol>
+
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">After a successful participant search, the system redirects to the <b>Transaction history</b> tab on the <b>Participant record</b> page, displaying the <b>All transactions</b> default grid for accountable balances.</span></span></p>
+
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">From this view, the processor also can view the details of a transaction by clicking on the <u>Transaction Id</u>.  Details vary depending upon the transaction but can include the following.</span></span></p>
+
+			<ol>
+				<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Account details/Balance summary (Receivables, deductions, accountable balances)</span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Status of the transaction, including outstanding balances (if applicable)</span></span></li>
+				</ol>
+				</li>
+				<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Payment details (Payment transactions only)</span></span></li>
+				<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Notes (All transaction types)</span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Any notes entered during transaction processing.</span></span></li>
+				</ol>
+				</li>
+				<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Historical transactions against the account (Receivables, deductions, accountable balances)</span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Any transactions made against the account.</span></span></li>
+				</ol>
+				</li>
+				<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Associated documents (Accountable balances)</span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">If any documents were uploaded as part of establishing the account/transaction</span></span></li>
+				</ol>
+				</li>
+				<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Payment address (Payment transactions only)</span></span></li>
+				<li class="MsoNoSpacing" style="margin-left:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Details about payment address or EFT account.</span></span></li>
+			</ol>
+
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">The processor can select the gear icon to export the transaction details to Microsoft Excel CSV format.</span></span></p>
+
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:107%">Select the <b><span style="color:#363636">Close</span></b> button to exit the window and return to the <u>Transaction history</u> grid.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width: 517px; padding: 0in 7px; text-align: right;" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><a href="#Top">Go to top.</a></span></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width: 517px; padding: 0in 7px;" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:666px; margin-left:41px; border-collapse:collapse; border:none" width="666">
+	<tbody>
+		<tr>
+			<td colspan="2" style="width:666px; padding:0in 7px 0in 7px" valign="top">
+			<h3><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong><span style="line-height:normal"><a id="Topic2" name="Topic2"></a>Topic 2: </span>Reviewing BTs in BDN</strong></span></span></h3>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:666px; margin-left:41px; border-collapse:collapse; border:none" width="666">
+	<tbody>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Introduction</strong></span></span></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">This section discusses viewing payment records in the Benefits Delivery Network (BDN) for claims processed in <span style="letter-spacing: -0.2px;">DGI before July 8, 2024</span>.</span></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Change date</strong></span></span></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal">January 22</span>, 2025</span></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>II.1.C.2</b></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>General</b></span></span></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p class="MsoNoSpacing" style="padding:0px; text-align:start; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box">While Veterans Claims Examiners (VCEs) can no longer establish (CEST) or adjust (CADJ) Chapter 33 Master Records in BDN upon the transition to eMPWR, VCEs still can view the master record and transaction history from before the conversion in BDN.  To do so, users will follow the processes found in </span></span></span></span></span></span></span></span></span></span></span></span></span><a class="eGainArticleLink" articleid="554400000076905" articlename="9. Chapter 33 BDN Screens and FOES Review" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076905?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part XII, 9</a><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box">.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+			<p class="MsoNoSpacing" style="padding:0px; text-align:start; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><i style="box-sizing:border-box">Note</i>: All active account receivables were migrated to eMPWR as part of the conversion.  As such, no information displays on the M01 Accounts Receivable screen.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+			<p class="MsoNoSpacing" style="padding:0px; text-align:start; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><i style="box-sizing:border-box">Note</i>: No transactions submitted on or after July 8, 2024, will display in BDN.  VCEs must review eMPWR to view these transactions. This means that both eMPWR and BDN will need to be reviewed if a beneficiary has activity both before and after July 8, 2024.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width: 517px; padding: 0in 7px; text-align: right;" valign="top"><span style="font-size:16px;"><a href="#Top">Go to top.</a></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width: 517px; padding: 0in 7px;" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:666px; margin-left:41px; border-collapse:collapse; border:none" width="666">
+	<tbody>
+		<tr>
+			<td colspan="2" style="width:666px; padding:0in 7px 0in 7px" valign="top">
+			<h3><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="line-height:normal"><a id="Topic3" name="Topic3"></a>Topic 3: </span>Handling claim errors</strong></span></span></h3>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:666px; margin-left:41px; border-collapse:collapse; border:none" width="666">
+	<tbody>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr /></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;"><strong>Introduction</strong></span></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:11pt"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt">Various technical errors may occur during routine processing.  This section discusses known possible errors and provides instructions for resolving them.</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><strong><span style="font-size:16px;">Change date</span></strong></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif"><span style="line-height:normal">January 22</span></span>, 2025</span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>II.1.C.3.a</b></span></span></p>
+
+			<p><font face="Arial, Helvetica, sans-serif"><span style="font-size: 16px;"><b>Authorization failure</b></span></font></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p class="MsoNoSpacing"><span style="font-size:11pt"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt">If BM or DGI rules cannot generate the fields required for successful transmission of payments to eMPWR or invalid values are passed, the impacted claim will be unable to be authorized until the issue is rectified.</span></span></span></p>
+
+			<p class="MsoNoSpacing"><span style="font-size:11pt"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt">The user will be notified of the error by an authorization error banner.  </span><span style="font-size:12.0pt">For any error messages, the user takes the following steps.</span></span></span></p>
+
+			<ol style="margin-bottom:11px">
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Exit the claim.</span></span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Re-enter the claim and attempt to authorize the claim a second time.</span></span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If the error indicates a “BGS” or an address, phone, or email issue, take the following steps.</span></span></span></span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Review The Image Management System (TIMS) and BM to identify the most recent mailing address.</span></span></span></span></span></li>
+					<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Check the format of the most recent address against the United States Postal Service (USPS) </span></span><a href="https://tools.usps.com/zip-code-lookup.htm?byaddress" style="color:#0563c1; text-decoration:underline"><span style="font-size:12.0pt"><span style="line-height:107%">address validator</span></span></a><span style="font-size:12.0pt"><span style="line-height:107%">.  Enter the address into the validator and click “Find.”  </span></span></span></span></span></li>
+					<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Correct the address in BM to the exact address provided by USPS.</span></span></span></span></span></li>
+				</ol>
+				</li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If this fails, consult with a Senior VCE or Lead Senior VCE for review and an additional attempt to authorize the claim on their own.  Follow local procedures as appropriate.</span></span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If the claim continues to fail, follow local procedures to request review by the local data remediation point of contact (POC) who will follow their procedures to fix the problem or submit a Defect in Functionality (DIF) report for database correction, as appropriate.</span></span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Follow local procedures to suspend the token in TIMS until data remediation and/or DIF resolution.</span></span></span></span></span></li>
+				<li style="margin-bottom:11px; margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Upon communication that the remediation has been completed, the user can continue routine processing.</span></span></span></span></span></li>
+			</ol>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><b>II.1.C.3.b</b></span></span></p>
+
+			<p><font face="Arial, Helvetica, sans-serif"><span style="font-size:16px"><b>Data remediation</b></span></font></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p class="MsoNoSpacing"><span style="font-size:11pt"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt">Due to data inconsistencies across VA systems, some initial post-eMPWR claims may require data remediation to proceed with establishing an Education claim in the Corporate Database (CorpDB).  Each RPO will establish local procedures for VCEs to request POC intervention to resolve any data mismatches.</span></span></span></p>
+
+			<p class="MsoNoSpacing"><span style="font-size:11pt"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt">Data remediation POCs need access to the following systems:</span></span></span></p>
+
+			<ol>
+				<li class="MsoBodyText" style="margin-left:8px"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">Master Person Index (MPI) Toolkit with access to the <b>Search Experian</b> button,</span></span></li>
+				<li class="MsoBodyText" style="margin-left:8px"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">SHARE application with access to the <b>Corporate Inquires</b>, <b>Corporate Update</b>, and <b>BIRLS Update</b> (BUPD) commands,</span></span></li>
+				<li class="MsoBodyText" style="margin-left:8px"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">eFolder application with SSA Inquiry access to view documents, and</span></span></li>
+				<li class="MsoBodyText" style="margin-left:8px"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">TIMS application with <u>Folder Processing</u> access to view EDU documents.</span></span></li>
+			</ol>
+
+			<p class="MsoBodyText"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">For errors that involve a missing ID or an MPI issue, data remediation POCs will complete the following:</span></span></p>
+
+			<ol style="margin-bottom:11px">
+				<li class="MsoBodyText" style="margin-left:8px"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">Compare identity information in the MPI Toolkit with the information in Share, TIMS, and eFolder to determine the correct <i>Participant ID</i> (<i>PID</i>).</span></span></li>
+				<li class="MsoBodyText" style="margin-left:8px"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">Upon identifying the correct <i>PID</i>, the data remediation POC follows local procedures to submit a Service Now (SNOW) ticket to the VBA EDU Identity Tiger Team for correction.</span></span></li>
+				<li class="MsoBodyText" style="margin-left:8px"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">For any systems that need data corrected, take the POC will take the necessary corrective actions:</span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li class="MsoBodyText" style="margin-left:8px"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">If there is an incorrect file number/SSN in eFolder, submit a SNOW ticket to the VBA CORP OBI Data Quality team along with any supporting documentation to correct VBMS.  <b>This ticket must be resolved before moving onto any additional corrections.</b></span></span></li>
+					<li class="MsoBodyText" style="margin-left:8px"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">If the information in BIRLS is found to be incorrect, use the BUPD button in Share to update that information, as appropriate.  <b>Before making any BIRLS updates, run a “Search All in List” action and compare the name and date of birth to ensure the BIRLS and CorpDB records match.</b></span></span></li>
+					<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If the information in CorpDB is found to be incorrect, use the <b>Corporate Update</b> button in Share to update that information, as appropriate.</span></span></span></span></span></li>
+					<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If the information in MPI is found to be incorrect, submit a <b>Request</b> in the MPI Toolkit.</span></span></span></span></span></li>
+					<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If the information in BM or DGI is found to be incorrect, update the biographical information screen as appropriate.  </span></span><span style="font-size:12.0pt"><span style="line-height:107%">If the SSN in BM or DGI needs to be updated, submit a SNOW ticket for DGIB updates using established SSN correction procedures</span></span>.</span></span></span></li>
+					<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If the information of the TIMS folder is found to be incorrect, follow established procedures to have corrections made to the TIMS folder.</span></span></span></span></span></li>
+				</ol>
+				</li>
+				<li style="margin-bottom:11px; margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Once all SNOW tickets have been resolved and all corrections have been made, the remediation POC will return the token to the VCE to complete normal processing.</span></span></span></span></span></li>
+			</ol>
+
+			<p class="MsoBodyText"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">For errors that involve a missing date of birth (DOB), data remediation POCs will complete the following:</span></span></p>
+
+			<ol>
+				<li class="MsoBodyText" style="margin-left:8px"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">Review the EDU file to locate the beneficiary’s DOB.</span></span></li>
+				<li class="MsoBodyText" style="margin-left:8px"><span style="font-size:12pt"><span style="font-family:Arial,sans-serif">Perform a <b>BUPD</b> in SHARE to update the DOB.</span></span></li>
+			</ol>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><b>II.1.C.3.c</b></span></span></p>
+
+			<p><font face="Arial, Helvetica, sans-serif"><span style="font-size:16px"><b>BT order failures</b></span></font></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">When a claim includes both payments and receivables, then upon authorization, overpayments are transmitted first to eMPWR, followed by payments, to allow eMPWR’s Participant Systematic Review (PSR) to properly review and code items for collection, affording due process rights when needed.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If any of the receivable or associated payment BTs fail or are rescheduled, then the entire set of BTs will fail.  The user will know this occurred through an error showing upon authorization and/or enrollment verification in BM.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">To resolve this issue, </span></span><span style="font-size:12.0pt"><span style="line-height:107%">the user should take the following steps.</span></span></span></span></span></p>
+
+			<ol style="margin-bottom:11px">
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Suspend the token in TIMS until the next business day.</span></span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">After the suspension time has elapsed, review the authorized claim in BM or DGI as appropriate to see if the error is still displaying.  This will give the system the opportunity to run its automatic retries.</span></span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If the error persists, contact your Coach to follow local procedures to submit a DIF report for database correction.</span></span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Follow local procedures to suspend the token in TIMS until DIF resolution.</span></span></span></span></span></li>
+				<li style="margin-bottom:11px; margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Upon receiving notification of resolution, continue to work the claim follow standard procedures.</span></span></span></span></span></li>
+			</ol>
+
+			<p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><i><span style="font-size:12.0pt"><span style="line-height:107%">Note</span></span></i><span style="font-size:12.0pt"><span style="line-height:107%">: Until the issue is resolved, no new claims can be created for the beneficiary.</span></span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><b>II.1.C.3.d</b></span></span></p>
+
+			<p><font face="Arial, Helvetica, sans-serif"><span style="font-size:16px"><b>Automated payment error resolution</b></span></font></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">When a user attempts to authorize a claim/verify an enrollment within BM and there is a failure to successfully transmit to eMPWR, the system will do the following.</span></span></span></span></p>
+
+			<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">The errored BT will display on for the Payment Action Report along with a reason for review and corrective action.  Once a BT displays on the Payment Action Report, the Production Operations (ProdOps) team from Accenture Federal Services (AFS) will work directly with the local Support Services Division (SSD) to have payments manually issued through eMPWR and to make any corrections necessary to continue normal processing. </span></span></span></span></p>
+
+			<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><i><span style="line-height:107%">Note</span></i><span style="line-height:107%">:<b> </b>Users will not usually see this activity, since it happens in the background.</span></span></span></span></p>
+
+			<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">If a user comes across a beneficiary with failed payments that have not been resolved, they take the following steps:</span></span></span></span></p>
+
+			<ol style="margin-bottom:11px">
+				<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">Suspend the token in TIMS until the next business day.</span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">After the suspension time has elapsed, review the claim to see if the error is still displaying.</span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">If the error persists, contact your Coach to follow local procedures to coordinate with SSD to manually issue the BTs and to submit a DIF report to AFS ProdOps for database correction.</span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">Follow local procedures to suspend the token in TIMS until DIF resolution.</span></span></span></span></li>
+				<li style="margin-bottom:11px; margin-left:8px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">Upon receiving notification of resolution, continue to work the claim follow standard procedures.</span></span></span></span></li>
+			</ol>
+
+			<p style="margin-bottom:11px"><span style="font-size:16px;"><span style="line-height: 107%;"><span style="line-height: 107%;">EDU<font face="Arial, sans-serif"> can no longer issue these payments on its own due to the Office of Financial Management’s (OFM) need to maintain fiscal separation of duties.</font></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width: 517px; padding: 0in 7px; text-align: right;" valign="top"><span style="font-size:16px;"><a href="#Top">Go to top.</a></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:666px; margin-left:41px; border-collapse:collapse; border:none" width="666">
+	<tbody>
+		<tr>
+			<td colspan="2" style="width:666px; padding:0in 7px 0in 7px" valign="top">
+			<h3><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="line-height:normal"><a id="Topic4" name="Topic4"></a>Topic 4: </span>Handling proceeds under eMPWR</strong></span></span></h3>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:666px; margin-left:41px; border-collapse:collapse; border:none" width="666">
+	<tbody>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr /></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px"><strong>Introduction</strong></span></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:11pt"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt">Various technical errors may occur during routine processing.  This section discusses known possible errors and provides instructions for resolving them.</span></span></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><strong><span style="font-size:16px">Change date</span></strong></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="line-height:normal">January 22</span></span>, 2025</span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><b>II.1.C.4.a</b></span></span></p>
+
+			<p><font face="Arial, Helvetica, sans-serif"><span style="font-size:16px"><b>General</b></span></font></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">When a BT is sent to eMPWR and the transmission attempt results in the return of the payment, EDU will need to review those claims.  Usually this is the result of an invalid payment address on file for the beneficiary.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:11px"><span style="font-size: 12pt;"><span style="line-height:107%"><span style="font-family:"Arial",sans-serif">In BDN, designated users ran a daily </span></span></span><span style="font-size: 12pt;"><span style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="line-height:107%"><span style="font-family:"Arial",sans-serif"><span style="color:black">Fiscal Output Exception System (FOES) report to identify returned payments.  With the transition to eMPWR, BDN FOES messages will no longer function for beneficiaries processed in DGI or BM.  Instead, designated users will need to access the report in eMPWR that generates the list of EDU proceeds.  Following existing standards, the eMPWR proceeds reports must be assigned for review within 2 business days.</span></span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><b>II.1.C.4.b</b></span></span></p>
+
+			<p><font face="Arial, Helvetica, sans-serif"><span style="font-size:16px"><b>Processing proceeds</b></span></font></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p style="margin-bottom:11px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Since eMPWR is only a payment system and not a combined payment-processing system like BDN, eMPWR will not automatically suspend payments for beneficiaries with proceeds on their account.  To prevent inappropriate accumulation of proceeds, upon receiving a proceeds-review assignment, users take the following steps.</span></span></span></span></span></p>
+
+			<ol style="margin-bottom:11px">
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Review the beneficiary’s payment history in eMPWR and in SHARE to confirm proceeds are on file for the beneficiary.</span></span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If proceeds exist, put the beneficiary's record into suspense with a reason of <i>Beneficiary Payment Undeliverable </i>in either DGI or BM.</span></span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">Review the payment address on the screen and compare it to the most recent payment addresses in TIMS and the payment address history in SHARE.  </span></span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If the payment address was entered incorrectly in DGI or BM, make any corrections necessary to the payment address.</span></span></span></span></span></li>
+				<li style="margin-left:8px"><span style="font-size:11pt"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="font-size:12.0pt"><span style="line-height:107%">If the payment address matches the most recent address on file, develop to the beneficiary via phone call or email for updated payment information asking them to visit </span></span><a href="https://www.va.gov/change-direct-deposit/" style="color:#0563c1; text-decoration:underline"><span style="font-size:12.0pt"><span style="line-height:107%">https://www.va.gov/change-direct-deposit/</span></span></a><span style="font-size:12.0pt"><span style="line-height:107%"> to view and update their payment address.</span></span></span></span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">Suspend any token in TIMS for 7 days.</span></span></span></span></li>
+					<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">Review DGI or BM as appropriate to confirm a new address has been received.</span></span></span></span></li>
+					<li style="margin-left:8px; margin-bottom:11px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">If a new payment address has been added, proceed to step (e).</span></span></span></span></li>
+					<li style="margin-left:8px; margin-bottom:11px"><span style="font-size:16px;"><span style="line-height:107%"><span style="font-family:Arial,sans-serif"><span style="line-height:107%">If a new payment address has not been added, change the payment address to the most recent mailing address on file.</span></span></span></span></li>
+					<li style="margin-left:8px; margin-bottom:11px"><span style="font-size:16px;">Follow local procedures to request SSD process the release of the proceeds.</span></li>
+					<li style="margin-left:8px; margin-bottom:11px"><span style="font-size:16px;">When SSD confirms the release of proceeds, remove the suspense from the beneficiary file and proceed with routine processing.</span></li>
+				</ol>
+				</li>
+			</ol>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width: 517px; padding: 0in 7px; text-align: right;" valign="top"><span style="font-size:16px;"><a href="#Top">Go to top.</a></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width: 517px; padding: 0in 7px;" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:666px; margin-left:41px; border-collapse:collapse; border:none" width="666">
+	<tbody>
+		<tr>
+			<td colspan="2" style="width:666px; padding:0in 7px 0in 7px" valign="top">
+			<h3><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><strong><span style="line-height:normal"><a id="Topic5" name="Topic5"></a>Topic 5: </span>Debt transfers</strong></span></span></h3>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="border-collapse:collapse;border:none;margin-left:41px;width:666px;" summary="This table shows the options of transferring receivables into eMPWR" width="666">
+	<tbody>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr /></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px"><strong>Introduction</strong></span></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;">This section contains information on 61C and 63C debt transfers<span style="font-family:Arial,sans-serif">.</span></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><strong><span style="font-size:16px">Change date</span></strong></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="line-height:normal">January 22</span></span>, 2025</span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr /></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><b>II.1.C.5</b></span></span></p>
+
+			<p><span style="font-size:16px;"><b>Debt Transfers</b></span></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">Before the conversion to eMPWR, receivable balances associated with a chapter 30, 1606, or 1607 master record could be transferred to a chapter 33 master record for collection via processing of a BT 04E 90C, 96C, and 97C deduction in BDN. With chapter 33 receivables being converted to eMPWR, these ‘C- type’ deductions can no longer be used as they are not available in eMPWR. Eventually when all EDU benefits are in eMPWR, users will be able to process a BT 18 – Benefit Repayment where they will be able to select a given EDU receivable and select a ‘Recoup From’ benefit of their choosing. This will not be available until all EDU Benefits are processed through eMPWR. Until then, a procedure is required to guide users through the process of transferring a non-chapter 33 receivable from BDN to collect against a chapter 33 payable in eMPWR.</span></span></p>
+
+			<p><span style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;">If a user needs to transfer a non-chapter 33 receivable into eMPWR for collection against a chapter 33 payable, eMPWR offers two types of deductions that can be used.</span></p>
+
+			<p style="text-align: center;"><img id="f393f130-fec4-46c0-b213-3181480638de" name="Picture11.png" src="/system/ws/v11/media/image/5544/f393f130-fec4-46c0-b213-3181480638de" style="width:508px;height:226px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p style="padding: 0px; margin-bottom: 10px; text-align: center;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><i>Transferring receivables into eMPWR</i></span></span></p>
+
+			<p style="padding:0px; text-align:start; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">In eMPWR, all chapter 33 participant payables with the exception of BT 06I Housing/Kick are considered ‘retro.’</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+			<p style="padding:0px; text-align:start; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">In eMPWR, chapter 33 participant BT 06I housing/kicker awards can be considered either ‘retro’ or ‘recurring’. Retro is defined as any BT 06I where the payable period is for a prior month. Recurring is defined as any BT 06I where the payable is for the current month. DGI processes distinct BT 06Is that separate award periods so that no BT 06I contains an award period that is both retro and recurring.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+			<p style="padding:0px; text-align:start; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">If an active chapter 33 06I payable transaction for a beneficiary is received in the last two business days of the month, regardless of the payable effective date, these benefits will be considered as retroactive and will be processed on the first working day of the following month.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+			<p style="padding:0px; text-align:start; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">These distinctions are important because when processing either a BT18 61C or BT18 63C in eMPWR, Finance users will be responsible for designating the transaction to either deduct from a retroactive award OR deduct from a recurring award.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+			<p style="padding:0px; text-align:start; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">These 61C and 63C deductions are generally used with a purpose. Although it is possible to notice the presence of a non-chapter 33 receivable when processing a chapter 33 award, typically receivable balances are transferred between benefits if a retroactive election is made, or it is determined that a beneficiary was not eligible for a particular benefit program and previously paid benefits under one program can be repaid under another.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+			<p style="padding:0px; text-align:start; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Use the table below to help differentiate 61C and 63C debt transfers.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+			<table class="MsoTableGrid" style="background-color:#ffffff;border-collapse:collapse;border-color:initial;border-spacing:0px;border-style:none;border-width:medium;box-sizing:border-box;color:#000000;font-family:"Times New Roman";font-size:16px;font-style:normal;font-variant-ligatures:normal;font-weight:400;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;vertical-align:baseline;white-space:normal;width:5.3in;" summary="This table shows 61C and 63C debt transfer differences." width="509">
+				<tbody style="box-sizing:border-box; font-size:16px; vertical-align:baseline">
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; width:254px; background-color:#ffffff; border-top:2px double gray; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><b style="box-sizing:border-box; font-weight:700"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Transferring a chapter 30, 1606, or 1607 BDN receivable into eMPWR for chapter 33 collection</span></span></b></span></span></span></span></span></span></span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; width:254px; background-color:#ffffff; border-top:2px double gray; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><b style="box-sizing:border-box; font-weight:700"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Transferring a chapter 35 BDN receivable into eMPWR for chapter 33 collection</span></span></b></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:59px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="padding:0px; margin-bottom:11px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">When transferring a receivable between two records in two different systems that share the same file number, local Finance will establish a BT 18 61C deduction. Offset funds will be received by DMC as they have collection jurisdiction over the associated receivable.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:59px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">When transferring a receivable between two records in two different systems that do not share the same file number local Finance establishes a BT 18 63C deduction. Then, either 1) local finance applies the offset funds against the true receivable and handles all associated transactions or 2) local finance processes a suspense transfer sending the offset funds to DMC using the file number/payee code that is assigned to the true receivable. DMC then completes the appropriate debt reduction actions as they have jurisdiction over the associated receivable.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:59px; width:509px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><b style="box-sizing:border-box; font-weight:700"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Note</span></span></b><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Facility payments are excluded from 61C + 63C deductions.</span></span></span></span></span></span></span></span></span></span></span></p>
+
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Stations should complete thorough reviews of these deductions throughout the EDU award process. Excess deductions should be cleared regularly.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p align="center" style="padding:0px; text-align:center; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:15px"><i style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:17px">61C and 63C debt transfer differences</span></span></span></span></i></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+			<p style="padding:0px; text-align:start; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">The table below provides processing examples and guidance for solutions with applicable options.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+			<table class="MsoTableGrid" style="background-color:#ffffff;border-collapse:collapse;border-color:initial;border-spacing:0px;border-style:none;border-width:medium;box-sizing:border-box;color:#000000;font-family:"Times New Roman";font-size:16px;font-style:normal;font-variant-ligatures:normal;font-weight:400;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;vertical-align:baseline;white-space:normal;" summary="This table shows examples of debt transfers.">
+				<tbody style="box-sizing:border-box; font-size:16px; vertical-align:baseline">
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; width:254px; background-color:#ffffff; border-top:2px double gray; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><b style="box-sizing:border-box; font-weight:700"><span style="box-sizing:border-box"><span style="box-sizing:border-box">If the example involves …</span></span></b></span></span></span></span></span></span></span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; width:254px; background-color:#ffffff; border-top:2px double gray; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><b style="box-sizing:border-box; font-weight:700"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Solutions include …</span></span></b></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:0.2in; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Example 1</span></span></u><b style="box-sizing:border-box; font-weight:700"><span style="box-sizing:border-box"><span style="box-sizing:border-box">:</span></span></b><span style="box-sizing:border-box"><span style="box-sizing:border-box"> Paul Smith received chapter 30 benefits for the period of 1/16/24 – 2/29/24. On 3/1/2024, it is discovered that a processing error occurred, and the claimant elected chapter 33 benefits effective 12/1/2023. Paul received $2,000.00 under MGIB for this period. Today is 3/5/2024.</span></span></span></span></span></span></span></span></span></span></span></p>
+
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">DGI analysis shows that for this same period, chapter 33 will award $500.00 for books and supplies and $2,600.00 housing. No MHA benefits are payable for March at this time.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:0.2in; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Chapter 33 is the higher paying benefit. All participant chapter 33 payables are considered retro. Finance to process RETRO 61C in the amount of $2000.00.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="3" style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:0.2in; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Example 2</span></span></u><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Carrie Smith received chapter 30 benefits for the period of 1/16/24 – 2/29/24. On 3/1/2024, it is discovered that a processing error occurred, and the claimant elected chapter 33 benefits effective 12/1/2023. Carrie received $,2000.00 under MGIB for this period. Today is 3/5/2024.</span></span></span></span></span></span></span></span></span></span></span></p>
+
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"> </span></span></span></span></span><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">DGI analysis shows that for this same period, chapter 33 will award $500.00 for books and supplies and $1,400.00 housing. No MHA benefits are payable for March at this time, but a BT 06I in the amount of $800.00 is scheduled for 3/27/2024.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:0.2in; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">MGIB is the higher paying benefit. The participant has a mix of both retro and recurring payables.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:0.2in; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Option 1</span></span></u><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Finance to process RETRO 61C in the amount of $1,900.00. When the DGI award is authorized and the $1,900 deduction has occurred, Finance can then establish a RECURRING 61C in the amount of $100.00. When the March BT 06I matures in DGI, it will be considered RECURRING and the final $100.00 deduction will occur.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:2.9in; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Option 2</span></span></u><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Finance to process a RETRO 61C for the full $2,000.00. When the DGI award is authorized and the $1,900 deduction has occurred, Finance can process a BT18A adjusting the ‘deduct from’ value of the previously established 61C deduction from retroactive deduction to recurring monthly payment. When the March BT 06I matures in DGI, it will be considered RECURRING and the final $100.00 deduction will occur.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="3" style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:0.2in; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Example 3</span></span></u><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Kim Smith received chapter 30 benefits for the period of 1/16/24 – 3/15/24. On 3/17/2024, it is discovered that a processing error occurred, and the claimant elected chapter 33 benefits effective 12/1/2023. Kim received $2,800.00 under MGIB for this period. Today is 3/17/2024.</span></span></span></span></span></span></span></span></span></span></span></p>
+
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"> </span></span></span></span></span><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">DGI analysis shows that for this same period, chapter 33 will award $500.00 for books and supplies and $3,000.00 for housing, of which $750.00 is due for 3/1/24 – 3/15/24 and will mature on 3/27/24.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:0.2in; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Chapter 33 is the higher paying benefit. The participant has a mix of retro and recurring payables for the impacted award period.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:1px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Option 1</span></span></u><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Finance to process RETRO 61C in the amount of $2,750.00. When the DGI award is authorized and the $2,750.00 deduction has occurred, Finance can then establish a recurring 61C in the amount of $50.00. When the March BT 06I matures, it will be considered RECURRING and the final $50.00 deduction will occur.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:1px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Option 2</span></span></u><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Finance to process a RETRO 61C for the full $2,800.00. When the DGI award is authorized and the $2,750.00 deduction has occurred, Finance can process a BT18A adjusting the ‘deduct from’ value of the previously established 61C deduction from retroactive deduction to recurring monthly payment. When the March BT 06I matures, it will be considered RECURRING and the final $50.00 deduction will occur.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:1px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Example 4</span></span></u><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Sherrie Smith received chapter 30 benefits for the period of 1/16/24 – 3/15/24. On 3/17/2024, it is discovered that a processing error occurred, and the claimant elected chapter 33 benefits effective 12/1/2023. Sherrie received $2,800.00 under MGIB for this period. Today is 3/29/2024.</span></span></span></span></span></span></span></span></span></span></span></p>
+
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"> </span></span></span></span></span><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">DGI analysis shows that for this same period, chapter 33 will award $500.00 for books and supplies and $3,000.00 for housing, of which $750.00 is due for 3/1/24 – 3/15/24 and will mature at the time of authorization. (Reminder, today is 3/29 which is during eMPWR end of month cycle).</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:1px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Chapter 33 is the higher paying benefit. DGI will award ALL retro payments as the DGI award is being authorized during the end of month cycle. As such, Finance to process a RETRO 61C for the $2,800.00 the participant received under MGIB.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:1px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Example 5</span></span></u><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Katherine Smith received 1606 benefits in 2018 and has an outstanding receivable balance in the amount of $60.00.  The claimant recently applied for chapter 33 and an enrollment certification was received showing full time enrollment from 1/16/24 – 5/15/24. The claimant is eligible for chapter 33 at the 100% Veteran level. A chapter 33 election date of 12/1/23 was made. Today is 4/1/2024.</span></span></span></span></span></span></span></span></span></span></span></p>
+
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"> </span></span></span></span></span><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">DGI analysis shows that for this new enrollment period, DGI will award $500 for books and supplies as well as $4,000.00 for housing covering the period of 1/16 – 3/31/24.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:1px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">DGI RETRO payables far exceed the 1606 receivable balance. Finance to establish a RETRO 61C deduction in the amount of $60.00.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="3" style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:1px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:2px double gray" valign="top">
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Example 6</span></span></u><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Tim Smith received chapter 35 benefits for the period of 1/16/24 – 2/29/24. On 3/1/2024, it is discovered that a processing error occurred, and the claimant elected chapter 33-FRY benefits effective 12/1/2023. Tim received $2,000.00 under chapter 35 for this period. Today is 3/5/2024.</span></span></span></span></span></span></span></span></span></span></span></p>
+
+						<p style="padding:0px; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"> </span></span></span></span></span><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">DGI analysis shows that for this same period, chapter 33-FRY will award $500.00 for books and supplies and $1,400.00 housing. No MHA benefits are payable for March at this time.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:1px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Chapter 35 is the higher paying benefit. The participant has a mix of both retro and recurring payables for the impacted period.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:1px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Option 1</span></span></u><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Finance to process RETRO 63C in the amount of $1,900.00. Once that deduction has occurred, if DGI shows a March 2024 BT06I payable with an EOM March maturation date, Finance can process RECURRING 63C in the amount of $100.00 so when that March BT06I matures, the final $100.00 deduction will occur.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:2px double gray; padding:0in 7px; vertical-align:baseline; height:1px; width:254px; background-color:#ffffff; border-top:none; border-right:2px double gray; border-left:none" valign="top">
+						<p style="padding:0px; margin-bottom:8px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:normal"><u style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box">Option 2</span></span></u><span style="box-sizing:border-box"><span style="box-sizing:border-box">: Finance to process a RETRO 63C for the full $2,000.00. When the DGI award is authorized and the $1,900.00 deduction has occurred, Finance can process a BT18A adjusting the ‘deduct from’ value of the previously established 63C deduction from retroactive deduction to recurring monthly payment. When the March BT 06I matures, it will be considered RECURRING and the final $100.00 deduction will occur.</span></span></span></span></span></span></span></span></span></span></span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p align="center" style="padding:0px; text-align:center; margin-bottom:10px"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="box-sizing:border-box"><span style="min-height:20px"><span style="color:#000000"><span style="font-style:normal"><span style="font-variant-ligatures:normal"><span style="font-weight:400"><span style="white-space:normal"><span style="background-color:#ffffff"><span style="text-decoration-thickness:initial"><span style="text-decoration-style:initial"><span style="text-decoration-color:initial"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:15px"><i style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="box-sizing:border-box"><span style="line-height:17px">Examples of debt transfers</span></span></span></span></i></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width: 517px; padding: 0in 7px; text-align: right;" valign="top"><span style="font-size:16px;"><a href="#Top">Go to top.</a></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width: 517px; padding: 0in 7px;" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:666px; margin-left:41px; border-collapse:collapse; border:none" width="666">
+	<tbody>
+		<tr>
+			<td colspan="2" style="width:666px; padding:0in 7px 0in 7px" valign="top">
+			<h3><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><strong><span style="line-height:normal"><a id="Topic6" name="Topic6"></a>Topic 6: </span>Requesting Manual Payment Processing</strong></span></span></h3>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="border-collapse:collapse; border:none; margin-left:41px; width:666px" summary="This table shows the options of transferring receivables into eMPWR" width="666">
+	<tbody>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr /></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px"><strong>Introduction</strong></span></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">This section discusses submitting a request for manual payment processing to the Support Services Division (SSD).</span></span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"><strong><span style="font-size:16px">Change date</span></strong></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top"><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><span style="line-height:normal">January 22</span></span>, 2025</span></td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><b>II.1.C.6.a</b></span></span></p>
+
+			<p><span style="font-size:16px;"><b>Manual Payments</b></span></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;">If the VCE finds that BTs need out of system action,</span></span></p>
+
+			<ul>
+				<li><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;">Complete the attached Fiscal Action PDF and follow local procedures to send form to SSD Finance for manual transactions to be completed. </span></span>
+
+				<ul>
+					<li><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;">Include screen captures of Payment Instructions screen, audit, or other evidence, as appropriate. </span></span></li>
+					<li><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;">If the BT is from a TOE or Fry Scholarship claim, include the file number of the source Veteran in the “TOE Claim” or “FRY Scholarship Claim” field, as appropriate.</span></span></li>
+				</ul>
+				</li>
+				<li><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;">If the manual payments are required for specialized processing, such as incarcerated claimant claims or retroactive inductions, the claim must be authorized before being sent to SSD.</span></span></li>
+				<li><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;">If the payment is to resolve a failed payment from a previously authorized claim, SSD must release the payment and EDU will follow local procedures to submit a Defect in Functionality (DIF) ticket to AFS ProdOps to adjust the payment status in the database.  No new claim can be created until both actions have been completed.</span></span></li>
+			</ul>
+
+			<p><b style="font-size: 16px; font-family: Arial, Helvetica, sans-serif;">Work Study</b></p>
+
+			<p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;">If Chapter 33 eligibility was established in DGI before June 26, 2024, and no subsequent work product was authorized, a new DGI work product needs to be created and authorized before requests for manual payment can be sent to SSD.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-size:16px"><span style="font-family:Arial,Helvetica,sans-serif"><b>II.1.C.6.b</b></span></span></p>
+
+			<p><span style="font-size:16px;"><b>Manual Payments without a corporate record</b></span></p>
+			</td>
+			<td style="width:517px; padding:0in 7px 0in 7px" valign="top">
+			<p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;">For beneficiaries processed in DGI with no eMPWR conversion work product AND no work product authorized on or after July 8, 2024, then no manual financial action can be taken by either SSD or the DMC on the beneficiary’s chapter 33 record OR</span></span></p>
+
+			<p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;">For beneficiaries processed in BM with no eMPWR conversion claim AND no claim authorized on or after <span style="color:#0000ff;">TBD</span>, then no manual financial action can be taken by either SSD or the DMC on the beneficiary’s record. </span></span></p>
+
+			<p><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;">This situation most commonly can occur in the processing of work study claims and DMC actions to collect a debt.</span></span></p>
+
+			<p><span style="font-size: 16px; font-family: Arial, Helvetica, sans-serif;">The RPOs need to assign POCs for SSD and DMC to contact when no Education record exists in CorpDB and must be created to process a fiscal action.  Upon receiving that contact, the POC needs to create and authorized a work product in DGI to create the corporate record.  Once the work product is authorized, the POC will respond to SSD or DMC as appropriate to allow them to continue their work.</span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:149px; padding:0in 7px 0in 7px" valign="top"></td>
+			<td style="width: 517px; padding: 0in 7px; text-align: right;" valign="top"><span style="font-size:16px;"><a href="#Top">Go to top.</a></span></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

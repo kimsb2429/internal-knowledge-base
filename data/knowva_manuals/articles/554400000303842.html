@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M22-4, Part II, Chapter 3, Section J – Benefits Manager Specialized Claim Adjudication</title>
+  <meta name="source-system" content="KnowVA (knowva.ebenefits.va.gov)">
+  <meta name="source-type" content="va_manual">
+  <meta name="manual-name" content="M22-4">
+  <meta name="article-id" content="554400000303842">
+  <meta name="alternate-id" content="None">
+  <meta name="last-modified" content="2025-08-27T18:20:56.000Z">
+  <meta name="created" content="2025-06-27T16:07:07Z">
+  <meta name="keywords" content="DGIB, Managed Service, BM, Benefits Manager, BDN">
+  <meta name="topic-breadcrumb" content="M22-4 &gt; Part 02 – Computer Processing &gt; 03 - Benefits Manager">
+  <meta name="content-category" content="">
+  <meta name="target-audience" content="">
+</head>
+<body>
+<nav class="topic-breadcrumb" aria-label="Topic hierarchy"><span class="bc-item">M22-4</span> / <span class="bc-item">Part 02 – Computer Processing</span> / <span class="bc-item">03 - Benefits Manager</span></nav>
+<h1>M22-4, Part II, Chapter 3, Section J – Benefits Manager Specialized Claim Adjudication</h1>
+<p style="margin-left:48px"><a id="Top" name="Top"></a></p>
+
+<table class="MsoTableGrid" style="margin-left:-5px; border-collapse:collapse; border:none" width="765">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Overview</span></span></span></b></span></p>
+			</td>
+			<td style="width:624px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This section discusses the specialized claim adjudication capabilities of Benefits Manager (BM), including chapter 30 death refund and chapter 30 Transfer of Entitlement (TOE) processing.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top"></td>
+			<td style="width:624px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="margin-left:-5px; border-collapse:collapse; border:none" width="765">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">In This Section</span></span></span></b></span></p>
+			</td>
+			<td style="width:624px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This section contains the following topics:</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p></p>
+			</td>
+			<td style="width:624px; padding:0in 7px 0in 7px; height:20px; background-color:white" valign="top">
+			<table class="MsoTableGrid" style="border-collapse:collapse; border:none" width="587">
+				<tbody>
+					<tr>
+						<td style="border-bottom:1px solid black; width:105px; padding:0in 6px 0in 6px; height:21px; border-top:1px solid black; border-right:1px solid black; border-left:1px solid black" valign="top">
+						<p align="center" style="margin-bottom:10px; text-align:center"><span style="line-height:normal"><b><span style="font-size:12.0pt">Topic</span></b></span></p>
+						</td>
+						<td style="border-bottom:1px solid black; width:483px; padding:0in 6px 0in 6px; height:21px; border-top:1px solid black; border-right:1px solid black; border-left:none" valign="top">
+						<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt">Topic Name</span></b></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:1px solid black; width:105px; padding:0in 6px 0in 6px; height:21px; border-top:none; border-right:1px solid black; border-left:1px solid black" valign="top">
+						<p align="center" style="margin-bottom:10px; text-align:center"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif">1</span></span></span></p>
+						</td>
+						<td style="border-bottom:1px solid black; width:483px; padding:0in 6px 0in 6px; height:21px; border-top:none; border-right:1px solid black; border-left:none" valign="top">
+						<p class="MsoNoSpacing" style="margin-bottom:10px"><a href="#Topic1"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif">Topic 1: Chapter 30 death refund</span></span></span></a></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:1px solid black; width:105px; padding:0in 6px 0in 6px; height:21px; border-top:none; border-right:1px solid black; border-left:1px solid black" valign="top">
+						<p align="center" style="margin-bottom:10px; text-align:center"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif">2</span></span></span></p>
+						</td>
+						<td style="border-bottom:1px solid black; width:483px; padding:0in 6px 0in 6px; height:21px; border-top:none; border-right:1px solid black; border-left:none" valign="top">
+						<p class="MsoNoSpacing" style="margin-bottom:10px"><a href="#Topic2"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif">Topic 2: Chapter 30 Transfer of Entitlement (TOE)</span></span></span></a></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top"></td>
+			<td style="width:624px; padding:0in 7px 0in 7px; height:20px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="margin-left:-5px; border-collapse:collapse; border:none" width="772">
+	<tbody>
+		<tr>
+			<td colspan="2" style="width:772px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Topic 1: Chapter 30 death benefit<a id="Topic1" name="Topic1"></a></span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:142px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p></p>
+			</td>
+			<td style="width:630px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:142px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Introduction</span></span></span></b></span></p>
+			</td>
+			<td style="width:630px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This topic provides information about c</span>hapter 30 death refund functionality in BM.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:142px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top"></td>
+			<td style="width:630px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Change Date</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">June 27, 2025</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.1.a</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">General</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Benefits Manager contains functionality to process a claim for a chapter 30 death refund, submitted by the next-of-kin of a deceased Veteran.</span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><br />
+			<span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">For more information on the chapter 30 death benefit, including eligibility criteria, see </span></span></span></span><a class="eGainArticleLink" articleid="554400000076293" articlename="Part 05, Chapter 30. Chapter 4 - Award Processing and Other Authorization Issues" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076293?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part V, 4.11</a><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.1.b</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Claim creation</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">To create a chapter 30 death refund claim, a user will navigate to the Claim history tab of the deceased Veteran and select the “Create a claim” button. In the Create a claim modal, select the “Chapter 30 (MGIB-AD) - Death refund” option.</span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Note:</span></span></span></b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black"> In order for the “Chapter 30 (MGIB-AD) - Death refund” claim option to appear, the Veteran’s bio page must contain a date of death.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:8.05in; margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.1.c</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Claim usage</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">A chapter 30 death refund may be used to process the following scenarios:</span></span></span></span></p>
+
+			<ul style="margin-bottom:10px">
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Development to next-of-kin for claim after receipt of notification of death</span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Award of benefits to next-of-kin</span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Denial of claim when Veteran is deceased but no entitlement to death benefit exists</span></span></span></span></li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width: 8.05in; margin-left: -5px; border-collapse: collapse; border-width: initial; border-style: none; border-color: initial;" width="773">
+	<tbody>
+		<tr>
+			<td style="width: 141px; padding: 0in 6px; height: 89px;" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.1.d</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Eligibility section</span></span></span></b></span></p>
+			</td>
+			<td style="width: 632px; padding: 0in 6px; height: 89px;" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The Eligibility section of chapter 30 death refund claim contains reduced functionality in comparison to the Eligibility section of an original or supplemental chapter 30 claim.</span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The “DoD participation code & contributions” section contains chapter 30 participation data. As in a normal chapter 30 claim, the user may override this data with the “Add VA participation override” button, if necessary. For more information on the VA participation override functionality, see </span></span></span></span><a class="eGainArticleLink" articleid="554400000288875" articlename="M22-4, Part II, Chapter 3, Section D - Benefits Manager Eligibility" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000288875?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.D.3.d</a><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">.</span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The user may also add additional contribution (also referred to as buy-up) data by using the “Add additional contribution” button. For more information regarding input of additional contributions, see </span></span></span></span><a class="eGainArticleLink" articleid="554400000288875" articlename="M22-4, Part II, Chapter 3, Section D - Benefits Manager Eligibility" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000288875?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.D.3.e</a><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black"><b>.</b></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The “Chapter 30 (MGIB-AD) service period(s)” section allows for input of service data by using the “Add service period” and “Add reserve service obligation” buttons. Service data is not considered during death refund processing and is included for informational purposes only. For more information regarding input of service, see </span></span></span></span><a class="eGainArticleLink" articleid="554400000288875" articlename="M22-4, Part II, Chapter 3, Section D - Benefits Manager Eligibility" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000288875?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.D.3.f</a><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black"><b>.</b></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The “Chapter 30 death refund” section contains the “Refundable contributions” field. The amount in this field is calculated by system rules, based on user inputs and previously awarded benefits. If the Veteran was paid benefits in Benefits Manager prior to their death under chapter 30, the total amount paid will reduce the refundable contributions. If the amount paid exceeds or is equal to the total basic and additional contributions, the field will display $0.00.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 141px; padding: 0in 6px; height: 89px;" valign="top"></td>
+			<td style="width: 632px; padding: 0in 6px; height: 89px;" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:749px; margin-left:-5px; border-collapse:collapse; border:none" width="749">
+	<tbody>
+		<tr>
+			<td style="width:117px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.1.e</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Next of kin information section</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The Next of kin information section of chapter 30 death refund claim contains details on the next-of-kin who are eligible for the death benefit or are potentially interested parties.</span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This section displays the Refundable contributions amount discussed in </span></span></span></span><a class="eGainArticleLink" articleid="554400000303842" articlename="M22-4, Part II, Chapter 3, Section J – Benefits Manager Specialized Claim Adjudication" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000303842?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.J.1.d</a><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black"><b>.</b> It is included to aid the user in determining the appropriate refund amount for each next-of-kin.</span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">To add a next-of-kin, the user will select the “Add next of kin” button.</span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Within the “Add next of kin” modal, the user will be presented with the following fields:</span></span></span></span></p>
+
+			<ul style="margin-bottom:10px">
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Relationship type</span></span></span></span>
+
+				<ul style="list-style-type:circle">
+					<li style="margin-bottom:10px; margin-left:16px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This is a required field and must be populated.</span></span></span></span></li>
+					<li style="margin-bottom:10px; margin-left:16px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Acceptable values include:</span></span></span></span>
+					<ul style="list-style-type:square">
+						<li style="margin-bottom:10px; margin-left:8px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Father</span></span></span></span></li>
+						<li style="margin-bottom:10px; margin-left:8px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Mother</span></span></span></span></li>
+						<li style="margin-bottom:10px; margin-left:8px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Spouse</span></span></span></span></li>
+						<li style="margin-bottom:10px; margin-left:8px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Child</span></span></span></span></li>
+						<li style="margin-bottom:10px; margin-left:8px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Other</span></span></span></span></li>
+					</ul>
+					</li>
+				</ul>
+				</li>
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">First name</span></span></span></span>
+				<ul style="list-style-type:circle">
+					<li style="margin-bottom:10px; margin-left:16px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This is a required field and must be populated.</span></span></span></span></li>
+				</ul>
+				</li>
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Middle name</span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Last name</span></span></span></span>
+				<ul style="list-style-type:circle">
+					<li style="margin-bottom:10px; margin-left:16px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This is a required field and must be populated.</span></span></span></span></li>
+				</ul>
+				</li>
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Claimant ID</span></span></span></span>
+				<ul style="list-style-type:circle">
+					<li style="margin-bottom:10px; margin-left:16px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Currently, only the Social Security of the next of kin should be entered in this field</span></span></span></span></li>
+					<li style="margin-bottom:10px; margin-left:16px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">If the next-of-kin does not have a Social Security Number, or an SSN is not of record, the user should select the “There is no Social Security Number” checkbox. This selection must be further affirmed by checking the “I verify there is no Social Security Number associated with this claimant.” checkbox.</span></span></span></span></li>
+				</ul>
+				</li>
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Date of birth</span></span></span></span>
+				<ul style="list-style-type:circle">
+					<li style="margin-bottom:10px; margin-left:16px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This is a required field and must be populated.</span></span></span></span></li>
+				</ul>
+				</li>
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Mailing address</span></span></span></span>
+				<ul style="list-style-type:circle">
+					<li style="margin-bottom:10px; margin-left:16px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The functionality in the subsidiary fields of this section are documented in </span></span></span></span><a class="eGainArticleLink" articleid="554400000288864" articlename="M22-4, Part II, Chapter 3, Section C – Beneficiary Management" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000288864?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.C.1.d</a>.</li>
+				</ul>
+				</li>
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Refund amount</span></span></span></span>
+				<ul style="list-style-type:circle">
+					<li style="margin-bottom:10px; margin-left:16px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This field may be left blank if the next-of-kin are being established prior to receipt of claim.</span></span></span></span></li>
+					<li style="margin-bottom:10px; margin-left:16px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The amount input cannot exceed the value of the “Refundable contributions” field</span></span></span></span></li>
+					<li style="margin-bottom: 10px; margin-left: 16px;"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Upon save of the modal, the total sum of the refund amounts of all next-of-kin is validated against the refundable contributions amount. If the total sum exceeds the refundable contributions, an error stating, "<b>The sum of the next of kin refund amounts cannot exceed the refundable contributions"</b>, will display.</span></span></span></span></li>
+					<li style="margin-bottom: 10px; margin-left: 16px;"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">In order to resolve, the refund amounts amongst all next-of-kin must be adjusted so that the total sum is less than refundable contributions.</span></span></span></span></li>
+				</ul>
+				</li>
+			</ul>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">NOTE: </span></span></span></b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">It is recommended that all next-of-kin have a Beneficiary information page established prior to being added to the Next of kin information page. See </span></span></span></span><a class="eGainArticleLink" articleid="554400000288864" articlename="M22-4, Part II, Chapter 3, Section C – Beneficiary Management" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000288864?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.C.1.b</a><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black"><b> </b>for more information on establishing a Beneficiary information page.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:117px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:8.05in; margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.1.f</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Claim summary section</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The chapter 30 death refund claim uses the same Claim summary workflow as an original or supplemental chapter 30 claim. For more information on the Claim summary section of a claim, see </span></span></span></span><a class="eGainArticleLink" articleid="554400000289086" articlename="M22-4, Part II, Chapter 3, Section G - Benefits Manager Claim Summary" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000289086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.G</a><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black"><b>.</b></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Two signatures are required for all chapter 30 death benefit claims which contain awards. If the claim contains no awards, a user may submit for authorization by using the “Submit for authorization” button or may authorize the claim by using the “Authorize” button. Signature requirements for chapter 30 death refund claims will be dictated by RPO management.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:8.05in; margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.1.g</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Letters generated by chapter 30 death refund claims</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The chapter 30 death refund claim does not produce a system-generated letter. Users may upload an appropriately information user-generated letter using the procedures detailed in </span></span></span></span><a class="eGainArticleLink" articleid="554400000289089" articlename="M22-4, Part II, Chapter 3, Section H – Benefits Manager Letters" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000289089?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.H.1.c</a><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">.</span></span></span></span></p>
+
+			<p style="margin-bottom:10px"></p>
+
+			<p style="margin-bottom:10px"></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width: 632px; padding: 0in 6px; height: 89px; background-color: white; text-align: right;" valign="top"><span style="font-size:16px;"><a href="#Top">Go to top</a></span></td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:8.05in; margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td colspan="2" style="width:676px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Topic 2: Chapter 30 Transfer of Entitlement (TOE)<a id="Topic2" name="Topic2"></a></span></span></span></span></p>
+			</td>
+			<td style="border-bottom:none; padding:0in 0in 0in 0in; border-top:none; border-right:none; border-left:none; width:97px">
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p></p>
+			</td>
+			<td colspan="2" style="width:632px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Introduction</span></span></span></b></span></p>
+			</td>
+			<td colspan="2" style="width:632px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This topic provides information about chapter 30 Transfer of Entitlement (TOE) in BM.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top"></td>
+			<td colspan="2" style="width:632px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; border-top:none; border-right:none; border-left:none; width:141px"></td>
+			<td style="border-bottom:none; border-top:none; border-right:none; border-left:none; width:535px"></td>
+			<td style="border-bottom:none; border-top:none; border-right:none; border-left:none; width:97px"></td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:686px; margin-left:-5px; border-collapse:collapse; border:none" width="686">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Change Date</span></span></span></b></span></p>
+			</td>
+			<td style="width:545px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">June 27, 2025</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top"></td>
+			<td style="width:545px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:8.05in; margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.2.a</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">General</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Benefits Manager contains reduced functionality necessary to process a chapter 30 Transfer of Entitlement (TOE) claim.</span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><br />
+			<span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">For more information on chapter 30 Transfer of Entitlement, see <a href="https://vaww.vrm.km.va.gov/system/templates/selfservice/va_kanew/help/agent/locale/en-US/portal/554400000001048/content/554400000058825/22-02-02-Transfer-of-Entitlement?query=%2222-02-02%22">Circular 22-02-02</a>.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:8.05in; margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.2.b</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Entitlement adjustments for transferring Veteran</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">If a Veteran is approved for chapter 30 TOE, their chapter 30 entitlement must be adjusted to reflect the amount of entitlement transferred out to their dependents.</span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">If the Veteran’s record does not already reflect their chapter 30 TOE transfers, a user must create and authorize an original or supplemental claim for the Veteran and adjust entitlement as necessary using the manual entitlement adjustments functionality detailed in </span></span></span></span><a class="eGainArticleLink" articleid="554400000289040" articlename="M22-4, Part II, Chapter 3, Section E – Benefits Manager Entitlement and Kickers" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000289040?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.E.2.b</a><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:8.05in; margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.2.c</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Claim creation for beneficiary</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">To create a chapter 30 TOE claim, a user will navigate to the Claim history tab of the dependent beneficiary and select the “Create a claim” button. In the Create a claim modal, select the “Chapter 30 TOE (MGIB-AD)” option and click the “Continue and establish relationship” button to proceed to the next step.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:8.05in; margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.2.d</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Establishing Veteran-beneficiary relationship</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">After clicking the “Continue and establish relationship” button, the user will be presented with the “Establish relationship” modal. This modal contains a single field, Relationship type. This field is required and has the following acceptable values:</span></span></span></span></p>
+
+			<ol style="margin-bottom:10px">
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Spouse</span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Child</span></span></span></span></li>
+			</ol>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">After selecting a relationship type, the user will click “Continue”. They will be presented with an additional filed, “Veteran information”. This field is required and acceptable inputs are the Social Security Number or file number of the transferor Veteran. This information is used to locate and create (if necessary) a Veteran in the Claimant Service. For more information on searching for a Veteran during relationship establishment, see </span></span></span></span></span><a class="eGainArticleLink" articleid="554400000288864" articlename="M22-4, Part II, Chapter 3, Section C – Beneficiary Management" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000288864?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.C.3.c</a><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">.</span></span></span></span></span></p>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:8.05in; margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.2.e</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Eligibility section</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The Eligibility section of a chapter 30 TOE claim contains minimal information required to establish eligibility.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The “Relationship information” table will display the relationship type and transferor Veteran’s name and file number. This information is read-only and for informational purposes only.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The “Delimiting date” table is conditionally required. If the beneficiary is a spouse, a delimiting date is not required but may be input if appropriate. If the beneficiary is a child, a delimiting date is required to be entered by the user. If a delimiting date is appropriate, the user will click the “Add delimiting date” button. The user will be presented with the “Add delimiting date” modal, where the user can enter the appropriate delimiting date or use the date picker by clicking the calendar icon.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">If a delimiting date has been previously entered, a pencil icon will appear next to the delimiting date. If a user clicks the pencil icon, they will be taken to the “Edit delimiting date” modal. The functionality of this modal is identical to the “Add delimiting date” modal. Additionally, if the relationship type is a spouse, a trashcan will appear, which will allow for deletion of the delimiting date if appropriate.</span></span></span></span></span></p>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="border-collapse:collapse;border:none;height:10px;margin-left:-5px;width:8.05in;" width="773">
+	<tbody>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white; border-top:none; border-right:none; border-left:none" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.2.f</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Entitlement section</span></span></span></b></span></p>
+			</td>
+			<td style="border-bottom:none; width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white; border-top:none; border-right:none; border-left:none" valign="top">
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The Entitlement section of a chapter 30 TOE claim contains minimal information required to establish entitlement.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The “Manual entitlement adjustments” section will allow for initial establishment and adjustment of entitlement. If a beneficiary is eligible, the user will click the “Adjust manual entitlement” button. The user will be presented with the “Adjust manual entitlement” modal. For more information on this modal, see </span></span></span></span></span><a class="eGainArticleLink" articleid="554400000289040" articlename="M22-4, Part II, Chapter 3, Section E – Benefits Manager Entitlement and Kickers" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000289040?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.E.2.b</a><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">. The user will add the appropriate amount of entitlement which has been transferred to the beneficiary and click the “Submit adjustment” button.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">If necessary, previously saved adjustments may be edited or deleted using the pencil and trash can icons, respectively, as detailed in </span></span></span></span></span><a class="eGainArticleLink" articleid="554400000289040" articlename="M22-4, Part II, Chapter 3, Section E – Benefits Manager Entitlement and Kickers" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000289040?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.E.2.b</a><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">.</span></span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white; border-top:none; border-right:none; border-left:none" valign="top"></td>
+			<td style="border-bottom:none; width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white; border-top:none; border-right:none; border-left:none" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.2.g</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Enrollments section</span></span></span></b></span></p>
+			</td>
+			<td style="border-bottom:none; width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white; border-top:none; border-right:none; border-left:none" valign="top">
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The Enrollments section of a chapter 30 TOE claim contains minimal information required to establish awards.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The “Manual awards” section will allow for input of the following award types which are present in a normal chapter 30 workflow:</span></span></span></span></span></p>
+
+			<ul style="margin-bottom:10px">
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Accelerated payment</span></span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Apprenticeship</span></span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Correspondence</span></span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Flight</span></span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Licensing and certification</span></span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">National exam</span></span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">On-the-Job training</span></span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Tutorial assistance</span></span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Work study</span></span></span></span></span></li>
+			</ul>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">For more information on the input of these types of awards, see </span></span></span></span></span><a class="eGainArticleLink" articleid="554400000288916" articlename="M22-4, Part II, Chapter 3, Section F – Benefits Manager Enrollment Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000288916?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.F.7</a><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Four additional manual award types are also available in the chapter 30 TOE workflow:</span></span></span></span></span></p>
+
+			<ul style="margin-bottom:10px">
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Graduate</span></span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">High school</span></span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">NCD</span></span></span></span></span></li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Undergraduate</span></span></span></span></span></li>
+			</ul>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Upon selection of one of these manual awards, the user will be presented with the fields detailed in </span></span></span></span></span><a class="eGainArticleLink" articleid="554400000288916" articlename="M22-4, Part II, Chapter 3, Section F – Benefits Manager Enrollment Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000288916?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.F.2.a-c </a><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">, as applicable. These entries are for informational purposes only and are not used to calculated awards or entitlement.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">There is an additional field, “Entitlement charge”, which only appears within the chapter 30 TOE workflow. This field is required and determines the entitlement charge for the period which is used by the system rules. The user should input the appropriate entitlement charge for the payable period in MM-DD format.</span></span></span></span></span></p>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">A user can add payment for a manual award period by clicking the down arrow on the left of the award and selecting the “Add payment” button. The user will be presented with the “Add payment” modal. In this modal, the user will establish monthly payments for each stub or whole month within the enrollment period. The following fields are available:</span></span></span></span></span></p>
+
+			<ul style="margin-bottom:10px">
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Begin date</span></span></span></span></span>
+
+				<ul style="list-style-type:circle">
+					<li style="margin-bottom:10px; margin-left:16px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This is a required field and should be the beginning of the enrollment, or the beginning of a month within the enrollment, as appropriate.</span></span></span></span></span></li>
+				</ul>
+				</li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">End date</span></span></span></span></span>
+				<ul style="list-style-type:circle">
+					<li style="margin-bottom:10px; margin-left:16px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This is a required field and should be the end date of the enrollment, or the end date of the month used for the begin date, as appropriate.</span></span></span></span></span></li>
+				</ul>
+				</li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Amount</span></span></span></span></span>
+				<ul style="list-style-type:circle">
+					<li style="margin-bottom:10px; margin-left:16px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This is a required field and should be the total amount due for the time period established by the Begin and End date fields.</span></span></span></span></span></li>
+				</ul>
+				</li>
+				<li style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Description</span></span></span></span></span>
+				<ul style="list-style-type:circle">
+					<li style="margin-bottom:10px; margin-left:16px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">This field is optional and can be up to 200 characters.</span></span></span></span></span></li>
+				</ul>
+				</li>
+			</ul>
+
+			<p style="margin-bottom:10px"><span style="background:white"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">After establishment of a payment, the pencil and trash can icons will appear for each payment. These icons can be used to edit or delete the payment entry, respectively.</span></span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white; border-top:none; border-right:none; border-left:none" valign="top"></td>
+			<td style="border-bottom:none; width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:8.05in; margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.2.h</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Claim summary section</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The Claim summary section of a chapter 30 TOE claim uses the same Claim summary workflow as an original or supplemental chapter 30 claim. For more information on the Claim summary section of a claim, see </span></span></span></span><a class="eGainArticleLink" articleid="554400000289086" articlename="M22-4, Part II, Chapter 3, Section G - Benefits Manager Claim Summary" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000289086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.G</a><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="MsoTableGrid" style="width:8.05in; margin-left:-5px; border-collapse:collapse; border:none" width="773">
+	<tbody>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">II.3.J.2.i</span></span></span></b></span></p>
+
+			<p style="margin-bottom:10px"><span style="line-height:normal"><b><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">Letters generated by chapter 30 TOE claims</span></span></span></b></span></p>
+			</td>
+			<td style="width:632px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">The chapter 30 TOE claim does not produce a system-generated letter. Users may upload an appropriately information user-generated letter using the procedures detailed in </span></span></span></span><a class="eGainArticleLink" articleid="554400000289089" articlename="M22-4, Part II, Chapter 3, Section H – Benefits Manager Letters" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000289089?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">M22-4, Part II, 3.H.1.c</a><span style="line-height:normal"><span style="font-size:12.0pt"><span style="font-family:"Arial",sans-serif"><span style="color:black">.</span></span></span></span></p>
+
+			<p style="margin-bottom:10px"></p>
+
+			<p style="margin-bottom:10px"></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width: 632px; padding: 0in 6px; height: 89px; background-color: white; text-align: right;" valign="top"><a href="#Top"><span style="font-size:16px;">Go to top</span></a></td>
+		</tr>
+		<tr>
+			<td style="width:141px; padding:0in 6px 0in 6px; height:89px; background-color:white" valign="top"></td>
+			<td style="width: 632px; padding: 0in 6px; height: 89px; background-color: white; text-align: right;" valign="top"><span style="font-size:16px;"><a class="eGainArticleLink" articleid="554400000303854" articlename="M22-4, Part II, Chapter 3, Section K – Benefits Manager Automation" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000303854?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Next Section</a></span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="margin-left:48px"></p>
+</body>
+</html>

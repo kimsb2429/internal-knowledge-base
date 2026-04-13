@@ -1,0 +1,2614 @@
+{
+  "crawl_date": "2026-04-13T15:35:50Z",
+  "source": "https://www.knowva.ebenefits.va.gov",
+  "portal_id": "554400000001018",
+  "manuals_crawled": [
+    "M22-3",
+    "M22-4"
+  ],
+  "stats": {
+    "topics_discovered": 170,
+    "articles_discovered": 237,
+    "articles_downloaded": 237
+  },
+  "articles": {
+    "554400000059318": {
+      "name": "CHAPTER 1.  GENERAL",
+      "topic_id": "554400000016107",
+      "topic_breadcrumb": [
+        "M22-3",
+        "Chapter 01 – General"
+      ],
+      "manual_name": "M22-3",
+      "downloaded": true
+    },
+    "554400000059332": {
+      "name": "CHAPTER 2. QUALITY ASSURANCE",
+      "topic_id": "554400000016108",
+      "topic_breadcrumb": [
+        "M22-3",
+        "Chapter 02 – Quality Assurance"
+      ],
+      "manual_name": "M22-3",
+      "downloaded": true
+    },
+    "554400000060317": {
+      "name": "CHAPTER 3. NOT AVAILABLE",
+      "topic_id": "554400000016109",
+      "topic_breadcrumb": [
+        "M22-3",
+        "Chapter 03 – Not Available"
+      ],
+      "manual_name": "M22-3",
+      "downloaded": true
+    },
+    "554400000060324": {
+      "name": "CHAPTER 4. STRATEGIC OVERSIGHT AND ANALYSIS REVIEW",
+      "topic_id": "554400000016110",
+      "topic_breadcrumb": [
+        "M22-3",
+        "Chapter 04 – Strategic Oversight and Analysis Review"
+      ],
+      "manual_name": "M22-3",
+      "downloaded": true
+    },
+    "554400000060851": {
+      "name": "CHAPTER 5. QUANTITATIVE MEASUREMENT",
+      "topic_id": "554400000016111",
+      "topic_breadcrumb": [
+        "M22-3",
+        "Chapter 05 – Quantitative Measurement"
+      ],
+      "manual_name": "M22-3",
+      "downloaded": true
+    },
+    "554400000072757": {
+      "name": "CHAPTER 6. WORK FLOW MANAGEMENT",
+      "topic_id": "554400000016112",
+      "topic_breadcrumb": [
+        "M22-3",
+        "Chapter 06 – Work Flow Management"
+      ],
+      "manual_name": "M22-3",
+      "downloaded": true
+    },
+    "554400000061193": {
+      "name": "APPENDIX A - EDUCATION END PRODUCT CODES FOR QUANTITATIVE MEASUREMENT",
+      "topic_id": "554400000016113",
+      "topic_breadcrumb": [
+        "M22-3",
+        "Education End Product Codes for Quantitative Measurement - Appendix A"
+      ],
+      "manual_name": "M22-3",
+      "downloaded": true
+    },
+    "554400000074655": {
+      "name": "Chapter 04 - Revisions",
+      "topic_id": "554400000016114",
+      "topic_breadcrumb": [
+        "M22-3",
+        "Transmittal"
+      ],
+      "manual_name": "M22-3",
+      "downloaded": true
+    },
+    "554400000063441": {
+      "name": "PART 01, GENERAL. CHAPTER 1 - OVERVIEW OF THE MANUAL",
+      "topic_id": "554400000016127",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "01 – Overview of the Manual"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000063717": {
+      "name": "PART 01, GENERAL. CHAPTER 02, DEFINITIONS",
+      "topic_id": "554400000016128",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "02 – Definitions"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000226316": {
+      "name": "Part 01, General, Chapter 3",
+      "topic_id": "554400000016129",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "03 – Overview of Education Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000064121": {
+      "name": "PART 01, GENERAL. CHAPTER 04. PROCEDURES FOR REGIONALIZED PROCESSING",
+      "topic_id": "554400000016130",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "04 – Procedures for Regionalized Processing"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000068457": {
+      "name": "PART 01, GENERAL. CHAPTER 06, MONITORING SCHOOL REPORTING PROBLEMS",
+      "topic_id": "554400000016132",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "06 – Monitoring School Reporting Problems"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000071640": {
+      "name": "Part 1: Chapter 7 - School Liability",
+      "topic_id": "554400000016133",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "07 – School Liability"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000071668": {
+      "name": "Part 1: Chapter 8 - Other Actions Due to School Noncompliance",
+      "topic_id": "554400000016134",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "08 – Other Actions Due to School Noncompliance"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000072609": {
+      "name": "PART 01, GENERAL. CHAPTER 09, WORK-STUDY ALLOWANCE PROGRAM",
+      "topic_id": "554400000016135",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "09 – Work-Study Allowance Program"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000072665": {
+      "name": "PART 01, GENERAL. CHAPTER 10, DIRECT DEPOSIT",
+      "topic_id": "554400000016136",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "10 – Direct Deposit"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000105890": {
+      "name": "PART 1, GENERAL, CHAPTER 11, COMMITTEE ON WAIVERS AND COMPROMISES",
+      "topic_id": "554400000016137",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "11 – Reserved for Future Use"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000104647": {
+      "name": "13 - Check Tracers",
+      "topic_id": "554400000017001",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "13 - Check Tracers"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000303937": {
+      "name": "M22-4 Addendum | Glossary - Appendix A: Acronyms and Abbreviations",
+      "topic_id": "554400000026761",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000303997": {
+      "name": "M22-4 Addendum | Glossary - Appendix B: Common Terminology",
+      "topic_id": "554400000026761",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000308063": {
+      "name": "Archives",
+      "topic_id": "554400000016138",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 01 – General",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000291404": {
+      "name": "M22-4, Part II, Chapter 1, Section A – DGIB Managed Service",
+      "topic_id": "554400000016139",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "01 - DGIB Managed Service"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000291148": {
+      "name": "M22-4, Part II, Chapter 1, Section B – DGIB and Education Processing Systems",
+      "topic_id": "554400000016139",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "01 - DGIB Managed Service"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000291771": {
+      "name": "M22-4, Part II, Chapter 1, Section C - Payment  Errors and History",
+      "topic_id": "554400000016139",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "01 - DGIB Managed Service"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000262463": {
+      "name": "M22-4, Part II,  Chapter 2, Section A - DGIB Managed Service and eMPWR Integration",
+      "topic_id": "554400000016140",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "02 - The 33 Processing System (DGI)"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000263336": {
+      "name": "M22-4, Part II, Chapter 2, Section B – Legacy Chapter 33 Payment Processing",
+      "topic_id": "554400000016140",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "02 - The 33 Processing System (DGI)"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000263346": {
+      "name": "M22-4, Part II, Chapter 2, Section C – Chapter 33 Payment Transmission to eMPWR",
+      "topic_id": "554400000016140",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "02 - The 33 Processing System (DGI)"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000303799": {
+      "name": "M22-4, Part II, Chapter 2, Section D, Topics 01-05:  Chapter 33 Processing Screens in DGI",
+      "topic_id": "554400000016140",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "02 - The 33 Processing System (DGI)"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000303797": {
+      "name": "M22-4, Part II, Chapter 2, Section D, Topics 06-10: Chapter 33 Processing Screens in DGI",
+      "topic_id": "554400000016140",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "02 - The 33 Processing System (DGI)"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000263561": {
+      "name": "M22-4, Part II, Chapter 2, Section D, Topics 11-15:  Chapter 33 Processing Screens in DGI",
+      "topic_id": "554400000016140",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "02 - The 33 Processing System (DGI)"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000263354": {
+      "name": "M22-4, Part II, Chapter 2, Section E - Reviewing Chapter 33 Payment History",
+      "topic_id": "554400000016140",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "02 - The 33 Processing System (DGI)"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000263358": {
+      "name": "M22-4, Part II, Chapter 2, Section F - Automated Chapter 33 Processing",
+      "topic_id": "554400000016140",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "02 - The 33 Processing System (DGI)"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000287675": {
+      "name": "M22-4, Part II, Chapter 3, Section A – General Benefits Manager Information",
+      "topic_id": "554400000016141",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "03 - Benefits Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000303825": {
+      "name": "M22-4, Part II, Chapter 3, Section B – BDN Historical Reporting",
+      "topic_id": "554400000016141",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "03 - Benefits Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000288864": {
+      "name": "M22-4, Part II, Chapter 3, Section C – Beneficiary Management",
+      "topic_id": "554400000016141",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "03 - Benefits Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000288875": {
+      "name": "M22-4, Part II, Chapter 3, Section D - Benefits Manager Eligibility",
+      "topic_id": "554400000016141",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "03 - Benefits Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000289040": {
+      "name": "M22-4, Part II, Chapter 3, Section E – Benefits Manager Entitlement and Kickers",
+      "topic_id": "554400000016141",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "03 - Benefits Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000288916": {
+      "name": "M22-4, Part II, Chapter 3, Section F – Benefits Manager Enrollment Processing",
+      "topic_id": "554400000016141",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "03 - Benefits Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000289086": {
+      "name": "M22-4, Part II, Chapter 3, Section G - Benefits Manager Claim Summary",
+      "topic_id": "554400000016141",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "03 - Benefits Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000289089": {
+      "name": "M22-4, Part II, Chapter 3, Section H – Benefits Manager Letters",
+      "topic_id": "554400000016141",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "03 - Benefits Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000303839": {
+      "name": "M22-4, Part II, Chapter 3, Section I – Benefits Manager Reconciliation Claims",
+      "topic_id": "554400000016141",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "03 - Benefits Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000303842": {
+      "name": "M22-4, Part II, Chapter 3, Section J – Benefits Manager Specialized Claim Adjudication",
+      "topic_id": "554400000016141",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "03 - Benefits Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000303854": {
+      "name": "M22-4, Part II, Chapter 3, Section K – Benefits Manager Automation",
+      "topic_id": "554400000016141",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "03 - Benefits Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000307180": {
+      "name": "M22-4, Part II, Chapter 4 - Approval Manager",
+      "topic_id": "554400000016142",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "04 - Approval Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000221410": {
+      "name": "M22-4, Part II, Chapter 5 - Enrollment Manager",
+      "topic_id": "554400000016143",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "05 - Enrollment Manager"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000263362": {
+      "name": "M22-4, Part II, Chapter 6, Section A - Handling Payment Issues and Errors in eMPWR",
+      "topic_id": "554400000016144",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "06 - eMPWR"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000263365": {
+      "name": "M22-4, Part II, Chapter 6, Section B - Conversion from BDN to eMPWR",
+      "topic_id": "554400000016144",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "06 - eMPWR"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000263366": {
+      "name": "M22-4, Part II, Chapter 6, Section C - Requesting Access to eMPWR",
+      "topic_id": "554400000016144",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "06 - eMPWR"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000263367": {
+      "name": "M22-4, Part II, Chapter 6, Section D - Controlling Work After eMPWR Transition",
+      "topic_id": "554400000016144",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "06 - eMPWR"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000307184": {
+      "name": "M22-4, Part II, Chapter 7 – Other Data Sharing Systems",
+      "topic_id": "554400000016145",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "07 - Other Data Sharing Systems"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000304007": {
+      "name": "M22-4 Addendum | Appendix A: Active DGI Work Product Summary (WPS) Screen Messages",
+      "topic_id": "554400000016148",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000304053": {
+      "name": "M22-4 Addendum | Appendix B: Possible Business Transaction (BT) Fields in eMPWR",
+      "topic_id": "554400000016148",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000078763": {
+      "name": "ARCHIVED: M22-4, Part II, Chapter 1 - Computer Processing Concepts",
+      "topic_id": "554400000016149",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076474": {
+      "name": "ARCHIVED: M22-4, Part II, Chapter 2 - TRANSACTION CODES",
+      "topic_id": "554400000016149",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075787": {
+      "name": "ARCHIVED: M22-4, Part II, Chapter 3 - Master Record Inquiry (Overview and [Chs. 32, 34, 35 and Secs. 901, AND 903])",
+      "topic_id": "554400000016149",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000077340": {
+      "name": "ARCHIVED: M22-4, Part II, Chapter 4 - Master Record Inquiry (Chapter 30)",
+      "topic_id": "554400000016149",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076879": {
+      "name": "ARCHIVED: M22-4, Part II, Chapter 5 - MASTER RECORD INQUIRY (CHAPTER [1606])",
+      "topic_id": "554400000016149",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000077365": {
+      "name": "ARCHIVED: M22-4, Part II, Chapter 6 - BDN Processing - General",
+      "topic_id": "554400000016149",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000072899": {
+      "name": "ARCHIVED: M22-4, Part II, Chapter 7 – Education Letters",
+      "topic_id": "554400000016149",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000072991": {
+      "name": "ARCHIVED: M22-4, Part II, Chapter 8 - Miscellaneous Target Processing",
+      "topic_id": "554400000016149",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073086": {
+      "name": "ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables",
+      "topic_id": "554400000016149",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000304066": {
+      "name": "Archived Addendum | Glossary - Appendix:  Benefits Delivery Network (BDN) Commands",
+      "topic_id": "554400000016149",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 02 – Computer Processing",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073486": {
+      "name": "Part 3: Chapter 1 - Administrative Issues",
+      "topic_id": "554400000016150",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "01 – Administrative Issues"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073501": {
+      "name": "Part 3: Chapter 2 - Administrative Procedures",
+      "topic_id": "554400000016151",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "02 – Administrative Procedures"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073583": {
+      "name": "Part 3: Chapter 3 - Processing Applications for Benefits",
+      "topic_id": "554400000016152",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "03 – Processing Applications for Benefits"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073604": {
+      "name": "Part 3: Chapter 4 - Delimiting Date Extensions",
+      "topic_id": "554400000016153",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "04 – Delimiting Date Extensions"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073887": {
+      "name": "Part 3: Chapter 5 - Counseling",
+      "topic_id": "554400000016154",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "05 – Counseling"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073633": {
+      "name": "Part 3: Chapter 6 - Programs of Education",
+      "topic_id": "554400000016155",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "06 – Programs of Education"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075993": {
+      "name": "Part 3: Chapter 7 - Restrictions on Training",
+      "topic_id": "554400000016156",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "07 – Restrictions on Training"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076131": {
+      "name": "Part 3: Chapter 8 - Periodic Education Certifications",
+      "topic_id": "554400000016157",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "08 – Periodic Education Certifications"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076203": {
+      "name": "Part 3: Chapter 9 - Certificates of Eligibility and Disallowances",
+      "topic_id": "554400000016158",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "09 – Certificates of Eligibility and Disallowances"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073491": {
+      "name": "Part 3: Chapter 10 - Tutorial Assistance",
+      "topic_id": "554400000016159",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "10 – Tutorial Assistance"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073555": {
+      "name": "Part 3: Chapter 11 - Section 901",
+      "topic_id": "554400000016160",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "11 – Section 901"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073280": {
+      "name": "Part 3: Chapter 12 - The Antiterrorism Act",
+      "topic_id": "554400000016161",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "12 – The Antiterrorism Act"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000105882": {
+      "name": "RESERVED",
+      "topic_id": "554400000016162",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "13 - TBD"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073494": {
+      "name": "Part 3: Chapter 14 - Upstream Manual",
+      "topic_id": "554400000016163",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "14 – Upstream"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000308066": {
+      "name": "Appendices",
+      "topic_id": "554400000026762",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000308067": {
+      "name": "Archives",
+      "topic_id": "554400000017475",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 03 – Claims Processing",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073421": {
+      "name": "Part 4: Chapter 1 - Enrollment Certification",
+      "topic_id": "554400000016165",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "01 – Enrollment Certifications"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073476": {
+      "name": "Part 4: Chapter 2 - Flight, Correspondence, Licensing and Certification, National Examinations, and Preparatory Courses",
+      "topic_id": "554400000016166",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "02 – Flight and Correspondence Training"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073551": {
+      "name": "Part 4, Award Issues. Chapter 4 - Change of Program",
+      "topic_id": "554400000016168",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "04 – Change of Program"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075843": {
+      "name": "Unsatisfactory Attendance, Progress, or Conduct",
+      "topic_id": "554400000016164",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "05 – Unsatisfactory Attendance, Progress, or Conduct"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073534": {
+      "name": "Part 4: Chapter 6 - Measurement of College Level Courses",
+      "topic_id": "554400000016169",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "06 – Measurement of College Level Courses"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073579": {
+      "name": "Part 4: Chapter 8 - Interval Payment",
+      "topic_id": "554400000016171",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "08 – Interval Payment"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073590": {
+      "name": "Part 4: Chapter 9 - Dependency Issues",
+      "topic_id": "554400000016172",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "09 – Dependency Issues"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073602": {
+      "name": "Part 4: Chapter 10 - Advance and Special Payments",
+      "topic_id": "554400000016173",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "10 – Advance and Special Payments"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073644": {
+      "name": "Part 4: Chapter 11 - Enrollment Adjustments",
+      "topic_id": "554400000016174",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "11 – Enrollment Adjustments"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073667": {
+      "name": "Part 4: Chapter 12 - Out-of-System Award Processing",
+      "topic_id": "554400000016175",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "12 – Out-of-System Processing (Large File)"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073684": {
+      "name": "Part 4: Chapter 13 - Miscellaneous Award Issues",
+      "topic_id": "554400000016176",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "13 – Miscellaneous Award Issues"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073697": {
+      "name": "Part 4, Award Issues. Chapter 14 - Tables",
+      "topic_id": "554400000016177",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "14 – Tables"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000304058": {
+      "name": "M22-4 Addendum | Glossary - Appendix:  Flight Training Terminology",
+      "topic_id": "554400000016178",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073743": {
+      "name": "Archive of  Changes - Part 04, Award Issues",
+      "topic_id": "554400000016179",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 04 – Award Issues",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073756": {
+      "name": "Part 5 Chapter 1 - General",
+      "topic_id": "554400000016180",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "01 – General"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076230": {
+      "name": "M22-4 Part 5: Chapter 2 - MGIB BDN Processing",
+      "topic_id": "554400000016181",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "02 – BDN Processing"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000077000": {
+      "name": "Part 5: Chapter 3 - Eligibility Issues",
+      "topic_id": "554400000016182",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "03 – Eligibility Issues"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076293": {
+      "name": "Part 05, Chapter 30. Chapter 4 - Award Processing and Other Authorization Issues",
+      "topic_id": "554400000016183",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "04 – Award Processing and Other Authorization Issues"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076311": {
+      "name": "Part 5: Chapter 5 - Notice of Exception Processing",
+      "topic_id": "554400000016184",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "05 – Notice of Exception Processing"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000077042": {
+      "name": "Part 5: Chapter 6 - Certifications",
+      "topic_id": "554400000016185",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "06 – Certifications"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076317": {
+      "name": "Part 5: Chapter 7 - Letters",
+      "topic_id": "554400000016186",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "07 – Letters"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076326": {
+      "name": "Part 5: Chapter 8 - Miscellaneous",
+      "topic_id": "554400000016187",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "08 – Miscellaneous"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076337": {
+      "name": "Part V: Chapter 10 - Tuition Assistance Top-up",
+      "topic_id": "554400000016189",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "10 – Top-up"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076342": {
+      "name": "Part 5: Chapter 11 - Accelerated Payment",
+      "topic_id": "554400000016190",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "11 – Accelerated Payment"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076450": {
+      "name": "Part V:  Chapter 12 - Additional Contributions",
+      "topic_id": "554400000016191",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "12 – Additional Contributions"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000105884": {
+      "name": "RESERVED",
+      "topic_id": "554400000016192",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000077044": {
+      "name": "Archive dated 5/10/19: M22-4 Part 5: Chapter 9 - Chapter 34 Issues",
+      "topic_id": "554400000016193",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000130140": {
+      "name": "Archived date: 10/11/19: M22-4, Part 5, Chapter 1, Appendices.",
+      "topic_id": "554400000016193",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076265": {
+      "name": "Prior to 2019 - Archive of Changes",
+      "topic_id": "554400000016193",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 05 – Chapter 30",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076271": {
+      "name": "Part 6: Chapter 1 - General",
+      "topic_id": "554400000016194",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 06 – Chapter 32",
+        "01 – General"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076458": {
+      "name": "Part 6: Chapter 2 - Chapter 32 BDN Processing",
+      "topic_id": "554400000016195",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 06 – Chapter 32",
+        "02 – BDN Processing"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073542": {
+      "name": "Part 6: Chapter 3 - Eligibility Issues",
+      "topic_id": "554400000016196",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 06 – Chapter 32",
+        "03 – Eligibility Issues"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073576": {
+      "name": "Part 6: Chapter 4 - Award Processing and Other Authorization Issues",
+      "topic_id": "554400000016197",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 06 – Chapter 32",
+        "04 – Award Processing and Other Authorization Issues"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073589": {
+      "name": "Part 6: Chapter 5 - Notice of Exception Processing",
+      "topic_id": "554400000016198",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 06 – Chapter 32",
+        "05 – Notice of Exception Processing"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073594": {
+      "name": "Letters",
+      "topic_id": "554400000016199",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 06 – Chapter 32",
+        "06 – Letters"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076315": {
+      "name": "Part 6: Chapter 7-Miscellaneous",
+      "topic_id": "554400000016200",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 06 – Chapter 32",
+        "07 – Miscellaneous"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000105885": {
+      "name": "RESERVED",
+      "topic_id": "554400000016201",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 06 – Chapter 32",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073650": {
+      "name": "Prior to 2019 - Archive of Changes Part VI Chapter 32",
+      "topic_id": "554400000016202",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 06 – Chapter 32",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073664": {
+      "name": "Part 7: Chapter 1 - General",
+      "topic_id": "554400000016203",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 07 – Chapter 35",
+        "01 – General"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073682": {
+      "name": "Part 7: Chapter 2 - BDN Processing",
+      "topic_id": "554400000016204",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 07 – Chapter 35",
+        "02 – BDN Processing"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073695": {
+      "name": "Part 7: Chapter 3 - Eligibility Issues",
+      "topic_id": "554400000016205",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 07 – Chapter 35",
+        "03 – Eligibility Issues"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073754": {
+      "name": "Part 7: Chapter 5 - Notice of Exception Processing",
+      "topic_id": "554400000016207",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 07 – Chapter 35",
+        "05 – Notice of Exception Processing"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075864": {
+      "name": "Part 7: Chapter 35 - Letters",
+      "topic_id": "554400000016208",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 07 – Chapter 35",
+        "06 – Letters"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073778": {
+      "name": "Part 7: Chapter 6 - Letters",
+      "topic_id": "554400000016208",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 07 – Chapter 35",
+        "06 – Letters"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073783": {
+      "name": "Part 7: Chapter 7 - VA Education Loans PROGRAM REPEALED See CIR. 22-04-01, PARAGRAPH 9",
+      "topic_id": "554400000016209",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 07 – Chapter 35",
+        "07 – VA Education Loans"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073806": {
+      "name": "Part 7: Chapter 8 - Miscellaneous",
+      "topic_id": "554400000016210",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 07 – Chapter 35",
+        "08 – Miscellaneous"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000105886": {
+      "name": "RESERVED",
+      "topic_id": "554400000016211",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 07 – Chapter 35",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073843": {
+      "name": "Prior to 2019 - Archive of Changes Part VII Chapter 35",
+      "topic_id": "554400000016212",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 07 – Chapter 35",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073835": {
+      "name": "M22-4 Part 8: Chapter 1 - (Chapter 1606 Provisions)",
+      "topic_id": "554400000016213",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 08 – Chapter 1606",
+        "01 – General"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075832": {
+      "name": "Part 8: Chapter 2 - Chapter 1606 BDN Processing",
+      "topic_id": "554400000016214",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 08 – Chapter 1606",
+        "02 – BDN Processing"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073974": {
+      "name": "M22-4 Part 8: Chapter 3 - Eligibility Issues",
+      "topic_id": "554400000016215",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 08 – Chapter 1606",
+        "03 – Eligibility Issues"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075562": {
+      "name": "Part 8: Chapter 4 - Award Processing and Other Authorization Issues",
+      "topic_id": "554400000016216",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 08 – Chapter 1606",
+        "04 – Award Processing and Other Authorization Issues"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075838": {
+      "name": "Part 8: Chapter 5 - Notice of Exception Processing",
+      "topic_id": "554400000016217",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 08 – Chapter 1606",
+        "05 – Notice of Exception Processing"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075851": {
+      "name": "Part 8: Chapter 6 - Certifications",
+      "topic_id": "554400000016218",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 08 – Chapter 1606",
+        "06 – Certifications"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075852": {
+      "name": "Part 8: Chapter 7 - Letters",
+      "topic_id": "554400000016219",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 08 – Chapter 1606",
+        "07 – Letters"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075619": {
+      "name": "Part 8: Chapter 8 - Miscellaneous",
+      "topic_id": "554400000016220",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 08 – Chapter 1606",
+        "08 – Miscellaneous"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000079752": {
+      "name": "This chapter refers to information contained in Training Guide 22-99-5, The Chapter 1606 Training Guide",
+      "topic_id": "554400000016220",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 08 – Chapter 1606",
+        "08 – Miscellaneous"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075631": {
+      "name": "RESERVED",
+      "topic_id": "554400000016221",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 08 – Chapter 1606",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075856": {
+      "name": "Prior to 2019 - Archive of Changes Part 8: Chapter 10",
+      "topic_id": "554400000016222",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 08 – Chapter 1606",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075637": {
+      "name": "Part 9: Chapter 1 - General",
+      "topic_id": "554400000016223",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "01 – General"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073740": {
+      "name": "Part 9:  Chapter 2 - Review of Approvals - Overview",
+      "topic_id": "554400000016224",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "02 – Review of Approvals - Overview"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073748": {
+      "name": "Part 9: Chapter 3 - Review of Approvals - Specific Criteria for Institutions of Higher Learning and Noncollege Degree Institutions",
+      "topic_id": "554400000016225",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "03 – Review of Approvals - Specific Criteria for Institutions Of Higher Learning and Noncollege Degree Institutions"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073935": {
+      "name": "Part 9: Chapter 4 - Review of Approvals - Specific Criteria for Correspondence Schools, Flight Schools, and Job Training Establishments",
+      "topic_id": "554400000016226",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "04 – Review of Approvals - Specific Criteria for Correspondence Schools, Flight Schools, and Job Training Establishments"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075682": {
+      "name": "Part 9: Chapter 5 - Programs Approved by Other Than State Approving Agencies",
+      "topic_id": "554400000016227",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "05 – Programs Approved by Other Than State Approving Agencies"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075825": {
+      "name": "Part 9: Chapter 6 - Approval Information in WEAMS",
+      "topic_id": "554400000016228",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "06 – Approval Information in WEAMS (Web Enabled Approval Management System)"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000080120": {
+      "name": "Part 9: Chapter 8 - Records, Files, and Reports",
+      "topic_id": "554400000016230",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "08 – Records, Files, and Reports"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000080125": {
+      "name": "Part 9: Chapter 9 - Miscellaneous",
+      "topic_id": "554400000016231",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "09 – Miscellaneous"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000308109": {
+      "name": "M22-4 Addendum | College-Level Course and Objective Codes",
+      "topic_id": "554400000016232",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000308110": {
+      "name": "M22-4 Addendum | Non-College Degree Course and Objective Codes",
+      "topic_id": "554400000016232",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000308108": {
+      "name": "M22-4 Addendum | State Codes",
+      "topic_id": "554400000016232",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000308106": {
+      "name": "M22-4 Addendum | Station Number Codes",
+      "topic_id": "554400000016232",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076423": {
+      "name": "Prior to 2019 - Archive of Changes Part 9 Liaison and Approval Acitivities",
+      "topic_id": "554400000016233",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 09 – Liaison &amp; Approval Activities",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076426": {
+      "name": "Part 10: Chapter 1 - Introduction",
+      "topic_id": "554400000016234",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 10 – Compliance Survey",
+        "01 – Introduction"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073619": {
+      "name": "M22-4, Part 10, Compliance Survey. Chapter 02, Preliminary Procedures.",
+      "topic_id": "554400000016235",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 10 – Compliance Survey",
+        "02 – Preliminary Procedures"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073640": {
+      "name": "M22-4, Part 10, Compliance Survey. Chapter 03, Compliance Survey Procedures.",
+      "topic_id": "554400000016236",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 10 – Compliance Survey",
+        "03 – Preliminary Procedures"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073742": {
+      "name": "M22-4, Part 10, Compliance Survey. Chapter 04, Procedures Applicable to Facilities Offering Specific Types of Training.",
+      "topic_id": "554400000016237",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 10 – Compliance Survey",
+        "04 – Procedures Applicable to Facilities Offering Specific Types of Training"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073906": {
+      "name": "M22-4, Part 10, Compliance Suvery. Chapter 05, Procedures Based on Number of Discrepancies Found.",
+      "topic_id": "554400000016238",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 10 – Compliance Survey",
+        "05 – Procedures Based on Number of Discrepancies Found"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073910": {
+      "name": "M22-4, Part 10, Compliance Survey. Chapter 06, Referrals.",
+      "topic_id": "554400000016239",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 10 – Compliance Survey",
+        "06 – Referrals"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073927": {
+      "name": "M22-4, Part 10, Compliance Survey. Chapter 07 - Reports and Correspondence.",
+      "topic_id": "554400000016240",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 10 – Compliance Survey",
+        "07 – Reports and Correspondence"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073638": {
+      "name": "Chapter 8 - Records",
+      "topic_id": "554400000016241",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 10 – Compliance Survey",
+        "08 – Records"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000308070": {
+      "name": "Appendices",
+      "topic_id": "554400000016242",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 10 – Compliance Survey",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000199558": {
+      "name": "ARCHIVED: M22-4, Part X, Chapter 2 – Preliminary Procedures, 2.02  SCHEDULE OF COMPLIANCE SURVEYS (38 U.S.C. 3693)",
+      "topic_id": "554400000016243",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 10 – Compliance Survey",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000078710": {
+      "name": "Prior to 2019 - Archive of Changes Part 10",
+      "topic_id": "554400000016243",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 10 – Compliance Survey",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073649": {
+      "name": "Provisions of Chapter 1607 (Reserve Educational Asistance Programs (REAP))",
+      "topic_id": "554400000016244",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "01 – Provisions [DRAFT]"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073690": {
+      "name": "Policy Issues IMPLEMENT AS ADVISED",
+      "topic_id": "554400000016245",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "02 – Policy Issues [DRAFT]"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000078825": {
+      "name": "Part IX Chapter 3 System Basics",
+      "topic_id": "554400000016246",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "03 – System Basics [DRAFT]"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073909": {
+      "name": "Chapter 1607 Master Record Inquiries",
+      "topic_id": "554400000016247",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "04 – Chapter 1607 Master Record Inquiries [DRAFT]"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073674": {
+      "name": "Part 11: Chapter 5 - Determining Eligibility and COE Processing",
+      "topic_id": "554400000016248",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "05 – Determining Eligibility and COE Processing [DRAFT]"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073724": {
+      "name": "1607 Part 11: Chapter 6 - Payment and Authorization Processes",
+      "topic_id": "554400000016249",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "06 – Payment and Authorization Processes [DRAFT]"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073883": {
+      "name": "XI Ch1607 7 Batch Processing [DRAFT]",
+      "topic_id": "554400000016250",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "07 – Batch Processing [DRAFT]"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073658": {
+      "name": "Fiscal And Accounting Processing",
+      "topic_id": "554400000016251",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "08 – Fiscal and Accounting Processing [DRAFT]"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073726": {
+      "name": "Part XI: Chapter 9-Out-of-System Award Processing",
+      "topic_id": "554400000016252",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "09 – Out-of-System Award Processing [DRAFT]"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076575": {
+      "name": "Chapter 10 Tables",
+      "topic_id": "554400000016253",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "10 – Tables [DRAFT]"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000308071": {
+      "name": "Appendices",
+      "topic_id": "554400000026763",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000308072": {
+      "name": "Archives",
+      "topic_id": "554400000017477",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 11 – Chapter 1607",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000078305": {
+      "name": "Part 12, Chapter 00: Index",
+      "topic_id": "554400000016126",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000081817": {
+      "name": "Chapter 1. Post-9-11 Educational Assistance Program",
+      "topic_id": "554400000016254",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "01 – Post-9/11 GI Bill"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073730": {
+      "name": "Chapter 2. Eligibility",
+      "topic_id": "554400000016255",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "02 – Eligibility"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000081827": {
+      "name": "Sub-Chapter 1. Service Members",
+      "topic_id": "554400000016255",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "02 – Eligibility"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073736": {
+      "name": "Sub-Chapter 2. Veterans",
+      "topic_id": "554400000016255",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "02 – Eligibility"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073749": {
+      "name": "Sub-Chapter 3. Dependents",
+      "topic_id": "554400000016255",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "02 – Eligibility"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073785": {
+      "name": "Sub-Chapter 4.  Entitlement Issues",
+      "topic_id": "554400000016255",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "02 – Eligibility"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000078114": {
+      "name": "Sub-Chapter 5 Eligibility Excluded Service",
+      "topic_id": "554400000016255",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "02 – Eligibility"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073878": {
+      "name": "Chapter 3. Training Programs",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073801": {
+      "name": "Sub-Chapter 10. Tutorial Assistance Program",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073803": {
+      "name": "Sub-Chapter 11. Active Duty Training",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073961": {
+      "name": "Sub-Chapter 12 Approved Courses",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073775": {
+      "name": "Sub-Chapter 1 Instutions of Higher Learning",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073782": {
+      "name": "Sub-Chapter 2. Non-College Degree (NCD) Programs",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073784": {
+      "name": "Sub-Chapter 3. On-the-Job and Apprenticeship Training",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073787": {
+      "name": "Sub-Chapter 4. Flight Training",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073789": {
+      "name": "Sub-Chapter 5. Distance Learning, Independent Study, and Internet Training",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073790": {
+      "name": "Sub-Chapter 6. Correspondence Training",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073792": {
+      "name": "Sub-Chapter 7. National Testing Program",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073796": {
+      "name": "Sub-Chapter 8. Licensing and Certification",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073798": {
+      "name": "Sub-Chapter 9. Work-study Program",
+      "topic_id": "554400000016256",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "03 – Training Programs"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073949": {
+      "name": "Chapter 33 chapter 4 Monetary Benefits",
+      "topic_id": "554400000016257",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "04 – Monetary Benefits"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073952": {
+      "name": "Chapter 33 Sub-Chapter 4.1 Overview",
+      "topic_id": "554400000016257",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "04 – Monetary Benefits"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073958": {
+      "name": "Chapter 33 Sub-Chapter 4.2 Tuition and Fees",
+      "topic_id": "554400000016257",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "04 – Monetary Benefits"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000078677": {
+      "name": "Chapter 33 Sub-Chapter 4.3 Housing Allowance",
+      "topic_id": "554400000016257",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "04 – Monetary Benefits"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000078675": {
+      "name": "Chapter 33 Sub-Chapter 4.4 Books and Supplies Stipend",
+      "topic_id": "554400000016257",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "04 – Monetary Benefits"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000077643": {
+      "name": "Chapter 33 Sub-Chapter 4.5 - Additional Benefits",
+      "topic_id": "554400000016257",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "04 – Monetary Benefits"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000077645": {
+      "name": "Chapter 33 Sub-Chapter 4.6 - Reimbursements, Fees, and Overpayments",
+      "topic_id": "554400000016257",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "04 – Monetary Benefits"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073808": {
+      "name": "Sub-Chapter 1. User Login LTS Screen",
+      "topic_id": "554400000016258",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "05 – LTS Screen Navigation"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073860": {
+      "name": "Sub-Chapter 11. Payment Instructions LTS Screen",
+      "topic_id": "554400000016258",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "05 – LTS Screen Navigation"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073811": {
+      "name": "Sub-Chapter 2. LTS Authorized Users Warning Screen",
+      "topic_id": "554400000016258",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "05 – LTS Screen Navigation"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073816": {
+      "name": "Sub-Chapter 3. Search Chapter 33 LTS Screen",
+      "topic_id": "554400000016258",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "05 – LTS Screen Navigation"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073819": {
+      "name": "Sub-Chapter 4. Claimant Biography LTS Screen",
+      "topic_id": "554400000016258",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "05 – LTS Screen Navigation"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073821": {
+      "name": "Sub-Chapter 5. Work Product History LTS Screen",
+      "topic_id": "554400000016258",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "05 – LTS Screen Navigation"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073827": {
+      "name": "Sub-Chapter 6. Service Data LTS Screen",
+      "topic_id": "554400000016258",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "05 – LTS Screen Navigation"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073832": {
+      "name": "Sub-Chapter 7. Entitlement and Kickers LTS Screen",
+      "topic_id": "554400000016258",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "05 – LTS Screen Navigation"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073846": {
+      "name": "Sub-Chapter 8. Enrollment LTS Screen",
+      "topic_id": "554400000016258",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "05 – LTS Screen Navigation"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073851": {
+      "name": "Sub-Chapter 9. Letters Processing and Letters Screen",
+      "topic_id": "554400000016258",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "05 – LTS Screen Navigation"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073865": {
+      "name": "Chapter 6. LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073870": {
+      "name": "Sub-Chapter 1. Search Chapter 33 - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073850": {
+      "name": "Sub-Chapter 10. Enrollment: Non-College Degree (NCD) - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073856": {
+      "name": "Sub-Chapter 11. Enrollment: Flight Training - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073861": {
+      "name": "Sub-Chapter 12. Letter Information - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073872": {
+      "name": "Sub-Chapter 2. Claimant Biography - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073886": {
+      "name": "Sub-Chapter 3. Work Product History - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073890": {
+      "name": "Sub-Chapter 4. Service Data - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073893": {
+      "name": "Sub-Chapter 5. Entitlement and Kickers - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073894": {
+      "name": "Sub-Chapter 6. Enrollment - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073822": {
+      "name": "Sub-Chapter 7. Enrollment Correct and Add Function - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073829": {
+      "name": "Sub-Chapter 8. Enrollment: Correspondence - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073834": {
+      "name": "Sub-Chapter 9. Enrollment: On-the-Job (OJT)/Apprenticeship - LTS Data Entry Rules",
+      "topic_id": "554400000016259",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "06 – LTS Data Entry Rules"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073866": {
+      "name": "Chapter 7. Transfer of Entitlement Claim",
+      "topic_id": "554400000016260",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "07 – Transfer of Entitlement Claim"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000078109": {
+      "name": "8. Fry Scholarship Claim",
+      "topic_id": "554400000016261",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "08 – Fry Scholarship Claim"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076905": {
+      "name": "9. Chapter 33 BDN Screens and FOES Review",
+      "topic_id": "554400000016262",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "09 – Chapter 33 BDN"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076577": {
+      "name": "PART 12, CHAPTER 10 - CHAPTER 33 RESOURCES",
+      "topic_id": "554400000016263",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "10 – Resources"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000191366": {
+      "name": "Enrollment Verification - Chapter 33",
+      "topic_id": "554400000016264",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "11 – Enrollment Verification"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000308073": {
+      "name": "Appendices",
+      "topic_id": "554400000026764",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "Appendices"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000078247": {
+      "name": "Archive dated 6/11/19: M22-4 Part 12 Chapter 11 - Glossary of Terms",
+      "topic_id": "554400000017479",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000076013": {
+      "name": "Archive dated 6/11/19: M22-4 Part 12 Chapter 12.2 Public Law 112–26",
+      "topic_id": "554400000017479",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000078314": {
+      "name": "Archive dated 6/11/19. M22-4 Part 12, Chapter 13 Advisories (Chapter 33)",
+      "topic_id": "554400000017479",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073862": {
+      "name": "Archive dated 6/11/19. M22-4 Part 12 Chapter 12.1 Public Law 111-377",
+      "topic_id": "554400000017479",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000075779": {
+      "name": "Archive dated 6/11/19. M22-4 Part 12 Chapter 12.3 Public Law 110–252",
+      "topic_id": "554400000017479",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    },
+    "554400000073852": {
+      "name": "Archive dated 6/11/19 M22-4 Part 12 Chapter 12.4 Fry Scholarship Provision of PL 111-32",
+      "topic_id": "554400000017479",
+      "topic_breadcrumb": [
+        "M22-4",
+        "Part 12 – Chapter 33",
+        "Archives"
+      ],
+      "manual_name": "M22-4",
+      "downloaded": true
+    }
+  }
+}

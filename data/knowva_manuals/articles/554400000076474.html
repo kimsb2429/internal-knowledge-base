@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ARCHIVED: M22-4, Part II, Chapter 2 - TRANSACTION CODES</title>
+  <meta name="source-system" content="KnowVA (knowva.ebenefits.va.gov)">
+  <meta name="source-type" content="va_manual">
+  <meta name="manual-name" content="M22-4">
+  <meta name="article-id" content="554400000076474">
+  <meta name="alternate-id" content="None">
+  <meta name="last-modified" content="2025-08-27T11:14:36.000Z">
+  <meta name="created" content="2018-01-08T15:50:42Z">
+  <meta name="keywords" content="m22-4, chapter 32, transaction, codes, finance, funding, payment">
+  <meta name="topic-breadcrumb" content="M22-4 &gt; Part 02 – Computer Processing &gt; Archives">
+  <meta name="content-category" content="">
+  <meta name="target-audience" content="">
+</head>
+<body>
+<nav class="topic-breadcrumb" aria-label="Topic hierarchy"><span class="bc-item">M22-4</span> / <span class="bc-item">Part 02 – Computer Processing</span> / <span class="bc-item">Archives</span></nav>
+<h1>ARCHIVED: M22-4, Part II, Chapter 2 - TRANSACTION CODES</h1>
+<p><strong><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="#Top" name="#Top"></a></span></span></strong></p>
+
+<p class="paragraph" style="margin-left: 48px; text-align: center;"><span style="font-size:22px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#c0392b;"><b>ARCHIVED <span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent">August 14, 2025 </span></span></span></b> </span></span></span></p>
+
+<p class="paragraph" paraeid="{b94cba4e-119d-4e35-853d-dd3a0a8919b1}{145}" paraid="492305406" style="margin-left: 48px; text-align: center;"><span style="font-size:22px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#c0392b;"><span style="vertical-align:baseline"><span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent"><span style="overflow-wrap:break-word"><span style="white-space-collapse: preserve;"><span style="font-kerning:none"><span data-contrast="none" style="user-select:text" xml:lang="EN-US"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent"><span style="font-variant-ligatures:none !important"><span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent"><b>FOR HISTORICAL <span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent">PURPOSES ONLY</span></span></span></b></span></span></span></span></span></span></span> </span></span></span></span></span></span></span></span></span></span></p>
+
+<p></p>
+
+<p><strong><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PART 02, COMPUTER PROCESSING. CHAPTER 2 - TRANSACTION CODES</span></span></strong><br />
+ </p>
+
+<p><a href="#201"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.01  Purpose</span></span></a><br />
+<a href="#202"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.02  General</span></span></a><br />
+<a href="#203"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.03  Award Transactions</span></span></a><br />
+<a href="#204"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.04  Other Common Transactions</span></span></a><br />
+<a href="#205"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.05  Computer Generated Transactions</span></span></a><br />
+<a href="#206"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.06  Unique Features in Chapter 35 Processing</span></span></a><br />
+<a href="#207"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.07  Chapter 32 Banking Transactions</span></span></a><br />
+<a href="#208"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.08  Transaction Codes - Chapters 30, 32, [35, 1606] and Sections 901 and 903</span></span></a><br />
+<a href="#209"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.09  [Reserved for Future Use]</span></span></a><br />
+<a href="#210"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.10  Last Activity Codes - DOD Records   (Chapters 30 and [1606])</span></span></a><br />
+ </p>
+
+<p><u><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Tables</span></span></u></p>
+
+<p><a href="#t201"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.01 Chapter 30 and 1606 Transaction Codes</span></span></a><br />
+<a href="#t202"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.02  Chapter 32 and 35 Transaction Codes</span></span></a><br />
+<a href="#t203"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2.03  DOD Transaction Codes</span></span></a><br />
+ </p>
+
+<p><strong><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="201" name="201"></a>2.01 PURPOSE</span></span></span></span></span></span></strong><br />
+ </p>
+
+<hr />
+<p> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">This chapter explains the transaction codes and last activity codes used in the computer systems described in this manual. <a href="#208">Sections 2.08 through 2.10 </a>provide comprehensive listings of these codes.  [RPO (Regional Processing Office)] users need to understand these codes to fully analyze the master record screens for the various benefits. Master record screens are described in </span></span><a class="eGainArticleLink" articleid="554400000075787" articlename="ARCHIVED: M22-4, Part II, Chapter 3 - Master Record Inquiry (Overview and [Chs. 32, 34, 35 and Secs. 901, AND 903])" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000075787?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 2: Chapter 3 - Master Record Inquiry (Overview and [Chs. 32, 34, 35 and Secs. 901, AND 903])</a>, <a class="eGainArticleLink" articleid="554400000077340" articlename="ARCHIVED: M22-4, Part II, Chapter 4 - Master Record Inquiry (Chapter 30)" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000077340?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 2: Chapter 4 - Master Record Inquiry (Chapter 30)</a> and <a class="eGainArticleLink" articleid="554400000076879" articlename="ARCHIVED: M22-4, Part II, Chapter 5 - MASTER RECORD INQUIRY (CHAPTER [1606])" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076879?portalId=554400000001018&usertype=customer&\$lang=en-us&">PART 02, COMPUTER PROCESSING. Chapter 05 - MASTER RECORD INQUIRY (CHAPTER [1606])</a> .<br />
+ </span></span></p>
+
+<p style="text-align: right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></span></span></a></p>
+
+<p><strong><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="202" name="202"></a>2.02 GENERAL</span></span></strong><br />
+ </p>
+
+<hr />
+<p></p>
+
+<p style="margin-left: 40px"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="202a" name="202a"></a>a. Technical Meaning</strong>. [BDN (Benefit Delivery Network)] shows each transaction by a code number. In order for the data to process properly, the information must be in a specified format. BDN then builds the formatted data into a transaction. The transaction code number tells the computer what kind of actions it must perform. Transactions are either created as a result of data entered by an operator at a terminal, or by a batch program. (See</span></span> <a class="eGainArticleLink" articleid="554400000064143" articlename="Archive dated 5/10/19: M22-4 PART 01, GENERAL. CHAPTER 05 - MISCELLANEOUS" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000064143?portalId=554400000001018&usertype=customer&\$lang=en-us&">PART 01, GENERAL. CHAPTER 05 - MISCELLANEOUS</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> for information on the batch method of entry.)</span></span></span></span><br />
+ </p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="202a1" name="202a1"></a>1.  Each transaction has a specific purpose. For example, an award transaction 12C can create a master record and authorize benefits. A stop-payment transaction code 09V establishes an earlier ending date for benefits previously authorized or paid.</span></span><br />
+ <br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="202a2" name="202a2"></a>2.  A transaction is identified by a two-digit numeric code that may or may not have an alpha modifier. However, it may be also be a three-digit alpha code.</span></span><br />
+ <br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="202a3" name="202a3"></a>3.  Transaction codes do not appear on the processing screen when an operator enters information. They are shown on final award documents, master records, and error message writeouts. Transaction codes provide the key to analyzing master records, NOEs (Notice of Exceptions), and other computer-generated documents.]</span></span><br />
+ </p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">[<em>NOTE: BDN does not maintain transaction codes in the technical sense of the term for the DoD (Department of Defense) eligibility records for chapters 30 and 1606. However, these systems have a last activity code to indicate the nature of the last activity. As RPOs can use these last activity codes in the same manner as the transaction codes in the other systems, they are included in this chapter.</em>]</span></span><br />
+ </p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="202b" name="202b"></a>b. Practical Meaning.</strong> Transaction codes or last activity codes indicate the last activity (what has happened) in each master record. [For Chapters 32/903, and 35, the user can see only the latest transaction on the current master record screen. For Chapters 30 and 1606, the user can see the 20 most recent transactions.]</span></span><br />
+ <br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="202c" name="202c"></a>c. When Transactions Occur.</strong> A transaction only occurs when a record is created or updated. It is critical to understand exactly when education records are updated. Updating occurs at different times depending on the education system [(Chapter 30, 32/903, 35 or 1606) in question. (See <a class="eGainArticleLink" articleid="554400000063441" articlename="PART 01, GENERAL. CHAPTER 1 - OVERVIEW OF THE MANUAL" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000063441?portalId=554400000001018&usertype=customer&\$lang=en-us&">PART 01, GENERAL. CHAPTER 1 - OVERVIEW OF THE MANUAL</a>. Section 1.13) The mere completion of BDN data entry screens does not ensure that a transaction will take place. For example, the Education Division may prepare an award screen; however], no transaction occurs until the award is authorized and the transaction is transmitted to Hines BDC (Benefits Delivery Center) for eventual updating of the claimant's record. The speed of the updating depends on the system in question.</span></span><br />
+ <br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="202d" name="202d"></a>d. Assignment of Codes.</strong> When entering data into [BDN], operators generally do not need to know specific transaction codes. [BDN] assigns the appropriate transaction codes based on what the operator is trying to do. To understand how to enter data into [BDN (i.e., the BDN data entry commands), refer to <a class="eGainArticleLink" articleid="554400000077928" articlename="Part 02, Computer Processing. Chapter 6 - BDN Processing, General (Subchapter 2)" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000077928?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 02, Computer Processing. Chapter 6 - BDN Processing, General (Subchapter 2)</a> and <a class="eGainArticleLink" articleid="554400000072991" articlename="ARCHIVED: M22-4, Part II, Chapter 8 - Miscellaneous Target Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000072991?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 2: Chapter 8 - Miscellaneous Target Processing</a> of the manual and the second chapter of each benefit part of the manual (e.g., pt. V, ch. 2). For chapter 1606, see <a class="eGainArticleLink" articleid="554400000073083" articlename="Training Guide 22-99-5, The Chapter 1606 User Guide, Table of Contents" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073083?portalId=554400000001018&usertype=customer&\$lang=en-us&">Training Guide 22-99-5, The Chapter 1606 User Guide, Table of Contents</a>.</span></span><br />
+ <br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="202e" name="202e"></a>e. Rejects.</strong> In a few situations, it is possible for a transaction to reject because it is inappropriate for the current status of the master record. In most cases, however, on-line screen edits, described in later chapters, prevent this from happening.</span></span><br />
+ <br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="202f" name="202f"></a>f. Categories of Transactions.</strong> Three general categories of transactions are:</span></span><br />
+ </p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="202f1" name="202f1"></a>1. Transactions created when an operator enters data into [BDN] (e.g., an original award of benefits).</span></span><br />
+ <br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="202f2" name="202f2"></a>2. Transactions generated by [BDN] during batch processing (e.g., a rate increase for all records in a benefit chapter).</span></span><br />
+ <br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="202f3" name="202f3"></a>3. Transactions generated as the result of data entry from sources other than a VA operator (e.g., data from DoD computer files).</span></span><br />
+ </p>
+
+<p style="text-align: right"><br />
+<a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></span></span></a><br />
+ </p>
+
+<p><strong><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="203" name="203"></a>2.03 AWARD TRANSACTIONS</span></span></span></span></strong><br />
+ </p>
+
+<hr />
+<p> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">There are three basic types of education awards:  original, reentrance, and amended.  Each has a specific purpose and bears a distinct transaction code.</span></span></span></span><br />
+ </p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="203a" name="203a"></a>a. Original Award.</strong> [An award that is processed with no previous BDN master record other than type D (accounts receivable), type J (denial), type H (application), or type I (certificate of eligibility). (See <a class="eGainArticleLink" articleid="554400000063441" articlename="PART 01, GENERAL. CHAPTER 1 - OVERVIEW OF THE MANUAL" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000063441?portalId=554400000001018&usertype=customer&\$lang=en-us&">PART 01, GENERAL. CHAPTER 1 - OVERVIEW OF THE MANUAL</a> Section 1.08)] An original award has a transaction code 12B.</span></span><br />
+ <br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="203b" name="203b"></a>b. Reentrance Award.</strong> [An award that is entered into a master record where the last No Pay Date is earlier than the award beginning date.] A reentrance award has a transaction code 12C.</span></span><br />
+ <br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="203c" name="203c"></a>c. Amended Award.</strong> [An award that is entered into a master record where the last No Pay Date is later than the award beginning date. An amended award has a transaction code 14C. Some amended awards are system generated. For Chapter 35, BDN generates a transaction 14G when there is a legislative rate increase. In Chapter 32 processing, BDN] generates a transaction 14T when the bank record changes.</span></span><br />
+ </p>
+
+<p style="text-align: right"><br />
+<a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<p><strong><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="204" name="204"></a>2.04 OTHER COMMON TRANSACTIONS</span></span></strong><br />
+ </p>
+
+<hr />
+<p> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Other common education transactions that result from operator entries in [BDN] are as follows:</span></span><br />
+ </p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="204a" name="204a"></a>a. 02 or 02V - Correction to individual fields in the master record.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="204b" name="204b"></a>b. 03D/03E - Disallowances.</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="204c" name="204c"></a>c. 04 thru 08 series - Fiscal Transactions entered by the Finance Activity.</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="204d" name="204d"></a>d. 09 - Stop payment.</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="204e" name="204e"></a>e. 10 - Suspend payment.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="204f" name="204f"></a>f. 16 - Resume payment. </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="204g" name="204g"></a>g. 22 - Change of address.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="204h" name="204h"></a>h. 35 - Certification of Attendance</span></span></span></span><br />
+ </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="text-align: right"><br />
+<a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a><br />
+ </p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="205" name="205"></a>2.05 COMPUTER GENERATED TRANSACTIONS</strong></span></span></span></span><br />
+ </p>
+
+<hr />
+<p> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Each benefit system periodically generates certain transaction codes. These codes indicate what change occurred to the master record. Examples are:</span></span></span></span><br />
+ </p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="205a" name="205a"></a>a. 21 - returned check</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="205b" name="205b"></a>b. FFP - Full-File Pass [(Chs. 30 and 1606 only)]</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="205c" name="205c"></a>c. 14G - generated rate change (Ch. 35 only)</span></span></span></span></p>
+
+<p style="text-align: right"><br />
+<a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a><br />
+ </p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="206" name="206"></a>2.06 UNIQUE FEATURES IN CHAPTER 35 PROCESSING</strong></span></span></p>
+
+<p></p>
+
+<hr />
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="206a" name="206a"></a>a. Breakdown into Smaller Transactions.</strong> [In certain transactions in the Chapter 35 system, BDN breaks a transaction down into smaller transactions that process individually.] For example, a transaction 12B or 14C for Chapter 35 will contain smaller transactions as follows depending on the type of information entered.</span></span></span></span><br />
+ </p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="206a1" name="206a1"></a>1. Transaction 03A contains personal identifying information.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="206a2" name="206a2"></a>2. Transaction 03C, more commonly called C/E (Certificate of Eligibility) contains additional information affecting eligibility, entitlement credit, facility codes, objective, and course codes.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="206a3" name="206a3"></a>3. If an 03A or an 03C transaction rejects, the whole transaction rejects. However, if the award transaction rejects, the 03A or 03C may not reject, thereby creating a type H or I master record. (See [Section 1.08] for types of master records.)</span></span><br />
+ </p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="206b" name="206b"></a>b. Certificate of Eligibility Transactions.</strong> The Chapter 35 system has some unique processing for C/E transactions (03C). See <strong><u>PART 07, CHAPTER 35. CHAPTER 02, BDN PROCESSING</u></strong>, [<a class="eGainArticleLink" articleid="554400000073682" articlename="Part 7: Chapter 2 - BDN Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073682?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 7: Chapter 2 - BDN Processing</a> Section 2.03] for details.</span></span></p>
+
+<p><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>Note: [Only the Chapter 30 and 1606 systems] can actually generate a C/E form to the claimant. The Chapter 35 C/E transaction referred to above only enters data into the master record. It does not actually issue a C/E form.</em></span></span></p>
+
+<p style="text-align: right; margin-left: 40px"><br />
+<a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></span></span></a><br />
+ </p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="207" name="207"></a>2.07 CHAPTER 32 BANKING TRANSACTIONS</strong></span></span></span></span><br />
+ </p>
+
+<hr />
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="207a" name="207a"></a>a. General.</strong> Every month each military service department sends the VA information on its Chapter 32 participants. By the end of the individual's second month of participation, a VA Contributions Account (also referred to as a Bank record) will be established at Hines BDC. [RPOs can view the BDN M26 through M29 series of screens as soon as the Contributions Account is established. (See  <a class="eGainArticleLink" articleid="554400000075787" articlename="ARCHIVED: M22-4, Part II, Chapter 3 - Master Record Inquiry (Overview and [Chs. 32, 34, 35 and Secs. 901, AND 903])" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000075787?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 2: Chapter 3 - Master Record Inquiry (Overview and [Chs. 32, 34, 35 and Secs. 901, AND 903])</a></span></span><br />
+ </p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="207b" name="207b"></a>b. Banking Activity Maintained in a Master Record.</strong> [BDN assigns Chapter 32 Contributions Account transactions two-digit codes preceded by either a P (for "processed") or an R (for "reject"). The code usually represents a transaction submitted by DoD or by VA personnel, but it may also reflect internal system activity, or award transaction activities. The field, LAST ACTIVITY, on the M26 CH32/903 Participant Account Summary screen described in chapter 3, shows the code and the date that the last transaction processed against the record. Some of the codes for the various transactions are: 01, Correction to a Contributions Account; 30, Release of Unapplied Contributions; and 96, Refund. See Section <a href="#208b">2.08(b)</a> for a complete listing.</span></span></p>
+
+<p style="text-align: right"><br />
+<a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a><br />
+ </p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="208" name="208"></a>2.08 TRANSACTION CODES - CHAPTERS 30, 32, [35, 1606] AND SECTIONS 901 AND 903</strong></span></span><br />
+ </p>
+
+<hr />
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="208a" name="208a"></a>a. Benefit Transactions.</strong> <a href="#t201">Table 2.01</a> shows the benefit transactions codes used in Chapter 30 and 1606 records. <a href="#t202">Table 2.02</a> shows the benefit transactions codes used in chapter 32 (including section 903) and 35 records. See <a href="#208b">subparagraph b</a> for Chapter 32, section 901 and section 903 bank transactions. The "Media" shown in the third column of the table refers to the method of input of the transaction:</span></span><br />
+ </p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">B - Batch Input (certain Ch. 30 certification transactions only) (certain Ch. 1606 certification transactions - in future enhancement)</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G - Computer Generated</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">C - CHAIRS Input (Ch. 34/35 only)</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V - Video Display Terminal (i.e., [(Personal Computer)]</span></span><br />
+ </p>
+
+<p style="text-align: center; margin-left: 40px"><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="t201" name="t201"></a>Table 2.01, Chapter 30 and 1606 Transaction Codes</span></span><br />
+ </p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px" summary="This table shows the benefit transaction codes used in Chapter 30 and Chapter 1606 records.">
+	<thead>
+		<tr>
+			<th scope="col"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Code</strong></span></span></th>
+			<th scope="col"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Description</strong></span></span></th>
+			<th scope="col"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Media</strong></span></span></th>
+			<th colspan="2" scope="col"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Benefit System</strong></span></span></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="3"></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>30</strong></span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>1606</strong></span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">02</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Correction to the master record</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">02F</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Facility Code Update</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">02T*</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Award changed from Training Type "E" to "D"</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certificate of Eligibility form issued</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certificate of Eligibility form issued from amended 310 screen processing</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03D</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Denial - No benefit master record exists, or type "D" master record exists</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03E</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Denial</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03N</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03N</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">[BDN] C/E Issued (no 310 screen processing)</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04B</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Uncollectible returned checks</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04E</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Establish or increase accounts receivable, or clearance of unassociated account</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Establish or increase accounts receivable, or clearance of unassociated account</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04G</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04G</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Special Payment - Local</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Special Payment - Local</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06A</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment (includes tutorial assistance)</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment (includes tutorial assistance)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment - establish accounts receivable</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V [ ]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06C</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06C</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment - clear unassociated account</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment - clear unassociated account</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06E</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Clear unassociated account - no payment</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Clear unassociated account - no payment</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06G</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Special payment (computer)</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Special payment (computer)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V [ ]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06L</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment - Work-study allowance</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment - Work-study allowance</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06T</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment - Tutorial Assistance</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">07C</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Waiver - full or partial</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Waiver - full or partial</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">07D</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Write-off - Compromise or discharge in bankruptcy</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">08</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Cash collections [ ] deposited to Hines BDC accounts</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">08A</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Transfer unapplied deposit fund collections (cash) deposited to RO accounts</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">08B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Transfer unapplied deposit fund collections (offset) deposited to RO accounts</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">08E</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Reduction of accounts receivable, or clearance of unassociated balance</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">09</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Stop payment</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">10</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Suspend payment</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Suspend payment</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">10S</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">First Notice of Death (FNOD); BIRLS updated.</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">12B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Original award - Education</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">12C</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Reentrance award from interrupted - Education</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Reentrance award from interrupted - Education</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">14A</span></span></td>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Supplemental award generated from certification of delivery. This removes control or bar in advance payment cases.</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Supplemental award generated from certification of delivery. This removes control or bar in advance payment cases.</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">14C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Supplemental award - Education</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">16</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Resume payment</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">18</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">18</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Establish or change recurring deductions</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="display: none"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">21</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Returned check</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">21R</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Returned check</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">22</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Change of name and address</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">22C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Change of Address Generated</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">22D</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Change of DD/EFT</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">22F</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Change of fiduciary and address</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">22N</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DD/EFT NOC</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">22X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DD/EFT XREF</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">23</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Transfer of veteran's records - station change</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">25V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Change of name</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">26</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Adjustment of duplicate file number (appears in record of canceled number)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">26C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CNUM transaction changed the file number of benefit master record</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">28</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Notice of death</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35*</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification of attendance - award generated</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35T</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification of attendance - Telephone [from batch input]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">[**X]</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">[**35W</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification action processed from batch input (i.e., resulted from "Web" or "Internet" processing)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X]</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification action processed from batch input (i.e., resulted from "Wanding" at an RPO)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35Z</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification action processed under CERT command</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">63C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Overpayment Deleted during conversion from PC to BDN (Admin Error)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">96</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Refunded Death Cases</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">A/P</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Advance issued</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">AFR</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Annual Reporting Fee</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">C34</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Increase or decrease in chapter 34 transferred entitlement or a chapter 34 accounts receivable created or increased</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CARS TRANS CODE</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CARS Update</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CNV</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Converted from PC system to [BDN]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CNV</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Converted (old ch. 1606 system to new ch. 1606 system)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DOD</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Indicates a change to the individual's DOD eligibility record was received</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FFP</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Full-File Pass Processed</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">[LEG</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Legislative Rate Increase</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X]</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PAM</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">AUTOCERT/Pamphlets</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X01*</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Cost Code Fix - CAT II</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X02*</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Master Record Fix on 4/26/91</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">* One Time Update</span></span></span></span></span></span></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">[** To be installed later]</span></span></p>
+
+<p style="text-align: center"><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="t202" name="t202"></a>Table 2.02, Chapter 32 and 35 Transaction Codes</span></span><br />
+ </p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px" summary="This table shows the benefit transaction codes used in chapter 32 (including section 903) and 35 records.">
+	<thead>
+		<tr>
+			<th scope="col"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Code</span></span></span></span></th>
+			<th scope="col"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Description</span></span></th>
+			<th scope="col"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Media</span></span></th>
+			<th colspan="2" scope="col"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Benefit System</span></span></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="3"></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">32/903</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">34/35</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">01V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Reinsert Master Record</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">02V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Correctin to the master record</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V, C*</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03A</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Application data entered in claimant's record</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V, C*</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certificate of eligibility data entered in claimant's record</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V, C*</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03D</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Denial - No benefit master record exists, or type "D" master record exists</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03E</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Denial</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03F</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Record Purposes Disallowance</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04A</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Transfer accounts receivable debits<br />
+			(Manila RO only)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Uncollectible returned checks</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04D</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Resubmit unassociated debit</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04E</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Establish or increase accounts receivable, or clearance of unassociated account</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Special payment - local</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V [ ]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04H</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Computer generated hold check - not held</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04I</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Treasury Form RO-188, Substitute Checks</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04T</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Special payment (generated from [ ] 06G transaction)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">05X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Accrued award as reimbursement</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">05Y</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Accrued award by relationship</span></span></span></span></span></span></span></span></span></span></span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06A</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment [(includes tutorial assistance)]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment - establish accounts receivable</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V [ ]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment - clear unassociated account</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06E</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Clear unassociated account - no payment</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Special payment (computer)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V [ ]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06H</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CARS returned money to payee</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06L</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">One-time payment - Work-study allowance</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">07C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Waiver - full or partial</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">07D</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Write-off - Compromise or discharge in bankruptcy</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">07G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Reduction of accounts receivable</span></span> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">from outside source</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">08</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Cash collections [  ] deposited to Hines BDC account</span></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">s</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">08A</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Transfer unapplied deposit fund collections (cash) deposited to RO accounts</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">08B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Transfer unapplied deposit fund collections (offset) deposited to RO accounts</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">08C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Transfer accounts receivable credits (Manila RO only)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">08E</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Reduction of accounts receivable, or clearance of unassociated balance</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">09V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Stop payment notice - Education</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V [ ]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">10V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Suspend payment</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> [ ]</span></span></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">12B</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Original award - Education</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">12C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Reentrance award from interrupted - Education</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V, C**</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> [ ]</span></span></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">14A</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Supplemental award generated from certification of delivery. This removes control or bar in advance payment cases.</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">14C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Supplemental award - Education</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V [ ]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">14F</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Generated award to accomplish mass changes in school ending dates and automatic adjustments</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">14G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Generated award to accomplish mass changes in school ending dates and automatic adjustments</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">14K</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Supplemental award to remove payment bar on basis of information furnished by student</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">14T</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">[Generated award based on Hines or DOD update to bank record]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">14W</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Supplemental award generated from certification of delivery. This removes bar to payment on advance pay</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">16V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Resume payment</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">18</span></span></td>
+			<td><span style="display: none"> <font face="Arial">Establish or change recurring deductions</font></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Establish or change recurring deductions</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">21</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Returned check</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">22</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Change of name and address</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">22C</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Change of address (generated from certification transaction)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">22F</span></span></td>
+			<td><span style="display: none"> <font face="Arial">Change of fiduciary and address</font></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Change of fiduciary and address</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">23</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Transfer of veteran's records - station change</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">C</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X***</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> { }</span></span></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">25V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Change of name</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">26</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Adjustment of duplicate file number (appears in record of canceled number)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V, C**</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">26P</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Purge (VACO only)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">28</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Notice of death</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X***</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35A</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification of delivery of advance pay</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35C</span></span></td>
+			<td><span style="display: none"> <font face="Arial">Certification of lessons completed</font></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification of lessons completed</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35F</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification of flight training</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35I</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Verification of attendance - IHL</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35J</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification of attendance - NCD</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35S</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Verification of attendance - IHL</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35T</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification of attendance - NCD</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35W</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification of delivery of advance pay</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">36</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Certification of training - OJT/APPR</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">V</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">38</span></span></td>
+			<td><span style="display: none"> <font face="Arial">Request for address</font></span><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Request for address</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">39V</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Request for education master record writeout</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">C</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">88G</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Generated correction</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> [G]</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td style="text-align: center"></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">94</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Automatic suspension of delinquent education account</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">95</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Automatic termination of delinquent education account</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">98</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Future date rate change</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">XSA</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Deduction of excess absences from payment made as a result of certification of attendance processing</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G</span></span></td>
+			<td></td>
+			<td style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">*One Time update</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">**CHAIR Input permitted for Ch. 35 only</span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">***Ch. 34 only</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> <br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="208b" name="208b"></a>b. DoD Transaction Codes in Chapter 32 in Chapter 32 and Section 901 and 903 Records.</strong> The service departments submit bank transactions via magnetic tape for participants in the chapter 32 and section 901 and 903 programs. This is a two-digit numeric code preceded by a P (for "processed") or an R (for "reject"). <a href="#t203">Table 2.03 </a>shows the DoD codes for the various bank transactions, their descriptions, and the programs to which they apply.</span></span><br />
+ </span></span></p>
+
+<p style="text-align: center; margin-left: 40px"><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="t203" name="t203"></a>Table 2.03 DoD Transaction Codes</span></span><br />
+ </p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" style="width: 500px" summary="This table displays the DOD codes for the various bank transactions, their descriptions, and the programs to which they apply.">
+	<thead>
+		<tr>
+			<th scope="col"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Code</span></span></th>
+			<th scope="col"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Description</span></span></th>
+			<th colspan="3" scope="col"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Benefit System</span></span></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2"></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">32</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">903</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">901</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">01</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Correction to a Contributions Account</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">05</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Correction of File Identification or Statistical Data in the Record</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">10</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Establishment - Personnel and Financial Data</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">11</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Establishment - Personnel Data Only</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">12</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Establishment - Financial Data Only</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">21</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Returned Check</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">22</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Address Change</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">30</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Release of Unapplied Contributions</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">35</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Retroactive Adjustment of Prior Contributions</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">40</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Recurring Monthly Allotment</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">44</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Notice of Proposed DOD Bonus Contribution, "Kicker"</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">45</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DOD Bonus Contribution, "Kicker"</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">50</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Allotment Termination</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">51</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Eligibility</span></span></td>
+			<td></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">96</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Refund</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">E00</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">A bank sequential run has been processed updating the records</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BP</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Big Pay (Recurring Payment Processing)</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">X</span></span></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="text-align: right"><br />
+<a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></span></span></a><br />
+ </p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="209" name="209"></a>2.09 [RESERVED FOR FUTURE USE]</strong></span></span></span></span></span></span><br />
+ </p>
+
+<hr />
+<p style="text-align: right"><br />
+<a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></span></span></a><br />
+ </p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="210" name="210"></a>2.10  LAST ACTIVITY CODES - DOD RECORDS (CHS. 30 and [1606])</strong></span></span></span></span><br />
+ </p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See <a class="eGainArticleLink" articleid="554400000077340" articlename="ARCHIVED: M22-4, Part II, Chapter 4 - Master Record Inquiry (Chapter 30)" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000077340?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 2: Chapter 4 - Master Record Inquiry (Chapter 30)</a> and <a class="eGainArticleLink" articleid="554400000076879" articlename="ARCHIVED: M22-4, Part II, Chapter 5 - MASTER RECORD INQUIRY (CHAPTER [1606])" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076879?portalId=554400000001018&usertype=customer&\$lang=en-us&">PART 02, COMPUTER PROCESSING. Chapter 05 - MASTER RECORD INQUIRY (CHAPTER [1606])</a> to review these records. Instead of transaction codes, these records use a 3-character alpha code to indicate the last activity.</span></span><br />
+ </p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="210a" name="210a"></a>a. Chapter 30.</strong></span></span><br />
+ </p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="210a1" name="210a1"></a>1. LOD - Shows the record existed at the time of the initial loading of DoD Data into the VA's database and has not been changed since.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="210a2" name="210a2"></a>2. ADD - Shows a new DoD record was received since the initial receipt of records. "ADD" shows an initial record was added or that a 2nd or subsequent DoD record has been added after the initial record.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="210a3" name="210a3"></a>3. CNG - Indicates service data changed in the DoD record.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="210a4" name="210a4"></a>4. C34 - Indicates the "Entitlement Used" fields have changed in the Chapter 34 master record since the last activity.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="210a5" name="210a5"></a>5. TNT - Indicates entitled to Chapter 34 benefits at the time of initial loading of Chapter 34 data into the Chapter 30 system.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="210a6" name="210a6"></a>6. SNT - Indicates NOT entitled to Chapter 34 benefits at the time of initial loading of Chapter 34 data into the Chapter 30 system.</span></span><br />
+ </p>
+
+<p style="margin-left: 40px"><strong><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="210b" name="210b"></a>b. Chapter [1606].</span></span></strong><br />
+ </p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="210b1" name="210b1"></a>1. LOD - Shows the record existed at the time of the initial loading of DoD Data into the VA's database and has not been changed since.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="210b2" name="210b2"></a>2. ADD - Shows a new DoD record was received since the initial receipt of records.  "ADD" shows an initial record was added or that a 2nd or subsequent DoD record has been added after the initial record. </span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="210b3" name="210b3"></a>3. CNG - Indicates service data changed in the DoD record.</span></span><br />
+ </p>
+
+<p style="text-align: right"><br />
+<a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go To Top</span></span></a><br />
+ </p>
+</body>
+</html>

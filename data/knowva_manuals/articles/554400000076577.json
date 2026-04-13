@@ -1,0 +1,42 @@
+{
+  "article_id": "554400000076577",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000076577",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 12 – Chapter 33",
+    "10 – Resources"
+  ],
+  "topic_id": "554400000016263",
+  "manual_name": "M22-4",
+  "title": "PART 12, CHAPTER 10 - CHAPTER 33 RESOURCES",
+  "description": "Chapter 33 Manual Assistance",
+  "keywords": "resources, links, vis, bdn, tims",
+  "last_modified": "2025-07-29T11:21:42.000Z",
+  "created": "2018-01-09T14:48:18Z",
+  "version": "21",
+  "state": "P",
+  "contains_table": false,
+  "contains_list": true,
+  "heading_outline": [
+    {
+      "level": 2,
+      "text": "PART 12, CHAPTER 10 - CHAPTER 33 RESOURCES"
+    },
+    {
+      "level": 2,
+      "text": "10.01 System Resources"
+    },
+    {
+      "level": 2,
+      "text": "10.02 Active Service Matrix"
+    }
+  ],
+  "heading_count": 3,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

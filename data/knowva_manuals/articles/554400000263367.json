@@ -1,0 +1,42 @@
+{
+  "article_id": "554400000263367",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000263367",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 02 – Computer Processing",
+    "06 - eMPWR"
+  ],
+  "topic_id": "554400000016144",
+  "manual_name": "M22-4",
+  "title": "M22-4, Part II, Chapter 6, Section D - Controlling Work After eMPWR Transition",
+  "description": "This chapter discusses taking credit for work, tracking work timeliness, and diary issues.",
+  "keywords": "Digital GI Bill (DGIB) eMPWR managed service enterprise management of payment workload reporting",
+  "last_modified": "2025-08-27T18:23:37.000Z",
+  "created": "2024-02-29T20:07:53Z",
+  "version": "22",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": false,
+  "heading_outline": [
+    {
+      "level": 3,
+      "text": "Topic 1: RPO Processor Production Reporting"
+    },
+    {
+      "level": 3,
+      "text": "Topic 2: Education Service Workload Reporting"
+    },
+    {
+      "level": 3,
+      "text": "Topic 3: Maintaining Diaries for Future Work"
+    }
+  ],
+  "heading_count": 3,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

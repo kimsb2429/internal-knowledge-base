@@ -1,0 +1,282 @@
+{
+  "article_id": "554400000080120",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000080120",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 09 – Liaison &amp; Approval Activities",
+    "08 – Records, Files, and Reports"
+  ],
+  "topic_id": "554400000016230",
+  "manual_name": "M22-4",
+  "title": "Part 9: Chapter 8 - Records, Files, and Reports",
+  "description": "Records, Files, and Reports for facilities",
+  "keywords": null,
+  "last_modified": "2025-09-24T11:00:19.000Z",
+  "created": "2018-02-22T17:51:09Z",
+  "version": "35",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": true,
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Subchapter 1. Records and Files 1.\n8.01  Electronic Approval Records\n8.02  Information Dissemination File\n8.03  Facilities Register and Card File\n8.04  Facility Codes\n\nSubchapter 2. Approvals Compliance and Liaison Reports"
+    },
+    {
+      "level": 2,
+      "text": "8.05  Salesforce [Customizable] Reports"
+    },
+    {
+      "level": 2,
+      "text": "8.06  OBIEE [Customizable] Reports"
+    },
+    {
+      "level": 2,
+      "text": "8.07  Tableau Reports"
+    },
+    {
+      "level": 2,
+      "text": "8.08  Annual Reporting Fees Reports"
+    },
+    {
+      "level": 2,
+      "text": "8.09  Pay List and Vet Rep List"
+    },
+    {
+      "level": 2,
+      "text": "8.10  Reserved"
+    },
+    {
+      "level": 2,
+      "text": "8.11  OJT Flight and Correspondence Report"
+    },
+    {
+      "level": 2,
+      "text": "8.12  VA-ONCE (VA Online Certification of Enrollment) Reports"
+    },
+    {
+      "level": 2,
+      "text": "8.13  Two Certification Report"
+    },
+    {
+      "level": 2,
+      "text": "8.14  VA Form 1998 Report"
+    },
+    {
+      "level": 2,
+      "text": "8.01  Salesforce Reports: Custom Built Reports"
+    },
+    {
+      "level": 2,
+      "text": "8.04  New Reports"
+    },
+    {
+      "level": 2,
+      "text": "8.05  Choose Report Type"
+    },
+    {
+      "level": 2,
+      "text": "8.06  Filters"
+    },
+    {
+      "level": 2,
+      "text": "8.07  Display Fields"
+    },
+    {
+      "level": 2,
+      "text": "8.08  Save Report"
+    },
+    {
+      "level": 2,
+      "text": "8.09  Export Report"
+    },
+    {
+      "level": 2,
+      "text": "8.10  Folders"
+    },
+    {
+      "level": 2,
+      "text": "8.11  List Views"
+    },
+    {
+      "level": 2,
+      "text": "8.12  Creating New List Views"
+    },
+    {
+      "level": 2,
+      "text": "8.13  List Views: Filters and Display Fields"
+    },
+    {
+      "level": 2,
+      "text": "8.12  OBIEE Dashboards"
+    },
+    {
+      "level": 2,
+      "text": "8.13  WEAMS Main Menu"
+    },
+    {
+      "level": 2,
+      "text": "8.14  EDU COIN Reports"
+    },
+    {
+      "level": 2,
+      "text": "8.15  J250 Amounts by Payment Type"
+    },
+    {
+      "level": 2,
+      "text": "8.16  Export Report"
+    },
+    {
+      "level": 2,
+      "text": "8.17  Tableau Dashboards"
+    },
+    {
+      "level": 2,
+      "text": "8.18  Annual Reporting Fee Listing"
+    },
+    {
+      "level": 2,
+      "text": "8.19  Pay List (WEAMS)"
+    },
+    {
+      "level": 2,
+      "text": "8.20  Pay List"
+    },
+    {
+      "level": 2,
+      "text": "8.21  Generating VA Form 22-1998 Report"
+    },
+    {
+      "level": 1,
+      "text": "SUBCHAPTER II. APPROVALS COMPLIANCE AND LIAISON REPORTS"
+    },
+    {
+      "level": 2,
+      "text": "8.05 Salesforce [Customizable] Reports"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.01. Salesforce Reports: Custom Built Reports"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.04. New Reports"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.06 Filters"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.07. Display Fields"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.08. Save Report"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.09. Export Report"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.10. Folders"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.11. List Views"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.12. Creating New List Views"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.13. List Views: Filters and Display Fields"
+    },
+    {
+      "level": 2,
+      "text": "8.06 OBIEE [Customizable] Reports"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.12. OBIEE Dashboards"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.13. WEAMS Main Menu"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.14. EDU COIN Reports"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.15. J250 Amounts by Payment Type"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.16. Export Report"
+    },
+    {
+      "level": 2,
+      "text": "8.07 Tableau Reports"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.17. Tableau Dashboards"
+    },
+    {
+      "level": 2,
+      "text": "8.08 Annual Reporting Fees (ARF) Reports"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.18. Annual Reporting Fee Listing"
+    },
+    {
+      "level": 2,
+      "text": "8.09 Pay List and Vet Rep List"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.19. Pay List (WEAMS)"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.20. Pay List"
+    },
+    {
+      "level": 2,
+      "text": "8.10 Reserved"
+    },
+    {
+      "level": 2,
+      "text": "8.11 OJT Flight and Correspondence Report"
+    },
+    {
+      "level": 2,
+      "text": "8.12 VA-ONCE (VA Online Certification of Enrollment) Reports"
+    },
+    {
+      "level": 2,
+      "text": "8.13 Two Certification Report"
+    },
+    {
+      "level": 2,
+      "text": "8.14 WEAMS (Web Enabled Approval Management System) VA Form 22-1998 Report"
+    },
+    {
+      "level": 2,
+      "text": "Figure 8.21. Generating VA Form 22-1998 Report"
+    }
+  ],
+  "heading_count": 63,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

@@ -1,0 +1,42 @@
+{
+  "article_id": "554400000291404",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000291404",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 02 – Computer Processing",
+    "01 - DGIB Managed Service"
+  ],
+  "topic_id": "554400000016139",
+  "manual_name": "M22-4",
+  "title": "M22-4, Part II, Chapter 1, Section A – DGIB Managed Service",
+  "description": "DGIB Managed Service",
+  "keywords": "DGIB Managed Service, BM, DGI",
+  "last_modified": "2025-08-27T18:07:24.000Z",
+  "created": "2025-01-16T15:04:26Z",
+  "version": "22",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": true,
+  "heading_outline": [
+    {
+      "level": 3,
+      "text": "Topic 1: Overview"
+    },
+    {
+      "level": 3,
+      "text": "Topic 2: Claimant data information"
+    },
+    {
+      "level": 3,
+      "text": "Topic 3: Payments and the DGIB Managed Service"
+    }
+  ],
+  "heading_count": 3,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

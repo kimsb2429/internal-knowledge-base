@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ARCHIVED: M22-4, Part II, Chapter 4 - Master Record Inquiry (Chapter 30)</title>
+  <meta name="source-system" content="KnowVA (knowva.ebenefits.va.gov)">
+  <meta name="source-type" content="va_manual">
+  <meta name="manual-name" content="M22-4">
+  <meta name="article-id" content="554400000077340">
+  <meta name="alternate-id" content="None">
+  <meta name="last-modified" content="2025-08-27T11:15:58.000Z">
+  <meta name="created" content="2018-01-17T19:30:40Z">
+  <meta name="keywords" content="m22-4, part 2, chapter 4, bdn, examples, processing MGIB, Chapter 30, master, terms, school, entry">
+  <meta name="topic-breadcrumb" content="M22-4 &gt; Part 02 – Computer Processing &gt; Archives">
+  <meta name="content-category" content="">
+  <meta name="target-audience" content="">
+</head>
+<body>
+<nav class="topic-breadcrumb" aria-label="Topic hierarchy"><span class="bc-item">M22-4</span> / <span class="bc-item">Part 02 – Computer Processing</span> / <span class="bc-item">Archives</span></nav>
+<h1>ARCHIVED: M22-4, Part II, Chapter 4 - Master Record Inquiry (Chapter 30)</h1>
+<p class="paragraph" style="margin-left: 48px; text-align: center;"><span style="font-size:22px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#c0392b;"><b>ARCHIVED <span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent">August 14, 2025 </span></span></span></b> </span></span></span></p>
+
+<p class="paragraph" paraeid="{b94cba4e-119d-4e35-853d-dd3a0a8919b1}{145}" paraid="492305406" style="margin-left: 48px; text-align: center;"><span style="font-size:22px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#c0392b;"><span style="vertical-align:baseline"><span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent"><span style="overflow-wrap:break-word"><span style="white-space-collapse: preserve;"><span style="font-kerning:none"><span data-contrast="none" style="user-select:text" xml:lang="EN-US"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent"><span style="font-variant-ligatures:none !important"><span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent"><b>FOR HISTORICAL <span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent">PURPOSES ONLY</span></span></span></b></span></span></span></span></span></span></span> </span></span></span></span></span></span></span></span></span></span></p>
+
+<p></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Part 2: Chapter 4 - Master Record Inquiry (Chapter 30)</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a href="#SI">Subchapter 1</a>. Chapter 30 Benefit Master Record Inquiry</strong><br />
+<a href="#401">4.01 Master Record Screens</a><br />
+<a href="#402">4.02 Ready Screen Entries</a><br />
+<a href="#403">4.03 Chapter 30 Status and Award History (M21)</a><br />
+<a href="#404">4.04 Transaction and Payment History (M22)</a><br />
+<a href="#405">4.05 Chapter 30 Eligibility and Entitlement (M23)</a><br />
+<a href="#406">4.06 [Reserved for Future Use]</a><br />
+<a href="#407">4.07 Chapter 30 Dropped Priors Screen (M20)</a><br />
+<a href="#408">4.08 Screen Selection Screen (30M)</a><br />
+<a href="#409">4.09 Chapter 30 Death Benefit Record (M96)</a><br />
+<br />
+<strong><a href="#SII">Subchapter 2.</a> Chapter 30 Master Record Inquiry</strong><br />
+<a href="#410">4.10 Chapter 30 DOD Data Record Screen (30D)</a><br />
+<br />
+<strong>Figures</strong><br />
+<a href="#f401a">4.01a M21 Screen Display Fields Chapter 30 IHL Award (Category IB)</a><br />
+<a href="#f401b">4.01b M21 Screen Display Fields Chapter 30 IHL Award (Category II)</a><br />
+<a href="#f402">4.02 M21 Screen Display Fields - Type "J" Master Record</a><br />
+<a href="#f403">4.03 M21 Screen Display Fields - Type "I" Master Record</a><br />
+<a href="#f404">4.04 M21 Screen Display Fields Requesting Earlier Periods</a><br />
+<a href="#f405">4.05 M21 Screen Display Fields Requested Earlier Periods From Figure 4.04. Also Requesting Earlier Periods</a><br />
+<a href="#f406">4.06 M21 Screen Displayed Fields Earlier Periods From Figure 4.05 Shown</a><br />
+<a href="#f407">4.07 [Reserved for Future Use]</a><br />
+<a href="#f408">4.08 M22 Screen Display - Requesting Earlier Periods</a><br />
+<a href="#f409">4.09 M22 Screen Display - Earlier Periods Shown</a><br />
+<a href="#f410">4.10 M23 Screen Display</a><br />
+<a href="#f411">4.11 [Reserved for Future Use]</a><br />
+<a href="#f412">4.12 M20 Screen Display</a><br />
+<a href="#f413">4.13 30M Screen Display</a><br />
+<a href="#f414">4.14 M96 Screen Display</a><br />
+<a href="#f415">4.15 30D Screen Display (Category I Case)</a><br />
+<a href="#f416">4.16 30D Screen Display (Category II Case)</a></span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="SI" name="SI"></a>SUBCHAPTER I.  CHAPTER 30 BENEFIT MASTER RECORD INQUIRY</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="401" name="401"></a>4.01   MASTER RECORD SCREENS</strong></span></span></p>
+
+<div align="center">
+<hr align="center" noshade="noshade" size="1" width="100%" /></div>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The Chapter 30 <u>benefit</u> record screens are as follows:</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="401q" name="401q"></a>a.</strong>  M21 - Chapter 30 Status and Award History.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="401b" name="401b"></a>b.</strong>  M22 - Transaction and Payment History.</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="401c" name="401c"></a>c.</strong>  M23 - Chapter 30 Eligibility and Entitlement.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="401d" name="401d"></a>d.</strong>  [  ]</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="401e" name="401e"></a>e.</strong>  M20 - Dropped Priors.</span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="401f" name="401f"></a>f.</strong>  M96 - Chapter 30 Death Benefit Record.</span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="401g" name="401g"></a>g.</strong>  30M - Screen Selection.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="401h" name="401h"></a>h.</strong>  M01 - Deduction Receivable Balance Data.  (See</span></span></span></span></span></span></span></span></span></span></span></span></span></span> <a class="eGainArticleLink" articleid="554400000075787" articlename="ARCHIVED: M22-4, Part II, Chapter 3 - Master Record Inquiry (Overview and [Chs. 32, 34, 35 and Secs. 901, AND 903])" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000075787?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 2: Chapter 3 - Master Record Inquiry (Overview and [Chs. 32, 34, 35 and Secs. 901, AND 903])</a>.)</span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="402" name="402"></a>4.02  READY SCREEN ENTRIES</strong></span></span></p>
+
+<div align="center">
+<hr align="center" noshade="noshade" size="1" width="100%" /></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="402a" name="402a"></a>a.</strong>  Make the following entries on the Ready Screen:</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="402a1" name="402a1"></a>(1)  Command MINQ.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="402a2" name="402a2"></a>(2)  Operator's password.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="402a3" name="402a3"></a>(3)  Screen number (optional).</span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="402a4" name="402a4"></a>(4)  File number.</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="402a5" name="402a5"></a>(5)  BENEFIT Field.  Enter "CH30".</span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="402a6" name="402a6"></a>6)  Press the ENTER key.</span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="402b" name="402b"></a>b.</strong> BDN (Benefits Delivery Network, previously called Target) shows the M21 screen if a particular screen is not requested.  The ready screen shows "CH 30 RECORD NOT FOUND" when a benefit record is not located.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="402c" name="402c"></a>c.</strong>  PINQ (Pending Inquiry) and SINQ (Status Inquiry) processing remain unchanged for chapter 30.  (See ch. 3.)  There are five BDNRSs (Benefits Delivery Network Regional Systems) and four RPOs (Regional Processing Offices).  PINQ and SINQ commands only show issues pending within a given region.  Benefits Delivery Network (BDN) shows the S02 Selection screen if more than one record exists.  Select the appropriate record from the S02 screen.</span></span></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="403" name="403"></a>4.03  [CHAPTER 30 STATUS AND AWARD HISTORY] (M21)</strong></span></span></p>
+
+<div align="center">
+<hr align="center" noshade="noshade" size="1" width="100%" /></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="403a" name="403a"></a>a.  M21 Screen Display Fields</strong>.  This screen shows current award lines and other master record data for chapter 30.  A brief description of displayed fields follows.  (See <a href="#f401a">figs. 4.01a</a> and <a href="#f401b">4.01b</a>.)</span></span></p>
+
+<p style="text-align: center; margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="f401a" name="f401a"></a></strong></span></span></p>
+
+<p align="center"><img alt="Figure 4.01a.  M21 Screen Display Fields Chapter 30 IHL Award (Category IB)]" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.01a.jpg" style="height: 378px; width: 566px" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.01a.  M21 Screen Display Fields<br />
+Chapter 30 IHL Award (Category IB)]</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 59%" summary="M21 SCREEN DISPLAY FIELDS AND REMARKS" width="59%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>FIELD NAME</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">REMARKS</span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FILE NUMBER</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the file number.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SOC SEC NUMBER</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the social security number (when it is not the file number).</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">M/R STATUS</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows one of the following:</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RUNNING or SUSP with suspend reason code</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TERMINATED</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">C/E ISSUED</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DISALLOWED</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ACCT REC</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PURGE</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="f401b" name="f401b"></a></strong></span></span></p>
+
+<p align="center"><img alt="Figure 4.01b.  M21 Screen Display Fields Chapter 30 IHL Award (Category II)" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.01b.jpg" style="height: 344px; width: 566px" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.01b.  M21 Screen Display Fields<br />
+Chapter 30 IHL Award (Category II)</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 59%" summary="M21 Screen Display Fields CHAPTER 30 IHL AWARDS CATEGORY II" width="59%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>FIELD NAME</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>REMARKS</strong></span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NAME</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the stub name of the veteran.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">STATION</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the station of jurisdiction.  See paragraph 9.21.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CHIEF ATTY</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Chief Attorney)  Shows the RO (Regional Office) number of the station from which the Veterans Services Center Manager controls the guardian appointment.  See paragraph 9.21.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PWR-ATTY</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Power of Attorney)  See Service Organization Codes listed in M21-1, part II, chapter 6, exhibit B.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BENEFIT</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the type of benefit:  CH30.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">LAST ACTIVITY</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the type and date of last transaction.  See Part 2 Chapter 2 paragraph 2.08a for a listing of transaction codes.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ORIG ENT/CH30</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Original Entitlement)  Shows the amount of chapter 30 original entitlement.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ORIG ENT/CH34</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Original Entitlement)  Shows the amount of remaining chapter 34 entitlement as of 1-1-90. This amount will not exceed 36 months.]  This is the same as the CH34 TRANSF ENT field on the M23 screen.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RECEIVABLE</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the current accounts receivable (overpayment) total.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">REM ENT CH30</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Remaining Entitlement)  [Shows the original CH30 entitlement minus entitlement for 1, 2 and 3 below, then adding 4 below.</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(1) the CH30 entitlement dropped,</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(2) the CH30 entitlement used,</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(3) the CH30 entitlement reduced,</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(4) the CH 30 entitlement restored.]</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">REM ENT CH34</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Remaining Entitlement)  Shows the difference between the CH 34 entitlement remaining as of 1-1-90 (not to exceed 36 months) and the CH34 entitlement used after 1-1-90, plus the CH34 entitlement dropped after 1-1-90, plus the CH34 entitlement reduced after 1-1-90.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PROCEEDS (RSN)</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows accumulated amount due the claimant from returned checks or benefits due but not paid preceded by a one position reason code:</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> Code                Explanation</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">    1                  Undeliverable</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">    3                  Reported Deceased</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">    5                  Nonentitlement</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">    6                  Nonentitlement, Other</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">    7                  Returned Advance Pay Check</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DELIMIT DATE (30)</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Delimiting Date)</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the chapter 30 delimiting date.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TYPE TNG</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Type Training)  Shows type of training.  See paragraph 9.29.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">6 CR HR EXC DATE</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(6 Credit Hour Exclusion Date)  Shows the date that the 6 credit hour exclusion was allowed.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FACILITY</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Facility Code)  Shows the facility code for the current school or training establishment.  See paragraph 9.08.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DATE LAST CERT</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Date Last Certified)  Shows the day following the latest month, day and year certified.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COURSE/OBJ</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Course/Objective Code)  See paragraphs 9.32 and 9.33.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DATE LAST PAID</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the month, day and year of the date through which the last payment was made.  (This is a "none" or no-pay date.)</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CHANGE OF PROGRAM</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">This field is blank if no change of program has been charged.  Codes 1-6 indicate that the first, second, third, etc. changes of program have been charged.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DATE CERT ISSUED</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Date Certificate Issued)  Shows the date that BDN identified the case as needing a student verification of enrollment (VA Form 22-8979, Student Verification of Enrollment) to be issued.  Consult the Schedule of Operations to determine the date a certificate <em>was scheduled to be issued</em>.  NOTE:  The actual date that a certificate is issued depends on Hines DPC processing.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PAY STATUS</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows one of the following:</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BARRED COD (certification of delivery) - Shows when a running master record has an uncertified advance payment </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NEED CERT - Shows when a verification of enrollment] has not been received and processed.  The veteran is due at least 1 month's payment.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DUAL SUSP - Shows on running master records when the account is in suspense for delinquent COD or returned check other than reason 1 <u>and</u> any other suspense reason.  This also shows for accounts suspended for any reason <u>plus</u> reason 98 (Department of Defence (DOD) Change).</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SUSPENSE NEED COD - Shows when a running master record has an "88" suspense reason (delinquent advance pay confirmation).</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SUSP RET CK - Shows when a running master record has a "21" suspense (check returned) reason.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BASIC - Shows on type "I" master records.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TERMINATED - Shows on type "E" master records.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SUSPENDED - Shows when a running master record has a suspense reason other than for a returned check or delinquent COD.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RUNNING - Shows for running master records.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DOD SUSPENSE - Shows after receipt of a change to the claimant's DOD record which may affect entitlement to benefits.  The Suspend Reason code is 98.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PAY STATUS</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Continued)</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PURGE - Shows when a "26" (DUPC) transaction cancels a master record.  The system deletes this master record by FFP (Full File Pass) after the clearing of any accounts receivable or proceeds existing in that record.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">[EFT</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Electronic Funds Transfer indicator).  Shows when VA is sending a veteran's education benefits electronically to his or her financial institution.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PHONE CERT</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Phone Certification)  Will show if the veteran used a touch tone telephone to verify his or her school attendance.  (Not yet in use.)]</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ADVANCE PAY</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BDN shows PAID or PENDING, as appropriate.  PENDING shows when an advance payment has been processed but the check has not yet been released to the school.  This field is blank or shows N/A if there is no advance payment in the award.</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="text-align: right; clear: both"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></div>
+
+<div style="clear: both">
+<hr /></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="403b" name="403b"></a>b.  Miscellaneous Master Record Data</strong>.  The center of the M21 screen (Line 13) has a variable field to show disallowance reasons, information for type "I" master records, or suspend reasons.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="403b1" name="403b1"></a>(1)  <u>Disallowance Reasons</u>.  If the claim has been disallowed, 1 disallowance reason and code and up to 2 additional disallowance reason codes can be displayed on Line 13.  The system removes the disallowance reason and code(s) when an award is subsequently processed.  See <a href="#f402">figure 4.02</a> for a type J master record.  The disallowance codes and reasons are as follows in order of priority.  If there is more than 1 code, the order of priority determines the order the codes are displayed on the M21 screen and the order of the paragraphs generated for the disallowance letter.  (See <a class="eGainArticleLink" articleid="554400000076317" articlename="Part 5: Chapter 7 - Letters" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076317?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5: Chapter 7 - Letters</a>.)</span></span></p>
+
+<p style="text-align: center; margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="f402" name="f402"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.02.  M21 Screen Display Fields - Type "J" Master Record" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.02.jpg" style="height: 375px; width: 736px" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.02.  M21 Screen Display Fields - Type "J" Master Record</strong></span></span></p>
+
+<p align="right"></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 59%" summary="M21 Screen Display Fields - Type "J" Master Record" width="59%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>DISALLOWANCE CODE</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>REASONS</strong></span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">01</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">No Military/Reserve Service</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">01A</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">No Military Service</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">01C</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">No Military Service (CH34)</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">02</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">No or Insufficient Qualifying Service</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">02A</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Entry IN SVC prior to 7/1/85</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">02B</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Service Person Did not Complete 24 months</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">02C</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Insufficient Qualifying Service</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">02F</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">No/Insufficient Qualifying Service</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">03</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Character of Discharge</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">05A</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">No Remaining CH34 Entitlement</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">06</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Disability Not Due To Service</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">91</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Education Level</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">91A</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">No High School Completion</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">91B</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">No High School Completion</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">92</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Reserve Obligation Not Met</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">94</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ROTC/Commission After 12/31/76</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">94A</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Commission after 12/31/76</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">94B</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ROTC Program</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">97</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Declined CH30 Participation</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">87</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><u>X</u> Change of Program Not Approved  (<u>X</u> is the number of the program change.)</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">62</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Unsatisfactory Progress or Conduct</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">65</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Entitlement Exhausted</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">66</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Beyond Delimiting Date  [  ]</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">86</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Denied for Counseling</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">16</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Failure to Prosecute</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">28</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Claimant Incarcerated</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">21</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Whereabouts Unknown</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">30</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Elected Other Benefit</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">79</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Course/School Does Not Meet Requirements.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">80</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Course Not Approved</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">81</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Program Does Not Meet Requirements</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">85</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Already Qualified for Objective</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">22</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Death of Claimant</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">20</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Claim Withdrawn</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">04</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Entitlement Forfeited</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 33%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">29</span></span></p>
+			</td>
+			<td style="width: 67%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Other</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="text-align: right; clear: both"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></div>
+
+<div style="clear: both">
+<hr /></div>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="403b2" name="403b2"></a>2)  <u>Type I Records</u>.  [BDN establishes a type I master record with a legend on line 13 if a claimant with eligibility and entitlement enrolls in correspondence, on-the-job training, or apprenticeship.  See <a href="#f403">figure 4.03</a>.  These type benefits are currently paid outside of BDN award processing.  BDN removes the legend if a BDN] award is later processed to the type I master record.  Line 13 shows one of the following legends:</span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 54%" summary="BDN establishes a type I master record with a legend on line 13 if a claimant with eligibility and entitlement enrolls in correspondence, on-the-job training, or apprenticeship" width="54%">
+	<tbody>
+		<tr>
+			<th scope="row" style="width: 37%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CORRESPONDENCE</span></span></p>
+			</th>
+			<td style="width: 7%">
+			<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">-</span></span></p>
+			</td>
+			<td style="width: 56%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OUT OF SYSTEM PAYMENT.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 37%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OJT</span></span></p>
+			</th>
+			<td style="width: 7%">
+			<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">-</span></span></p>
+			</td>
+			<td style="width: 56%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OUT OF SYSTEM PAYMENT.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 37%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">APPRENTICESHIP</span></span></p>
+			</th>
+			<td style="width: 7%">
+			<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">-</span></span></p>
+			</td>
+			<td style="width: 56%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OUT OF SYSTEM PAYMENT.</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> <a id="f403" name="f403"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.03.  M21 Screen Display Fields - Type "I" Master Record" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.03.jpg" style="height: 344px; width: 566px" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">         <strong>Figure 4.03.  M21 Screen Display Fields - Type "I" Master Record</strong></span></span></p>
+
+<p align="right"></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="403b3" name="403b3"></a>(3)  <u>Suspended Records</u>.  If the master record status is Suspended, line 13 will show one of the following reason codes and reasons.  See <a href="#f404">figure 4.04</a>.</span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">        <a id="403c" name="403c"></a><strong>c.  Award Data</strong>.  The bottom portion of this screen contains the following displayed fields:</span></span></span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 59%" summary="M21 Screen Display Fields - Type "I" Master Record" width="59%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>FIELD NAME</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>REMARKS</strong></span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BEGINNING DATE/RSN</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.14</span></span> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">for reason codes.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NO PAY DATE/RSN</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the "NONE" date (the first day of a no-rate period) and the reason code for that date.  See <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.14 for reason codes.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TYP TNG</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Type Training)  Shows the alpha code for the type of training.  See <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.29.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TNG TME</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Training Time)  Shows a training time for each award line.  See  <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.23.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RATE</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows amount of payment per month including kicker amount.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DEP</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the dependency code for current and future award lines for category II cases. See <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.04.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">HRS/DY</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Hours/Days)  Shows the type and number of hours of attendance and, for non-IHL courses, shows the days per week of attendance.  See Type of Hours codes in  <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a>  paragraph 9.27.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FACILITY CODE</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the facility code for the current school or training establishment.  See <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.08.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ST</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Step)  Not Used.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OR</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Override)  Shows "J" for incarcerated claimants, "I" for independent study or "M" for manually calculated payments.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">EARLIER AWARD<br />
+			PERIODS</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the number of prior award lines not displayed.</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter an "X" in the field immediately preceding the field title to view these prior award lines.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">LATER AWARD<br />
+			PERIODS</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the number of future award lines not displayed.</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter an "X" in the field immediately preceding the field title to view these future lines.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">MSG</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Message)  Shows a free-form message previously input on the 312 Screen during award processing.  This message line is up to 55 characters and is the chapter 30 equivalent of the folder-pull indicator. (See <a href="#f401a">fig. 4.01</a>.)  Use award processing or the CORR Command to update this field.</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="text-align: right; clear: both"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></div>
+
+<div style="clear: both">
+<hr /></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="403d" name="403d"></a>d.  Additional Futures--Additional Priors</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="403d1" name="403d1"></a>(1)  Each award line specifies a rate of payment for specific dates, training type, training time, hours, and facility.</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="403d1a" name="403d1a"></a>(a)  There is a positive entry in EARLIER AWARD PERIODS showing how many payment periods are in the past if there are payment periods in the past not shown on the M21 screen.  (See <a href="#f404">fig. 4.04</a>.)</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="403d1b" name="403d1b"></a>(b)  There is a positive entry in LATER AWARD PERIODS showing how many payment periods are in the future but not shown.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="403d2" name="403d2"></a>(2)  Enter "X" to the left of one of the two legends at the bottom of the M21 screen to see the earlier or the later payment periods.</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="403d2a" name="403d2a"></a>(a)  The M21 screen redisplays showing the number of prior/future payment periods initially indicated, to a maximum of five periods.  See <a href="#f405">figures 4.05</a> and <a href="#406">4.06</a> for resulting master record after requesting earlier periods.  [  ]</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="403d2b" name="403d2b"></a>(b)  BDN only retains 16 award lines.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="403d3" name="403d3"></a>(3)  Enter M21 in NEXT SCREEN to return to the original display of the M21 screen.</span></span></p>
+
+<p style="text-align: center; margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="f404" name="f404"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.04.  M21 Screen Display Fields Requesting Earlier Periods" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.04.jpg" style="height: 360px; width: 566px" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.04.  M21 Screen Display Fields<br />
+Requesting Earlier Periods</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<hr />
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="f405" name="f405"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.05.  M21 Screen Display Fields  Requested Earlier Periods from Figure 4.04 displayed Also Requesting Additional Earlier Periods" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.05.jpg" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.05.  M21 Screen Display Fields<br />
+Requested Earlier Periods from Figure 4.04 displayed<br />
+Also Requesting Additional Earlier Periods</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<hr />
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="f406" name="f406"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.06.  M21 Screen Display Fields Earlier Periods From Figure 4.05 Shown." src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.06.jpg" style="height: 360px; width: 566px" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.06.  M21 Screen Display Fields<br />
+Earlier Periods From Figure 4.05 Shown.</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="f407" name="f407"></a>Figure 4.07. [Reserved for Future Use]</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="404" name="404"></a>4.04  TRANSACTION AND PAYMENT HISTORY (M22)</strong></span></span></p>
+
+<div align="center">
+<hr align="center" noshade="noshade" size="1" width="100%" /></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="404a" name="404a"></a>a.</strong>  The M22 screen shows each transaction and the date up to 20 transactions.  The most recent transaction shows first.  The screen also shows payment histories.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="404b" name="404b"></a>b.</strong>  This screen shows information vertically.  For descriptions of the following display fields, refer to the M21 screen descriptions.  (See <a href="#f404">fig. 4.04</a>.)</span></span></span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 38%" summary="This screen shows information vertically" width="38%">
+	<thead>
+		<tr>
+			<th scope="row" style="width: 9%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</th>
+			<th scope="col" style="width: 52%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FILE NUMBER</span></span></p>
+			</th>
+			<th scope="col" style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> BENEFIT</span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row" style="width: 9%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</th>
+			<td style="width: 52%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NAME</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> NEXT SCREEN</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="404c" name="404c"></a>c.</strong>  [See <a class="eGainArticleLink" articleid="554400000076474" articlename="ARCHIVED: M22-4, Part II, Chapter 2 - TRANSACTION CODES" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076474?portalId=554400000001018&usertype=customer&\$lang=en-us&">PART 02, COMPUTER PROCESSING. CHAPTER 2 - TRANSACTION CODES</a> paragraph 2.08] for transactions codes used in the chapter 30 system.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="404d" name="404d"></a>d.</strong>  The bottom portion of the screen shows a TOTALS column and up to 5 individual payment histories.  The system stores a total of 15 payment histories.  The date at the top of the column represents the date of payment.</span></span></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 59%" summary="TRANSACTIONS CODES USED IN CH 30 SYSTEM" width="59%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>FIELD NAME</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>REMARKS</strong></span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PAYMENT AMT</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Payment after any offset.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OFFSET AMT</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Amount withheld based on account receivable.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RETR/RECUR AMT</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Amount of recurring payment generated from a certification as well as retroactive payment generated from an amended award.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PROCDS AMT</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Amount of returned checks.</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="404e" name="404e"></a>e.</strong>  Additional Payment Histories</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="404e1" name="404e1"></a>(1)  There is a positive entry in EARLIER telling how many payment periods are in the past if there are payment periods in the past not shown on the M22 screen.  (See <a href="#f408">fig. 4.08</a>.)  There is a positive entry in LATER telling how many payment periods are in the future if there are payment periods in the future but not shown.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="404e2" name="404e2"></a>(2)  Enter "X" to the left of one of these two legends at the bottom of the M22 screen to see the earlier or the later payment periods.  The M22 screen redisplays showing the number of prior/future payment periods initially indicated, to a maximum of five periods.  See <a href="#f409">figure 4.09</a> for resulting master record after requesting earlier periods.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="404e3" name="404e3"></a>(3)  Enter M22 in NEXT SCREEN to return to the original display of the M22 screen.</span></span></span></span></span></span></p>
+
+<p style="text-align: center; margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="f408" name="f408"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.08.  M22 Screen Display - Requesting Earlier Periods" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.08.jpg" style="height: 331px; width: 566px" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.08.  M22 Screen Display - Requesting Earlier Periods</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<hr />
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="f409" name="f409"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.09.  M22 Screen Display - Earlier Periods Shown" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.09.jpg" style="height: 347px; width: 566px" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.09.  M22 Screen Display - Earlier Periods Shown</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="405" name="405"></a>4.05  CHAPTER 30 ELIGIBILITY AND ENTITLEMENT (M23) </strong></span></span></p>
+
+<div align="center">
+<hr align="center" noshade="noshade" size="1" width="100%" /></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="405a" name="405a"></a>a.</strong>  The M23 Screen is a summary of the claimant's service information used as a basis for eligibility and entitlement to chapter 30.  This screen also includes other statistical information.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="405b" name="405b"></a>b.</strong>  Refer to the M21 screen descriptions for descriptions of the following display fields.  (See <a href="#403">par. 4.03</a>).</span></span></span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 40%" summary="M21 SCREEN DESCRIPTIONS" width="40%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 8%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</th>
+			<th scope="col" style="width: 49%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FILE NUMBER</span></span></p>
+			</th>
+			<th scope="col" style="width: 43%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BENEFIT</span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width: 8%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 49%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NAME</span></span></p>
+			</td>
+			<td style="width: 43%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NEXT SCREEN</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="405c" name="405c"></a>c.</strong>  The following display fields are unique to the M23 screen (see <a href="#f410">fig. 4.10</a>.):</span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> <a id="f410" name="f410"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.10.  M23 Screen Display " src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.10.jpg" style="height: 377px; width: 566px" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.10.  M23 Screen Display </strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 59%" summary="M23 SCREEN DISPLAY" width="59%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>FIELD NAME</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>REMARKS</strong></span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CH30 STATUS</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the DOD Eligibility Status Code and Values.  (See <a class="eGainArticleLink" articleid="554400000077000" articlename="Part 5: Chapter 3 - Eligibility Issues" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000077000?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5: Chapter 3 - Eligibility Issues</a> paragraph 3.06 for a list of the codes and their values.)</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SERVICE DATES</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(2 occurrences)  Shows the EOD (entered on duty) and RAD (released from active duty) dates.  ONDUTY is substituted for the RAD date for inservice persons.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">IN SVC</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(In Service)  Shows "Y" if claimant is in service.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">S/C</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Service Connection)  Shows "Y" if veteran's discharge from active duty was due to a service-connected disability as determined by the service department or VA.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DEDUCTIBLE TIME</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the total of "not-on-duty" and "non-creditable" service in months and days.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CH34 TRANSF ENT</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the amount of CH34 entitlement remaining as of 1-1-90.  This amount cannot exceed 36 months.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">UPGRADE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows date the character of discharge was upgraded.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">2X4 Election</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Not Used.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ESR</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows date the veteran entered into the Selected Reserve.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RSR</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows date of discharge or release from the Selected Reserve.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ENL TERM</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the claimant's enlistment term used to establish eligibility.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">S/C</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows "Y" if the veteran's discharge from the Selected Reserve was due to a service-connected disability as determined by the service department or VA.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BASIC KICKER</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows claimant's contractual monthly kicker.  (See <a class="eGainArticleLink" articleid="554400000073756" articlename="Part 5 Chapter 1 - General" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073756?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5 Chapter 1 - General</a>, appendix A, table 1.09.)</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RECALCULATED KICKER</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows if the veteran did not complete his or her KICKER initial enlistment, resulting in a recalculation of the monthly kicker rate.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SUPPL RATE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">[Not currently in use.]</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SUPPL KICKER</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">[Not currently in use.]</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CH 32 KICKER</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the veterans chapter 32 kicker for category III cases.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CH 30 KICKER</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows claimant's kicker code received from DMDC.  (See <a class="eGainArticleLink" articleid="554400000073756" articlename="Part 5 Chapter 1 - General" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073756?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5 Chapter 1 - General</a> appendix A, table 1.09.)</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PC PAYMENT IND</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows when the veteran received payment using the Chapter 30 PC system</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DATA MATCH SUSP DATE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the date that the system suspended benefits due to DMDC data match.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>DISABILITY EXTENSION:</strong></span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">MOS, DAYS</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows months and days of a disability extension.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DATE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows beginning date of a disability extension.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PRIOR VA TRAINING</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows months and days of prior VA training.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TYPE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Type prior VA training)  Shows type of prior VA training.  See <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.13.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BIRTH DATE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the veterans date of birth.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CLAIM DATE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the date of the claimant's original claim for chapter 30 benefits.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>ENTITLEMENT </strong></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>CH34/CH30:</strong></span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ORIGINAL</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Original Entitlement)  Shows the original entitlement in months and hundredths of a month.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">REMAINING</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Remaining Entitlement)  Shows remaining entitlement in months and hundredths of a month as of the last no-pay date in the master record.  Includes a separate field for the amount of CH34 remaining entitlement as of the no pay date in the CH30 master record.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">USED</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Entitlement Used)  Shows the total entitlement used as of the last no-pay date in the master record.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DROPPED PRS</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Dropped Priors)  Shows months and days of entitlement dropped from the M21 Screen and accumulated on the M20 Screen.  (This amount is not included in the USED entitlement field.)  Includes a separate field for the amount of CH34 entitlement dropped from the CH30 master record.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CUM REDUCED</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Correctable through CORR transaction.  Shows entitlement charged by other than award action.  Includes a separate field for the amount of CH34 entitlement charged by other than award action.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CUM RESTORED</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Correctable through CORR transaction.  Shows the amount of entitlement restored previously charged by award action.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DELIM/TERM DATE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Delimiting Date/Termination Date.  Shows the delimiting date except for 2 X 4 eligibles in which case the termination date of eligibility is shown.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">EDUCATION LEVEL</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows claimant's education level:</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CODE    NARRATIVE REPRESENTATIVE</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   00                    Unknown</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  01-11                Non HS Grad</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   12                    HS Grad</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   13                    HS Plus</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   14                    Associate or Equivalent</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   15                    Associate  Plus</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   16                    Bach Degree</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  17-20                Grad Degree</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="406" name="406"></a>4.06  [RESERVED FOR FUTURE USE]</strong></span></span></p>
+
+<div align="center">
+<hr align="center" noshade="noshade" size="1" width="100%" /></div>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="f411" name="f411"></a>Figure 4.11.  [Reserved for Future Use]</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="407" name="407"></a>4.07  CHAPTER 30 DROPPED PRIORS SCREEN (M20) </strong></span></span></p>
+
+<div align="center">
+<hr align="center" noshade="noshade" size="1" width="100%" /></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="407a" name="407a"></a>a.</strong>  Enter M20 on the ready screen to obtain the M20 screen.  BDN shows an M20 screen on MINQ inquiries when award lines are dropped from the master record.  The system drops the earliest award lines as award lines (in excess of 16) are added to the master record.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="407b" name="407b"></a>b.</strong>  The M20 screen shows up to 4 dropped prior award lines at one time.  The M20 screen shows the most recent dropped award lines first and stores up to 44 dropped prior award lines.  View earlier and later award lines not shown by accessing the EARLIER PERIODS and LATER PERIODS fields.</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="407c" name="407c"></a>c.</strong>  This screen is for display only.  BDN cannot process award lines shown on this screen as they are no longer in the active master record.  Use this screen to verify data from the dropped award lines. </span></span></span></span></span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> <a id="f412" name="f412"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.12.  M20 Screen Display" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.12.jpg" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.12.  M20 Screen Display</strong></span></span></p>
+
+<p align="right"></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 59%" summary="M20 SCREEN DISPLAY FIELDS" width="59%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>FIELD NAME</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>REMARKS</strong></span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">EFFECTIVE DATE/REASON</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See  <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.14.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NO PAY DATE/REASON</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See  <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.14.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TRAINING TYPE/TIME</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.23.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">HOURS/DAYS</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.27.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DEPENDENCY</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.04.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COST CODE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows a four position code used by VA and DOD for finance purposes; reflects veteran/in-service status, type of schooling, branch of service, and source of funding.  The master record does not show the fourth digit.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CHARGES</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the total charges for the term or semester as reported by the school.  Used to calculate the monthly rate if the claimant is in-service, training at less than half-time, or incarcerated.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">MONTHLY RATE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows amount of payment per month including kicker amount.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BASIC PERCENT</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the percent of the monthly rate which represents the basic rate.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">KICKER PERCENT</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the percent of the monthly rate which represents the kicker.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SUPPLEMENT PERCENT</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Not Used.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SUPPLEMENT-KICK</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PCT</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Not Used.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FACILITY CODE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a> paragraph 9.08.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COURSE-CODE/</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OVERRIDE</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See <a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a>  paragraphs 9.32 and 9.33 for course code table.  See <a href="#403">par. 4.03</a> (M21 screen) for rate override indicator.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">EARLIER PERIODS</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Used to request the display of earlier dropped prior periods.  To view these dropped award lines, enter an "X" in the field immediately preceding the field title.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">LATER PERIODS</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Used to request the display of later dropped prior periods.  To view these dropped award lines, enter an "X" in the field immediately preceding the field title.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 29%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NEXT SCREEN</span></span></p>
+			</td>
+			<td style="width: 71%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter END, RES, or leave blank.</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="407d" name="407d"></a>d.</strong>  The ready screen shows "NO CH30 DROPPED PRIORS FOUND" when no dropped priors are present.</span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="408" name="408"></a>4.08  SCREEN SELECTION SCREEN (30M)</strong></span></span></p>
+
+<div align="center">
+<hr align="center" noshade="noshade" size="1" width="100%" /></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="408a" name="408a"></a>a.</strong>  The 30M screen shows information screens available for chapter 30 processing.  It also shows error and informational messages at the bottom of the screen.  Enter an "X" in the field immediately to the left of the screen title to view or access that particular screen.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="408b" name="408b"></a>b.</strong>  See <a href="#f413">figure 4.13</a> for available screens for chapter 30 processing.</span></span></span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="f413" name="f413"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.13.  30M Screen Display" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.13.jpg" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.13.  30M Screen Display</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="409" name="409"></a>4.09  CHAPTER 30 DEATH BENEFIT RECORD SCREEN (M96)</strong></span></span></p>
+
+<div align="center">
+<hr align="center" noshade="noshade" size="1" width="100%" /></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="409a" name="409a"></a>a.</strong>  The M96 screen shows information concerning beneficiaries who have been paid a veteran's chapter 30 death benefit.  Input is currently restricted to the Finance activity at the Buffalo Regional Processing Office.  However, operators in any RO can use the MINQ command to view this screen.  For a maximum of two designated beneficiaries, the M96 screen shows the total death benefit paid.  It also shows the amount paid to a designated beneficiary with the date of payment, and the name and address of that beneficiary.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="409b" name="409b"></a>b.</strong>  See <a href="#f414">figure 4.14</a> for fields on the M96 screen.</span></span></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> <a id="f414" name="f414"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.14.  M96 Screen Display" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.14.jpg" style="height: 344px; width: 566px" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.14.  M96 Screen Display</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="SII" name="SII"></a>SUBCHAPTER II.  CHAPTER 30 DOD MASTER RECORD INQUIRY</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="410" name="410"></a>4.10  CHAPTER 30 DOD DATA RECORD SCREEN (30D)</strong></span></span></p>
+
+<div align="center">
+<hr align="center" noshade="noshade" size="1" width="100%" /></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="410a" name="410a"></a>a.  General</strong>.  There are two very distinct Chapter 30 DOD Data Record screens as described below.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410a1" name="410a1"></a>(1)  [<u>"Regular" 30D Screens</u>.  These "regular" 30D screens are for all persons who meet the different chapter 30 category criteria defined in part V.  (<a href="#f415">Figure 4.15</a> shows a 30D screen for a category I claimant.  This could be a regular 30D screen for any eligibility category.)  If any fields on the 30D screen are blank, it means DOD does not have the data in its chapter 30 database (the data may exist elsewhere in DOD).</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410a2" name="410a2"></a>(2)  <u>"Special" 30D Screens</u>.  These "special" 30D screens are limited to those individuals who were eligible to receive chapter 34 benefits, the Vietnam Era GI Bill, on December 31, 1989.  These "special" 30D screens for category II cases were created by VA (NOT DOD) based on data present during 1989.  These "special" 30D screens can not show any data other than that data present when these screens were created during 1989.  See <a href="#f416">figure 4.16</a> for a category II 30D screen.</span></span></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>NOTE:  There is also a Chapter 1606] DOD Data Record, commonly referred to as the "DOD" screen.  See Training Guide 22-99-5, The Chapter 1606 User Guide, part II, chapter 1 for details.]  </em></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="410b" name="410b"></a>b.  Inquiry Processing</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b1" name="410b1"></a>(1)  <u>Restrictions</u>.  The 30D screen is intended for use by all [ROs in resolving inquiries.  It is for use by RPOs in making eligibility determinations.  The 30D screen is NOT a final determination of eligibility.  ONLY THE RPOs may make an eligibility determination.  No VA personnel should make definitive statements as to eligibility, rates, or monthly kickers unless the RPO has actually processed a claim and BDN shows a master record (i.e., M21, M22 and M23 screens).  Inquiries that cannot be answered with the use of BDN] must continue to be referred to the RPO.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b2" name="410b2"></a>(2)  <u>Ready Screen entries</u>.  Make the following entries on the Ready screen to obtain a 30D screen:</span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b2a" name="410b2a"></a>(a)  Command MINQ.</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b2b" name="410b2b"></a>(b)  Operator's password.</span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b2c" name="410b2c"></a>(c)  Screen number.  Enter 30D.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>NOTE:  "30D" in the screen number limits the BDN System search to the chapter 30 DOD database.</em></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b2d" name="410b2d"></a>(d)  File number.</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b2e" name="410b2e"></a>(e)  BENEFIT Field.  Optional Entry of "CH30".</span></span></span></span></p>
+
+<p style="text-align: center; margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="f415" name="f415"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.15.  30D Screen Display (Category I case)" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.15.jpg" style="height: 378px; width: 566px" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.15.  30D Screen Display (Category I case)</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<hr />
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> <a id="f416" name="f416"></a></span></span></p>
+
+<p align="center"><img alt="Figure 4.16.  30D Screen Display (Category II case)" src="https://www.knowva.ebenefits.va.gov/img/edu/M22-4Part2Ch4Fig4.16.jpg" /><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Figure 4.16.  30D Screen Display (Category II case)</strong></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Go to Top</span></span></a></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b2f" name="410b2f"></a>(f)  Press the ENTER key.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b3" name="410b3"></a>(3)  <u>Ready Screen Edits</u></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b3a" name="410b3a"></a>(a)  If the operator enters an 8-digit claim number and a record is not found, BDN shows "SOCIAL SECURITY NUMBER REQUIRED" on the Ready Screen.</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b3b" name="410b3b"></a>(b)  If no record is found and a Social Security number is shown on the Ready screen, [BDN shows "CH 30 RECORD NOT FOUND"] on the Ready Screen.</span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410b3c" name="410b3c"></a>(c)  If there is a problem accessing the DOD database, [BDN shows "CH30 DOD DATA RECORD UNAVAILABLE"] on the Ready Screen.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">        <a id="410b3d" name="410b3d"></a>(d)  BDN shows the M21 screen if a particular screen is not requested and CH30 is entered in the BENEFIT field.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="410c" name="410c"></a>c.  Updating the DOD Record</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410c1" name="410c1"></a>(1)  VA personnel cannot update the 30D screen.  The screens are only accessible for inquiry processing.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410c2" name="410c2"></a>(2)  [DOD can update all fields of the regular 30D screen during the weekly update processing.  BDN will generate an NOE (Notice of Exception) that explains action taken when a DOD record is updated or added and a matching BDN benefit master record exists.  <em><strong>See  </strong></em></span></span><a class="eGainArticleLink" articleid="554400000076311" articlename="Part 5: Chapter 5 - Notice of Exception Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076311?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5: Chapter 5 - Notice of Exception Processing</a> <strong><em>for chapter 30 NOES (Notice of Exception Subsystem) processing instructions. </em></strong> </span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410c3" name="410c3"></a>(3)  The last update of the "special" 30D screen was on November 7, 1989.  BDN will generate an NOE message if this screen is ever updated by DOD in the future.  BDN also generates NOE messages when the DOD record is updated as the result of a change in the chapter 34 record.  See</span></span></span></span> <a class="eGainArticleLink" articleid="554400000076311" articlename="Part 5: Chapter 5 - Notice of Exception Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076311?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5: Chapter 5 - Notice of Exception Processing</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> for chapter 30 NOES processing instructions.]</span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="410d" name="410d"></a>d.  Multiple DoD Records  </strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410d1" name="410d1"></a>(1)  [Multiple 30D screens are possible.  If there is more than one 30D screen, the RPO will review each screen to determine which, if any, is the proper one to establish eligibility.  Records are deleted from DOD's database only if they were erroneously established.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410d2" name="410d2"></a>(2)  If there is more than one DoD record for a chapter 30 claimant, BDN] shows a separate DOD (chapter 1606)or 30D screen for each DOD record (to a maximum of 20).  The first record on the DOD screen shows "MULTIPLE DOD RECORDS - HIT ENTER TO CONTINUE."  The first record on the 30D screen shows "MULTIPLE 30D RECORDS - HIT ENTER TO CONTINUE."  "ALL RECORDS HAVE BEEN REVIEWED" shows on the message line of the last DOD or 30D record.  Entering RES in NEXT SCREEN shows the first record.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410d3" name="410d3"></a>(3)  BDN shows "CH 30 RECORD (30D) EXISTS" when the chapter 1606] DOD screen is being viewed and a chapter 30 eligibility record exists.  Enter 30D in NEXT SCREEN field to review the chapter 30 record.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>NOTE:  This is true only if the operator is reviewing an "old" DOD screen.  The old "DOD" screen is the DOD screen in effect before the publication of TG 22-99-5. </em></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410d4" name="410d4"></a>(4)  BDN shows "CH 106 RECORD (DOD) EXISTS" if the chapter 30 30D screen is being viewed and a chapter 1606 eligibility record exists.  Enter DOD in NEXT SCREEN field to review the chapter 1606 eligibility record.</span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>NOTE:  This information refers to an "old" DOD screen.  To obtain a current DOD screen, use the MINQ command with "DOD in the Screen Number field and"1606" in the Benefit field.]  </em></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="410e" name="410e"></a>e.  Service Data</strong>.  [Regular 30D screens can show service data (Branch, EOD, RAD, Separation Reason, Character of Service, Enlistment Term, and Education Level) in two columns.  Special 30D screens can show service data in four columns.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410e1" name="410e1"></a>(1)  Regular 30D screens show the service data currently in DOD's chapter 30 database.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410e2" name="410e2"></a>(2)  Special 30D screens DO NOT SHOW current service information.  The first three columns show BIRLS data as of February 4, 1989.  The fourth column shows DOD service data as of November 7, 1989.  The fourth column EOD is a BASD (Basic Active Service Date).  This is an adjustable date and does not always reflect the date entered on duty.]</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="410f" name="410f"></a>f.  Self-Explanatory Fields</strong>.  The following fields are self-explanatory.</span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 44%" summary="SELF-EXPLANATORY FIELDS" width="44%">
+	<thead>
+		<tr>
+			<th scope="row" style="width: 8%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</th>
+			<th scope="col" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DATE</span></span></p>
+			</th>
+			<th scope="col" style="width: 47%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FILE NUMBER</span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row" style="width: 8%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</th>
+			<td style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NAME</span></span></p>
+			</td>
+			<td style="width: 47%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SOC SEC NUMBER</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 8%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</th>
+			<td style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DATE OF BIRTH</span></span></p>
+			</td>
+			<td style="width: 47%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">LAST ACTIVITY DATE</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="410g" name="410g"></a>g.  Unique Display Fields</strong>.  A brief description of displayed fields on the 30D screen follows.  (See <a href="#f415">figs. 4.15</a> and <a href="#f416">4.16</a>.)</span></span></p>
+
+<div style="clear: both">
+<table align="center" border="1" cellpadding="0" cellspacing="0" width="59%">
+	<thead>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><b>FIELD NAME</b></span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><b>REMARKS</b></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">LAST ACTIVITY</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CNG-Indicates service data changed in the DOD record.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%"></td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">C34-Indicates the "Entitlement Used" fields have changed in the chapter 34 master record since the last activity.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%"></td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TNT-Indicates entitled to chapter 34 benefits at the time of initial loading of chapter 34 data into the chapter 30 system.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%"></td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SNT-Indicates NOT entitled to chapter 34 benefits at the time of initial loading of chapter 34 data into the chapter 30 system.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%"></td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">LOD-Indicates the record existed at the time of initial loading of Department of Defense Data into the chapter 30 system and has not been changed since.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%"></td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ADD-Indicates a new DOD record was received after the initial loading of records.  "ADD" indicates an initial record was added or that a 2nd or subsequent DOD record has been added after the initial record.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DOD STATUS</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Department of Defense Status)  Shows claimant's eligibility status per DOD .  (See <a class="eGainArticleLink" articleid="554400000076230" articlename="M22-4 Part 5: Chapter 2 - MGIB BDN Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076230?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-4 Part 5: Chapter 2 - MGIB BDN Processing</a> paragraph 2.07.)</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SOURCE OF COMMISSION</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows a legend which indicates the source of commission.  The possible legends are:</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%"></td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ROTC           RESERVE OFFICERS TRAINING CORPS</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ACAD           ACADEMY</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BLANK          UNKNOWN OR NONE</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PAY REDUCTION</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the amount contributed under chapter 30 in [category I, III or IV cases.   An entry of less than $1200 will not necessarily result in a denial of benefits.  See <a class="eGainArticleLink" articleid="554400000073756" articlename="Part 5 Chapter 1 - General" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073756?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5 Chapter 1 - General</a> for the eligibility requirements for each category.]  If the claimant is a category II case, pay reduction is not a factor and one of the following reasons shows:</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%"></td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Missing or Conflicting Data</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">No CH34 Service</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Not on duty 7-1-85</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">More than 90 day break in service</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Academy/ROTC Commission</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">On duty on 7-1-85</span></span></p>
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">YEAR OF COMMISSION</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the commission year.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BRANCH</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the branch of service:</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%"></td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ARMY</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NAVY</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">M                   Marine Corps</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">AF   Air Force   </span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CG                Coast Guard</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NOAA           National Oceanic and Atmospheric Administration</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PHS              U. S. Public Health Service</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ARNG           Army National Guard</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">AR                Army Reserve</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NR                Navy Reserve</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">MCR             Marine Corps Reserve</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ANG              Air National Guard</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">AFR              Air Force Reserve</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CGR             Coast Guard Reserve</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BASIC KICKER</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows an additional monthly rate over and above the basic allowance.  The system computes this rate based on current facts.  The rate is subject to change.  Next to the monthly rate is a one-character kicker code showing the term of service and the total kicker.  Refer to <a class="eGainArticleLink" articleid="554400000077000" articlename="Part 5: Chapter 3 - Eligibility Issues" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000077000?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5: Chapter 3 - Eligibility Issues</a> paragraph 3.08 and figures 3.03 and 3.03a for details on kicker code meanings.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">EOD</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the entered on duty date.  <i>See <a href="#410e">subparagraph e</a></i> for differences between regular and special 30D screens.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SUPPL RATE</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Supplemental Rate)  Shows the monthly supplemental assistance.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RAD</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the released from active duty date.  <i>See <a href="#410e">subparagraph e</a></i> for additional information concerning this item differing between category I and II cases.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SUPPL KICKER</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Supplemental Kicker)  Shows the amount of the supplemental kicker as determined by the services.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SEP REASON</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Separation Reason)  Shows one of the following codes representing the reason for discharge.  <u>See <a href="#410e">subparagraph e</a></u> for additional information concerning this item differing between category I and II cases.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%"></td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CIWD              CONDITION THAT INTERFERES WITH DUTY</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COG                CONVENIENCE OF GOVERNMENT</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DECD              DECEASED</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DIS                  DISABILITY</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DFR                 DROPPED FROM RANKS</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ETS                 EXPIRATION TERM OF SERVICE</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">EPTS               EXISTED PRIOR TO SERVICE</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">HDSP              HARDSHIP</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OTH                 OTHER</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RIF                   REDUCTION IN FORCE</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">UNK    UNKNOWN</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CHAR OF SVC</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Character of Service)  Shows one of the following codes representing the type of discharge.  <u>See<a href="#410e"> subpar e</a>.</u> for additional information concerning this item differing between category I and II cases.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%"></td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DIS                                DISHONORABLE</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">HON                              HONORABLE</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OTH                              OTHER</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">UHC                              UNDER HONORABLE CONDITIONS</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">UNC                              UNCHARACTERIZED</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">UNK                               UNKNOWN</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CH 34 M/R</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows "Y" if there is a chapter 34 master record.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ENL TERM</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Enlistment Term)  Shows the length of the veteran's initial service obligation.  (Category I only)  BDN computes the basic monthly payment rate using this field (a 2-year enlistment term or a 3-year or more enlistment term). </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PRIOR TRNG</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Prior Training)  Shows training used under chapter 34 and other chapters.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">EDUCATION LEVEL</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the claimant's level of education.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%"></td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   00                               UNKNOWN</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   11                               NON HS GRAD</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   12                               HS GRAD</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   13                               HS PLUS</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   14                               ASSOC/EQUIV</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   16                               BACH DEGREE</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   17                               GRAD DEGREE</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DATE OF </span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ENLISTMENT</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the date that the claimant enlisted in the military, if different from the EOD date.  The date is necessary for the BDN system to determine the claimant's correct kicker rate.  See <a class="eGainArticleLink" articleid="554400000077000" articlename="Part 5: Chapter 3 - Eligibility Issues" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000077000?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5: Chapter 3 - Eligibility Issues</a>, paragraph 3.08a(4) for information on the use of this date.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TRANSFERRED CH34 MO DAYS</span></span></p>
+			</td>
+			<td valign="top" width="75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows chapter 34 remaining entitlement reflected in the chapter 34 BDN master record.  BDN transfers up to 36 months to the 310 screen for use in the chapter 30 eligibility calculation.</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="410h" name="410h"></a>h.  Chapter 30 Selected Reserve Data</strong>.  The following fields contain information concerning participation in the Selected Reserve and indicates potential 2 X 4 eligibility.  A positive entry in the "ENT SEL RES" field does not in itself establish eligibility in the 2 X 4 program.  Refer to <a class="eGainArticleLink" articleid="554400000073756" articlename="Part 5 Chapter 1 - General" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073756?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5 Chapter 1 - General</a> for basic eligibility requirements of the 2 X 4 program.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="410i" name="410i"></a>i.  Entry Field</strong>.  NEXT SCREEN is the only entry field on the 30D and DOD screens.  The valid entries are as follows:</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410i1" name="410i1"></a>(1)  RES redisplays the first DOD record of a multiple DOD record.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410i2" name="410i2"></a>(2)  END terminates processing, displaying the "PROCESSING COMPLETE" message.</span></span></span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 59%" summary="FIELDS ON THE 30D AND DOD SCREEN" width="59%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>FIELD NAME</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>REMARKS</strong></span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SELECTIVE<br />
+			RESERVE</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the reserve component.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COMPONENT</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ARNG                       MCR</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">AR                            ANG</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NR                            AFR</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">                                    CGR</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SEL RES ENLISTMENT TERM</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Shows the number of years enlisted in the Selected Reserve.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ENT SEL RES</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Entered Selected Reserve)  Shows the date (MM-DD-YY) entered the selected reserves.  This field may show two dates.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">REL SEL RES</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Released Selected Reserve)  Shows the date (MM-DD-YY) left the selected reserves   This field may show two dates.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RSN</span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Reason)  Shows the reason released from the Selected Reserve.  [Data not currently available, except for the following:]</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 25%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 75%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">REUP                       REENLISTED</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">UNSAT                     UNSATISFACTORY PARTICIPATION</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410i3" name="410i3"></a>(3)  Leaving NEXT SCREEN field blank and pressing the enter key does one of the following:</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410i3a" name="410i3a"></a>(a)  Shows the next record of a multiple DOD record, or</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410i3b" name="410i3b"></a>(b)  Terminates processing, showing the "PROCESSING COMPLETE" message.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410i4" name="410i4"></a>(4)  DOD shows the chapter 1606 DOD Data Record.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a id="410i5" name="410i5"></a>(5)  30D shows the chapter 30 DOD Data Record.</span></span></span></span></p>
+
+<p align="right"><a href="##Top"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Back to Top</span></span></a></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+</body>
+</html>

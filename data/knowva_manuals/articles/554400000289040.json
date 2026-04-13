@@ -1,0 +1,34 @@
+{
+  "article_id": "554400000289040",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000289040",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 02 – Computer Processing",
+    "03 - Benefits Manager"
+  ],
+  "topic_id": "554400000016141",
+  "manual_name": "M22-4",
+  "title": "M22-4, Part II, Chapter 3, Section E – Benefits Manager Entitlement and Kickers",
+  "description": "This part discusses how non-chapter 33 education benefits, Montgomery GI Bill (MGIB or chapter 30), Montgomery GI Bill - Selected Reserve (chapter 1606), and Survivors' and Dependents' Educational Assistance (DEA or chapter 35) are processed in Benefits Manager (BM).",
+  "keywords": "DGIB Managed Service, BM, Benefits Manager, BDN",
+  "last_modified": "2025-12-11T20:13:53.000Z",
+  "created": "2024-12-05T20:34:14Z",
+  "version": "32",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": true,
+  "heading_outline": [
+    {
+      "level": 3,
+      "text": "Topic 1: Prior used entitlement"
+    }
+  ],
+  "heading_count": 1,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

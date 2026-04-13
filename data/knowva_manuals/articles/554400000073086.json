@@ -1,0 +1,29 @@
+{
+  "article_id": "554400000073086",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000073086",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 02 – Computer Processing",
+    "Archives"
+  ],
+  "topic_id": "554400000016149",
+  "manual_name": "M22-4",
+  "title": "ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables",
+  "description": "This chapter is a description of codes that are used in the Benefits Delivery Network (BDN) processing as well as in award prcoessing outside of BDN.",
+  "keywords": "BDN processing codes, status codes, education codes, claim codes, branch of service codes,",
+  "last_modified": "2025-08-27T11:18:34.000Z",
+  "created": "2017-11-13T14:18:28Z",
+  "version": "13",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": false,
+  "heading_outline": [],
+  "heading_count": 0,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

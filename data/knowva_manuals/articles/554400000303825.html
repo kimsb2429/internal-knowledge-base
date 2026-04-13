@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M22-4, Part II, Chapter 3, Section B – BDN Historical Reporting</title>
+  <meta name="source-system" content="KnowVA (knowva.ebenefits.va.gov)">
+  <meta name="source-type" content="va_manual">
+  <meta name="manual-name" content="M22-4">
+  <meta name="article-id" content="554400000303825">
+  <meta name="alternate-id" content="None">
+  <meta name="last-modified" content="2025-08-27T18:15:15.000Z">
+  <meta name="created" content="2025-06-27T13:17:46Z">
+  <meta name="keywords" content="DGIB, Managed Service, BM, Benefits Manager, BDN">
+  <meta name="topic-breadcrumb" content="M22-4 &gt; Part 02 – Computer Processing &gt; 03 - Benefits Manager">
+  <meta name="content-category" content="">
+  <meta name="target-audience" content="">
+</head>
+<body>
+<nav class="topic-breadcrumb" aria-label="Topic hierarchy"><span class="bc-item">M22-4</span> / <span class="bc-item">Part 02 – Computer Processing</span> / <span class="bc-item">03 - Benefits Manager</span></nav>
+<h1>M22-4, Part II, Chapter 3, Section B – BDN Historical Reporting</h1>
+<table class="MsoTableGrid" style="border-collapse:collapse; border:none">
+	<tbody>
+		<tr>
+			<td style="width:161px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top"><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif"><span style="color:black"><a id="Top" name="Top"></a></span></span></b></span></span></td>
+			<td style="width:652px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:161px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif"><span style="color:black">Overview</span></span></b></span></span></p>
+			</td>
+			<td style="width:652px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif"><span style="color:black">This section discusses the BDN Historical Reporting functionality within Benefits Manager.</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:161px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top"></td>
+			<td style="width:652px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:161px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top"></td>
+			<td style="width:652px; padding:0in 6px 0in 6px; height:20px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p></p>
+
+<table class="MsoTableGrid" style="border-collapse:collapse; border:none">
+	<tbody>
+		<tr>
+			<td style="width:143px; padding:0in 6px 0in 6px; height:22px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif"><span style="color:black">In This Section</span></span></b></span></span></p>
+			</td>
+			<td style="width:661px; padding:0in 6px 0in 6px; height:22px; background-color:white" valign="top">
+			<p style="margin-bottom:10px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif"><span style="color:black">This section contains the following topics:</span></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:143px; padding:0in 6px 0in 6px; height:109px; background-color:white" valign="top">
+			<p></p>
+			</td>
+			<td style="width:661px; padding:0in 7px 0in 7px; height:109px; background-color:white" valign="top">
+			<table class="MsoTableGrid" style="border-collapse:collapse; border:none" width="647">
+				<tbody>
+					<tr>
+						<td style="border-bottom:1px solid black; width:77px; padding:0in 6px 0in 6px; height:22px; border-top:1px solid black; border-right:1px solid black; border-left:1px solid black" valign="top">
+						<p align="center" style="margin-bottom:10px; text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:Aptos,sans-serif"><b><span style="font-family:"Calibri",sans-serif">Topic</span></b></span></span></span></p>
+						</td>
+						<td style="border-bottom:1px solid black; width:384px; padding:0in 6px 0in 6px; height:22px; border-top:1px solid black; border-right:1px solid black; border-left:none" valign="top">
+						<p style="margin-bottom:10px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:Aptos,sans-serif"><b><span style="font-family:"Calibri",sans-serif">Topic Name</span></b></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:1px solid black; width:77px; padding:0in 6px 0in 6px; height:22px; border-top:none; border-right:1px solid black; border-left:1px solid black">
+						<p align="center" style="margin-bottom:10px; text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:Aptos,sans-serif"><span style="font-family:"Arial",sans-serif">1</span></span></span></span></p>
+						</td>
+						<td style="border-bottom:1px solid black; width:384px; padding:0in 6px 0in 6px; height:22px; border-top:none; border-right:1px solid black; border-left:none">
+						<p><a href="#Topic1"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:Aptos,sans-serif"><b><span style="font-family:"Arial",sans-serif">Topic 1: Searching for a beneficiary in BDN Historical Reporting</span></b></span></span></span></a></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-bottom:1px solid black; width:77px; padding:0in 6px 0in 6px; height:22px; border-top:none; border-right:1px solid black; border-left:1px solid black">
+						<p align="center" style="margin-bottom:10px; text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:Aptos,sans-serif"><span style="font-family:"Arial",sans-serif">2</span></span></span></span></p>
+						</td>
+						<td style="border-bottom:1px solid black; width:384px; padding:0in 6px 0in 6px; height:22px; border-top:none; border-right:1px solid black; border-left:none">
+						<p><a href="#Topic2"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:Aptos,sans-serif"><b><span style="font-family:"Arial",sans-serif">Topic 2: Reviewing the Reports Generated by BDN Historical Reporting</span></b></span></span></span></a></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:143px; padding:0in 6px 0in 6px; height:109px; background-color:white" valign="top"></td>
+			<td style="width:661px; padding:0in 7px 0in 7px; height:109px; background-color:white" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p></p>
+
+<table class="MsoTableGrid" style="width:780px; border-collapse:collapse; border:none" width="780">
+	<tbody>
+		<tr>
+			<td colspan="2" style="border-bottom:none; width:780px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Topic 1: Searching for a beneficiary in BDN Historical Reporting<a id="Topic1" name="Topic1"></a></span></b></span></span></p>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Introduction</span></b></span></span></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">This topic discusses searching for beneficiaries using the BDN Historical Reporting functionality in Benefits Manager (BM).</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Change Date</span></b></span></span></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">June 27, 2025</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">II.3.B.1.a</span></b></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Searching for a beneficiary</span></b></span></span></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">The BDN Historical Reporting screen is accessed using a tab at the top of the home screen in BM, which can be accessed via </span><a href="https://iam.education.va.gov/"><span style="font-family:"Arial",sans-serif">https://iam.education.va.gov/</span></a><span style="font-family:"Arial",sans-serif">.</span></span></span></p>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><img id="a0a05726-7744-4192-a61b-66fc317c5bcd" name="bdnhr-1.png" src="/system/ws/v11/media/image/5544/a0a05726-7744-4192-a61b-66fc317c5bcd" style="width:551px;height:196px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></span></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: BDN Historical Reporting Search Screen</span></i></span></span></p>
+
+			<p align="center" style="text-align:center"></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">The user can begin the search by entering the following in the search field on the screen.</span></span></span></p>
+
+			<ol style="margin-bottom:7px">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">File number/ Social Security Number</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li class="MsoNoSpacing" style="margin-top:7px; margin-right:32px; margin-bottom:7px; margin-left:16px"><span style="font-size:16px;"><span style="background:white"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">When searching by File number (such as a “C number”), the user must enter the entire alphanumeric identifier as is in BDN. If the identifier begins a letter, as with VA file numbers, the leading letter <b><u>must be capitalized</u></b>.</span></span></span></span></span></li>
+					<li class="MsoNoSpacing" style="margin-top:7px; margin-right:32px; margin-bottom:7px; margin-left:16px"><span style="font-size:16px;"><span style="background:white"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">When searching by social security number (SSN), the user enters nine (9) numeric digits without dashes.</span></span></span></span></span></li>
+				</ol>
+				</li>
+			</ol>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px; margin-left:72px"><span style="font-size:16px;"><span style="background:white"><i><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">Note</span></span></span></i><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">: “Wild card” searches are not available in BM.</span></span></span></span></span></p>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px; margin-left:72px"><span style="font-size:16px;"><span style="background:white"><i><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">Note</span></span></span></i><span style="font-family:"Arial",sans-serif"><span style="color:black">:<i> </i>A chapter 35 record may be located by searching either the Veteran’s file number or the beneficiary’s SSN</span></span></span></span></p>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px"><span style="font-size:16px;"><span style="background:white"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">If the user wishes to conduct a separate record search, they can either:</span></span></span></span></span></p>
+
+			<ol style="margin-bottom:10px">
+				<li class="MsoNoSpacing" style="margin-bottom:10px; margin-left:8px"><span style="font-size:16px;"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">Select the File number of SSN previously entered, delete, re-enter, and click <b>Search</b>, or</span></span></span></span></li>
+				<li class="MsoNoSpacing" style="margin-bottom:10px; margin-left:8px"><span style="font-size:16px;"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">The user can click <b>Restart search</b>, which erases the prior field entry, and enter a new File number or SSN.</span></span></span></span></li>
+			</ol>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">II.3.B.1.b</span></b></span></span></p>
+
+			<p></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Search Results</span></b></span></span></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p class="MsoNoSpacing" style="margin-bottom:10px"><span style="font-size:16px;"><span style="background:white"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">After selecting the <b>Search</b> button, a new section will appear.</span></span></span></span></span></p>
+
+			<ol style="margin-top:7px; margin-bottom:7px">
+				<li class="MsoNoSpacing" style="margin-top:7px; margin-right:16px; margin-bottom:7px; margin-left:16px"><span style="font-size:16px;"><span style="background:white"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">Search results allow the user to access record of the beneficiary’s past utilized education benefits by selecting the <b>View Report</b> button.</span></span></span></span></span></li>
+			</ol>
+
+			<p align="center" class="MsoNoSpacing" style="margin-bottom:10px; text-align:center"><span style="font-size:16px;"><img id="b62b2e7d-1978-4cf3-abe1-b400ecb834d0" name="bdnhr-2.png" src="/system/ws/v11/media/image/5544/b62b2e7d-1978-4cf3-abe1-b400ecb834d0" style="width:535px;height:175px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></span></p>
+
+			<p align="center" class="MsoNoSpacing" style="margin-bottom:16px; text-align:center"><span style="font-size:16px;"><span style="background:white"><i><span style="font-family:"Arial",sans-serif"><span style="color:black">Figure: Search results example</span></span></i></span></span></p>
+
+			<ol start="2" style="margin-bottom:16px">
+				<li class="MsoNoSpacing" style="margin-bottom:16px; margin-left:8px"><span style="font-size:16px;"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">Multiple results may be presented. The beneficiary and/or their dependents may be displayed with separate and distinct payee codes. The user should select the record which matches their adjudicative need.</span></span></span></span></li>
+			</ol>
+
+			<p class="MsoNoSpacing" style="margin-bottom:16px"><span style="font-size:16px;"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">An error message will display if the search has more than 100 results requesting the user to refine the search further.</span></span></span></span></p>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px"><span style="font-size:16px;"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">A message will be displayed if no results are returned.</span></span></span></span></p>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px"></p>
+
+			<p align="center" class="MsoNoSpacing" style="margin-bottom:10px; text-align:center"><img id="dc788579-533f-407d-9597-214429ca02ed" name="bdnhr-3.png" src="/system/ws/v11/media/image/5544/dc788579-533f-407d-9597-214429ca02ed" style="width:498px;height:103px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" class="MsoNoSpacing" style="margin-bottom:10px; text-align:center"><span style="font-size:16px;"><span style="background:white"><i><span style="font-family:"Arial",sans-serif"><span style="color:black">Figure: Error message when no results are returned</span></span></i></span></span></p>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px"></p>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px"><span style="font-size:16px;"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">An error message will appear if the user does not have the required sensitivity level to access the record.</span></span></span></span></p>
+
+			<p align="center" class="MsoNoSpacing" style="margin-bottom:10px; text-align:center"></p>
+
+			<p align="center" class="MsoNoSpacing" style="margin-bottom:10px; text-align:center"><img id="4bdbf3c5-5c6f-43d3-85de-2901a8056738" name="bdnhr-4.png" src="/system/ws/v11/media/image/5544/4bdbf3c5-5c6f-43d3-85de-2901a8056738" style="width:495px;height:172px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" class="MsoNoSpacing" style="margin-bottom:10px; text-align:center"><span style="font-size:16px;"><span style="background:white"><i><span style="font-family:"Arial",sans-serif"><span style="color:black">Figure: Error message when user lacks sensitivity level to access the report</span></span></i></span></span></p>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px"></p>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px"><span style="font-size:16px;"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">Upon clicking <b>Ok</b> the <b>View Report</b> button will disappear and be replaced with the message <i>Do not have permission to view.</i></span></span></span></span></p>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px"></p>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px"><span style="font-size:16px;"><span style="background:white"><span style="font-family:"Arial",sans-serif"><span style="color:black">If system connections are down or intermittent, the following error message may be encountered.</span></span></span></span></p>
+
+			<p class="MsoNoSpacing" style="margin-bottom:10px"></p>
+
+			<p align="center" class="MsoNoSpacing" style="margin-bottom:10px; text-align:center"><img id="ec547c42-98c9-4ed7-afb3-f4642d8f6c71" name="bdnhr-5.png" src="/system/ws/v11/media/image/5544/ec547c42-98c9-4ed7-afb3-f4642d8f6c71" style="width:560px;height:178px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" class="MsoNoSpacing" style="margin-bottom:10px; text-align:center"><span style="font-size:16px;"><span style="background:white"><i><span style="font-family:"Arial",sans-serif"><span style="color:black">Figure: Example of error message when system is down</span></span></i></span></span></p>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p align="right" style="text-align:right"><a href="#Top"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Go to top</span></span></span></a></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="border-bottom:none; width:780px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Topic 2: Reviewing the Reports Generated by BDN Historical Reporting<a id="Topic2" name="Topic2"></a></span></b></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Introduction</span></b></span></span></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">This topic discusses the different reports generated by BDN Historical Reporting.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Change Date</span></b></span></span></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">June 27, 2025</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">II.3.B.2.a</span></b></span></span></p>
+
+			<p></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">General</span></b></span></span></p>
+
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">When the identified beneficiary has been successfully located and the user clicks <b>View Report</b>, the following options may be presented, based on the beneficiary’s past benefit usage.</span></span></span></p>
+
+			<p></p>
+
+			<ol>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Chapter 35,</span></span></span></li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Chapter 30,</span></span></span></li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Chapter 1606,</span></span></span></li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Chapter 1607,</span></span></span></li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Chapter 32, or</span></span></span></li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Chapter 34.</span></span></span></li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="a6d9f247-4b85-45a6-a9f5-ba9c0b3a0e8d" name="bdnhr-6.png" src="/system/ws/v11/media/image/5544/a6d9f247-4b85-45a6-a9f5-ba9c0b3a0e8d" style="width:631px;height:245px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: View of reports provided during claimant search</span></i></span></span></p>
+
+			<p align="center" style="text-align:center"></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">To return to the search screen of BDN Historical Reporting, the user must click the <b>Back to search results </b>button at the top.</span></span></span></p>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="517d075a-cbe7-4974-a9e2-7e5243220895" name="bdnhr-7.png" src="/system/ws/v11/media/image/5544/517d075a-cbe7-4974-a9e2-7e5243220895" style="width:487px;height:176px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Back to search results button example</span></i></span></span></p>
+
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">II.3.B.2.b</span></b></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Claimant Details Banner</span></b></span></span></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Upon expanding any of the reports provided, a claimant details banner will be presented at the top (in blue), containing the following information:</span></span></span></p>
+
+			<p></p>
+
+			<ol>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Name & Address,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">For a beneficiary with a domestic residence,</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displayed as First name, Middle initial, Last name, Street Address/PO Box, City, State</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">For a beneficiary with a foreign residence, and</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displayed as First name, Middle initial, Last name, Street Address/PO Box, City, Province, Country.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">For a beneficiary with a military overseas residence.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displayed as First name, Middle initial, Last name, Street Address/PO Box, Military PO, and Geographic area of station. </span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Zip code,</span></span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">For a beneficiary with a domestic residence,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays the first five digits.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">For a beneficiary with a foreign residence,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays up to five digits.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">For a beneficiary with a military overseas residence,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays the first five digits.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Note</span></i><span style="font-family:"Arial",sans-serif">: If an “FZ code” was used in BDN, only the succeeding 3 digits will be displayed, (i.e., “FZ953” in BDN will display as “953” in the report).</span></span></span></p>
+
+			<p></p>
+
+			<ol start="3">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date of birth,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displayed in the format of MM/DD/YYYY.</span></span></span></li>
+				</ol>
+				</li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date of death,</span></span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">If deceased, will be displayed in the format of MM/DD/YYYY, and</span></span></span></li>
+				</ol>
+				</li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Gender,</span></span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Display will include either:</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">M for Male, or</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">F for Female.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Station,</span></span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the last RO/RPO to process the record, and</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays as RPOXXX.</span></span></span></li>
+				</ol>
+				</li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Branch of service,</span></span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Active-duty branches, and</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Reserve/guard units.</span></span></span></li>
+				</ol>
+				</li>
+			</ol>
+
+			<p style="margin-left:96px"></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Note: Field will NOT be utilized or displayed on Chapter 35 records.</span></span></span></p>
+
+			<p></p>
+
+			<ol start="8">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">File number,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">If a non-SSN VA identifier is provided, this field will display all alphanumeric values, in capitalized form. For example, for a “C” type file, the user would see <i>C12345678</i> without any dashes or separation,</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">If the beneficiary is only identified by their SSN, their SSN will appear in this field, without dashes, and</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">If the beneficiary does not have an SSN, then a system-generated identifier would be produced.</span></span></span></li>
+				</ol>
+				</li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">SSN,</span></span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">If an SSN exists for the beneficiary, it will display as nine (9) numeric digits with dashes, and</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">If no SSN exists for the beneficiary, the field will display a system-generated identifier.</span></span></span></li>
+				</ol>
+				</li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date last paid,</span></span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the most recent “none” or no-pay date for the beneficiary, and</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of MM/DD/YYYY.</span></span></span></li>
+				</ol>
+				</li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Six-credit hour exclusion, and</span></span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">If previously utilized, the field will display <b>USED</b>, and</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">If not previously utilized, the field will display <b>UNUSED</b>.</span></span></span></li>
+				</ol>
+				</li>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Master record status.</span></span></span>
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays the most recent Master record status from BDN as per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.28</a>.</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p style="margin-left:96px"></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Note</span></i><span style="font-family:"Arial",sans-serif">: If a field does not include a value to present user from BDN, the field will show <b>N/A</b>.</span></span></span></p>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="e67c90e6-f88c-40cc-b27d-2e776b6fd905" name="bdnhr-8.png" src="/system/ws/v11/media/image/5544/e67c90e6-f88c-40cc-b27d-2e776b6fd905" style="width:535px;height:177px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of a claimant details banner</span></i></span></span></p>
+
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">II.3.B.2.c</span></b></span></span></p>
+
+			<p></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Chapter 35 Historical Reporting Display</span></b></span></span></p>
+
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">When Chapter 35 information is requested, the following sections/fields will display in the provided report accordion:</span></span></span></p>
+
+			<p></p>
+
+			<ol>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Entitlement history,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Default view, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Original entitlement,</span></span></span>
+
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the beginning amount of entitlement for the beneficiary under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Used entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of entitlement utilized under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Remaining entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the resulting amount of entitlement equivalent to original entitlement minus used entitlement, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Prior VA training type, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the most recent, prior VA education benefit received, if applicable, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of X.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Prior VA training amount.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of entitlement utilized during prior education benefit usage, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Expanded view.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Objective-course, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the objective and course codes for the beneficiary’s enrollment per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.31 - 9.33</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX-XXX format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Fiduciary file location.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the location of the beneficiary’s fiduciary record, if applicable, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX format.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="498910e2-6000-4a8d-9c51-67e6f0d72b36" name="bdnhr-9.png" src="/system/ws/v11/media/image/5544/498910e2-6000-4a8d-9c51-67e6f0d72b36" style="width:598px;height:156px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch35 entitlement history section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="2">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Important dates and important information, and</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Delimiting date,</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the first day after a claimant’s period of eligibility expires, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date last paid,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the most recent “none” or no-pay date for the beneficiary, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of MM/DD/YYYY.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date last certified, and</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the day following the latest month, day, and year attendance was verified, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">89C indicator.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">This field indicates if an interest-bearing receivable existed/s in the <i>Centralized Accounts Receivable (CARS)</i> system, which would be collected by EDU prior to any station-created overpayments. Displayed values may include:</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif"> 0-9 = Yes, an interest-bearing receivable exists, or</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Null</span></i><span style="font-family:"Arial",sans-serif"> = No, an interest-bearing receivable does not exist.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="4ea622eb-eb51-4c80-a62b-3fc64a773b6d" name="bdnhr-10.png" src="/system/ws/v11/media/image/5544/4ea622eb-eb51-4c80-a62b-3fc64a773b6d" style="width:582px;height:99px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch35 important dates and information section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="3">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Awards history.</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Default view, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Begin date,</span></span></span>
+
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the start date for a payable period, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Begin reason,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the reason code associated with the begin date, per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.14</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of XX.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">No pay date,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the first day after a payable period, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">No pay reason,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the reason code associated with the no pay date, per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II,  9.14</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of XX.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Rate, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the monthly calculated amount payable for a period of training, and </span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in $XX.XX format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Training time.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the training time code, per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.23</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of X.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Expanded view.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Hours,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the number of hours in which the beneficiary is enrolled for that period of training, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displayed in the format of XX.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Entitlement charge,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the rate at which entitlement is charged under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the X format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Training type,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Facility code, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Identifies the training facility at which the training occurred, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format X-X-XXXX-XX.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Charges.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the tuition/fees charges by the training facility for the period of enrollment, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the $XX.XX format.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="d9c6c586-2971-49f2-892e-e56587b066f9" name="bdnhr-11.png" src="/system/ws/v11/media/image/5544/d9c6c586-2971-49f2-892e-e56587b066f9" style="width:587px;height:188px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch35 awards history section</span></i></span></span></p>
+
+			<p align="center" style="text-align:center"></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Note</span></i><span style="font-family:"Arial",sans-serif">: If a field does not include a value to present user from BDN, the field will show <b>N/A</b>.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">II.3.B.2.d</span></b></span></span></p>
+
+			<p></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Chapter 30 Historical Reporting Display</span></b></span></span></p>
+
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">When Chapter 30 information is requested, the following six sections/fields will display in the provided report accordion:</span></span></span></p>
+
+			<p></p>
+
+			<ol>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Entitlement history,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Default view, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Original entitlement,</span></span></span>
+
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the beginning amount of entitlement for the beneficiary under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Used entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of entitlement utilized under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Remaining entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the resulting amount of entitlement equivalent to original entitlement minus used entitlement, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Prior VA training type,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the most recent, prior VA education benefit received, if applicable, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of X.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Prior VA training amount, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of entitlement utilized under a prior VA education benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of MM-DD.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Out-of-system payment indicator.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates if award processing was completed through the FOCAS program, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays a,</span></span></span>
+							<ol style="list-style-type:lower-alpha">
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Y, if the case was generated through FOCAS and paid using BDN, or</span></span></span></li>
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">N, if the case was not generated through FOCAS.</span></span></span></li>
+							</ol>
+							</li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Expanded view.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Dropped entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents entitlement used for award periods not represented in the master record due to system space/record limitations, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Cumulative reduction,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the amount of entitlement manually charged against a beneficiary’s record under Ch30, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Cumulative restored,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the amount of entitlement manually added to a beneficiary’s record under Ch30, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Ch34 indicator,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates if the claimant transferred entitlement from Ch34 to Ch30, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays either,</span></span></span>
+							<ol style="list-style-type:lower-alpha">
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">X or Y = Yes, or</span></span></span></li>
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Blank or null = No.</span></span></span></li>
+							</ol>
+							</li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Ch34 remaining entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the amount of remaining entitlement under Ch34, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Ch34 cumulative reduced entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the amount of entitlement manually charged against the beneficiary’s record in lieu of processing an award under Ch34, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Ch34 dropped entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents entitlement used for Chapter 34 award periods not represented in the master record due to system space/record limitations, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Tuition assistance used,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of entitlement utilized in the payment of tuition assistance under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Objective-course, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the objective and course codes for the beneficiary’s enrollment per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.31 -9.33</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX-XXX format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Fiduciary file location.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the location of the beneficiary’s fiduciary record, if applicable, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX format.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p style="margin-left:144px"></p>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="61398e1b-a9a1-46b7-a31c-5c434a120df0" name="bdnhr-12.png" src="/system/ws/v11/media/image/5544/61398e1b-a9a1-46b7-a31c-5c434a120df0" style="width:595px;height:216px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch30 entitlement history section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="2">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Important dates and important information,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Default view, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Delimiting date,</span></span></span>
+
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the first day after a claimant’s period of eligibility expires, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date last paid,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the most recent “none” or no-pay date for the beneficiary, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of MM/DD/YYYY.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Exhaust date,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the date on which the claimant’s entitlement to the transferred Ch34 benefit ends, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Enter on-duty date,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Release from active-duty date, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Participation code.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the DoD status code presented on what was formerly known as the 30D screen, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XX format.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Expanded view.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Ch30 eligibility override,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates that a manual override was utilized to allow for benefit payment under Ch30, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays either,</span></span></span>
+							<ol style="list-style-type:lower-alpha">
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">X or Y = Yes, or</span></span></span></li>
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Blank or null = No.</span></span></span></li>
+							</ol>
+							</li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Ch34 eligibility override,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates that a manual override was utilized to allow for benefit payment under Ch30 category II beneficiary, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays either,</span></span></span>
+							<ol style="list-style-type:lower-alpha">
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">X or Y = Yes, or</span></span></span></li>
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Blank or null = No.</span></span></span></li>
+							</ol>
+							</li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Upgrade discharge date,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date last certified,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the day following the latest month, day, and year attendance was verified, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Re-enter on-duty date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Later released from active-duty date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Entered Selected Reserve date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Released from Selected Reserve date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disability extension date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disability extension time,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disallowance reason 1,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disallowance reason 2,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disallowance reason 3, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Additional contribution date amount.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the date and amount of the last contribution made by the beneficiary toward the additional contribution ($600 buy-up) program, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY-$XXX.XX format.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="fd120051-c12d-45ab-8298-8d77e16d61a2" name="bdnhr-13.png" src="/system/ws/v11/media/image/5544/fd120051-c12d-45ab-8298-8d77e16d61a2" style="width:609px;height:261px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch30 important dates and information section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="3">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Awards history,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Default view, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Begin date,</span></span></span>
+
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the start date for a payable period, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Begin reason,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the reason code associated with the begin date, per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.14</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of XX.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">No pay date,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the first day after a payable period, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">No pay reason,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the reason code associated with the no pay date, per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.14</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of XX.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Training type</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the training time code, per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.29</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of X.</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Note:</span></b><span style="font-family:"Arial",sans-serif"> If awards are under the VRAP program, the training type value will be “V”.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Training time.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the training time code, per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.23</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of X.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Expanded view.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Rate,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Dependency,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the number of dependencies for the claimant.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Hours,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Facility code,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Identifies the training facility at which the training occurred, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format X-X-XXXX-XX.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Override, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates that an override was used in the processing of the award.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Charges.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of the charges submitted by the training facility for the given enrollment, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the $XXXXX.XX format.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="17b9c215-c4c0-4f69-9059-2cdc8fd7382a" name="bdnhr-14.png" src="/system/ws/v11/media/image/5544/17b9c215-c4c0-4f69-9059-2cdc8fd7382a" style="width:605px;height:163px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch30 awards history section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="4">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Payment history, and</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Payment date,</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the date on which the transaction was processed, authorized, or certified in BDN, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Payment amount,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the amount of the transaction processed, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the $XXXXX.XX format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Offset amount,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the amount of payment was offset due to prior overpayment(s) on record, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the $XXXXX.XX format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Recurring amount, and</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the $XXXXX.XX format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Proceeds amount.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the $XXXXX.XX format.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="1db653c3-6742-4615-8cad-71c486cb37cf" name="bdnhr-15.png" src="/system/ws/v11/media/image/5544/1db653c3-6742-4615-8cad-71c486cb37cf" style="width:563px;height:162px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch30 payment history section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="5">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Transaction history.</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Transaction date, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the date the BDN transaction occurred, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Transaction code.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the transaction which occurred on the corresponding date, per </span></span></span><a class="eGainArticleLink" articleid="554400000076474" articlename="ARCHIVED: M22-4, Part II, Chapter 2 - TRANSACTION CODES" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076474?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 2</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX format.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="2927526a-cc31-4d0b-bd09-9e995e2679ba" name="bdnhr-16.png" src="/system/ws/v11/media/image/5544/2927526a-cc31-4d0b-bd09-9e995e2679ba" style="width:522px;height:219px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch30 transaction history</span></i></span></span></p>
+
+			<p align="center" style="text-align:center"></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Note</span></i><span style="font-family:"Arial",sans-serif">: If a field does not include a value to present user from BDN, the field will show <b>N/A</b>.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">II.3.B.2.e</span></b></span></span></p>
+
+			<p></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Chapter 1606 Historical Reporting Display</span></b></span></span></p>
+
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">When Chapter 1606 information is requested, the following sections/fields will display in the provided report accordion:</span></span></span></p>
+
+			<p></p>
+
+			<ol>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Entitlement history,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Default view, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Original entitlement,</span></span></span>
+
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the beginning amount of entitlement for the beneficiary under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Used entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of entitlement utilized under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Remaining entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the resulting amount of entitlement equivalent to original entitlement minus used entitlement, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Prior VA training type,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the most recent, prior VA education benefit received, if applicable, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of X.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Prior VA training amount, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of entitlement utilized under prior VA education benefits, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Out-of-system payment indicator.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates if award processing was completed through the FOCAS program, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays a,</span></span></span>
+							<ol style="list-style-type:lower-alpha">
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Y, if the case was generated through FOCAS and paid using BDN, or</span></span></span></li>
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">N, if the case was not generated through FOCAS.</span></span></span></li>
+							</ol>
+							</li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Expanded view.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Dropped entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents entitlement used for award periods not represented in the master record due to system space/record limitations, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Cumulative reduction,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the amount of entitlement manually charged against a beneficiary’s record, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Cumulative restored,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the amount of entitlement manually added to a beneficiary’s record, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Objective-course, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the objective and course codes for the beneficiary’s enrollment per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.31 -9.33</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX-XXX format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Fiduciary file location.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the location of the beneficiary’s fiduciary record, if applicable, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX format.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="ea33465d-d0e7-4200-b802-281ab5d19fb3" name="bdnhr-17.png" src="/system/ws/v11/media/image/5544/ea33465d-d0e7-4200-b802-281ab5d19fb3" style="width:616px;height:167px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch1606 entitlement history section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="2">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Historical eligibility periods,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Default view, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Eligibility status,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Eligibility date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Eligibility code,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Basic eligibility date, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Eligibility override.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Expanded view.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Kicker status,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Kicker date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Kicker code, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Kicker override.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="6c33b680-9261-4558-9de9-467d5da6a69e" name="bdnhr-18.png" src="/system/ws/v11/media/image/5544/6c33b680-9261-4558-9de9-467d5da6a69e" style="width:615px;height:159px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch1606 historical eligibility periods section</span></i></span></span></p>
+
+			<p align="center" style="text-align:center"></p>
+
+			<ol start="3">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Important dates and important information,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Delimiting date,</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the first day after a claimant’s period of eligibility expires, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date last paid,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the most recent “none” or no-pay date for the beneficiary, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of MM/DD/YYYY.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date last certified,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the day following the latest month, day, and year attendance was verified, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disallowance reason 1,</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disallowance reason 2, and</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disallowance reason 3.</span></span></span></li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="17d1bc00-41fb-4fb1-8ac0-062b4cbfd11a" name="bdnhr-19.png" src="/system/ws/v11/media/image/5544/17d1bc00-41fb-4fb1-8ac0-062b4cbfd11a" style="width:545px;height:99px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch1606 important dates and information section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="4">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Awards history,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Default view, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Begin date,</span></span></span>
+
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the start date for a payable period, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Begin reason,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the reason code associated with the begin date, per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.14</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of XX.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">No pay date,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the first day after a payable period, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">No pay reason,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the reason code associated with the no pay date, per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.14</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of XX.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Training type, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Training time.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the training time code, per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.23</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of X.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Expanded view.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Rate,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Kicker rate,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Hours,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Facility code, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Identifies the training facility at which the training occurred, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format X-X-XXXX-XX.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Override.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="1f896d0e-6edc-433d-a5e3-8597cb537d75" name="bdnhr-20.png" src="/system/ws/v11/media/image/5544/1f896d0e-6edc-433d-a5e3-8597cb537d75" style="width:624px;height:203px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch1606 awards history section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="5">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Payment history, and</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Payment date,</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Payment amount,</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Offset amount,</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Recurring amount, and</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Proceeds amount.</span></span></span></li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="3183a16e-4f3a-40d0-a166-e2b76b668cbb" name="bdnhr-21.png" src="/system/ws/v11/media/image/5544/3183a16e-4f3a-40d0-a166-e2b76b668cbb" style="width:570px;height:164px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch1606 payment history section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="6">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Transaction history.</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Transaction date, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the date the BDN transaction occurred, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Transaction code.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the transaction which occurred on the corresponding date, per </span></span></span><a class="eGainArticleLink" articleid="554400000076474" articlename="ARCHIVED: M22-4, Part II, Chapter 2 - TRANSACTION CODES" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076474?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 2</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX format.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="2ac7b97e-46d9-4f8c-84f1-5cdc99aeb8df" name="bdnhr-22.png" src="/system/ws/v11/media/image/5544/2ac7b97e-46d9-4f8c-84f1-5cdc99aeb8df" style="width:518px;height:214px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch1606 transaction history section</span></i></span></span></p>
+
+			<p align="center" style="text-align:center"></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Note</span></i><span style="font-family:"Arial",sans-serif">: If a field does not include a value to present user from BDN, the field will show <b>N/A</b>.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">II.3.B.2.f</span></b></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Chapter 1607 Historical Reporting Display</span></b></span></span></p>
+
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">When Chapter 1607 information is requested, the following sections/fields will display in the provided report accordion:</span></span></span></p>
+
+			<p></p>
+
+			<ol>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Entitlement history,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Default view, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Original entitlement,</span></span></span>
+
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the beginning amount of entitlement for the beneficiary under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Used entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of entitlement utilized under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Remaining entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the resulting amount of entitlement equivalent to original entitlement minus used entitlement, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Prior VA training type,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the most recent, prior VA education benefit received, if applicable, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of X.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Prior VA training amount, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of entitlement utilized under prior VA education benefits, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Out-of-system payment indicator.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates if award processing was completed through the FOCAS program, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays a,</span></span></span>
+							<ol style="list-style-type:lower-alpha">
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Y, if the case was generated through FOCAS and paid using BDN, or</span></span></span></li>
+								<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">N, if the case was not generated through FOCAS.</span></span></span></li>
+							</ol>
+							</li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Expanded view.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Dropped entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents entitlement used for award periods not represented in the master record due to system space/record limitations, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Cumulative reduction,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the amount of entitlement manually charged against a beneficiary’s record, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Cumulative restored,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the amount of entitlement manually added to a beneficiary’s record, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Objective-course, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the objective and course codes for the beneficiary’s enrollment per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.31 -9.33</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX-XXX format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Fiduciary file location.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the location of the beneficiary’s fiduciary record, if applicable, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX format.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="1f991762-8ef1-4272-b62b-d1d5573a0912" name="bdnhr-23.png" src="/system/ws/v11/media/image/5544/1f991762-8ef1-4272-b62b-d1d5573a0912" style="width:611px;height:169px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch1607 entitlement history section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="2">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Important dates and important information,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Default view, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Delimiting date,</span></span></span>
+
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the first day after a claimant’s period of eligibility expires, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date last paid,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the most recent “none” or no-pay date for the beneficiary, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of MM/DD/YYYY.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date last certified,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the day following the latest month, day, and year attendance was verified, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Enter on-duty date, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Release from active-duty date.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Expanded view.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Re-enter on-duty date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Later released from active-duty date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Entered Selected Reserve date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Release from Selected Reserve date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Additional entered Selected Reserve date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Additional release from Selected Reserve date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disability extension date,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disability extension time,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disallowance reason 1,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disallowance reason 2,</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disallowance reason 3, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Additional contribution date amount.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="15c90c80-0f79-4141-84e4-d86434f7a987" name="bdnhr-24.png" src="/system/ws/v11/media/image/5544/15c90c80-0f79-4141-84e4-d86434f7a987" style="width:576px;height:228px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch1607 important dates and information section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="3">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Payment history, and</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Payment date,</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Payment amount,</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Offset amount,</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Recurring amount, and</span></span></span></li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Proceeds amount.</span></span></span></li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="ffc029d0-ad61-47bf-b4ee-2be5ec8deade" name="bdnhr-25.png" src="/system/ws/v11/media/image/5544/ffc029d0-ad61-47bf-b4ee-2be5ec8deade" style="width:593px;height:169px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch1607 payment history section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="4">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Transaction history.</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Transaction date, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the date the BDN transaction occurred, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Transaction code.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Indicates the transaction which occurred on the corresponding date, per </span></span></span><a class="eGainArticleLink" articleid="554400000076474" articlename="ARCHIVED: M22-4, Part II, Chapter 2 - TRANSACTION CODES" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076474?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 2</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX format.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="2c204686-3cbc-4c1b-98f1-4104313ed3e0" name="bdnhr-26.png" src="/system/ws/v11/media/image/5544/2c204686-3cbc-4c1b-98f1-4104313ed3e0" style="width:492px;height:206px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch1607 transaction history section</span></i></span></span></p>
+
+			<p align="center" style="text-align:center"></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Note</span></i><span style="font-family:"Arial",sans-serif">: If a field does not include a value to present user from BDN, the field will show <b>N/A</b>.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">II.3.B.2.g</span></b></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Chapter 32 Historical Reporting Display</span></b></span></span></p>
+
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">When Chapter 32 information is requested, the following sections/fields will display in the provided report accordion:</span></span></span></p>
+
+			<p></p>
+
+			<ol>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Entitlement history,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Default view, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Original entitlement,</span></span></span>
+
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the beginning amount of entitlement for the beneficiary under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Used entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of entitlement utilized under the benefit, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Remaining entitlement,</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the resulting amount of entitlement equivalent to original entitlement minus used entitlement, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Prior VA training type, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the most recent, prior VA education benefit received, if applicable, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of X.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Dropped entitlement.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents entitlement used for award periods not represented in the master record due to system space/record limitations, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Expanded view.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Objective-course, and</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the objective and course codes for the beneficiary’s enrollment per </span></span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Rescinded: M22-4, Part II, 9.31 - 9.33</a><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX-XXX format.</span></span></span></li>
+						</ol>
+						</li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Fiduciary file location.</span></span></span>
+						<ol>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the location of the beneficiary’s fiduciary record, if applicable, and</span></span></span></li>
+							<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the XXX format.</span></span></span></li>
+						</ol>
+						</li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="8031e957-7a3c-482d-b703-56e3317a3029" name="bdnhr-27.png" src="/system/ws/v11/media/image/5544/8031e957-7a3c-482d-b703-56e3317a3029" style="width:577px;height:153px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch32 entitlement history section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="2">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Important dates and important information,</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Delimiting date,</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the first day after a claimant’s period of eligibility expires, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date last paid,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the most recent “none” or no-pay date for the beneficiary, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of MM/DD/YYYY.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Date last certified,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the day following the latest month, day, and year attendance was verified, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Enter on-duty date,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the beneficiary’s first day of active-duty service, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Release from active-duty date, and</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the beneficiary’s last day of active-duty service, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM/DD/YYYY format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Disallowance reason 1.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the first reason for the disallowance of benefits under this chapter, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of XX.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="e226d29d-d936-442e-8707-6ab1028d46f4" name="bdnhr-28.png" src="/system/ws/v11/media/image/5544/e226d29d-d936-442e-8707-6ab1028d46f4" style="width:593px;height:90px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch32 important dates and information section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="3">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Contribution history, and</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Participant,</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the action taken or status of contributions made by the beneficiary, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of X-Action/Status.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Amount,</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the dollar value of the action/status of the DoD’s contributions, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of $XX.XX.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">DoD, and</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the action taken or status of contributions made by the beneficiary, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of X-Action/Status.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Amount.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the dollar value of the action/status of the DoD’s contributions, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format of $XX.XX.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="84736cfc-2789-4dd6-a780-ac5ecd616226" name="bdnhr-29.png" src="/system/ws/v11/media/image/5544/84736cfc-2789-4dd6-a780-ac5ecd616226" style="width:589px;height:229px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch32 contribution history section</span></i></span></span></p>
+
+			<p></p>
+
+			<ol start="4">
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Allotment history.</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Year, and</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the year in which contributions were made by the beneficiary into the benefit, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the format XXXX.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Months of Year(a) Values.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the total contributions made by the beneficiary in a given month, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the $XX.XX format.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="3d671ed0-5fb0-4c7f-b4c8-4f617b2fc42f" name="bdnhr-30.png" src="/system/ws/v11/media/image/5544/3d671ed0-5fb0-4c7f-b4c8-4f617b2fc42f" style="width:619px;height:94px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch32 allotment history section</span></i></span></span></p>
+
+			<p align="center" style="text-align:center"></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Note</span></i><span style="font-family:"Arial",sans-serif">: If a field does not include a value to present user from BDN, the field will show <b>N/A</b>.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<hr />
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">II.3.B.2.h</span></b></span></span></p>
+
+			<p></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><b><span style="font-family:"Arial",sans-serif">Chapter 34 Historical Reporting Display</span></b></span></span></p>
+
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">When Chapter 34 information is requested, the following sections/fields will display in the provided report accordion:</span></span></span></p>
+
+			<p></p>
+
+			<ol>
+				<li><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Entitlement history.</span></span></span>
+
+				<ol style="list-style-type:lower-alpha">
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Original entitlement,</span></span></span>
+
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the beginning amount of entitlement for the beneficiary under the benefit, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Used entitlement, and</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the amount of entitlement utilized under the benefit, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+					</ol>
+					</li>
+					<li style="margin-left:16px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Remaining entitlement.</span></span></span>
+					<ol style="list-style-type:lower-roman">
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Represents the resulting amount of entitlement equivalent to original entitlement minus used entitlement, and</span></span></span></li>
+						<li style="margin-left:8px"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Displays in the MM-DD format.</span></span></span></li>
+					</ol>
+					</li>
+				</ol>
+				</li>
+			</ol>
+
+			<p></p>
+
+			<p align="center" style="text-align:center"><img id="afd442c8-419f-4d93-b139-2e80db2f64c1" name="bdnhr-31.png" src="/system/ws/v11/media/image/5544/afd442c8-419f-4d93-b139-2e80db2f64c1" style="width:561px;height:115px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;cursor:pointer" /></p>
+
+			<p align="center" style="text-align:center"><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Figure: Example of Ch34 entitlement history section</span></i></span></span></p>
+
+			<p align="center" style="text-align:center"></p>
+
+			<p><span style="font-size:16px;"><span style="line-height:normal"><i><span style="font-family:"Arial",sans-serif">Note</span></i><span style="font-family:"Arial",sans-serif">: If a field does not include a value to present user from BDN, the field will show <b>N/A</b>.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p align="right" style="text-align:right"><a href="#Top"><span style="font-size:16px;"><span style="line-height:normal"><span style="font-family:"Arial",sans-serif">Go to top</span></span></span></a></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="border-bottom:none; width:141px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p></p>
+			</td>
+			<td style="border-bottom:none; width:639px; padding:0in 7px 0in 7px; height:20px; border-top:none; border-right:none; border-left:none" valign="top">
+			<p align="right" style="text-align:right"><span style="font-size:16px;"><a class="eGainArticleLink" articleid="554400000288864" articlename="M22-4, Part II, Chapter 3, Section C – Beneficiary Management" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000288864?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Next Section</a></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p></p>
+</body>
+</html>

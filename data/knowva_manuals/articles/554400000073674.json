@@ -1,0 +1,29 @@
+{
+  "article_id": "554400000073674",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000073674",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 11 – Chapter 1607",
+    "05 – Determining Eligibility and COE Processing [DRAFT]"
+  ],
+  "topic_id": "554400000016248",
+  "manual_name": "M22-4",
+  "title": "Part 11: Chapter 5 - Determining Eligibility and COE Processing",
+  "description": "The BDN chapter 1607 system is similar to the chapters 30 and 1606 systems in many ways. The same screens are used, however the layout of the screens and the information input by the VCE can vary slightly between these programs. There is nothing different in processing a Certificate of Eligibility, for example, however some new fields have been added to the 310 screen for chapter 1607 processing.          This chapter will focus on the 310, 411 and COE screens and instruction for processing a REAP claim utilizing these screens.",
+  "keywords": "Ch 1607, REAP, Ch 1607 310 screen, 1607 411 screen, 1607 COE screen, REAP, Ch 1607,",
+  "last_modified": "2018-03-13T16:12:22.000Z",
+  "created": "2017-11-17T20:35:55Z",
+  "version": "13",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": false,
+  "heading_outline": [],
+  "heading_count": 0,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

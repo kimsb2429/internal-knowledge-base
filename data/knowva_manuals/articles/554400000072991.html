@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ARCHIVED: M22-4, Part II, Chapter 8 - Miscellaneous Target Processing</title>
+  <meta name="source-system" content="KnowVA (knowva.ebenefits.va.gov)">
+  <meta name="source-type" content="va_manual">
+  <meta name="manual-name" content="M22-4">
+  <meta name="article-id" content="554400000072991">
+  <meta name="alternate-id" content="None">
+  <meta name="last-modified" content="2025-08-27T11:18:04.000Z">
+  <meta name="created" content="2017-11-09T15:08:51Z">
+  <meta name="keywords" content="requesting a Notice of exception,  target commands, miscellaneous target commands,">
+  <meta name="topic-breadcrumb" content="M22-4 &gt; Part 02 – Computer Processing &gt; Archives">
+  <meta name="content-category" content="">
+  <meta name="target-audience" content="">
+</head>
+<body>
+<nav class="topic-breadcrumb" aria-label="Topic hierarchy"><span class="bc-item">M22-4</span> / <span class="bc-item">Part 02 – Computer Processing</span> / <span class="bc-item">Archives</span></nav>
+<h1>ARCHIVED: M22-4, Part II, Chapter 8 - Miscellaneous Target Processing</h1>
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a id="#Top" name="#Top"></a></strong></span></span></p>
+
+<p class="paragraph" style="margin-left: 48px; text-align: center;"><span style="font-size:22px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#c0392b;"><b>ARCHIVED <span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent">August 14, 2025 </span></span></span></b> </span></span></span></p>
+
+<p class="paragraph" paraeid="{b94cba4e-119d-4e35-853d-dd3a0a8919b1}{145}" paraid="492305406" style="margin-left: 48px; text-align: center;"><span style="font-size:22px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="color:#c0392b;"><span style="vertical-align:baseline"><span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent"><span style="overflow-wrap:break-word"><span style="white-space-collapse: preserve;"><span style="font-kerning:none"><span data-contrast="none" style="user-select:text" xml:lang="EN-US"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent"><span style="font-variant-ligatures:none !important"><span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent"><b>FOR HISTORICAL <span style="user-select:text"><span style="-webkit-user-drag:none"><span style="-webkit-tap-highlight-color:transparent">PURPOSES ONLY</span></span></span></b></span></span></span></span></span></span></span> </span></span></span></span></span></span></span></span></span></span></p>
+
+<p></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Part 2: Chapter 8 - Miscellaneous Target Processing</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong><a href="#SI">Subchapter 1</a>. Overview of Notices of Exception Processing</strong><br />
+<a href="#801">8.01  General </a><br />
+<a href="#802">8.02  Notices of Exception</a><br />
+<a href="#803">8.03  Access to the NOES</a><br />
+<a href="#804">8.04  Types of NOE Messages</a><br />
+<a href="#805">8.05  Requesting NOE Messages</a><br />
+<a href="#806">8.06  NOE Message Field Descriptions</a><br />
+<a href="#807">8.07  Disposition of NOE MESSAGES</a><br />
+<br />
+<strong><a href="#SII">Subchapter 2</a>. Miscellaneous Target Commands</strong><br />
+<a href="#808">8.08  DUPC</a><br />
+<a href="#809">8.09  CNUM</a><br />
+<a href="#810">8.10  PURG</a><br />
+<a href="#811">8.11  STAT</a><br />
+<a href="#812">8.12  TINQ</a><br />
+<a href="#813">8.13  CORR</a><br />
+<a href="#814">8.14  Finance Commands</a><br />
+<a href="#815">8.15  Liaison and Compliance </a><br />
+<a href="#816">8.16  Management Commands</a><br />
+<br />
+<strong>Figures</strong><br />
+<a href="#f801">8.01  Sample Chapter 30 NOE S12 Menu Screen</a><br />
+<a href="#f802">8.02  Sample Chapter 32 NOE S12 Menu Screen</a><br />
+<a href="#f803">8.03  Sample Chapter 35 NOE S11 Menu Screen</a><br />
+<a href="#f804">8.04  Sample Chapter 106 NOE S12 Menu Screen</a><br />
+<a href="#f805">8.05  Sample Chapter 30 Notice of Exception</a><br />
+<a href="#f806">8.06  Sample Chapter 32 Notice of Exception</a><br />
+<a href="#f807">8.07  Sample Chapter 35 Notice of Reject</a><br />
+<a href="#f808">8.08  Sample Chapter 106 Notice of Exception</a><br />
+<a href="#f809">8.09  S95 STAT Ready Screen</a><br />
+<a href="#f810">8.10  S94 STAT Screen</a><br />
+<a href="#f811">8.11  S95 STAT Screen</a><br />
+<a href="#f812">8.12  T01 TINQ Screen</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="SI"></a><strong>SUBCHAPTER I.  OVERVIEW OF NOTICES OF EXCEPTION PROCESSING</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="801"><strong>8.01 GENERAL</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">This chapter contains Target processing and procedures that do not readily belong in other chapters of M22-4. </span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="801a"></a><strong>a.</strong><a href="#SI"> Subchapter I </a>deals with general Notices of Exception processing.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="801b"></a><strong>b.</strong><a href="#SII"> Subchapter II</a> deals with Target commands not covered elsewhere.</span></span></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="802"><strong>8.02  NOTICES OF EXCEPTION PROCESSING - GENERAL</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NOE (Notices of Exception) result from TCS (Target Central System) processing.  At times, Target processing may result in rejection of an action or in generation of an information message.  If Target rejects an action or sends a message, TCS sets up an NOE message.  Target sends the messages to the BDNRS (Benefits Delivery Network Regional Systems) for further processing and retrieval by the regional offices.  Regional office personnel obtain a list of NOE messages by using the NOES (<u>N</u>otice <u>O</u>f <u>E</u>xception <u>S</u>ubsystem) command.</span></span></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="803"><strong>8.03  ACCESS TO THE NOES COMMAND</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The Adjudication Officer designates certain individuals to have access to the NOES command.  An operator must request a separate listing for each education benefit system.  For example, an operator would have to submit a request for a chapter 34/35 list and a second request for a chapter 32 list.  NOE listings within a given education benefit system (except for chapter 32) contain all NOE messages for the entire field station (digits 00-99).  (NOE listings for the chapter 32 system contain all NOE messages within a maximum of 20 digits in each request.)  The NOES command has limited access to prevent the unnecessary printing of duplicate listings.  Generally, field stations should assign one individual to obtain the NOES listings; several other individuals should also receive training as alternates and have access to the command. </span></span></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="804"><strong>8.04  TYPES OF NOE MESSAGES</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">There are three categories of NOE messages:  REJECT, ACTION, and INFO messages.  Each message requires regional office attention.  The category of the NOE message determines the type of action required and the priority assigned.</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="804a"></a><strong>a.  REJECT Messages (Chs. 32 and 35)</strong>.  REJECT messages should have the highest priority.  They indicate that TCS did not successfully process a transaction.  Regional offices should carefully review claims involving REJECT messages.  These messages often require submission of corrected action to the TCS.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="804b"></a><strong>b.  ACTION Messages</strong>.  Regional offices should carefully review claims involving ACTION messages.  These messages often direct attention to suspended awards, required certifications, or changes in eligibility.  ACTION messages do not usually reflect an error by a VA operator.</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="804c"></a><strong>c.  INFO Messages</strong>.  These messages should have the third highest priority.  They identify unusual TCS processing circumstances.  Regional offices should carefully review claims involving INFO messages and take any necessary action.  These messages usually contain information for documentation purposes.  Adjudicators may often file INFO messages in the claims folder without further action.</span></span></span></span></span></span></p>
+
+<p><br clear="all" />
+ </p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="805"><strong>8.05  REQUESTING NOE MESSAGES</strong></a></span></span></p>
+
+<hr />
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="8051"></a>(1)  Make the following entries on the Ready screen to obtain a NOTICE OF EXCEPTION MENU SELECTION SCREEN (S12 for chapters 30, 32, and 106, S11 for chapter 35):</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="8051a"></a>(a) The command NOES.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="8051b"></a>(b) Operator's password.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="8051c"></a>(c) Benefit.  If CH35, leave blank.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="8052"></a>(2)  Make the following entries on the NOE menu selection screen to have Target print NOE messages:</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="8052a"></a>(a) Specify any range of digits (00 thru 99) for NOE messages.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="8052b"></a>(b) Put an X under the date or cycle by desired NOE messages.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="8052c"></a>(c) Press the ENTER key.</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">A sample of the NOES menu selection screen for each education system follows:  (See <a href="#f801">figs. 8.01 thru 8.04)</a></span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f801"></a><img alt="Chapter 30 NOE S12 Menu Screen" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333506/M224 Part 2 Ch 8 Figure 8.01.jpg" style="border-top: 1px solid; height: 357px; border-right: 1px solid; width: 560px; border-bottom: 1px solid; border-left: 1px solid" /><br />
+<strong>"Figure 8.01. Sample Chapter 30 NOE S12 Menu Screen</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f802"></a><img alt="Chapter 32 NOE S12 Menu Screen" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333506/M224 Part 2 Ch 8 Figure 8.02.jpg" style="border-top: 1px solid; height: 342px; border-right: 1px solid; width: 560px; border-bottom: 1px solid; border-left: 1px solid" /><br />
+<strong>"Figure 8.02.  Sample Chapter 32 NOE S12 Menu Screen</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f803"></a><img alt="Chapter 35 NOE S11 Menu Screen" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333506/M224 Part 2 Ch 8 Figure 8.03.jpg" style="border-top: 1px solid; height: 373px; border-right: 1px solid; width: 560px; border-bottom: 1px solid; border-left: 1px solid" /><br />
+<strong>Figure 8.03. Sample Chapter 35 NOE S11 Menu Screen</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f804"></a><img alt="Chapter 106 NOE S12 Menu Screen" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333506/M224 Part 2 Ch 8 Figure 8.04.jpg" style="border-top: 1px solid; height: 388px; border-right: 1px solid; width: 560px; border-bottom: 1px solid; border-left: 1px solid" /><br />
+<strong>Figure 8.04. Sample Chapter 106 NOE S12 Menu Screen</strong></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806"><strong>8.06  NOE MESSAGE FIELD DESCRIPTIONS - S10 MESSAGE</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="#f805">Figures 8.05 thru 8.09</a> show a sample of NOE for each education system.</span></span></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f805"></a><img alt="Chapter 30 Notice of Exception" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333506/M224 Part 2 Ch 8 Figure 8.05.jpg" style="border-top: 1px solid; height: 358px; border-right: 1px solid; width: 560px; border-bottom: 1px solid; border-left: 1px solid" /><img alt="Sample Chapter 30 Notice of Exception" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333506/M22P4 Part 2 Ch 8 Figure 8.05.jpg" /><br />
+<strong>Figure 8.05.  Sample Chapter 30 Notice of Exception </strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f806"></a><img alt="Chapter 32 Notice of Exception" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333506/M224 Part 2 Ch 8 Figure 8.06.jpg" style="border-top: 1px solid; height: 310px; border-right: 1px solid; width: 560px; border-bottom: 1px solid; border-left: 1px solid" /><br />
+<br />
+<strong>Figure 8.06. Sample Chapter 32 Notice of Exception</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f807"></a><img alt="Chapter 35 Notice of Reject" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333506/M224 Part 2 Ch 8 Figure 8.07.jpg" style="border-top: 1px solid; height: 310px; border-right: 1px solid; width: 560px; border-bottom: 1px solid; border-left: 1px solid" /><br />
+<strong>Figure 8.07. Sample Chapter 35 Notice of Reject</strong></span></span></p>
+
+<p align="center"></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f808"></a><img alt="Chapter 106 Notice of Exception" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333506/M224 Part 2 Ch 8 Figure 8.08.jpg" style="border-top: 1px solid; height: 342px; border-right: 1px solid; width: 560px; border-bottom: 1px solid; border-left: 1px solid" /><br />
+<strong>"Figure 8.08. Sample Chapter 106 Notice of Exception</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>NOTE:  The following is general NOE information.  Also see </em></span></span><a class="eGainArticleLink" articleid="554400000076311" articlename="Part 5: Chapter 5 - Notice of Exception Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076311?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5: Chapter 5 - Notice of Exception Processing</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>  </em></span></span> , <a class="eGainArticleLink" articleid="554400000073589" articlename="Part 6: Chapter 5 - Notice of Exception Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073589?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 6: Chapter 5 - Notice of Exception Processing</a> <span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>  </em></span></span><a class="eGainArticleLink" articleid="554400000073754" articlename="Part 7: Chapter 5 - Notice of Exception Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073754?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 7: Chapter 5 - Notice of Exception Processing</a> ,  <a class="eGainArticleLink" articleid="554400000075838" articlename="Part 8: Chapter 5 - Notice of Exception Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000075838?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 8: Chapter 5 - Notice of Exception Processing</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>    for instructions on how to process specific NOE messages.</em></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a"></a><strong>a.  NOE Fields for Chapter 30, 32, and 106 Systems</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a1"></a>1.  PROCESSING DATE.  This field shows the date of NOE occurrence (month and day).</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a2"></a>2.  STATION NUMBER.  This field shows the regional office number of the station processing the claim or having jurisdiction over the claim.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a3"></a>3.  FILE NUMBER.  This field shows the claimant's file number.  The social security number shows for chapter 32 claimants.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a4"></a>4.  PAYEE NUMBER.  This field shows payee 00.</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a5"></a>5.  STUB NAME.  This field shows the payee's stub name if transaction processing generates the NOE.  This field shows the master record stub name if recurring payment processing or bank processing generates the NOE.</span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a6"></a>6.  REJECT MESSAGE CODE.  This field shows the NOE code number.</span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a7"></a>7.  TRANSACTION CODE.  This field identifies the transaction that caused the NOE.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a8"></a>8.  UNASSOCIATED NUMBER.  (ch. 32 only)  This field is blank or shows a file number.  Route the message to the finance activity for review if a file number shows in this field.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a9"></a>9.  SEQUENCE NUMBER.  (ch. 32 only)  This field is blank or shows two digits.  Route the message to the finance activity for review if two digits show in this field.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a10"></a>10.  BATCH NUMBER.  (ch. 32 only)  This field is blank or shows four digits.  Route the message to the finance activity for review if four digits show in this field.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a11"></a>11.  AMOUNT.  (ch. 32 only)  This field is blank or shows a dollar amount representing unassociated money in the record.  Route the message to the finance activity for review if unassociated money shows in this field.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806a12"></a>12.  REJECT MESSAGE LEGEND.  This field has an explanation of the NOE code number.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806b"></a><strong>b.  NOE Fields for Chapter 35 System</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806b1"></a>1.  CYCLE NUMBER.  This field shows the cycle of NOE occurrence.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806b2"></a>2.  BATCH NUMBER.  This field shows four digits.  The first digit is the last digit of the year.  The last three digits are the Julian date representing the day TCS assembled this transaction with other transactions and stored it for processing.  For example, Batch 9018 indicates that the Hines BDC (Benefit Delivery Center) assembled the transaction on January 18, 1989.  TCS processed transactions in this batch during Cycle 0, February 1989, on January 20, 1989.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806b3"></a>3.  STATION NUMBER.  See subparagraph a above.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806b4"></a>4.  BATCH DATE.  This field shows the calendar date of the day TCS assembled this transaction with other transactions (at the Hines BDC) and stored it for processing by the TCS.</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806b5"></a>5.  TRANSACTION CODE AND MODIFIER.  This field identifies the transaction that caused the NOE. </span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806b6"></a>6.  FILE NUMBER.  This field shows the claimant's file number.</span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806b7"></a>7.  PAYEE NUMBER.  This field shows the payee's number.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806b8"></a>8.  STUB NAME.  This field shows the payee's stub name if transaction processing generates the NOE.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806b9"></a>9.  REJECT MESSAGE CODE.  This field shows the NOE code number.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="806b10"></a>10.  REJECT MESSAGE LEGEND.  This field has an explanation of the NOE code number.</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="807"><strong>8.07  DISPOSITION OF NOE MESSAGES</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Target prints NOE messages in terminal-digit order.  Regional office personnel separate NOE messages and send them to the appropriate claims unit for association with the appropriate folder and award action, as required.  Station personnel dispose of NOES messages, when no longer required, in accordance with Records Control Schedule VB-1, Part I, item No 08-041.000.</span></span></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="SII"></a><strong>SUBCHAPTER II.  MISCELLANEOUS TARGET COMMANDS</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="808"><strong>8.08  DUPC</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DUPC (<u>DUP</u>licate Record <u>C</u>onsolidation) is a BIRLS (Beneficiary Identification & Records Locator Subsystem) command which consolidates two BIRLS records, based on an "old file number" (cancelled file number) and "new file number" (retained file number).  (See M21-1, pt. II, par. 3.16 for DUPC procedures.)  These BIRLS records may or may not have a Hines benefit master record.  DUPC processing generates a change of file number transaction (26) for any chapter 30 or 34 record existing under the "old file number" (cancelled number).  DUPC cancels the Hines benefit master record under the cancelled file number.  For chapter 34, an operator uses the CORR (correction) command to update the retained record to reflect the entitlement used under the cancelled file number.  For DUPC, the operator must have physical control of both folders.  BIRLS must also show the operator's regional office has jurisdiction of both folders.  See <a href="#809">paragraph 8.09</a> for the changing of a file number.  This processing is used when BIRLS contains the correct file number with a Hines master record under a different number.</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="808a"></a><strong>a.  Retention Criteria</strong>.  See M23-1, part I, paragraph 6.05 for information as to how to determine which record to retain.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="808b"></a><strong>b.  Chapter 30 DUPC Processing</strong>.  See </span></span></span></span><a class="eGainArticleLink" articleid="554400000076230" articlename="M22-4 Part 5: Chapter 2 - MGIB BDN Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076230?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-4 Part 5: Chapter 2 - MGIB BDN Processing</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">    </span></span></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809"><strong>8.09  CNUM</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The operator uses the CNUM (<u>C</u>hange of File <u>NUM</u>ber) command to change the file number for a benefit master record to a different number.  An operator can currently use CNUM to change records in the chapter 34/35 and chapter 30 systems.  An operator uses this command when there is only one Hines master record under a number different than the BIRLS reference number.  See <a href="#808">paragraph 8.08</a> for DUPC procedures when two BIRLS records exist (with or without a Hines master record under each BIRLS number). </span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a"></a><strong>a.  CNUM Procedures</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a1"></a>(1)  The required Ready screen entries are: </span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a1a"></a>(a)  The command CADJ,</span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a1b"></a>(b)  Operator's password,</span></span></span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a1c"></a>(c)  The file number. </span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a1d"></a>(d)  Benefit type.    </span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a1e"></a>(e)  For chapter 35, also enter the payee number.  For chapters 30 and 34, the system assumes payee 00.</span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a2"></a>(2)  If Target does not locate a record with the file and payee number, CNUM processing terminates and the Ready screen shows "NO MASTER RECORD IN FILE.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a3"></a>(3)  If Target locates an abbreviated chapter 34 master record, CNUM processing terminates and the Ready screen shows "CNUM CANNOT BE PROCESSED-REACTIVATE RECORD".</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>NOTE: See </em></span></span><a class="eGainArticleLink" articleid="554400000073682" articlename="Part 7: Chapter 2 - BDN Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073682?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 7: Chapter 2 - BDN Processing</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>  for instructions on activation procedures for chapter 34 records.</em></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a4"></a>(4)  If Target locates a record with the file and payee number, CNUM processing proceeds.  Target shows the M21 screen.  Type the correct number over the incorrect number and press ENTER.</span></span></em></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a5"></a>(5)  BIRLS checks for a record under the new number containing the correct name.  If BIRLS does not have such a record, Target terminates CNUM processing.  The Ready screen shows the message "RECORD BELONGS TO (SHOWS NAME OF OTHER INDIVIDUAL)-DO BUPD OR CNAM" or the message "NO BIRLS RECORD UNDER NEW FILE NUMBER-DO CEST".   </span></span></span></span></em></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a6"></a>(6)  If a master record already exists for the new file number and payee number, CNUM processing terminates.  The Ready screen shows "RECORD EXISTS FOR NEW FILE NUMBER."</span></span></span></span></span></span></em></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a7"></a>(7)  When CNUM processing is complete, the Ready screen shows "PROCESSING COMPLETE."  Target forwards a 26 transaction to the Hines BDC.</span></span></span></span></span></span></span></span></em></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809a8"></a>(8)  When CNUM processing is complete for a chapter 34 record containing a chapter 30 indicator, Target sends VA Form 22-8270a, Education Master Record - Audit Write Out to the regional office that processed the CNUM transaction with a 903 message showing "TR 26 PROC AGAINST POSSBL 34/30 M/R - REVIEW."</span></span></span></span></span></span></span></span></span></span></em></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>NOTE:  Transaction 26 takes two input cycles to update a number in the chapter 34/35 system.  </em></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809b"></a><strong>b.  Chapter 30 System</strong>.  Only the RPOs (regional processing offices) can use the CNUM command to change chapter 30 records.  (See </span></span><a class="eGainArticleLink" articleid="554400000076474" articlename="ARCHIVED: M22-4, Part II, Chapter 2 - TRANSACTION CODES" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076474?portalId=554400000001018&usertype=customer&\$lang=en-us&">PART 02, COMPUTER PROCESSING. CHAPTER 2 - TRANSACTION CODES</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> )</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>NOTE:  If an operator at a regional office encounters a record involving potential chapter 30 record CNUM adjustment (e.g. while reviewing a claims folder with a C&P record), he/she should bring this record to the station chapter 30 coordinator.  Before taking any CNUM action, that individual should coordinate with his/her counterpart at the chapter 30 RPO.</em></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809c"></a><strong>c.  Alternatives to CNUM</strong></span></span></em></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809c1"></a>(1)  <u>Chapter 34/35 system</u>.  For a limited number of cases, Target has two master records for the same claimant while BIRLS only has one record.  See <a href="#810">paragraph 8.10</a> for necessary PURGE actions.  An operator cannot use the CNUM command in this situation.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809c2"></a>(2)  <u>Chapter 32/903 system</u>.  CNUM processing is not available for the chapter 32/903 system.  For the chapter 32/903 system, Target should never have two benefit master records for the same claimant because a bank record is necessary for the proper establishment of a benefit record.  If an operator encounters such a case, he/she should carefully review all records to determine if both records belong to the same individual.  This will usually require development to the service departments that sent the bank records.  The operator should determine the correct number.  The chapter 32 coordinator should coordinate the consolidation action by calling the Education System Staff (224A) at [(202)  273-7168].  Alternately, this coordinator can direct a message through Wang Office to "MAIL VBA 22" for further delivery to the System Staff (224A).  He or she should explain the reason for the request and give all pertinent file numbers.  The consolidation action requires Hines BDC action.  The Education System Staff notifies the chapter 32 coordinator when Target allows appropriate award action.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809c3"></a>(3)  <u>Chapter 106 system</u>.  An operator cannot use the CNUM command.  For the chapter 106 interim system, Target should never have two benefit master records for the same claimant.  If, after appropriate development, both records belong to the same individual, the regional office 106 coordinator should call the Education Procedures Staff (224B) at [(202) 273 -7181].  Alternately, this coordinator can direct a message through Wang Office to "MAIL VBA 22" for further delivery to the Procedures Staff (224B).  The Education Procedures Staff notifies the chapter 106 coordinator after purging the benefit master record under the incorrect number.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="809c4"></a>(4)  <u>DOD Records (Chapter 30/106 systems)</u>.  An operator cannot use the CNUM command.  For these systems, Target should never have two DOD (Department of Defense) records for the same claimant under two different numbers.  A DOD record is necessary for the proper establishment of a chapter 30 or 106 benefit record.  (See  </span></span></span></span></span></span></span></span><a class="eGainArticleLink" articleid="554400000077340" articlename="ARCHIVED: M22-4, Part II, Chapter 4 - Master Record Inquiry (Chapter 30)" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000077340?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 2: Chapter 4 - Master Record Inquiry (Chapter 30)</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> for DOD records.)  DOD records can have multiple entries (one from each branch or component) under one number.  If, after appropriate development, both DOD records belong to the same individual, the regional office chapter 30 or 106 coordinator should request the service contact point to delete the incorrect record.  For chapter 106, see </span></span></span></span></span></span></span></span><a class="eGainArticleLink" articleid="554400000075619" articlename="Part 8: Chapter 8 - Miscellaneous" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000075619?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 8: Chapter 8 - Miscellaneous</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> for the contact points.  For chapter 30, see  </span></span></span></span></span></span></span></span><a class="eGainArticleLink" articleid="554400000076326" articlename="Part 5: Chapter 8 - Miscellaneous" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076326?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part 5: Chapter 8 - Miscellaneous</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  for the contact points.  The contact point notifies the coordinator after deleting the DOD record under the incorrect number.</span></span></span></span></span></span></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="810"><strong>8.10 PURG</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The PURG (<u>PURG</u>e) command (available only for use by selected Central Office personnel) is available to delete a chapter 34/35 or 106 master record from the Hines BDC data base.  The PURG command will be available in the future for chapter 30 records.  Processing of the PURG command generates a transaction (26P) to the chapter 34/35 record.  Processing of this transaction generates a master record writeout containing the status of the master record immediately prior to the deletion.  The master record is deleted from the master file.  For chapter 34 and 35, the master record must be other than type A or D, must not be an abbreviated master record, and must not contain an accounts receivable.  Regional offices desiring deletion of a master record must submit a request explaining the circumstances, in writing or through Wang Office (to "MAIL VBA 22") to the Director of the Education Service (22).  See<a href="#809c3"> paragraph 8.09c(3) </a>for 106 purge procedures.</span></span></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="811"><strong>8.11 STAT</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The STAT (<u>STAT</u>us) command allows employees to obtain information concerning the current status and availability (either "available" or "unavailable") of the files in the Target system.  The S94 screen shows the current status and availability of the C&P (Compensation and Pension) and chapter 34/35 master files.  The S95 screen shows the current status and availability of the REPS (Reinstated Entitlement Program for Survivors) and chapters 30, 31 and 32 files.  One system can be available for review or input with others not being available.  Also, even if a person reviews the STAT screen, determines that a particular system is available, and then immediately attempts to access that system, the system may be unavailable.  That system may be having difficulties that the STAT screen does not reflect.  Also, the Hines BDC could have been in the process of taking that system down when the employee was reviewing the STAT screen.  Target shows an appropriate message when a system is not available.</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="811a"></a><strong>a.</strong>  To access a STAT screen, the operator must complete a Ready screen with STAT as the command.  (See<a href="#f809"> fig. 8.09</a> for Ready screen entries.)  Target does not require the employee's password.  With these entries, Target automatically shows the S94 screen.  To review the S95 screen, the operator must include "S95" in the screen number field.  (See <a href="#f810">fig. 8.10</a> for the S94 screen and <a href="#f811">fig. 8.11</a> for the S95 screen.)   </span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f809"></a><img alt="S95 STAT Ready Screen" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333514/M22PART2CH8_9.jpg" style="border-top: 1px solid; height: 326px; border-right: 1px solid; width: 560px; border-bottom: 1px solid; border-left: 1px solid" /><br />
+<strong>Figure 8.09. S95 STAT Ready Screen</strong></span></span></p>
+
+<p><br />
+<span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f810"></a><img alt="S94 STAT Ready Screen" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333506/M224 Part 2 Ch 8 Figure 8.10.jpg" style="border-top: 1px solid; height: 451px; border-right: 1px solid; width: 560px; border-bottom: 1px solid; border-left: 1px solid" /><br />
+<br />
+<strong>Figure 8.10.  S94 STAT Screen</strong></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f811"></a><img alt="S95 STAT Ready Screen" src="https://www.vapulse.net/servlet/JiveServlet/download/125192-2-333506/M224 Part 2 Ch 8 Figure 8.11.jpg" style="border-top: 1px solid; height: 435px; border-right: 1px solid; width: 560px; border-bottom: 1px solid; border-left: 1px solid" /><br />
+<strong>Figure 8.11. S95 STAT Screen</strong></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="812"><strong>8.12 TINQ</strong></a>   (See system advisory dated January 10, 2008.)</span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The <u>TINQ</u> (<u>T</u>reasury <u>INQ</u>uiry) command allows an operator to obtain information on individual checks.  The T01 screen shows the benefit, amount, pay date, and address of the payee.  The T01 screen shows all education benefits.  The initial screen shows the 9 latest checks.  An operator can scroll to a separate T01 screen and review earlier checks (a maximum of 18 payments and 6 returned checks).  Deleted checks were microfiched when deleted.</span></span></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>NOTE:  Checks appearing on the "HOLD CHECK" list can appear on the TINQ screen.  If claimants report nonreceipt of a particular check, an operator should first review the TINQ screen and then ascertain whether the finance activity held that check.</em></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="812a"></a><strong>a.</strong>  To access a TINQ screen, the operator must complete a Ready screen with TINQ as the command, his or her password, the file number, and payee number.  Target automatically shows the T01 screen.  (See <a href="#f812">fig. 8.12.</a>)</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="812b"></a><strong>b.</strong>  To obtain further information for the TINQ command, see MP 4, part IV (Payment History File).</span></span></span></span></p>
+
+<p></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> T01                           TREASURY INQUIRY SCREEN                 10-01-90</span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> FILE NUMBER        01 010 010   PAYEE 00      NAME  JOHN B SMITH             </span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> LAST ACTIVITY DATE 09-19-90                   LAST MICROFICHE DATE           </span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">                               PAYMENT DATA                                   </span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   TYPE       AMOUNT  PAY DATE  ZIP-CODE     ADD LINE 1       ADD LINE 2     RO</span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> CH30        1048.00  12-04-90  70001        4001 ROPE DR  FT WORTH TX       49</span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> CH30         122.27  10-30-90  70001        4001 ROPE DR  FT WORTH TX       49</span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> CP-RECUR      76.00  12-01-90  70001        4001 ROPE DR  FT WORTH TX       49</span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> CP-RECUR      76.00  11-01-90  30080         526 CAPE RD  CARTERSVILLE GA   16</span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">                               RETURNED CHECK DATA                            </span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> ISSUE DATE       AMOUNT        CANCEL DATE       CHECK #   REASON         TYPE</span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   20-29      EARLIER PYMTS/RTN-CKS              LATER PYMTS/RTN-CKS          </span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">                                                              NEXT SCREEN     </span></span></p>
+
+<p style="text-align: center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><u>DSJ,T01                                                                        </u></span></span></p>
+
+<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="f812"></a><strong>Figure 8.12.  T01 TINQ Screen</strong></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813"><strong>8.13  CORR</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">An operator may use the CORR (<u>CORR</u>ection) command to make limited education master record transaction 02 and 02V corrections directly on a Target inquiry screen for all benefits except chapter 106.  This is an easier method to make corrections than preparing amended awards.  Also, see the alternate means of input for specific chapter 35 02V transactions (<a href="https://vbaw.vba.va.gov/bl/22/ref/m22-4/Part%20VII/ch02.htm">pt. VII, ch. 2</a>).  Also, for chapter 30 CORR transactions, see part </span></span></span></span><a class="eGainArticleLink" articleid="554400000076230" articlename="M22-4 Part 5: Chapter 2 - MGIB BDN Processing" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000076230?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-4 Part 5: Chapter 2 - MGIB BDN Processing</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  V, chapter 2 for detailed instructions.</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813a"></a><strong>a. CORR Processing (Chs. 32/35)</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813a1"></a>(1) An operator can make changes to the Education master record on the following screens:</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813a1a"></a>(a) M21 - Education Master Record Status Screen;</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813a1b"></a>(b) M23 - Education Master Record Eligibility and Entitlement Screen; and</span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813a1c"></a>(c) M24 - Education Master Record Miscellaneous Data Screen.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813a2"></a>(2) Target has a limited number of correctable fields.  "Protected" fields are fields in which the operator cannot change the entry.  Target does not process changes, additions or deletions entered into these fields against the master record even though the screen appears to accept the entry.  Any field not shown in subparagraph c is a protected field.</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813a3"></a>(3) An operator must make a correction on only one of the screens if a particular field appears on more than one education inquiry screen.</span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813a4"></a>(4) Corrections to the Hines master record do not affect BIRLS records.  If BIRLS corrections are necessary as a result of corrections to the Hines master record, follow current procedures for BIRLS update.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813a5"></a>(5) Entries in Target correctable fields process in the next education pay cycle (or benefit daily processing for chapter 32).  This processing must occur before the corrections appear on the MINQ or CORR screens.</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813b"></a><strong>b.  CORR Procedures (Chs. 32/35)</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813b1"></a>(1) <u>Ready Screen Entries</u></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813b1a"></a>(a) An operator enters the command CORR, the operator's password, and the file number.  Also enter CH32 as the benefit if correcting a chapter 32 record.</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813b1b"></a>(b) Optional entries include screen number, payee number and CH 35 as the benefit.</span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813b1c"></a>(c) Target shows the Payee Selection screen (SO2) for selection of the desired master record if entries on the Ready screen are insufficient to identify a specific record. </span></span></span></span></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813b2"></a>(2) <u>Master Record Corrections</u></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813b2a"></a>(a) First determine if a field is correctable.  <a href="#813c">Subparagraph c </a>lists the correctable fields by type of master record.</span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813b2b"></a>(b) If the field is correctable, erase the old data and enter the correct data if the field is correctable.  (On a chapter 35 record, an operator may not enter the data under CORR if a field is blank.)</span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813b2c"></a>(c) After making all the corrections on a screen, press the print key and request a printout of the corrected screen before pressing ENTER.  (Pressing ENTER sends the CORR transaction to Hines.)</span></span></span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813b2d"></a>(d) Sign the printout and file it in the claims folder.</span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 120px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813b2e"></a>(e) Target automatically makes the correction to the field on the other screen(s) when the operator makes a correction to a field that is correctable on more than one screen. </span></span></span></span></span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813c"></a><strong>c.  Correctable Fields (Chs. 32/35)</strong>.  The fields shown on the charts below are the only ones correctable on Target using the CORR command.  If a field is not shown below, Target will not process a CORR transaction to that field.  (NOTE: Target CORR transaction edits ensure that the entered information is correct.  The data shown on the charts below contain only the minimum basic entries for CORR processing.)</span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813c1"></a>(1) <u>M21 Education Master Record Status Screen.</u>  The M21 screen has these fields located above the award lines.</span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 48%" summary="The M21 screen has these fields located above the award lines." width="48%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FIELD NAME ON M21</span></span></p>
+			</th>
+			<th colspan="5" scope="col">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TYPE OF MASTER RECORD  ON WHICH</span></span></p>
+
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CORRECTIONS CAN BE MADE</span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<caption>M21 Education Master Record Screen</caption>
+	<tbody>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> A</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> E</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> H</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> I</span></span></p>
+			</td>
+			<td style="width: 16%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> J</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NAME</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 16%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">VET-NAME (CH35)</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 16%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FIELD NAME ON M21</span></span></p>
+			</td>
+			<td colspan="5">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TYPE OF M/R ON WHICH</span></span></p>
+
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CORRECTIONS CAN BE MADE</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> A</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> E</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> H</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> I</span></span></p>
+			</td>
+			<td style="width: 16%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> J</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">STA</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 16%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PWR-ATTY</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 16%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">GDN</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 16%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TYPE TRNG</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 16%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FACILITY</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 16%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COURSE</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 16%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 36%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OBJ</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 12%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 16%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 65%" summary="identifies the types of screen legend, entry and remarks" width="65%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 21%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>SCREEN LEGEND</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 40%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>ENTRY</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 39%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>REMARKS</strong></span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<caption>above table continued</caption>
+	<tbody>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NAME</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter the seven-character stub name of the payee.</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter spaces between the initials and surname with the space bar.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">VET-NAME</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(veteran-name)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter the seven-character stub name of the veteran.</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Chapter 35 cases only-see above remarks.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">STA</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(station)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter the three-digit numeric code for the regional office of jurisdiction.</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See </span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> , paragraph 9.21.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PWR-ATTY</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(power of attorney)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter the two-digit numeric code.</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See </span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">, paragraph 9.17.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">GDN</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(guardian)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter the three-digit regional office number.</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TYPE TRNG</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(type training)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Make only the following corrections to the type training field:</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See </span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> paragraph 9.29  (The M21 screen has this field located just above the FACILITY.)</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FROM (TYPE) TO (TYPE)</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NOTE: Type training is changed on the current and all subsequent award</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">A................B</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">lines.  Prior award lines are not changed.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">B................A</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Target edits this field for consistency</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">C................D, H</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">with the FACILITY and</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">D................C, H</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COURSE/OBJ codes.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">F................L</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">G................K</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">I................NONE</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">J................NONE</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">K................G</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">L................F</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FACILITY</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter the eight-digit facility code with dashes (X-X-XXXX-XX).</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See </span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">, paragraph 9.08.  Changes current and all  future lines.  Target edits this field for consistency with the TYPE TRNG and COURSE/OBJ codes.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COURSE/OBJ</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(course/objective)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter the three-digit codes for course and final objectives</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See </span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">, paragraphs 9.32 and 9.33.  Target edits this field against TYPE TRNG and FACILITY code.</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813c2"></a>(2)  <u>M23 Education Master Record Eligibility and Entitlement Data Screen</u></span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 64%" summary="list of field name on M23 and type of master record on which corrections can be made" width="64%">
+	<thead>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FIELD NAMES ON M23</span></span></p>
+			</th>
+			<th colspan="5" scope="col">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TYPE OF M/R ON WHICH</span></span></p>
+
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CORRECTIONS CAN BE MADE</span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<caption>M23 Education master record eligibility and entitlement data screen</caption>
+	<tbody>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> A</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> E</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> H</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> I</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> J</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BRANCH OF SERVICE (CH32)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SERVICE DATES (RAD) (CH32)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COMPUTED EOD (CH32)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DELIMITING DATE (CH35)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SPEC ELIGIBILITY (CH32)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SERVICE PERIOD (CH35)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PRIOR VA TRNG TIME (CH35)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PRIOR VA TRNG TYPE (CH35)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TIME USED (CH34)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OTHER DEDUCT TIME (CH34)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DATE OF CLAIM</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">EDUC LEVEL AT APPL</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RESIDENCE AT APPL</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">INITIAL OBJ</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CURRENT OBJ</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DEPENDENCY AT APPL (CH34)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> A</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> E</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> H</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> I</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> J</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SEX AT APPL</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BIRTH DATE OF PAYEE</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">[PERSIAN GULF REVIEW</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row" style="width: 45%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BENEFICIARY SSN (CH35)  (See Note below.)</span></span></p>
+			</th>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X</span></span></p>
+			</td>
+			<td style="width: 11%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> X]</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NOTE:  For "J" master records, if the Beneficiary SSN is blank, CORR will not allow the entry of the SSN.  However, if the Beneficiary SSN is present (but erroneous), CORR will allow the correction of the SSN.  For these master records (that do not allow for the entry of the SSN), ROs should flash or annotate the DEA folder so that this data can be entered properly if the payee is subsequently paid DEA benefits.</span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 65%" summary="shows options for screen legend, entry options and remarks" width="65%">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 21%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>SCREEN LEGEND</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 40%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>ENTRY</strong></span></span></p>
+			</th>
+			<th scope="col" style="width: 39%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>REMARKS</strong></span></span></p>
+			</th>
+		</tr>
+	</thead>
+	<caption>J master record</caption>
+	<tbody>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BRANCH</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OF SERVICE</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Valid entries include:</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">A or ARMY</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">B or N or NAVY</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">C or M (Marines)</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">D or CG (Coast Guard)</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">E or PHS (Public Health Service)</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">F or AF (Air Force)</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">I or NOAA (National Oceanic and</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   Atmospheric Administration)</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SERVICE DATES</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Six digits for EOD and six digits for RAD</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(MMDDYY/MMDDYY).  For inservice, substitute ONDUTY for the RAD date.</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Change to EOD also requires</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">correction to COMPUTED EOD.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COMPUTED EOD</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Six digits (MMDDYY)</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Month, day, year.  The date cannot be later than the EOD date unless the computed EOD is equal to 2-1-55.  An operator must complete this field if he or she changes the EOD.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DELIMITING DATE</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Six digits (MMDDYY)</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Correctable for [DEA] only.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SPEC</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ELIGIBILITY</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Special Eligibility)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Valid entries for [VEAP] are:</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NONE</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">S/C DISABILITY</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SERVICE PERIOD</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(CH35)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Valid entries are: WWI, WWII, KC, PTE, SAW, PKC, VNE</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Applicable to [DEA] cases only.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PRIOR VA TRNG TIME (Prior VA</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Training Time)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Six digits (MM-DD) (months, days)</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">May not exceed 45 months.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PRIOR VA TRNG TYPE (Prior VA</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Training Type)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Valid entries are: </span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NONE,</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CH31 WWII,</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CH31 KC,</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CH31 PTE,</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PL 346 WWII,</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CH33 KC,</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CH34,</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CH35,</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COMB</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TIME USED</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Four digits (MM-DD) (months, days)</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> Cannot exceed 24 months.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OTHER DEDUCT</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TIME</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Four digits (MM-DD) (months, days)</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter noncreditable service or not on duty time.  Cannot exceed 36 months.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DATE OF CLAIM</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Six digits </span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Date must be earlier than current date.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">EDUC LEVEL</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">AT APPL</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Education Level at Application)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">From 00 to 17 only</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See </span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> paragraph 9.05.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">RESIDENCE</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">AT APPL</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Residence at Application)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Two digit code (State Code)</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See </span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> paragraph 9.20.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">INITIAL/CURRENT OBJ</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(Initial/Current Objectives)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">XXX/XXX</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Three digits for each code; initial</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">and current objectives.</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See </span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> paragraphs 9.32 and 9.33.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">DEPENDENCY AT APPL</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Two digit code.</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See </span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> paragraph 9.04.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SEX OF APPL</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">M or F </span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BIRTH DATE OF PAYEE</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter six digits of date of birth.</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="813c3"></a>(3)  <u>M24 Education Master Record Miscellaneous Data Screen</u></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><em>NOTE:  An operator can use the M24 screen only to correct previously entered certification data on a type E or A master record.  An operator cannot use it to certify an uncertified period.</em></span></span></p>
+
+<table align="center" border="1" cellpadding="0" cellspacing="0" style="width: 65%" summary="options for screen legend, entry and remarks" width="65%">
+	<caption>M24 EDUCATION MASTER RECORD MISCELLANEOUS DATA SCREEN</caption>
+	<tbody>
+		<tr>
+			<td style="width: 21%"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span>
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>SCREEN LEGEND</strong></span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>ENTRY</strong></span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p align="center"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>REMARKS</strong></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ABSENCES THIS PER (Absences This Period)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Two digits </span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter 00 for enrollment periods after</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">12-18-89.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">ABSENCES</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(for specific months and years)</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Two digits</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter 00 for enrollment periods after</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">12-18-89.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">OJT/APP UNITS OF</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PAYMT</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">(On-the-Job Training/</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Apprenticeship Units of Payment)</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">([VEA/DEA])</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Two digits (entered as 15ths</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">of a month)</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><strong>Hours Worked</strong>   <strong>Fifteenths</strong></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   0-3                      00</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">   4-11                     01</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  12-19                    02</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  20-27                    03</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  28-35                   04</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  36-43                   05</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  44-51                   06</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  52-59                   07</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  60-67                   08</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  68-75                   09</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  76-83                   10</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  84-91                   11</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">  92-99                   12</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">100-107                  13</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">108-115                 14</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">116 and over          15</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter number of applicable units per month (max = 15).</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">LOAN STATUS</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">O—No loan</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">C—Loan totally repaid</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">D—Defaulted loan</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">L—Deferred payment period</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">P—Grace period</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">R—Repayment</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">([DEA] only)  Enter applicable code.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FOLDER PULL</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">REQUIRED</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">A through N</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">P through T</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Y and the number "0", (zero).</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">See </span></span><a class="eGainArticleLink" articleid="554400000073086" articlename="ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000073086?portalId=554400000001018&usertype=customer&\$lang=en-us&">Part2: CHapter 9- Code Tables</a><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> paragraph 9.09 for the displayed messages.  An operator does not have to make an entry if a folder pull indicator is not required. To delete a previously established indicator, an operator enters a "0" (zero).</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">SECTION 156</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">REPS RCD</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Y or N</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter "Y" only on [DEA] child or orphan if also entitled to section 156 benefits.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PROGRAM CHANGE</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">1, 2, or 3</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Enter to indicate the first, second, or third change of program.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">TOTAL FLT PAID</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">BY VA:</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">CUR FLT ENROLL</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">([VEA])</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Six digits in dollars and cents.</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">No longer used.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 21%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">PREV FLT ENROL</span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">([VEA])</span></span></p>
+			</td>
+			<td style="width: 40%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">Six digits in dollars and cents.</span></span></p>
+			</td>
+			<td style="width: 39%">
+			<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">No longer used.</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="clear: both"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></div>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">NOTE:  If an operator makes a change to OJT/APP UNITS OF PYMT, [BDN] adjusts the account, releases a payment, or creates an overpayment.</span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="814"><strong>8.14  FINANCE COMMANDS</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The following [BDN] commands are used by the Finance activity.  (For further information or details, see the appropriate finance manual.)</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="814a"></a><strong>a.  COLL (Collections and Returned Checks)</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">COLL is used to process cash collections and checks returned for reason of insufficient funds which were previously applied as cash collections.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="814b"></a><strong>b.  FAUT (Fiscal Authorization)</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">FAUT is used to approve, disapprove, or bypass a pending fiscal authorization.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="814c"></a><strong>c.  FIST ([Fiscal Transaction])</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The [FIST command is used] to release payments (i.e., special payments, one-time payments, work-study, tutorial payments, and to establish or adjust accounts receivable).</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="814d"></a><strong>d.  FOES (Financial Message System)</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The [FOES (Fiscal Notice of Exception System) command is used] in conjunction with fiscal output from BDN.  The FOES command operates similarly to the NOES command, but is limited to the Finance activity.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="814e"></a><strong>e.  FRPT (Fiscal Transaction Report)</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The [FRPT command is used to obtain pending and authorized fiscal] transactions.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="814f"></a><strong>f.  PENF (Pending Fiscal Transactions)</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The [PENF command is used to obtain pending fiscal transactions (similarly to the WIPP, Work in Process] command).</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="814g"></a><strong>g.  [RFND (Refund)</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The Refund command is used to both disenroll a veteran or serviceperson from the VEAP program and process a refund of that individual's unused VEAP contributions.  (The Finance activity uses the RFND command on the D11 Disenrollment Refund Benefit Chapter 32 screen.)</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="814h"></a><strong>h.  RAUT (Refund Authorization)</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The Refund Authorization command is used to approve or disapprove both the disenrollment of a veteran or serviceperson from the VEAP program and the release of a refund of unused VEAP contributions.  (The Finance activity uses the RAUT command on the D13 Refund Authorization Benefit Chapter 32 screen.)</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="814i"></a><strong>i.  UNAS (Unassociated Accounts)</strong></span></span></p>
+
+<p style="margin-left: 80px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The UNAS command is used to view and clear unassociated chapter 30 funds which generally represent funds due VA payees.]</span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="815"><strong>8.15  LIAISON AND COMPLIANCE COMMANDS</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The following [BDN] commands are used by the Education section in VSD (Veterans Services Division).  (For further information or details, see [circular 22-83-12, Veterans Services Division Education Activities End Products on the [BDN] System.  This information is scheduled to be incorporated into pt. IX.)]</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="815a"></a><strong>a.  WEST (Work Establishment)</strong>.  This command is used to establish a pending end product for a compliance or liaison issue.</span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="815b"></a><strong>b.  WCAN (Work Cancellation)</strong>.  This command is used to cancel a previously established pending issue.  No work measurement credit is generated by use of the WCAN procedure.</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="815c"></a><strong>c.  WCLR (Work Cleared)</strong>.  This command is used to clear an existing pending issue or to take end product credit for an issue for which a pending issue was not required.</span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="815d"></a><strong>d.  WINQ (Work Inquiry)</strong>.  This command is used to review the status of pending issues for monitoring and appropriate follow-up commands.</span></span></span></span></span></span></span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="816"><strong>8.16  MANAGEMENT COMMANDS</strong></a></span></span></p>
+
+<hr />
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif">The following [BDN] commands are used by Adjudication and VSD managers.  [ ]</span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="816a"></a><strong>a.  WIPP (Work in Process)</strong>.  This command is used to access the WIPP Subsystem to monitor pending issues.  Additional information is available on overall processing time and maturing issues.  [(For further information, see [M21-1, pt. V, ch. 22.)]</span></span></span></span></span></span></p>
+
+<p style="margin-left: 40px"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a name="816b"></a><strong>b.  QCRE (Quality Control and Review)</strong>.  This command allows the user to obtain weekly listings of completed end products for purposes of quality review.  [(For further information, see M21-4,  ch. 2.)]</span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+
+<p align="right"><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"><a href="##Top">Go to Top</a></span></span></p>
+
+<p><span style="font-size: 16px"><span style="font-family: arial, helvetica, sans-serif"> </span></span></p>
+</body>
+</html>

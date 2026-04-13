@@ -1,0 +1,70 @@
+{
+  "article_id": "554400000073486",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000073486",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 03 – Claims Processing",
+    "01 – Administrative Issues"
+  ],
+  "topic_id": "554400000016150",
+  "manual_name": "M22-4",
+  "title": "Part 3: Chapter 1 - Administrative Issues",
+  "description": "This article is about the administrative issues over education jurisdiction procedures, mail and folder procedures, controls on pending issues, and delegation of authority for education claims.",
+  "keywords": "admin, issue control, EP, claim, error, mail, return, sensitive cases, jurisdiction",
+  "last_modified": "2025-04-04T18:12:51.000Z",
+  "created": "2017-11-15T20:54:34Z",
+  "version": "50",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": true,
+  "heading_outline": [
+    {
+      "level": 2,
+      "text": "Regional Processing Offices"
+    },
+    {
+      "level": 3,
+      "text": "Figure: 1.02 RPO Jurisdiction (by State)"
+    },
+    {
+      "level": 3,
+      "text": "Buffalo, NY"
+    },
+    {
+      "level": 4,
+      "text": "Buffalo RPO Jurisdiction"
+    },
+    {
+      "level": 3,
+      "text": "St. Louis, MO"
+    },
+    {
+      "level": 4,
+      "text": "St. Louis RPO Jurisdiction"
+    },
+    {
+      "level": 4,
+      "text": "Muskogee RPO Jurisdiction"
+    },
+    {
+      "level": 1,
+      "text": "a.  DEFINITIONS"
+    },
+    {
+      "level": 1,
+      "text": "b.  UPSTREAM PROCEDURES"
+    },
+    {
+      "level": 1,
+      "text": "c.  CLAIMS PROCESSING"
+    }
+  ],
+  "heading_count": 10,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

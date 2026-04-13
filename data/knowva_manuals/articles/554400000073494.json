@@ -1,0 +1,29 @@
+{
+  "article_id": "554400000073494",
+  "alternate_id": null,
+  "source_type": "va_manual",
+  "source_system": "knowva.ebenefits.va.gov",
+  "source_url": "https://www.knowva.ebenefits.va.gov/system/templates/selfservice/va_ssnew/help/customer/locale/en-US/portal/554400000001018/content/554400000073494",
+  "topic_breadcrumb": [
+    "M22-4",
+    "Part 03 – Claims Processing",
+    "14 – Upstream"
+  ],
+  "topic_id": "554400000016163",
+  "manual_name": "M22-4",
+  "title": "Part 3: Chapter 14 - Upstream Manual",
+  "description": "This article covers the process and procedures for Upstream Processing",
+  "keywords": "processing, scan, mail, TIMS, image, index, transfer",
+  "last_modified": "2019-05-24T17:15:53.000Z",
+  "created": "2017-11-15T21:49:44Z",
+  "version": "13",
+  "state": "P",
+  "contains_table": true,
+  "contains_list": true,
+  "heading_outline": [],
+  "heading_count": 0,
+  "content_category": "",
+  "target_audience": "",
+  "process_change": "",
+  "attachments": []
+}

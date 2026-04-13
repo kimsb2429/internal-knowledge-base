@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M22-4, Part II, Chapter 2, Section C – Chapter 33 Payment Transmission to eMPWR</title>
+  <meta name="source-system" content="KnowVA (knowva.ebenefits.va.gov)">
+  <meta name="source-type" content="va_manual">
+  <meta name="manual-name" content="M22-4">
+  <meta name="article-id" content="554400000263346">
+  <meta name="alternate-id" content="None">
+  <meta name="last-modified" content="2025-08-27T18:10:19.000Z">
+  <meta name="created" content="2024-02-29T19:00:57Z">
+  <meta name="keywords" content="Digital GI Bill DGIB eMPWR Managed Service Enterprise Management of Payment Workload and Reporting.">
+  <meta name="topic-breadcrumb" content="M22-4 &gt; Part 02 – Computer Processing &gt; 02 - The 33 Processing System (DGI)">
+  <meta name="content-category" content="">
+  <meta name="target-audience" content="">
+</head>
+<body>
+<nav class="topic-breadcrumb" aria-label="Topic hierarchy"><span class="bc-item">M22-4</span> / <span class="bc-item">Part 02 – Computer Processing</span> / <span class="bc-item">02 - The 33 Processing System (DGI)</span></nav>
+<h1>M22-4, Part II, Chapter 2, Section C – Chapter 33 Payment Transmission to eMPWR</h1>
+<p style="margin-bottom: 11px; margin-left: 48px; text-indent: 0px; -webkit-text-stroke-width: 0px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="white-space: normal"><span style="word-spacing: 0px"><span style="text-transform: none"><span style="font-weight: 400"><span style="color: #000000"><span style="font-style: normal"><span style="orphans: 2"><span style="widows: 2"><span style="letter-spacing: normal"><span style="line-height: 15px"><span style="font-variant-ligatures: normal"><span style="font-variant-caps: normal"><span style="text-decoration-thickness: initial"><span style="text-decoration-style: initial"><span style="text-decoration-color: initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+
+<table class="MsoTableGrid" style="border-top: medium none; font-family: "Times New Roman"; border-right: medium none; width: 666px; word-spacing: 0px; border-collapse: collapse; border-bottom: medium none; text-transform: none; margin-left: 6px; border-left: medium none; orphans: 2; widows: 2; letter-spacing: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial" width="666">
+	<tbody>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><a id="Top" name="Top"></a><b>Overview</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">This section discusses chapter 33 payment transmission to the Enterprise Management of Payment Workload and Reporting (eMPWR) after June 28, 2024.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>In This Section</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">This section contains the following topics:</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<table class="MsoTableGrid" style="border-top: medium none; border-right: medium none; border-collapse: collapse; border-bottom: medium none; border-left: medium none">
+				<tbody>
+					<tr>
+						<td style="border-top: black 1px solid; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Topic</b></span></span></span></p>
+						</td>
+						<td style="border-top: black 1px solid; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Topic Name</b></span></span></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 64px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: black 1px solid; padding-right: 7px" valign="top">
+						<p style="margin-left: 48px; text-indent: -0.25in"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">1      </span></span></span></p>
+						</td>
+						<td style="border-top: medium none; border-right: black 1px solid; width: 287px; border-bottom: black 1px solid; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; border-left: medium none; padding-right: 7px" valign="top">
+						<p class="MsoNoSpacing"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><a href="#Topic 1">Topic 1: Payment Transmission to eMPWR</a></span></span></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<h3 style="margin-top: 3px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="font-weight: normal"><span style="line-height: normal"><span style="break-after: avoid"><b><a id="Topic 1" name="Topic 1"></a>Topic 1: Payment Transmission to eMPWR</b></span></span></span></span></span></h3>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 666px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p style="margin-left: 24px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b> </b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Introduction</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">This topic contains information on chapter 33 payment transmission to eMPWR after June 28, 2024.</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Change Date</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal">June 23, 2025</span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.2.C.1.a</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>BT Generation</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p class="MsoNoSpacing"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">DGI is programmed with rules that are used to determine and populate the necessary information to create both payments and receivables sent to eMPWR.  These rules consider a wide variety of information including eligibility determinations, enrollments and amendments entered on the Enrollment screen, and any manual or miscellaneous awards entered on the Work Product Summary (WPS) screen.  Only some of these calculated values are displayed on the DGI WPS and Payment Instruction (PI) screens.  The calculated details for a given business transaction (BT) can be viewed in the eMPWR system.</span></span></p>
+
+			<p class="MsoNoSpacing"></p>
+
+			<p class="MsoNoSpacing"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><i>Reference: </i>See Appendix B in <a class="eGainArticleLink" articleid="554400000263373" articlename="Chapter 11: Appendices" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263373?portalId=554400000001018&usertype=customer&\$lang=en-us&">Appendices </a>for full details on the possible values.  See <a class="eGainArticleLink" articleid="554400000263354" articlename="M22-4, Part II, Chapter 2, Section E - Reviewing Chapter 33 Payment History" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000263354?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-4, Part II, 2.E </a> for details on how to review BTs in eMPWR.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.2.C.1.b</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Transmission of BTs to eMPWR</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p class="MsoNoSpacing"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">Upon the authorization of a work product that generates payments and/or receivables in DGI, BTs are immediately transmitted to eMPWR with receivables being sent first.  Payments due in the future are stored by the system until they mature (or are adjusted by interim work).  Upon maturation and enrollment verification (where applicable; see <a class="eGainArticleLink" articleid="554400000191366" articlename="Enrollment Verification - Chapter 33" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000191366?portalId=554400000001018&usertype=customer&\$lang=en-us&">M22-4, Part XII, 11</a> for details), <i>payments are transmitted to eMPWR without additional Veteran Claims Examiner (VCE) action.</i></span></span></p>
+
+			<p class="MsoNoSpacing"></p>
+
+			<p class="MsoNoSpacing"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">Unlike BDN, BTs will generally be transmitted to eMPWR immediately upon authorization.  Any transactions submitted after 5:59:59 PM CT will be processed by eMPWR on the following business day. Matured BTs are visible in eMPWR nearly immediately upon authorization, though payment details take one business day.</span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"> </span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>II.2.C.1.c</b></span></span></span></p>
+
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"><b>Notifying DMC</b></span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p class="MsoNoSpacing"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif">If a receivable exists or a new receivable is generated upon the authorization of a work product, DGI will send a notification of all scheduled housing payments to the Debt Management Center (DMC). The notification(s) will provide the appropriate data needed for DMC collections.</span></span></p>
+
+			<p class="MsoNoSpacing"></p>
+
+			<p class="MsoNoSpacing"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><i>No VCE action is needed regarding this issue.</i></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align:center">
+			<hr align="center" size="1" width="98%" /></div>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>II.2.C.1.d</b></span></span></p>
+
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><b>Debt Offsets</b></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal">Some payments can be used to offset existing debts during the debt collection process.  Automatic debt collection abides by the following rules.</span></span></span></p>
+
+			<ul>
+				<li style="line-height:normal; font-size:11pt; font-family:Calibri, sans-serif"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">“Recurring” beneficiary payables are protected from offset.</span></span></li>
+				<li style="line-height:normal; font-size:11pt; font-family:Calibri, sans-serif"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">“Retro” books and supplies (71B) payables can be directly offset against any 71B receivables with the same veteran/ beneficiary relationship, a matching award type code, and congruent dates between the payable and the receivable.  No action on the collection indicator need be taken.</span></span></li>
+				<li style="line-height:normal; font-size:11pt; font-family:Calibri, sans-serif"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">“Retro” housing and kicker payables can be directly offset against either housing or kicker receivables under specific circumstances.</span></span></li>
+			</ul>
+
+			<p style="margin-left: 80px;"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal">Appliable to any receivable in a “collectible” status that does not have a BR established (i.e., no active repayment plan).</span></span></span></p>
+
+			<ul>
+				<li style="line-height:normal; font-size:11pt; font-family:Calibri, sans-serif"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;">“Retro” payables for a Vendor (75B) can be offset for any Vendor receivable with the same veteran/ beneficiary relationship, a matching award type code, and congruent dates between the payable and the receivable.</span></span></li>
+			</ul>
+
+			<p style="line-height:normal; font-size:11pt; font-family:Calibri, sans-serif"></p>
+
+			<p style="line-height:normal; font-size:11pt; font-family:Calibri, sans-serif"><span style="font-size:16px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:normal"><i>No VCE action is needed regarding this issue.</i></span></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p align="right" style="text-align: right"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><a href="#Top">Go to Top</a></span></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 150px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<p><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="line-height: normal"> </span></span></span></p>
+			</td>
+			<td style="width: 516px; padding-bottom: 0in; padding-top: 0in; padding-left: 7px; padding-right: 7px" valign="top">
+			<div align="center" style="text-align: center">
+			<hr align="center" size="0" width="98%" /></div>
+
+			<p style="text-align: right"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="font-size:16px;"><a class="eGainArticleLink" articleid="554400000303799" articlename="M22-4, Part II, Chapter 2, Section D, Topics 01-05:  Chapter 33 Processing Screens in DGI" href="https://eg5813aprl-int-nlb.egainstz.cloud/system/ws/v11/ss/article/554400000303799?portalId=554400000001018&usertype=customer&\$lang=en-us&" href="">Next Section</a></span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p style="margin-bottom: 11px; margin-left: 48px; text-indent: 0px; -webkit-text-stroke-width: 0px"><span style="font-size: 16px"><span style="font-family: Arial, Helvetica, sans-serif"><span style="white-space: normal"><span style="word-spacing: 0px"><span style="text-transform: none"><span style="font-weight: 400"><span style="color: #000000"><span style="font-style: normal"><span style="orphans: 2"><span style="widows: 2"><span style="letter-spacing: normal"><span style="line-height: 15px"><span style="font-variant-ligatures: normal"><span style="font-variant-caps: normal"><span style="text-decoration-thickness: initial"><span style="text-decoration-style: initial"><span style="text-decoration-color: initial"> </span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+</body>
+</html>
