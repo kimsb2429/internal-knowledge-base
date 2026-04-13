@@ -13,7 +13,6 @@
   "manual_name": "M22-4",
   "title": "Part 7: Chapter 5 - Notice of Exception Processing",
   "description": "This article is about the Notice of exception processing command which is what is used on BDN to generate most of the messages with codes to identify them.",
-  "keywords": "Chapter 35, NOE, codes, exception",
   "last_modified": "2018-03-12T22:48:40.000Z",
   "created": "2017-11-20T21:30:55Z",
   "version": "7",

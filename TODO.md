@@ -8,11 +8,11 @@
 
 ## Next — Zero-to-MCP Steps 3-9
 
-- [ ] Step 3: Bronze layer — enrich crawler output with ACL metadata, lastModified from Confluence REST API
+- [x] Step 3: Bronze layer — heading extraction fix, acl, source_authority_tier, content_category enrichment
 - [ ] Step 4: Guardrails — secret/credential regex scanning, space allowlist config, result count cap
-- [ ] Step 5: Parsing layer — run Docling (TableFormerMode.ACCURATE) on the 126 table-heavy articles
+- [x] Step 5: Parsing layer — markdownify for 237 HTML articles, Docling (TableFormerMode.ACCURATE) for VADIR ICD PDF. Post-processed PDF to strip cover OCR junk + tripled ToC (165K→103K). Validated: 20-article HTML sample (14/20 pass, 6 fail on colspan tables — deferred to Step 7 context blurbs), PDF validated for content completeness. Known limitations: 54 HTML articles have broken pipe tables from colspan (445 rows), PDF has 6 split tables at page breaks + flat heading hierarchy.
 - [ ] Step 6: Metadata schema — create pgvector tables (documents + document_chunks) per buy-vs-build doc
-- [ ] Step 7: Chunking pipeline — Docling HybridChunker (max_tokens=8192) + contextual retrieval (~50 lines)
+- [ ] Step 7: Chunking pipeline — MarkdownHeaderTextSplitter for HTML articles, Docling HybridChunker for PDFs. Context blurbs must specifically address: (a) merged-cell tables — LLM description should capture the semantic meaning the colspan header conveyed, (b) PDF split tables — detect consecutive tables with matching column headers and merge before chunking, (c) heading hierarchy — use section number prefixes (1.3.1, 5.1.3) not markdown heading levels for PDF chunks
 - [ ] Step 8: Embed and store — Titan V2 → pgvector with HNSW index
 - [ ] Step 9: Eval harness — DeepEval with golden_query_set.json as baseline
 
