@@ -20,10 +20,57 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 7: Chapter 3 - Eligibility Issues"
+    },
+    {
+      "level": 2,
+      "text": "3.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. APPLICATIONS FOR BENEFITS"
+    },
+    {
+      "level": 2,
+      "text": "3.02 OVERVIEW OF ELIGIBILITY DETERMINATIONS"
+    },
+    {
+      "level": 2,
+      "text": "3.03 ESTABLISHING QUALIFYING SERVICE-CONNECTED DISABILITY OR DEATH"
+    },
+    {
+      "level": 2,
+      "text": "3.04 ELIGIBLE PERSON WITH VETERAN OR RESERVE STATUS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. DOCUMENTING ELIGIBILITY DETERMINATIONS"
+    },
+    {
+      "level": 2,
+      "text": "3.05 COMPUTER-GENERATED DOCUMENTATION"
+    },
+    {
+      "level": 2,
+      "text": "3.06 IDENTIFYING DATA"
+    },
+    {
+      "level": 2,
+      "text": "3.08 CHILD AND SPOUSE DATA"
+    },
+    {
+      "level": 2,
+      "text": "3.09 COMPUTER-GENERATED FIELDS"
+    }
+  ],
+  "heading_count": 11,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

@@ -20,10 +20,57 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 3: Chapter 8 - Periodic Education Certifications"
+    },
+    {
+      "level": 2,
+      "text": "8.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "8.02 VA FORM"
+    },
+    {
+      "level": 2,
+      "text": "8.03 VA FORM"
+    },
+    {
+      "level": 2,
+      "text": "8.04 VA FORM"
+    },
+    {
+      "level": 2,
+      "text": "8.05 VA FORM"
+    },
+    {
+      "level": 2,
+      "text": "8.06 MONTHLY CERTIFICATION OF ON-THE-JOB AND APPRENTICESHIP TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "8.07 PERIODIC EDUCATION CERTIFICATION NOT OBTAINABLE"
+    },
+    {
+      "level": 2,
+      "text": "8.08 EXCESSIVE RATE LINES"
+    },
+    {
+      "level": 2,
+      "text": "8.09 ALTERNATE MEANS FOR SUBMITTING VERIFICATIONS OR CERTIFICATIONS"
+    },
+    {
+      "level": 2,
+      "text": "8.10 TERMINATION VERIFICATIONS OR CERTIFICATIONS"
+    }
+  ],
+  "heading_count": 11,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

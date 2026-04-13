@@ -23,6 +23,10 @@
   "heading_outline": [
     {
       "level": 1,
+      "text": "Part 9: Chapter 8 - Records, Files, and Reports"
+    },
+    {
+      "level": 1,
       "text": "Subchapter 1. Records and Files 1.\n8.01  Electronic Approval Records\n8.02  Information Dissemination File\n8.03  Facilities Register and Card File\n8.04  Facility Codes\n\nSubchapter 2. Approvals Compliance and Liaison Reports"
     },
     {
@@ -274,9 +278,11 @@
       "text": "Figure 8.21. Generating VA Form 22-1998 Report"
     }
   ],
-  "heading_count": 63,
-  "content_category": "",
+  "heading_count": 64,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

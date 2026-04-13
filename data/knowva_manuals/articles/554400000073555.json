@@ -20,10 +20,137 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 3: Chapter 11 - Section 901"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. ELIGIBILITY AND ENTITLEMENT"
+    },
+    {
+      "level": 2,
+      "text": "11.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "11.02 ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "11.03 CHARACTER OF DISCHARGE"
+    },
+    {
+      "level": 2,
+      "text": "11.04 DELIMITING DATE"
+    },
+    {
+      "level": 2,
+      "text": "11.05 DETERMINING ENTITLEMENT"
+    },
+    {
+      "level": 2,
+      "text": "11.06 RATES FOR SECTION"
+    },
+    {
+      "level": 2,
+      "text": "11.07 LIMITATION ON ASSISTANCE UNDER TWO OR MORE PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "11.08 LUMP-SUM CASH OUT PAYMENT"
+    },
+    {
+      "level": 2,
+      "text": "11.09 APPLICATIONS AND OTHER FORMS"
+    },
+    {
+      "level": 2,
+      "text": "11.10 COURSES AND BENEFITS"
+    },
+    {
+      "level": 2,
+      "text": "11.11 REQUIREMENTS OF CURRENT VA EDUCATIONAL PROGRAMS NOT APPLICABLE TO SECTION"
+    },
+    {
+      "level": 2,
+      "text": "11.12 ACCREDITED INSTITUTIONS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. INQUIRY, AWARD, AND DISALLOWANCE PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "11.13 DELEGATION OF AUTHORITY FOR SECTION"
+    },
+    {
+      "level": 2,
+      "text": "11.14 INQUIRIES"
+    },
+    {
+      "level": 2,
+      "text": "11.15 DISALLOWANCES"
+    },
+    {
+      "level": 2,
+      "text": "11.16 APPEALS"
+    },
+    {
+      "level": 2,
+      "text": "11.17 AWARDS"
+    },
+    {
+      "level": 2,
+      "text": "11.18 AWARD CONSIDERATIONS"
+    },
+    {
+      "level": 2,
+      "text": "11.19 NOTIFICATION OF AWARD ACTION"
+    },
+    {
+      "level": 2,
+      "text": "11.20 END PRODUCTS"
+    },
+    {
+      "level": 2,
+      "text": "11.21 DISPOSITION OF AWARDS"
+    },
+    {
+      "level": 2,
+      "text": "11.22 CHANGE OF STATUS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. DEPENDENCY AND ENTITLEMENT TRANSFER"
+    },
+    {
+      "level": 2,
+      "text": "11.23 ESTABLISHMENT OF DEPENDENCY"
+    },
+    {
+      "level": 2,
+      "text": "11.24 TRANSFER OF ENTITLEMENT"
+    },
+    {
+      "level": 2,
+      "text": "11.25 TRANSFER OF ENTITLEMENT UPON THE DEATH OF A SERVICEPERSON OR VETERAN"
+    },
+    {
+      "level": 2,
+      "text": "11.26 ELECTION TO TRANSFER ENTITLEMENT"
+    },
+    {
+      "level": 2,
+      "text": "11.27 REVOCATION OF ELECTION"
+    }
+  ],
+  "heading_count": 31,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

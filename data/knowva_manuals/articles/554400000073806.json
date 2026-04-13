@@ -20,10 +20,93 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 7: Chapter 8 - Miscellaneous"
+    },
+    {
+      "level": 2,
+      "text": "8.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. HINES AND BIRLS ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "8.02 PAYING A SECOND SPOUSE OR TENTH CHILD"
+    },
+    {
+      "level": 2,
+      "text": "8.03 DEA CLAIMS ESTABLISHMENT PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. DUPLICATE EDUCATION RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "8.04 POTENTIAL DUPLICATE EDUCATION MASTER RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "8.05 PROCESSING FOLDERS FOR POTENTIALLY DUPLICATE EDUCATION MASTER RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "8.06 INACTIVE RECORDS FOR POTENTIALLY DUPLICATE EDUCATION MASTER RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "8.07 ADJUDICATION ACTION FOR POTENTIALLY DUPLICATE EDUCATION MASTER RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. REVIEW FOR OLD TYPE A CASES"
+    },
+    {
+      "level": 2,
+      "text": "8.08 REVIEW OF TYPE A RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "8.09 VERIFYING ATTENDANCE INFORMATION"
+    },
+    {
+      "level": 2,
+      "text": "8.10 TYPE A RUNNING CASES"
+    },
+    {
+      "level": 2,
+      "text": "8.11 TYPE A SUSPENDED CASES"
+    },
+    {
+      "level": 2,
+      "text": "8.12 DIARY"
+    },
+    {
+      "level": 2,
+      "text": "8.13 PREVENTIVE MEASURES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV. DUPLICATE INACTIVE AND ACTIVE CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "8.14 IDENTIFICATION OF DUPLICATE INACTIVE AND ACTIVE CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "8.15 REVIEW AND CORRECTION OF DUPLICATE INACTIVE AND ACTIVE CHAPTER"
+    }
+  ],
+  "heading_count": 20,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

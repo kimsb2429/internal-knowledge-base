@@ -19,10 +19,61 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "CHAPTER 5. QUANTITATIVE MEASUREMENT"
+    },
+    {
+      "level": 2,
+      "text": "5.01 SCOPE"
+    },
+    {
+      "level": 2,
+      "text": "5.02 TYPES AND PURPOSES OF QUANTITATIVE MEASUREMENT"
+    },
+    {
+      "level": 2,
+      "text": "5.03 MEASUREMENT UNITS AND STANDARDS"
+    },
+    {
+      "level": 2,
+      "text": "5.04 AREAS OF QUANTITATIVE MEASUREMENT AND CURRENT REPORTS"
+    },
+    {
+      "level": 2,
+      "text": "5.05 UNMEASURED HOURS AND OTHER MEASURED HOURS"
+    },
+    {
+      "level": 2,
+      "text": "5.06 BORROWED/LOANED HOURS AND BROKERED WORK"
+    },
+    {
+      "level": 2,
+      "text": "5.07 CONCEPT OF CLASSIFICATION OF CLAIMS AND ACTIONS"
+    },
+    {
+      "level": 2,
+      "text": "5.08 GENERAL END PRODUCT CODE PRINCIPLES"
+    },
+    {
+      "level": 2,
+      "text": "5.09 END PRODUCT CODE GROUPS"
+    },
+    {
+      "level": 2,
+      "text": "5.10 SPECIFIC END PRODUCT CODE DETERMINATIONS"
+    },
+    {
+      "level": 2,
+      "text": "5.11 ANNOTATING END PRODUCTS"
+    }
+  ],
+  "heading_count": 12,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

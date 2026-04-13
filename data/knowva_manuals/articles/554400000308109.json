@@ -20,10 +20,17 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "M22-4 Addendum | College-Level Course and Objective Codes"
+    }
+  ],
+  "heading_count": 1,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

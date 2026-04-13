@@ -22,6 +22,10 @@
   "contains_list": true,
   "heading_outline": [
     {
+      "level": 1,
+      "text": "M22-4, Part II, Chapter 1, Section A – DGIB Managed Service"
+    },
+    {
       "level": 3,
       "text": "Topic 1: Overview"
     },
@@ -34,9 +38,11 @@
       "text": "Topic 3: Payments and the DGIB Managed Service"
     }
   ],
-  "heading_count": 3,
-  "content_category": "",
+  "heading_count": 4,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

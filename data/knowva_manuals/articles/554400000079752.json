@@ -20,10 +20,37 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "This chapter refers to information contained in Training Guide 22-99-5, The Chapter 1606 Training Guide"
+    },
+    {
+      "level": 2,
+      "text": "8.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "8.02 BACKGROUND"
+    },
+    {
+      "level": 2,
+      "text": "8.03 VA ACTION"
+    },
+    {
+      "level": 2,
+      "text": "8.05 UNRESOLVED PROBLEMS WITH"
+    },
+    {
+      "level": 2,
+      "text": "8.06 [RESERVED FOR FUTURE USE]"
+    }
+  ],
+  "heading_count": 6,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

@@ -20,10 +20,45 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 4: Chapter 8 - Interval Payment"
+    },
+    {
+      "level": 2,
+      "text": "8.01 GENERAL RESTRICTIONS ON INTERVAL PAYMENT"
+    },
+    {
+      "level": 2,
+      "text": "8.02 ADDITIONAL RESTRICTIONS FOR SUMMER-TERM INTERVALS"
+    },
+    {
+      "level": 2,
+      "text": "8.03 NONSTANDARD TERMS OTHER THAN SUMMER TERMS"
+    },
+    {
+      "level": 2,
+      "text": "8.04 INTERVALS BETWEEN OVERLAPPING TERMS"
+    },
+    {
+      "level": 2,
+      "text": "8.05 DELIMITING DATE OCCURS DURING INTERVAL BETWEEN TERMS"
+    },
+    {
+      "level": 2,
+      "text": "8.06 OVERPAYMENTS INVOLVING INTERVAL PAY"
+    },
+    {
+      "level": 2,
+      "text": "8.07 ENTITLEMENT CHARGE FOR INTERVALS BETWEEN TERMS WITH NON CREDIT COURSES"
+    }
+  ],
+  "heading_count": 8,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

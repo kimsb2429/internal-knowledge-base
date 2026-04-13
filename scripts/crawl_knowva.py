@@ -423,6 +423,127 @@ def _build_structured_html(article: dict) -> str:
 </html>"""
 
 
+# --- Heading extraction helpers ---------------------------------------------------
+
+_HEADING_CONNECTORS = frozenset(
+    {"of", "and", "for", "the", "in", "to", "or", "an", "at", "by", "on", "vs"}
+)
+
+
+def _is_title_word(w: str) -> bool:
+    """Return True if *w* looks like part of an ALL-CAPS heading."""
+    stripped = w.rstrip(".,;:")
+    if not stripped:
+        return False
+    if stripped.lower() in _HEADING_CONNECTORS:
+        return True
+    alpha = [c for c in stripped if c.isalpha()]
+    if not alpha:
+        return False
+    return all(c.isupper() for c in alpha)
+
+
+def _strip_trailing_connectors(words: list[str]) -> list[str]:
+    """Remove trailing connectors / articles that leak from body text."""
+    while words and words[-1].lower().rstrip(".,") in (_HEADING_CONNECTORS | {"a"}):
+        words.pop()
+    return words
+
+
+def _extract_headings(html: str) -> list[dict]:
+    """
+    Extract heading hierarchy from article HTML.
+
+    First pass: standard <h1>–<h6> tags.
+    Second pass (fallback): KnowVA CMS uses ``<a name="...">`` anchors with
+    nearby bold/plain text instead of semantic heading tags.  Section titles
+    are ALL-CAPS (e.g. ``9.01  PURPOSE``).  We split at block-level tag
+    boundaries to avoid capturing body text.
+    """
+    headings: list[dict] = []
+
+    # --- Pass 1: standard h-tags ---
+    for hm in re.finditer(
+        r"<(h[1-6])[^>]*>(.*?)</\1>", html, re.IGNORECASE | re.DOTALL
+    ):
+        level = int(hm.group(1)[1])
+        text = re.sub(r"<[^>]+>", "", hm.group(2)).strip()
+        if text:
+            headings.append({"level": level, "text": text})
+
+    # --- Pass 2: named-anchor fallback (only if no sub-headings from pass 1) ---
+    has_sub_headings = any(h["level"] > 1 for h in headings)
+    if has_sub_headings:
+        return headings
+
+    for m in re.finditer(
+        r'<a\s[^>]*name="([^"]+)"[^>]*>', html, re.IGNORECASE
+    ):
+        anchor = m.group(1).lstrip("#")
+        if len(anchor) > 20 or " " in anchor or anchor == "Top":
+            continue
+
+        # Grab text from anchor to next block-level boundary
+        window = html[m.start() : m.start() + 500]
+        block_parts = re.split(
+            r"<(?:/?p|/?div|hr|br)\b[^>]*/?>", window, flags=re.IGNORECASE
+        )
+        heading_html = block_parts[0]
+
+        # Strip inline tags (empty string, not space — preserves words
+        # split across tags like <strong>ENTITLEMENT C</strong><strong>ODES</strong>)
+        clean = re.sub(r"<[^>]+>", "", heading_html)
+        clean = re.sub(r"&nbsp;|\xa0", " ", clean)
+        clean = re.sub(r"\(Updated[^)]*\)", "", clean)
+        clean = re.sub(r"\s+", " ", clean).strip()
+
+        # --- Section number heading (e.g. "9.01 PURPOSE") ---
+        sec_match = re.match(r"(\d+\.\d+)\s+", clean)
+        if sec_match:
+            rest = clean[sec_match.end() :]
+            title_words = []
+            for word in rest.split():
+                if word.startswith("("):
+                    break
+                if _is_title_word(word):
+                    title_words.append(word.rstrip("."))
+                else:
+                    break
+            title_words = _strip_trailing_connectors(title_words)
+            if title_words:
+                title = f'{sec_match.group(1)} {" ".join(title_words)}'
+                if re.match(r"^\d+$", anchor):
+                    level = 2
+                elif re.match(r"^\d+[a-z]$", anchor):
+                    level = 3
+                else:
+                    level = 4 if re.match(r"^\d+[a-z]\d", anchor) else 2
+                headings.append({"level": level, "text": title})
+            continue
+
+        # --- Subchapter heading (e.g. "Subchapter I. General Codes") ---
+        sub_match = re.match(
+            r"(Subchapter\s+[IVX]+)\.?\s*", clean, re.IGNORECASE
+        )
+        if sub_match:
+            rest = clean[sub_match.end() :]
+            title_words = []
+            for word in rest.split():
+                if word[0].isdigit():
+                    break
+                if _is_title_word(word):
+                    title_words.append(word.rstrip("."))
+                else:
+                    break
+            title_words = _strip_trailing_connectors(title_words)
+            text = sub_match.group(1).strip()
+            if title_words:
+                text += ". " + " ".join(title_words)
+            headings.append({"level": 2, "text": text})
+
+    return headings
+
+
 def _build_metadata(article: dict) -> dict:
     """
     Build metadata JSON aligned to the pgvector document_chunks schema.
@@ -441,14 +562,7 @@ def _build_metadata(article: dict) -> dict:
     contains_list = bool(re.search(r'<[ou]l[\s>]', content, re.IGNORECASE))
 
     # Extract heading hierarchy within the article content
-    headings = []
-    for hm in re.finditer(
-        r'<(h[1-6])[^>]*>(.*?)</\1>', content, re.IGNORECASE | re.DOTALL
-    ):
-        level = int(hm.group(1)[1])
-        text = re.sub(r'<[^>]+>', '', hm.group(2)).strip()
-        if text:
-            headings.append({"level": level, "text": text})
+    headings = _extract_headings(content)
 
     custom_attrs = article.get("custom_attributes", {})
 

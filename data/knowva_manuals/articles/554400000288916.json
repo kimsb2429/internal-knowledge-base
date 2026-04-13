@@ -22,6 +22,10 @@
   "contains_list": true,
   "heading_outline": [
     {
+      "level": 1,
+      "text": "M22-4, Part II, Chapter 3, Section F – Benefits Manager Enrollment Processing"
+    },
+    {
       "level": 3,
       "text": "Topic 1: General information"
     },
@@ -50,9 +54,11 @@
       "text": "Topic 7: Managing Manual Awards"
     }
   ],
-  "heading_count": 7,
-  "content_category": "",
+  "heading_count": 8,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

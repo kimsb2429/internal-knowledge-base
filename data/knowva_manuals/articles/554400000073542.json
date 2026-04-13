@@ -20,10 +20,45 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 6: Chapter 3 - Eligibility Issues"
+    },
+    {
+      "level": 2,
+      "text": "3.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "3.02 OVERVIEW OF ELIGIBILITY DETERMINATIONS"
+    },
+    {
+      "level": 2,
+      "text": "3.03 CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "3.04 CHARACTER OF SERVICE"
+    },
+    {
+      "level": 2,
+      "text": "3.05 DETERMINATION OF EARLY-OUT DISCHARGE UNDER"
+    },
+    {
+      "level": 2,
+      "text": "3.06 USE OF BDN"
+    },
+    {
+      "level": 2,
+      "text": "3.07 SERVICE DEPARTMENT CONTACTS"
+    }
+  ],
+  "heading_count": 8,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

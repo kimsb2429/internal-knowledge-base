@@ -20,10 +20,101 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 5: Chapter 8 - Miscellaneous"
+    },
+    {
+      "level": 2,
+      "text": "8.01 [GENERAL]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. PROCEDURES FOR [RO EDUCATION COORDINATORS]"
+    },
+    {
+      "level": 2,
+      "text": "8.02 OVERVIEW OF [RO EDUCATION COORDINATOR'S RESPONSIBILITIES"
+    },
+    {
+      "level": 2,
+      "text": "8.03 [RPO REQUEST FOR COPIES OF DOCUMENTS IN CLAIMS FOLDERS]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. [RULES FOR ADDING AND REMOVING DEPENDENTS]"
+    },
+    {
+      "level": 2,
+      "text": "8.04 [EFFECTIVE DATES FOR ADDING DEPENDENTS]"
+    },
+    {
+      "level": 2,
+      "text": "8.05 [EFFECTIVE DATE FOR REMOVING DEPENDENTS]"
+    },
+    {
+      "level": 2,
+      "text": "8.06 [DUE PROCESS AND NOTIFICATION REQUIREMENTS FOR LOSS OF DEPENDENT"
+    },
+    {
+      "level": 2,
+      "text": "8.07 [RESERVED]"
+    },
+    {
+      "level": 2,
+      "text": "8.08 [RESERVED]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. MISCELLANEOUS RPO PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "8.10 [INQUIRIES"
+    },
+    {
+      "level": 2,
+      "text": "8.11 [RESERVED]"
+    },
+    {
+      "level": 2,
+      "text": "8.12 PRIORITY OF REQUESTS"
+    },
+    {
+      "level": 2,
+      "text": "8.13 CONTROL OF PENDING ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "8.14 FOLLOW UP TO SERVICE DEPARTMENTS"
+    },
+    {
+      "level": 2,
+      "text": "8.15 USE OF SUPPORTING DOCUMENTS"
+    },
+    {
+      "level": 2,
+      "text": "8.16 NOTIFICATION TO CLAIMANT"
+    },
+    {
+      "level": 2,
+      "text": "8.17 RESERVED"
+    },
+    {
+      "level": 2,
+      "text": "8.18 BOARD FOR CORRECTION OF MILITARY RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "8.19 RESERVED"
+    }
+  ],
+  "heading_count": 22,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

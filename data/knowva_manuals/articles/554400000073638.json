@@ -20,10 +20,25 @@
   "state": "P",
   "contains_table": false,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Chapter 8 - Records"
+    },
+    {
+      "level": 2,
+      "text": "8.01 COMPLIANCE SURVEY FILE"
+    },
+    {
+      "level": 2,
+      "text": "8.02 RETENTION OF COMPLIANCE SURVEY RECORDS"
+    }
+  ],
+  "heading_count": 3,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

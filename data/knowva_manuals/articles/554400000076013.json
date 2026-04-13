@@ -20,10 +20,17 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Archive dated 6/11/19: M22-4 Part 12 Chapter 12.2 Public Law 112–26"
+    }
+  ],
+  "heading_count": 1,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

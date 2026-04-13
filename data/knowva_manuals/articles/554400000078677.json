@@ -22,6 +22,10 @@
   "contains_list": true,
   "heading_outline": [
     {
+      "level": 1,
+      "text": "Chapter 33 Sub-Chapter 4.3 Housing Allowance"
+    },
+    {
       "level": 2,
       "text": "Sub-Chapter 3. Housing Allowance"
     },
@@ -50,9 +54,11 @@
       "text": "3.06 Housing Allowance in Lieu of the Chapter 31 Subsistence Allowance"
     }
   ],
-  "heading_count": 7,
-  "content_category": "",
+  "heading_count": 8,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

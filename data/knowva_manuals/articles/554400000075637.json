@@ -20,10 +20,81 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 9: Chapter 1 - General"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. ROLE OF THE EDUCATION LIAISON REPRESENTATIVE"
+    },
+    {
+      "level": 2,
+      "text": "1.01 DESIGNATIONS AND RESPONSIBILITIES OF THE EDUCATION LIAISON REPRESENTATIVE"
+    },
+    {
+      "level": 2,
+      "text": "1.02 JURISDICTION OVER PROGRAM APPROVALS"
+    },
+    {
+      "level": 2,
+      "text": "1.03 LIAISON WITH STATE APPROVING AGENCIES"
+    },
+    {
+      "level": 2,
+      "text": "1.04 LIAISON WITH SCHOOLS AND JOB TRAINING ESTABLISHMENTS"
+    },
+    {
+      "level": 2,
+      "text": "1.05 LIAISON WITH REGIONAL PROCESSING OFFICE PERSONNEL"
+    },
+    {
+      "level": 2,
+      "text": "1.06 LIAISON WITH REGIONAL OFFICE PERSONNEL"
+    },
+    {
+      "level": 2,
+      "text": "1.07 LIAISON WITH OTHER STATE AND FEDERAL AGENCIES AND ORGANIZATIONS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. STATE APPROVING AGENCIES"
+    },
+    {
+      "level": 2,
+      "text": "1.08 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "1.09 INSPECTIONS AND APPROVALS"
+    },
+    {
+      "level": 2,
+      "text": "1.10 REIMBURSEMENT CONTRACTS WITH STATE APPROVING AGENCIES"
+    },
+    {
+      "level": 2,
+      "text": "1.11 REVIEWS OF CONTRACT PROPOSALS BY EDUCATION LIAISON REPRESENTATIVES"
+    },
+    {
+      "level": 2,
+      "text": "1.12 INVOICE PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "1.13 QUARTERLY REPORT OF ACTIVITIES"
+    },
+    {
+      "level": 2,
+      "text": "1.14 STATE APPROVING AGENCY PERFORMANCE EVALUATION PROCESS"
+    }
+  ],
+  "heading_count": 17,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

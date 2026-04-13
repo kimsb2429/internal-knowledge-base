@@ -19,10 +19,33 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "CHAPTER 1.  GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "1.01 PURPOSE"
+    },
+    {
+      "level": 2,
+      "text": "1.02 APPLICATION AND SCOPE"
+    },
+    {
+      "level": 2,
+      "text": "1.03 DEFINITIONS AND TERMS"
+    },
+    {
+      "level": 2,
+      "text": "1.04 OTHER PUBLICATIONS"
+    }
+  ],
+  "heading_count": 5,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

@@ -20,10 +20,185 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 05, Chapter 30. Chapter 4 - Award Processing and Other Authorization Issues"
+    },
+    {
+      "level": 2,
+      "text": "4.01 PURPOSE"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.02 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.03 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.04 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.05 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. MISCELLANEOUS ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "4.06 CERTIFICATES OF ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "4.07 CHANGE IN ORIGINAL ENTITLEMENT"
+    },
+    {
+      "level": 2,
+      "text": "4.08 CHANGE OF PROGRAM"
+    },
+    {
+      "level": 2,
+      "text": "4.09 CONFIRMED ENROLLMENTS"
+    },
+    {
+      "level": 2,
+      "text": "4.10 COOPERATIVE TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "4.11 DEATH BENEFIT"
+    },
+    {
+      "level": 2,
+      "text": "4.12 FIRST NOTICE OF DEATH PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "4.13 EFFECTIVE DATE OF [ORIGINAL] AWARDS"
+    },
+    {
+      "level": 2,
+      "text": "4.14 LUMP SUM AWARD ADJUSTMENTS"
+    },
+    {
+      "level": 2,
+      "text": "4.15 MANUAL ENTITLEMENT COMPUTATIONS"
+    },
+    {
+      "level": 2,
+      "text": "4.16 OVERRIDE INDICATOR ON BDN AWARD LINES"
+    },
+    {
+      "level": 2,
+      "text": "4.17 REFUNDS"
+    },
+    {
+      "level": 2,
+      "text": "4.18 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.19 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. CATEGORY II ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "4.20 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.21 BUY BACK OF CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.22 CHANGES TO CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.23 CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.24 DEPENDENCY"
+    },
+    {
+      "level": 2,
+      "text": "4.25 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV. PROCEDURES FOR OJT/APPRENTICESHIP, CORRESPONDENCE, AND FLIGHT AWARDS"
+    },
+    {
+      "level": 2,
+      "text": "4.26 [CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.27 FINANCE ACTIVITIES"
+    },
+    {
+      "level": 2,
+      "text": "4.28 [EDUCATION DIVISION] ACTIVITIES"
+    },
+    {
+      "level": 2,
+      "text": "4.29 LETTERS"
+    },
+    {
+      "level": 2,
+      "text": "4.30 COMPARISON TO OTHER OUT-OF-SYSTEM AWARD PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER V. AUTOMATIC RATE INCREASES"
+    },
+    {
+      "level": 2,
+      "text": "4.31 BACKGROUND"
+    },
+    {
+      "level": 2,
+      "text": "4.32 CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.33 AUTOMATED ADJUSTMENTS"
+    },
+    {
+      "level": 2,
+      "text": "4.34 REVIEW AND ADJUSTMENT OF AWARDS"
+    },
+    {
+      "level": 2,
+      "text": "4.35 CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.36 ONE-TIME NOTICE"
+    },
+    {
+      "level": 2,
+      "text": "4.37 END PRODUCT CREDIT"
+    }
+  ],
+  "heading_count": 43,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

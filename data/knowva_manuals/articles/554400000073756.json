@@ -20,10 +20,169 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 5 Chapter 1 - General"
+    },
+    {
+      "level": 2,
+      "text": "1.01 OVERVIEW"
+    },
+    {
+      "level": 2,
+      "text": "1.02 DEFINITIONS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I"
+    },
+    {
+      "level": 2,
+      "text": "1.03 INTRODUCTION"
+    },
+    {
+      "level": 2,
+      "text": "1.04 CATEGORIES IA, IB, IC, AND THE OPEN PERIOD"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II"
+    },
+    {
+      "level": 2,
+      "text": "1.05 INTRODUCTION"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III"
+    },
+    {
+      "level": 2,
+      "text": "1.07 INTRODUCTION"
+    },
+    {
+      "level": 2,
+      "text": "1.08 CATEGORIES IIIA, IIIB, AND IIIC"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV"
+    },
+    {
+      "level": 2,
+      "text": "1.09 INTRODUCTION"
+    },
+    {
+      "level": 2,
+      "text": "1.10 CATEGORIES IVA, IVB AND IVC"
+    },
+    {
+      "level": 2,
+      "text": "1.11 [CATEGORY IVA, IVC"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER V"
+    },
+    {
+      "level": 2,
+      "text": "1.15 [MORE THAN ONE PERIOD OF SERVICE]"
+    },
+    {
+      "level": 2,
+      "text": "1.16 AMOUNTS WITHHELD"
+    },
+    {
+      "level": 2,
+      "text": "1.17 CLARIFICATION OF BASIC ELIGIBILITY ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "1.18 ADDITIONAL ISSUES IN SELECTED RESERVE CASES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER VI"
+    },
+    {
+      "level": 2,
+      "text": "1.19 PERIOD OF ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "1.20 [ENTITLEMENT ISSUES]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER VII"
+    },
+    {
+      "level": 2,
+      "text": "1.21 MONTHLY RATES OF BASIC EDUCATIONAL ASSISTANCE"
+    },
+    {
+      "level": 2,
+      "text": "1.22 [KICKERS]"
+    },
+    {
+      "level": 2,
+      "text": "1.23 [ADDITIONAL CONTRIBUTIONS]"
+    },
+    {
+      "level": 2,
+      "text": "1.24 SUPPLEMENTAL EDUCATIONAL ASSISTANCE"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER VIII"
+    },
+    {
+      "level": 2,
+      "text": "1.25 [LUMP-SUM PAYMENTS]"
+    },
+    {
+      "level": 2,
+      "text": "1.26 [ACCELERATED PAYMENT]"
+    },
+    {
+      "level": 2,
+      "text": "1.27 [TRANSFER OF ENTITLEMENT]"
+    },
+    {
+      "level": 2,
+      "text": "1.29 CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IX"
+    },
+    {
+      "level": 2,
+      "text": "1.30 [PROHIBITION AGAINST DUPLICATION OF BENEFITS]"
+    },
+    {
+      "level": 2,
+      "text": "1.31 [EDUCATIONAL LEAVE OF ABSENCE]"
+    },
+    {
+      "level": 2,
+      "text": "1.33 FUNDING AND RESPONSIBILITIES"
+    },
+    {
+      "level": 2,
+      "text": "1.34 REPORTS"
+    },
+    {
+      "level": 2,
+      "text": "1.35 REQUIREMENTS AND COMPARABILITY"
+    }
+  ],
+  "heading_count": 39,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

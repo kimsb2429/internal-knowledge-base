@@ -20,10 +20,117 @@
   "state": "P",
   "contains_table": false,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 9: Chapter 3 - Review of Approvals - Specific Criteria for Institutions of Higher Learning and Noncollege Degree Institutions"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I"
+    },
+    {
+      "level": 2,
+      "text": "3.01 MEASUREMENT OF COURSES"
+    },
+    {
+      "level": 2,
+      "text": "3.02 HIGHER COMPETENCY"
+    },
+    {
+      "level": 2,
+      "text": "3.03 MULTIPLE OBJECTIVES"
+    },
+    {
+      "level": 2,
+      "text": "3.05 OPTIONAL COURSES"
+    },
+    {
+      "level": 2,
+      "text": "3.06 PRECLUDED COURSES"
+    },
+    {
+      "level": 2,
+      "text": "3.07 CONTRACTED COURSES"
+    },
+    {
+      "level": 2,
+      "text": "3.08 PRACTICAL TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "3.09 COOPERATIVE TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II"
+    },
+    {
+      "level": 2,
+      "text": "3.10 REMEDIAL/DEFICIENCY COURSES"
+    },
+    {
+      "level": 2,
+      "text": "3.11 PRO RATA REFUND POLICY"
+    },
+    {
+      "level": 2,
+      "text": "3.12 PROGRAMS PURSUED IN MORE THAN ONE STATE"
+    },
+    {
+      "level": 2,
+      "text": "3.13 INDIVIDUALIZED CURRICULUM"
+    },
+    {
+      "level": 2,
+      "text": "3.14 PROGRAMS TO PREPARE FOR EXAMS"
+    },
+    {
+      "level": 2,
+      "text": "3.15 VARIABLE CREDIT"
+    },
+    {
+      "level": 2,
+      "text": "3.16 CREDIT BY EXAM AND LIFE EXPERIENCE"
+    },
+    {
+      "level": 2,
+      "text": "3.17 RESERVE OFFICER TRAINING CORPS"
+    },
+    {
+      "level": 2,
+      "text": "3.18 POST-DOCTORAL COURSES"
+    },
+    {
+      "level": 2,
+      "text": "3.19 CLINICAL PASTORAL EDUCATION"
+    },
+    {
+      "level": 2,
+      "text": "3.20 INDEPENDENT STUDY"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. NON-COLLEGE DEGREE INSTITUTIONS"
+    },
+    {
+      "level": 2,
+      "text": "3.21 LENGTH OF COURSE"
+    },
+    {
+      "level": 2,
+      "text": "3.22 STANDARDS OF ATTENDANCE"
+    },
+    {
+      "level": 2,
+      "text": "3.23 FARM COOPERATIVE"
+    }
+  ],
+  "heading_count": 26,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

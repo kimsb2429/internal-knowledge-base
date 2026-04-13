@@ -20,10 +20,149 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 8: Chapter 4 - Award Processing and Other Authorization Issues"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. BDN ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "4.01 CERTIFICATE OF ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "4.02 DISALLOWANCE"
+    },
+    {
+      "level": 2,
+      "text": "4.03 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.04 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.05 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.06 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.07 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.08 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.09 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.10 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.11 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.12 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. OUT-OF-SYSTEM ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "4.13 MANUAL AWARD PROCESSING—GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "4.14 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.15 AWARDS FOR COAST GUARD RESERVE MEMBERS REQUIRING ACTION BY THE BUFFALO REGIONAL PROCESSING OFFICE"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. OTHER AUTHORIZATION ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "4.16 PRIOR BENEFITS PAID UNDER ANOTHER LAW"
+    },
+    {
+      "level": 2,
+      "text": "4.17 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.18 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.19 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.20 UNPUBLISHED INSTRUCTIONS"
+    },
+    {
+      "level": 2,
+      "text": "4.21 MANUAL ENTITLEMENT COMPUTATIONS"
+    },
+    {
+      "level": 2,
+      "text": "4.22 [ACTIVE SERVICE] ADJUSTMENTS"
+    },
+    {
+      "level": 2,
+      "text": "4.23 INVOLUNTARY SEPARATION PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV. PERIODIC RATE INCREASES"
+    },
+    {
+      "level": 2,
+      "text": "4.25 CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.26 AUTOMATED ADJUSTMENTS"
+    },
+    {
+      "level": 2,
+      "text": "4.27 REVIEW AND ADJUSTMENT OF AWARDS"
+    },
+    {
+      "level": 2,
+      "text": "4.28 COAST GUARD AND ST LOUIS CASES"
+    },
+    {
+      "level": 2,
+      "text": "4.29 ONE-TIME NOTICE"
+    },
+    {
+      "level": 2,
+      "text": "4.30 END PRODUCT CREDIT"
+    }
+  ],
+  "heading_count": 34,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

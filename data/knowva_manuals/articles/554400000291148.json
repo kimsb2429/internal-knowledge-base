@@ -22,6 +22,10 @@
   "contains_list": true,
   "heading_outline": [
     {
+      "level": 1,
+      "text": "M22-4, Part II, Chapter 1, Section B – DGIB and Education Processing Systems"
+    },
+    {
       "level": 3,
       "text": "Topic 1: DGIB Managed Service and DGI processing"
     },
@@ -30,9 +34,11 @@
       "text": "Topic 2: DGIB Managed Service and BM processing"
     }
   ],
-  "heading_count": 2,
-  "content_category": "",
+  "heading_count": 3,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

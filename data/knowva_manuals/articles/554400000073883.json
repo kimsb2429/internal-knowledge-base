@@ -20,10 +20,113 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "XI Ch1607 7 Batch Processing [DRAFT]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. BDN REAP LETTERS"
+    },
+    {
+      "level": 2,
+      "text": "7.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "7.02 ORIGINAL/REENTRANCE LETTER"
+    },
+    {
+      "level": 2,
+      "text": "7.03 AMENDED AWARD LETTER"
+    },
+    {
+      "level": 2,
+      "text": "7.04 DENIAL LETTERS"
+    },
+    {
+      "level": 2,
+      "text": "7.05 TERMINATION LETTERS"
+    },
+    {
+      "level": 2,
+      "text": "7.06 DELINQUENT CERTIFICATION LETTERS"
+    },
+    {
+      "level": 2,
+      "text": "7.07 DISCONTINUANCE, DELINQUENT CERTIFICATION"
+    },
+    {
+      "level": 2,
+      "text": "7.08 CERTIFICATE OF ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "7.09 EFT LETTERS"
+    },
+    {
+      "level": 2,
+      "text": "7.10 RESERVED FOR FUTURE USE"
+    },
+    {
+      "level": 2,
+      "text": "7.11 RESERVED FOR FUTURE USE"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. DMDC UPDATING"
+    },
+    {
+      "level": 2,
+      "text": "7.12 RESERVED FOR FUTURE USE"
+    },
+    {
+      "level": 2,
+      "text": "7.13 RESERVED FOR FUTURE USE"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. NOE PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "7.14 RESERVED FOR FUTURE USE"
+    },
+    {
+      "level": 2,
+      "text": "7.15 RESERVED FOR FUTURE USE"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV. BDN CERTIFICATION PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "7.16 CERTIFICATION PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "7.17 RESERVED FOR FUTURE USE"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER V. FULL FILE PASS AND REPORTS"
+    },
+    {
+      "level": 2,
+      "text": "7.18 RESERVED FOR FUTURE USE"
+    },
+    {
+      "level": 2,
+      "text": "7.19 RESERVED FOR FUTURE USE"
+    }
+  ],
+  "heading_count": 25,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

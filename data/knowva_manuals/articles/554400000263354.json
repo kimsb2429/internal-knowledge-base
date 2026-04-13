@@ -22,6 +22,10 @@
   "contains_list": false,
   "heading_outline": [
     {
+      "level": 1,
+      "text": "M22-4, Part II, Chapter 2, Section E - Reviewing Chapter 33 Payment History"
+    },
+    {
       "level": 3,
       "text": "Topic 1: Reviewing BTs Issued on or after July 8, 2024"
     },
@@ -30,9 +34,11 @@
       "text": "Topic 2: Reviewing BTs Issued before July 8, 2024"
     }
   ],
-  "heading_count": 2,
-  "content_category": "",
+  "heading_count": 3,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

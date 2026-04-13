@@ -20,10 +20,161 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 3: Chapter 3 - Processing Applications for Benefits"
+    },
+    {
+      "level": 2,
+      "text": "3.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. BASIC CONCEPTS"
+    },
+    {
+      "level": 2,
+      "text": "3.02 OVERVIEW"
+    },
+    {
+      "level": 2,
+      "text": "3.03 DEFINITIONS"
+    },
+    {
+      "level": 2,
+      "text": "3.04 VA RESPONSIBILITIES"
+    },
+    {
+      "level": 2,
+      "text": "3.05 TIME LIMITS"
+    },
+    {
+      "level": 2,
+      "text": "3.06 GOOD CAUSE CONSIDERATION"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. GENERAL PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "3.07 APPLICATION FORMS"
+    },
+    {
+      "level": 2,
+      "text": "3.08 INITIAL ACTIONS IN CLAIM PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "3.09 PROCEDURES TO REVIEW VA FORM"
+    },
+    {
+      "level": 2,
+      "text": "3.10 ELECTIONS"
+    },
+    {
+      "level": 2,
+      "text": "3.11 SPECIFIC ISSUES REGARDING VERIFICATION OF SERVICE"
+    },
+    {
+      "level": 2,
+      "text": "3.12 VERIFICATION OF SERVICE"
+    },
+    {
+      "level": 2,
+      "text": "3.13 DEVELOPMENT FOR ADDITIONAL REQUIRED INFORMATION"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. MISCELLANEOUS SERVICE ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "3.14 STATUTORY BARS AND FORFEITURE OF BENEFITS"
+    },
+    {
+      "level": 2,
+      "text": "3.15 CHARACTER OF DISCHARGE"
+    },
+    {
+      "level": 2,
+      "text": "3.17 DEDUCTIBLE TIME"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV. TRAINING UNDER PRIOR BENEFIT PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "3.18 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "3.19 COMPUTATIONS FOR TRAINING UNDER PRIOR VA BENEFIT PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER V. RULES OF EVIDENCE"
+    },
+    {
+      "level": 2,
+      "text": "3.20 EVIDENCE REQUESTED FROM CLAIMANT"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER VI. DUTY TO ASSIST"
+    },
+    {
+      "level": 2,
+      "text": "3.21 BACKGROUND"
+    },
+    {
+      "level": 2,
+      "text": "3.22 APPLYING DUTY TO ASSIST"
+    },
+    {
+      "level": 2,
+      "text": "3.23 WHEN NOT TO APPLY \"DUTY TO ASSIST\""
+    },
+    {
+      "level": 2,
+      "text": "3.24 STEPS TAKEN APPLYING DUTY TO ASSIST"
+    },
+    {
+      "level": 2,
+      "text": "3.25 WHEN INFORMATION CANNOT BE OBTAINED"
+    },
+    {
+      "level": 2,
+      "text": "3.26 REASONABLE DOUBT RULE"
+    },
+    {
+      "level": 2,
+      "text": "3.27 PRIMARY AND SECONDARY EVIDENCE"
+    },
+    {
+      "level": 2,
+      "text": "3.28 BURDEN OF PROOF AND THE WEIGHING OF EVIDENCE"
+    },
+    {
+      "level": 2,
+      "text": "3.29 PHOTOCOPIES"
+    },
+    {
+      "level": 2,
+      "text": "3.30 NEW AND RELEVANT EVIDENCE"
+    },
+    {
+      "level": 2,
+      "text": "3.31 AFFIDAVITS OR CERTIFICATIONS IN SUPPORT OF CLAIM"
+    }
+  ],
+  "heading_count": 37,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

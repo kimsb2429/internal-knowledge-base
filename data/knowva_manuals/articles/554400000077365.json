@@ -20,10 +20,85 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "ARCHIVED: M22-4, Part II, Chapter 6 - BDN Processing - General"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. BDN PROCESSING OVERVIEW"
+    },
+    {
+      "level": 2,
+      "text": "6.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "6.02 OVERVIEW OF SUBCHAPTER I"
+    },
+    {
+      "level": 2,
+      "text": "6.03 BDN COMMANDS"
+    },
+    {
+      "level": 2,
+      "text": "6.04 CLAIMS ESTABLISHMENT"
+    },
+    {
+      "level": 2,
+      "text": "6.05 CLAIMS DEVELOPMENT PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "6.06 CLAIMS DATA ENTRY PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "6.07 CLAIMS ADJUDICATION PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "6.08 CLAIMS AUTHORIZATION PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "6.09 BDN PROCESSING [EXAMPLES]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. BDN AWARD PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "6.10 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "6.14 SUPPLEMENTAL AWARD PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "6.15 SUPPLEMENTAL AWARD PROCESSING-AWARD LINE ENTRY REQUIREMENTS"
+    },
+    {
+      "level": 2,
+      "text": "6.16 MINIMAL INPUT AWARD PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "6.17 GAD/GAP/501 PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "6.18 AWARD PRINT"
+    }
+  ],
+  "heading_count": 18,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

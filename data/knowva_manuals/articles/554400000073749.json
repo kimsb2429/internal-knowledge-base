@@ -22,13 +22,19 @@
   "contains_list": true,
   "heading_outline": [
     {
+      "level": 1,
+      "text": "Sub-Chapter 3. Dependents"
+    },
+    {
       "level": 2,
       "text": "e. The 81-Month Rule. Beneficiaries who have used chapter 35 prior to electing Fry may be entitled up to 81 months of benefits combined from more than one benefit 38 USC 3695().  Individuals who use only non-chapter 35 benefits cannot exceed 48 months of entitlement combined when using more than one benefit. The 81-month provision does not apply to individuals who have exhausted 48 months of benefits prior to October 1, 2013."
     }
   ],
-  "heading_count": 1,
-  "content_category": "",
+  "heading_count": 2,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

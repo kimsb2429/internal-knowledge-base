@@ -20,10 +20,149 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 4: Chapter 11 - Enrollment Adjustments"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. ENROLLMENT ADJUSTMENTS"
+    },
+    {
+      "level": 2,
+      "text": "11.01 REQUIREMENT FOR REPORTING ENROLLMENT CHANGES"
+    },
+    {
+      "level": 2,
+      "text": "11.02 DETERMINING THE LAST DATE OF ATTENDANCE"
+    },
+    {
+      "level": 2,
+      "text": "11.03 REPORTING REDUCTIONS AND TERMINATIONS"
+    },
+    {
+      "level": 2,
+      "text": "11.04 EFFECTIVE DATES OF REDUCTION AND TERMINATION"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II"
+    },
+    {
+      "level": 2,
+      "text": "11.05 DEFINITION AND BACKGROUND"
+    },
+    {
+      "level": 2,
+      "text": "11.06 CLARIFICATION OF \"FIRST INSTANCE\""
+    },
+    {
+      "level": 2,
+      "text": "11.07 CLARIFICATION"
+    },
+    {
+      "level": 2,
+      "text": "11.08 DOCUMENTATION PROCEDURE"
+    },
+    {
+      "level": 2,
+      "text": "11.09 PROCEDURES WHEN THE EXCLUSION APPLIES"
+    },
+    {
+      "level": 2,
+      "text": "11.10 ADDITIONAL EXAMPLES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. MITIGATING CIRCUMSTANCES"
+    },
+    {
+      "level": 2,
+      "text": "11.11 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "11.12 EVIDENCE REQUIREMENT FOR MITIGATING CIRCUMSTANCES"
+    },
+    {
+      "level": 2,
+      "text": "11.13 DEVELOPMENT AND AWARD ACTIONS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV. MISCELLANEOUS ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "11.14 SCHOOL LIABILITY"
+    },
+    {
+      "level": 2,
+      "text": "11.15 ADJUSTMENTS IN CREDIT HOURS THAT DO NOT AFFECT TRAINING TIME OR RATE OF PURSUIT"
+    },
+    {
+      "level": 2,
+      "text": "11.16 REPORTING INCOMPLETE GRADES"
+    },
+    {
+      "level": 2,
+      "text": "11.17 NON-CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "11.18 INCREASED SCHOOL ATTENDANCE"
+    },
+    {
+      "level": 2,
+      "text": "11.19 GRADUATION REQUIREMENTS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER V. ENTITLEMENT RESTORATION"
+    },
+    {
+      "level": 2,
+      "text": "11.20 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "11.21 ENTITLEMENT RESTORATION"
+    },
+    {
+      "level": 2,
+      "text": "11.22 REVIEW PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "11.23 AWARD CHANGES"
+    },
+    {
+      "level": 2,
+      "text": "11.24 MAXIMUM ENTITLEMENT"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER VI. COMPUTER PROCESSING ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "11.25 PROCESSING STOP PAYMENT AND SUSPEND ACTIONS FOR NON-CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "11.26 EFFECT OF STOP AND SUSPEND ACTIONS ON VARIOUS TYPES OF TRAINING FOR BDN CASES"
+    },
+    {
+      "level": 2,
+      "text": "11.27 COMPUTER-GENERATED STOP AND SUSPEND PAYMENT TRANSACTIONS"
+    }
+  ],
+  "heading_count": 34,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

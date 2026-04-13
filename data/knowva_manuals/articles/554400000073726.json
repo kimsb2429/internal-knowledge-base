@@ -22,6 +22,10 @@
   "contains_list": false,
   "heading_outline": [
     {
+      "level": 1,
+      "text": "Part XI: Chapter 9-Out-of-System Award Processing"
+    },
+    {
       "level": 4,
       "text": "Entered by"
     },
@@ -78,9 +82,11 @@
       "text": "CH 1606 DEBT 08E DATE"
     }
   ],
-  "heading_count": 14,
-  "content_category": "",
+  "heading_count": 15,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

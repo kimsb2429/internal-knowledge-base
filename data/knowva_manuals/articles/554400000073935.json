@@ -20,10 +20,117 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 9: Chapter 4 - Review of Approvals - Specific Criteria for Correspondence Schools, Flight Schools, and Job Training Establishments"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. SPECIFIC CRITERIA FOR CORRESPONDENCE SCHOOLS"
+    },
+    {
+      "level": 2,
+      "text": "4.01 NONACCREDITED CORRESPONDENCE SCHOOLS"
+    },
+    {
+      "level": 2,
+      "text": "4.02 PERCENTAGE OF STUDENTS COMPLETING CORRESPONDENCE COURSES"
+    },
+    {
+      "level": 2,
+      "text": "4.03 ENROLLMENT AGREEMENTS"
+    },
+    {
+      "level": 2,
+      "text": "4.04 REFUND POLICIES"
+    },
+    {
+      "level": 2,
+      "text": "4.05 COMBINATION CORRESPONDENCE"
+    },
+    {
+      "level": 2,
+      "text": "4.06 MAINTAINING APPROVAL DATA"
+    },
+    {
+      "level": 2,
+      "text": "4.07 INQUIRIES ON CORRESPONDENCE APPROVALS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. SPECIFIC CRITERIA FOR FLIGHT SCHOOLS"
+    },
+    {
+      "level": 2,
+      "text": "4.08 FEDERAL AVIATION ADMINISTRATION"
+    },
+    {
+      "level": 2,
+      "text": "4.09 APPROVAL REQUIREMENTS"
+    },
+    {
+      "level": 2,
+      "text": "4.10 APPROVAL PACKAGES"
+    },
+    {
+      "level": 2,
+      "text": "4.11 SPECIFIC FLIGHT SCHOOL REQUIREMENTS"
+    },
+    {
+      "level": 2,
+      "text": "4.12 TYPES OF INDIVIDUAL COURSES"
+    },
+    {
+      "level": 2,
+      "text": "4.13 FLIGHT TRAINING CENTERS"
+    },
+    {
+      "level": 2,
+      "text": "4.14 FLIGHT SIMULATORS AND FLIGHT TRAINING DEVICES"
+    },
+    {
+      "level": 2,
+      "text": "4.15 CONCURRENT ENROLLMENT"
+    },
+    {
+      "level": 2,
+      "text": "4.16 VACERT FOR WINDOWS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. SPECIFIC CRITERIA FOR JOB TRAINING ESTABLISHMENTS"
+    },
+    {
+      "level": 2,
+      "text": "4.17 APPLICATIONS"
+    },
+    {
+      "level": 2,
+      "text": "4.18 APPROVAL REQUIREMENTS FOR APPRENTICESHIP AND OJT PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "4.19 DEFINITIONS"
+    },
+    {
+      "level": 2,
+      "text": "4.20 SPECIAL ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "4.21 SPECIAL ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "4.22 SPECIAL ISSUES"
+    }
+  ],
+  "heading_count": 26,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

@@ -20,10 +20,193 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "M22-4, Part 10, Compliance Survey. Chapter 04, Procedures Applicable to Facilities Offering Specific Types of Training."
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I"
+    },
+    {
+      "level": 2,
+      "text": "4.01 VERIFICATION OF ENROLLMENT DATA"
+    },
+    {
+      "level": 2,
+      "text": "4.02 PURSUIT OF APPROVED PROGRAM OR COURSE"
+    },
+    {
+      "level": 2,
+      "text": "4.03 RECORDS AND REPORTS OF ENROLLMENT, CHANGES IN ENROLLMENT, AND TERMINATION OR INTERRUPTION"
+    },
+    {
+      "level": 2,
+      "text": "4.04 RECORDS AND REPORTS OF PROGRESS, CONDUCT, OR ATTENDANCE"
+    },
+    {
+      "level": 2,
+      "text": "4.05 RESTRICTIONS ON PERCENTAGE OF VETERANS AND ELIGIBLE PERSONS ENROLLED"
+    },
+    {
+      "level": 2,
+      "text": "4.06 CHARGES FOR TUITION AND FEES"
+    },
+    {
+      "level": 2,
+      "text": "4.07 ADDITIONAL AREAS OF REVIEW FOR COURSES APPROVED AS NONACCREDITED"
+    },
+    {
+      "level": 2,
+      "text": "4.08 INDEPENDENT STUDY, INCLUDING OPEN CIRCUIT TV"
+    },
+    {
+      "level": 2,
+      "text": "4.09 RESIDENTIAL PRACTICAL TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "4.10 COOPERATIVE PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "4.11 FARM COOPERATIVE PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "4.12 VERIFICATION OF NCD COURSE MEASUREMENT"
+    },
+    {
+      "level": 2,
+      "text": "4.13 BRANCHES"
+    },
+    {
+      "level": 2,
+      "text": "4.14 TUTORIAL ASSISTANCE"
+    },
+    {
+      "level": 2,
+      "text": "4.15 EDUCATION LOANS"
+    },
+    {
+      "level": 2,
+      "text": "4.16 CONFLICTING INTERESTS CERTIFICATION"
+    },
+    {
+      "level": 2,
+      "text": "4.17 CONDUCTING REMOTE REVIEWS"
+    },
+    {
+      "level": 2,
+      "text": "4.18 COMBINATION CORRESPONDENCE-RESIDENCE PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "4.19 VERIFICATION OF ENROLLMENT DATA"
+    },
+    {
+      "level": 2,
+      "text": "4.20 RECORDS AND REPORTS OF ENROLLMENT, CHANGES IN ENROLLMENT, AND TERMINATION OR INTERRUPTION"
+    },
+    {
+      "level": 2,
+      "text": "4.21 RECORDS AND REPORTS OF PROGRESS, CONDUCT, OR ATTENDANCE"
+    },
+    {
+      "level": 2,
+      "text": "4.22 POWER OF ATTORNEY/NONASSIGNABILITY OF BENEFIT"
+    },
+    {
+      "level": 2,
+      "text": "4.23 RESTRICTIONS ON THE PERCENTAGE OF VETERANS AND ELIGIBLE PERSON ENROLLED"
+    },
+    {
+      "level": 2,
+      "text": "4.24 CHARGES FOR TUITION AND FEES"
+    },
+    {
+      "level": 2,
+      "text": "4.25 SIX-MONTH NORMAL COMPLETION TIME"
+    },
+    {
+      "level": 2,
+      "text": "4.26 ADDITIONAL AREAS OF REVIEW FOR CORRESPONDENCE COURSE APPROVED AS NONACCREDITED"
+    },
+    {
+      "level": 2,
+      "text": "4.27 VERIFICATION OF ENROLLMENT DATA"
+    },
+    {
+      "level": 2,
+      "text": "4.28 PURSUIT OF APPROVED PROGRAM OR COURSE"
+    },
+    {
+      "level": 2,
+      "text": "4.29 CREDIT FOR PREVIOUS EDUCATION AND TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "4.30 RECORDS AND REPORTS OF ENROLLMENT, CHANGES IN ENROLLMENT, AND TERMINATION OR INTERRUPTION"
+    },
+    {
+      "level": 2,
+      "text": "4.31 RECORDS AND REPORTS OF PROGRESS, CONDUCT, OR ATTENDANCE"
+    },
+    {
+      "level": 2,
+      "text": "4.32 RESTRICTIONS ON PERCENTAGE OF VETERANS AND ELIGIBLE PERSONS ENROLLED"
+    },
+    {
+      "level": 2,
+      "text": "4.33 CHARGES FOR TUITION AND FEES"
+    },
+    {
+      "level": 2,
+      "text": "4.34 ADDITIONAL AREAS OF REVIEW FOR COURSES APPROVED AS NONACCREDITED"
+    },
+    {
+      "level": 2,
+      "text": "4.35 POSSESSION OF VALID PRIVATE PILOT CERTIFICATE OR HIGHER RATING AND APPROPRIATE MEDICAL CERTIFICATE"
+    },
+    {
+      "level": 2,
+      "text": "4.36 VERIFICATION OF ENROLLMENT DATA"
+    },
+    {
+      "level": 2,
+      "text": "4.37 CREDIT FOR PREVIOUS EDUCATION AND TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "4.38 RECORDS AND REPORTS OF ENROLLMENT, CHANGES IN ENROLLMENT, AND TERMINATION OR INTERRUPTION"
+    },
+    {
+      "level": 2,
+      "text": "4.39 WAGES PAID"
+    },
+    {
+      "level": 2,
+      "text": "4.40 RECORDS AND REPORTS OF PROGRESS, CONDUCT AND ATTENDANCE"
+    },
+    {
+      "level": 2,
+      "text": "4.41 RELATED TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "4.42 TRAINING AGREEMENT"
+    },
+    {
+      "level": 2,
+      "text": "4.43 FAMILY RELATIONSHIP"
+    }
+  ],
+  "heading_count": 45,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

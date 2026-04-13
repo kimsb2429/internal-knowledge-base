@@ -20,10 +20,53 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 9: Chapter 6 - Approval Information in WEAMS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "6.01 WEAMS"
+    },
+    {
+      "level": 2,
+      "text": "6.02 WEAMS ACCESS"
+    },
+    {
+      "level": 2,
+      "text": "6.03 WEAMS APPLICATION TABS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. INSTITUTIONS"
+    },
+    {
+      "level": 2,
+      "text": "6.04 FINDING EDUCATIONAL AND TRAINING INSTITUTIONS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "6.12 PROGRAM SCREENS"
+    },
+    {
+      "level": 2,
+      "text": "6.16 NATIONAL EXAM"
+    }
+  ],
+  "heading_count": 10,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

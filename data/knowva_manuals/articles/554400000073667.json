@@ -20,10 +20,73 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 4: Chapter 12 - Out-of-System Award Processing"
+    },
+    {
+      "level": 2,
+      "text": "12.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "12.02 [OUT-OF-SYSTEM PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "12.03 OUT-OF-SYSTEM PROCESSING FOR CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "12.04 OUT-OF-SYSTEM PROCESSING FOR CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "12.05 OUT-OF-SYSTEM PROCESSING FOR CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "12.06 OUT-OF-SYSTEM PROCESSING FOR CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "12.07 OUT-OF-SYSTEM PROCESSING FOR SECTION"
+    },
+    {
+      "level": 2,
+      "text": "12.08 OUT-OF-SYSTEM PROCESSING FOR THE ANTITERRORISM ACT"
+    },
+    {
+      "level": 2,
+      "text": "12.09 AUTHORIZATION FORMS USED FOR OUT-OF-SYSTEM EDUCATION AWARDS"
+    },
+    {
+      "level": 2,
+      "text": "12.10 PREPARATION OF VA FORM"
+    },
+    {
+      "level": 2,
+      "text": "12.11 PREPARATION OF VA FORM"
+    },
+    {
+      "level": 2,
+      "text": "12.12 PREPARATION OF VA FORM"
+    },
+    {
+      "level": 2,
+      "text": "12.13 COMPLETION OF OPTIONAL FORM"
+    },
+    {
+      "level": 2,
+      "text": "12.14 COORDINATION OF OUT-OF-SYSTEM AWARD ACTIONS"
+    }
+  ],
+  "heading_count": 15,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

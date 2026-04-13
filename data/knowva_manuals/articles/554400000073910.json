@@ -20,10 +20,41 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "M22-4, Part 10, Compliance Survey. Chapter 06, Referrals."
+    },
+    {
+      "level": 2,
+      "text": "6.01 REFERRAL TO STATE APPROVING AGENCY"
+    },
+    {
+      "level": 2,
+      "text": "6.02 REFERRAL TO OTHER VA ELEMENTS"
+    },
+    {
+      "level": 2,
+      "text": "6.03 REFERRALS INVOLVING A SUBSTANTIAL PATTERN OF OVERPAYMENTS"
+    },
+    {
+      "level": 2,
+      "text": "6.04 REFERRAL TO THE STATION COMMITTEE ON EDUCATIONAL ALLOWANCES"
+    },
+    {
+      "level": 2,
+      "text": "6.05 SCHOOL LIABILITY"
+    },
+    {
+      "level": 2,
+      "text": "6.06 FRAUD"
+    }
+  ],
+  "heading_count": 7,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

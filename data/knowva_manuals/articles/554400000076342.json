@@ -22,13 +22,19 @@
   "contains_list": true,
   "heading_outline": [
     {
+      "level": 1,
+      "text": "Part 5: Chapter 11 - Accelerated Payment"
+    },
+    {
       "level": 2,
       "text": "11.06 RESERVED(Change Date:  April 28, 2008)"
     }
   ],
-  "heading_count": 1,
-  "content_category": "",
+  "heading_count": 2,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

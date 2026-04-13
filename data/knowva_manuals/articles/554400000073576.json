@@ -20,10 +20,121 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 6: Chapter 4 - Award Processing and Other Authorization Issues"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. CERTIFICATE OF ELIGIBILITY AND DISALLOWANCE PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "4.01 CERTIFICATE OF ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "4.02 DISALLOWANCES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. BDN PROCESSING ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "4.03 CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.04 SECTION"
+    },
+    {
+      "level": 2,
+      "text": "4.05 AWARDS INVOLVING DROPPED PRIOR [BDN] AWARD LINES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. OUT-OF-SYSTEM PROCESSING ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "4.06 TYPES OF ACTIONS REQUIRING OUT-OF-SYSTEM PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "4.07 OUT-OF-SYSTEM CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.08 OUT-OF-SYSTEM SECTION"
+    },
+    {
+      "level": 2,
+      "text": "4.09 FUNCTIONS PERFORMED BY PPU AND BUFFALO RO FINANCE"
+    },
+    {
+      "level": 2,
+      "text": "4.10 COOPERATIVE TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "4.11 REDUCTION OF BENEFITS FOR INCARCERATED VETERANS"
+    },
+    {
+      "level": 2,
+      "text": "4.12 FLIGHT,"
+    },
+    {
+      "level": 2,
+      "text": "4.13 BUFFALO RO PAYMENT PROCESSING INSTRUCTIONS FOR APPRENTICESHIP/OJT, AND FLIGHT AWARDS"
+    },
+    {
+      "level": 2,
+      "text": "4.14 OTHER AWARD CONSIDERATIONS FOR OUT-OF-SYSTEM CASES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV. OTHER AWARD PROCESSING ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "4.15 [EDUCATION] COORDINATORS"
+    },
+    {
+      "level": 2,
+      "text": "4.16 CLAIMS INVOLVING AN EIGHT-DIGIT FILE NUMBER"
+    },
+    {
+      "level": 2,
+      "text": "4.17 CHANGING SERVICE STATUS OF CLAIMANT"
+    },
+    {
+      "level": 2,
+      "text": "4.18 DOCUMENTATION FOR ORIGINAL AWARDS OR CERTIFICATES OF ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "4.19 ENTITLEMENT COMPUTATIONS"
+    },
+    {
+      "level": 2,
+      "text": "4.20 ELEMENTARY AND SECONDARY TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "4.21 [CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.22 CERT ISSUE DATE ZEROED OUT REPORT"
+    }
+  ],
+  "heading_count": 27,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

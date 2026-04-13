@@ -22,6 +22,10 @@
   "contains_list": false,
   "heading_outline": [
     {
+      "level": 1,
+      "text": "M22-4, Part II, Chapter 6, Section C - Requesting Access to eMPWR"
+    },
+    {
       "level": 3,
       "text": "Topic 1: Requesting Access to eMPWR"
     },
@@ -30,9 +34,11 @@
       "text": "Topic 2: eMPWR Employee Access Requests for Conversion"
     }
   ],
-  "heading_count": 2,
-  "content_category": "",
+  "heading_count": 3,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

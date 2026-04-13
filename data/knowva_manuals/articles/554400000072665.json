@@ -20,10 +20,53 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "PART 01, GENERAL. CHAPTER 10, DIRECT DEPOSIT"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "10.01 INTRODUCTION"
+    },
+    {
+      "level": 2,
+      "text": "10.02 HOW CAN A BENEFICIARY SIGN UP FOR DIRECT DEPOSIT?"
+    },
+    {
+      "level": 2,
+      "text": "10.03 HOW TO FIND DIRECT DEPOSIT DATA ON A CHECK"
+    },
+    {
+      "level": 2,
+      "text": "10.04 HOW TO PROCESS REQUESTS FOR DIRECT DEPOSIT"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II"
+    },
+    {
+      "level": 2,
+      "text": "10.05 SUMMARY OF EFT IN BDN"
+    },
+    {
+      "level": 2,
+      "text": "10.06 BDN LETTERS FOR DIRECT DEPOSIT"
+    },
+    {
+      "level": 2,
+      "text": "10.07 BDN PARAGRAPHS FOR DIRECT DEPOSITS"
+    }
+  ],
+  "heading_count": 10,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

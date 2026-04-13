@@ -20,10 +20,57 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "M22-4 Part 8: Chapter 3 - Eligibility Issues"
+    },
+    {
+      "level": 2,
+      "text": "3.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "3.02 APPLICATION AND FILING"
+    },
+    {
+      "level": 2,
+      "text": "3.03 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "3.04 ELIGIBILITY DOCUMENTATION"
+    },
+    {
+      "level": 2,
+      "text": "3.05 ELIGIBILITY STATUS AND DATE OF ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "3.06 DEVELOPMENT ACTIONS"
+    },
+    {
+      "level": 2,
+      "text": "3.07 INFORMATION"
+    },
+    {
+      "level": 2,
+      "text": "3.08 ADMINISTRATIVE ERROR"
+    },
+    {
+      "level": 2,
+      "text": "3.09 DELIMITING DATE"
+    },
+    {
+      "level": 2,
+      "text": "3.10 PROCEDURAL AND APPELLATE RIGHTS"
+    }
+  ],
+  "heading_count": 11,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

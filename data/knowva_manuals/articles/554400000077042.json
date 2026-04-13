@@ -20,10 +20,61 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 5: Chapter 6 - Certifications"
+    },
+    {
+      "level": 2,
+      "text": "6.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "6.02 CERTIFICATION REQUIRED FOR PAYMENT"
+    },
+    {
+      "level": 2,
+      "text": "6.03 FORMS USED FOR VERIFICATION AND CERTIFICATION"
+    },
+    {
+      "level": 2,
+      "text": "6.04 [BDN] ISSUANCE OF CERTIFICATIONS"
+    },
+    {
+      "level": 2,
+      "text": "6.05 PROCESSING MONTHLY CERTIFICATIONS--GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "6.06 PROCESSING MONTHLY CERTIFICATIONS--IHL TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "6.07 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "6.08 PROCESSING CERTIFICATIONS FOR CORRESPONDENCE, FLIGHT, AND ON-THE-JOB/APPRENTICESHIP TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "6.09 DELINQUENT CERTIFICATION PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "6.10 DELINQUENT COD"
+    },
+    {
+      "level": 2,
+      "text": "6.11 [RESERVED FOR FUTURE USE]"
+    }
+  ],
+  "heading_count": 12,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

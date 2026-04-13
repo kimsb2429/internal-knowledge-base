@@ -20,10 +20,109 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part V:  Chapter 12 - Additional Contributions"
+    },
+    {
+      "level": 2,
+      "text": "12.01 OVERVIEW"
+    },
+    {
+      "level": 2,
+      "text": "12.02 BACKGROUND"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I"
+    },
+    {
+      "level": 2,
+      "text": "12.03 DESCRIPTION OF PROGAM"
+    },
+    {
+      "level": 2,
+      "text": "12.04 ELIGIBILITY REQUIREMENTS"
+    },
+    {
+      "level": 2,
+      "text": "12.05 CONTRIBUTION REQUIREMENTS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II"
+    },
+    {
+      "level": 2,
+      "text": "12.06 IDENTIFYING BUY-UP CLAIMS"
+    },
+    {
+      "level": 2,
+      "text": "12.07 EVIDENCE OF PARTICIPATION"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III"
+    },
+    {
+      "level": 2,
+      "text": "12.08 HISTORICAL PROCEDURE"
+    },
+    {
+      "level": 2,
+      "text": "12.09 CURRENT PROCEDURE"
+    },
+    {
+      "level": 2,
+      "text": "12.10 MISCELLANEOUS COLLECTION ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV"
+    },
+    {
+      "level": 2,
+      "text": "12.11 PAYMENTS"
+    },
+    {
+      "level": 2,
+      "text": "12.12 PAYMENTS TO ACTIVE DUTY PARTICIPANTS"
+    },
+    {
+      "level": 2,
+      "text": "12.13 EFFECTIVE DATE OF INCREASED RATE"
+    },
+    {
+      "level": 2,
+      "text": "12.14 EFFECTIVE DATES FOR \"CONTINUING CONTRIBUTORS\""
+    },
+    {
+      "level": 2,
+      "text": "12.15 PAYING THE ADDITIONAL RATE IN THE BENEFITS DELIVERY NETWORK"
+    },
+    {
+      "level": 2,
+      "text": "12.16 FLIGHT, CORRESPONDENCE, APPRENTICESHIP AND ON-THE-JOB TRAINING PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER V"
+    },
+    {
+      "level": 2,
+      "text": "12.17 PURPOSE AND HISTORY"
+    },
+    {
+      "level": 2,
+      "text": "12.18 HISTORICAL PROCEDURES"
+    }
+  ],
+  "heading_count": 24,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

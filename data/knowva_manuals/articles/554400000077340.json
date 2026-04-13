@@ -20,10 +20,65 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "ARCHIVED: M22-4, Part II, Chapter 4 - Master Record Inquiry (Chapter 30)"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.01 MASTER RECORD SCREENS"
+    },
+    {
+      "level": 2,
+      "text": "4.02 READY SCREEN ENTRIES"
+    },
+    {
+      "level": 2,
+      "text": "4.03 [CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.04 TRANSACTION AND PAYMENT HISTORY"
+    },
+    {
+      "level": 2,
+      "text": "4.05 CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.06 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "4.07 CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.08 SCREEN SELECTION SCREEN"
+    },
+    {
+      "level": 2,
+      "text": "4.09 CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "4.10 CHAPTER"
+    }
+  ],
+  "heading_count": 13,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

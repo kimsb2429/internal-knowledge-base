@@ -20,10 +20,113 @@
   "state": "P",
   "contains_table": false,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 9:  Chapter 2 - Review of Approvals - Overview"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I"
+    },
+    {
+      "level": 2,
+      "text": "2.01 PURPOSE"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II"
+    },
+    {
+      "level": 2,
+      "text": "2.02 APPLICATION PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "2.03 ACCREDITED PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "2.04 NONACCREDITED PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "2.05 CORRESPONDENCE COURSES"
+    },
+    {
+      "level": 2,
+      "text": "2.06 FLIGHT TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "2.07 APPRENTICESHIP PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "2.08 OTHER-ON-THE-JOB TRAINING PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV"
+    },
+    {
+      "level": 2,
+      "text": "2.12 EFFECTIVE DATES OF APPROVAL"
+    },
+    {
+      "level": 2,
+      "text": "2.13 SCHOOL CALENDAR AND CLASS SCHEDULES"
+    },
+    {
+      "level": 2,
+      "text": "2.14 PERIOD OF OPERATION"
+    },
+    {
+      "level": 2,
+      "text": "2.15 ADVANCED PAY CERTIFICATION"
+    },
+    {
+      "level": 2,
+      "text": "2.16 ASSIGNMENT OF EDUCATION BENEFITS CHECKS"
+    },
+    {
+      "level": 2,
+      "text": "2.17 STANDARDS OF PROGRESS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER V"
+    },
+    {
+      "level": 2,
+      "text": "2.18 NOTICES OF APPROVAL TO VA"
+    },
+    {
+      "level": 2,
+      "text": "2.19 REVIEW OF NOTICES OF APPROVAL"
+    },
+    {
+      "level": 2,
+      "text": "2.20 DISSEMINATION OF APPROVAL INFORMATION"
+    },
+    {
+      "level": 2,
+      "text": "2.21 DENIALS, SUSPENSIONS, AND WITHDRAWALS OF APPROVAL BY STATE APPROVING AGENCIES"
+    },
+    {
+      "level": 2,
+      "text": "2.22 SUSPENSIONS OR DISCONTINUANCES OF PAYMENTS BY VA"
+    }
+  ],
+  "heading_count": 25,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

@@ -19,10 +19,77 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "CHAPTER 6. WORK FLOW MANAGEMENT"
+    },
+    {
+      "level": 2,
+      "text": "6.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "6.02 ACCESSING THE WIPP SUBSYSTEM"
+    },
+    {
+      "level": 2,
+      "text": "6.03 STATUS SELECTION MENU"
+    },
+    {
+      "level": 2,
+      "text": "6.04 WIPP STATUS"
+    },
+    {
+      "level": 2,
+      "text": "6.05 TIMELINESS"
+    },
+    {
+      "level": 2,
+      "text": "6.06 FOLDER DELAY STATUS"
+    },
+    {
+      "level": 2,
+      "text": "6.07 MISCELLANEOUS WIPP STATUS"
+    },
+    {
+      "level": 2,
+      "text": "6.08 MATURING PENDING ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "6.09 MATURING DIARY ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "6.10 APPEAL CASES"
+    },
+    {
+      "level": 2,
+      "text": "6.11 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "6.12 WIPP USER PLAN"
+    },
+    {
+      "level": 2,
+      "text": "6.13 WORK FLOW PLAN"
+    },
+    {
+      "level": 2,
+      "text": "6.14 MANAGEMENT ANALYSIS"
+    },
+    {
+      "level": 2,
+      "text": "6.15 RETENTION OF DATA"
+    }
+  ],
+  "heading_count": 16,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

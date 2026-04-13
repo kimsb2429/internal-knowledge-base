@@ -20,10 +20,69 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "M22-4 Part 8: Chapter 1 - (Chapter 1606 Provisions)"
+    },
+    {
+      "level": 2,
+      "text": "1.01 BACKGROUND"
+    },
+    {
+      "level": 2,
+      "text": "1.02 RESPONSIBILITIES"
+    },
+    {
+      "level": 2,
+      "text": "1.03 ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "1.04 UNSATISFACTORY PARTICIPATION"
+    },
+    {
+      "level": 2,
+      "text": "1.05 ENTITLEMENT"
+    },
+    {
+      "level": 2,
+      "text": "1.06 ELIGIBILITY UNDER TWO OR MORE PROGRAMS"
+    },
+    {
+      "level": 2,
+      "text": "1.07 PERIOD OF ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "1.08 EXTENSION OF PERIOD OF ELIGIBILITY DUE TO SERVICE-CONNECTED DISABILITY"
+    },
+    {
+      "level": 2,
+      "text": "1.09 PROGRAMS OF EDUCATION HISTORY"
+    },
+    {
+      "level": 2,
+      "text": "1.10 MONTHLY RATES"
+    },
+    {
+      "level": 2,
+      "text": "1.11 PROCESSING OVERVIEW"
+    },
+    {
+      "level": 2,
+      "text": "1.12 RESERVED"
+    },
+    {
+      "level": 2,
+      "text": "1.13 OTHER CHAPTER"
+    }
+  ],
+  "heading_count": 14,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

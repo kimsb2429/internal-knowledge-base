@@ -20,10 +20,69 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 7: Chapter 35 - Letters"
+    },
+    {
+      "level": 2,
+      "text": "6.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "6.02 DICTATED LETTERS"
+    },
+    {
+      "level": 2,
+      "text": "6.03 BDN GENERATED LETTERS"
+    },
+    {
+      "level": 2,
+      "text": "6.04 DISALLOWANCE LETTER"
+    },
+    {
+      "level": 2,
+      "text": "6.05 ORIGINAL OR REENTRANCE IHL OR NCD AWARD LETTER"
+    },
+    {
+      "level": 2,
+      "text": "6.06 ORIGINAL OR REENTRANCE CORRESPONDENCE AWARD LETTER"
+    },
+    {
+      "level": 2,
+      "text": "6.07 ORIGINAL OR REENTRANCE APPRENTICESHIP OR OTHER ON-THE-JOB TRAINING AWARD LETTER"
+    },
+    {
+      "level": 2,
+      "text": "6.08 SUPPLEMENTAL AWARD LETTER"
+    },
+    {
+      "level": 2,
+      "text": "6.09 UNSCHEDULED TERMINATION LETTER"
+    },
+    {
+      "level": 2,
+      "text": "6.10 RETURNED ADVANCE PAYMENT CHECK LETTER"
+    },
+    {
+      "level": 2,
+      "text": "6.11 DELINQUENT CERTIFICATION OF DELIVERY LETTER"
+    },
+    {
+      "level": 2,
+      "text": "6.12 DELINQUENT CERTIFICATION LETTER"
+    },
+    {
+      "level": 2,
+      "text": "6.13 DISCONTINUANCE, DELINQUENT CERTIFICATION LETTER"
+    }
+  ],
+  "heading_count": 14,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

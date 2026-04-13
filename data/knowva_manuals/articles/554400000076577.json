@@ -22,6 +22,10 @@
   "contains_list": true,
   "heading_outline": [
     {
+      "level": 1,
+      "text": "PART 12, CHAPTER 10 - CHAPTER 33 RESOURCES"
+    },
+    {
       "level": 2,
       "text": "PART 12, CHAPTER 10 - CHAPTER 33 RESOURCES"
     },
@@ -34,9 +38,11 @@
       "text": "10.02 Active Service Matrix"
     }
   ],
-  "heading_count": 3,
-  "content_category": "",
+  "heading_count": 4,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

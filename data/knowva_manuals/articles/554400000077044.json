@@ -20,10 +20,57 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Archive dated 5/10/19: M22-4 Part 5: Chapter 9 - Chapter 34 Issues"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. ELIGIBILITY DETERMINATIONS"
+    },
+    {
+      "level": 2,
+      "text": "9.01 BASIC ELIGIBILITY DETERMINATIONS"
+    },
+    {
+      "level": 2,
+      "text": "9.02 PROGRAMS OF DELAYED ENTRY"
+    },
+    {
+      "level": 2,
+      "text": "9.03 PERIOD OF ACDUTRA BECAME ACTIVE DUTY"
+    },
+    {
+      "level": 2,
+      "text": "9.04 CRITERIA GOVERNING ELIGIBILITY DETERMINATIONS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. ENTITLEMENT COMPUTATION"
+    },
+    {
+      "level": 2,
+      "text": "9.05 RULES FOR COMPUTING ENTITLEMENT"
+    },
+    {
+      "level": 2,
+      "text": "9.06 FACTORS THAT LIMIT ENTITLEMENT"
+    },
+    {
+      "level": 2,
+      "text": "9.07 USING ACDUTRA TO ESTABLISH ENTITLEMENT"
+    },
+    {
+      "level": 2,
+      "text": "9.08 EXTENSIONS OF ENTITLEMENT"
+    }
+  ],
+  "heading_count": 11,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

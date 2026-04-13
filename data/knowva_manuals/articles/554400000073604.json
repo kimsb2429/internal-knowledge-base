@@ -23,12 +23,54 @@
   "heading_outline": [
     {
       "level": 1,
+      "text": "Part 3: Chapter 4 - Delimiting Date Extensions"
+    },
+    {
+      "level": 1,
       "text": "4.15 Extension for Public Law 116-140"
+    },
+    {
+      "level": 2,
+      "text": "4.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "4.02 EXTENSIONS BASED ON A LATER PERIOD OF ACTIVE DUTY"
+    },
+    {
+      "level": 2,
+      "text": "4.03 EXTENSIONS FOR DISABILITY PREVENTING TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "4.04 EXTENSIONS TO END OF TERM OR COURSE"
+    },
+    {
+      "level": 2,
+      "text": "4.05 EXTENSION FOR POW OR MIA STATUS"
+    },
+    {
+      "level": 2,
+      "text": "4.06 EXTENSION FOR UPGRADED DISCHARGE/ RECORDS CORRECTION"
+    },
+    {
+      "level": 2,
+      "text": "4.08 EXTENSION FOR SUSPENSION OF TRAINING DUE TO REASONS BEYOND CONTROL"
+    },
+    {
+      "level": 2,
+      "text": "4.10 EXTENSION DUE TO SEPARATION FOR DISABILITY"
+    },
+    {
+      "level": 2,
+      "text": "4.11 EXTENSION WHEN VETERAN DIES"
     }
   ],
-  "heading_count": 1,
-  "content_category": "",
+  "heading_count": 11,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

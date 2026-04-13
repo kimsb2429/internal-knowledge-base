@@ -20,10 +20,105 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 4: Chapter 10 - Advance and Special Payments"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. ADVANCE PAYMENTS"
+    },
+    {
+      "level": 2,
+      "text": "10.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "10.02 DEFINITION AND ELIGIBILITY REQUIREMENTS"
+    },
+    {
+      "level": 2,
+      "text": "10.03 ADVANCE PAYMENT NOT PAYABLE"
+    },
+    {
+      "level": 2,
+      "text": "10.04 ADVANCE PAYMENT AWARD INFORMATION"
+    },
+    {
+      "level": 2,
+      "text": "10.05 EARLIEST PROCESSING DATE FOR ADVANCE PAYMENT AWARD"
+    },
+    {
+      "level": 2,
+      "text": "10.06 LATEST PROCESSING DATE FOR ADVANCE PAYMENT AWARD"
+    },
+    {
+      "level": 2,
+      "text": "10.07 SPECIAL PAYMENT FOR ADVANCE PAYMENT REQUEST"
+    },
+    {
+      "level": 2,
+      "text": "10.08 PROCESSING ADVANCE PAYMENT AWARD ON A CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "10.09 ISSUANCE OF ADVANCE PAYMENT AWARD LETTER"
+    },
+    {
+      "level": 2,
+      "text": "10.10 ISSUANCE OF ADVANCE PAYMENT CHECK"
+    },
+    {
+      "level": 2,
+      "text": "10.11 ISSUANCE OF VA FORM 22-1999V"
+    },
+    {
+      "level": 2,
+      "text": "10.12 ADVANCE PAYMENT APPLIED TO ACCOUNTS RECEIVABLE"
+    },
+    {
+      "level": 2,
+      "text": "10.13 PROCESSING CHANGES TO MASTER RECORDS AFTER PROCESSING ADVANCE PAYMENT AWARD"
+    },
+    {
+      "level": 2,
+      "text": "10.14 DELIVERY AND RETURN OF ADVANCE PAYMENT CHECK"
+    },
+    {
+      "level": 2,
+      "text": "10.15 RECEIPT OF CERTIFICATION OF DELIVERY AND CLEARING THE BAR OR CONTROL"
+    },
+    {
+      "level": 2,
+      "text": "10.16 DELINQUENT CERTIFICATION OF DELIVERY AND AUTOMATIC TERMINATION"
+    },
+    {
+      "level": 2,
+      "text": "10.17 DELINQUENT CERTIFICATION OF DELIVERY AND FOLLOW-UP NOTICE"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. SPECIAL PAYMENTS"
+    },
+    {
+      "level": 2,
+      "text": "10.18 CRITERIA FOR SPECIAL PAYMENT"
+    },
+    {
+      "level": 2,
+      "text": "10.19 ENROLLMENT CERTIFICATION"
+    },
+    {
+      "level": 2,
+      "text": "10.20 PROCESSING THE SPECIAL PAYMENT"
+    }
+  ],
+  "heading_count": 23,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

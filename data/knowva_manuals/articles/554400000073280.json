@@ -20,10 +20,45 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 3: Chapter 12 - The Antiterrorism Act"
+    },
+    {
+      "level": 2,
+      "text": "12.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "12.02 VA RESPONSIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "12.03 CLAIMS"
+    },
+    {
+      "level": 2,
+      "text": "12.04 ENTITLEMENT AND OTHER PROVISIONS"
+    },
+    {
+      "level": 2,
+      "text": "12.05 INSTRUCTIONS FOR THE BALTIMORE REGIONAL OFFICE"
+    },
+    {
+      "level": 2,
+      "text": "12.06 ADJUDICATION RESPONSIBILITIES"
+    },
+    {
+      "level": 2,
+      "text": "12.07 FINANCE RESPONSIBILITIES"
+    }
+  ],
+  "heading_count": 8,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

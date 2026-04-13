@@ -20,10 +20,109 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "ARCHIVED: M22-4, Part II, Chapter 1 - Computer Processing Concepts"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. BDN PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "1.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "1.02 [BDN]"
+    },
+    {
+      "level": 2,
+      "text": "1.03 [BDN PAYMENT SYSTEMS]"
+    },
+    {
+      "level": 2,
+      "text": "1.04 [BDN AWARD TYPES]"
+    },
+    {
+      "level": 2,
+      "text": "1.05 [BDN DATA ENTRY]"
+    },
+    {
+      "level": 2,
+      "text": "1.06 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "1.07 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. [BDN MASTER RECORDS]"
+    },
+    {
+      "level": 2,
+      "text": "1.08 EDUCATION MASTER RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "1.09 EDUCATION MASTER RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "1.10 EDUCATION MASTER RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "1.11 EDUCATION MASTER RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "1.12 EDUCATION MASTER RECORDS"
+    },
+    {
+      "level": 2,
+      "text": "1.13 [SCHEDULE OF OPERATIONS]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. NON-BDN APPLICATIONS AND PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "1.14 NON-BDN PAYMENT SYSTEMS"
+    },
+    {
+      "level": 2,
+      "text": "1.15 VETERANS EDUCATION CERTIFICATION PROGRAM"
+    },
+    {
+      "level": 2,
+      "text": "1.16 ELECTRONIC CERTIFICATION AUTOMATED PROGRAM"
+    },
+    {
+      "level": 2,
+      "text": "1.17 WEB BASED APPLICATIONS"
+    },
+    {
+      "level": 2,
+      "text": "1.18 TELEPHONE APPLICATIONS"
+    },
+    {
+      "level": 2,
+      "text": "1.19 THE IMAGING MANAGEMENT SYSTEM"
+    },
+    {
+      "level": 2,
+      "text": "1.20 OTHER SUPPORTING APPLICATIONS"
+    }
+  ],
+  "heading_count": 24,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

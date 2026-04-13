@@ -20,10 +20,45 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "PART 01, GENERAL. CHAPTER 06, MONITORING SCHOOL REPORTING PROBLEMS"
+    },
+    {
+      "level": 2,
+      "text": "6.01 REGIONAL OFFICE RESPONSIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "6.02 GUIDELINES FOR IDENTIFYING SCHOOL REPORTING PROBLEMS"
+    },
+    {
+      "level": 2,
+      "text": "6.03 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "6.04 COIN EDU"
+    },
+    {
+      "level": 2,
+      "text": "6.05 COIN EDU"
+    },
+    {
+      "level": 2,
+      "text": "6.06 USE BY EDUCATION SERVICES UNIT IN FIELD STATIONS"
+    },
+    {
+      "level": 2,
+      "text": "6.07 DISPOSITION INSTRUCTIONS"
+    }
+  ],
+  "heading_count": 8,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

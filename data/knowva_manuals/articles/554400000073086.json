@@ -20,10 +20,157 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "ARCHIVED: M22-4, Part II, Chapter 9 – Code Tables"
+    },
+    {
+      "level": 2,
+      "text": "Subchapter I"
+    },
+    {
+      "level": 2,
+      "text": "9.01 PURPOSE"
+    },
+    {
+      "level": 2,
+      "text": "9.02 BRANCH OF SERVICE CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.03 CHILD STATUS CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.04 DEPENDENCY CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.05 EDUCATIONAL LEVEL CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.06 ENTITLEMENT CHARGE CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.07 ENTITLEMENT CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.08 FACILITY CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.09 FILE PULL INDICATOR CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.10 KICKER CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.11 LUMP-SUM INDICATOR CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.12 PAYEE NUMBER CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.13 PRIOR VA TRAINING CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.14 REASON CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.15 RETURNED CHECK CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.16 SEPARATION REASON CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.17 SERVICE ORGANIZATION CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.18 SEX CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.19 SPECIAL ELIGIBILITY INDICATOR CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.20 STATE CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.21 STATION NUMBER CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.22 STATUS CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.23 TRAINING TIME CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.24 TRANSACTION CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.25 TYPE OF CERTIFICATE OF ELIGIBILITY CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.26 TYPE OF CLAIM CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.27 TYPE OF HOUR CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.28 TYPE OF MASTER RECORD CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.29 TYPE OF TRAINING CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.30 VETERANS SERVICE PERIOD CODES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. COURSE AND OBJECTIVE CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.31 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "9.32 COLLEGE-LEVEL COURSE AND OBJECTIVE CODES"
+    },
+    {
+      "level": 2,
+      "text": "9.33 NON-COLLEGE-DEGREE COURSE AND OBJECTIVE CODES"
+    }
+  ],
+  "heading_count": 36,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

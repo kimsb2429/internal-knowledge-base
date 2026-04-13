@@ -20,10 +20,33 @@
   "state": "P",
   "contains_table": false,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "M22-4, Part 10, Compliance Survey. Chapter 02, Preliminary Procedures."
+    },
+    {
+      "level": 2,
+      "text": "2.01 OVERVIEW"
+    },
+    {
+      "level": 2,
+      "text": "2.02 SCHEDULE OF COMPLIANCE SURVEYS"
+    },
+    {
+      "level": 2,
+      "text": "2.03 SELECTION OF CASES"
+    },
+    {
+      "level": 2,
+      "text": "2.04 RESERVED"
+    }
+  ],
+  "heading_count": 5,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

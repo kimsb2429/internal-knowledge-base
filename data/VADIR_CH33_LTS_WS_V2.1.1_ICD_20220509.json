@@ -1,0 +1,14 @@
+{
+  "source_type": "va_icd",
+  "source_system": "VADIR",
+  "source_id": "VADIR_CH33_LTS_WS_V2.1.1_ICD_20220509",
+  "title": "VADIR Chapter 33 Long Term Solution Web Service Interface Control Document v2.1.1",
+  "description": "Interface Control Document for the VADIR Chapter 33 Long Term Solution (LTS) Web Service, defining SOAP/REST endpoints, data schemas, and integration specifications.",
+  "last_modified": "2022-05-09T00:00:00Z",
+  "acl": "public",
+  "source_authority_tier": 1,
+  "content_category": "gov_docs_and_manuals",
+  "manual_name": "VADIR_CH33_LTS_WS_ICD",
+  "contains_table": true,
+  "contains_list": true
+}

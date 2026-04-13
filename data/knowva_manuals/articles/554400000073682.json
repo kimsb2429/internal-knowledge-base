@@ -20,10 +20,73 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 7: Chapter 2 - BDN Processing"
+    },
+    {
+      "level": 2,
+      "text": "2.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "2.04 [BDN] SPECIAL PAYMENT PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "2.05 INACTIVE SYSTEM PROCESSING FOR CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. [CHAIRS PROCEDURES]"
+    },
+    {
+      "level": 2,
+      "text": "2.06 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "2.07 02R TRANSACTION INSTRUCTIONS"
+    },
+    {
+      "level": 2,
+      "text": "2.08 02V CORRECTION INSTRUCTIONS"
+    },
+    {
+      "level": 2,
+      "text": "2.09 FIELD NUMBERS FOR 02V CORRECTIONS"
+    },
+    {
+      "level": 2,
+      "text": "2.10 03A TRANSACTION INSTRUCTIONS"
+    },
+    {
+      "level": 2,
+      "text": "2.11 03C TRANSACTION INSTRUCTIONS"
+    },
+    {
+      "level": 2,
+      "text": "2.12 12C/09V TRANSACTION INSTRUCTIONS"
+    },
+    {
+      "level": 2,
+      "text": "2.13 [RESERVED FOR FUTURE USE]"
+    },
+    {
+      "level": 2,
+      "text": "2.17 [CHAIRS MAIN] MENU SCREEN"
+    },
+    {
+      "level": 2,
+      "text": "2.18 [RESERVED FOR FUTURE USE]"
+    }
+  ],
+  "heading_count": 15,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

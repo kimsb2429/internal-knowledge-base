@@ -20,10 +20,89 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "ARCHIVED: M22-4, Part II, Chapter 8 - Miscellaneous Target Processing"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. OVERVIEW OF NOTICES OF EXCEPTION PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "8.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "8.02 NOTICES OF EXCEPTION PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "8.03 ACCESS TO THE NOES COMMAND"
+    },
+    {
+      "level": 2,
+      "text": "8.04 TYPES OF NOE MESSAGES"
+    },
+    {
+      "level": 2,
+      "text": "8.05 REQUESTING NOE MESSAGES"
+    },
+    {
+      "level": 2,
+      "text": "8.06 NOE MESSAGE FIELD DESCRIPTIONS"
+    },
+    {
+      "level": 2,
+      "text": "8.07 DISPOSITION OF NOE MESSAGES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. MISCELLANEOUS TARGET COMMANDS"
+    },
+    {
+      "level": 2,
+      "text": "8.08 DUPC"
+    },
+    {
+      "level": 2,
+      "text": "8.09 CNUM"
+    },
+    {
+      "level": 2,
+      "text": "8.10 PURG"
+    },
+    {
+      "level": 2,
+      "text": "8.11 STAT"
+    },
+    {
+      "level": 2,
+      "text": "8.12 TINQ"
+    },
+    {
+      "level": 2,
+      "text": "8.13 CORR"
+    },
+    {
+      "level": 2,
+      "text": "8.14 FINANCE COMMANDS"
+    },
+    {
+      "level": 2,
+      "text": "8.15 LIAISON AND COMPLIANCE COMMANDS"
+    },
+    {
+      "level": 2,
+      "text": "8.16 MANAGEMENT COMMANDS"
+    }
+  ],
+  "heading_count": 19,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

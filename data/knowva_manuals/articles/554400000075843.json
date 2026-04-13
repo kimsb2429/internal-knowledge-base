@@ -20,10 +20,37 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Unsatisfactory Attendance, Progress, or Conduct"
+    },
+    {
+      "level": 2,
+      "text": "5.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "5.02 RESPONSIBILITIES OF SCHOOLS"
+    },
+    {
+      "level": 2,
+      "text": "5.03 VA RESPONSIBILITIES"
+    },
+    {
+      "level": 2,
+      "text": "5.04 PROCEDURES FOR TERMINATING AWARDS"
+    },
+    {
+      "level": 2,
+      "text": "5.05 REQUESTS TO REENTER TRAINING"
+    }
+  ],
+  "heading_count": 6,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

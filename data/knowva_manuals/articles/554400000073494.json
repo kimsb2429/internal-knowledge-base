@@ -20,10 +20,201 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 3: Chapter 14 - Upstream Manual"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. INTRODUCTION TO TIMS"
+    },
+    {
+      "level": 2,
+      "text": "14.01 TERMINOLOGY AND ACRONYMS"
+    },
+    {
+      "level": 2,
+      "text": "14.02 PURPOSE AND BENEFITS OF TIMS"
+    },
+    {
+      "level": 2,
+      "text": "14.03 WORKFLOW FOR UPSTREAM PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "14.04 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. BATCH PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "14.06 MAIL SCREENING"
+    },
+    {
+      "level": 2,
+      "text": "14.07 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "14.08 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "14.09 DEFINING A BATCH"
+    },
+    {
+      "level": 2,
+      "text": "14.10 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "14.11 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. SCAN OPERATION"
+    },
+    {
+      "level": 2,
+      "text": "14.12 HINTS FOR SCANNING BATCHES"
+    },
+    {
+      "level": 2,
+      "text": "14.13 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "14.14 BATCH SCANNING"
+    },
+    {
+      "level": 2,
+      "text": "14.15 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "14.16 PERFORMING A SCAN CLEAN-UP AND ROUTING A BATCH"
+    },
+    {
+      "level": 2,
+      "text": "14.17 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV. INDEX AND QUALITY CONTROL (QC)"
+    },
+    {
+      "level": 2,
+      "text": "14.18 INTRODUCTION TO INDEXING AND QUALITY CONTROL"
+    },
+    {
+      "level": 2,
+      "text": "14.19 BATCH INDEXING"
+    },
+    {
+      "level": 2,
+      "text": "14.20 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "14.21 CREATING A RECORD IN TIMS"
+    },
+    {
+      "level": 2,
+      "text": "14.22 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER V. CLAIMS ESTABLISHMENT (CESTING)"
+    },
+    {
+      "level": 2,
+      "text": "14.24 CLAIMS ESTABLISHMENT"
+    },
+    {
+      "level": 2,
+      "text": "14.25 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "14.26 CAPTURING BENEFIT DELIVERY NETWORK"
+    },
+    {
+      "level": 2,
+      "text": "14.27 [FIGURE]"
+    },
+    {
+      "level": 2,
+      "text": "14.28 PCAN END PRODUCTS"
+    },
+    {
+      "level": 2,
+      "text": "14.29 OUT OF RPO QUESTION BOX"
+    },
+    {
+      "level": 2,
+      "text": "14.30 [FIGURE] PCAN"
+    },
+    {
+      "level": 2,
+      "text": "14.31 UPDATING BIRLS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER VI. MISCELLANEOUS ACTIONS"
+    },
+    {
+      "level": 2,
+      "text": "14.32 KNOWING HOW TO IDENTIFY A POA"
+    },
+    {
+      "level": 2,
+      "text": "14.33 CHANGING A NAME"
+    },
+    {
+      "level": 2,
+      "text": "14.34 TO ADD SERVICE INFORMATION TO THE VID SCREEN"
+    },
+    {
+      "level": 2,
+      "text": "14.35 CHANGE ADDRESS AND/OR ADD DIRECT DEPOSIT INFORMATION TO PIF"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER VII. FOLDER TRANSFER PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "14.36 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "14.37 MASS FOLDER TRANSFER PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "14.38 REGULAR FOLDER TRANSFER PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER VIII. ARCHIVING"
+    },
+    {
+      "level": 2,
+      "text": "14.39 ARCHIVING PAPER DOCUMENTS"
+    },
+    {
+      "level": 2,
+      "text": "14.40 ARCHIVING INTO COMPUTER"
+    }
+  ],
+  "heading_count": 47,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

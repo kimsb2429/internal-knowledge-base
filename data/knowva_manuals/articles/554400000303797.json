@@ -22,6 +22,10 @@
   "contains_list": true,
   "heading_outline": [
     {
+      "level": 1,
+      "text": "M22-4, Part II, Chapter 2, Section D, Topics 06-10: Chapter 33 Processing Screens in DGI"
+    },
+    {
       "level": 3,
       "text": "Topic 6: Work Product History Screen"
     },
@@ -34,9 +38,11 @@
       "text": "Topic 8: Work Product Creation Screen (Self and TOE)"
     }
   ],
-  "heading_count": 3,
-  "content_category": "",
+  "heading_count": 4,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

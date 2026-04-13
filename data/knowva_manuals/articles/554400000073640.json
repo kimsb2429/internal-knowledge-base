@@ -20,10 +20,69 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "M22-4, Part 10, Compliance Survey. Chapter 03, Compliance Survey Procedures."
+    },
+    {
+      "level": 2,
+      "text": "3.01 PREPARATION FOR SURVEY"
+    },
+    {
+      "level": 2,
+      "text": "3.02 CLASS CHECKS AND STUDENT INTERVIEWS"
+    },
+    {
+      "level": 2,
+      "text": "3.03 BRIEFING SCHOOL OFFICIALS"
+    },
+    {
+      "level": 2,
+      "text": "3.04 VERIFICATION OF ENROLLMENT DATA"
+    },
+    {
+      "level": 2,
+      "text": "3.05 PURSUIT OF APPROVED PROGRAM OR COURSE"
+    },
+    {
+      "level": 2,
+      "text": "3.06 CREDIT FOR PREVIOUS EDUCATION AND TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "3.07 RECORDS AND REPORTS OF ENROLLMENT, CHANGES IN ENROLLMENT, AND TERMINATION OR INTERRUPTION"
+    },
+    {
+      "level": 2,
+      "text": "3.08 RECORDS AND REPORTS OF PROGRESS, CONDUCT, OR ATTENDANCE"
+    },
+    {
+      "level": 2,
+      "text": "3.09 QUESTIONABLE ADVERTISING, SALES, OR ENROLLMENT PRACTICES"
+    },
+    {
+      "level": 2,
+      "text": "3.10 GUIDELINES FOR REVIEWING ADVERTISEMENT PRACTICES"
+    },
+    {
+      "level": 2,
+      "text": "3.11 RECRUITING PRACTICES"
+    },
+    {
+      "level": 2,
+      "text": "3.12 GI BILL"
+    },
+    {
+      "level": 2,
+      "text": "3.13 POWER OF ATTORNEY/NON-ASSIGNABILITY OF BENEFITS"
+    }
+  ],
+  "heading_count": 14,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

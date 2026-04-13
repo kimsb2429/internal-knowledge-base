@@ -19,10 +19,77 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "CHAPTER 2. QUALITY ASSURANCE"
+    },
+    {
+      "level": 2,
+      "text": "2.01 SCOPE"
+    },
+    {
+      "level": 2,
+      "text": "2.02 MISSION"
+    },
+    {
+      "level": 2,
+      "text": "2.03 PERIOD OF REVIEW"
+    },
+    {
+      "level": 2,
+      "text": "2.04 SCOPE"
+    },
+    {
+      "level": 2,
+      "text": "2.05 REVIEW AREAS/TOPICS"
+    },
+    {
+      "level": 2,
+      "text": "2.06 CITED ERRORS NOTED ON QUALITY ASSURANCE REVIEWS FOR CLAIMS PROCESSING"
+    },
+    {
+      "level": 2,
+      "text": "2.07 RECONSIDERATIONS"
+    },
+    {
+      "level": 2,
+      "text": "2.08 ACTIONS ON RECONSIDERATIONS"
+    },
+    {
+      "level": 2,
+      "text": "2.09 REPORTS"
+    },
+    {
+      "level": 2,
+      "text": "2.10 MISSION"
+    },
+    {
+      "level": 2,
+      "text": "2.11 PERIOD OF REVIEW"
+    },
+    {
+      "level": 2,
+      "text": "2.12 SAMPLE SELECTION"
+    },
+    {
+      "level": 2,
+      "text": "2.14 DEFICIENCIES NOTED ON QUALITY ASSURANCE REVIEWS"
+    },
+    {
+      "level": 2,
+      "text": "2.30 MISSION"
+    },
+    {
+      "level": 2,
+      "text": "2.37 REPORTS"
+    }
+  ],
+  "heading_count": 16,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

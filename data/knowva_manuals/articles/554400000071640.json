@@ -20,10 +20,145 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 1: Chapter 7 - School Liability"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. BASIC PROCEDURE"
+    },
+    {
+      "level": 2,
+      "text": "7.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "7.02 BACKGROUND"
+    },
+    {
+      "level": 2,
+      "text": "7.03 OVERVIEW OF SCHOOL LIABILITY PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "7.04 IDENTIFICATION OF POTENTIAL SCHOOL LIABILITY CASES"
+    },
+    {
+      "level": 2,
+      "text": "7.05 DETERMINATION OF POTENTIAL LIABILITY"
+    },
+    {
+      "level": 2,
+      "text": "7.06 NOTICE TO SCHOOL AND VA RESPONSE"
+    },
+    {
+      "level": 2,
+      "text": "7.07 COMMITTEE ON SCHOOL LIABILITY"
+    },
+    {
+      "level": 2,
+      "text": "7.08 ROLE OF REGIONAL COUNSEL"
+    },
+    {
+      "level": 2,
+      "text": "7.09 PREHEARING CONFERENCE"
+    },
+    {
+      "level": 2,
+      "text": "7.10 HEARING"
+    },
+    {
+      "level": 2,
+      "text": "7.11 COMMITTEE PANEL DECISION AND NOTICE TO SCHOOL"
+    },
+    {
+      "level": 2,
+      "text": "7.12 APPELLATE PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. EXTENT OF POTENTIAL SCHOOL LIABILITY FOR INDIVIDUAL OVERPAYMENTS"
+    },
+    {
+      "level": 2,
+      "text": "7.13 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "7.14 FALSE CERTIFICATION CASES"
+    },
+    {
+      "level": 2,
+      "text": "7.15 LATE REPORT CASES"
+    },
+    {
+      "level": 2,
+      "text": "7.16 EXAMPLES"
+    },
+    {
+      "level": 2,
+      "text": "7.17 FAILURE TO REPORT AND FALSE CERTIFICATION DISTINGUISHED"
+    },
+    {
+      "level": 2,
+      "text": "7.18 NONPUNITIVE GRADES ASSIGNED"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. GUIDELINES FOR SCHOOL LIABILITY DECISIONS"
+    },
+    {
+      "level": 2,
+      "text": "7.19 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "7.20 DISCUSSION OF KEY CONCEPTS"
+    },
+    {
+      "level": 2,
+      "text": "7.21 GUIDELINES WHEN NEGLIGENCE IS THE ISSUE"
+    },
+    {
+      "level": 2,
+      "text": "7.22 RULE OF REASONABLE CERTAINTY"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER IV. STANDARD OPERATING PROCEDURE ON POTENTIAL SCHOOL LIABILITY"
+    },
+    {
+      "level": 2,
+      "text": "7.23 IDENTIFICATION PHASE"
+    },
+    {
+      "level": 2,
+      "text": "7.24 DETERMINATION OF POTENTIAL LIABILITY"
+    },
+    {
+      "level": 2,
+      "text": "7.25 RPO CLAIMS PROCESSING WHEN POTENTIAL SCHOOL LIABILITY HAS BEEN DETERMINED"
+    },
+    {
+      "level": 2,
+      "text": "7.26 NOTICE TO SCHOOL AND VA RESPONSE"
+    },
+    {
+      "level": 2,
+      "text": "7.27 COMMITTEE ON SCHOOL LIABILITY"
+    },
+    {
+      "level": 2,
+      "text": "7.28 BASIC STEPS ONCE VA FORM LETTER"
+    }
+  ],
+  "heading_count": 33,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

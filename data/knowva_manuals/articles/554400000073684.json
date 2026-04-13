@@ -23,6 +23,10 @@
   "heading_outline": [
     {
       "level": 1,
+      "text": "Part 4: Chapter 13 - Miscellaneous Award Issues"
+    },
+    {
+      "level": 1,
       "text": "13.36  General"
     },
     {
@@ -78,9 +82,11 @@
       "text": "13.41  Entitlement Restoration"
     }
   ],
-  "heading_count": 14,
-  "content_category": "",
+  "heading_count": 15,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

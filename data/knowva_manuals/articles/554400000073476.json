@@ -20,10 +20,85 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 4: Chapter 2 - Flight, Correspondence, Licensing and Certification, National Examinations, and Preparatory Courses"
+    },
+    {
+      "level": 2,
+      "text": "2.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "2.02 ELIGIBILITY CRITERIA FOR VOCATIONAL FLIGHT TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "2.03 FLIGHT COURSES"
+    },
+    {
+      "level": 2,
+      "text": "2.04 ENROLLMENT CERTIFICATION"
+    },
+    {
+      "level": 2,
+      "text": "2.05 FLIGHT OBJECTIVES"
+    },
+    {
+      "level": 2,
+      "text": "2.06 CREDIT FOR PRIOR TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "2.07 CHANGES OF PROGRAM VOCATIONAL"
+    },
+    {
+      "level": 2,
+      "text": "2.08 ALREADY QUALIFIED AND REFRESHER FLIGHT TRAINING VOCATIONAL AND NON-COLLEGE DEGREE"
+    },
+    {
+      "level": 2,
+      "text": "2.09 NON-REIMBURSABLE FLIGHT TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "2.10 COMBINATION COLLEGE DEGREE"
+    },
+    {
+      "level": 2,
+      "text": "2.11 FLIGHT AWARD AND MONTHLY CERTIFICATION OF FLIGHT TRAINING PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "2.12 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "2.13 ELIGIBILITY CRITERIA FOR CORRESPONDENCE TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "2.14 ENROLLMENT CERTIFICATION"
+    },
+    {
+      "level": 2,
+      "text": "2.15 AFFIRMATION OF ENROLLMENT"
+    },
+    {
+      "level": 2,
+      "text": "2.16 [CREDIT FOR PRIOR TRAINING AND NON-REIMBURSABLE LESSONS"
+    },
+    {
+      "level": 2,
+      "text": "2.17 CORRESPONDENCE AWARD AND CERTIFICATION OF LESSONS COMPLETED PROCEDURES"
+    }
+  ],
+  "heading_count": 18,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

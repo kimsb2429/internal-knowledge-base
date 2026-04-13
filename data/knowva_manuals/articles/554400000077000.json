@@ -20,10 +20,109 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 5: Chapter 3 - Eligibility Issues"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. GENERAL (ALL CATEGORIES)"
+    },
+    {
+      "level": 2,
+      "text": "3.01 PURPOSE"
+    },
+    {
+      "level": 2,
+      "text": "3.02 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "3.03 ELIGIBILITY—PRELIMINARY REVIEW"
+    },
+    {
+      "level": 2,
+      "text": "3.04 ELIGIBILITY BASED ON DISCHARGE FOR SERVICE-CONNECTED DISABILITY[, A MEDICAL CONDITION PREEXISTING SERVICE, OR A CONDITION WHICH INTERFERED WITH THE VETERAN'S ABILITY TO PERFORM MILITARY DUTY"
+    },
+    {
+      "level": 2,
+      "text": "3.05 ELIGIBILITY DETERMINATIONS—GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "3.06 ELIGIBILITY DETERMINATIONS—SPECIFIC ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "3.07 \"OPEN PERIOD\" CASES"
+    },
+    {
+      "level": 2,
+      "text": "3.08 BASIC KICKER"
+    },
+    {
+      "level": 2,
+      "text": "3.09 CLAIMS INVOLVING SELECTED RESERVE SERVICE"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. ADDITIONAL PROCEDURES FOR CATEGORY II ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "3.10 DEVELOPMENT AND ADJUDICATION OF CATEGORY II CASES"
+    },
+    {
+      "level": 2,
+      "text": "3.11 30D SCREEN INTERPRETATION"
+    },
+    {
+      "level": 2,
+      "text": "3.12 VERIFICATION OF SERVICE"
+    },
+    {
+      "level": 2,
+      "text": "3.13 MULTIPLE SERVICE PERIODS"
+    },
+    {
+      "level": 2,
+      "text": "3.14 RPO REQUESTS TO REGIONAL OFFICES AND TO THE RPC"
+    },
+    {
+      "level": 2,
+      "text": "3.15 CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. ADDITIONAL PROCEDURES FOR CATEGORY III ELIGIBILITY"
+    },
+    {
+      "level": 2,
+      "text": "3.16 DEVELOPMENT AND ADJUDICATION OF CATEGORY III CASES"
+    },
+    {
+      "level": 2,
+      "text": "3.17 CATEGORY III ELECTIONS"
+    },
+    {
+      "level": 2,
+      "text": "3.19 CLAIMANTS WHO HAVE CHAPTER"
+    },
+    {
+      "level": 2,
+      "text": "3.20 DENIALS"
+    },
+    {
+      "level": 2,
+      "text": "3.21 ISSUANCE OF CERTIFICATES OF ELIGIBILITY"
+    }
+  ],
+  "heading_count": 24,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

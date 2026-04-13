@@ -20,10 +20,149 @@
   "state": "P",
   "contains_table": true,
   "contains_list": true,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 4: Chapter 1 - Enrollment Certification"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. GENERAL INFORMATION REGARDING ENROLLMENT CERTIFICATIONS"
+    },
+    {
+      "level": 2,
+      "text": "1.00 EXHAUSTED ENTITLEMENT OR DELIMITING DATE EXPIRED DURING CURRENT TERM BEING PROCESSED"
+    },
+    {
+      "level": 2,
+      "text": "1.01 REQUIREMENT FOR ENROLLMENT CERTIFICATION"
+    },
+    {
+      "level": 2,
+      "text": "1.02 CHANGE OF PROGRAM OR PLACE OF TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "1.03 ENROLLMENT CERTIFICATION INCOMPLETE OR REQUIRES CLARIFICATION"
+    },
+    {
+      "level": 2,
+      "text": "1.04 NOTIFICATION ISSUES"
+    },
+    {
+      "level": 2,
+      "text": "1.05 SUPPLEMENTAL ENROLLMENT"
+    },
+    {
+      "level": 2,
+      "text": "1.06 ENROLLMENT PERIOD CERTIFIED"
+    },
+    {
+      "level": 2,
+      "text": "1.07 ROUNDING OUT OF TERMS"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. SPECIFIC ENTRIES ON ENROLLMENT CERTIFICATION"
+    },
+    {
+      "level": 2,
+      "text": "1.08 IDENTIFYING DATA"
+    },
+    {
+      "level": 2,
+      "text": "1.09 TYPE OF TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "1.10 NAME OF PROGRAM"
+    },
+    {
+      "level": 2,
+      "text": "1.11 CREDIT FOR PRIOR TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "1.12 ENROLLMENT EFFECTIVE DATE RULES"
+    },
+    {
+      "level": 2,
+      "text": "1.13 CREDIT HOUR COURSES"
+    },
+    {
+      "level": 2,
+      "text": "1.14 CHARGES FOR PERIOD OF INSTRUCTION"
+    },
+    {
+      "level": 2,
+      "text": "1.15 TRAINING TIME FOR GRADUATE OR ADVANCED PROFESSIONAL COURSES"
+    },
+    {
+      "level": 2,
+      "text": "1.16 ADVANCE PAYMENT REQUESTS AND ACCELERATED PAYMENT REQUESTS"
+    },
+    {
+      "level": 2,
+      "text": "1.17 PRACTICAL TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "1.18 STUDENT TEACHING"
+    },
+    {
+      "level": 2,
+      "text": "1.19 VOCATIONAL FLIGHT TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "1.20 CORRESPONDENCE COURSES"
+    },
+    {
+      "level": 2,
+      "text": "1.21 APPRENTICESHIP/ON-THE-JOB TRAINING"
+    },
+    {
+      "level": 2,
+      "text": "1.22 NAME AND ADDRESS OF CONTRACT SCHOOL OR BRANCH LOCATION"
+    },
+    {
+      "level": 2,
+      "text": "1.23 SCHOOL OFFICIAL'S CERTIFICATION OF ENROLLMENT DATA"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. NON-MATRICULATION"
+    },
+    {
+      "level": 2,
+      "text": "1.24 DEFINITION OF MATRICULATION"
+    },
+    {
+      "level": 2,
+      "text": "1.25 REQUIREMENT FOR MATRICULATION"
+    },
+    {
+      "level": 2,
+      "text": "1.26 TERMS RELATING TO NON-MATRICULATION"
+    },
+    {
+      "level": 2,
+      "text": "1.27 OPEN-ENDED PROGRAMS UNDER"
+    },
+    {
+      "level": 2,
+      "text": "1.28 TRANSFER PROGRAMS UNDER"
+    },
+    {
+      "level": 2,
+      "text": "1.29 PROCESSING ENROLLMENTS FOR NON-MATRICULATED STUDENTS"
+    }
+  ],
+  "heading_count": 34,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

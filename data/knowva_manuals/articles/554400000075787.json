@@ -20,10 +20,81 @@
   "state": "P",
   "contains_table": true,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "ARCHIVED: M22-4, Part II, Chapter 3 - Master Record Inquiry (Overview and [Chs. 32, 34, 35 and Secs. 901, AND 903])"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER I. OVERVIEW OF MASTER RECORD INQUIRY"
+    },
+    {
+      "level": 2,
+      "text": "3.01 GENERAL"
+    },
+    {
+      "level": 2,
+      "text": "3.04 MINQ PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER II. MASTER RECORD INQUIRY PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "3.05 EDUCATION MASTER RECORD STATUS"
+    },
+    {
+      "level": 2,
+      "text": "3.06 EDUCATION MASTER RECORD AWARD STATUS"
+    },
+    {
+      "level": 2,
+      "text": "3.07 EDUCATION MASTER RECORD ELIGIBILITY AND ENTITLEMENT DATA"
+    },
+    {
+      "level": 2,
+      "text": "3.08 EDUCATION MASTER RECORD MISCELLANEOUS DATA"
+    },
+    {
+      "level": 2,
+      "text": "3.09 ABBREVIATED EDUCATION MASTER RECORD"
+    },
+    {
+      "level": 2,
+      "text": "3.10 CH"
+    },
+    {
+      "level": 2,
+      "text": "3.11 CH32/903 PARTICIPANT CONTRIBUTION HISTORY"
+    },
+    {
+      "level": 2,
+      "text": "3.12 CH"
+    },
+    {
+      "level": 2,
+      "text": "3.13 CH"
+    },
+    {
+      "level": 2,
+      "text": "SUBCHAPTER III. MASTER RECORD INQUIRY PROCEDURES"
+    },
+    {
+      "level": 2,
+      "text": "3.14 EDUCATIONAL ASSISTANCE TEST PROGRAM BENEFIT"
+    },
+    {
+      "level": 2,
+      "text": "3.15 DEDUCTION/RECEIVABLE/BALANCE DATA"
+    }
+  ],
+  "heading_count": 17,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }

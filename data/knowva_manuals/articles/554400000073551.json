@@ -20,10 +20,85 @@
   "state": "P",
   "contains_table": false,
   "contains_list": false,
-  "heading_outline": [],
-  "heading_count": 0,
-  "content_category": "",
+  "heading_outline": [
+    {
+      "level": 1,
+      "text": "Part 4, Award Issues. Chapter 4 - Change of Program"
+    },
+    {
+      "level": 2,
+      "text": "4.01 WHAT IS THE PURPOSE OF THIS CHAPTER?"
+    },
+    {
+      "level": 2,
+      "text": "4.02 WHICH EDUCATION BENEFITS ARE AFFECTED?"
+    },
+    {
+      "level": 2,
+      "text": "4.03 WHAT ARE THE MAJOR POINTS IN THIS CHAPTER?"
+    },
+    {
+      "level": 2,
+      "text": "4.04 WHY IS THE CHANGE OF PROGRAM ISSUE IMPORTANT?"
+    },
+    {
+      "level": 2,
+      "text": "4.05 HOW IS CHANGE OF PROGRAM RELATED TO UNSATISFACTORY PROGRESS?"
+    },
+    {
+      "level": 2,
+      "text": "4.06 WHERE CAN I FIND RELATED INFORMATION?"
+    },
+    {
+      "level": 2,
+      "text": "4.07 WHAT IS A CHANGE OF PROGRAM?"
+    },
+    {
+      "level": 2,
+      "text": "4.08 WHAT IF A STUDENT RECEIVES MORE THAN ONE TYPE OF BENEFIT?"
+    },
+    {
+      "level": 2,
+      "text": "4.09 WHAT IS A MATERIAL LOSS OF CREDIT?"
+    },
+    {
+      "level": 2,
+      "text": "4.10 WHEN IS DEVELOPMENT NECESSARY TO DETERMINE IF A CHANGE OF PROGRAM HAS OCCURRED?"
+    },
+    {
+      "level": 2,
+      "text": "4.11 HOW DOES A PERSON APPLY FOR A CHANGE OF PROGRAM?"
+    },
+    {
+      "level": 2,
+      "text": "4.12 WHAT GOVERNS THE EFFECTIVE DATE OF BENEFITS WHEN THERE IS A CHANGE OF PROGRAM?"
+    },
+    {
+      "level": 2,
+      "text": "4.13 WHAT ARE THE RESTRICTIONS ON A FIRST CHANGE OF PROGRAM?"
+    },
+    {
+      "level": 2,
+      "text": "4.14 WHAT ARE THE RESTRICTIONS ON A SECOND OR SUBSEQUENT CHANGE OF PROGRAM?"
+    },
+    {
+      "level": 2,
+      "text": "4.15 WHEN IS DEVELOPMENT REQUIRED TO SEE IF A CHANGE OF PROGRAM MAY BE APPROVED?"
+    },
+    {
+      "level": 2,
+      "text": "4.16 WHEN CAN YOU ASK VR&C DIVISIONS FOR ASSISTANCE?"
+    },
+    {
+      "level": 2,
+      "text": "4.17 HOW DO YOU INFORM THE CLAIMANT OF A CHANGE OF PROGRAM DECISION?"
+    }
+  ],
+  "heading_count": 18,
+  "content_category": "gov_docs_and_manuals",
   "target_audience": "",
   "process_change": "",
-  "attachments": []
+  "attachments": [],
+  "acl": "public",
+  "source_authority_tier": 1
 }
