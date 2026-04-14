@@ -16,7 +16,7 @@
 **Analysis (added during session walkthrough)**
 8. [Proof Points: Evidence for Key Architectural Decisions](#proof-points-evidence-for-key-architectural-decisions) — 8 decisions with evidence tables, honest gaps, and "if challenged" responses
 9. [Target Use Cases and Consumers](#target-use-cases-and-consumers) — 6 use cases with traceable metrics
-10. [From Zero to Knowledge MCP (Step-by-Step with Iteration Loops)](#from-zero-to-knowledge-mcp-step-by-step-with-iteration-loops) — 22 steps, 5 iteration loops (A–E) with specific eval metrics per loop
+10. [From Zero to Knowledge MCP (Step-by-Step with Iteration Loops)](#from-zero-to-knowledge-mcp-step-by-step-with-iteration-loops) — 26 steps, 5 iteration loops (A–E) with specific eval metrics per loop
 11. [Lessons (captured while walking through the research)](#my-lessons-captured-while-walking-through-this-doc) — 15 lessons with outline
 
 **2026 Production RAG + Cost Control (appended 2026-04-12, from [deep-dive research](2026-04-11-productionizing-ai-systems.md))**
@@ -638,19 +638,21 @@ Consolidated from discussions across this session. For each decision, what evide
     - **Orphan chunk check** (automated, no golden set needed): scan all chunks in pgvector. Flag any chunk that starts mid-sentence, contains a partial table row without a header, or has an empty heading_breadcrumb. Target: 0 orphan chunks.
     - **Diagnosis flow**: low table-query scores → fix parser (step 5). Low self-sufficiency → fix chunk boundaries/prompt (step 7). Missing heading breadcrumbs → fix metadata extraction (step 7). Orphan chunks → fix chunking prompt or add post-chunk validation.
 11. Add cross-encoder reranker — Cohere Rerank on Bedrock or self-hosted BGE-reranker
-12. **LOOP B: Retrieval Tuning** — 2–3 iterations, diminishing returns faster than Loop A.
+12. Add HyDE (Hypothetical Document Embeddings) — generate hypothetical answer, embed that instead of raw query. Largest single retrieval improvement per 2026 consensus. Expect biggest gains on vocabulary-mismatch queries.
+13. Add CRAG (Corrective RAG) — grade retrieved chunks before generating. If all chunks score below relevance threshold, re-query with reshaped query or flag as unanswerable. Prevents confident wrong answers from irrelevant context.
+14. **LOOP B: Retrieval Tuning** — 2–3 iterations, diminishing returns faster than Loop A.
     - **Eval metrics**: Ragas `context_precision` + `context_recall` + MRR (Mean Reciprocal Rank — where does the correct chunk appear in the ranked results?)
     - **Reranker-specific check**: compare MRR before and after reranker. If MRR jumps (correct chunk moves from position 8 to position 1), the reranker is earning its keep. If MRR barely moves, the bottleneck is elsewhere.
     - **Synonym/paraphrase check**: include 10 golden queries that use different vocabulary from the source docs ("roll back a failed deploy" when the doc says "revert a broken release"). Measure source F1 on just these. Low score → hybrid BM25+vector won't help; high score → vector search is handling synonyms fine.
     - **Top-K sensitivity check**: run eval at top-5, top-10, top-20, top-50. If source F1 at top-50 is much higher than at top-5, good chunks exist but ranking is burying them — reranker is the fix. If source F1 at top-50 is still low, chunks aren't in the index — back to Loop A.
     - **Diagnosis flow**: low MRR but high recall@50 → reranker/ranking tuning. Low recall@50 → back to Loop A. Synonym queries failing → consider hybrid retrieval or query expansion.
-13. Build MCP server — `query` tool returning top-K chunks with full metadata, no generation
-14. Build one consuming app — Slack bot, web chat, or Claude Code with MCP configured
-15. Build query-level telemetry into the MCP server — log every MCP tool call with structured payload: `query`, `chunks_returned`, `top_chunk_score`, `doc_sources`, `timestamp`, `latency_ms`. Build feedback collection into the consuming app — thumbs up/down, "wrong source", "outdated" at minimum. Implement low-confidence detection: if top chunk score < threshold, log as `low_confidence_retrieval` for weekly review.
-16. Build pipeline-level health monitoring — 6 operational monitors: (1) ingestion pipeline completion (did the run finish?), (2) docs processed vs. expected (catch source API silently returning empty), (3) embedding API errors/latency (alert on >5% error rate or p95 >10s), (4) vector DB health (connection failure or query timeout), (5) MCP server uptime (health check endpoint), (6) index size over time (alert on >20% day-over-day change — catches runaway growth or accidental mass deletion). For an internal tool, Slack alerts on failure are sufficient.
-17. Set up monthly usage insights report — aggregate query logs into a recurring one-pager: most-queried topics (where knowledge gaps are), queries with no good results (documents that should exist but don't), source distribution (where real knowledge lives vs. where people think it lives), power users vs. inactive teams (adoption signal for sponsor). This report is worth more politically than the system itself.
-18. Set up automated freshness decay — per-source-type decay curves applied at query time. Objective signal (timestamp), no feedback-loop risk. Safe to automate from day 1.
-19. **LOOP C: Real-World Feedback** — continuous, two speeds.
+15. Build MCP server — `query` tool returning top-K chunks with full metadata, no generation
+16. Build one consuming app — Slack bot, web chat, or Claude Code with MCP configured
+17. Build query-level telemetry into the MCP server — log every MCP tool call with structured payload: `query`, `chunks_returned`, `top_chunk_score`, `doc_sources`, `timestamp`, `latency_ms`. Build feedback collection into the consuming app — thumbs up/down, "wrong source", "outdated" at minimum. Implement low-confidence detection: if top chunk score < threshold, log as `low_confidence_retrieval` for weekly review.
+18. Build pipeline-level health monitoring — 6 operational monitors: (1) ingestion pipeline completion (did the run finish?), (2) docs processed vs. expected (catch source API silently returning empty), (3) embedding API errors/latency (alert on >5% error rate or p95 >10s), (4) vector DB health (connection failure or query timeout), (5) MCP server uptime (health check endpoint), (6) index size over time (alert on >20% day-over-day change — catches runaway growth or accidental mass deletion). For an internal tool, Slack alerts on failure are sufficient.
+19. Set up monthly usage insights report — aggregate query logs into a recurring one-pager: most-queried topics (where knowledge gaps are), queries with no good results (documents that should exist but don't), source distribution (where real knowledge lives vs. where people think it lives), power users vs. inactive teams (adoption signal for sponsor). This report is worth more politically than the system itself.
+20. Set up automated freshness decay — per-source-type decay curves applied at query time. Objective signal (timestamp), no feedback-loop risk. Safe to automate from day 1.
+21. **LOOP C: Real-World Feedback** — continuous, two speeds.
     - **Automated (telemetry + analytics)**: log all queries + results + feedback + scores. Weekly automated job clusters recent queries by topic, flags topics with >40% negative feedback, identifies source types with consistently low `faithfulness`, flags freshness issues. Outputs a report — detection is automated, action is human.
     - **Human-in-the-loop (parameter changes)**: review weekly report → decide if it's a retrieval tuning issue or a content/chunking issue → adjust reranker weights / source boosting / metadata filters manually. Do NOT automate parameter changes — down-weighting a source based on feedback creates spiral feedback loops (less exposure → less positive feedback → more down-weighting → source silently disappears from retrieval).
     - **Fast loop (tunes retrieval, no re-ingest)**: reranker weights, source_type boosting, freshness decay curves, top-K parameters, metadata pre-filters. Human decides based on automated report.
@@ -660,16 +662,16 @@ Consolidated from discussions across this session. For each decision, what evide
     - **Source gap detection**: for queries where context sufficiency is 0, check: does the answer exist anywhere in bronze? If yes → chunking/parsing problem (Loop A). If no → source isn't indexed, add it.
     - **Freshness failure detection**: for queries where the system returns a correct-but-outdated answer, check last_modified on retrieved chunk. If >6 months old and a newer version exists, freshness decay curve needs adjustment.
     - **Diagnosis flow**: new query patterns → expand golden set. Source gaps → add to bronze + Loop D. Stale answers → adjust freshness decay. Wrong chunks for known queries → Loop A or Loop B depending on whether chunks exist.
-20. Calibrate LLM-judges — human grades 20–30 queries, compare to Ragas metric scores, validate 90%+ agreement
-21. Scale sources — add second corpus. **Build a separate ingestion pipeline** (connector, parser, chunker, metadata extractor) for the new source type. Output lands in the **same pgvector table** with source-type-specific nullable columns added. Same MCP endpoint, same eval harness — just more chunks from a new `source_type`. **When adding Jira:** decide what to index before building the pipeline. Jira issues are noisy — every status transition, comment, and field edit triggers an update. Index issue descriptions + comments on resolved/completed tickets, not the full activity stream. Otherwise the index fills with "Changed status from In Progress to In Review" chunks that pollute retrieval.
-22. **LOOP D: Multi-Source Expansion** — per new source type. Each source gets its own pipeline; all pipelines feed one table.
+22. Calibrate LLM-judges — human grades 20–30 queries, compare to Ragas metric scores, validate 90%+ agreement
+23. Scale sources — add second corpus. **Build a separate ingestion pipeline** (connector, parser, chunker, metadata extractor) for the new source type. Output lands in the **same pgvector table** with source-type-specific nullable columns added. Same MCP endpoint, same eval harness — just more chunks from a new `source_type`. **When adding Jira:** decide what to index before building the pipeline. Jira issues are noisy — every status transition, comment, and field edit triggers an update. Index issue descriptions + comments on resolved/completed tickets, not the full activity stream. Otherwise the index fills with "Changed status from In Progress to In Review" chunks that pollute retrieval.
+24. **LOOP D: Multi-Source Expansion** — per new source type. Each source gets its own pipeline; all pipelines feed one table.
     - **Eval metrics**: source F1 on cross-source queries + single-source regression (did existing single-source queries get worse?)
     - **Cross-source eval**: add 10+ queries whose answers require the new source + an existing source. Measure source F1 specifically on these.
     - **Regression check**: re-run eval on original golden query set. If source F1 drops, the new source introduced noise — fix with source_type weighting or metadata filters.
     - **Source-type-specific parsing validation**: same as Loop A parsing checks but for the new source type. Code needs function-boundary checks (no split functions). Jira needs field-completeness checks (did Summary, Description, Resolution all survive?). Each source type has its own failure modes.
     - **Source-type-specific metadata**: add nullable columns for the new source type (e.g. `jira_priority`, `linked_ticket_ids` for Jira; `file_path`, `function_name`, `language` for code). Existing chunks have NULL for these — no migration needed.
-23. Open to other consumers — announce MCP server, additional consumers are incremental
-24. **LOOP E: Multi-Consumer Tuning** — as consumer base grows.
+25. Open to other consumers — announce MCP server, additional consumers are incremental
+26. **LOOP E: Multi-Consumer Tuning** — as consumer base grows.
     - **Eval metrics**: per-consumer source F1 + context sufficiency + latency p95
     - **Consumer-specific eval sets**: each consuming app may need its own golden queries reflecting its use case. Maintain per-consumer eval subsets.
     - **Latency monitoring**: if p95 exceeds 2s, check whether it's retrieval (pgvector), reranking, or MCP overhead.
@@ -678,17 +680,19 @@ Consolidated from discussions across this session. For each decision, what evide
 **Overall shape:**
 
 ```
-Steps 1-9:   BUILD            → first working eval baseline
-Loop A:      FIX CHUNKS       → 3-5 iterations, highest leverage
-Step 11:     ADD RERANKER
-Loop B:      TUNE RETRIEVAL   → 2-3 iterations, diminishing returns
-Steps 13-14: SHIP             → MCP + first consumer
-Steps 15-17: INSTRUMENT       → query telemetry + pipeline health monitoring + usage insights report
-Step 18:     FRESHNESS        → automated decay curves
-Loop C:      LEARN            → continuous (automated detection, human-decided action)
-Step 20:     VALIDATE EVAL    → calibrate Ragas judges
-Loop D:      SCALE SOURCES    → one at a time, stabilize each (Jira: filter noise before building pipeline)
-Loop E:      TUNE CONSUMERS   → as consumer base grows
+Steps 1-9:    BUILD            → first working eval baseline
+Loop A:       FIX CHUNKS       → 3-5 iterations, highest leverage
+Step 11:      ADD RERANKER
+Step 12:      ADD HyDE         → hypothetical document embeddings for vocabulary-mismatch queries
+Step 13:      ADD CRAG         → corrective RAG, grade chunks before generating
+Loop B:       TUNE RETRIEVAL   → 2-3 iterations, diminishing returns
+Steps 15-16:  SHIP             → MCP + first consumer
+Steps 17-19:  INSTRUMENT       → query telemetry + pipeline health monitoring + usage insights report
+Step 20:      FRESHNESS        → automated decay curves
+Loop C:       LEARN            → continuous (automated detection, human-decided action)
+Step 22:      VALIDATE EVAL    → calibrate Ragas judges
+Loop D:       SCALE SOURCES    → one at a time, stabilize each (Jira: filter noise before building pipeline)
+Loop E:       TUNE CONSUMERS   → as consumer base grows
 ```
 
 ---
@@ -831,7 +835,7 @@ Most of section 4 validates what was captured through the architecture deep-dive
 **"Demand precise, fine-grained citations — paragraph/cell/function level, not doc level."** Document-level citations ("source: runbook-42") are unfalsifiable — the user can't verify without reading the whole document. Paragraph-level citations let users (and consuming LLMs) go directly to the relevant section. **The MCP already supports this** — the `heading_breadcrumb` + `source_doc_id` metadata on each chunk gives paragraph-level attribution. A consuming app can cite "payments-runbook.md > Deployment > Timeouts" instead of just "payments-runbook.md." This is the difference between a demo and a professional system — "precise citations, like linking claims to exact paragraphs, table cells, and figures, separate professional agentic applications from chatbot demos."
 - https://www.tensorlake.ai/blog/rag-citations
 
-**"Track freshness as a first-class dashboard metric."** Alongside retrieval latency and answer quality. Auto-archive or flag docs past a defined age threshold (6–12 months for fast-moving domains). This connects to the automated telemetry in step 15 — add a freshness dashboard that shows: distribution of `last_modified` across retrieved chunks, % of retrievals that surfaced chunks older than threshold, trend over time.
+**"Track freshness as a first-class dashboard metric."** Alongside retrieval latency and answer quality. Auto-archive or flag docs past a defined age threshold (6–12 months for fast-moving domains). This connects to the automated telemetry in step 17 — add a freshness dashboard that shows: distribution of `last_modified` across retrieved chunks, % of retrievals that surfaced chunks older than threshold, trend over time.
 - https://www.regal.ai/blog/rag-hygiene
 
 **"For code: use CST parser (tree-sitter) so chunks align with functions and classes."** CST = Concrete Syntax Tree — the full parse tree of source code that preserves every token (whitespace, comments, punctuation). Tree-sitter is the standard tool (~100 languages supported, used by VS Code and Neovim for syntax highlighting). It knows that lines 15–42 are a function called `processPayment` and lines 44–60 are a class called `PaymentService`, so you can chunk code at semantic boundaries (one function = one chunk) instead of arbitrary line counts. **Plan a fallback chunker**: CST parsing is language-specific and breaks on partial/malformed files (common in PRs, migration scripts, config files). If tree-sitter fails on a file, fall back to line-based or heading-based chunking rather than skipping the file entirely. Relevant in Loop D when adding codebase as a source.
@@ -877,7 +881,7 @@ Most of section 4 validates what was captured through the architecture deep-dive
 **Fine-grained citations vs. latency/cost.** Paragraph/span attribution requires storing enough metadata to reconstruct a deep link (doc ID + heading path + optionally character offset). Worth it for trust. Our `heading_breadcrumb` + `source_doc_id` already provides this at near-zero marginal cost — it's metadata we're already extracting.
 - https://arxiv.org/html/2406.13663v1
 
-**Feedback-loop investment: thumbs up/down vs. structured follow-up.** Thumbs up/down is cheap but low-signal; "was this the right source?" is richer but needs UX work. Start with thumbs up/down (step 15), evolve to structured feedback as the system matures and you understand which signals matter most. Spotify's "Honk" series argues this is the key differentiator for predictable agentic results.
+**Feedback-loop investment: thumbs up/down vs. structured follow-up.** Thumbs up/down is cheap but low-signal; "was this the right source?" is richer but needs UX work. Start with thumbs up/down (step 17), evolve to structured feedback as the system matures and you understand which signals matter most. Spotify's "Honk" series argues this is the key differentiator for predictable agentic results.
 - https://engineering.atspotify.com/2025/12/feedback-loops-background-coding-agents-part-3
 
 #### Decisions made for the pipeline based on these tradeoffs
@@ -915,7 +919,7 @@ Most of section 4 validates what was captured through the architecture deep-dive
 13. **DoorDash Two-Tier Guardrails** — for customer-facing or compliance-sensitive consuming apps: Tier 1 = cheap semantic similarity check (answer embedding vs chunk embeddings), Tier 2 = expensive LLM evaluator triggered only when Tier 1 flags. DoorDash rejected single-model guardrails on cost/latency grounds. Result: 90% hallucination reduction, 99% compliance issue reduction. Not needed for internal/engineer-facing consumption.
 14. **Spotify: Adoption ≠ Quality + Feedback Loops** — Spotify's 86% WAU is adoption, not productivity or quality. No answer-accuracy metrics disclosed. Don't confuse MCP usage stats with retrieval quality — Ragas eval is the ground truth. Separately, Spotify's "Honk" series names feedback loops as the key differentiator: build user feedback collection into consuming apps from day 1. Two speeds: fast loop (per-query feedback tunes retrieval-layer params like reranker weights, freshness decay, source boosting — no re-ingest needed) and slow loop (accumulated feedback patterns diagnose parsing/chunking problems → periodic re-run of bronze → silver pipeline for affected sources).
 15. **Section 4 Nuances: Dos, Don'ts, and Tradeoffs** — practitioner-community refinements that add specificity beyond the architecture lessons. 70/30 semantic/recency default ratio, per-content-type decay needs a `content_category` field beyond `source_type`, paragraph-level citations (not doc-level), routing evaluation as a separate eval dimension, code chunking via CST parser (tree-sitter) + fallback, ACL bypass by indexing only org-wide-readable content.
-16. **Jira Noise Filtering** — Jira issues are noisy; every status transition, comment, and field edit triggers an update. Decide early what to index: descriptions + comments on resolved/completed tickets, not the full activity stream. Otherwise the index fills with "Changed status from In Progress to In Review" chunks that pollute retrieval. Relevant when adding Jira in Loop D (step 19).
+16. **Jira Noise Filtering** — Jira issues are noisy; every status transition, comment, and field edit triggers an update. Decide early what to index: descriptions + comments on resolved/completed tickets, not the full activity stream. Otherwise the index fills with "Changed status from In Progress to In Review" chunks that pollute retrieval. Relevant when adding Jira in Loop D (step 23).
 17. **Structured Retrieval Logging Pattern** — log every MCP tool call with a structured payload: `query`, `chunks_returned`, `top_chunk_score`, `doc_sources`, `timestamp`. This is the foundation for all downstream monitoring — pipeline health, retrieval quality, usage insights. Costs nothing, gives everything needed for weekly review. Implement on day one in the MCP search handler.
 18. **Monthly Usage Insights as Strategic Asset** — beyond technical monitoring, aggregate query logs into a monthly one-pager for leadership: most-queried topics (where knowledge gaps are), queries with no good results (documents that should exist but don't), source distribution (where real knowledge lives vs. where people think it lives), power users vs. inactive teams (adoption signal). This report is worth more politically than the system itself — it makes the builder the person who understands how the org's knowledge flows, not just the person who built a tool.
 19. **Pipeline Health Monitoring Checklist** — 6-item operational monitoring for the always-on system: (1) ingestion pipeline completion (did the run finish?), (2) docs processed vs. expected (catch source API silently returning empty), (3) embedding API errors/latency (>5% error rate or p95 >10s), (4) vector DB health (connection failure or query timeout), (5) MCP server uptime (health check endpoint), (6) index size over time (>20% day-over-day change = runaway growth or accidental deletion). For an internal tool, Slack alerts on failure are sufficient — no PagerDuty needed.

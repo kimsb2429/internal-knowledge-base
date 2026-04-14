@@ -2,6 +2,74 @@
 
 Research, evidence analysis, and implementation plan for building a production RAG (Retrieval-Augmented Generation) pipeline that serves organizational knowledge through an MCP (Model Context Protocol) server.
 
+## Getting Started
+
+### Prerequisites
+
+- Python 3.12+ with `venv`
+- Docker Desktop (for pgvector)
+- ~500 MB disk space for embeddings + corpus
+
+### Setup
+
+```bash
+# Python environment
+python3 -m venv .venv
+source .venv/bin/activate
+pip install beautifulsoup4 sentence-transformers psycopg2-binary tiktoken langchain-text-splitters
+
+# Database (pgvector in Docker)
+docker compose up -d
+docker exec -i ikb_pgvector psql -U ikb -d ikb < scripts/init_schema.sql
+```
+
+Connection string: `postgresql://ikb:ikb_local@localhost:5433/ikb` (container: `ikb_pgvector`, port: 5433).
+
+### Running the pipeline
+
+The pipeline has four stages. Each script is idempotent and resume-safe.
+
+```bash
+# 1. Crawl the corpus (already done — outputs in data/knowva_manuals/articles/)
+python scripts/crawl_knowva.py
+
+# 2. Enrich metadata (headings, acl, authority tier, content_category)
+python scripts/enrich_metadata.py
+
+# 3. Preprocess HTML — source-specific normalization (heading fix, layout-table unwrap, div-table unwrap)
+python scripts/knowva_preprocess.py
+
+# 4. Chunk — generic source-agnostic splitter (outputs data/knowva_manuals/chunks/all_chunks.json)
+python scripts/chunk_documents.py
+
+# 5. Embed and store in pgvector (resume-safe — skips already-inserted documents)
+python scripts/embed_and_store.py
+```
+
+### Repo layout
+
+```
+data/
+  knowva_manuals/
+    articles/          ← raw crawled HTML + metadata sidecars (committed)
+    preprocessed/      ← normalized HTML (gitignored — regenerable)
+    chunks/            ← chunked JSON (gitignored — regenerable)
+  vadir_parsed/        ← Docling-parsed PDF (committed — slow to reproduce)
+  golden_query_set.json ← 110 validated evaluation queries
+
+scripts/
+  crawl_knowva.py         ← eGain v11 API crawler
+  enrich_metadata.py      ← adds headings, acl, authority tier, content_category
+  knowva_preprocess.py    ← source-specific HTML normalizations for KnowVA
+  chunk_documents.py      ← source-agnostic chunker (HTML + markdown)
+  embed_and_store.py      ← mxbai-embed-large → pgvector
+  init_schema.sql         ← documents + document_chunks tables, HNSW index
+```
+
+### Current status
+
+See `TODO.md` for the Zero-to-MCP checklist. Canonical plan is in `docs/2026-04-11-engineering-rag-evidence-and-howtos.md` § "From Zero to Knowledge MCP". Steps 1-3, 5-8 done; Step 9 (eval harness) is next.
+
 ## What's in here
 
 ### [Engineering RAG — Evidence, Methodology, and How-Tos](docs/2026-04-11-engineering-rag-evidence-and-howtos.md)
@@ -33,15 +101,14 @@ Component-level buy-vs-build analysis for every pipeline stage:
 - **Cost breakdown** — free vs paid, estimated monthly costs (~$65-75/mo at moderate volume)
 - **Tools mapped to each build step** — specific tool for every step in the zero-to-MCP plan, including schema DDL and MCP server signature
 
-## Target stack
+## Actual stack (as built)
 
-- **Vector store:** Postgres + pgvector (standard RDS, not Aurora)
-- **Embeddings:** AWS Bedrock Titan Text Embeddings V2 (1024 dims, 8192 token limit)
-- **LLM:** Claude Sonnet on Bedrock (chunking, eval, generation)
-- **Sources:** PDFs (with complex tables) + Confluence + Jira + codebase (phased)
-- **Output:** MCP server returning chunks + metadata to consuming LLMs and apps
-- **Eval:** DeepEval + Ragas on Bedrock
-- **Monitoring:** Langfuse (self-hosted)
+- **Vector store:** Postgres + pgvector (local via Docker during build; RDS-ready for prod)
+- **Embeddings:** mxbai-embed-large (1024 dims, local via sentence-transformers) — replaces original Titan V2 plan, zero API cost
+- **LLM:** Claude Sonnet (planned for eval + generation; optional for Loop A summary indexing)
+- **Sources (current):** KnowVA HTML manuals (M22-3, M22-4) + VADIR PDF. Confluence/Jira deferred to Loop D.
+- **Output:** MCP server returning chunks + metadata (Steps 15-16, not yet built)
+- **Eval:** DeepEval + golden query set (Step 9, next)
 
 ## Key finding
 

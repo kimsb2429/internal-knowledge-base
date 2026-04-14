@@ -1,0 +1,16 @@
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    container_name: ikb_pgvector
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: ikb
+      POSTGRES_USER: ikb
+      POSTGRES_PASSWORD: ikb_local
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./scripts/init_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+
+volumes:
+  pgdata:
