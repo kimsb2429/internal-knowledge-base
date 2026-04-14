@@ -1,1 +1,10 @@
 __pycache__/
+.venv/
+*.pyc
+
+# Regeneratable pipeline outputs (deterministic, no LLM — reproduce via scripts/)
+data/knowva_manuals/preprocessed/
+data/knowva_manuals/chunks/
+
+# Archived/legacy markdown output — no longer on critical path
+data/knowva_manuals/parsed/

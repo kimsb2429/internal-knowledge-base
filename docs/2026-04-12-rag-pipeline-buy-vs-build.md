@@ -354,7 +354,29 @@ Retrieval flow: Query → Titan V2 embed → pgvector top-50 (fast, rough) → t
 
 ---
 
-### Steps 13-14: SHIP (MCP + first consumer)
+### Step 12: Add HyDE (Hypothetical Document Embeddings)
+
+| Tool | How |
+|---|---|
+| **Claude Haiku on Bedrock** | Given a user query, generate a hypothetical answer (1-2 paragraphs). Embed that answer instead of the raw query. The hypothesis sits in the same semantic space as the actual documents, improving recall for queries phrased differently from the source text. |
+| **DeepEval** | Measure retrieval quality before/after HyDE on the golden query set. Expect largest gains on queries with vocabulary mismatch (user says "housing money" but source says "Monthly Housing Allowance"). |
+
+Query flow: User query → Claude Haiku generates hypothetical answer → Titan V2 embeds hypothesis → pgvector ANN → rerank → return.
+
+---
+
+### Step 13: Add CRAG (Corrective RAG)
+
+| Tool | How |
+|---|---|
+| **Claude Haiku on Bedrock** | After retrieval, grade each returned chunk: "Does this chunk contain information that answers the query?" Score 0-1. If all chunks score below threshold (e.g., 0.3), re-query with reshaped query or flag as unanswerable. |
+| **DeepEval** | Measure reduction in hallucinated/wrong answers. Track % of queries that trigger the corrective re-query path. |
+
+Prevents the most common production failure: confident wrong answers generated from irrelevant context.
+
+---
+
+### Steps 14-15: SHIP (MCP + first consumer)
 
 | Tool | How |
 |---|---|
@@ -373,7 +395,7 @@ async def search(query: str, top_k: int = 5, source_type: str | None = None) -> 
 
 ---
 
-### Steps 15-17: INSTRUMENT
+### Steps 16-18: INSTRUMENT
 
 | Tool | How |
 |---|---|
@@ -383,7 +405,7 @@ async def search(query: str, top_k: int = 5, source_type: str | None = None) -> 
 
 ---
 
-### Step 18: FRESHNESS
+### Step 19: FRESHNESS
 
 | Tool | How |
 |---|---|
@@ -402,7 +424,7 @@ async def search(query: str, top_k: int = 5, source_type: str | None = None) -> 
 
 ---
 
-### Step 20: VALIDATE EVAL
+### Step 21: VALIDATE EVAL
 
 | Tool | How |
 |---|---|
@@ -431,7 +453,7 @@ async def search(query: str, top_k: int = 5, source_type: str | None = None) -> 
 
 ---
 
-### Steps 23-24: OPEN TO CONSUMERS + Loop E
+### Steps 25-26: OPEN TO CONSUMERS + Loop E
 
 | Tool | Role |
 |---|---|
@@ -458,11 +480,11 @@ async def search(query: str, top_k: int = 5, source_type: str | None = None) -> 
 | Full-text search | **Native tsvector** → upgrade to **pg_textsearch** if needed | OSS | Free | Step 11 |
 | ORM | **SQLAlchemy + pgvector-python** | MIT | Free | Step 8 |
 | Reranking | **Cohere Rerank 3.5 on Bedrock** → **BGE-v2-m3 on SageMaker** at volume | AWS / MIT | $2/1K queries → ~$1/hr flat | Step 11 |
-| MCP server | **FastMCP** | MIT | Free | Step 13 |
-| MCP design reference | **knowledge-rag** (lyonzin) | MIT | Free | Step 13 |
+| MCP server | **FastMCP** | MIT | Free | Step 14 |
+| MCP design reference | **knowledge-rag** (lyonzin) | MIT | Free | Step 14 |
 | Eval framework | **DeepEval** | MIT | Free | Step 9 |
 | Golden set generation | **Ragas TestsetGenerator** | Apache 2.0 | Free | Step 2 |
-| Monitoring + telemetry | **Langfuse** (self-hosted) | MIT | Free | Step 15 |
+| Monitoring + telemetry | **Langfuse** (self-hosted) | MIT | Free | Step 16 |
 | Embedding drift | **Arize Phoenix** | Elastic v2 | Free | Loop C |
 | Guardrails (customer-facing) | **Custom** DoorDash two-tier | — | Free (pgvector) + Sonnet cost | Loop E |
 | Jira ingestion (Loop D) | **Jira REST API** + custom | — | Free | Loop D |
