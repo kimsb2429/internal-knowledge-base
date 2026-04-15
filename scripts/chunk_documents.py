@@ -32,6 +32,8 @@ from langchain_text_splitters import (
     MarkdownHeaderTextSplitter,
     RecursiveCharacterTextSplitter,
 )
+import lxml.html
+from lxml_html_clean import Cleaner
 import tiktoken
 
 # Directories — override via env vars or edit here
@@ -77,6 +79,87 @@ MD_SPLITTER = MarkdownHeaderTextSplitter(
 
 def count_tokens(text: str) -> int:
     return len(TOKENIZER.encode(text))
+
+
+_HTML_CLEANER = Cleaner(
+    scripts=True,
+    javascript=True,
+    comments=True,
+    style=True,
+    inline_style=True,
+    links=False,
+    meta=True,
+    page_structure=False,
+    processing_instructions=True,
+    embedded=True,
+    frames=True,
+    forms=True,
+    annoying_tags=True,
+    remove_unknown_tags=False,
+    safe_attrs_only=True,
+    safe_attrs=frozenset(["href", "src", "alt", "colspan", "rowspan"]),
+)
+
+
+UNWRAP_TAGS = {"span", "font"}
+DROPPABLE_IF_EMPTY = {"a", "b", "i", "u", "em", "strong", "p", "div", "section", "nav", "sup", "sub", "small"}
+
+
+def _bs4_post_pass(html: str) -> str:
+    """Semantic-aware cleanup after lxml's attribute stripping.
+
+    - Unwraps <span>/<font> (pure visual carriers once attrs are gone).
+    - Removes empty inline/block tags (no text, no children, no img).
+    - Preserves table structure, lists, headings, anchors with href, images.
+    """
+    if not html.strip():
+        return html
+    soup = BeautifulSoup(html, "html.parser")
+
+    # Unwrap visual-only tags (multiple passes: children may have been spans too)
+    for _ in range(5):
+        unwrapped = 0
+        for tag in soup.find_all(UNWRAP_TAGS):
+            tag.unwrap()
+            unwrapped += 1
+        if unwrapped == 0:
+            break
+
+    # Drop empty inline/block tags (except those with meaningful attrs or img children)
+    for _ in range(5):
+        removed = 0
+        for tag in soup.find_all(DROPPABLE_IF_EMPTY):
+            if tag.find("img"):
+                continue
+            # <a> with href is a real link even if empty
+            if tag.name == "a" and tag.get("href"):
+                continue
+            if not tag.get_text(strip=True):
+                tag.decompose()
+                removed += 1
+        if removed == 0:
+            break
+
+    # Collapse decorative <hr> at top/bottom only if not meaningful
+    for hr in soup.find_all("hr"):
+        # keep <hr> inside <li> or <td>; drop bare <hr> at container level
+        if hr.parent and hr.parent.name in {"li", "td", "th"}:
+            continue
+        hr.decompose()
+
+    return str(soup)
+
+
+def clean_html(html: str) -> str:
+    """Strip presentational attrs/tags; preserve structural HTML incl. tables w/ colspan/rowspan."""
+    if not html.strip():
+        return html
+    doc = lxml.html.fragment_fromstring(html, create_parent="_wrap_")
+    _HTML_CLEANER(doc)
+    inner = "".join(lxml.html.tostring(c, encoding="unicode") for c in doc)
+    if doc.text:
+        inner = doc.text + inner
+    return inner
 
 
 def split_html_by_headings(html: str) -> list[dict]:
@@ -439,6 +522,8 @@ def chunk_html_file(file_path: str) -> list[dict]:
     with open(file_path) as f:
         html = f.read()
 
+    html = clean_html(html)
+
     metadata = find_metadata(source_id)
     # First pass: split by headings
     heading_chunks = split_html_by_headings(html)
@@ -446,7 +531,21 @@ def chunk_html_file(file_path: str) -> list[dict]:
     element_chunks = []
     for chunk in heading_chunks:
         element_chunks.extend(split_chunk_by_elements(chunk))
-    return finalize_chunks(element_chunks, source_id, metadata)
+    chunks = finalize_chunks(element_chunks, source_id, metadata)
+    # Apply BS4 post-pass AFTER chunk boundaries are set, so cleanup doesn't
+    # shift boundaries. Recompute token_count + oversized flag from cleaned content.
+    for c in chunks:
+        cleaned = _bs4_post_pass(c["content"])
+        c["content"] = cleaned
+        c["token_count"] = count_tokens(cleaned)
+        # Preserve "oversized" semantics: tables retain their flag if still
+        # over threshold; prose was already split pre-cleanup, so cleaned
+        # prose below threshold flips to False as expected.
+        if c["chunk_type"] == "table":
+            c["oversized"] = c["token_count"] > OVERSIZE_THRESHOLD
+        else:
+            c["oversized"] = c["token_count"] > OVERSIZE_THRESHOLD
+    return chunks
 
 
 def chunk_md_file(file_path: str) -> list[dict]:

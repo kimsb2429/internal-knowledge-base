@@ -145,6 +145,65 @@ Extracted moments, narratives, and artifacts from the session that demonstrate R
 - Final observation: every archived chunk already has "ARCHIVED:" in the `heading_path` (e.g., `"ARCHIVED: M22-4, Part II, Chapter 7 – Education Letters"`). The LLM sees the signal without extra metadata plumbing.
 - No enrichment needed — the source content is already self-describing.
 
+**Act 17 — Step 9 eval harness + the broken golden set audit** (eval credibility before tuning)
+- Built `scripts/retrieve.py` (vanilla pgvector cosine), `scripts/generate.py` (Sonnet 4.6, system-prompt-grounded), `scripts/run_eval.py` (110-query orchestrator), `scripts/score_eval.py` (DeepEval w/ Haiku judge)
+- Discovered the golden set was malformed JSON — two missing commas, file unparseable since creation. Caught only because eval scripts tried to load it ([Ex. Y](#ex-y-golden-set-malformed-json))
+- Built a structural audit (`scripts/audit_golden_set.py`) — checks each `expected_source_id` exists in DB, distinctive query terms appear in expected source, suggests alternate sources
+- Audit caught: **14 queries pointed at `VADIR_ICD` but the DB stored it as `VADIR_CH33_LTS_WS_V2.1.1_ICD_20220509`** — pure ID mismatch from creator-friendly shorthand. Auto-fixed across all 14
+- Found 4 real golden-set bugs: query #9 asked about "bartending" (zero corpus mentions), #10 expected one source for private-pilot training but 20 chunks across 5 articles cover it, #19/#45 had wrong expected source
+- Pattern enforced: **only fix golden set on structural checks, never on "our system missed it"** — protects against overfitting the eval to the system. Documented the pattern in [Ex. Z](#ex-z-golden-set-audit-pattern)
+- First baseline (110q, v1 chunks, no rerank): Faithfulness 0.97, AnsRel 0.85, **CtxPrec 0.40, CtxRec 0.45, CtxRel 0.43** — generation production-grade, retrieval is the weak link
+
+**Act 18 — HtmlRAG vs lxml-html-clean** (research-first paid off twice)
+- HTML chunks are cluttered with `<span style="font-size: 16px"><span style="font-family: arial">…</span></span>` MS-Word noise. ~35-75% of chunk tokens were tag overhead.
+- Per the global research-first rule: dispatched two parallel subagents (broad + recent) to find existing solutions before custom code
+- Found **HtmlRAG** (WWW 2025 paper, `pip install htmlrag`) — purpose-built for RAG, claims "Lossless HTML Cleaning" preserving colspan/rowspan
+- Spike test on a synthetic table proved the paper wrong: HtmlRAG strips colspan, rowspan, AND the `<table>` tag itself ([Ex. AA](#ex-aa-htmlrag-vs-lxml-clean))
+- Fallback: **`lxml-html-clean` with explicit `safe_attrs={'href','src','alt','colspan','rowspan'}`** — passes all checks, 65% size reduction on tables, table semantics intact
+- First brain noted this as a candidate for the public Claude skill repo: "lightweight wrapper around lxml-html-clean that strips decorative HTML while preserving structural tags including tables with colspan/rowspan" — added to global TODO
+
+**Act 19 — Option B: chunk boundaries vs content separation** (the v1→v2→v2b investigation)
+- Applied lxml cleanup BEFORE chunking. Re-embedded. Ran 10-query subset eval.
+- Result: **Contextual Recall dropped from 0.75 → 0.50** (-25pp). Cleaning REGRESSED retrieval.
+- Root cause investigation: cleanup was unwrapping `<span>` tags that the heading-splitter used as structural boundaries. Different chunk boundaries → different embeddings → different retrieval order.
+- Designed the controlled experiment (Option B): apply BS4 cleanup AFTER `split_html_by_headings` instead of before. Boundaries stay identical; only chunk content cleaned post-hoc.
+- Dispatched a subagent to run Option B end-to-end while main thread researched reranker libraries in parallel
+- **Result: chunk count back to 6,489 (identical to v1, vs 5,355 in v2). Recall: 0.75 → 0.75 (perfectly preserved). Token cost: -20.6%** ([Ex. BB](#ex-bb-option-b-results))
+- First brain framing of the underlying lesson: "is it cuz the noisy tags are actually helping?" — answer: tags don't help embeddings semantically, but they helped as structural anchors for the chunker. Boundaries vs content was the wrong axis to bundle together.
+
+**Act 20 — Reranker integration + the 27GB OOM** (Step 11)
+- Picked **mxbai-rerank-base-v2** (0.5B params, Apache 2.0, MPS-compatible) — same vendor as embedder, peer-reviewed lift over BGE on BEIR
+- First eval attempt with rerank crashed the system — Python process hit 27GB RAM, macOS suspended every other app (Activity Monitor, Xcode, Docker GUI)
+- Built `scripts/debug_rerank_mem.py` to instrument each pipeline stage with RSS deltas. Confirmed: rerank alone fine (1.7GB), embedder + rerank together fine (2.4GB)
+- The failure mode: a 5K-token chunk fed through cross-encoder attention allocated **13.84 GiB**. Our v2b corpus has chunks up to 47K tokens — O(n²) attention math = 27GB ([Ex. CC](#ex-cc-rerank-oom-reproducer))
+- Fix: cap rerank input at 2,000 chars per chunk. Cross-encoders are trained on ≤512-token passages anyway — long inputs don't help ranking, just blow memory
+- After fix: 4GB peak even with 47K-token chunks. Full 110-query rerank eval ran cleanly
+- **Headline rerank lift on full 110: CtxPrec 0.40 → 0.57 (+16.5pp), CtxRel 0.43 → 0.55 (+11.8pp), CtxRec 0.45 → 0.51 (+5.3pp)** ([Ex. DD](#ex-dd-rerank-headline-comparison))
+
+**Act 21 — Deep-dive: top RAG teams don't use the frameworks we considered** (the surprising research finding)
+- After hand-rolling a chunker, found base64 binary blobs leaking into chunks as garbage text + image-only chunks with no retrievable content. Signaled we might be missing entire layers other people had solved.
+- Invoked `/deep-dive` skill — DAG-decomposed into 4 parallel research subagents covering Unstructured.io, Docling, LlamaIndex, and what top production RAG teams actually use
+- **The unexpected finding:** Uber Genie, Dropbox Dash, LinkedIn RAG, Atlassian Rovo, Notion AI, Spotify AiKA — **none use Unstructured or Docling for HTML ingestion**. All custom or native-API.
+- Anthropic's cookbook doesn't even prescribe a parser. The chunking-strategy battles are mostly noise; the real lever is **Contextual Retrieval** — Anthropic's own pattern with documented +35% recall lift from prepending LLM-generated context per chunk before embedding
+- Synthesis report saved to `docs/deep-dive/2026-04-14-html-rag-ingestion-state-of-art.md` ([Ex. EE](#ex-ee-deep-dive-decision-table))
+- Decision: stay custom (validated by what works in production), adopt Contextual Retrieval as the next Loop A intervention
+
+**Act 22 — Contextual Retrieval via Batches API** (cost-aware bulk processing)
+- Built async live-API contextualizer first. Hit Haiku rate limits hard: at concurrency=8 → 205/347 chunks failed with 429s; at concurrency=3 with max_retries=10 → 5/347 still failed. Effective rate: **0.9 chunks/sec, ~$14, 2 hours for 6,489 chunks**.
+- First brain: "what's the batches api?" — pivoted to Anthropic Message Batches: 50% discount, no per-request rate limits, async background processing
+- First batch attempt: 400 BadRequestError because VADIR source_id `VADIR_CH33_LTS_WS_V2.1.1_ICD_20220509` contains dots — violates Anthropic's `^[a-zA-Z0-9_-]{1,64}$` custom_id pattern. Smoke test missed it (only had digit-IDs). ~1 hour lost to debug ([Ex. FF](#ex-ff-batch-custom-id-bug))
+- Fixed: sanitize source_id → token via regex, persist token mapping in batch state file for poll-resume
+- Second batch: 5,978/6,142 success in **~4 minutes wall time, $12.48** (97% success, half-cost vs live API). Combined with smoke test = 6,325/6,489 chunks contextualized.
+
+**Act 23 — Three-tier eval cadence** (making Loop A actually feasible)
+- Each full validation run = ~2h wall + $4-5. Unsustainable for iterative experimentation.
+- Designed three tiers based on what each catches:
+  - **Fast (5-10 min, $0.30)** — 30q subset + 4 cheap proxies (top-K source match, **answer-keyword recall** approximating Contextual Recall without LLM judge, IDK rate, token cost). For retrieval/chunking iterations.
+  - **Medium (30 min, $1.50)** — 30q subset + full DeepEval. For generation-side iterations (system prompt, model swap).
+  - **Full (2h, $4.30)** — 110q + full DeepEval. For milestone validation only.
+- Built `--fast` mode + `--baseline` flag in `run_eval.py` — automatically prints proxy deltas vs prior run, with ✓/✗ markers respecting sign convention (lower IDK = better) ([Ex. GG](#ex-gg-fast-mode-output))
+- **Speedup math:** 10 chunker tweaks at 2h each = 20h, $50. Same 10 tweaks at 8 min fast each + 1 full validation = 3.5h, $10. **6x faster, 5x cheaper, same final confidence.**
+
 ---
 
 ## Key Demo Moments (for video)
@@ -334,6 +393,71 @@ Q109: "13-question scorecard"
 
 **Talking point:** "Summary indexing costs real money per chunk. Before spending it, we checked if the free alternative — just the heading — was already descriptive enough. It was. If eval catches the gap, we add a `retrieve_full_doc` MCP method. Design against what you've measured, not what you fear."
 
+### 15. "The Library Lied About Its Own Paper" — HtmlRAG Spike Test
+**What happened:** Found `htmlrag` on PyPI — a WWW 2025 paper claiming "Lossless HTML Cleaning" preserving colspan/rowspan. Spike-tested it on a synthetic table with colspan/rowspan/style attributes. The library stripped colspan, rowspan, AND the `<table>` tag itself.
+
+**Talking point:** "Always validate library claims with a 5-minute spike test. Especially when the claim is the only reason you're reaching for the library. Switched to `lxml-html-clean` with an explicit attribute whitelist — passed every check, 65% size reduction on real chunks." ([Ex. AA](#ex-aa-htmlrag-vs-lxml-clean))
+
+### 16. "The Tags Were Holding Up the Boundaries" — Option B
+**What happened:** First attempt at HTML cleanup ran lxml + BS4 *before* chunking. Re-embedded. Eval showed Contextual Recall dropped from 0.75 → 0.50 (-25pp). The cleanup was unwrapping `<span>` tags that the heading-splitter used as structural markers — chunk boundaries shifted, embeddings changed, retrieval order broke.
+
+**Before/after:**
+- v1 (no clean): 6,489 chunks, CtxRec 0.75, avg 3,330 input tokens/query
+- v2 (clean before chunk): 5,355 chunks, CtxRec 0.50, boundaries shifted everywhere
+- **v2b (clean AFTER chunk): 6,489 chunks identical to v1, CtxRec 0.75, avg 2,643 tokens (-20.6%)**
+
+**Talking point:** "We almost shipped a 20% cost optimization that destroyed retrieval. The fix wasn't to undo the cleanup — it was to apply it AFTER chunk boundaries were set. Boundary preservation and content cleanup are independent dimensions; bundle them and you can't tell which one regressed." ([Ex. BB](#ex-bb-option-b-results))
+
+### 17. "27GB Python and macOS Suspended Every App" — Reranker OOM
+**What happened:** First eval with mxbai-rerank-base-v2 spiked Python to 27 GB RAM. macOS auto-suspended Activity Monitor, Xcode, Docker GUI, every other app to keep the foreground alive. Built a memory reproducer. Found cross-encoder attention is O(n²) — a 47K-token oversized table chunk needs 8.8 GB just for the attention matrix. Top-20 of those = 27 GB.
+
+**Fix shown on screen:** Cap rerank input at 2,000 chars per chunk. Cross-encoders are trained on ≤512-token passages anyway.
+
+**Result:** 4 GB peak even with the 47K-token chunks in the rerank set. Full 110-query rerank eval ran cleanly.
+
+**Talking point:** "Cross-encoders look at every (query, chunk) pair with full attention. That's their power and their failure mode. Truncate inputs aggressively — they don't help ranking quality and they'll murder your RAM." ([Ex. CC](#ex-cc-rerank-oom-reproducer))
+
+### 18. "+16.5pp Precision, +11.8pp Relevancy" — The Reranker Headline
+**What happened:** Full 110-query DeepEval comparison, same chunks, same generation, same scoring. Only difference: cosine top-5 vs cosine top-20 → mxbai-rerank → top-5.
+
+**Headline numbers on slide:**
+| Metric | No rerank | With rerank | Δ |
+|---|---|---|---|
+| Contextual Precision | 0.40 | 0.57 | **+16.5pp** |
+| Contextual Relevancy | 0.43 | 0.55 | **+11.8pp** |
+| Contextual Recall | 0.45 | 0.51 | +5.3pp |
+| Faithfulness | 0.97 | 0.96 | flat |
+| Answer Relevancy | 0.83 | 0.86 | +0.03 |
+
+**Talking point:** "k=5 cosine retrieval pulls 60-70% noise. A 0.5B-parameter cross-encoder reranker fixes that. 17pp Precision lift, 12pp Relevancy lift, no Faithfulness regression. Same model family as our embedder, runs locally, no API cost." ([Ex. DD](#ex-dd-rerank-headline-comparison))
+
+### 19. "None of the Top RAG Teams Use the Frameworks You Considered" — Deep Dive Surprise
+**What happened:** Used the `/deep-dive` skill to research what production RAG teams actually use for HTML ingestion. 4 parallel subagents researched Unstructured, Docling, LlamaIndex, and 7 named teams (Uber, Dropbox, LinkedIn, Atlassian, Notion, Spotify, Anthropic).
+
+**The finding on screen:** None of the seven teams use Unstructured.io or Docling for HTML ingestion. All custom or native-API. Anthropic's cookbook doesn't even prescribe a parser. The actual production playbook is **custom parsers + Contextual Retrieval (the next thing we adopted)**.
+
+**Talking point:** "We were second-guessing ourselves for hand-rolling a chunker. Turns out every production RAG team that's published their architecture also hand-rolled. The chunking-strategy battles are mostly noise. The real lever — Anthropic's Contextual Retrieval — is published with +35% recall lift." ([Ex. EE](#ex-ee-deep-dive-decision-table))
+
+### 20. "Submit and Walk Away" — Batches API for Bulk Contextualization
+**What happened:** Adopting Contextual Retrieval needed 6,489 LLM calls to generate per-chunk context strings. Live API was throttled to 0.9 chunks/sec by Haiku rate limits — would take 2 hours and $14. Switched to Anthropic's Message Batches API: 50% discount, no rate limits, async background processing.
+
+**Demo arc:**
+1. First batch attempt failed at request 6,074: VADIR source_id had dots, violated `^[a-zA-Z0-9_-]{1,64}$` pattern. Smoke test missed it (only digit IDs). Lost 1 hour to debug ([Ex. FF](#ex-ff-batch-custom-id-bug)).
+2. Fixed with reversible token map. Second batch: **5,978/6,142 success in 4 minutes wall time, $12.48** — half the live-API cost.
+
+**Talking point:** "When you have thousands of independent LLM calls and don't need real-time, the Batches API is a no-brainer — half the cost, no rate limits, runs in the background. Just sanitize your custom IDs."
+
+### 21. "Three-Tier Eval Cadence" — Making Loop A Actually Feasible
+**What happened:** A full eval iteration costs 2 hours and ~$5. After the first few full validation runs, the math killed iteration speed. Built three tiers:
+
+| Tier | Time | Cost | Catches |
+|---|---|---|---|
+| Fast | 5-10 min | $0.30 | Retrieval recall, ranking, source matches, token cost (no LLM judge) |
+| Medium | 30 min | $1.50 | Same + full DeepEval semantic scoring |
+| Full | 2h | $4.30 | Same on full 110-query set |
+
+**Talking point:** "Most RAG iterations are retrieval/chunking changes that don't need full DeepEval scoring. A 5-minute fast mode with cheap proxies — keyword recall, IDK rate, token cost — catches the same direction-of-change. Reserve the 2-hour full validation for milestone declarations. 6x faster, 5x cheaper, same final confidence." ([Ex. GG](#ex-gg-fast-mode-output))
+
 ---
 
 ## Key Demo Artifacts
@@ -349,6 +473,17 @@ Q109: "13-question scorecard"
 | Docker Compose | `docker-compose.yml` | pgvector/pg17 on port 5433 |
 | Schema SQL | `scripts/init_schema.sql` | documents + document_chunks tables with HNSW index |
 | ~~Parsing script~~ | ~~`scripts/parse_html_to_markdown.py`~~ | ~~Deleted — HTML articles skip markdown, go straight to HTMLHeaderTextSplitter~~ |
+| Retrieval | `scripts/retrieve.py` | Vanilla pgvector cosine, lazy model load, CLI + module API |
+| Generation | `scripts/generate.py` | Sonnet 4.6 grounded by system prompt, dotenv-loaded API key |
+| Eval orchestrator | `scripts/run_eval.py` | 110-query loop, supports `--rerank-from`, `--fast`, `--baseline` deltas, cheap proxies |
+| Eval scoring | `scripts/score_eval.py` | DeepEval w/ Haiku judge, 5 metrics async, JSON output |
+| Golden set audit | `scripts/audit_golden_set.py` | Structural checks: source IDs exist, key terms present, alternate sources |
+| HTML cleaner | `scripts/chunk_documents.py:_HTML_CLEANER` | `lxml-html-clean` w/ explicit safe_attrs preserving colspan/rowspan |
+| BS4 post-pass | `scripts/chunk_documents.py:_bs4_post_pass` | Per-chunk cleanup AFTER boundaries set, drops empty tags, unwraps `<span>` |
+| Reranker | `scripts/rerank.py` | mxbai-rerank-base-v2 cross-encoder, MPS-compatible, 2K-char input cap |
+| Memory debugger | `scripts/debug_rerank_mem.py` | RSS instrumentation per pipeline stage; reproduces 27GB OOM |
+| Contextual Retrieval | `scripts/contextualize_chunks.py` | Anthropic Batches API, prompt caching, sanitized custom_ids, resume-safe |
+| Deep dive report | `docs/deep-dive/2026-04-14-html-rag-ingestion-state-of-art.md` | DAG-based research synthesis: HTML RAG ingestion state of the art |
 | Sample article HTML | `data/knowva_manuals/articles/554400000073486.html` | Structure-preserving output (tables, headings, metadata in `<meta>` tags) |
 | Sample article JSON | `data/knowva_manuals/articles/554400000060851.json` | Enriched metadata: heading_outline with 12 headings, acl, authority tier, content_category |
 | Sample parsed markdown | `data/knowva_manuals/parsed/554400000073086.md` | 68 tables converted to pipe format, headings preserved, nav links stripped |
@@ -618,6 +753,20 @@ Q109: "13-question scorecard"
 - **LangChain HTMLHeaderTextSplitter:** tested and rejected — strips HTML tags, destroys table structure. Replaced with custom splitter.
 - **Chunking errors:** 0 (down from 19 before fixing pre-processor)
 - **Splitting passes:** 3 (headings → element boundaries → size-based for oversized prose/lists)
+
+### Step 9 Eval Harness + Loop A iterations (2026-04-14/15 session)
+- **Golden set bugs caught by audit:** 14 ID mismatches (`VADIR_ICD` → full PDF basename) + 4 query-level issues (1 corpus-absent term, 2 wrong source IDs, 1 multi-source under-specification) + 2 missing-comma JSON parse errors
+- **First baseline (v1, no rerank, full 110q):** Faithfulness 0.97, Answer Relevancy 0.85, Contextual Precision 0.40, Contextual Recall 0.45, Contextual Relevancy 0.43
+- **HtmlRAG `clean_html()` test:** strips `<table>`, colspan, rowspan despite paper's "Lossless" claim — rejected
+- **lxml-html-clean test:** preserves all structural attrs in safe_attrs allowlist — adopted, 65% size reduction on table chunks
+- **Option B (BS4 cleanup AFTER chunking):** 6,489 chunks (boundaries identical to v1), Contextual Recall 0.75 → 0.75, **avg input tokens -20.6%**
+- **Reranker memory bug:** O(n²) attention on 47K-token chunk → 13.84 GiB single allocation, full pipeline → 27 GB Python RSS
+- **Reranker truncation cap (2K chars):** peak RSS 4 GB even with oversized chunks
+- **Reranker lift (full 110q v2b):** Contextual Precision **+16.5pp** (0.40→0.57), Contextual Relevancy **+11.8pp** (0.43→0.55), Contextual Recall +5.3pp (0.45→0.51)
+- **Deep-dive research:** 4 parallel subagents, 7 production teams researched — **none use Unstructured.io or Docling for HTML ingestion**
+- **Contextual Retrieval via Anthropic Batches API:** 5,978/6,142 chunks (97% success), 4 min wall time, **$12.48** (50% off live API), 38.9M cache read tokens
+- **Eval cadence tiers built:** Fast (5-10 min, $0.30, no DeepEval, 30q + cheap proxies), Medium (30 min, $1.50, 30q + DeepEval), Full (2h, $4.30, 110q + DeepEval)
+- **Session-to-date Anthropic spend:** ~$30 (most of which is one-time contextualization)
 
 ---
 
@@ -1319,3 +1468,271 @@ Tradeoff: content-level queries ("what EPC is used for Chapter 35 original claim
 Cost: $0 (vs. ~$13 for Sonnet-generated summaries on 868 oversized chunks).
 
 Source: `scripts/embed_and_store.py`
+
+### Ex. Y: Golden set malformed JSON
+
+`data/golden_query_set.json` had been unparseable since creation — two missing commas between query objects. Caught only when the eval scripts tried to load it.
+
+Before (lines 511-516):
+```json
+      "tags": ["VADIR", "LTS", "eligibility_flow", "cross_source"]
+    }
+  ],
+    {
+      "id": 51,
+```
+
+After:
+```json
+      "tags": ["VADIR", "LTS", "eligibility_flow", "cross_source"]
+    },
+    {
+      "id": 51,
+```
+
+Two such errors (lines 513 and 738). Auto-fixed via Python loop that detects `}` followed by `{` on consecutive non-empty lines and inserts the comma.
+
+Result: file now parses to 110 queries matching the summary `total_queries: 110`.
+
+Source: `data/golden_query_set.json`
+
+### Ex. Z: Golden set audit pattern
+
+`scripts/audit_golden_set.py` enforces structural checks against the corpus — never against retrieval results.
+
+Audit found **14 queries** with `expected_source_id: "VADIR_ICD"` that doesn't exist in the DB:
+
+```
+--- 14 queries with missing expected_source_id ---
+  id= 28 expected=['VADIR_ICD'] type=table_lookup
+    Q: What are the five VADIR web service operations available through VSCH33Service?WSDL?
+  id= 29 expected=['VADIR_ICD'] type=technical_spec
+  ...
+```
+
+DB stores the full PDF basename: `VADIR_CH33_LTS_WS_V2.1.1_ICD_20220509`. Auto-fixed all 14 to use the actual ID.
+
+The discipline rule (committed to plan doc):
+- ✅ Allowed: "expected_source_id doesn't exist in DB" → fix
+- ✅ Allowed: "key terms from expected answer don't appear anywhere in expected source article" → mark for rewrite
+- ✅ Allowed: "multiple corpus articles equally cover the topic" → expand `expected_source_ids` list
+- ❌ Forbidden: "our retrieval missed it, so loosen the check" → that's overfitting
+
+Source: `scripts/audit_golden_set.py`
+
+### Ex. AA: HtmlRAG vs lxml-html-clean colspan test
+
+HtmlRAG's published paper claims "Lossless HTML Cleaning" preserving colspan/rowspan. Synthetic test proved otherwise:
+
+Input:
+```html
+<table border="1" class="MsoTableGrid" style="width: 600px">
+<tbody>
+<tr><th rowspan="2">Year</th><th colspan="2">Enrollment</th></tr>
+<tr><td>Full-time</td><td>Part-time</td></tr>
+<tr><td>2024</td><td>100</td><td>50</td></tr>
+</tbody></table>
+```
+
+`htmlrag.clean_html()` output:
+```html
+<tbody>
+<tr><th>Year</th><th>Enrollment</th></tr>
+<tr><td>Full-time</td><td>Part-time</td></tr>
+<tr><td>2024</td><td>100</td><td>50</td></tr>
+</tbody>
+```
+
+Verdict: `<table>` stripped. `colspan` stripped. `rowspan` stripped. **Fails the only invariant we cared about.**
+
+`lxml_html_clean.Cleaner(safe_attrs={'href','src','alt','colspan','rowspan'})` output on same input:
+```html
+<table>
+<tbody>
+<tr><th rowspan="2">Year</th><th colspan="2">Enrollment</th></tr>
+<tr><td>Full-time</td><td>Part-time</td></tr>
+<tr><td>2024</td><td>100</td><td>50</td></tr>
+</tbody></table>
+```
+
+All three preserved. Used `lxml_html_clean`. Achieved 65% size reduction on real table chunks.
+
+Source: `scripts/chunk_documents.py:_HTML_CLEANER`
+
+### Ex. BB: Option B — boundaries vs content separation
+
+The wrong move (BS4 cleanup BEFORE chunking):
+
+| Metric | v1 (no clean) | v2 (clean before chunk) | Δ |
+|---|---|---|---|
+| Chunk count | 6,489 | 5,355 | -17% (boundaries shifted) |
+| **Contextual Recall (10q subset)** | **0.75** | **0.50** | **-25pp** 🔴 |
+
+Cleanup unwrapped `<span>` tags that the heading-splitter was using as structural anchors. Different boundaries → different embeddings → demoted right chunks.
+
+The right move (Option B: BS4 cleanup AFTER chunking, per-chunk on final content):
+
+| Metric | v1 | v2b (clean after chunk) | Δ |
+|---|---|---|---|
+| Chunk count | 6,489 | 6,489 | identical (boundaries preserved) |
+| Contextual Recall | 0.75 | 0.75 | flat ✅ |
+| Avg input tokens / query | 3,330 | 2,643 | **-20.6%** ✅ |
+
+Code change in `chunk_documents.py:chunk_html_file`:
+```python
+chunks = finalize_chunks(element_chunks, source_id, metadata)
+# Apply BS4 post-pass AFTER chunk boundaries are set, so cleanup doesn't
+# shift boundaries. Recompute token_count + oversized flag from cleaned content.
+for c in chunks:
+    cleaned = _bs4_post_pass(c["content"])
+    c["content"] = cleaned
+    c["token_count"] = count_tokens(cleaned)
+    c["oversized"] = c["token_count"] > OVERSIZE_THRESHOLD
+return chunks
+```
+
+Lesson: boundary preservation and content cleanup are independent dimensions. Bundle them and you can't tell which one caused a regression.
+
+Source: `scripts/chunk_documents.py`
+
+### Ex. CC: Reranker OOM reproducer
+
+`scripts/debug_rerank_mem.py` instruments each pipeline stage with RSS deltas:
+
+```
+device=mps  with_embedder=False  n_docs=20  doc_tokens=500
+[   0.0s] RSS=    21 MB  (Δ +0 MB)  startup
+[   2.9s] RSS=   436 MB  (Δ +415 MB)  before rerank load
+[   6.0s] RSS=  1676 MB  (Δ +1240 MB)  after rerank load
+[  13.7s] RSS=  1676 MB  (Δ +0 MB)  after rerank call 1/3
+[  20.0s] RSS=  1676 MB  (Δ +0 MB)  after rerank call 2/3
+[  26.4s] RSS=  1676 MB  (Δ +0 MB)  after rerank call 3/3
+Peak RSS: 1676 MB
+```
+
+Same test with 5K-token docs:
+```
+RuntimeError: Invalid buffer size: 13.84 GiB
+```
+
+In production, our v2b corpus has chunks up to 47K tokens (oversized tables). 47,000² × 4 bytes (fp32 attention matrix) = 8.8 GB *per chunk*. Top-20 of those = 27 GB.
+
+Fix in `scripts/rerank.py`:
+```python
+RERANK_MAX_CHARS = int(os.environ.get("IKB_RERANK_MAX_CHARS", "2000"))
+
+def _rerank_text(c: dict) -> str:
+    heading = " > ".join(c.get("heading_path") or [])
+    content = c["content"][:RERANK_MAX_CHARS]
+    return f"{heading}\n\n{content}" if heading else content
+```
+
+Cross-encoders are trained on ≤512-token passages anyway. Truncating doesn't hurt ranking quality.
+
+Result: peak 4 GB even with 47K-token chunks in the rerank set. No OOM.
+
+Source: `scripts/rerank.py`, `scripts/debug_rerank_mem.py`
+
+### Ex. DD: Reranker headline lift (full 110-query baseline)
+
+Same chunks (v2b post Option B), same generation (Sonnet 4.6 temp=0), same scoring (Haiku DeepEval). Only difference: with rerank, retrieval pulls top-20 from cosine then mxbai-rerank-base-v2 picks top-5.
+
+| Metric | v2b baseline (cosine top-5) | v2b + rerank (cosine top-20 → rerank top-5) | Δ |
+|---|---|---|---|
+| Faithfulness | 0.969 | 0.961 | -0.008 (within noise) |
+| Answer Relevancy | 0.832 | 0.857 | +0.025 |
+| **Contextual Precision** | **0.400** | **0.565** | **+0.165 🚀** |
+| Contextual Recall | 0.453 | 0.506 | **+0.053** |
+| **Contextual Relevancy** | **0.434** | **0.552** | **+0.118 🚀** |
+
+Cost & wall time:
+- Generation: $1.13 vs $1.32 with rerank
+- Generation time: 583s vs 4,497s (rerank adds ~30s/query for 20-doc cross-encoder pass)
+- Scoring: ~$3, 55 min, identical for both
+
+The CtxPrec/CtxRel jumps validated the "k=5 has 60-70% noise" diagnosis from earlier sessions — reranker is the proper fix.
+
+Source: `data/eval_v2b.scores.json`, `data/eval_v2b_rerank.scores.json`
+
+### Ex. EE: Deep-dive decision table
+
+The unexpected finding from `/deep-dive` skill research (4 parallel subagents):
+
+| Team | HTML parser | Chunking strategy |
+|---|---|---|
+| Uber Genie | Custom: Google Docs API → HTML, custom loader | Structure-aware; Post-Processor Agent re-orders by source position |
+| Dropbox Dash | In-house | **Query-time chunking** — docs NOT pre-chunked at index time |
+| LinkedIn RAG (arXiv 2404.17723) | Custom: tickets → trees → knowledge graph | Hierarchical; chunks within graph nodes |
+| Atlassian Rovo | Native Confluence/Jira connectors | Hybrid retrieval, Llama-Nemotron-Embed-1B |
+| Notion AI | Apache Hudi + Kafka + Debezium CDC data lake | Not disclosed |
+| Spotify AiKA | Backstage plugins | Not disclosed |
+| Anthropic cookbook | No parser prescribed | **Fixed-size ~800 + Contextual Retrieval** |
+
+**None use Unstructured.io or Docling for HTML ingestion.** Six of seven teams went custom. Anthropic doesn't even prescribe a parser.
+
+The biggest lever surfaced: Anthropic's Contextual Retrieval — published −35% retrieval failure rate from prepending LLM-generated context per chunk.
+
+Lesson: framework dismissals based on "covers ~60% of needs" weren't wrong — they were normal. The production-RAG playbook is custom parsers + smart augmentation (CR, reranker, hybrid).
+
+Source: `docs/deep-dive/2026-04-14-html-rag-ingestion-state-of-art.md`
+
+### Ex. FF: Batches API custom_id pattern bug
+
+Smoke test on 2 docs (both with pure-digit source IDs) passed cleanly. Full submission failed at request 6,074:
+
+```
+anthropic.BadRequestError: Error code: 400 - {'type': 'error', 'error': 
+{'type': 'invalid_request_error', 
+'message': "requests.6074.custom_id: String should match pattern 
+'^[a-zA-Z0-9_-]{1,64}$'"}}
+```
+
+The offending source_id: `VADIR_CH33_LTS_WS_V2.1.1_ICD_20220509` — contains dots from the version suffix.
+
+Fix (`scripts/contextualize_chunks.py`): build a reversible token map, persist in batch state for the poll-resume phase:
+
+```python
+def _sid_token(source_id: str) -> str:
+    if source_id in _SID_TO_TOKEN:
+        return _SID_TO_TOKEN[source_id]
+    safe = re.sub(r"[^a-zA-Z0-9]+", "_", source_id).strip("_")[:50]
+    base = safe; n = 1
+    while safe in _TOKEN_TO_SID and _TOKEN_TO_SID[safe] != source_id:
+        safe = f"{base}_{n}"[:50]; n += 1
+    _SID_TO_TOKEN[source_id] = safe
+    _TOKEN_TO_SID[safe] = source_id
+    return safe
+```
+
+Lesson: smoke tests need at least one of every weird input class. Pure-digit IDs masked the dot bug entirely. Cost: ~1 hour debug, $0 (failed before any cost incurred).
+
+Successful resubmit: 5,978/6,142 chunks (97% success), $12.48, 4 min wall time.
+
+Source: `scripts/contextualize_chunks.py`
+
+### Ex. GG: Fast mode CLI output
+
+`run_eval.py --fast --baseline eval_v2b_rerank.raw.json` runs 30 queries with no DeepEval, prints cheap proxies + delta vs baseline:
+
+```
+Running 30 queries (k=5)  rerank_from=20...
+  [  1/30] id=  1  top1_match=True  topk_match=True  tokens_in= 2770 out=124
+  [  2/30] id=  2  top1_match=True  topk_match=True  tokens_in= 5244 out= 83
+  ...
+
+============================================================
+  FAST PROXIES  (n=30)
+============================================================
+  top1_source_match_rate           0.567     vs base 0.500     Δ +0.067 ▲ ✓
+  topk_source_match_rate           0.733     vs base 0.667     Δ +0.067 ▲ ✓
+  answer_keyword_recall_mean       0.612     vs base 0.554     Δ +0.058 ▲ ✓
+  idk_rate                         0.300     vs base 0.367     Δ -0.067 ▼ ✓
+  avg_input_tokens                 2643      vs base 3330      Δ -687.000 ▼ ✓
+
+  baseline: eval_v2b_rerank.raw.json  matched n=30
+  (fast mode: DeepEval scoring skipped — run scripts/score_eval.py for full metrics)
+```
+
+Sign convention: ▲ = increase, ▼ = decrease. ✓ = better-by-direction (lower IDK and tokens = better). 5 minutes wall time, ~$0.30 cost.
+
+Source: `scripts/run_eval.py:cheap_proxies`, `scripts/run_eval.py:print_proxies_with_delta`
