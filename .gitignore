@@ -1,6 +1,10 @@
 __pycache__/
 .venv/
 *.pyc
+.env
+
+# DeepEval local cache
+.deepeval/
 
 # Regeneratable pipeline outputs (deterministic, no LLM — reproduce via scripts/)
 data/knowva_manuals/preprocessed/
@@ -8,3 +12,7 @@ data/knowva_manuals/chunks/
 
 # Archived/legacy markdown output — no longer on critical path
 data/knowva_manuals/parsed/
+
+# Eval artifacts — large + ephemeral. Reproducible via run_eval.py + score_eval.py
+data/eval_*.json
+data/golden_set_audit.json

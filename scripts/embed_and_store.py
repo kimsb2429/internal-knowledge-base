@@ -21,24 +21,36 @@ import psycopg2
 import psycopg2.extras
 from sentence_transformers import SentenceTransformer
 
-CHUNKS_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "data", "knowva_manuals", "chunks", "all_chunks.json"
-)
+_CHUNKS_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "knowva_manuals", "chunks")
+# Prefer contextualized chunks if present (from scripts/contextualize_chunks.py)
+_CONTEXTUALIZED = os.path.join(_CHUNKS_DIR, "all_chunks_contextualized.json")
+CHUNKS_PATH = _CONTEXTUALIZED if os.path.exists(_CONTEXTUALIZED) else os.path.join(_CHUNKS_DIR, "all_chunks.json")
 DB_URL = os.environ.get("IKB_DB_URL", "postgresql://ikb:ikb_local@localhost:5433/ikb")
 MODEL_NAME = "mixedbread-ai/mxbai-embed-large-v1"
 EMBED_BATCH_SIZE = 32
 
 
 def build_embed_text(chunk: dict) -> str:
-    """For oversized chunks, embed a descriptive string instead of raw content."""
-    if not chunk["oversized"]:
-        return chunk["content"]
+    """Build the text that gets embedded.
 
-    title = (chunk.get("source_metadata", {}) or {}).get("title", "") or ""
-    heading_parts = [h for h in (chunk.get("heading_path") or []) if h and h != title]
-    heading = " > ".join(heading_parts)
-    parts = [p for p in [title, heading] if p]
-    return " | ".join(parts) if parts else chunk["content"][:500]
+    Regular chunks: [context prefix (if any)] + content.
+    Oversized chunks: [context prefix (if any)] + descriptive heading string.
+
+    `context` is set by scripts/contextualize_chunks.py — a 50-100 token snippet
+    that situates the chunk within its parent doc (Anthropic Contextual Retrieval).
+    """
+    ctx = (chunk.get("context") or "").strip()
+
+    if not chunk["oversized"]:
+        base = chunk["content"]
+    else:
+        title = (chunk.get("source_metadata", {}) or {}).get("title", "") or ""
+        heading_parts = [h for h in (chunk.get("heading_path") or []) if h and h != title]
+        heading = " > ".join(heading_parts)
+        parts = [p for p in [title, heading] if p]
+        base = " | ".join(parts) if parts else chunk["content"][:500]
+
+    return f"{ctx}\n\n{base}" if ctx else base
 
 
 def vector_literal(embedding) -> str:
