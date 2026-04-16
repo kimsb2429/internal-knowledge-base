@@ -2702,7 +2702,31 @@ The fix wasn't "move rerank to a GPU service" — that adds an account, two secr
 
 **Also tested `rank-T5-flan`** (110 MB, "best zero-shot on out-of-domain" per FlashRank docs) as a middle ground. Dramatically worse: top1 0.400 (−33pp), idk 0.433 (+27pp). Likely because VA education corpus is in-domain for MS MARCO training data — the out-of-domain advantage of T5-flan doesn't help here. Ruled out.
 
-**Escape hatch:** `scripts/rerank.py` honors `IKB_RERANK_MODEL` env var for any FlashRank-supported model — e.g. `ce-esci-MiniLM-L12-v2` (e-commerce-tuned), `ms-marco-MultiBERT-L-12` (multilingual, 150 MB). Swapping back to mxbai requires restoring the `mxbai-rerank` dep + the old rerank.py branch — intentionally not kept as a dual-backend toggle, since a CI gate measuring a different pipeline than production isn't a valid gate.
+**Escape hatch:** `scripts/rerank.py` honors `IKB_RERANK_MODEL` env var for any FlashRank-supported model — e.g. `ce-esci-MiniLM-L12-v2` (e-commerce-tuned), `ms-marco-MultiBERT-L-12` (multilingual, 150 MB). Swapping back to mxbai requires restoring the `mxbai-rerank` dep + the old rerank.py branch — intentionally not kept as a dual-backend toggle for v1, but **a tiered architecture is the right production pattern** (see Moment 39 below).
+
+### Moment 39: Tiered reranker architecture — fast for the gate, heavy for the release, light for monitoring
+
+The obvious critique of the FlashRank swap: *"your CI gate now measures a different pipeline than production — isn't that an invalid gate?"* The sharper answer re-frames the question: **don't use one reranker model for all purposes.** Different tiers need different speed/quality tradeoffs, and the same scaffolding holds them together.
+
+| Tier | Purpose | Reranker | Frequency |
+|---|---|---|---|
+| **Merge gate (Option A — shipped)** | "Does this PR obviously break retrieval or prompting?" | FlashRank MiniLM (22M, ~2s/query) | Every PR, blocking |
+| **Release gate (Option C — labeled, not shipped)** | "Does this release match our published headline scores?" | mxbai-rerank-base-v2 or heavier + full DeepEval on 110q | Nightly or pre-release |
+| **Production inference** | "Deliver the best answer per the consumer's latency budget" | Consumer-configurable; heavy for high-stakes, light for interactive | Every live query |
+| **Production monitoring** | "Notice drift between releases on real traffic" | FlashRank MiniLM + sampling | Continuous |
+
+**Why this is not a gate-invalidation risk:**
+
+The narrow failure mode where different-model tiers diverge is a *rerank-specific code change* — e.g., someone edits how ties break or changes the top-k cutoff logic, and only the heavier model exposes the bug. That's <5% of realistic changes. The other 95% (chunking, embedding, prompts, retrieval SQL, metadata filters) affect the shared upstream path; proxies with either reranker catch those equally well. For the narrow case, the nightly/release gate is the safety net — the merge gate doesn't need to carry that weight.
+
+**Why this fits the pilot-to-prod scaling thesis:**
+
+Adds one row to the 8-dimension scaling table (now 9): the same scaffolding that runs fast proxies in CI also runs full DeepEval nightly and light rerank on live traffic. More workflow files, not more rewrites. Same pattern as the `auth_context` seam, the tsvector-without-BM25 schema, the showcase-trace Langfuse link. **Label the seams; the v1 demo ships one tier honestly; production scales by adding tiers, not rebuilding.**
+
+### Talking point — "One reranker tier doesn't fit all purposes"
+
+"A valid critique of our CI swap: the merge gate now runs a different reranker than the MCP server would in production. The sharper architecture isn't 'use the same model everywhere' — it's *use the right model per tier*. Fast cross-encoder on every PR so the gate is actually used. Heavy generative reward model nightly so release scores match what we publish. Light rerank on live traffic so monitoring is always on. The ~5% of PRs that would regress the heavy-model path specifically get caught by the nightly — same scaffolding, different knob."
+
 
 **Escape hatch:** `scripts/rerank.py` honors `IKB_RERANK_MODEL` env var. Production deployments that want higher quality and can afford 10x slower inference can point at a heavier model. The MCP server reads the same env var.
 
