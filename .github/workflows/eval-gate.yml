@@ -21,7 +21,11 @@ on:
 jobs:
   eval-gate:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # Runtime on CPU-only runners: ~50-55 min end-to-end. Local with Apple MPS
+    # runs in ~21 min; CI is CPU-bound on mxbai embed + rerank. Post-ship
+    # optimization spoke: parallelize Sonnet calls (sequential today → ~5 min
+    # concurrent). Until then, keep headroom here.
+    timeout-minutes: 75
 
     services:
       postgres:
