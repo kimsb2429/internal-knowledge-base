@@ -593,6 +593,11 @@ Q109: "13-question scorecard"
 | **Backup snapshot** | `~/ikb-backups/ikb-20260415-1705.dump` | 30MB `pg_dump -Fc` of the live pgvector volume (238 docs, 6,489 chunks). |
 | **Trace-public helper** | `scripts/make_trace_public.py` | Sidecar flip of Langfuse trace visibility via `/api/public/ingestion` `trace-create` event. 40 lines stdlib + dotenv. Works around the OTel-attribute-on-child-span gotcha. |
 | **Baseline reconfirm output** | `data/eval_v2bcr_rerank_postship.fast.raw.json` | 30q fast eval post-tsvector. Zero drift vs `eval_v2bcr_rerank.raw.json`. Also serves as the Option A CI gate baseline. |
+| **Eval-gate workflow** | `.github/workflows/eval-gate.yml` | Option A gate: pg17 service container + HF/FlashRank caches + apt-installed postgresql-client-17 + fixture restore + fast eval + regression check. `timeout-minutes: 75`. Blocking on PRs to main. First green run: `f0d912a`. |
+| **Regression checker** | `scripts/check_regression.py` | Reads current + baseline raw JSON; runs `cheap_proxies` on both; exits 1 on gated-metric regression beyond tolerance (top1/topk/keyword_recall: −5pp; idk_rate: +10pp). Self-verified (zero drift → pass) and synthetic regression (10 flipped top1 → fail with diagnostic). |
+| **CI fixture DB** | `evals/fixture_v1.dump` | 30 MB `pg_dump -Fc` of the v2bcr+rerank state (238 docs, 6,489 chunks). Committed to git; restored per CI run (<10 s). |
+| **CI baseline** | `evals/baseline.fast.json` | FlashRank MiniLM 30q baseline. Regression gate compares every PR run against this file. Regenerate with `.venv/bin/python -m scripts.run_eval --fast --k 5 --rerank-from 20` and `cp` into place when chunks, embeddings, or reranker change. |
+| **run_eval two-phase refactor** | `scripts/run_eval.py` | Split `run_one` into `_prep` (serial retrieve+rerank, CPU-bound) + `_complete` (parallel Sonnet via ThreadPoolExecutor). `--concurrency` arg, default 8. Per-query Phase-1 timing for CI debuggability. Back-compat wrapper retained. |
 
 ---
 
@@ -825,6 +830,16 @@ Q109: "13-question scorecard"
 
 > "since this is all geared toward demo let's do option A, but mention option C in the demo" — (the exact "label the seams" discipline applied at the CI-gate design level)
 
+> "ok python taking up lots of memory, like 15gb" — (noticing the machine degrading in real time, forcing the question of whether the reranker was the right choice or just the first choice)
+
+> "hm odd. take a look at what we did before. there should be details captured in the demo doc. i think we ran rerank successfully locally, and it wasn't that slow" — (pushing back on a bad assumption with historical evidence — demo-prep doc became the diagnostic tool)
+
+> "what exactly is the complexity?" — (the question that preempted a bad infrastructure decision — forcing an honest accounting of what Modal would cost before adopting it)
+
+> "let's try rank-tf-flan" — (not settling for the first working option; A/B'd against a middle-ground model before committing)
+
+> "does it make sense to have different models for rerank, one for ci eval and one for the full eval (which we are forgoing cuz it's demo, but that would be the design)?" — (the question that surfaced the tiered-reranker architecture as the right production pattern)
+
 ---
 
 ## Raw Stats for Demo Slides
@@ -913,6 +928,18 @@ Q109: "13-question scorecard"
 - **Keyword recall (proxy for CtxRec):** 0.731 → 0.757 → 0.873 → 0.917 → **0.958**
 - **Avg input tokens:** 1.3k → 2.1k → 4.4k → 8.5k → 22.7k (10× cost from k=5 to k=50 — caps k somewhere around 10-20 in practice)
 - **Decision unlocked:** raise `rerank_from` from 20 → 50 targets the 3-7% of queries where gold is rank 21-50 (in-bounds with Anthropic CR paper's 150→20 and Cohere's 100→10)
+
+### Eval-in-CI merge gate (2026-04-16 session 9)
+- **First CI run:** canceled at 44m 50s on the eval step (45-min workflow timeout) — mxbai-rerank-base-v2 projected ~45+ min for 30 queries on Linux CI CPU
+- **Rerank model swap:** mxbai-rerank-base-v2 (0.5B, CausalLM-based generative scoring) → FlashRank `ms-marco-MiniLM-L-12-v2` (22M, ONNX encoder + classification head)
+- **Local fast-eval wall time:** 1,286 s → **58 s** (22x speedup), memory peak 20.9 GB → 1.9 GB
+- **CI fast-eval wall time:** ~120 s (on GitHub Linux runner, CPU-only)
+- **First green CI run:** 3:53 total (setup 78 s + eval 120 s + regression check <1 s + artifact upload/cleanup ~35 s)
+- **First gated merge:** PR #4, commit `f0d912a`, 2026-04-16 15:13 EDT
+- **Quality delta (fast proxies, 30q, mxbai → FlashRank MiniLM):** top1 identical (0.733 → 0.733), topk +3.3pp (0.867 → 0.900), keyword_recall identical (0.768 → 0.768), idk_rate +13.3pp (0.167 → 0.300)
+- **T5-flan spot test (ruled out):** top1 drops to 0.400, idk rises to 0.433 — zero-shot advantage doesn't apply when corpus is in-domain for MS MARCO training
+- **Modal cost projection (declined):** T4 GPU ~$0.02/run + cold-start overhead + 4 new complexity dimensions (account, 2 secrets, decorated remote function, fallback path) for ~2-3 min savings over FlashRank
+- **CI cost per PR:** ~$0.30 in Anthropic Sonnet 4.6 generation (30 queries × ~$0.01 each)
 
 ---
 
@@ -2726,6 +2753,177 @@ Adds one row to the 8-dimension scaling table (now 9): the same scaffolding that
 ### Talking point — "One reranker tier doesn't fit all purposes"
 
 "A valid critique of our CI swap: the merge gate now runs a different reranker than the MCP server would in production. The sharper architecture isn't 'use the same model everywhere' — it's *use the right model per tier*. Fast cross-encoder on every PR so the gate is actually used. Heavy generative reward model nightly so release scores match what we publish. Light rerank on live traffic so monitoring is always on. The ~5% of PRs that would regress the heavy-model path specifically get caught by the nightly — same scaffolding, different knob."
+
+### Moment 40: Debugging the reranker — why "slow" was actually "wrong architecture"
+
+The first CI run hit the 45-min workflow timeout on the eval step. Initial hypothesis: "CPU is slower than local MPS." Stepping through the debug:
+
+**Layer 1 — is it MPS vs CPU?** `sample 91351 1` showed `at::native::addmm_impl_cpu_` and `at::native::cpublas::gemm` in the hot path. Patched `rerank.py` to force MPS via `device='mps'`. Re-ran. Stack now showed `metal gpu stream` and `at::native::mps::mps_copy_` — MPS active. Still slow.
+
+**Layer 2 — memory pressure?** Peak footprint 20.9 GB on CPU run, 15.0 GB on MPS. Most of a 32 GB machine. Multiple killed runs accumulated: orphan `multiprocessing.resource_tracker` processes (`/loky-<pid>-<hash>` semaphore leaks reported on each shutdown). Memory compression kicked in. Wired pages climbed past 10 GB. **Machine crawled to a halt.** Purge-memory had marginal effect; only reboot released the Metal-wired buffers. ([Ex. YY](#ex-yy-reranker-debug-sample-stacks))
+
+**Layer 3 — root cause.** The `mxbai_rerank` library's `MxbaiRerankV2(model_name_or_path)` class calls `AutoModelForCausalLM.from_pretrained(...)`. That's *causal language model*, not sequence-classification. **mxbai-rerank-base-v2 is a 0.5B-parameter generative reward model** that scores (query, document) pairs via decoder generation — not a traditional encoder-with-classification-head cross-encoder. Per-pair scoring runs the full generation loop. On CPU: ~30s per 20-doc query. On local macOS with memory pressure: ~99s per query. On Linux CI: projected 45+ min for 30 queries.
+
+The fix wasn't "move rerank to a GPU service" — it was **use the right tool**. FlashRank's `ms-marco-MiniLM-L-12-v2` is a 22M-param ONNX encoder with a classification head. True cross-encoder, pre-compiled ONNX graph, no generation loop. Per-query time on CI CPU: ~2s. 22x speedup from choosing the correct *architecture*, not throwing more compute at the wrong one.
+
+### Moment 41: The "complexity budget" on Modal (when NOT to reach for GPU infrastructure)
+
+During the slow-CI investigation, the natural infra instinct: *"just use Modal or another on-demand GPU service for rerank."* Walked through what that buys:
+
+| Dimension | Cost of Modal | Cost of staying CPU |
+|---|---|---|
+| **New dependencies** | Modal Python SDK + account + `MODAL_TOKEN_ID` + `MODAL_TOKEN_SECRET` GitHub secrets | 0 |
+| **Code changes** | `scripts/rerank.py` becomes `@modal.function`-decorated; model weights bake into a Modal image (slow first build) or download on cold-start; local CLI `python -m scripts.rerank "query"` breaks unless fallback path maintained | Drop-in model swap, 50-line rewrite |
+| **Ops overhead** | Cold starts (~30-60s per CI run unless paid keep-warm, ~$425/mo); two failure modes (Modal API + local fallback); when Modal has a blip, CI is down and merges block | None |
+| **Mental-model tax** | "Why does this repo need a Modal account to run eval locally?" — README line + trust-budget item alongside Anthropic + Langfuse + GitHub | None |
+| **Savings** | ~2-3 minutes vs FlashRank on CPU | — |
+
+**Decision: skip Modal.** Two-to-three minutes of saved CI time doesn't earn four new complexity dimensions. **The right "fix" for "model is too slow" is usually "wrong model," not "more compute."**
+
+Quotable — *"If rerank is genuinely slow on CPU (which we need to confirm), I'd reach for FlashRank first, Modal second."*
+
+([Ex. AAA](#ex-aaa-reranker-model-comparison-actual-numbers))
+
+### Moment 42: The first CI-gated merge on record
+
+**2026-04-16, 15:13 EDT.** PR #4 squash-merged to main: commit `f0d912a`, "Ship-cut v1: eval-in-CI merge gate + Langfuse public trace polish."
+
+This is the demo's first durable artifact: **a merge that went through a CI gate that could have blocked it**. The gate ran `run_eval.py --fast` on 30 queries against a fixture DB (the committed `evals/fixture_v1.dump`), compared fast proxies against `evals/baseline.fast.json`, exited 0. Total CI time: 3:53. ([Ex. ZZ](#ex-zz-first-gated-merge-timing))
+
+From here forward, every PR in this repo goes through the same gate. The failing-then-passing PR — the next planned artifact — is where the gate will actually *block* a merge, fix in place, and green again. That's the moment that converts the scaffolding from *present* to *proven*.
+
+### Talking point — "Why 'slow' wasn't a compute problem"
+
+"The first CI run timed out at 45 minutes on the eval step. The natural reflex is to throw a GPU at it — provision a Modal container, pay for T4 rental, accept the cold-start hit. We almost did. Then I sampled the stack and realized: the reranker we picked isn't a cross-encoder at all. It's a 0.5-billion-parameter causal language model scoring (query, doc) pairs via decoder generation. No amount of infrastructure fixes the wrong architecture. FlashRank's 22-million-parameter ONNX cross-encoder — twenty-five times smaller, actual classification head, pre-compiled graph — ran the same eval in 2 seconds per query on the same CPU. Twenty-two-fold speedup from picking the right model, zero new dependencies, no new secrets. The right 'fix' for 'model is too slow' is usually 'wrong model.'"
+
+### Talking point — "Gates aren't proof until one blocks something"
+
+"The eval-gate merge passed on its first run. Green. But a gate that never blocks anything doesn't prove it works — it just proves the tests happened to pass. The next commit in this branch plan is an intentional regression: bypass the reranker, let CI fail with a clear diagnostic, push the fix, watch CI turn green, squash-merge. That PR's history — blocked, fixed, green, merged — is the thing enterprise buyers actually want to see. A gate is an artifact the moment it catches something."
+
+### Quotables (session 9 continued)
+
+- "One reranker tier doesn't fit all purposes."
+- "The right 'fix' for 'model is too slow' is usually 'wrong model,' not 'more compute.'"
+- "A gate that never blocks anything doesn't prove it works — it just proves the tests happened to pass."
+- "A 0.5-billion-parameter causal language model scoring pairs via decoder generation is not a cross-encoder. It's a reward model in a trench coat."
+- "Twenty-five times smaller, twenty-two times faster, zero new dependencies. That's what swapping models — not swapping infrastructure — looks like."
+- "Modal saves you 2-3 minutes at the cost of a new account, two secrets, cold starts, and a fallback code path. Four new complexity dimensions for a three-minute gain. Decline politely."
+
+### Ex. YY: Reranker debug — sample stacks + memory trajectory
+
+**CPU path (initial run):**
+```
+Physical footprint:         13.4G
+Physical footprint (peak):  20.9G
+...
+at::native::linear → at::native::matmul → at::native::addmm_impl_cpu_
+at::native::cpublas::gemm                                    ← CPU BLAS
+```
+
+**MPS path (after forcing device='mps'):**
+```
+Physical footprint:         14.6G
+Physical footprint (peak):  15.0G
+...
+DispatchQueue_75: metal gpu stream  (serial)
+at::native::mps::mps_copy_
+at::mps::MPSStream::executeMPSGraph                          ← MPS active
+```
+
+**Memory pressure after 3 kill-restart cycles:**
+```
+Pages free:                                 992          # ~15 MB on a 32 GB machine
+Pages wired down:                        672,263        # ~10.5 GB
+Pages active:                             71,125
+Pages inactive:                           64,458
+```
+
+**Leaked resource tracker (on each killed process):**
+```
+UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects
+to clean up at shutdown: {'/loky-88693-yv94ti4x'}
+```
+
+**Root cause (from `mxbai_rerank` source):**
+```python
+class MxbaiRerankV2:
+    def __init__(self, model_name_or_path, ..., device: str = auto_device(), ...):
+        ...
+        self.model = AutoModelForCausalLM.from_pretrained(
+            model_name_or_path,
+            ...
+        )
+```
+
+`AutoModelForCausalLM` — not `AutoModelForSequenceClassification`. Per-pair scoring runs full decoder generation. That's why it's slow on CPU, slow on MPS, and not amenable to "just throw hardware at it."
+
+Source: `scripts/rerank.py` (pre-swap), `mxbai_rerank/model.py` inspected via `inspect.getsource`.
+
+### Ex. ZZ: First gated merge — CI timing breakdown
+
+```
+Run ID: 24528455819 (docs-only follow-up; same timing profile as the first green run)
+Trigger: PR #4 push to session-9-eval-in-ci
+
+Setup phase:                    ~78s
+  Initialize containers (pg17)   ~15s
+  Checkout + Python 3.12 + uv    ~10s
+  Install postgresql-client-17   ~30s
+  Cache HF / FlashRank (restore) ~3s
+  uv pip install -r reqs-ci.txt  ~10s
+  Wait for Postgres              ~2s
+  Restore 30MB fixture dump      ~6s
+
+Eval phase:                    ~120s
+  Phase 1: serial retrieve + rerank (30 × ~2s FlashRank MiniLM CPU)    ~65s
+  Phase 2: parallel Sonnet generation (concurrency=8)                  ~55s
+
+Check regression:                <1s
+Upload artifact + cleanup:       ~35s
+
+Total:                          233s (3:53)
+```
+
+Compared to first attempt on mxbai-rerank-base-v2: canceled at 44:50, still on the eval step. 22x wall-time improvement from the rerank model swap alone. Docs comparison from our own testing:
+
+| Point | mxbai (old) | FlashRank MiniLM |
+|---|---|---|
+| Fast-eval wall time (30q, local MPS) | 1286 s | 58 s |
+| Fast-eval wall time (30q, CI CPU) | 45 min+ (timeout) | ~120 s |
+| Model size | 500 MB (0.5B params) | 34 MB (22M params) |
+| Architecture | CausalLM (generative scoring) | ONNX encoder + classification head |
+| Cross-encoder forward pass (CPU) | ~1.5 s per pair (generation loop) | ~0.1 s per pair (single forward) |
+| Rerank contribution to eval time | ~30 s / query (20-doc pool) | ~2 s / query (20-doc pool) |
+
+Source: `data/eval_v2bcr_rerank.raw.json` (mxbai baseline), `evals/baseline.fast.json` (FlashRank baseline), GitHub Actions run 24528455819.
+
+### Ex. AAA: Reranker model comparison — actual measured numbers
+
+Same 30-query fast-mode subset, same fixture DB, same retrieve pool (top-20 cosine), same Sonnet 4.6 generation (T=0). Only the reranker model differs:
+
+| Metric | mxbai-rerank-base-v2 | FlashRank MiniLM | FlashRank T5-flan |
+|---|---|---|---|
+| Params | 500M | 22M | 110M |
+| Format | PyTorch CausalLM | ONNX encoder | ONNX encoder-decoder |
+| **top1_source_match** | **0.733** | **0.733** | 0.400 |
+| **topk_source_match** | 0.867 | **0.900** | 0.833 |
+| **answer_keyword_recall** | **0.768** | **0.768** | 0.660 |
+| **idk_rate** | **0.167** | 0.300 | 0.433 |
+| **elapsed_seconds** | 1,286 | **58** | 91 |
+| **speedup vs mxbai** | 1× | **22×** | 14× |
+
+**Key findings:**
+
+1. **FlashRank MiniLM ties mxbai on top1 and keyword_recall, improves topk by +3pp, loses 13pp on idk_rate.** Retrieval proxies are equal-or-better; cost is in Sonnet's confidence to answer from slightly different top-5 chunks.
+
+2. **T5-flan is strictly worse on every quality axis.** Despite being 3x larger than MiniLM. Likely because T5-flan's training ("best zero-shot on out-of-domain") doesn't help when our VA corpus IS in-domain for MS MARCO-trained rankers. Ruled out.
+
+3. **mxbai's high quality doesn't matter if the CI gate can't run in under 45 minutes.** Ship the fastest model that clears the retrieval-quality floor; label the others as production tiers.
+
+Source: `data/eval_v2bcr_rerank.raw.json`, `data/eval_v2bcr_flashrank.fast.raw.json`, `data/eval_v2bcr_t5flan.fast.raw.json`. All reproducible via `run_eval.py --fast --k 5 --rerank-from 20` with `IKB_RERANK_MODEL` env var.
+
+
+
 
 
 **Escape hatch:** `scripts/rerank.py` honors `IKB_RERANK_MODEL` env var. Production deployments that want higher quality and can afford 10x slower inference can point at a heavier model. The MCP server reads the same env var.
