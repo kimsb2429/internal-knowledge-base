@@ -16,3 +16,7 @@ data/knowva_manuals/parsed/
 # Eval artifacts — large + ephemeral. Reproducible via run_eval.py + score_eval.py
 data/eval_*.json
 data/golden_set_audit.json
+
+# K-sweep diagnostic outputs — reproducible via scripts/run_eval.py
+data/ksweep_*.raw.json
+data/ksweep_logs/

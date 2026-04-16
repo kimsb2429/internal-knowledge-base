@@ -4,6 +4,44 @@ Extracted moments, narratives, and artifacts from the session that demonstrate R
 
 ---
 
+## Launch-prep capture checklist
+
+Items to gather or produce as ship-cut work progresses (see `~/consulting-research/docs/rag-demo/README.md` § "Ship-cut v1"). **Future agents: when you complete any of these, append the artifact to this doc as a new `### Ex.` entry and update the relevant raw-stats subsection.**
+
+### Measurement gaps — data exists or is cheap to generate
+
+1. **Per-`query_type` segmented eval numbers** (highest-impact). Aggregates for v2bcr+rerank are captured; the segmented breakdown (lookup, synthesis, cross_source, temporal, contradiction, negative, ambiguous_term, prod_ops, consulting_sme, table_lookup) is not. Produce it + 2–3 representative failures per low-scoring class. The post-eval protocol in `CLAUDE.md` is mandatory — capture the output verbatim.
+2. **Before/after on ONE specific query** — pick from the 110-query golden set: a query where baseline retrieval missed and v2bcr+rerank nailed it. Preference order: table-embedded answer > heading-dependent > cross-source synthesis. Capture both top-5 chunks + both generated answers side-by-side. Becomes the *anchor query* for README hero + video cold-open + Reddit lede.
+3. **IDK rate / refusal behavior by query type** — golden set has negative queries. Break out IDK rate by class; include 2 examples of correct refusals. Under-documented in public demos, high production signal.
+4. **Per-query cost breakdown** — `embed($X) + retrieve($Y) + rerank($Z) + generate($W) = $N`. Extrapolate: 10K queries/month = $M, 1M = $K. Same for ingestion: $12.48 contextualized 6K chunks → project to 1M chunks ≈ $2K one-time. Feeds the pilot-to-prod scaling table directly.
+5. **Latency numbers** — p50/p95 retrieval, p50/p95 end-to-end. Langfuse captures once instrumented. Screenshot 1–2 canonical traces.
+6. **HyDE-skip reasoning as a standalone demo moment** — the pieces are in Act 24 (k-sweep) but scattered. Promote to a single angle: *"K-sweep showed ranking-bound not index-bound — raising `rerank_from` 20→50 is the better lever than HyDE."* Save as a clean quotable + raw stats block.
+
+### Will exist only after ship-cut build — capture when created
+
+7. **Langfuse trace screenshots** — 3 canonical captures: simple lookup, table-embedded answer, cross-source synthesis. Each showing query → retrieved chunks → generated answer → tokens + cost + timing. Save raw images in `docs/demo-assets/` or similar.
+8. **Failing-then-passing PR** — the ship-cut's highest-signal artifact. Capture: PR URL, failing CI run log, the diff of the fix, merged PR URL. Save as `### Ex. [next letter]: Merge-gate blocks a CtxRec regression`.
+9. **Guardrail examples** — one rejected input (schema-invalid or obviously malicious), one output validation catching a bad response. Save actual traces / response bodies with explanatory context.
+10. **Claude Desktop MCP screen recording** — actual capture of the MCP server being called from Claude Desktop. Run the anchor query end-to-end, tool invocation visible. Raw video + 1–2 still frames.
+
+### Nice to have — not required for launch, capture opportunistically
+
+11. **Concurrency / throughput stress test** — label in demo as "untested at scale; architecture is stateless, MCP layer horizontal-scales." Only run if time allows before launch.
+12. **Ingestion throughput** — docs/hour for onboarding a new source. Useful talking point for the pilot-to-prod gap discussion but not load-bearing.
+
+### Already well-covered — do NOT add more
+
+- Reranker methodology and numbers (Act 17–18, Ex. CC–DD)
+- Contextual Retrieval letdown data (Act 20, Ex. EE)
+- Black-box validation pattern (Acts 11, 12)
+- HtmlRAG / LangChain honest critiques (Acts 15, 16, Ex. T, Ex. AA)
+- Golden-set methodology + bug audit (Acts 2, 10, Ex. Y, Z)
+- Chunking decisions and refactor (Acts 6–9, Ex. Q–R, V–X)
+
+Additional acts or examples in these categories are not needed — 25 demo moments + 40+ Ex. references is already more than 12 months of Tier-2 spoke content.
+
+---
+
 ## Narrative Arc
 
 **Setup:** Client has VA Education Service manuals on a JavaScript SPA (KnowVA) and a PDF ICD document. Needs a RAG knowledge base with evaluation.
@@ -194,6 +232,31 @@ Extracted moments, narratives, and artifacts from the session that demonstrate R
 - First batch attempt: 400 BadRequestError because VADIR source_id `VADIR_CH33_LTS_WS_V2.1.1_ICD_20220509` contains dots — violates Anthropic's `^[a-zA-Z0-9_-]{1,64}$` custom_id pattern. Smoke test missed it (only had digit-IDs). ~1 hour lost to debug ([Ex. FF](#ex-ff-batch-custom-id-bug))
 - Fixed: sanitize source_id → token via regex, persist token mapping in batch state file for poll-resume
 - Second batch: 5,978/6,142 success in **~4 minutes wall time, $12.48** (97% success, half-cost vs live API). Combined with smoke test = 6,325/6,489 chunks contextualized.
+
+**Act 24 — "Are all the failing queries technical?"** (the failure-class realization)
+- After v2bcr+rerank eval, Contextual Recall sat at 0.52. Proposed "increase k" as the obvious next move. First brain asked a targeted question: are these low-recall failures all technical-term queries?
+- Segmented the 33 worst-recall queries by query characteristics: **82% were exact-token precision misses** (EPC 240, VADIR code 9GY, $45,000, Muskogee) — queries where a specific literal string needed to appear in the answer chunk, but dense embeddings buried it under semantic neighbors. **18% were multi-source synthesis queries** (prod-ops / consulting-SME questions requiring stitching across sections) — a totally different failure mode ([Ex. HH](#ex-hh-failure-class-segmentation))
+- Realization: the two classes want different treatments. Hybrid retrieval (BM25 + dense + RRF) is the textbook fix for exact-token precision. HyDE + query decomposition is the fix for synthesis queries. Neither alone solves the other.
+- The bigger lesson: **"loop on one metric at a time" was a shorthand that masked the real principle**. Interventions don't target metrics — they target failure classes. Aggregate metrics average across heterogeneous query populations, hiding bimodal distributions.
+- First brain's correction: "the fact that this insight only surfaced after I asked the question is problematic." Codified a standing rule: after every eval, segment by query_type, pull representative failures, name patterns, map to levers — before proposing next steps. Added to plan doc step 9, project CLAUDE.md, and global lessons. ([Ex. II](#ex-ii-post-eval-analysis-protocol))
+- Revised iteration principle: **pick the largest unresolved failure class, choose the single intervention most likely to resolve it, ship, measure on that class specifically, then reassess.** Preserves one-change-at-a-time discipline without conflating metrics with failure classes.
+
+**Act 25 — k-sweep, HyDE, CRAG, hybrid: triaging the roadmap**
+- Full discussion of the four remaining retrieval-layer techniques, priorities aligned to failure classes:
+  1. K-sweep diagnostic (1 afternoon) — is retrieval ranking-bound or index-bound? Cheap answer before investing.
+  2. Hybrid retrieval (~100 lines) — BM25 + dense + RRF. Targets exact-token precision (82% of low-Recall failures). Biggest lever for smallest effort.
+  3. HyDE + query decomposition — targets vocabulary mismatch and multi-source synthesis. Smaller slice but the remaining class.
+  4. CRAG — quality gate for the remaining edge cases + "say IDK" discipline for production.
+- Key decision aid: hybrid moves BEFORE HyDE in the plan because the failure analysis showed which class dominates in our corpus specifically ([Ex. JJ](#ex-jj-hybrid-over-hyde-reasoning)).
+
+**Act 26 — K-sweep diagnostic + metric prioritization in the long-context era** (2026-04-15 session)
+- Ran the k-sweep before investing in HyDE: 5 fast-mode runs at k ∈ {3, 5, 10, 20, 50}, **no rerank** to isolate pure index recall. 25 min total, ~$1.50 ([Ex. LL](#ex-ll-k-sweep-table))
+- Source recall climbed monotonically 0.80 → 0.87 → 0.87 → 0.90 → 0.93 — **gold docs ARE in the index**, just ranked 21-50 for ~3-7% of queries. Signal: ranking-bound, not index-bound.
+- top1 frozen at 0.533 across every k — the best chunk isn't the gold source half the time regardless of pool size. Not fixable by widening retrieval; fixable only by ranking or chunking quality.
+- Generator lift was huge: IDK 0.367 → 0.100, keyword recall 0.731 → 0.958. Long-context models genuinely filter junk, as long as the gold chunk is in the bag.
+- **Discussion that followed — when the 5 DeepEval metrics actually matter:** mapped each metric to the effect of raising k (Faith ~flat, AnsRel ↑, CtxPrec ↓, CtxRec ↑↑, CtxRel ↓). Raising k is a Pareto trade: buys CtxRec + AnsRel at cost of CtxPrec + CtxRel. The interesting levers are ranking ones (HyDE, better reranker, hybrid) because they lift CtxPrec/CtxRel without the trade.
+- **Priority reshuffle for the long-context era:** with modern LLMs filtering noise well, **CtxRec > CtxPrec > CtxRel**. CtxPrec still matters for cost/latency/distractors, not for answer quality alone. CtxRel is most useful as a **pipeline health diagnostic** — low CtxRel + high CtxRec = noisy index (duplicates, base64 blobs, over-fine chunking) ([Ex. MM](#ex-mm-metric-priority-long-context-era))
+- Decision aid confirmed: raising `rerank_from` from 20 to 50 is in-bounds with current best practice (Anthropic's own CR paper uses 150→20; Cohere 100→10) and directly addresses the 3-7% of queries where gold sits at rank 21-50.
 
 **Act 23 — Three-tier eval cadence** (making Loop A actually feasible)
 - Each full validation run = ~2h wall + $4-5. Unsustainable for iterative experimentation.
@@ -447,6 +510,16 @@ Q109: "13-question scorecard"
 
 **Talking point:** "When you have thousands of independent LLM calls and don't need real-time, the Batches API is a no-brainer — half the cost, no rate limits, runs in the background. Just sanitize your custom IDs."
 
+### 22. "Aggregates Were Hiding Two Diseases" — The Failure-Class Insight
+**What happened:** After CR eval, Contextual Recall sat at 0.52. Proposed increasing k as the obvious next move. First brain asked: "are the failing queries all technical?" Segmented the 33 low-recall queries — **82% were exact-token precision misses (EPC 240, 9GY, Muskogee); 18% were multi-source synthesis queries.** Different diseases needing different treatments.
+
+**Talking point:** "Aggregate metrics average across heterogeneous query populations and hide bimodal distributions. 'Contextual Recall 0.52' was actually 'lookup queries 0.80 + synthesis queries 0.20' — two failure classes with two different fixes. Hybrid retrieval attacks one class; HyDE attacks the other. Without segmentation, we'd have picked the wrong lever." ([Ex. HH](#ex-hh-failure-class-segmentation))
+
+### 23. "Metrics → Failure Classes → Levers" — The Revised Iteration Principle
+**What happened:** Codified a standing rule: after every eval, segment by query_type, pull 2-3 representative failures per cluster, name the patterns with specific mechanisms, map to levers — before proposing the next step. Captured in plan doc step 9, project CLAUDE.md, and global lessons.
+
+**Talking point:** "The shorthand 'loop on one metric at a time' masked the real principle. Interventions don't target metrics — they target failure classes. An intervention with zero aggregate-metric movement isn't a failed iteration if it resolved a specific class. The right question is 'which failure class is this treatment curing,' not 'did the average go up.'" ([Ex. II](#ex-ii-post-eval-analysis-protocol))
+
 ### 21. "Three-Tier Eval Cadence" — Making Loop A Actually Feasible
 **What happened:** A full eval iteration costs 2 hours and ~$5. After the first few full validation runs, the math killed iteration speed. Built three tiers:
 
@@ -457,6 +530,28 @@ Q109: "13-question scorecard"
 | Full | 2h | $4.30 | Same on full 110-query set |
 
 **Talking point:** "Most RAG iterations are retrieval/chunking changes that don't need full DeepEval scoring. A 5-minute fast mode with cheap proxies — keyword recall, IDK rate, token cost — catches the same direction-of-change. Reserve the 2-hour full validation for milestone declarations. 6x faster, 5x cheaper, same final confidence." ([Ex. GG](#ex-gg-fast-mode-output))
+
+### 24. "Recall Climbs, Top1 Frozen" — The K-Sweep Diagnosis
+**What happened:** Instead of picking HyDE by vibes, ran a 25-min diagnostic: 5 fast-mode evals at k ∈ {3, 5, 10, 20, 50}, no rerank. Recall climbed monotonically 0.80 → 0.93. Top1 stayed frozen at 0.533 at every k.
+
+**Before/after framing:** The question "is retrieval ranking-bound or index-bound?" has two opposite fixes. Ranking-bound → HyDE / better rerank / hybrid. Index-bound → chunking, embeddings, more sources. The sweep answered: **ranking-bound.** Gold docs are in the index, just ranked 21-50 for 3-7% of queries. Top1 being stuck regardless of pool size says the best-scoring chunk isn't the gold one half the time — a ranking/chunking problem, not a recall problem.
+
+**Talking point:** "You don't pick your next lever from vibes. A 25-minute k-sweep tells you whether you're ranking-bound or index-bound before you sink 2 days into the wrong intervention. Gold docs climbing into reach as k grows + top1 frozen = ranking is the weak link. That rules out HyDE-before-hybrid, confirms wider rerank pool, and retires the 'just raise k' instinct."  ([Ex. LL](#ex-ll-k-sweep-table))
+
+### 25. "Which Metric Do I Defend?" — Priority in the Long-Context Era
+**What happened:** After the k-sweep, first brain asked how the 5 DeepEval metrics would each move with higher k, then: "is there a typical k or every man for himself?" — followed by "contextual precision isn't really necessary if the client LLM can handle the extra info?" Mapped out the metric tradeoff, landed on a priority order.
+
+**The mapping on screen:**
+
+| Metric | Raising k effect | Why |
+|---|---|---|
+| Faithfulness | ~flat | Grounding doesn't care about pool size if gold chunk is present |
+| Answer Relevancy | ↑ | IDK halved 0.37 → 0.10; generator filters noise well |
+| **Contextual Precision** | ↓ or flat | Rank-weighted; top1 frozen, extra chunks dilute the ranked list |
+| **Contextual Recall** | ↑↑ | Direct: source recall 0.80 → 0.93 |
+| **Contextual Relevancy** | ↓ | More chunks, same # gold → ratio drops |
+
+**Talking point:** "The hierarchy of RAG metrics has shifted with long-context models. CtxRec > CtxPrec > CtxRel. Modern LLMs filter noise well — CtxPrec matters now for cost, latency, and distractor risk, not answer quality. CtxRel is most useful as a *debugging lens*: low CtxRel + high CtxRec means your index is noisy (duplicates, blobs, over-fine chunks). Optimize recall aggressively, accept lower precision, watch CtxRel as a signal that something junky got indexed." ([Ex. MM](#ex-mm-metric-priority-long-context-era))
 
 ---
 
@@ -492,6 +587,10 @@ Q109: "13-question scorecard"
 | Golden query set | `data/golden_query_set.json` | 110 queries, 10 types, source references, answers |
 | Eval results | `data/eval_faithfulness_v2.json` | Per-query claim decomposition + grounding scores |
 | VADIR ICD original | `data/VADIR_CH33_LTS_WS_V2.1.1_ICD_20220509.pdf` | Real VA interface control document |
+| **MCP server** | `scripts/mcp_server.py` | FastMCP 3.x wrapping retrieve+rerank. Tools + Resources + Prompts. `auth_context` gateway seam. `--transport stdio`/`http` switch. 185 LOC. |
+| **MCP smoke test** | `scripts/test_mcp_server.py` | In-process `fastmcp.Client` test, 5 assertions incl. guardrails (empty-query reject, k-clamp). |
+| **Hybrid-ready schema** | `scripts/init_schema.sql` | `content_tsv` GENERATED column + GIN index — BM25-ready, no rewrite. |
+| **Backup snapshot** | `~/ikb-backups/ikb-20260415-1705.dump` | 30MB `pg_dump -Fc` of the live pgvector volume (238 docs, 6,489 chunks). |
 
 ---
 
@@ -689,6 +788,20 @@ Q109: "13-question scorecard"
 
 > "let's do heading-only, and then we can deal with it by having the mcp serve a method like retrieve_full_doc or something later" — (deferral with an explicit escape valve)
 
+**From 2026-04-15 session (k-sweep + metric prioritization):**
+
+> "let's do k sweep first" — (picking diagnostic before intervention, per the post-eval protocol)
+
+> "show me our 5 scores again? prior to this experiment" — (grounding a new diagnostic in the existing metric baseline before interpreting)
+
+> "so the improvement we're seeing with increased k would improve which of the 5 metrics?" — (pushing past the proxy numbers to the DeepEval metrics that actually define quality)
+
+> "is there a typical k or really every man for himself?" — (checking industry convergence before defaulting to custom)
+
+> "hmmm so contextual precision is not really necessary if the client llm / user can handle the extra info?" — (the question that re-ordered the metric priority hierarchy for the long-context era)
+
+> "and what about contextual relevancy" — (finishing the metric reprioritization sweep)
+
 ---
 
 ## Raw Stats for Demo Slides
@@ -767,6 +880,16 @@ Q109: "13-question scorecard"
 - **Contextual Retrieval via Anthropic Batches API:** 5,978/6,142 chunks (97% success), 4 min wall time, **$12.48** (50% off live API), 38.9M cache read tokens
 - **Eval cadence tiers built:** Fast (5-10 min, $0.30, no DeepEval, 30q + cheap proxies), Medium (30 min, $1.50, 30q + DeepEval), Full (2h, $4.30, 110q + DeepEval)
 - **Session-to-date Anthropic spend:** ~$30 (most of which is one-time contextualization)
+
+### K-sweep diagnostic (2026-04-15 session)
+- **Config:** 5 fast-mode runs, 30 queries each, varying `--k` ∈ {3, 5, 10, 20, 50}, **no rerank** (isolates pure index recall)
+- **Wall time:** ~25 min total serial, **cost ~$1.50**
+- **Source recall (gold doc in top-k):** 0.800 → 0.867 → 0.867 → 0.900 → **0.933** (monotonic climb — ranking-bound, not index-bound)
+- **top1_source_match_rate:** **0.533 across every k** (best chunk is not the gold chunk half the time — ranking/chunking problem, not recall)
+- **IDK rate:** 0.367 → 0.367 → 0.200 → 0.100 → 0.100 (long-context generator uses extra chunks well)
+- **Keyword recall (proxy for CtxRec):** 0.731 → 0.757 → 0.873 → 0.917 → **0.958**
+- **Avg input tokens:** 1.3k → 2.1k → 4.4k → 8.5k → 22.7k (10× cost from k=5 to k=50 — caps k somewhere around 10-20 in practice)
+- **Decision unlocked:** raise `rerank_from` from 20 → 50 targets the 3-7% of queries where gold is rank 21-50 (in-bounds with Anthropic CR paper's 150→20 and Cohere's 100→10)
 
 ---
 
@@ -1736,3 +1859,739 @@ Running 30 queries (k=5)  rerank_from=20...
 Sign convention: ▲ = increase, ▼ = decrease. ✓ = better-by-direction (lower IDK and tokens = better). 5 minutes wall time, ~$0.30 cost.
 
 Source: `scripts/run_eval.py:cheap_proxies`, `scripts/run_eval.py:print_proxies_with_delta`
+
+### Ex. HH: Failure-class segmentation — the "not a single failure mode" finding
+
+Aggregate Contextual Recall on v2bcr+rerank: 0.52 (33 of 110 queries scored ≤ 0.15).
+
+Segmenting those 33 failures by query characteristics surfaced **two distinct failure classes**:
+
+**Class 1 — Exact-token precision loss (27/33 = 82%):**
+| id | Query (excerpt) | Missing token |
+|----|----|----|
+| 24 | "What End Product Code is used for an original Chapter 35 claim?" | "240" (EPC 240) |
+| 34 | "What does VADIR project code '9GY' represent?" | "9GY" |
+| 39 | "What does the VADIR exclusionPeriod 'exclusionPerdTyp' field contain?" | "exclusionPerdTyp" |
+| 40 | "What VADIR error code means 'Invalid Search Criteria'?" | specific error code |
+| 46 | "What transaction code in Benefits Manager represents a work study allowance?" | specific transaction code |
+| 60 | "ServicePeriod shows svcCd = 'F' and statute = '9B7'..." | specific field values |
+
+Pattern: the answer is a specific literal token. Dense embeddings treat "EPC 240" and "EPC 250" chunks as near-identical. BM25 discriminates instantly.
+
+**Class 2 — Multi-source synthesis (6/33 = 18%):**
+| id | Query (excerpt) | Why hard |
+|----|----|----|
+| 81 | "Service record lookups are regularly taking longer than they should. What downstream processes break?" | Requires stitching SLA spec + downstream failure modes across sections |
+| 84 | "How would we catch it if a veteran has been getting the wrong benefit level for years...?" | Detection mechanisms span 4+ layers |
+| 91 | "Military service record responses doubled in size over the past month. Should we be concerned?" | Payload semantics + freshness + DMDC patterns |
+| 93 | "Fail over to DR environment. What changes?" | ICD Section 5.1 + Section 7.4 |
+| 95 | "Scheduled maintenance window for eMPWR. Impact on in-flight work?" | Transition timeline + BT lifecycle |
+| 106 | "When someone says 'the master record,' what system?" | Time-and-chapter disambiguation |
+
+Pattern: no single chunk contains the answer. Requires retrieving, then synthesizing across 2-4 sources.
+
+**Different diseases. Different treatments.** Hybrid retrieval (BM25 + dense + RRF) fixes Class 1 almost entirely. Query decomposition + HyDE fixes Class 2. Neither alone fixes both.
+
+Source: analysis output of `data/eval_v2bcr_rerank.scores.json`
+
+### Ex. II: Post-eval analysis protocol
+
+Added to plan doc step 9 + project CLAUDE.md as a mandatory practice after every eval — baseline, Loop iteration, or production measurement.
+
+```
+Post-eval analysis protocol:
+(a) Segment by query_type — compute per-metric means. Aggregates hide
+    bimodal distributions.
+(b) Pull 2-3 representative failures per cluster — query + expected +
+    retrieved chunks + judge reasoning.
+(c) Name failure patterns — specific mechanism ("exact-code-in-table
+    buried by dense embedding noise"), not generic ("retrieval issue").
+(d) Map patterns to levers — which plan step / intervention targets each.
+
+Anti-pattern: proposing next intervention directly from aggregate deltas.
+That tunes blindly. Reranker lifted Precision 16.5pp AND masked that 33
+queries still had Recall ≈ 0 — the kind of thing aggregates can't show.
+```
+
+Captured in:
+- `docs/2026-04-11-engineering-rag-evidence-and-howtos.md` § "From Zero to Knowledge MCP" step 9
+- `CLAUDE.md` (project) — always loaded
+- `~/.claude/lessons.md` + `lessons-detail.md` — generalizes beyond RAG
+
+### Ex. JJ: Why hybrid retrieval was promoted above HyDE in the plan
+
+**Before failure-class analysis** (plan doc original order): Step 11 Reranker → Step 12 HyDE → Step 13 CRAG → Loop B (included hybrid).
+
+**After failure-class analysis:**
+
+| Failure class | Size | Best lever | Effort |
+|---|---|---|---|
+| Exact-token precision | 27 queries | **Hybrid retrieval (BM25 + dense + RRF)** | ~100 lines, no API cost |
+| Multi-source synthesis | 6 queries | HyDE + query decomposition | ~200 lines, +$0.001/query |
+| Vocabulary mismatch | Few | HyDE | Same as above |
+| Image-content gap | 1-2 queries | OCR / vision (big lift, narrow) | High effort, narrow scope |
+| Corpus-absent | 1-2 queries | Expand corpus (Loop D) or mark unanswerable | Outside current scope |
+
+Hybrid targets the largest class with the smallest footprint. HyDE addresses a smaller class at ~2x the code and a per-query API cost. **Easy prioritization call, invisible without the class segmentation.**
+
+Revised order:
+```
+Step 11. Reranker              ✓ done
+Step 12. K-sweep diagnostic     — ranking-bound vs index-bound?
+Step 13. Hybrid retrieval       — promoted: targets largest failure class
+Step 14. HyDE + query decomposition
+Step 15. CRAG
+Loop B.  Full retrieval tuning
+```
+
+Source: this session's analysis of `data/eval_v2bcr_rerank.scores.json`
+
+### Ex. KK: Metric evolution across Loop A iterations — the ups and downs
+
+Full-110-query DeepEval scores across every iteration. Shows that every intervention was evaluated head-to-head (same queries, same judge) and promoted only if it earned its keep.
+
+| Iteration | Chunks | Retrieval | Faith | AnsRel | CtxPrec | CtxRec | CtxRel | Tokens/q |
+|---|---|---|---|---|---|---|---|---|
+| v1 baseline | 6,489 | cosine top-5 | 0.97 (subset) | 0.85 (subset) | 0.50 (subset) | 0.75 (subset) | 0.54 (subset) | 3,330 |
+| v2 (BS4 pre-chunk) | 5,355 | cosine top-5 | 0.99 (subset) | 0.89 (subset) | 0.47 (subset) | **0.50** (subset) | 0.52 (subset) | n/a |
+| **v2b** (Option B: BS4 post-chunk) | **6,489** | cosine top-5 | 0.97 | 0.83 | 0.40 | 0.45 | 0.43 | **2,643 (-21%)** |
+| **v2b + rerank** | 6,489 | cosine top-20 → rerank top-5 | 0.96 | 0.86 | **0.57 (+17pp)** | 0.51 (+5pp) | **0.55 (+12pp)** | 2,800 |
+| **v2bcr + rerank** | 6,489 | contextualized embed + rerank | 0.95 | **0.91 (+5pp)** | 0.61 (+4pp) | 0.52 (+1pp) | 0.56 (+1pp) | 2,693 |
+
+Notes on the trajectory:
+- **v2 was REVERTED** — BS4-before-chunking shifted heading splitter boundaries and crashed Recall -25pp. Rollback restored v1 state. The eval caught this before it became the baseline.
+- **v2b Option B** recovered boundary preservation while keeping the token savings. Recall held flat, cost dropped 20%. Kept.
+- **Reranker** delivered the biggest single-iteration lift. Precision +16.5pp, Relevancy +11.8pp.
+- **Contextual Retrieval** delivered a modest lift on top of rerank (AnsRel +5pp). Anthropic's published +35% recall claim did NOT replicate at our scale — CR overlaps with what reranker already does.
+
+**Cumulative effect (v1 → v2bcr+rerank):** AnsRel +9%, CtxPrec +52%, CtxRec +14%, CtxRel +28%. Two interventions (Option B, reranker) delivered the bulk; CR was incremental.
+
+Source: `data/eval_v2b.scores.json`, `data/eval_v2b_rerank.scores.json`, `data/eval_v2bcr_rerank.scores.json`
+
+### Ex. LL: K-sweep diagnostic table
+
+Five fast-mode runs, 30 queries each, **no rerank** to isolate pure index recall. Varied `--k` only. 25 minutes total, ~$1.50.
+
+| k | topk recall | top1 | ans-kw recall | idk rate | avg_in_tokens |
+|---|---|---|---|---|---|
+| 3  | 0.800 | 0.533 | 0.731 | 0.367 | 1,272 |
+| 5  | 0.867 | 0.533 | 0.757 | 0.367 | 2,149 |
+| 10 | 0.867 | 0.533 | 0.873 | 0.200 | 4,363 |
+| 20 | 0.900 | 0.533 | 0.917 | 0.100 | 8,506 |
+| 50 | **0.933** | 0.533 | **0.958** | 0.100 | 22,682 |
+
+Two key signals:
+
+1. **Source recall climbs monotonically (0.80 → 0.93).** Gold docs ARE in the index — just ranked 21-50 for ~3-7% of queries. Not a plateau = not index-bound.
+2. **top1 frozen at 0.533 across every k.** The best-scoring chunk is not the gold source half the time, regardless of pool size. Widening retrieval doesn't fix this — it's a ranking or chunking problem.
+
+**Diagnosis:** ranking-bound. Levers that help: wider rerank pool (20 → 50), HyDE (better query vectors), hybrid retrieval (BM25 rescues exact-token queries). Levers that don't: bigger corpus, different embedder, more chunks.
+
+Source: `data/ksweep_k{3,5,10,20,50}.raw.json`, logs in `data/ksweep_logs/`
+
+### Ex. MM: Metric priority in the long-context era
+
+The five DeepEval metrics don't all matter equally anymore. As LLM context windows grew (100K+) and filtering got stronger, the hierarchy shifted. This table maps each metric to:
+- How raising `k` changes it (proxy for retrieval breadth)
+- How much it matters for **answer quality**
+- Whether it has a separate role (cost, diagnostics)
+
+| Metric | Effect of ↑k | Quality impact | Other role |
+|---|---|---|---|
+| Faithfulness | ~flat | **Still #1** — hallucination gate | — |
+| Answer Relevancy | ↑ | High — this is what users feel | — |
+| **Contextual Recall** | ↑↑ | **High** — if gold chunk is missing, nothing else matters | — |
+| **Contextual Precision** | ↓ or flat | **Lower than it used to be** — LLMs filter junk well | **Cost, latency, distractor risk** |
+| **Contextual Relevancy** | ↓ | Lowest — non-rank-weighted signal-to-noise | **Pipeline health diagnostic** |
+
+**Revised priority for long-context RAG:** Faith = AnsRel > CtxRec > CtxPrec > CtxRel.
+
+**CtxPrec is still useful** — just not as a quality metric. It governs:
+- **Cost** — k=50 is ~$0.07/query vs k=5 at ~$0.006 (10× at scale)
+- **Latency** — input tokens dominate gen latency for most models
+- **Distractor failure mode** — semantically-similar-but-wrong chunks in repetitive domain corpora (VA manuals with shared boilerplate) pull answers off-topic. Faithfulness regressions live here.
+- **Downstream consumers** — if MCP serves another agent, cluttered context = cluttered citations
+
+**CtxRel is most useful as a debugging lens, not a quality metric:**
+- Low CtxRel + high CtxRec = **index is noisy** (near-duplicates, base64 blobs, image-only chunks, over-fine chunking). Cue to run Loop A cleanup.
+- Low CtxRel + low CtxRec = **index is broken** (wrong corpus, bad embeddings).
+- High CtxRel + low CtxRec = **index is clean but missing content** (need more/better sources).
+
+On our dataset, CtxRel tracked CtxPrec closely (0.43 → 0.55 → 0.56) — queries narrow enough that "relevant at all" and "relevant at top" line up.
+
+**Industry convergence confirms this:** two-stage retrieval (retrieve wide 20-100, rerank narrow 3-10) is now the default. Anthropic CR paper: 150 → 20. Cohere: 100 → 10. Pre-long-context dogma of k=3-5 was a context-window limitation, not a quality principle.
+
+Source: discussion in 2026-04-15 session; k-sweep data in Ex. LL; prior eval scores in Ex. KK
+
+---
+
+## Act 27: The MCP Gateway Layer (framework ≠ enterprise scaffolding)
+
+### Moment 26: "The framework is a commodity. The gateway is the enterprise story."
+
+**Context:** During ship-cut planning we evaluated whether FastMCP 3.x could scale for enterprise. The research answered a sharper question — the framework choice barely matters; the **gateway layer** sitting in front of it is where enterprise scaling actually lives.
+
+**The architectural split:**
+
+```
+[Claude Desktop / Claude Code / Agent platform]   ← consumer LLM
+         ↓
+[MCP Gateway]  ← Kong Enterprise MCP, Lunar MCPX, TrueFoundry, MintMCP
+   - OAuth / SAML / SSO
+   - Rate limits, audit trail, policy enforcement
+   - Multi-tenant routing, secrets management
+   - Aggregated OTel / observability
+         ↓
+[FastMCP server]  ← business logic only
+   - tools / resources / prompts
+   - retrieval, domain logic
+         ↓
+[pgvector / your data]
+```
+
+**The key insight:** the gateway eats the cross-cutting concerns that make enterprise MCP expensive to build from scratch — SSO, SOC2 audit, multi-tenancy, rate limits, secret injection. All the major gateways treat the underlying MCP server as pluggable.
+
+**Gartner signal worth quoting:** by 2026, 75% of API gateway vendors will ship MCP features. Kong already has. Lunar.dev is tracked as a Representative Vendor in the MCP Gateways category, SOC2 at Enterprise tier. This is the "API Management 2.0" consolidation — same shape as the 2014 API-gateway wave.
+
+**Named players to cite:** Kong Enterprise MCP, Lunar MCPX, TrueFoundry MCP Gateway, MintMCP. Pick based on existing API gateway stack.
+
+**TrueFoundry published numbers worth citing if asked:** 3–4ms gateway latency, 350+ req/s on a single vCPU.
+
+**The anti-pattern worth naming:** "Per-server auth becomes a maintenance burden past ~3 servers." Teams that build SSO/audit/policy into each individual MCP server end up rebuilding it per server and break at scale. The whole point of the gateway pattern is *not* to do that.
+
+### Example NN — Why the ship-cut deliberately doesn't build a gateway
+
+Ship-cut discipline: **label the seams, don't half-build.** The `auth_context` parameter lives in the FastMCP tool signature (the seam). The gateway populates it in production. In the demo, it's `None`. Same rule applies to SSO, multi-tenancy, blue/green index, namespace isolation.
+
+**Why not build a gateway for v1:**
+- Buyers watching the video don't type into the demo, they book a call. Gateway adds zero narrative value pre-call.
+- Kong / Lunar / TrueFoundry are paid/licensed or SaaS. Standing one up for the demo is 2–3 days of infra work that ships nothing new.
+- Credibility comes from **labeling the seam correctly**, not building it. That's the thesis of the scaling table.
+- Same category as SSO, multi-tenancy, blue/green — README stubs with named production paths.
+
+**What would pull gateway into scope (not now):**
+- A first consulting client specifically asking "can you show me gateway integration?" — that becomes billable discovery work, not demo work.
+- Post-launch: if Show HN / Reddit comments consistently ask "but how do you handle SSO?" — that's the signal to build a second demo repo showing Kong or Lunar wiring. Different asset, not v1.
+
+### Talking point — "Why FastMCP, not a custom server"
+
+"The framework-selection research hit a fork: it wasn't really about frameworks. Python MCP frameworks are converging — FastMCP 1.0 was merged back into the official SDK, they share the same primitives. The real enterprise scaling question is the gateway in front of it. So we picked FastMCP 3.x for the server — fastest to ship, decorator-based, async-first, OpenTelemetry built in — and left the gateway as a labeled seam. Enterprise path: Kong, Lunar, or TrueFoundry. Same FastMCP server underneath."
+
+### Talking point — "Why no gateway in v1"
+
+"A gateway is a 2–3 day infra lift that doesn't change the narrative. Buyers watching this don't care whether SSO is wired — they care that I know *where* SSO goes. Naming the seam is stronger than half-building it. The `auth_context` parameter is the seam. Kong, Lunar, or TrueFoundry is the production fill. Same discipline as multi-tenancy, blue/green indexing, namespace isolation — labeled, not built."
+
+### Quotables
+
+- "The framework is a commodity. The gateway is the enterprise story."
+- "Per-server auth becomes a maintenance burden past three servers. The gateway exists so you don't rebuild SSO seven times."
+- "Gartner tracks MCP Gateways as a category now. SOC2-certified vendors exist. This is API Management 2.0."
+- "Label the seams. Don't half-build them."
+- "FastMCP was merged into the official SDK. Picking one over the other is a non-decision. Picking a gateway isn't."
+
+### Stats block
+
+- Gartner: **75% of API gateway vendors will ship MCP features by end of 2026**
+- TrueFoundry published benchmark: **3–4ms gateway latency, 350+ req/s / vCPU**
+- FastMCP Python single-pod ceiling: **~1,200 concurrent connections on 8GB RAM**
+- Streamable HTTP shared-session throughput: **290–300 req/s** (vs 30–36 req/s unique-session — 10× penalty)
+- Python vs Java/Go on MCP benchmark: **Python ≈ 18% of high-perf tier** — fine when retrieval latency dominates (our pgvector + rerank = 200–800ms)
+
+Source: research + discussion in 2026-04-15 session (ikb-session-8); FastMCP framework evaluation, gateway landscape research
+
+---
+
+## Act 28: The MCP Server Ships (Tools + Resources + Prompts, 200 lines)
+
+### Moment 27: "Most MCP servers only ship Tools. This one ships all three."
+
+**Context:** After locking framework (FastMCP 3.x) and scoping out the gateway, the v1 MCP server was built as a thin wrapper over the existing `retrieve.py` + `rerank.py` pipeline. Intentionally exposed **Tools + Resources + Prompts** — the three most-used MCP capabilities — because 90% of public MCP servers only ship Tools, which is the reason critics call MCP "a REST API wrapper with extra steps."
+
+**What the server offers ([Ex. OO](#ex-oo-mcp-server-core)):**
+- **Tool `query(query, k, rerank_from, auth_context)`** — pgvector cosine → mxbai-rerank cross-encoder → top-k chunks with metadata
+- **Resource `document://{source_id}`** — full raw HTML fetch for the `retrieve_full_doc` escape valve (designed in Ex. X, now real)
+- **Prompt `cite_from_chunks`** — citation-heavy answer template, portable across any MCP client (Claude Desktop, Cursor, Windsurf)
+
+**Production-scaling knobs baked in:**
+- `--transport stdio` (default, for Claude Desktop / Code) ↔ `--transport http` (Streamable HTTP, gateway-fronted) — one-flag switch, no rewrite
+- Logging routed to stderr only (stdout is reserved for JSON-RPC on stdio transport — a 2026 gotcha that breaks naive implementations)
+- `auth_context: dict | None = None` on every tool — the enterprise gateway seam, typed and documented, does nothing in v1
+- Hard guardrails: `MAX_K=20`, `MAX_QUERY_CHARS=2000`, empty-query rejection, k-clamping
+- Every response carries `trace_id` + `latency_ms` — ready for OTel/Langfuse wiring next
+
+**Smoke test (in-process via `fastmcp.Client`) — all 5 assertions green ([Ex. PP](#ex-pp-smoke-test-output)):**
+1. Tools/resources/prompts register cleanly
+2. `query` returns 3 chunks with full metadata (rerank=7.812, latency=26s incl. first-call model load)
+3. `document://554400000073486` returns 52,875 chars of raw HTML
+4. `cite_from_chunks` renders with citation rules
+5. Guardrails: empty query → ToolError; k=999 clamped to 20
+
+### Moment 28: "Label the seams. Data residency is a schema column, not a roadmap item."
+
+Two infrastructure moves happened in the same session that quietly strengthen the pilot-to-prod scaling table without chasing new features:
+
+**(a) Hybrid-ready schema ([Ex. QQ](#ex-qq-tsvector-migration)).** Added a `content_tsv tsvector GENERATED ALWAYS AS (to_tsvector('english', content)) STORED` column + GIN index to `document_chunks`. All 6,489 existing rows populated automatically (Postgres back-fills generated columns on write, no migration script needed). BM25 wiring stays a post-launch spoke — but the README's "100k–1M docs" row of the scaling table is now truthful: *"Same schema. Scale via pgvector IVFFlat/HNSW indexes. No rewrite."*
+
+**(b) Backup discipline.** 30MB `pg_dump -Fc` snapshot at `~/ikb-backups/ikb-20260415-1705.dump` — survives Docker Desktop factory reset, `docker compose down -v`, or Mac disk failure. Re-ingest cost if the volume is ever lost: ~1 hour machine time + $12.48 Anthropic Batches API spend. The backup takes 30 seconds and caps that risk.
+
+### Moment 29: "There's no AWS-native Langfuse. The category exists for a reason."
+
+**Context:** Before wiring observability, verified that no cloud-native equivalent obviated the need for a dedicated LLM observability tool. Research answered the question sharply.
+
+**AWS's LLM-observability surface (2026):**
+- **CloudWatch Application Signals for Bedrock** — auto-instruments Bedrock SDK calls, tracks latency/cost/tokens. Great if you're all-in on Bedrock; useless for multi-provider stacks.
+- **Bedrock AgentCore Observability** — purpose-built for agent applications on Bedrock, emits OTel.
+- **Pattern AWS itself recommends:** AgentCore → OTel → ship to Langfuse (per AWS-samples repo). AWS is implicitly acknowledging the gap by making AgentCore OTel-native rather than CloudWatch-locked.
+
+**The gap ([Ex. RR](#ex-rr-aws-vs-langfuse-gap)):** Bedrock-only observability covers 60–70% of Langfuse. The LLM-native primitives (prompt versioning, LLM-as-judge evals attached to traces, golden-set datasets, shareable public dashboards) are missing from every cloud-native option.
+
+**Decision:** Langfuse Cloud for v1 (multi-provider reality: Anthropic Batches + Haiku judge + local mxbai = not on Bedrock; free tier; shareable public link is on-brand for the demo's observability row).
+
+**Portability safety net:** FastMCP 3.x emits OTel natively. If we ever swap Langfuse → Datadog / Honeycomb / Grafana Tempo, it's a config change, not a refactor. The README can honestly claim "standards-based instrumentation, not vendor-locked."
+
+### Talking point — "Why Tools + Resources + Prompts"
+
+"Most of the 12,000 MCP servers on PulseMCP ship Tools only. That's why the loudest MCP critique is 'it's just a REST API wrapper.' Tools + Resources + Prompts is a 2-hour differentiator that reframes the whole value prop — the server ships *affordances*, not just function calls. Consuming LLMs get a URI template for fetching full documents and a reusable citation-heavy prompt template for free. Same FastMCP server. Same pgvector. Three first-class protocol features instead of one."
+
+### Talking point — "The tsvector column costs nothing and proves the architecture claim"
+
+"A generated column is one ALTER TABLE away. Postgres auto-populates it on write — zero app-code changes. The GIN index builds in seconds at our 6K chunks. But the narrative return is outsized: the README's scaling table can now claim 'Same schema, scale via IVFFlat/HNSW, no rewrite' and point to a live column that proves it. That's the whole discipline — label the seams, but make sure the seams are real."
+
+### Talking point — "Why not AWS App Signals"
+
+"CloudWatch App Signals auto-instruments Bedrock. That's the entire value prop. Our stack has Anthropic direct (Batches API for Contextual Retrieval), Anthropic Haiku for the eval judge, and mxbai running locally for embeddings — zero of that traffic is visible to App Signals. Langfuse is provider-agnostic, which matches the reality of enterprise AI stacks in 2026: mixed Bedrock, direct API calls, and local models. AWS's own samples repo recommends piping AgentCore traces to Langfuse — which tells you everything."
+
+### Quotables
+
+- "Most MCP servers only ship Tools. That's why MCP gets called a REST API wrapper."
+- "Tools + Resources + Prompts is a 2-hour differentiator that reframes the value prop."
+- "The generated column is a seam you can point at. That's stronger than a roadmap bullet."
+- "Backup takes 30 seconds. Losing the volume costs 1 hour and twelve dollars. Do the backup."
+- "AWS's own docs route you through Langfuse. There's no shame in picking the right-shaped tool."
+- "FastMCP speaks OTel. Langfuse speaks OTel. Swapping backends is a config change, not a refactor."
+- "Label the seams. `auth_context=None` today is a gateway-populated dict tomorrow."
+
+### Stats block
+
+- **MCP server LOC:** 185 lines (`scripts/mcp_server.py`)
+- **Smoke test:** 5/5 assertions pass, in-process via `fastmcp.Client`
+- **First-call latency:** 26s (model load); steady-state ~3–4s / query (pgvector + rerank)
+- **Guardrail ceilings:** `MAX_K=20`, `MAX_QUERY_CHARS=2000`
+- **Schema addition:** `content_tsv` GENERATED column + GIN index, 6,489 rows back-filled automatically
+- **Backup:** 30MB `pg_dump -Fc`, survives Docker factory reset
+- **Re-ingest cost if volume lost:** ~1h machine time + $12.48 Anthropic Batches spend
+- **FastMCP version:** 3.2.4 (released post-Jan-2026; FastMCP 1.0 was merged into the official Python MCP SDK)
+
+---
+
+### Ex. OO: MCP server core
+
+**File:** `scripts/mcp_server.py` (excerpted)
+
+```python
+from fastmcp import FastMCP
+
+mcp = FastMCP(
+    "internal-knowledge-base",
+    instructions=(
+        "Retrieval over the VA Education corpus (M22-3, M22-4, VADIR ICD). "
+        "Use `query` for question-answering; results come pre-reranked by "
+        "cross-encoder. Use the `document://{source_id}` resource to fetch a "
+        "full source document when chunk-level context is insufficient. Use "
+        "the `cite_from_chunks` prompt to get a citation-heavy answer format."
+    ),
+)
+
+# --- Tool -------------------------------------------------------------
+@mcp.tool
+def query(
+    query: str,
+    k: int = 5,
+    rerank_from: int = 20,
+    auth_context: dict[str, Any] | None = None,   # <-- the gateway seam
+) -> dict:
+    """Retrieve the top-k most relevant chunks for a natural-language query..."""
+    t0 = time.time()
+    q = _validate_query(query)
+    k_out = _clamp_k(k)
+    k_pool = max(k_out, min(MAX_K * 5, int(rerank_from)))
+
+    candidates = retrieve(q, k=k_pool)            # pgvector cosine
+    top = rerank(q, candidates, top_k=k_out)      # mxbai cross-encoder
+
+    chunks = [ { ...flatten... } for c in top ]
+    latency_ms = int((time.time() - t0) * 1000)
+    trace_id = f"ikb-{int(t0 * 1000)}"
+    log.info("query trace_id=%s k=%d ... top_score=%.3f auth=%s",
+             trace_id, k_out, chunks[0]["rerank_score"], bool(auth_context))
+    return {"query": q, "k": k_out, "chunks": chunks,
+            "latency_ms": latency_ms, "trace_id": trace_id}
+
+# --- Resource ---------------------------------------------------------
+@mcp.resource("document://{source_id}")
+def get_document(source_id: str) -> dict:
+    """Return the full raw content + metadata for a source document."""
+    with _get_conn().cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+        cur.execute("SELECT ... FROM documents WHERE source_id = %s", (source_id,))
+        row = cur.fetchone()
+    if not row:
+        raise ValueError(f"document not found: {source_id}")
+    return dict(row)
+
+# --- Prompt -----------------------------------------------------------
+@mcp.prompt
+def cite_from_chunks(user_question: str) -> str:
+    """Answer the user's question using retrieved chunks with paragraph-level citations."""
+    return (
+        "You are answering a question over the VA Education corpus. Use the "
+        "`query` tool to retrieve relevant chunks, then answer with these rules:\n"
+        "1. Cite every non-trivial claim using `[source_id > heading_path]`.\n"
+        "2. If the retrieved chunks don't contain the answer, say so plainly.\n"
+        "3. Prefer direct quotes for regulatory or numeric content.\n"
+        "4. If a chunk has `chunk_type: table`, preserve the table's structure.\n\n"
+        f"User question: {user_question}"
+    )
+
+# --- Entrypoint (one-flag transport switch) --------------------------
+if args.transport == "stdio":
+    mcp.run()                                             # Claude Desktop / Code
+else:
+    mcp.run(transport="http", host=args.host, port=args.port)   # gateway-fronted
+```
+
+**Why this snippet matters:** the full production-scaling narrative fits in ~60 lines. Decorators do schema generation, sync-in-threadpool, URI routing, and JSON-RPC protocol handling. The three capabilities (Tools + Resources + Prompts) stack visibly. `auth_context` is the named seam. `mcp.run(transport=...)` is the stdio↔HTTP switch.
+
+---
+
+### Ex. PP: Smoke test output
+
+**File:** `scripts/test_mcp_server.py` — runs the server in-process via `fastmcp.Client` and verifies 5 properties.
+
+```
+[PASS] registration: tools=['query'] prompts=['cite_from_chunks'] resources=['document://{source_id}']
+[PASS] query: 3 chunks, top rerank=7.812 latency_ms=25995 trace_id=ikb-1776286503414
+[PASS] resource: document://554400000073486 -> 52875 chars raw_content
+[PASS] prompt: cite_from_chunks rendered with citation rules
+[PASS] empty-query guard: ToolError
+[PASS] k-clamp: requested 999, served 20
+
+All smoke tests passed.
+```
+
+**Why this snippet matters:** real MCP server, real pgvector query, real rerank, real guardrail enforcement — all verified before involving the first brain. The `k-clamp: requested 999, served 20` line is the guardrail in action; the `top rerank=7.812` is a real cross-encoder score on a real VA Education query.
+
+---
+
+### Ex. QQ: tsvector migration + GIN index (honest "hybrid-ready" claim)
+
+**Before** (`scripts/init_schema.sql`, `document_chunks` table):
+```sql
+embedding       vector(1024),                  -- mxbai-embed-large
+heading_path    TEXT[],
+chunk_type      TEXT NOT NULL DEFAULT 'text',
+```
+
+**After:**
+```sql
+embedding       vector(1024),                  -- mxbai-embed-large
+content_tsv     tsvector GENERATED ALWAYS AS (to_tsvector('english', coalesce(content, ''))) STORED,
+heading_path    TEXT[],
+chunk_type      TEXT NOT NULL DEFAULT 'text',
+...
+-- GIN index for BM25/lexical search (hybrid-ready; wiring deferred to post-launch spoke)
+CREATE INDEX idx_chunks_content_tsv ON document_chunks USING gin (content_tsv);
+```
+
+**Live migration (applied to ikb_pgvector container):**
+```
+docker exec ikb_pgvector psql -U ikb -d ikb -c "ALTER TABLE document_chunks
+  ADD COLUMN content_tsv tsvector GENERATED ALWAYS AS (to_tsvector('english', coalesce(content, ''))) STORED;"
+ALTER TABLE
+
+docker exec ikb_pgvector psql -U ikb -d ikb -c "CREATE INDEX IF NOT EXISTS idx_chunks_content_tsv
+  ON document_chunks USING gin (content_tsv);"
+CREATE INDEX
+
+SELECT count(*) AS rows_with_tsv FROM document_chunks WHERE content_tsv IS NOT NULL;
+ rows_with_tsv
+---------------
+          6489
+```
+
+**Why this snippet matters:** zero app-code changes, zero migration script, zero downtime. All 6,489 existing chunks populated automatically by Postgres (generated columns back-fill on write, and the generation expression is `STORED` so existing rows are evaluated at ALTER time). The README's "100k–1M docs scaling row" is now backed by a real column. Label-the-seam discipline, executed.
+
+---
+
+### Ex. RR: AWS-native vs. Langfuse — the observability gap table
+
+| Feature | CloudWatch App Signals / AgentCore | Langfuse |
+|---|---|---|
+| Trace storage + viewer | ✅ | ✅ |
+| Cost + token metrics | ✅ (Bedrock only) | ✅ (any provider) |
+| OTel ingest | ✅ | ✅ |
+| **Works with non-Bedrock LLMs** | ❌ | ✅ |
+| **Prompt versioning / management** | ❌ | ✅ |
+| **LLM-as-judge evals attached to traces** | ❌ (build with Lambda) | ✅ (built-in) |
+| **Golden dataset management** | ❌ | ✅ |
+| **Shareable public dashboard link** | ❌ (needs IAM) | ✅ |
+| Free tier | CloudWatch free tier | Yes (50K obs/mo) |
+
+**Tell:** AWS's own samples repo (`aws-samples/genai-llm-application-monitoring-on-aws`) routes AgentCore OTel traces to Langfuse or Grafana. When the cloud vendor's official pattern is "ship our traces to a third-party backend," the category gap is real.
+
+**Implication for the demo:** Langfuse isn't a compromise choice — it's the correct-shaped tool for a multi-provider stack (Anthropic Batches + Haiku judge + local mxbai, none of which are on Bedrock). The FastMCP-emits-OTel → Langfuse-ingests-OTel pattern is vendor-neutral; swapping backends is a config change.
+
+Source: 2026-04-15 session (ikb-session-8) — MCP server build, schema migration, observability research.
+
+---
+
+## RAG-or-Not-RAG: The Codebase-Context Discussion (2026-04-16)
+
+A multi-turn exploration triggered by the question *"everyone is ingesting codebase into an LLM — what's the actual best way?"* The conversation started with skepticism of the two obvious answers (RAG MCP over code, static documentation), ran two deep-dive research waves, corrected a wrong mental model midway, and landed on a concrete architectural recommendation for a realistic enterprise use case. Captured here as a single demo narrative because the arc — naive question → nuanced taxonomy → self-correction against primary sources → conditional answer → deployable blueprint — mirrors exactly the kind of reasoning a consulting engagement on this topic should produce.
+
+### Arc of the conversation
+
+1. **Opening question:** How are teams efficiently feeding codebase context to LLMs in early 2026? Obvious answers (RAG, static docs) felt insufficient.
+2. **First deep-dive (2026-04-15):** DAG of 6 sub-questions, parallel subagents. Produced taxonomy of 14 approaches, landed on *"agentic exploration + structural substrate (LSP/tree-sitter/graph) + agent-writable memory"* as the 2026 synthesis.
+3. **Serena/Cody/Augment walkthrough:** discussed what each is, when each fits, pricing, and the Navigation Paradox (CodeCompass finding that agents skip graph tools 58% of the time despite explicit prompting).
+4. **Error and correction:** offered a clean "Pattern A (unified index) vs Pattern B (federated MCP retrieval)" framing. First brain caught it by pointing at this repo's own research. Dropbox Dash explicitly rejected federated per-source tools after finding they caused context rot — they consolidated into a unified index with a knowledge-graph overlay. The Pattern A/B framing was oversimplified; production converges on Pattern A.
+5. **Second deep-dive (2026-04-16):** DAG of 6 sub-questions on code-in-RAG specifically. Key new finding: **GrepRAG (arXiv 2601.23254, Feb 2026)** — naive LLM-driven grep matches sophisticated graph-based retrievers on repo-level code completion, and with light post-processing beats SOTA by 7–15.6% exact match. Default answer: don't put code in RAG; use agentic grep + LSP. Code-RAG earns its keep in four specific conditions.
+6. **Use-case landing:** first brain specified the realistic enterprise shape — developers/analysts asking *"how does our code handle scenario X"* and *"will this change break the production pipeline"*, multi-repo, cannot afford on-demand scanning. This use case hits two of the four escape-hatch conditions simultaneously.
+7. **Final recommendation:** minimal-SCIP + semantic-RAG hybrid exposed as two MCP tools on existing Postgres/pgvector infrastructure. See highlighted blueprint below.
+
+### Corroborations from this repo's prior research
+
+The repo's existing research (`docs/2026-04-11-engineering-rag-evidence-and-howtos.md`, `docs/deep-dive/2026-04-14-html-rag-ingestion-state-of-art.md`) already establishes:
+
+- **"Codebase + wiki + on-call docs together" is ubiquitously assumed but never benchmarked.** HERB benchmark shows heterogeneous-source retrieval is the *unsolved* bottleneck (best agentic RAG 32.96/100).
+- **Uber's +27% EAg-RAG numbers are agentic-vs-traditional RAG, NOT multi-source-vs-single-source.** Explicit misattribution warning.
+- **Dropbox Dash consolidated into a unified search index** because federating tools caused context rot. Direct quote: *"More tools often meant slower, less accurate decision making... limiting tool definitions by consolidating retrieval through a universal search index, filtering context using a knowledge graph."*
+- **Top production RAG teams ingest docs/tickets/Slack, not monorepo code.** Code intelligence lives in a separate system (internal Sourcegraph equivalents, LSP-based tools, grep-over-monorepo) — never confirmed to be in the primary RAG.
+
+What this repo did not have, and the 2026-04-16 deep-dive added:
+
+- GrepRAG (arXiv 2601.23254) — direct ablation that grep matches graph-based retrievers.
+- cAST (arXiv 2506.15655) — tree-sitter AST chunking measured at +4.3 Recall@5 / +2.67 Pass@1 vs naive.
+- SPLADE-Code (arXiv 2603.22008) — learned sparse retrieval for code.
+- The explicit verdict that production teams don't put source code in their primary RAG (the corroborating evidence was present; the verdict wasn't made explicit).
+
+Full write-up with sources: `docs/deep-dive/2026-04-16-code-ingestion-into-rag.md`.
+
+### Ex. SS: Minimal-SCIP + semantic-RAG blueprint for FedRAMP multi-repo code intelligence (the highlighted final answer)
+
+**Use case:** developers/analysts asking *"how does our code handle scenario X?"* or *"if I do this, will I break the production pipeline?"* across an estate of multiple repos. Must be efficient (no LLM scanning all repos on every query). FedRAMP-High constraint with only Claude Sonnet 4.5 available via Bedrock. No Cursor / Cody Cloud / Augment / GitHub Copilot non-gov.
+
+**Why this is the case where code-RAG earns its keep:** the use case hits two of the four escape-hatch conditions from the deep-dive:
+1. Semantic/intent queries with low lexical overlap ("scenario X" rarely matches identifiers).
+2. Cross-language/cross-repo impact analysis (LSP and tree-sitter don't span repo boundaries reliably).
+
+Pure-agentic Claude Code fails on efficiency (multi-repo scan per query) and on intent queries. Pure-RAG fails on impact analysis. The answer is **two pre-built indexes, two MCP tools, one agent**.
+
+**Architecture:**
+
+```
+                ┌─ Semantic Code RAG (pgvector) ─────────┐
+                │  tree-sitter AST chunks at symbol      │
+                │  Contextual Retrieval prefix per chunk │
+                │  hybrid: mxbai-embed-large + BM25      │
+                │  cross-encoder rerank                  │
+                │  metadata: repo, path, symbol, is_test │
+                │                                        │
+Query ──► Agent ┤   MCP tool: search_code(intent_query)  │
+(Sonnet 4.5 on  │                                        │
+ Bedrock, via   ├─ Code Graph (Postgres, SCIP) ──────────┤
+ Claude Code)   │  .scip per repo → Postgres tables      │
+                │  cross-repo references resolved        │
+                │                                        │
+                │   MCP tool: find_callers(symbol)       │
+                │   MCP tool: trace_impact(file)         │
+                └────────────────────────────────────────┘
+```
+
+**Agent routing by question type:**
+- *"How does X work" / "where is scenario Y handled"* → `search_code` (semantic RAG). Intent query, Contextual Retrieval, hybrid, reranked.
+- *"If I change X, what breaks"* → `trace_impact` / `find_callers` (graph). Deterministic, exact, fast.
+- Compound questions → agent calls both and composes.
+
+**Why SCIP (and not tree-sitter-only) for the graph:**
+- "Will I break the pipeline" requires precise cross-repo reference resolution (e.g., `payments.api.process` in repo A called by `pipeline.ingest` in repo B through an npm/pip/go module import).
+- Tree-sitter is per-repo; it cannot resolve imports across repo boundaries.
+- SCIP is compiler-accurate and the indexers (`scip-typescript`, `scip-python`, `scip-java`, etc.) are open-source, standalone CLIs — no Sourcegraph required.
+
+**Why not self-hosted Sourcegraph OSS:** viable option, but building the two narrow MCP surfaces you actually need is less operational overhead than running Sourcegraph's full stack. SCIP is an open protobuf format; Sourcegraph publishes `scip` parsing libraries in Go/Rust. The DIY pipeline is ~2–3 weeks of engineering.
+
+**Minimal SCIP pipeline:**
+
+1. Per-repo CI step on merge-to-main: `scip-<lang> --output index.scip`.
+2. Upload `.scip` to shared artifact store (S3 / internal bucket / direct Postgres write).
+3. Ingestion service parses `.scip` protobuf using the Sourcegraph `scip` library (Go or Rust).
+4. Writes symbols, occurrences (definition/reference), and cross-repo relationships into Postgres tables.
+5. MCP server wraps SQL queries: `find_definition(symbol)`, `find_callers(symbol)`, `trace_impact(file)`, `list_symbols(path)`.
+
+**Why this reuses this repo's existing infrastructure:**
+- pgvector + Postgres + mxbai-embed-large stack already operating for VA docs. Adding a `code_chunks` table and a parallel `scip_symbols` / `scip_occurrences` table schema reuses the same ops surface.
+- Claude Sonnet 4.5 on Bedrock (FedRAMP-High authorized) is already the generation model in scope.
+- No new cloud dependencies. No third-party code intelligence vendor.
+- MCP server pattern already adopted for the docs RAG — two more MCP tools fit cleanly alongside the existing `search_docs` tool.
+
+**Why this matters for Sonnet 4.5 specifically:**
+- Sonnet 4.5 trails Opus 4.6 by 5–10pp on agentic coding benchmarks. Graph/symbol substrates matter *more* with weaker models — they do work the model otherwise has to do unreliably.
+- The Navigation Paradox (58% tool-skip rate) is more severe on weaker models. Pre-built indexes with clean MCP interfaces reduce the number of decisions the model has to make right.
+
+**Recommended build order:**
+1. **Semantic Code RAG side first.** Same pgvector infrastructure, same mxbai embedder, same Contextual Retrieval pattern proven on VA docs. Add tree-sitter chunking + `code_chunks` table + BM25 hybrid + rerank. One MCP tool (`search_code`). Answers 60–70% of "how does X work" queries alone.
+2. **Measure on realistic queries.** See what fails — likely the "what depends on this" impact questions.
+3. **Add the SCIP graph when value of #1 is proven.** Build only if impact analysis queries are demonstrably failing against pure RAG.
+4. **Three MCP tools total** across docs-RAG + code-RAG + code-graph. Well under the Dropbox context-rot threshold.
+
+**What this replaces:**
+- The need to self-host full Sourcegraph OSS.
+- The need for Cursor / Cody Cloud / Augment / Copilot (none FedRAMP-High authorized).
+- The need to give up and tell users to grep manually across N repos.
+
+**Demo talking point:** "The usual answer to 'how do we give LLMs codebase context' is either *dump it into RAG* or *use Cursor/Cody*. For FedRAMP-constrained environments with Sonnet 4.5 available, neither is viable. The research-backed answer is a thin purpose-built intelligence layer — two pre-built indexes exposed as MCP tools, reusing the same Postgres/pgvector infrastructure that powers the docs RAG. SCIP indexers are open-source standalone CLIs; the pipeline is 2–3 weeks of engineering, not a vendor contract."
+
+Source: 2026-04-16 session — two deep-dive research waves (saved to `docs/deep-dive/2026-04-15-codebase-context-for-llms.md` and `docs/deep-dive/2026-04-16-code-ingestion-into-rag.md`), cross-checked against this repo's existing engineering-rag-evidence and HTML-ingestion research, synthesized into the blueprint above.
+
+---
+
+## Act 29: The Router That Isn't (2026-04-16, continued)
+
+A follow-up discussion during ship-cut v1 planning. Triggered by the natural question *"if different retrieval pipelines handle different query types, don't you need a router?"* — and answered by flipping the frame: **the consuming LLM is the router; no classifier layer exists as a distinct component.** This is the 2026 architectural story for heterogeneous RAG that most public demos still get wrong.
+
+### Moment 30: "The router is the LLM reading your tool docstrings."
+
+**The anti-pattern** (what most 2023-era RAG tutorials still show): a query-classification step in front of retrieval. Classify query → dispatch to `search_docs` OR `search_code` OR `search_jira`. A separate model + separate prompt + separate latency + separate failure mode. Dropbox Dash rejected this explicitly after discovering federated per-source tools caused context rot — the planner LLM wasted tokens deciding which retriever to use and got it wrong.
+
+**The pattern that works:**
+
+```
+[Consuming LLM: Claude / Cursor / agent]
+         ↓ reads tool docstrings; picks per question
+[Small number of qualitatively-different @mcp.tool decorators]
+  - search_docs(query, k)        # for NL/conceptual questions
+  - search_code(query, k)        # for intent queries over code
+  - find_callers(symbol)         # for structural graph queries
+  - trace_impact(file)           # for transitive dependency queries
+         ↓ each tool does hybrid retrieval internally
+[Grep + dense + graph, fused, reranked — one pipeline, three retrievers in parallel]
+```
+
+**Three layers, three different kinds of routing:**
+1. **LLM-level** (between tools) — happens inside Claude, driven by your docstrings. You "build" it by writing good docstrings.
+2. **MCP server-level** (tool → implementation) — function dispatch, handled by the `@mcp.tool` decorator.
+3. **Hybrid retrieval within one tool** (between methods) — **always run all retrievers in parallel + fuse**. Never sub-route.
+
+**No component labeled "router" anywhere.**
+
+**The Dropbox distinction worth calling out in the demo:**
+- ❌ **Same capability × different sources = bad.** `search_slack`, `search_jira`, `search_confluence`. Planner degrades.
+- ✅ **Different capabilities = good.** `search_docs`, `search_code`, `find_callers`. Planner handles easily.
+- **What differentiates tools is what matters.** Same capability split across sources = federation anti-pattern. Qualitatively different capabilities = clean separation.
+
+### Moment 31: Three retrievers, three different questions. Same query, three different answers.
+
+**RAG ≠ vectors.** Retrieval-Augmented Generation is a *pattern*; the retrieval method behind it can be vector, lexical, graph, or all three fused. A key demo clarification because most audiences conflate "RAG" with "vector search."
+
+**The three retrieval methods in a code-RAG tool:**
+
+| Method | What it stores | Query style | Best for |
+|---|---|---|---|
+| **Grep / BM25 (lexical)** | Inverted index: token → files containing it | Exact word match, regex, operator-aware | "Show me all files mentioning `StripeWebhook`" |
+| **Vector (dense)** | Chunk embeddings in pgvector | Semantic similarity | "Where does the code handle failed webhook retries" (the word "retry" may not appear) |
+| **Graph (structural)** | Nodes (symbols) + edges (`calls`, `imports`, `inherits`) from SCIP | Deterministic traversal, exact connections | "What calls `process_payment`?" |
+
+**The demo-worthy example — same query, three answers:**
+
+Query: *"What calls `process_payment`?"*
+
+- **Grep** returns: every file mentioning the literal string `process_payment` — including comments, TODOs, string literals, unrelated variables. **Noisy but fast.**
+- **Vector** returns: functions semantically similar to `process_payment` — could return `charge_credit_card`, `handle_checkout`, etc. **Misses the exact callers.**
+- **Graph** returns: the exact 7 functions in 4 files that have a `calls` edge to this specific `process_payment`. **Zero false positives, zero false negatives.**
+
+**Only graph answers correctly.** This is why Sourcegraph keeps the graph layer, why SCIP exists, and why the FedRAMP blueprint (Ex. SS) calls for SCIP + semantic-RAG together. Vector alone is insufficient for structural questions. Grep alone is noisy for anything beyond literal matches. Graph alone can't answer intent queries. **Hybrid is the production answer.**
+
+### Moment 32: Mapping the router insight to v1 demo code
+
+**What the v1 MCP server already demonstrates architecturally, even with only one tool:**
+
+- The `query` tool's docstring includes the affordance — "Use for question-answering over the VA Education corpus; results come pre-reranked."
+- The `document://{source_id}` resource handles a different kind of retrieval — full-document fetch instead of chunk search.
+- The `cite_from_chunks` prompt template hands the consumer a citation-heavy answer format.
+
+Three MCP capabilities → three affordances → LLM picks. **The v1 demo already shows the pattern at small scale.** When the blueprint adds code-RAG later, it's more `@mcp.tool` decorators on the same FastMCP server — no router component to add.
+
+### Talking point — "No router. That's the feature."
+
+"Most 2023-era RAG tutorials still show you a query classification step in front of retrieval. Don't build that. In 2026, the consuming LLM IS the router, and it routes by reading your MCP tool docstrings. You build routing by writing good tool signatures. No classifier model, no dispatch layer, no extra latency, no extra failure mode. Small number of qualitatively-different tools plus hybrid retrieval inside each gets you there."
+
+### Talking point — "Grep, vector, graph — three retrievers, same query, three different answers."
+
+"RAG doesn't mean vectors. RAG is the pattern; the retrieval method is an orthogonal choice. A production code-retrieval tool runs grep, dense, and graph in parallel, fuses, and reranks. Each retriever answers a different kind of question — grep for literal matches, dense for intent, graph for structural connections. Only one of them correctly answers 'what calls process_payment' — and it's not the vector one. Hybrid retrieval is the 2026 production answer for any source type where no single retriever covers all query shapes."
+
+### Talking point — "Same capability, different sources = bad. Different capabilities = good."
+
+"Dropbox Dash rejected federated per-source tools — separate `search_slack`, `search_jira`, `search_confluence` caused context rot because the planner LLM wasted tokens choosing between qualitatively-identical tools. The right split is by *capability*, not *source*. One `search_docs` that spans Slack+Jira+Confluence internally, plus a `search_code` for qualitatively different retrieval, plus `find_callers` for graph operations. Three tools, three capabilities, LLM picks. That's the lesson most public demos still miss."
+
+### Quotables
+
+- "The router is the LLM reading your tool docstrings."
+- "In 2026, you build routing by writing good docstrings, not by adding a classifier."
+- "Same capability × different sources = federation anti-pattern. Different capabilities = clean separation."
+- "RAG doesn't mean vectors. Retrieval is an orthogonal choice from the RAG pattern."
+- "Grep, vector, graph — same query, three different answers. Only one is right, and which one depends on the question."
+- "Hybrid retrieval is the 2026 production answer. Sub-routing inside a tool re-creates the Dropbox mistake at a smaller scale."
+- "The v1 MCP server already shows the pattern at small scale. Tools + Resources + Prompts is three capabilities, not three sources."
+
+### Stats block (from 2026-04-16 adjudication deep-dive)
+
+- **Glean:** maintains separate lexical + semantic indexes for code; general Glean Search matches code only on PR descriptions and file names (not contents)
+- **Sourcegraph:** removed embeddings from Cody Enterprise — multi-repo scale forced retreat to graph + trigram
+- **GitHub Blackbird:** custom Rust trigram index, architecturally separate from Copilot retrieval inside one company
+- **HERB benchmark:** best agentic heterogeneous retrieval **32.96/100 average**; heterogeneous retrieval is unsolved
+- **CodeRAG-Bench (NAACL 2025):** modern code-specific dense embedders **beat BM25 on code** — reverses classic BEIR result. Code-specific matters; generic dense loses to BM25.
+- **CodeCompass:** graph wins architectural queries by **+20 ACS** over BM25; BM25 wins semantic queries by 10 ACS over vanilla. Task-type-dependent.
+- **Dropbox Dash (Ramon Martinez talk):** "more tools often meant slower, less accurate decision making" — consolidated federated tools into unified search + knowledge graph overlay
+
+Source: 2026-04-16 session, deep-dive adjudication research (`docs/deep-dive/2026-04-16-docs-vs-code-rag-adjudication.md`) — subagent-parallel DAG exploration over 6 sub-questions + stress-test of GrepRAG/cAST findings.
+
+### Ex. TT: The three-retriever trifecta — same query, three answers
+
+**Query:** *"What calls `process_payment` in this codebase?"*
+
+**Grep result (lexical, BM25 / tsvector):**
+```
+payments/tests/test_api.py:47:     result = process_payment(mock_req)   # unit test
+payments/README.md:12:             The `process_payment` function handles...  # doc comment
+payments/api.py:42:                def process_payment(req):               # the definition
+checkout/flow.py:89:              return process_payment(validated)      # real caller
+webhooks/stripe.py:156:           process_payment(webhook.payload)       # real caller
+legacy/migration.py:8:             # TODO: migrate process_payment calls  # stale comment
+```
+Six hits. Two are real callers; four are noise (test, docs, definition, TODO). Fast (<10ms). Would need LLM post-filtering to find actual callers.
+
+**Vector result (dense, mxbai or voyage-code-3):**
+```
+[rerank=8.1] payments/api.py:42:    def process_payment(req):            # self-match
+[rerank=7.3] payments/api.py:85:    def charge_credit_card(req):         # semantic sibling
+[rerank=6.9] invoices/api.py:24:    def handle_invoice_payment(inv):     # semantic sibling
+[rerank=6.2] refunds/core.py:31:    def issue_refund(txn):               # distantly related
+```
+Four hits. **Zero of them actually call process_payment.** Dense retrieval found semantically-similar code, not structural relationships. Useful for "what other functions are in this domain," useless for "who calls this."
+
+**Graph result (SCIP, deterministic traversal):**
+```sql
+SELECT caller_file, caller_function, call_line
+FROM scip_references
+WHERE target_symbol = 'payments/api.py:process_payment';
+```
+```
+checkout/flow.py::checkout_handler         line 89
+webhooks/stripe.py::handle_stripe_webhook  line 156
+```
+Exact answer. Two real callers, zero false positives. ~1ms query (indexed SQL).
+
+**The demo takeaway:** no single retriever handles all query types. Grep is noisy on structural questions. Dense is wrong on structural questions. Graph is unavailable for semantic questions. **Hybrid running all three in parallel, fused + reranked, is the production answer.** This is why Sourcegraph's architecture is "grep + graph + embeddings, in that order of trust," not "pick one."
+
+Source: synthesized from 2026-04-16 adjudication; mirrors LinkedIn KG-RAG, Sourcegraph Cody, and Augment Context Engine architectures documented in the research.
+
+
