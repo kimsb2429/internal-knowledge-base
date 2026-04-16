@@ -25,6 +25,7 @@ CREATE TABLE document_chunks (
     content         TEXT NOT NULL,                  -- full chunk content (sent to LLM)
     embed_text      TEXT NOT NULL,                  -- text that was embedded (= content, or summary for large chunks)
     embedding       vector(1024),                  -- mxbai-embed-large
+    content_tsv     tsvector GENERATED ALWAYS AS (to_tsvector('english', coalesce(content, ''))) STORED,
     heading_path    TEXT[],                         -- e.g. {"Part 12","Chapter 33","Section 8.13"}
     chunk_type      TEXT NOT NULL DEFAULT 'text',   -- "text" | "table" | "list"
     token_count     INTEGER,
@@ -36,6 +37,9 @@ CREATE TABLE document_chunks (
 CREATE INDEX idx_chunks_embedding ON document_chunks
     USING hnsw (embedding vector_cosine_ops)
     WITH (m = 16, ef_construction = 64);
+
+-- GIN index for BM25/lexical search (hybrid-ready; wiring deferred to post-launch spoke)
+CREATE INDEX idx_chunks_content_tsv ON document_chunks USING gin (content_tsv);
 
 -- Lookup chunks by document
 CREATE INDEX idx_chunks_document_id ON document_chunks(document_id);

@@ -6,6 +6,10 @@ VA Education RAG pipeline — from raw corpus to MCP server.
 
 The canonical build plan is the **"From Zero to Knowledge MCP"** section in `docs/2026-04-11-engineering-rag-evidence-and-howtos.md`. When the first brain says "zero to mcp", refer to that list. The TODO tracks progress against it — the plan doc is authoritative, TODO is a checklist.
 
+## Standing rules
+
+**Post-eval analysis protocol (apply after every eval run — baseline, Loop A iteration, Loop B iteration, anywhere):** never report aggregate metrics alone. Always follow with (a) per-`query_type` segmentation, (b) 2-3 representative failures pulled per failure cluster with full chunk/judge reasoning, (c) named failure patterns with concrete mechanisms, (d) mapping from each pattern to a specific plan step / lever. The plan doc (§ "From Zero to Knowledge MCP", step 9) has the full template. Anti-pattern: proposing the next intervention directly from aggregate deltas — that tunes blindly.
+
 ## Key decisions
 
 - **HTML articles stay as HTML** — no markdown conversion. Markdown is lossy for tables (colspan/rowspan). LLMs read HTML fine. One code path for all 237 HTML articles.

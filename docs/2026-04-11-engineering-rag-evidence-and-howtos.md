@@ -621,6 +621,8 @@ Consolidated from discussions across this session. For each decision, what evide
 
 ## From Zero to Knowledge MCP (Step-by-Step with Iteration Loops)
 
+> **Public-demo ship-cut (2026-04-15):** for the public RAG+MCP demo, optimization is paused in favor of MVP ship. Do NOT continue down the remaining optimization loops (HyDE, CRAG, Loop B retrieval tuning, freshness, multi-tenancy) before the demo ships. The honest current eval scores (Faith 0.95 / AnsRel 0.91 / CtxPrec 0.61 / CtxRec 0.52 / CtxRel 0.56) *are* the story for Thesis A — chasing higher numbers undermines the "honest benchmarking" differentiator. See `~/consulting-research/docs/rag-demo/README.md` — sections "Ship-cut v1", "Post-launch spokes", "Launch sequence" — for what to build now vs. park as post-launch spoke content. The k-sweep diagnostic (Step 12) is the one optimization-adjacent item that *is* worth doing pre-launch (it's diagnostic, not tuning).
+
 1. Pick first corpus — one Confluence space or doc collection, 50–200 docs, a team already struggling to search
 2. Build golden query set — 50 queries with correct answers + which source docs contain them. Include at least 10 queries whose answers live inside tables, 5 whose answers span multiple sections, and 5 that require heading context to disambiguate (e.g. "what's the timeout?" is meaningless without knowing which service)
 3. Set up bronze layer — raw documents + metadata (page_id, space, breadcrumb, lastModified, ACL groups)
@@ -630,7 +632,14 @@ Consolidated from discussions across this session. For each decision, what evide
 7. Build chunking pipeline — Sonnet-based, structure-preserving, table-aware, one command, automated, incremental
 8. Embed and store — Titan v2 → pgvector with metadata columns + `tsvector` column for future hybrid
 9. Set up Ragas eval harness — use `faithfulness` (groundedness), `answer_correctness`, `context_precision`, `context_recall` as core metrics. Reference: `aws-samples/sample-rag-evaluation-ragas` for Ragas + Sonnet on Bedrock. Since MCP returns chunks not answers, add a test LLM step: golden query → MCP retrieve → test LLM generates answer from chunks → Ragas evaluates. Run first eval against golden query set. This is the baseline.
-10. **LOOP A: Parsing + Chunking Quality** — 3–5 iterations, highest leverage loop.
+
+   **Post-eval analysis protocol (MANDATORY after every eval, baseline or Loop iteration):** metrics in aggregate are necessary but insufficient. Every eval run must produce a failure-pattern report *before* proposing the next intervention. Template:
+   - (a) **Segment by query_type**: compute per-metric means per `query_type` (lookup, cross_source, consulting_sme, prod_ops, negative, contradiction, temporal, synthesis, etc.). Aggregates hide bimodal distributions (e.g., "overall Recall 0.52" may be lookup 0.80 + synthesis 0.20 — two different problems with different fixes).
+   - (b) **Pull 2-3 representative failures per failure cluster**: for each metric that scored below its threshold, pick the worst queries, show query + expected answer + retrieved chunks + judge reasoning. Cluster by shared characteristics (exact-token precision loss, multi-source synthesis, vocabulary mismatch, image/OCR gap, chunk boundary split, etc.).
+   - (c) **Name the failure pattern(s)**: give each cluster a short label and a one-sentence mechanism. Be concrete ("exact-code-in-table buried by dense embedding noise") not generic ("retrieval issue").
+   - (d) **Map patterns to levers**: for each pattern, name the *specific* plan step or intervention that addresses it. If multiple patterns exist, rank by expected impact × effort before committing to a next step.
+   - **Anti-pattern to avoid:** fixing aggregate numbers in isolation. If you don't know *which failure class* each intervention targets, you're tuning blindly. Reranker helped our Precision by 16.5pp AND masked the fact that 33/110 queries still had Recall near zero — the kind of thing aggregates can't show.
+10. **LOOP A: Parsing + Chunking Quality** — 3–5 iterations, highest leverage loop. Each iteration should target a **named failure class** (surfaced via the post-eval analysis protocol in step 9), not just an aggregate metric. An iteration that resolves its targeted class but leaves aggregate metrics flat is still a successful iteration — it's just that the class was smaller than expected, which is itself useful information.
     - **Eval metrics**: Ragas `context_precision` + `context_recall` + `faithfulness`, broken down by query type (table queries, multi-section queries, heading-dependent queries)
     - **Parsing-specific checks**: for each table-answer query in the golden set, retrieve the top-5 chunks and check: does the chunk contain a readable table with intact column headers? Or is it linearized mush? Score: % of table queries where the retrieved chunk has an intact table. If low, the problem is the parser, not the chunker.
     - **Chunking-specific checks**: for each golden query, does the top-1 chunk contain the *complete* answer, or is the answer split across chunks 1 and 3? Score: % of queries where top-1 chunk is self-sufficient. If the answer keeps getting split, chunk boundaries are wrong.
@@ -638,21 +647,32 @@ Consolidated from discussions across this session. For each decision, what evide
     - **Orphan chunk check** (automated, no golden set needed): scan all chunks in pgvector. Flag any chunk that starts mid-sentence, contains a partial table row without a header, or has an empty heading_breadcrumb. Target: 0 orphan chunks.
     - **Diagnosis flow**: low table-query scores → fix parser (step 5). Low self-sufficiency → fix chunk boundaries/prompt (step 7). Missing heading breadcrumbs → fix metadata extraction (step 7). Orphan chunks → fix chunking prompt or add post-chunk validation.
 11. Add cross-encoder reranker — Cohere Rerank on Bedrock or self-hosted BGE-reranker
-12. Add HyDE (Hypothetical Document Embeddings) — generate hypothetical answer, embed that instead of raw query. Largest single retrieval improvement per 2026 consensus. Expect biggest gains on vocabulary-mismatch queries.
-13. Add CRAG (Corrective RAG) — grade retrieved chunks before generating. If all chunks score below relevance threshold, re-query with reshaped query or flag as unanswerable. Prevents confident wrong answers from irrelevant context.
-14. **LOOP B: Retrieval Tuning** — 2–3 iterations, diminishing returns faster than Loop A.
-    - **Eval metrics**: Ragas `context_precision` + `context_recall` + MRR (Mean Reciprocal Rank — where does the correct chunk appear in the ranked results?)
+12. **Quick k-sweep diagnostic** (recommended before HyDE/CRAG) — a single afternoon of eval runs that tells you whether your remaining retrieval weakness is ranking-bound or index-bound, so you pick the right next lever.
+    - **Run the same eval at k ∈ {3, 5, 10, 20, 50}** — ideally in fast mode (subset + cheap proxies) for quick turnaround.
+    - **Why this belongs here, not inside Loop B:** it's a *diagnostic* step that decides whether HyDE/CRAG are even worth investing in. Doing it before you touch HyDE avoids building a solution for the wrong problem.
+    - **Why it's cheap to iterate:** no re-chunking or re-embedding needed. The index stays constant; only the query-time top-K changes. A full sweep is ~30-60 min and <$2.
+    - **What to measure:** Contextual Recall, Contextual Precision, Contextual Relevancy, generation cost, latency. Plot each vs k.
+    - **How to read the result:**
+        - If Recall **keeps climbing** as k rises (e.g., 0.52 at k=5 → 0.75 at k=20 → 0.85 at k=50): **good chunks exist in the index**, ranking is burying them. Lever: better reranker / HyDE / ranking weights.
+        - If Recall **plateaus early or stays low** even at k=50: chunks aren't in the index. Lever: **Loop A** (better chunking / parsing / contextual retrieval / new source).
+        - If Precision and Relevancy **collapse** as k rises: you're not winning new recall, you're just padding with noise. Lower k, focus on ranking.
+    - **Structural caveat:** Contextual Relevancy is bounded by (truly relevant chunks ÷ k), so it mechanically drops as k grows — that's not necessarily a regression, it's the denominator shifting. Focus on Recall and absolute cost when reading the sweep.
+    - **Output of this step:** a picked "sweet spot" k for production, plus a verdict on whether to invest in Steps 13 (HyDE) and 14 (CRAG) or return to Loop A.
+13. Add HyDE (Hypothetical Document Embeddings) — generate hypothetical answer, embed that instead of raw query. Largest single retrieval improvement per 2026 consensus for vocabulary-mismatch queries. Costs ~$0.001 + 500-1000ms per query with Haiku as the hypothesizer.
+14. Add CRAG (Corrective RAG) — grade retrieved chunks before generating. If all chunks score below relevance threshold, re-query with reshaped query or flag as unanswerable. Prevents confident wrong answers from irrelevant context. Highest value in compliance-adjacent domains where "I don't know" beats a confident wrong answer.
+15. **LOOP B: Retrieval Tuning** — 2–3 iterations, diminishing returns faster than Loop A. Same failure-class-driven principle as Loop A: each iteration targets a class, not a metric. Common Loop B classes: exact-token precision (→ hybrid), vocabulary mismatch (→ HyDE), multi-source synthesis (→ query decomposition), confident-wrong (→ CRAG).
+    - **Eval metrics**: Ragas/DeepEval `context_precision` + `context_recall` + MRR (Mean Reciprocal Rank — where does the correct chunk appear in the ranked results?)
     - **Reranker-specific check**: compare MRR before and after reranker. If MRR jumps (correct chunk moves from position 8 to position 1), the reranker is earning its keep. If MRR barely moves, the bottleneck is elsewhere.
-    - **Synonym/paraphrase check**: include 10 golden queries that use different vocabulary from the source docs ("roll back a failed deploy" when the doc says "revert a broken release"). Measure source F1 on just these. Low score → hybrid BM25+vector won't help; high score → vector search is handling synonyms fine.
-    - **Top-K sensitivity check**: run eval at top-5, top-10, top-20, top-50. If source F1 at top-50 is much higher than at top-5, good chunks exist but ranking is burying them — reranker is the fix. If source F1 at top-50 is still low, chunks aren't in the index — back to Loop A.
-    - **Diagnosis flow**: low MRR but high recall@50 → reranker/ranking tuning. Low recall@50 → back to Loop A. Synonym queries failing → consider hybrid retrieval or query expansion.
-15. Build MCP server — `query` tool returning top-K chunks with full metadata, no generation
-16. Build one consuming app — Slack bot, web chat, or Claude Code with MCP configured
-17. Build query-level telemetry into the MCP server — log every MCP tool call with structured payload: `query`, `chunks_returned`, `top_chunk_score`, `doc_sources`, `timestamp`, `latency_ms`. Build feedback collection into the consuming app — thumbs up/down, "wrong source", "outdated" at minimum. Implement low-confidence detection: if top chunk score < threshold, log as `low_confidence_retrieval` for weekly review.
-18. Build pipeline-level health monitoring — 6 operational monitors: (1) ingestion pipeline completion (did the run finish?), (2) docs processed vs. expected (catch source API silently returning empty), (3) embedding API errors/latency (alert on >5% error rate or p95 >10s), (4) vector DB health (connection failure or query timeout), (5) MCP server uptime (health check endpoint), (6) index size over time (alert on >20% day-over-day change — catches runaway growth or accidental mass deletion). For an internal tool, Slack alerts on failure are sufficient.
-19. Set up monthly usage insights report — aggregate query logs into a recurring one-pager: most-queried topics (where knowledge gaps are), queries with no good results (documents that should exist but don't), source distribution (where real knowledge lives vs. where people think it lives), power users vs. inactive teams (adoption signal for sponsor). This report is worth more politically than the system itself.
-20. Set up automated freshness decay — per-source-type decay curves applied at query time. Objective signal (timestamp), no feedback-loop risk. Safe to automate from day 1.
-21. **LOOP C: Real-World Feedback** — continuous, two speeds.
+    - **Synonym/paraphrase check**: include 10 golden queries that use different vocabulary from the source docs ("roll back a failed deploy" when the doc says "revert a broken release"). Measure source F1 on just these. Low score → HyDE should be evaluated; high score → vector search is already handling synonyms fine.
+    - **Full top-K sensitivity sweep** (deeper version of Step 12): re-run the sweep with HyDE + CRAG on, including latency p95 and cost-per-query. Step 12 was a diagnostic; this is the tuning round.
+    - **Diagnosis flow**: low MRR but high recall@50 → reranker/ranking tuning. Low recall@50 → back to Loop A. Synonym queries failing → turn on HyDE. Confident-wrong answers → turn on CRAG.
+16. Build MCP server — `query` tool returning top-K chunks with full metadata, no generation
+17. Build one consuming app — Slack bot, web chat, or Claude Code with MCP configured
+18. Build query-level telemetry into the MCP server — log every MCP tool call with structured payload: `query`, `chunks_returned`, `top_chunk_score`, `doc_sources`, `timestamp`, `latency_ms`. Build feedback collection into the consuming app — thumbs up/down, "wrong source", "outdated" at minimum. Implement low-confidence detection: if top chunk score < threshold, log as `low_confidence_retrieval` for weekly review.
+19. Build pipeline-level health monitoring — 6 operational monitors: (1) ingestion pipeline completion (did the run finish?), (2) docs processed vs. expected (catch source API silently returning empty), (3) embedding API errors/latency (alert on >5% error rate or p95 >10s), (4) vector DB health (connection failure or query timeout), (5) MCP server uptime (health check endpoint), (6) index size over time (alert on >20% day-over-day change — catches runaway growth or accidental mass deletion). For an internal tool, Slack alerts on failure are sufficient.
+20. Set up monthly usage insights report — aggregate query logs into a recurring one-pager: most-queried topics (where knowledge gaps are), queries with no good results (documents that should exist but don't), source distribution (where real knowledge lives vs. where people think it lives), power users vs. inactive teams (adoption signal for sponsor). This report is worth more politically than the system itself.
+21. Set up automated freshness decay — per-source-type decay curves applied at query time. Objective signal (timestamp), no feedback-loop risk. Safe to automate from day 1.
+22. **LOOP C: Real-World Feedback** — continuous, two speeds.
     - **Automated (telemetry + analytics)**: log all queries + results + feedback + scores. Weekly automated job clusters recent queries by topic, flags topics with >40% negative feedback, identifies source types with consistently low `faithfulness`, flags freshness issues. Outputs a report — detection is automated, action is human.
     - **Human-in-the-loop (parameter changes)**: review weekly report → decide if it's a retrieval tuning issue or a content/chunking issue → adjust reranker weights / source boosting / metadata filters manually. Do NOT automate parameter changes — down-weighting a source based on feedback creates spiral feedback loops (less exposure → less positive feedback → more down-weighting → source silently disappears from retrieval).
     - **Fast loop (tunes retrieval, no re-ingest)**: reranker weights, source_type boosting, freshness decay curves, top-K parameters, metadata pre-filters. Human decides based on automated report.
@@ -662,16 +682,16 @@ Consolidated from discussions across this session. For each decision, what evide
     - **Source gap detection**: for queries where context sufficiency is 0, check: does the answer exist anywhere in bronze? If yes → chunking/parsing problem (Loop A). If no → source isn't indexed, add it.
     - **Freshness failure detection**: for queries where the system returns a correct-but-outdated answer, check last_modified on retrieved chunk. If >6 months old and a newer version exists, freshness decay curve needs adjustment.
     - **Diagnosis flow**: new query patterns → expand golden set. Source gaps → add to bronze + Loop D. Stale answers → adjust freshness decay. Wrong chunks for known queries → Loop A or Loop B depending on whether chunks exist.
-22. Calibrate LLM-judges — human grades 20–30 queries, compare to Ragas metric scores, validate 90%+ agreement
-23. Scale sources — add second corpus. **Build a separate ingestion pipeline** (connector, parser, chunker, metadata extractor) for the new source type. Output lands in the **same pgvector table** with source-type-specific nullable columns added. Same MCP endpoint, same eval harness — just more chunks from a new `source_type`. **When adding Jira:** decide what to index before building the pipeline. Jira issues are noisy — every status transition, comment, and field edit triggers an update. Index issue descriptions + comments on resolved/completed tickets, not the full activity stream. Otherwise the index fills with "Changed status from In Progress to In Review" chunks that pollute retrieval.
-24. **LOOP D: Multi-Source Expansion** — per new source type. Each source gets its own pipeline; all pipelines feed one table.
+23. Calibrate LLM-judges — human grades 20–30 queries, compare to Ragas metric scores, validate 90%+ agreement
+24. Scale sources — add second corpus. **Build a separate ingestion pipeline** (connector, parser, chunker, metadata extractor) for the new source type. Output lands in the **same pgvector table** with source-type-specific nullable columns added. Same MCP endpoint, same eval harness — just more chunks from a new `source_type`. **When adding Jira:** decide what to index before building the pipeline. Jira issues are noisy — every status transition, comment, and field edit triggers an update. Index issue descriptions + comments on resolved/completed tickets, not the full activity stream. Otherwise the index fills with "Changed status from In Progress to In Review" chunks that pollute retrieval.
+25. **LOOP D: Multi-Source Expansion** — per new source type. Each source gets its own pipeline; all pipelines feed one table.
     - **Eval metrics**: source F1 on cross-source queries + single-source regression (did existing single-source queries get worse?)
     - **Cross-source eval**: add 10+ queries whose answers require the new source + an existing source. Measure source F1 specifically on these.
     - **Regression check**: re-run eval on original golden query set. If source F1 drops, the new source introduced noise — fix with source_type weighting or metadata filters.
     - **Source-type-specific parsing validation**: same as Loop A parsing checks but for the new source type. Code needs function-boundary checks (no split functions). Jira needs field-completeness checks (did Summary, Description, Resolution all survive?). Each source type has its own failure modes.
     - **Source-type-specific metadata**: add nullable columns for the new source type (e.g. `jira_priority`, `linked_ticket_ids` for Jira; `file_path`, `function_name`, `language` for code). Existing chunks have NULL for these — no migration needed.
-25. Open to other consumers — announce MCP server, additional consumers are incremental
-26. **LOOP E: Multi-Consumer Tuning** — as consumer base grows.
+26. Open to other consumers — announce MCP server, additional consumers are incremental
+27. **LOOP E: Multi-Consumer Tuning** — as consumer base grows.
     - **Eval metrics**: per-consumer source F1 + context sufficiency + latency p95
     - **Consumer-specific eval sets**: each consuming app may need its own golden queries reflecting its use case. Maintain per-consumer eval subsets.
     - **Latency monitoring**: if p95 exceeds 2s, check whether it's retrieval (pgvector), reranking, or MCP overhead.
@@ -683,14 +703,15 @@ Consolidated from discussions across this session. For each decision, what evide
 Steps 1-9:    BUILD            → first working eval baseline
 Loop A:       FIX CHUNKS       → 3-5 iterations, highest leverage
 Step 11:      ADD RERANKER
-Step 12:      ADD HyDE         → hypothetical document embeddings for vocabulary-mismatch queries
-Step 13:      ADD CRAG         → corrective RAG, grade chunks before generating
+Step 12:      K-SWEEP DIAG.    → afternoon diagnostic: ranking-bound vs index-bound?
+Step 13:      ADD HyDE         → hypothetical document embeddings for vocabulary-mismatch queries
+Step 14:      ADD CRAG         → corrective RAG, grade chunks before generating
 Loop B:       TUNE RETRIEVAL   → 2-3 iterations, diminishing returns
-Steps 15-16:  SHIP             → MCP + first consumer
-Steps 17-19:  INSTRUMENT       → query telemetry + pipeline health monitoring + usage insights report
-Step 20:      FRESHNESS        → automated decay curves
+Steps 16-17:  SHIP             → MCP + first consumer
+Steps 18-20:  INSTRUMENT       → query telemetry + pipeline health monitoring + usage insights report
+Step 21:      FRESHNESS        → automated decay curves
 Loop C:       LEARN            → continuous (automated detection, human-decided action)
-Step 22:      VALIDATE EVAL    → calibrate Ragas judges
+Step 23:      VALIDATE EVAL    → calibrate Ragas judges
 Loop D:       SCALE SOURCES    → one at a time, stabilize each (Jira: filter noise before building pipeline)
 Loop E:       TUNE CONSUMERS   → as consumer base grows
 ```
