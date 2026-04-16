@@ -1,0 +1,109 @@
+name: eval-gate
+
+# Option A merge gate (see docs/demo-prep-raw.md Act 30): runs run_eval.py in
+# --fast mode (30 queries, proxies only — no DeepEval scoring) on every PR and
+# push to main. Blocks merge if any gated proxy regresses beyond tolerance.
+# Option C (full-DeepEval nightly) is NOT wired up — it's a labeled seam, not
+# shipped.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'requirements*.txt'
+      - '.github/workflows/eval-gate.yml'
+      - 'evals/**'
+      - 'data/golden_query_set.json'
+  push:
+    branches: [main]
+
+jobs:
+  eval-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    services:
+      postgres:
+        image: pgvector/pgvector:pg17
+        env:
+          POSTGRES_USER: ikb
+          POSTGRES_PASSWORD: ikb_local
+          POSTGRES_DB: ikb
+        ports:
+          - 5433:5432
+        options: >-
+          --health-cmd "pg_isready -U ikb -d ikb"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      IKB_DB_URL: postgresql://ikb:ikb_local@localhost:5433/ikb
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # HuggingFace cache is keyed by the model ids used (mxbai-embed-large,
+      # mxbai-rerank-base-v2) — actions/cache below keeps this warm across runs.
+      HF_HOME: ${{ github.workspace }}/.hf-cache
+      PGPASSWORD: ikb_local
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Install PostgreSQL 17 client (for pg_restore)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-common
+          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+          sudo apt-get install -y postgresql-client-17
+
+      - name: Cache HuggingFace model downloads
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.HF_HOME }}
+          key: hf-cache-v1-${{ hashFiles('requirements-ci.txt') }}
+          restore-keys: hf-cache-v1-
+
+      - name: Install Python deps
+        run: uv pip install --system -r requirements-ci.txt
+
+      - name: Wait for Postgres
+        run: |
+          until pg_isready -h localhost -p 5433 -U ikb -d ikb; do
+            echo "waiting for postgres..."; sleep 2
+          done
+
+      - name: Restore fixture DB
+        run: |
+          pg_restore -h localhost -p 5433 -U ikb -d ikb \
+            --clean --if-exists --no-owner --no-acl \
+            evals/fixture_v1.dump
+          # Sanity check: expect 238 docs / ~6489 chunks
+          psql -h localhost -p 5433 -U ikb -d ikb -c \
+            "SELECT (SELECT count(*) FROM documents) AS docs, (SELECT count(*) FROM document_chunks) AS chunks;"
+
+      - name: Run fast eval (30 queries, proxies only)
+        run: |
+          python -m scripts.run_eval --fast --k 5 --rerank-from 20 \
+            --out eval_current.fast.raw.json
+
+      - name: Check regression vs committed baseline
+        run: |
+          python -m scripts.check_regression \
+            --current data/eval_current.fast.raw.json \
+            --baseline evals/baseline.fast.json
+
+      - name: Upload eval artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-current-${{ github.sha }}
+          path: data/eval_current.fast.raw.json
+          retention-days: 14

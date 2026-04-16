@@ -228,9 +228,10 @@ def query(
         chunks[0]["rerank_score"] if chunks else -1.0,
     )
 
+    otel_trace_id = format(_parent_span.get_span_context().trace_id, "032x")
     log.info(
-        "query trace_id=%s k=%d pool=%d chunks=%d latency_ms=%d top_score=%.3f auth=%s",
-        trace_id, k_out, k_pool, len(chunks), latency_ms,
+        "query trace_id=%s otel_trace_id=%s k=%d pool=%d chunks=%d latency_ms=%d top_score=%.3f auth=%s",
+        trace_id, otel_trace_id, k_out, k_pool, len(chunks), latency_ms,
         chunks[0]["rerank_score"] if chunks else -1.0,
         bool(auth_context),
     )

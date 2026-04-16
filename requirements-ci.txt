@@ -1,0 +1,25 @@
+# CI-scoped dependencies for the eval-gate workflow.
+#
+# Minimal subset needed to run: scripts/retrieve.py, scripts/generate.py,
+# scripts/rerank.py, scripts/run_eval.py, scripts/check_regression.py.
+#
+# Does NOT include: docling (PDF parsing — not needed after ingestion),
+# deepeval (DeepEval judge — only used in full-mode scoring, not --fast gate),
+# fastmcp (MCP server — not exercised by the gate), langfuse / OTel stack
+# (observability only), or any macOS-specific packages (pyobjc, ocrmac).
+#
+# The source of truth for the full dev environment is requirements.txt.
+# Re-generate this file when upstream deps in the eval path change.
+
+accelerate==1.13.0
+anthropic==0.94.0
+huggingface-hub==0.36.2
+mxbai-rerank==0.1.6
+numpy==2.4.4
+psycopg2-binary==2.9.11
+python-dotenv==1.2.2
+safetensors==0.7.0
+sentence-transformers==5.4.0
+tokenizers==0.22.2
+torch==2.11.0
+transformers==4.57.6
