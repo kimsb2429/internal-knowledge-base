@@ -13,8 +13,12 @@
 
 accelerate==1.13.0
 anthropic==0.94.0
+# flashrank replaces mxbai-rerank (0.5B generative, ~30s/query) with ONNX
+# MiniLM cross-encoder (~2-3s/query). See docs/demo-prep-raw.md Act 30.
+flashrank==0.2.10
+flatbuffers==25.12.19
+onnxruntime==1.24.4
 huggingface-hub==0.36.2
-mxbai-rerank==0.1.6
 numpy==2.4.4
 psycopg2-binary==2.9.11
 python-dotenv==1.2.2

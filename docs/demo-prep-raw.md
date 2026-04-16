@@ -575,7 +575,7 @@ Q109: "13-question scorecard"
 | Golden set audit | `scripts/audit_golden_set.py` | Structural checks: source IDs exist, key terms present, alternate sources |
 | HTML cleaner | `scripts/chunk_documents.py:_HTML_CLEANER` | `lxml-html-clean` w/ explicit safe_attrs preserving colspan/rowspan |
 | BS4 post-pass | `scripts/chunk_documents.py:_bs4_post_pass` | Per-chunk cleanup AFTER boundaries set, drops empty tags, unwraps `<span>` |
-| Reranker | `scripts/rerank.py` | mxbai-rerank-base-v2 cross-encoder, MPS-compatible, 2K-char input cap |
+| Reranker | `scripts/rerank.py` | FlashRank `ms-marco-MiniLM-L-12-v2` ONNX cross-encoder (22M params, 2-3s/query on CPU, 2K-char input cap). Replaced mxbai-rerank-base-v2 (0.5B generative, 30s/query) to fit the CI merge gate. |
 | Memory debugger | `scripts/debug_rerank_mem.py` | RSS instrumentation per pipeline stage; reproduces 27GB OOM |
 | Contextual Retrieval | `scripts/contextualize_chunks.py` | Anthropic Batches API, prompt caching, sanitized custom_ids, resume-safe |
 | Deep dive report | `docs/deep-dive/2026-04-14-html-rag-ingestion-state-of-art.md` | DAG-based research synthesis: HTML RAG ingestion state of the art |
@@ -2672,6 +2672,39 @@ The handoff's eval-in-CI plan called for DeepEval-scored gate on CtxRec + Faith.
 - The demo's job is *"CI blocks regressions"* — proven by the failing-then-passing PR artifact, not by breadth of gated metrics.
 - 20 min / $0.30 is a reasonable gate for every PR; 80 min / $2 discourages frequent PRs.
 - Option C is the honest production story: ship A, label C for scaling up. Same "label the seams" pattern as the `auth_context` gateway seam and the tsvector-but-no-BM25-wiring schema.
+
+### Moment 38: Reranker swap — mxbai (0.5B generative) → FlashRank MiniLM (22M encoder)
+
+First CI run canceled at the 45-min workflow timeout, still on the eval step. Root cause: **mxbai-rerank-base-v2 is a 0.5B-parameter generative reward model** (scores via decoder generation, not encoder classification head), ~30s per query for 20-doc reranking on Linux CPU. 30 queries × 30s = 15 min rerank alone. Local runs under memory pressure spiked to 99s/query (loky worker leaks compounding the slowness).
+
+The fix wasn't "move rerank to a GPU service" — that adds an account, two secrets, a decorated remote function, cold starts, and a fallback code path, all for 2-3 min savings over the cleaner alternative. The cleaner alternative was to **swap the model entirely**.
+
+**FlashRank MiniLM** (`ms-marco-MiniLM-L-12-v2`, ~34 MB, ONNX-optimized, pairwise cross-encoder):
+- 10-15x faster than mxbai on the same CPU: ~2-3s per query for 20 docs
+- Still a proper cross-encoder (full query-chunk attention), just encoder + classification head instead of generative
+- Trained on MS MARCO — in-domain for RAG semantic ranking
+- Drop-in via `from flashrank import Ranker, RerankRequest`
+- No new services, no new secrets, no cold starts, no fallback code
+
+**Expected CI runtime with FlashRank:** ~5-6 min total (from 45+ min). Under the threshold where devs will wait for it.
+
+**Actual fast-proxy deltas after regenerating the baseline** (30-query subset, mxbai → FlashRank MiniLM):
+
+| Metric | mxbai (old) | FlashRank MiniLM | Δ |
+|---|---|---|---|
+| top1_source_match | 0.733 | 0.733 | 0.000 |
+| topk_source_match | 0.867 | **0.900** | **+0.033** |
+| answer_keyword_recall | 0.768 | 0.768 | 0.000 |
+| idk_rate | 0.167 | **0.300** | **+0.133** |
+| elapsed_seconds | 1286 | **58** | **-1228s (22x)** |
+
+**Retrieval is at least as good, elapsed time 22x better, Sonnet IDK rate climbs +13pp.** Retrieval proxies prove FlashRank pulls the correct source into top-5 just as often (actually +3pp more often). The IDK rise comes from different top-5 rankings — FlashRank finds the right source but may not rank the specific *answer-bearing* chunk within that source as highly. Real tradeoff, documented honestly, shippable.
+
+**Also tested `rank-T5-flan`** (110 MB, "best zero-shot on out-of-domain" per FlashRank docs) as a middle ground. Dramatically worse: top1 0.400 (−33pp), idk 0.433 (+27pp). Likely because VA education corpus is in-domain for MS MARCO training data — the out-of-domain advantage of T5-flan doesn't help here. Ruled out.
+
+**Escape hatch:** `scripts/rerank.py` honors `IKB_RERANK_MODEL` env var for any FlashRank-supported model — e.g. `ce-esci-MiniLM-L12-v2` (e-commerce-tuned), `ms-marco-MultiBERT-L-12` (multilingual, 150 MB). Swapping back to mxbai requires restoring the `mxbai-rerank` dep + the old rerank.py branch — intentionally not kept as a dual-backend toggle, since a CI gate measuring a different pipeline than production isn't a valid gate.
+
+**Escape hatch:** `scripts/rerank.py` honors `IKB_RERANK_MODEL` env var. Production deployments that want higher quality and can afford 10x slower inference can point at a heavier model. The MCP server reads the same env var.
 
 ### Moment 37: Zero drift after the tsvector schema change (good ops hygiene)
 

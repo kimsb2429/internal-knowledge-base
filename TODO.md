@@ -42,7 +42,7 @@ Canonical plan: `docs/2026-04-11-engineering-rag-evidence-and-howtos.md` § "Fro
 - [x] **pg_dump backup** — 30MB snapshot at `~/ikb-backups/ikb-20260415-1705.dump`. Survives Docker factory reset.
 - [x] **Docs-vs-code RAG adjudication** — `docs/deep-dive/2026-04-16-docs-vs-code-rag-adjudication.md`. Subagent-parallel DAG (6 sub-questions). Resolved the tension between Claim A (unified scaffolding) and Claim B (code is different). Surfaced that GrepRAG's baseline set is thin; tightened the repo's own overclaims.
 - [ ] **Ship-cut v1 remaining** (see `~/consulting-research/docs/rag-demo/README.md` § "Ship-cut v1"):
-  - [ ] Eval wired to GitHub Actions as merge gate
+  - [ ] Eval wired to GitHub Actions as merge gate — **code + workflow shipped on branch `session-9-eval-in-ci`; blocked on: (1) install `flashrank` locally, (2) regenerate `evals/baseline.fast.json` against FlashRank (mxbai-rerank replaced for speed), (3) compare quality delta, (4) re-run CI.** See docs/demo-prep-raw.md Act 30 for context.
   - [ ] Failing-then-passing PR (highest-signal artifact)
   - [x] Langfuse public trace link — showcase trace live at `https://us.cloud.langfuse.com/project/cmo0wah7a00pfad071nk6x84c/traces/a574193bbff7d5438f7fae9e27f4bb83`. `scripts/make_trace_public.py` flips any trace ID via Langfuse ingestion API.
   - [ ] Public README with 8-dim scaling table + docs-vs-code caveat + Accenture line

@@ -5,6 +5,15 @@ name: eval-gate
 # push to main. Blocks merge if any gated proxy regresses beyond tolerance.
 # Option C (full-DeepEval nightly) is NOT wired up — it's a labeled seam, not
 # shipped.
+#
+# IMPORTANT — baseline state:
+# evals/baseline.fast.json was generated with mxbai-rerank-base-v2 (since
+# replaced by FlashRank MiniLM for speed). Regenerate the baseline against
+# FlashRank before this workflow can pass a clean run.
+# Regen command (local, once):
+#   .venv/bin/python -m scripts.run_eval --fast --k 5 --rerank-from 20 \
+#       --out eval_v2bcr_flashrank.fast.raw.json
+#   cp data/eval_v2bcr_flashrank.fast.raw.json evals/baseline.fast.json
 
 on:
   pull_request:
@@ -45,9 +54,11 @@ jobs:
     env:
       IKB_DB_URL: postgresql://ikb:ikb_local@localhost:5433/ikb
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      # HuggingFace cache is keyed by the model ids used (mxbai-embed-large,
-      # mxbai-rerank-base-v2) — actions/cache below keeps this warm across runs.
+      # Two separate caches:
+      # - HF_HOME: sentence-transformers / mxbai-embed-large query embedder
+      # - IKB_RERANK_CACHE_DIR: FlashRank ONNX model (~34 MB for MiniLM-L-12)
       HF_HOME: ${{ github.workspace }}/.hf-cache
+      IKB_RERANK_CACHE_DIR: ${{ github.workspace }}/.flashrank-cache
       PGPASSWORD: ikb_local
 
     steps:
@@ -74,6 +85,13 @@ jobs:
           path: ${{ env.HF_HOME }}
           key: hf-cache-v1-${{ hashFiles('requirements-ci.txt') }}
           restore-keys: hf-cache-v1-
+
+      - name: Cache FlashRank ONNX model
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.IKB_RERANK_CACHE_DIR }}
+          key: flashrank-cache-v1-${{ hashFiles('requirements-ci.txt', 'scripts/rerank.py') }}
+          restore-keys: flashrank-cache-v1-
 
       - name: Install Python deps
         run: uv pip install --system -r requirements-ci.txt
