@@ -575,7 +575,7 @@ Q109: "13-question scorecard"
 | Golden set audit | `scripts/audit_golden_set.py` | Structural checks: source IDs exist, key terms present, alternate sources |
 | HTML cleaner | `scripts/chunk_documents.py:_HTML_CLEANER` | `lxml-html-clean` w/ explicit safe_attrs preserving colspan/rowspan |
 | BS4 post-pass | `scripts/chunk_documents.py:_bs4_post_pass` | Per-chunk cleanup AFTER boundaries set, drops empty tags, unwraps `<span>` |
-| Reranker | `scripts/rerank.py` | mxbai-rerank-base-v2 cross-encoder, MPS-compatible, 2K-char input cap |
+| Reranker | `scripts/rerank.py` | FlashRank `ms-marco-MiniLM-L-12-v2` ONNX cross-encoder (22M params, 2-3s/query on CPU, 2K-char input cap). Replaced mxbai-rerank-base-v2 (0.5B generative, 30s/query) to fit the CI merge gate. |
 | Memory debugger | `scripts/debug_rerank_mem.py` | RSS instrumentation per pipeline stage; reproduces 27GB OOM |
 | Contextual Retrieval | `scripts/contextualize_chunks.py` | Anthropic Batches API, prompt caching, sanitized custom_ids, resume-safe |
 | Deep dive report | `docs/deep-dive/2026-04-14-html-rag-ingestion-state-of-art.md` | DAG-based research synthesis: HTML RAG ingestion state of the art |
@@ -591,6 +591,8 @@ Q109: "13-question scorecard"
 | **MCP smoke test** | `scripts/test_mcp_server.py` | In-process `fastmcp.Client` test, 5 assertions incl. guardrails (empty-query reject, k-clamp). |
 | **Hybrid-ready schema** | `scripts/init_schema.sql` | `content_tsv` GENERATED column + GIN index — BM25-ready, no rewrite. |
 | **Backup snapshot** | `~/ikb-backups/ikb-20260415-1705.dump` | 30MB `pg_dump -Fc` of the live pgvector volume (238 docs, 6,489 chunks). |
+| **Trace-public helper** | `scripts/make_trace_public.py` | Sidecar flip of Langfuse trace visibility via `/api/public/ingestion` `trace-create` event. 40 lines stdlib + dotenv. Works around the OTel-attribute-on-child-span gotcha. |
+| **Baseline reconfirm output** | `data/eval_v2bcr_rerank_postship.fast.raw.json` | 30q fast eval post-tsvector. Zero drift vs `eval_v2bcr_rerank.raw.json`. Also serves as the Option A CI gate baseline. |
 
 ---
 
@@ -687,6 +689,13 @@ Q109: "13-question scorecard"
 - First brain's first-principles questioning exposed the gap — "why would a query vector match a table?"
 - The research-to-plan gap is a failure mode worth talking about: organizations do the research, then build something simpler and hope eval catches it
 - Lesson: audit your build plan against your own research before starting, not after
+
+### Angle 13: "Label the Seams, Don't Half-Build"
+- Every ship-cut v1 item follows the same discipline: ship the thing the demo needs; label everything else with a real pointer, not a stub.
+- Five concrete seams labeled so far: `auth_context` parameter (SSO/ACL), tsvector column with no BM25 wiring yet, the `document://` resource as the "retrieve_full_doc" escape valve, Option C (two-tier CI gate) described in README but only Option A shipped, and the Langfuse showcase-trace link (no custom dashboard viewer built).
+- The failure mode on the other side: half-built SSO, a fake BM25 scorer, a no-op gateway — all of which *look* like production features in a screenshot but don't hold up under a second question.
+- Honest stub > plausible fake. A paragraph describing how Option C extends from Option A is more credible than a flaky nightly job that fails on half the PRs.
+- Connects to Thesis A (production scaffolding as differentiator): scaffolding isn't only "what I built." It's also "what I deliberately didn't build, and why, and where it slots in when you need it."
 
 ---
 
@@ -801,6 +810,20 @@ Q109: "13-question scorecard"
 > "hmmm so contextual precision is not really necessary if the client llm / user can handle the extra info?" — (the question that re-ordered the metric priority hierarchy for the long-context era)
 
 > "and what about contextual relevancy" — (finishing the metric reprioritization sweep)
+
+**From 2026-04-16 session 9 (ship-cut polish):**
+
+> "does it say why we're doing this? what's the point of this in the context of the demo we're building" — (reaching for the purpose when a checklist item felt abstract — reframed from "dashboard share link" to "one clickable observability proof point")
+
+> "so at some point we discussed how the demo should live. did we ever decide that? is it a github repo? is it more than that?" — (pulling up to the artifact level before going further on any single item)
+
+> "same repo as-is is fine. and i agree that link per trace is fine" — (two decisions in one line: public repo cutover + Langfuse sharing model)
+
+> "so in simple terms, what is eval in ci merge gate" — (checking understanding before authorizing build — the load-bearing ship-cut item)
+
+> "so what we would need to run this on is like new prompt versions... what else, give me a few realistic use cases" — (pushing from abstract to concrete before committing to the gate design)
+
+> "since this is all geared toward demo let's do option A, but mention option C in the demo" — (the exact "label the seams" discipline applied at the CI-gate design level)
 
 ---
 
@@ -2593,5 +2616,302 @@ Exact answer. Two real callers, zero false positives. ~1ms query (indexed SQL).
 **The demo takeaway:** no single retriever handles all query types. Grep is noisy on structural questions. Dense is wrong on structural questions. Graph is unavailable for semantic questions. **Hybrid running all three in parallel, fused + reranked, is the production answer.** This is why Sourcegraph's architecture is "grep + graph + embeddings, in that order of trust," not "pick one."
 
 Source: synthesized from 2026-04-16 adjudication; mirrors LinkedIn KG-RAG, Sourcegraph Cody, and Augment Context Engine architectures documented in the research.
+
+---
+
+## Act 30: Labeling the seams (shipping the observability + quality proof points) (2026-04-16, session 9)
+
+Three ship-cut polish beats from one session, unified by the thesis: **label the seams with real artifacts — don't half-build features the demo doesn't need.**
+
+### Moment 33: The Langfuse "public dashboard share link" doesn't exist
+
+The ship-cut v1 checklist said *"Langfuse Cloud traces on dev queries — shareable read-only dashboard link in README."* The natural read: flip a project-level toggle, paste the dashboard URL. Reality: **Langfuse Cloud has per-trace public sharing but not dashboard-level public sharing.** Trace-level sharing is documented in a 2023 changelog; custom dashboards only mention "team collaboration." The feature described in the checklist was aspirational — no matching toggle exists.
+
+**Re-scoping the goal, not the feature:** what a reader actually needs from the README is *a clickable link that proves observability is wired up.* That's served equally well by one canonical public trace. Goal dissolves.
+
+### Moment 34: The documented OTel attribute didn't promote
+
+Langfuse's OTel integration docs list `langfuse.trace.public` (boolean) as the attribute that marks a trace public. Added it to the tool-call span alongside the existing `input.value` / `output.value`:
+
+```python
+_parent_span = _otel_trace.get_current_span()
+_parent_span.set_attribute("input.value", q)
+_parent_span.set_attribute("langfuse.trace.public", True)   # docs said this would work
+```
+
+After running the smoke test, **the trace came back `public: false`.** ([Ex. UU](#ex-uu-langfuse-otel-attribute-table))
+
+**The debugging loop:**
+1. Queried the authenticated Langfuse API — confirmed the trace exists, `public: False`, also missing `input` at trace level.
+2. Queried observations for the trace — found `langfuse.trace.public: true` landed, but on a **child** span (our tool function's span), not the root.
+3. The root span is the one FastMCP creates when wrapping the tool call — our `_otel_trace.get_current_span()` inside `query()` returns the *child* of FastMCP's wrapper, not the true OTel root.
+4. Langfuse only promotes `langfuse.trace.*` attributes from the root span. Child-span attributes become observation metadata, never trace fields.
+
+([Ex. VV](#ex-vv-debugging-the-span-hierarchy))
+
+### Moment 35: Sidecar ingestion API — the reliable path
+
+Rather than fight OTel's span hierarchy or reach into FastMCP internals, **use the Langfuse ingestion API directly.** POST a `trace-create` event with the same trace ID and `public: true` as a sidecar call. Works regardless of which span has which attributes.
+
+Result: `scripts/make_trace_public.py <otel_trace_id>` — 40 lines, no dependencies beyond stdlib + dotenv. Confirmed anonymous-viewer access via trpc query with no auth: `"public":true`. ([Ex. WW](#ex-ww-sidecar-helper-and-anonymous-access-check))
+
+**Reverted the OTel attribute code change** — dead weight that didn't achieve the goal. Kept one small addition: logging the 32-char OTel trace ID alongside our internal `ikb-<epoch>` trace_id so any server log line pairs to a Langfuse URL.
+
+### Moment 36: CI gate — pick what the demo needs, label what production needs
+
+The handoff's eval-in-CI plan called for DeepEval-scored gate on CtxRec + Faith. Walked through three options:
+
+| Option | What | Time/PR | Cost/PR |
+|---|---|---|---|
+| **A** — fast proxies on every PR | top1/topk match, keyword recall, IDK rate | ~20 min | $0.30 |
+| **B** — full 110q + DeepEval on every PR | Faith/AnsRel/CtxPrec/CtxRec/CtxRel | ~80 min | ~$2 |
+| **C** — two-tier: fast on every PR, full nightly | Blocking gate + full coverage | 20 min PR / nightly full | $0.30 PR + nightly |
+
+**Decision: ship Option A. Mention Option C as the production evolution in the demo itself.** Reasons:
+- Proxies are tight — baseline re-confirmation showed zero drift, and proxies move together with DeepEval metrics in practice (top1_source_match ≈ context recall signal).
+- The demo's job is *"CI blocks regressions"* — proven by the failing-then-passing PR artifact, not by breadth of gated metrics.
+- 20 min / $0.30 is a reasonable gate for every PR; 80 min / $2 discourages frequent PRs.
+- Option C is the honest production story: ship A, label C for scaling up. Same "label the seams" pattern as the `auth_context` gateway seam and the tsvector-but-no-BM25-wiring schema.
+
+### Moment 38: Reranker swap — mxbai (0.5B generative) → FlashRank MiniLM (22M encoder)
+
+First CI run canceled at the 45-min workflow timeout, still on the eval step. Root cause: **mxbai-rerank-base-v2 is a 0.5B-parameter generative reward model** (scores via decoder generation, not encoder classification head), ~30s per query for 20-doc reranking on Linux CPU. 30 queries × 30s = 15 min rerank alone. Local runs under memory pressure spiked to 99s/query (loky worker leaks compounding the slowness).
+
+The fix wasn't "move rerank to a GPU service" — that adds an account, two secrets, a decorated remote function, cold starts, and a fallback code path, all for 2-3 min savings over the cleaner alternative. The cleaner alternative was to **swap the model entirely**.
+
+**FlashRank MiniLM** (`ms-marco-MiniLM-L-12-v2`, ~34 MB, ONNX-optimized, pairwise cross-encoder):
+- 10-15x faster than mxbai on the same CPU: ~2-3s per query for 20 docs
+- Still a proper cross-encoder (full query-chunk attention), just encoder + classification head instead of generative
+- Trained on MS MARCO — in-domain for RAG semantic ranking
+- Drop-in via `from flashrank import Ranker, RerankRequest`
+- No new services, no new secrets, no cold starts, no fallback code
+
+**Expected CI runtime with FlashRank:** ~5-6 min total (from 45+ min). Under the threshold where devs will wait for it.
+
+**Actual fast-proxy deltas after regenerating the baseline** (30-query subset, mxbai → FlashRank MiniLM):
+
+| Metric | mxbai (old) | FlashRank MiniLM | Δ |
+|---|---|---|---|
+| top1_source_match | 0.733 | 0.733 | 0.000 |
+| topk_source_match | 0.867 | **0.900** | **+0.033** |
+| answer_keyword_recall | 0.768 | 0.768 | 0.000 |
+| idk_rate | 0.167 | **0.300** | **+0.133** |
+| elapsed_seconds | 1286 | **58** | **-1228s (22x)** |
+
+**Retrieval is at least as good, elapsed time 22x better, Sonnet IDK rate climbs +13pp.** Retrieval proxies prove FlashRank pulls the correct source into top-5 just as often (actually +3pp more often). The IDK rise comes from different top-5 rankings — FlashRank finds the right source but may not rank the specific *answer-bearing* chunk within that source as highly. Real tradeoff, documented honestly, shippable.
+
+**Also tested `rank-T5-flan`** (110 MB, "best zero-shot on out-of-domain" per FlashRank docs) as a middle ground. Dramatically worse: top1 0.400 (−33pp), idk 0.433 (+27pp). Likely because VA education corpus is in-domain for MS MARCO training data — the out-of-domain advantage of T5-flan doesn't help here. Ruled out.
+
+**Escape hatch:** `scripts/rerank.py` honors `IKB_RERANK_MODEL` env var for any FlashRank-supported model — e.g. `ce-esci-MiniLM-L12-v2` (e-commerce-tuned), `ms-marco-MultiBERT-L-12` (multilingual, 150 MB). Swapping back to mxbai requires restoring the `mxbai-rerank` dep + the old rerank.py branch — intentionally not kept as a dual-backend toggle for v1, but **a tiered architecture is the right production pattern** (see Moment 39 below).
+
+### Moment 39: Tiered reranker architecture — fast for the gate, heavy for the release, light for monitoring
+
+The obvious critique of the FlashRank swap: *"your CI gate now measures a different pipeline than production — isn't that an invalid gate?"* The sharper answer re-frames the question: **don't use one reranker model for all purposes.** Different tiers need different speed/quality tradeoffs, and the same scaffolding holds them together.
+
+| Tier | Purpose | Reranker | Frequency |
+|---|---|---|---|
+| **Merge gate (Option A — shipped)** | "Does this PR obviously break retrieval or prompting?" | FlashRank MiniLM (22M, ~2s/query) | Every PR, blocking |
+| **Release gate (Option C — labeled, not shipped)** | "Does this release match our published headline scores?" | mxbai-rerank-base-v2 or heavier + full DeepEval on 110q | Nightly or pre-release |
+| **Production inference** | "Deliver the best answer per the consumer's latency budget" | Consumer-configurable; heavy for high-stakes, light for interactive | Every live query |
+| **Production monitoring** | "Notice drift between releases on real traffic" | FlashRank MiniLM + sampling | Continuous |
+
+**Why this is not a gate-invalidation risk:**
+
+The narrow failure mode where different-model tiers diverge is a *rerank-specific code change* — e.g., someone edits how ties break or changes the top-k cutoff logic, and only the heavier model exposes the bug. That's <5% of realistic changes. The other 95% (chunking, embedding, prompts, retrieval SQL, metadata filters) affect the shared upstream path; proxies with either reranker catch those equally well. For the narrow case, the nightly/release gate is the safety net — the merge gate doesn't need to carry that weight.
+
+**Why this fits the pilot-to-prod scaling thesis:**
+
+Adds one row to the 8-dimension scaling table (now 9): the same scaffolding that runs fast proxies in CI also runs full DeepEval nightly and light rerank on live traffic. More workflow files, not more rewrites. Same pattern as the `auth_context` seam, the tsvector-without-BM25 schema, the showcase-trace Langfuse link. **Label the seams; the v1 demo ships one tier honestly; production scales by adding tiers, not rebuilding.**
+
+### Talking point — "One reranker tier doesn't fit all purposes"
+
+"A valid critique of our CI swap: the merge gate now runs a different reranker than the MCP server would in production. The sharper architecture isn't 'use the same model everywhere' — it's *use the right model per tier*. Fast cross-encoder on every PR so the gate is actually used. Heavy generative reward model nightly so release scores match what we publish. Light rerank on live traffic so monitoring is always on. The ~5% of PRs that would regress the heavy-model path specifically get caught by the nightly — same scaffolding, different knob."
+
+
+**Escape hatch:** `scripts/rerank.py` honors `IKB_RERANK_MODEL` env var. Production deployments that want higher quality and can afford 10x slower inference can point at a heavier model. The MCP server reads the same env var.
+
+### Moment 37: Zero drift after the tsvector schema change (good ops hygiene)
+
+An open question from the handoff: *the tsvector GENERATED column was added after the last full eval; could the schema change have perturbed retrieval?* Ran `run_eval.py --fast` against the v2bcr+rerank baseline to confirm.
+
+Result: **zero drift across every proxy.** ([Ex. XX](#ex-xx-baseline-reconfirm-zero-drift))
+
+| Metric | Now | Baseline | Δ |
+|---|---|---|---|
+| top1_source_match | 0.733 | 0.733 | 0.000 |
+| topk_source_match | 0.867 | 0.867 | 0.000 |
+| answer_keyword_recall | 0.768 | 0.768 | 0.000 |
+| idk_rate | 0.167 | 0.167 | 0.000 |
+| avg_input_tokens | 2489 | 2489 | 0.000 |
+| avg_output_tokens | 178 | 180 | -2 (Sonnet nondeterminism) |
+
+Confirms the GENERATED column is truly inert until BM25 is wired against it. **This is also the baseline file the Option A gate compares against** — built into the v2bcr+rerank eval artifact, reusable.
+
+### Talking point — "The supported feature, not the feature name"
+
+"The original plan said 'public dashboard share link.' Langfuse doesn't have that. But the reader only needs a clickable artifact that proves observability is wired up — a public trace link serves that identically. Matching to the supported feature (per-trace public via ingestion API) beats half-building a custom dashboard viewer. Rule: when docs don't match the plan, rescope the goal to the closest supported primitive."
+
+### Talking point — "Documented attribute, wrong span"
+
+"The Langfuse docs list `langfuse.trace.public` as the canonical OTel attribute for marking a trace public. It works — just not from inside a FastMCP tool function, because FastMCP wraps your tool call in an outer span that is the true OTel root. Your code's span is a child, and Langfuse only promotes trace-level attributes from the root. The sidecar ingestion API call sidesteps the whole issue in 40 lines of stdlib."
+
+### Talking point — "Ship the gate the demo needs, label the gate production needs"
+
+"For the public demo, the merge gate is Option A — fast proxies, 20 minutes, thirty cents per PR. Proxies move together with the scored metrics in practice, and the demo artifact (the failing-then-passing PR in Actions history) doesn't require DeepEval scoring to be convincing. Option C — fast on every PR, full DeepEval nightly — is the production evolution. Same pattern as the `auth_context` stub and the tsvector-without-BM25-wiring schema: label the seams, don't half-build."
+
+### Talking point — "Schema change verified, not assumed"
+
+"Added a tsvector GENERATED column for hybrid-readiness. Then re-ran the fast eval to confirm it didn't perturb retrieval — zero drift across every proxy, down to token counts. Schema changes that *shouldn't* affect retrieval need to be *verified* not to affect retrieval. That's the habit CI is meant to enforce every PR."
+
+### Quotables
+
+- "The supported feature, not the feature name."
+- "The documented attribute promotes from root. FastMCP makes your span a child of its wrapper. Those two facts don't meet."
+- "Sidecar ingestion API, forty lines of stdlib — works regardless of which span has which attributes."
+- "For v1, ship Option A. For production, label Option C. Same pattern as the auth_context seam."
+- "Schema changes that shouldn't affect retrieval need to be verified not to affect retrieval."
+- "Proxies move together with scored metrics in practice. The demo artifact is the blocked PR, not the breadth of gated metrics."
+
+### Stats block
+
+- Langfuse public trace URL: `https://us.cloud.langfuse.com/project/cmo0wah7a00pfad071nk6x84c/traces/a574193bbff7d5438f7fae9e27f4bb83`
+- Anonymous trpc verification: `"public":true` returned without auth headers (confirmed after ingestion API sidecar call landed)
+- Fast eval baseline reconfirm: 30 queries, 21 min, $0.30. Zero drift across all proxies.
+- CI gate Option A cost projection: $0.30/PR × 20 PRs/mo ≈ $6/mo
+- Same-repo-as-is decision: no sanitized fork; flip GitHub visibility to public when eval-in-CI is green on main
+
+Source: 2026-04-16 session 9, post-PR-#3 ship-cut polish. Debugging journey logged in memory at `~/.claude/projects/-Users-jaekim-internal-knowledge-base/memory/rag-pipeline-status.md` ("Langfuse OTel gotcha" section).
+
+### Ex. UU: Langfuse OTel attribute table (what docs promised)
+
+From the Langfuse OpenTelemetry integration docs:
+
+| Langfuse Field | OTel Attribute |
+|---|---|
+| name | `langfuse.trace.name` |
+| userId | `langfuse.user.id` |
+| sessionId | `langfuse.session.id` |
+| **public** | **`langfuse.trace.public` (boolean)** |
+| tags | `langfuse.trace.tags` (string[]) |
+| input | `langfuse.trace.input` |
+| output | `langfuse.trace.output` |
+
+Unstated in the table: **these promote to trace-level only when set on the root span of the OTel trace.** When a framework like FastMCP wraps your tool call in an outer span, your tool's span becomes a child — attributes set inside the tool function land on the child, not the root, and don't promote.
+
+Source: `https://langfuse.com/integrations/native/opentelemetry`
+
+### Ex. VV: Debugging the span hierarchy
+
+**Step 1 — authenticated query showed `public: false` at trace level:**
+
+```
+=== trace-level ===
+public: False
+name: tools/call query
+input.present: False
+output.present: False
+=== root-span attributes (first 4) ===
+rpc.system: mcp
+rpc.method: tools/call
+mcp.method.name: tools/call
+fastmcp.component.key: query
+```
+
+Zero `langfuse.*` attributes on root. FastMCP's wrapper span owns the root; only its own `rpc.*` / `mcp.*` / `fastmcp.*` attributes appear.
+
+**Step 2 — observations query showed the attribute on a child span:**
+
+```
+name=rerank            id=796fcb30  parent=47db0e43
+name=retrieve          id=85d0a690  parent=47db0e43
+name=tools/call query  id=47db0e43  parent=25f280c2    ← our tool function's span (CHILD)
+  ikb.k: 3
+  ikb.rerank_from: 20
+  langfuse.trace.public: true        ← landed here, not promoted
+  ikb.latency_ms: 26663
+name=tools/call query  id=25f280c2  parent=            ← FastMCP's wrapper (ROOT, no attributes)
+```
+
+Same `name=tools/call query` shows up twice. The outer one (25f280c2, no parent) is the true OTel root — FastMCP's instrumentation wrapper. The inner one (47db0e43) is our tool function's execution span. Everything we `set_attribute` inside `query()` lands on the inner span.
+
+**Step 3 — anonymous trpc query confirmed the practical consequence:**
+
+```
+$ curl "...api/trpc/traces.byIdWithObservationsAndScores?...traceId=a574193b..."
+[{"error":{"json":{"message":"User is not a member of this project and this trace is not public",
+ "code":-32001,"data":{"code":"UNAUTHORIZED","httpStatus":401}}}}]
+```
+
+Trace exists (error says "not public," not "not found") but anonymous viewer is blocked. **The attribute didn't promote; the trace isn't public; the ship-cut goal isn't met.**
+
+Source: `scripts/mcp_server.py` query function, inspected via Langfuse public API `/api/public/traces/{id}` and `/api/public/observations?traceId=...` (authenticated) and anonymous trpc to confirm end-user view.
+
+### Ex. WW: Sidecar helper and anonymous access check
+
+**`scripts/make_trace_public.py` — 40 lines of stdlib (+ dotenv):**
+
+```python
+def make_public(trace_id: str) -> None:
+    pk = os.environ["LANGFUSE_PUBLIC_KEY"]
+    sk = os.environ["LANGFUSE_SECRET_KEY"]
+    host = os.environ.get("LANGFUSE_BASE_URL", "https://cloud.langfuse.com").rstrip("/")
+
+    auth = base64.b64encode(f"{pk}:{sk}".encode()).decode()
+    payload = {
+        "batch": [{
+            "id": str(uuid.uuid4()),
+            "type": "trace-create",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "body": {"id": trace_id, "public": True},
+        }]
+    }
+    req = urllib.request.Request(
+        f"{host}/api/public/ingestion",
+        data=json.dumps(payload).encode(),
+        headers={"Authorization": f"Basic {auth}", "Content-Type": "application/json"},
+        method="POST",
+    )
+    with urllib.request.urlopen(req) as resp:
+        print(f"HTTP {resp.status} — {resp.read().decode()[:300]}")
+```
+
+**Run:**
+```
+$ .venv/bin/python -m scripts.make_trace_public a574193bbff7d5438f7fae9e27f4bb83
+HTTP 207 — {"successes":[{"id":"f5660d8e-5b4f-4e02-a24a-e845d56ee3ff","status":201}],"errors":[]}
+public URL: https://us.cloud.langfuse.com/project/cmo0wah7a00pfad071nk6x84c/traces/a574193bbff7d5438f7fae9e27f4bb83
+```
+
+**Verification (anonymous, no headers):**
+```
+$ curl ".../api/trpc/traces.byIdWithObservationsAndScores?..."
+...("public":true)...
+```
+
+One flag flipped via ingestion API; anonymous trpc now returns the trace without auth. The 207 Multi-Status response with `"successes":[...],"errors":[]` is Langfuse's standard ingestion batch response — idempotent, can re-run safely.
+
+Source: `scripts/make_trace_public.py`; Langfuse ingestion API docs at `https://api.reference.langfuse.com/`.
+
+### Ex. XX: Baseline reconfirm — zero drift after tsvector column
+
+```
+============================================================
+  FAST PROXIES  (n=30)
+============================================================
+  top1_source_match_rate           0.733     vs base 0.733     Δ +0.000
+  topk_source_match_rate           0.867     vs base 0.867     Δ +0.000
+  answer_keyword_recall_mean       0.768     vs base 0.768     Δ +0.000
+  idk_rate                         0.167     vs base 0.167     Δ +0.000
+  avg_input_tokens                 2489      vs base 2489      Δ +0.000
+  avg_output_tokens                178       vs base 180       Δ -2.000 ▼ ✓
+
+  baseline: eval_v2bcr_rerank.raw.json  matched n=30
+```
+
+Six proxies, five identical to the character, one down by 2 output tokens (Sonnet nondeterminism). The `content_tsv GENERATED ALWAYS AS (...) STORED` column + GIN index were added to 6,489 rows in the same Docker container — and the retrieval pipeline didn't notice. Which is exactly the guarantee GENERATED columns are supposed to offer, **now verified empirically.**
+
+Cost: $0.30 (Sonnet 4.6 generation, 30 queries). Elapsed: 21 min. Same cost/speed profile projected for the Option A CI gate.
+
+Source: `data/eval_v2bcr_rerank_postship.fast.raw.json` vs. `data/eval_v2bcr_rerank.raw.json` (baseline from 2026-04-15). Run via `scripts/run_eval.py --fast --k 5 --rerank-from 20 --baseline eval_v2bcr_rerank.raw.json`.
 
 

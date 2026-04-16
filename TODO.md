@@ -42,11 +42,12 @@ Canonical plan: `docs/2026-04-11-engineering-rag-evidence-and-howtos.md` § "Fro
 - [x] **pg_dump backup** — 30MB snapshot at `~/ikb-backups/ikb-20260415-1705.dump`. Survives Docker factory reset.
 - [x] **Docs-vs-code RAG adjudication** — `docs/deep-dive/2026-04-16-docs-vs-code-rag-adjudication.md`. Subagent-parallel DAG (6 sub-questions). Resolved the tension between Claim A (unified scaffolding) and Claim B (code is different). Surfaced that GrepRAG's baseline set is thin; tightened the repo's own overclaims.
 - [ ] **Ship-cut v1 remaining** (see `~/consulting-research/docs/rag-demo/README.md` § "Ship-cut v1"):
-  - [ ] Eval wired to GitHub Actions as merge gate
+  - [ ] Eval wired to GitHub Actions as merge gate — **code + workflow shipped on branch `session-9-eval-in-ci`; blocked on: (1) install `flashrank` locally, (2) regenerate `evals/baseline.fast.json` against FlashRank (mxbai-rerank replaced for speed), (3) compare quality delta, (4) re-run CI.** See docs/demo-prep-raw.md Act 30 for context.
   - [ ] Failing-then-passing PR (highest-signal artifact)
-  - [ ] Langfuse public dashboard share link
+  - [x] Langfuse public trace link — showcase trace live at `https://us.cloud.langfuse.com/project/cmo0wah7a00pfad071nk6x84c/traces/a574193bbff7d5438f7fae9e27f4bb83`. `scripts/make_trace_public.py` flips any trace ID via Langfuse ingestion API.
   - [ ] Public README with 8-dim scaling table + docs-vs-code caveat + Accenture line
-  - [ ] Public GitHub repo (MIT) + `docker compose up` repro + PulseMCP listing
+  - [ ] Public GitHub repo (MIT) + `docker compose up` repro + PulseMCP listing (same repo as-is, no fork)
+  - [ ] **Polish:** add `_meta = {"anthropic/maxResultSizeChars": 500000}` to `@mcp.tool query` and `@mcp.resource document://{source_id}` responses (Claude Code v2.1.91+, Apr 2 2026). ~2 lines. Fixes silent truncation when a viewer clones the repo and plugs into Claude Desktop on large documents (some VA manuals are 100K+ chars). Verify feature exists at claimed version before adding.
 - [ ] **Post-launch spokes added** (park until anchor has SERP data):
   - [ ] "Where the unified RAG pattern stops working: the docs-vs-code retrieval boundary"
   - [ ] "The router that isn't: why LLM-as-router via MCP tool affordances beats explicit query classifiers"

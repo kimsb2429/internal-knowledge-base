@@ -17,7 +17,9 @@ import argparse
 import json
 import os
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from dotenv import load_dotenv
 
@@ -47,13 +49,16 @@ def expected_source_ids(q: dict) -> list[str]:
     return ids
 
 
-def run_one(q: dict, k: int, rerank_from: int = 0) -> dict:
+def _prep(q: dict, k: int, rerank_from: int = 0) -> dict:
+    """Phase 1 — retrieve + rerank. CPU-bound; kept serial across queries so
+    PyTorch doesn't thrash when running on CI's CPU-only runners. All the
+    non-LLM work lives here; the shape is ready for phase 2 to attach the
+    generated answer."""
     if rerank_from and rerank_from > k:
         candidates = retrieve(q["query"], k=rerank_from)
         chunks = rerank(q["query"], candidates, top_k=k)
     else:
         chunks = retrieve(q["query"], k=k)
-    gen = generate(q["query"], chunks)
 
     expected_ids = expected_source_ids(q)
     retrieved_ids = [str(c["source_id"]) for c in chunks]
@@ -76,24 +81,47 @@ def run_one(q: dict, k: int, rerank_from: int = 0) -> dict:
     ]
 
     return {
+        "q": q,
+        "chunks": chunks,
+        "expected_ids": expected_ids,
+        "retrieved_ids": retrieved_ids,
+        "top1_match": top1_match,
+        "topk_match": topk_match,
+        "slim_chunks": slim_chunks,
+    }
+
+
+def _complete(prep: dict) -> dict:
+    """Phase 2 — generate answer. API-bound; safe to run concurrently across
+    queries because the Anthropic client is thread-safe and Anthropic accepts
+    parallel requests."""
+    q = prep["q"]
+    gen = generate(q["query"], prep["chunks"])
+    return {
         "id": q["id"],
         "query": q["query"],
         "expected_answer": q["answer"],
-        "expected_source_ids": expected_ids,
+        "expected_source_ids": prep["expected_ids"],
         "query_type": q.get("query_type"),
         "answer_in_table": q.get("answer_in_table"),
         "tags": q.get("tags", []),
-        "retrieved_chunks": slim_chunks,
+        "retrieved_chunks": prep["slim_chunks"],
         "context_strings": gen["context_strings"],
         "answer": gen["answer"],
         "model": gen["model"],
         "usage": gen["usage"],
         "retrieval_signals": {
-            "top1_source_match": top1_match,
-            "topk_source_match": topk_match,
-            "retrieved_source_ids": retrieved_ids,
+            "top1_source_match": prep["top1_match"],
+            "topk_source_match": prep["topk_match"],
+            "retrieved_source_ids": prep["retrieved_ids"],
         },
     }
+
+
+def run_one(q: dict, k: int, rerank_from: int = 0) -> dict:
+    """Back-compat wrapper kept so external callers (e.g., ad-hoc scripts) still
+    work. Internal two-phase path uses _prep + _complete directly."""
+    return _complete(_prep(q, k=k, rerank_from=rerank_from))
 
 
 import re
@@ -193,6 +221,8 @@ def main():
                     help="Fast triage mode: limit=30 by default, prints cheap proxies, no DeepEval scoring.")
     ap.add_argument("--baseline", type=str,
                     help="Path to a prior raw eval JSON (e.g. eval_v2b_rerank.raw.json) — print proxy deltas vs it.")
+    ap.add_argument("--concurrency", type=int, default=8,
+                    help="Phase-2 (Sonnet generation) concurrency. Retrieve+rerank stays serial.")
     args = ap.parse_args()
 
     if args.fast and args.limit is None:
@@ -206,28 +236,62 @@ def main():
         queries = queries[: args.limit]
 
     rr_note = f"  rerank_from={args.rerank_from}" if args.rerank_from else ""
-    print(f"Running {len(queries)} queries (k={args.k}){rr_note}...")
+    print(
+        f"Running {len(queries)} queries (k={args.k}){rr_note}  "
+        f"concurrency={args.concurrency}"
+    )
 
     out_path = os.path.join(OUT_DIR, args.out)
-    results = []
+    results: list[dict | None] = [None] * len(queries)
     total_in = total_out = 0
     t0 = time.time()
 
-    for i, q in enumerate(queries, 1):
+    # Phase 1 — serial retrieve + rerank.
+    print(f"Phase 1 (retrieve+rerank, serial): {len(queries)} queries", flush=True)
+    preps: list[dict | None] = [None] * len(queries)
+    phase1_errors: list[tuple[int, str]] = []
+    phase1_start = time.time()
+    for i, q in enumerate(queries):
+        t_q = time.time()
         try:
-            rec = run_one(q, k=args.k, rerank_from=args.rerank_from)
-            results.append(rec)
-            total_in += rec["usage"]["input_tokens"]
-            total_out += rec["usage"]["output_tokens"]
-            sig = rec["retrieval_signals"]
-            print(
-                f"  [{i:3d}/{len(queries)}] id={q['id']:>3}  "
-                f"top1_match={sig['top1_source_match']}  topk_match={sig['topk_source_match']}  "
-                f"tokens_in={rec['usage']['input_tokens']:>5} out={rec['usage']['output_tokens']:>3}"
-            )
+            preps[i] = _prep(q, k=args.k, rerank_from=args.rerank_from)
+            dt = time.time() - t_q
+            print(f"  P1 [{i+1:3d}/{len(queries)}] id={q['id']:>3}  {dt:>5.1f}s", flush=True)
         except Exception as e:
-            print(f"  [{i:3d}/{len(queries)}] id={q['id']} FAILED: {e}")
-            results.append({"id": q["id"], "query": q["query"], "error": str(e)})
+            phase1_errors.append((i, str(e)))
+            results[i] = {"id": q["id"], "query": q["query"], "error": f"phase1: {e}"}
+            print(f"  P1 [{i+1:3d}/{len(queries)}] id={q['id']} PHASE1 FAILED: {e}", flush=True)
+    phase1_done = time.time()
+    print(f"Phase 1 done in {phase1_done - phase1_start:.1f}s", flush=True)
+
+    # Phase 2 — concurrent Sonnet generation.
+    pending = [(i, p) for i, p in enumerate(preps) if p is not None]
+    print(f"Phase 2 (generate, concurrency={args.concurrency}): {len(pending)} queries")
+    print_lock = threading.Lock()
+    done_count = 0
+    with ThreadPoolExecutor(max_workers=args.concurrency) as pool:
+        future_to_idx = {pool.submit(_complete, p): i for i, p in pending}
+        for fut in as_completed(future_to_idx):
+            idx = future_to_idx[fut]
+            q = queries[idx]
+            try:
+                rec = fut.result()
+                results[idx] = rec
+                total_in += rec["usage"]["input_tokens"]
+                total_out += rec["usage"]["output_tokens"]
+                sig = rec["retrieval_signals"]
+                with print_lock:
+                    done_count += 1
+                    print(
+                        f"  [{done_count:3d}/{len(pending)}] id={q['id']:>3}  "
+                        f"top1_match={sig['top1_source_match']}  topk_match={sig['topk_source_match']}  "
+                        f"tokens_in={rec['usage']['input_tokens']:>5} out={rec['usage']['output_tokens']:>3}"
+                    )
+            except Exception as e:
+                results[idx] = {"id": q["id"], "query": q["query"], "error": f"phase2: {e}"}
+                with print_lock:
+                    done_count += 1
+                    print(f"  [{done_count:3d}/{len(pending)}] id={q['id']} PHASE2 FAILED: {e}")
 
     # Save
     elapsed = time.time() - t0
