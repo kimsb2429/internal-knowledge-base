@@ -50,11 +50,15 @@ def expected_source_ids(q: dict) -> list[str]:
 
 
 def _prep(q: dict, k: int, rerank_from: int = 0) -> dict:
-    """Phase 1 — retrieve. CPU-bound; kept serial across queries so PyTorch
-    doesn't thrash when running on CI's CPU-only runners. All the non-LLM
-    work lives here; the shape is ready for phase 2 to attach the generated
-    answer."""
-    chunks = retrieve(q["query"], k=k)
+    """Phase 1 — retrieve + rerank. CPU-bound; kept serial across queries so
+    PyTorch doesn't thrash when running on CI's CPU-only runners. All the
+    non-LLM work lives here; the shape is ready for phase 2 to attach the
+    generated answer."""
+    if rerank_from and rerank_from > k:
+        candidates = retrieve(q["query"], k=rerank_from)
+        chunks = rerank(q["query"], candidates, top_k=k)
+    else:
+        chunks = retrieve(q["query"], k=k)
 
     expected_ids = expected_source_ids(q)
     retrieved_ids = [str(c["source_id"]) for c in chunks]
