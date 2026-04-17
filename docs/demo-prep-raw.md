@@ -3113,3 +3113,114 @@ Cost: $0.30 (Sonnet 4.6 generation, 30 queries). Elapsed: 21 min. Same cost/spee
 Source: `data/eval_v2bcr_rerank_postship.fast.raw.json` vs. `data/eval_v2bcr_rerank.raw.json` (baseline from 2026-04-15). Run via `scripts/run_eval.py --fast --k 5 --rerank-from 20 --baseline eval_v2bcr_rerank.raw.json`.
 
 
+### Moment 43: The failing-then-passing PR — gate blocks, gate greens
+
+**2026-04-16, 20:22 EDT.** PR #5 squash-merged to main: commit `6821d26`, "Demo: failing-then-passing PR for the eval-in-CI gate."
+
+This is the fulfillment of Moment 42's promise. The regressing commit (`7597d7c`, "Simplify eval _prep: drop rerank path to cut CI time") deletes the if/else that triggers FlashRank MiniLM over a 20-candidate pool; retrieve now returns the raw pgvector top-5. A narrator-friendly "optimization" — pitched in the commit message as cutting CI time — that tanks retrieval quality.
+
+CI run `24540768938` (2:10 wall time) caught it cleanly:
+
+```
+metric                              current   baseline          Δ  verdict
+--------------------------------------------------------------------------
+top1_source_match_rate                0.533      0.733     -0.200  ✗ REGRESSION
+topk_source_match_rate                0.867      0.900     -0.033  ~ within tolerance
+answer_keyword_recall_mean            0.757      0.768     -0.011  ~ within tolerance
+idk_rate                              0.300      0.300     +0.000  = identical
+
+REGRESSION — gate blocks merge:
+  - top1_source_match_rate: 0.533 vs baseline 0.733 (Δ -0.200, tolerance ±0.05 down)
+```
+
+Top-1 source match fell 20pp — four times the 5pp tolerance. Fix commit (`b698b45`) restored the rerank; a third commit (`611f67d`) added the parked `paths:` filter to the `push:` trigger so the workflow would fire on the fix (the `pull_request` paths filter was skipping the re-run because net-zero PR diff matched no `scripts/**` path). CI run `24540937417` passed; squash-merged. Net change on main: the 6-line paths filter — regression cancels out.
+
+**The forever-artifact is the PR page itself**: [github.com/kimsb2429/internal-knowledge-base/pull/5](https://github.com/kimsb2429/internal-knowledge-base/pull/5). Red run → green run, visible in the Actions tab. The gate isn't just infra; it actually blocked a reasonable-sounding regression.
+
+### Talking point — "Reasonable-sounding regressions are the ones gates catch"
+
+"The regression commit message says 'simplify _prep: drop rerank path to cut CI time.' That sentence would pass code review at most companies. Rerank *is* expensive; pipeline simplification *is* a legitimate goal. What catches this isn't reading the diff more carefully — it's measuring the output. The gate runs 30 queries against a committed fixture, computes four proxies, compares them against a committed baseline. No human judgment involved. Top-1 dropped twenty percentage points. Merge blocked. That's the only thing a gate has to do — convert 'this PR looks reasonable' into 'this PR demonstrably broke retrieval quality by 20 points.'"
+
+### Talking point — "The net-zero diff taught us something about GitHub's path filter"
+
+"Second CI run didn't fire on the fix commit. Confusing for about three minutes, then obvious: GitHub evaluates `pull_request` path filters against the *PR's net diff* — base branch vs. head branch, not the individual commit. Because the fix commit reverted the regression exactly, the PR's diff had zero changes in `scripts/**`. Workflow skipped. Added a third commit that touched `.github/workflows/eval-gate.yml` (the parked paths filter on the `push:` trigger — a real improvement that happened to be what the fix commit needed to fire CI). Incidental win: paths filter is now live, verified immediately when the TODO-only follow-up push to main didn't trigger a run."
+
+### Quotables (session 10)
+
+- "A gate that catches a reasonable-sounding regression is the only kind of proof the artifact needs."
+- "Reviewers miss 20-point quality drops. Gates don't."
+- "GitHub's PR paths filter evaluates against net diff, not individual commits. Null-op commits skip the workflow."
+- "The regression PR's net change on main is 6 lines of YAML. The artifact isn't the diff — it's the Actions history."
+
+### Stats block — failing-then-passing
+
+- Regression mechanic: delete `if rerank_from and rerank_from > k` block in `_prep` (5 lines)
+- Local pre-push verification: `check_regression.py` exit 1, matched CI diagnostic to the character
+- CI run 1 (red): `24540768938`, 2:10 wall, failed at step 13 (`Check regression vs committed baseline`)
+- CI run 2 (green): `24540937417`, 3:19 wall, all steps pass
+- Post-merge main CI run: `24541066601`, 3:19 wall, green (paths filter correctly triggered on eval-gate.yml change)
+- PR: `https://github.com/kimsb2429/internal-knowledge-base/pull/5`
+- Squash commit: `6821d26` — net diff on main = 6-line YAML paths filter addition only
+
+### Replaying the failing-then-passing for the demo video
+
+PR #5 is merged, so the "watch CI turn red" moment is spent on the real artifact. Two paths exist for the video — use the museum-tour artifact AND one live demonstration.
+
+**Path A — Instant local replay (fast, for rehearsal or B-roll):**
+
+```bash
+# Regressed eval output is committed at evals/demo/regression.fast.raw.json
+.venv/bin/python -m scripts.check_regression \
+    --current evals/demo/regression.fast.raw.json \
+    --baseline evals/baseline.fast.json
+# Exits 1, prints the same "✗ REGRESSION" diagnostic CI produced on PR #5
+```
+
+Takes < 1 second. Perfect for cutting to: "this is the exact check CI runs in production." No Docker/DB/model load required; runs from any state of main.
+
+**Path B — Live CI redo on a throwaway PR (authentic red-run footage):**
+
+```bash
+# Start from clean main
+git checkout main && git pull
+
+# New branch
+git checkout -b demo-video-redo
+
+# Apply the same regression by editing scripts/run_eval.py — delete the if/else
+# in _prep so it becomes:
+#
+#     def _prep(q, k, rerank_from=0):
+#         """Phase 1 — retrieve."""
+#         chunks = retrieve(q["query"], k=k)
+#         ...
+#
+# Then:
+git add scripts/run_eval.py
+git commit -m "demo-video: drop rerank to show gate catching it"
+git push -u origin demo-video-redo
+gh pr create --title "Video demo: regression catch" --body "Throwaway for filming. Do not merge."
+
+# Watch CI fail (~2-3 min on this regression — it's faster than green because
+# the eval step skips the 65s rerank phase):
+gh run watch --exit-status $(gh run list --branch demo-video-redo --json databaseId --jq '.[0].databaseId')
+
+# When done recording:
+gh pr close <PR-number> --delete-branch
+```
+
+Total CI time: ~2:10 (per PR #5's run 24540768938). Best for the "dramatic pause" moment — trigger on camera, cut away, come back to red X.
+
+**Path C — Museum tour (paired with Path A or B):**
+
+Walk through PR #5 on GitHub in the video. Specifically:
+1. PR page: title says "Demo: failing-then-passing PR," merged status badge
+2. Actions tab: red X on `7597d7c`, green check on `611f67d`
+3. Click the failed run → `Check regression vs committed baseline` step → the REGRESSION output above
+4. Commit list: "Simplify eval _prep…" → "Restore rerank path after eval gate blocked…" → "Skip eval-gate on docs-only pushes to main"
+5. Squash-merge entry in the history shows the net change landed clean
+
+This is the authentic long-term proof. Path A or B is the live demonstration that makes the point land.
+
+Source: Session 10 (2026-04-16, post-PR-#4). PR #5 squash `6821d26`. Regressed eval output preserved at `evals/demo/regression.fast.raw.json`.
+
