@@ -26,6 +26,12 @@ on:
       - 'data/golden_query_set.json'
   push:
     branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'requirements*.txt'
+      - '.github/workflows/eval-gate.yml'
+      - 'evals/**'
+      - 'data/golden_query_set.json'
 
 jobs:
   eval-gate:
