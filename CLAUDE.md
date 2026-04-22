@@ -4,7 +4,7 @@ VA Education RAG pipeline — from raw corpus to MCP server.
 
 ## Zero-to-MCP plan
 
-The canonical build plan is the **"From Zero to Knowledge MCP"** section in `docs/2026-04-11-engineering-rag-evidence-and-howtos.md`. When the first brain says "zero to mcp", refer to that list. The TODO tracks progress against it — the plan doc is authoritative, TODO is a checklist.
+The canonical build plan is the **"From Zero to Knowledge MCP"** section in `docs/2026-04-11-engineering-rag-evidence-and-howtos.md`. The plan doc is authoritative for any "zero to mcp" references.
 
 ## Standing rules
 
