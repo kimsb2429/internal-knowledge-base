@@ -1,0 +1,12 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.kimsb2429/internal-knowledge-base",
+  "title": "Enterprise Internal Knowledge Base: Production-Ready RAG + MCP",
+  "description": "Production-ready RAG + MCP demo: eval-in-CI merge gate, Langfuse traces, structure-aware chunking.",
+  "version": "0.1.0",
+  "websiteUrl": "https://github.com/kimsb2429/internal-knowledge-base",
+  "repository": {
+    "url": "https://github.com/kimsb2429/internal-knowledge-base",
+    "source": "github"
+  }
+}
