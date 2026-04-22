@@ -4,7 +4,7 @@ A public Retrieval-Augmented Generation pipeline exposed as an MCP server. Sampl
 
 The repo implements evaluation, observability, and structure-aware ingestion. Cost/latency tuning, tenant-level access control, and other production concerns are discussed in the article linked below.
 
-**📖 Full writeup on Medium:** [POC-to-Production RAG](https://medium.com/@jae.kim.a19.projects/poc-to-production-rag-af49476f4ddc)
+**📖 Full writeup on Medium:** [Enterprise Internal Knowledge Base RAG MCP: POC-to-Production](https://medium.com/@jae.kim.a19.projects/poc-to-production-rag-af49476f4ddc)
 
 ---
 
@@ -178,7 +178,7 @@ Then `python scripts/run_eval.py --fast` to verify the eval baseline reproduces.
 
 ## Further reading
 
-- **Full demo writeup**: [POC-to-Production RAG](https://medium.com/@jae.kim.a19.projects/poc-to-production-rag-af49476f4ddc) (Medium)
+- **Full demo writeup**: [Enterprise Internal Knowledge Base RAG MCP: POC-to-Production](https://medium.com/@jae.kim.a19.projects/poc-to-production-rag-af49476f4ddc) (Medium)
 - [`docs/2026-04-11-engineering-rag-evidence-and-howtos.md`](docs/2026-04-11-engineering-rag-evidence-and-howtos.md) — engineering analysis, evidence base, Zero-to-MCP plan
 - [`docs/2026-04-12-rag-pipeline-buy-vs-build.md`](docs/2026-04-12-rag-pipeline-buy-vs-build.md) — buy-vs-build map per pipeline stage
 - [`docs/deep-dive/2026-04-16-docs-vs-code-rag-adjudication.md`](docs/deep-dive/2026-04-16-docs-vs-code-rag-adjudication.md) — when unified RAG stops working
