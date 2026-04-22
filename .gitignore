@@ -21,5 +21,6 @@ data/golden_set_audit.json
 data/ksweep_*.raw.json
 data/ksweep_logs/
 
-# Internal launch-prep notes — lives in ~/consulting-research/docs/rag-demo/
+# Internal launch-prep notes + planning — live in ~/consulting-research/docs/rag-demo/
 docs/demo-prep-raw.md
+TODO.md
