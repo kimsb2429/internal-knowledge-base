@@ -1,126 +1,190 @@
-# Internal Knowledge Base — RAG Pipeline Research & Build Plan
+# Enterprise Internal Knowledge Base — Production-Ready RAG + MCP
 
-Research, evidence analysis, and implementation plan for building a production RAG (Retrieval-Augmented Generation) pipeline that serves organizational knowledge through an MCP (Model Context Protocol) server.
+A public Retrieval-Augmented Generation pipeline exposed as an MCP server. Sample content from Veterans Affairs education manuals.
 
-## Getting Started
+The repo implements evaluation, observability, and structure-aware ingestion. Cost/latency tuning, tenant-level access control, and other production concerns are discussed in the article linked below.
 
-### Prerequisites
+**📖 Full writeup on Medium:** *link will land here upon publication*
 
-- Python 3.12+ with `venv`
-- Docker Desktop (for pgvector)
-- ~500 MB disk space for embeddings + corpus
+---
 
-### Setup
+## Why this exists
+
+RAG demos tend to focus on the quality of the retrieval pipeline, without recognizing that production RAG fails on the next ten steps: prompt or model changes that pass code review but tank answer quality, cost and latency drift that cannot be traced to specific queries, cross-tenant leakage that only surfaces in audit. This repo shows what catching them looks like in practice.
+
+The corpus is public (VA Education manuals — 238 documents, 9,000+ chunks) so anyone can clone, run, and adapt the pipeline.
+
+---
+
+## Quickstart
 
 ```bash
-# Python environment
-python3 -m venv .venv
-source .venv/bin/activate
-pip install beautifulsoup4 sentence-transformers psycopg2-binary tiktoken langchain-text-splitters
+git clone https://github.com/kimsb2429/internal-knowledge-base
+cd internal-knowledge-base
 
-# Database (pgvector in Docker)
+# 1. Start Postgres + pgvector
 docker compose up -d
-docker exec -i ikb_pgvector psql -U ikb -d ikb < scripts/init_schema.sql
+
+# 2. Python env + dependencies
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+# 3. Restore corpus fixture (~2 min — 238 docs + 9k chunks pre-embedded)
+docker exec -i ikb_pgvector pg_restore -U ikb -d ikb < evals/fixture_v1.dump
+
+# 4. Smoke-test the MCP server
+python scripts/test_mcp_server.py     # 7/7 tests pass
+
+# 5. Start the MCP server (stdio transport)
+python scripts/mcp_server.py
 ```
 
-Connection string: `postgresql://ikb:ikb_local@localhost:5433/ikb` (container: `ikb_pgvector`, port: 5433).
+### Consuming from Claude Desktop
 
-### Running the pipeline
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 
-The pipeline has four stages. Each script is idempotent and resume-safe.
+```json
+{
+  "mcpServers": {
+    "ikb": {
+      "command": "python",
+      "args": ["/absolute/path/to/internal-knowledge-base/scripts/mcp_server.py"]
+    }
+  }
+}
+```
+
+Then ask Claude things like *"What RPO handles GI Bill claims in Texas?"* — the MCP server returns ranked chunks with citations.
+
+---
+
+## Architecture
+
+**Ingestion (one-time per corpus):**
+
+```mermaid
+graph LR
+    A[KnowVA crawler<br/>HTML + PDF] --> B[Source-specific<br/>preprocessor]
+    B --> C[Structure-aware<br/>chunker]
+    C --> D[mxbai-embed-large<br/>local, 1024-dim]
+    D --> E[(pgvector)]
+    F[Anthropic Contextual<br/>Retrieval] -.-> E
+    E -.-> F
+    style E fill:#e1f5fe
+```
+
+**Query (per MCP tool call):**
+
+```mermaid
+graph LR
+    A[Claude Desktop<br/>MCP client] --> B[FastMCP server]
+    B --> C[pgvector top-K]
+    C --> D[Reranker<br/>mxbai or FlashRank]
+    D --> E[Claude Sonnet<br/>generation]
+    E --> A
+    E --> F[Langfuse trace]
+    style F fill:#fff9c4
+```
+
+**Stack:**
+- **Vector store:** Postgres + pgvector (Docker, port 5433); `content_tsv` GIN index for hybrid-ready
+- **Embeddings:** mxbai-embed-large (1024 dims, local via sentence-transformers) — $0 API cost
+- **Reranker:** mxbai-rerank-base-v2 (full eval) / FlashRank MiniLM (CI fast mode, 22M ONNX, ~2s/query)
+- **Generation:** Claude Sonnet
+- **MCP server:** FastMCP 3.2.4 — Tools (`query`), Resources (`document://{source_id}`), Prompts (`cite_from_chunks`)
+- **Observability:** Langfuse Cloud, per-trace public sharing
+- **Eval:** DeepEval + 110-query golden set + GitHub Actions merge gate
+
+---
+
+## Eval scores
+
+Full 110-question golden set, contextualized chunks + reranker:
+
+| Metric | Score |
+|---|---|
+| Faithfulness | 0.95 |
+| Answer Relevance | 0.91 |
+| Context Precision | 0.61 |
+| Context Recall | 0.52 |
+| Context Relevance | 0.56 |
+
+🔗 **[Live Langfuse trace](https://us.cloud.langfuse.com/project/cmo0wah7a00pfad071nk6x84c/traces/a574193bbff7d5438f7fae9e27f4bb83)** (public, no login).
+
+**Notable result:** Anthropic's Contextual Retrieval pattern produced modest lift on top of reranking (+4.8pp AnsRel, +4.1pp CtxPrec) at this scale — well short of the +35% recall their published numbers suggested. Reported as found; juiced numbers would defeat the point.
+
+---
+
+## Eval-in-CI as a merge gate
+
+Every PR runs the golden set in fast mode (FlashRank reranker, ~3-4 min wall, $0.30 in Sonnet calls) against a fixture DB. PRs that regress more than ±5pp on top1/topk/keyword_recall, or +10pp on `idk_rate`, are blocked.
+
+**Forever-artifact:** [PR #5](https://github.com/kimsb2429/internal-knowledge-base/pull/5) — a deliberate failing-then-passing PR. Red CI catches a 20pp top1 regression; green CI confirms the fix. The Actions tab is the proof.
+
+Workflow: [`.github/workflows/eval-gate.yml`](.github/workflows/eval-gate.yml).
+
+---
+
+## What this repo doesn't cover
+
+A few production-shape items are seams, not implementations:
+
+- **Multi-tenant scoping** — `auth_context` parameter present on every MCP tool, typed, currently unused (labels the SSO/ACL seam)
+- **Ingestion concurrency** — single-threaded chunker + embedder; production would use a modulus-distributed worker pool
+- **Hybrid search wiring** — `content_tsv` GIN index is live; BM25 + RRF fusion at query time stays a post-launch addition
+
+The writeup linked above covers these topics.
+
+---
+
+## Repo layout
+
+```
+docs/                    Research, evidence base, deep-dives
+data/                    Crawled corpus + golden query set
+scripts/
+  crawl_knowva.py            eGain v11 API crawler
+  enrich_metadata.py         Headings, ACL, authority tier, content_category
+  knowva_preprocess.py       Source-specific HTML normalization
+  chunk_documents.py         Structure-aware splitter (preserves table colspan/rowspan)
+  embed_and_store.py         mxbai-embed-large → pgvector
+  contextualize_chunks.py    Anthropic Batches API for Contextual Retrieval
+  rerank.py                  mxbai-rerank + FlashRank
+  retrieve.py / generate.py  RAG path
+  mcp_server.py              FastMCP exposure
+  run_eval.py / score_eval.py / check_regression.py   Eval harness + CI gate
+evals/                   Fixture DB dump + baseline JSON
+.github/workflows/       eval-gate.yml — merge-gate workflow
+```
+
+---
+
+## Reproducing from raw corpus (~30 min)
+
+Each script is idempotent and resume-safe.
 
 ```bash
-# 1. Crawl the corpus (already done — outputs in data/knowva_manuals/articles/)
-python scripts/crawl_knowva.py
-
-# 2. Enrich metadata (headings, acl, authority tier, content_category)
-python scripts/enrich_metadata.py
-
-# 3. Preprocess HTML — source-specific normalization (heading fix, layout-table unwrap, div-table unwrap)
-python scripts/knowva_preprocess.py
-
-# 4. Chunk — generic source-agnostic splitter (outputs data/knowva_manuals/chunks/all_chunks.json)
-python scripts/chunk_documents.py
-
-# 5. Embed and store in pgvector (resume-safe — skips already-inserted documents)
-python scripts/embed_and_store.py
+python scripts/crawl_knowva.py            # Crawl raw HTML (skip if data/knowva_manuals/articles/ exists)
+python scripts/enrich_metadata.py         # Add headings, ACL, authority tier
+python scripts/knowva_preprocess.py       # Normalize HTML quirks
+python scripts/chunk_documents.py         # Structure-aware split
+python scripts/embed_and_store.py         # mxbai → pgvector
+python scripts/contextualize_chunks.py    # Anthropic Batches API (~$12, optional but recommended)
 ```
 
-### Repo layout
+Then `python scripts/run_eval.py --fast` to verify the eval baseline reproduces.
 
-```
-data/
-  knowva_manuals/
-    articles/          ← raw crawled HTML + metadata sidecars (committed)
-    preprocessed/      ← normalized HTML (gitignored — regenerable)
-    chunks/            ← chunked JSON (gitignored — regenerable)
-  vadir_parsed/        ← Docling-parsed PDF (committed — slow to reproduce)
-  golden_query_set.json ← 110 validated evaluation queries
+---
 
-scripts/
-  crawl_knowva.py         ← eGain v11 API crawler
-  enrich_metadata.py      ← adds headings, acl, authority tier, content_category
-  knowva_preprocess.py    ← source-specific HTML normalizations for KnowVA
-  chunk_documents.py      ← source-agnostic chunker (HTML + markdown)
-  embed_and_store.py      ← mxbai-embed-large → pgvector
-  init_schema.sql         ← documents + document_chunks tables, HNSW index
-```
+## Further reading
 
-### Current status
+- **Full demo writeup**: *(Medium link coming after publication)*
+- [`docs/2026-04-11-engineering-rag-evidence-and-howtos.md`](docs/2026-04-11-engineering-rag-evidence-and-howtos.md) — engineering analysis, evidence base, Zero-to-MCP plan
+- [`docs/2026-04-12-rag-pipeline-buy-vs-build.md`](docs/2026-04-12-rag-pipeline-buy-vs-build.md) — buy-vs-build map per pipeline stage
+- [`docs/deep-dive/2026-04-16-docs-vs-code-rag-adjudication.md`](docs/deep-dive/2026-04-16-docs-vs-code-rag-adjudication.md) — when unified RAG stops working
 
-See `TODO.md` for the Zero-to-MCP checklist. Canonical plan is in `docs/2026-04-11-engineering-rag-evidence-and-howtos.md` § "From Zero to Knowledge MCP". Steps 1-3, 5-8 done; Step 9 (eval harness) is next.
-
-## What's in here
-
-### [Engineering RAG — Evidence, Methodology, and How-Tos](docs/2026-04-11-engineering-rag-evidence-and-howtos.md)
-
-Deep analysis of the engineering RAG landscape:
-
-- **Measurable gains** — evidence-ranked analysis of published RAG deployments (Uber Genie/EAg-RAG, Dropbox Dash, LinkedIn KG-RAG, DoorDash, Spotify AiKA, Stripe Minions), graded by strength of evidence (RCT > offline eval > telemetry > self-report)
-- **Disclosed architectures** — what each team actually built (chunking, embedding, retrieval, reranking, eval)
-- **Multi-source evidence** — does combining codebase + wiki + on-call docs actually help? (honest answer: ubiquitously assumed, never benchmarked)
-- **Dos, don'ts, and tradeoffs** — practitioner consensus on chunking, ACLs, freshness, citations, feedback loops
-- **Proof points** — evidence tables for 8 key architectural decisions with "if challenged" responses
-- **Zero-to-MCP step-by-step build plan** — 22 steps + 5 iteration loops (A-E) with specific eval metrics per loop
-- **2026 production RAG consensus** — contextual retrieval (49-67% failure reduction), hierarchical chunking, hybrid search, reranker benchmarks, eval frameworks, cost control
-
-### [RAG Ingestion Skills & Skill Packs — Research](docs/2026-04-11-rag-ingestion-skills-research.md)
-
-Survey of existing Claude Code skills, open-source libraries, and AWS samples for RAG ingestion:
-
-- 17 tools evaluated across parsing, chunking, metadata, pgvector, evaluation
-- Gap analysis identifying what exists vs what needs custom building
-- Ranked recommendations for the target stack (Postgres + pgvector, Claude Sonnet, AWS Bedrock Titan V2)
-
-### [RAG Pipeline — Buy vs Build Map](docs/2026-04-12-rag-pipeline-buy-vs-build.md)
-
-Component-level buy-vs-build analysis for every pipeline stage:
-
-- **Decision matrix** — which stages use existing tools vs custom code
-- **Tool recommendations** with specific repos, versions, licenses, and costs
-- **Cost breakdown** — free vs paid, estimated monthly costs (~$65-75/mo at moderate volume)
-- **Tools mapped to each build step** — specific tool for every step in the zero-to-MCP plan, including schema DDL and MCP server signature
-
-## Actual stack (as built)
-
-- **Vector store:** Postgres + pgvector (local via Docker during build; RDS-ready for prod)
-- **Embeddings:** mxbai-embed-large (1024 dims, local via sentence-transformers) — replaces original Titan V2 plan, zero API cost
-- **LLM:** Claude Sonnet (planned for eval + generation; optional for Loop A summary indexing)
-- **Sources (current):** KnowVA HTML manuals (M22-3, M22-4) + VADIR PDF. Confluence/Jira deferred to Loop D.
-- **Output:** MCP server returning chunks + metadata (Steps 15-16, not yet built)
-- **Eval:** DeepEval + golden query set (Step 9, next)
-
-## Key finding
-
-Most of the pipeline is buyable with open-source tools. Only ~500-700 lines of custom code needed:
-
-1. Contextual retrieval (~50 lines) — LLM context blurbs prepended to chunks
-2. pgvector schema + hybrid search (~100 lines SQL) — two-table pattern with RRF fusion
-3. MCP server (~200-400 lines) — thin retrieval wrapper via FastMCP
-4. Two-tier guardrails (~100 lines) — DoorDash-style cosine check + LLM judge
-
-Everything else is configuration and wiring on top of: Docling (PDF parsing), confluence-markdown-exporter, Docling HybridChunker, LangChain MultiVectorRetriever, Cohere Rerank on Bedrock, DeepEval, and Langfuse.
+---
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).

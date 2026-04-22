@@ -20,3 +20,6 @@ data/golden_set_audit.json
 # K-sweep diagnostic outputs — reproducible via scripts/run_eval.py
 data/ksweep_*.raw.json
 data/ksweep_logs/
+
+# Internal launch-prep notes — lives in ~/consulting-research/docs/rag-demo/
+docs/demo-prep-raw.md
