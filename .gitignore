@@ -2,6 +2,7 @@ __pycache__/
 .venv/
 *.pyc
 .env
+.DS_Store
 
 # DeepEval local cache
 .deepeval/
@@ -24,3 +25,4 @@ data/ksweep_logs/
 # Internal launch-prep notes + planning — live in ~/consulting-research/docs/rag-demo/
 docs/demo-prep-raw.md
 TODO.md
+.claude/worktrees/

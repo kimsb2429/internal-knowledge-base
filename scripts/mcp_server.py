@@ -74,6 +74,7 @@ def _init_otel() -> bool:
 _OTEL_ENABLED = _init_otel()
 
 from fastmcp import FastMCP  # noqa: E402  (must import after OTel setup)
+from fastmcp.tools.tool import ToolResult  # noqa: E402
 from opentelemetry import trace as _otel_trace  # noqa: E402
 
 from scripts.rerank import rerank  # noqa: E402
@@ -236,13 +237,16 @@ def query(
         bool(auth_context),
     )
 
-    return {
-        "query": q,
-        "k": k_out,
-        "chunks": chunks,
-        "latency_ms": latency_ms,
-        "trace_id": trace_id,
-    }
+    return ToolResult(
+        structured_content={
+            "query": q,
+            "k": k_out,
+            "chunks": chunks,
+            "latency_ms": latency_ms,
+            "trace_id": trace_id,
+        },
+        meta={"anthropic/maxResultSizeChars": 500000},
+    )
 
 
 # ---------------------------------------------------------------------------
